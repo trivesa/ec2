@@ -51,14 +51,14 @@ for file in files:
     done = False
     while not done:
         status, done = downloader.next_chunk()
-    image_file.seek(0)
+    image_file.seek(0)  # Reset pointer to the beginning of the file
     print(f"Download 100% complete for {file_id}.")
 
     # Open image to check if it's black or not
     image = Image.open(image_file)
     stat = ImageStat.Stat(image)
     brightness = sum(stat.mean) / len(stat.mean)
-    
+
     # If the image is detected as black
     if brightness < 10:  # Threshold for detecting black image (adjust as necessary)
         if not black_photo_found:
@@ -70,11 +70,16 @@ for file in files:
         # This is the label photo corresponding to the previous black photo
         print(f"Identified label photo: {file_name} ({file_id})")
 
-        # Process this label photo with Google Vision API
-        image.seek(0)  # Reset the image file pointer
+        # Reset the file pointer to the beginning before reading
+        image_file.seek(0)
         content = image_file.read()  # Read the content into bytes
-        vision_image = vision.Image(content=content)  # Create a vision.Image object with the content
-        
+        if not content:
+            print(f"Error: No content read from the image {file_name}.")
+            continue
+
+        # Create a vision.Image object with the content
+        vision_image = vision.Image(content=content)
+
         # Check if the vision_image has content before calling the API
         if vision_image.content:
             response = vision_client.text_detection(image=vision_image)
