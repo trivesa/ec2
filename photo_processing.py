@@ -1,3 +1,4 @@
+print(f"Using folder ID: {FOLDER_ID}")
 import os
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
