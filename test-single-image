@@ -1,0 +1,43 @@
+from google.oauth2 import service_account
+from googleapiclient.discovery import build
+from googleapiclient.http import MediaIoBaseDownload
+from google.cloud import vision
+import io
+import os
+
+# Set the path to the Google service account credentials JSON file
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/ec2-user/google-credentials/photo-to-listing-e89218601911.json"
+
+# Set up the Google Cloud Vision API client
+vision_client = vision.ImageAnnotatorClient()
+
+# Set up Google Drive API client
+drive_service = build('drive', 'v3', credentials=service_account.Credentials.from_service_account_file(os.getenv('GOOGLE_APPLICATION_CREDENTIALS')))
+
+# Replace with the file ID of the image in Google Drive
+file_id = '1BGFfcEWmrPwITvhtdd3b4VMFEuv20tGN'  # Replace with your actual file ID from Google Drive
+
+# Download the image content from Google Drive to memory
+request = drive_service.files().get_media(fileId=file_id)
+image_file = io.BytesIO()
+downloader = MediaIoBaseDownload(image_file, request)
+done = False
+while done is False:
+    status, done = downloader.next_chunk()
+    print(f"Download {int(status.progress() * 100)}% complete.")
+
+# Move to the beginning of the BytesIO object to read the image
+image_file.seek(0)
+
+# Use the downloaded image content for Vision API text detection
+image = vision.Image(content=image_file.read())
+response = vision_client.text_detection(image=image)
+texts = response.text_annotations
+
+# Print extracted texts
+if not texts:
+    print("No text detected in the image.")
+else:
+    print("Detected text:")
+    for text in texts:
+        print(text.description)
