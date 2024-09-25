@@ -29,6 +29,9 @@ else:
     white_photo = None
     label_photo = None
 
+    # Sort files based on their sequence number in the filename
+    files.sort(key=lambda x: int(x['name'].split('.')[0][-5:]))
+
     # Find the white photo and label photo
     for file in files:
         print(f"Checking file: {file['name']} ({file['mimeType']})")
@@ -41,7 +44,7 @@ else:
     if white_photo:
         white_photo_number = int(white_photo['name'].split('.')[0][-5:])
         print(f"White photo sequence number: {white_photo_number}")
-        
+
         for file in files:
             try:
                 file_number = int(file['name'].split('.')[0][-5:])
