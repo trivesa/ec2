@@ -2,6 +2,7 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseDownload
 from google.cloud import vision
+from PIL import Image, ImageStat
 import io
 import os
 
@@ -44,13 +45,16 @@ for file in files_sorted:
         status, done = downloader.next_chunk()
     image_file.seek(0)
 
-    # Load the image
+    # Load the image for vision processing
     vision_image = vision.Image(content=image_file.read())
 
-    # If this is the first image, consider it a black photo
+    # Load the image for PIL processing
+    image_file.seek(0)
+    pil_image = Image.open(image_file)
+
+    # Check if the current photo is a black photo
     if not black_photo_found:
-        # Check if the image is mostly black (could also use other logic)
-        if is_black_photo(vision_image):  # Assuming is_black_photo is a function to determine black photos
+        if is_black_photo(pil_image):
             black_photo_found = True
             last_black_photo = file
             print(f"Identified black photo: {file['name']} ({file['id']})")
@@ -89,10 +93,20 @@ def send_message_to_ui(message, block_name):
     # Example placeholder print statement (replace with actual UI communication logic)
     print(f"Message to {block_name}: {message}")
 
-def is_black_photo(vision_image):
+def is_black_photo(image):
     """
-    Placeholder function to determine if a given image is a black photo.
-    Replace with your actual logic to detect black photos.
+    Determines if the given image is a black photo.
+    This function calculates the average brightness of the image and 
+    considers it a black photo if the brightness is below a certain threshold.
     """
-    # Use vision API or image analysis to determine if the photo is black
-    return True  # Replace with actual condition
+    # Convert the image to grayscale
+    grayscale_image = image.convert('L')
+    # Calculate the average brightness of the image
+    stat = ImageStat.Stat(grayscale_image)
+    brightness = stat.mean[0]
+    
+    # Define a threshold below which the image is considered black
+    brightness_threshold = 10  # Adjust this value based on your images
+    
+    # Return True if the image is mostly black, False otherwise
+    return brightness < brightness_threshold
