@@ -18,7 +18,10 @@ drive_service = build('drive', 'v3', credentials=service_account.Credentials.fro
 folder_id = '1ABQ74hq28akUEV0BUOyue4ltztQA52PP'
 
 # Fetch list of image files from Google Drive folder
-results = drive_service.files().list(q=f"'{folder_id}' in parents", fields="files(id, name)").execute()
+results = drive_service.files().list(
+    q=f"'{folder_id}' in parents and mimeType='image/jpeg'",
+    fields="files(id, name, mimeType)"
+).execute()
 files = results.get('files', [])
 
 # Sort files based on their name to ensure sequential processing
