@@ -54,9 +54,13 @@ for index, file in enumerate(files):
     print(f"Download 100% complete for {file_id}.")
 
     # Open image to check if it's black or not
-    image = Image.open(image_file)
-    stat = ImageStat.Stat(image)
-    brightness = sum(stat.mean) / len(stat.mean)
+    try:
+        image = Image.open(image_file)
+        stat = ImageStat.Stat(image)
+        brightness = sum(stat.mean) / len(stat.mean)
+    except Exception as e:
+        print(f"Error processing image {file_name}: {e}")
+        continue
 
     # If the image is detected as black
     if brightness < 10:  # Threshold for detecting black image (adjust as necessary)
@@ -77,15 +81,20 @@ for index, file in enumerate(files):
 
         # Check if the vision_image has content before calling the API
         if vision_image.content:
-            response = vision_client.text_detection(image=vision_image)
-            texts = response.text_annotations
+            try:
+                response = vision_client.text_detection(image=vision_image)
+                texts = response.text_annotations
 
-            # Print extracted texts
-            if not texts:
-                print("No text detected in the image.")
-            else:
-                print("Detected text:")
-                for text in texts:
-                    print(text.description)
+                # Print extracted texts
+                if not texts:
+                    print("No text detected in the image.")
+                else:
+                    print("Detected text:")
+                    for text in texts:
+                        print(text.description)
+            except Exception as e:
+                print(f"Error during text detection for {file_name}: {e}")
         else:
             print(f"Error: vision.Image object is empty for {file_name}")
+
+print("Processing complete.")
