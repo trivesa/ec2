@@ -14,20 +14,30 @@ creds = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FI
 # Build the Drive API client
 drive_service = build('drive', 'v3', credentials=creds)
 
-# Folder ID for 'photo_processing' in the shared drive
-# Replace 'FOLDER_ID' with the actual folder ID
+# Folder ID for 'folder1' in the shared drive
 folder_id = '1AAUkLJYB7atxv1gDPv_DYH10GkTXhdy3'
+
+# Check if the folder is accessible
+try:
+    folder_metadata = drive_service.files().get(fileId=folder_id).execute()
+    print(f"Folder '{folder_metadata['name']}' found and accessible.")
+except Exception as e:
+    print(f"Error accessing folder: {e}")
 
 # List the files in the folder
 results = drive_service.files().list(
     q=f"'{folder_id}' in parents",
     pageSize=100,
-    fields="files(id, name)").execute()
+    fields="files(id, name, mimeType)").execute()
 items = results.get('files', [])
 
 if not items:
     print('No files found in the folder.')
 else:
+    print(f"Files found in folder {folder_id}:")
+    for item in items:
+        print(f" - {item['name']} (ID: {item['id']}, Type: {item['mimeType']})")
+
     # Sort files by the last 5 digits of the name
     sorted_items = sorted(items, key=lambda x: int(x['name'].split()[-1].split('.')[0]))
 
