@@ -32,6 +32,25 @@ files_sorted = sorted(files, key=lambda x: x['name'])
 black_photo_found = False
 last_black_photo = None
 
+# Define the is_black_photo function here
+def is_black_photo(image):
+    """
+    Determines if the given image is a black photo.
+    This function calculates the average brightness of the image and 
+    considers it a black photo if the brightness is below a certain threshold.
+    """
+    # Convert the image to grayscale
+    grayscale_image = image.convert('L')
+    # Calculate the average brightness of the image
+    stat = ImageStat.Stat(grayscale_image)
+    brightness = stat.mean[0]
+    
+    # Define a threshold below which the image is considered black
+    brightness_threshold = 10  # Adjust this value based on your images
+    
+    # Return True if the image is mostly black, False otherwise
+    return brightness < brightness_threshold
+
 # Loop through all files to identify and process label photos
 for file in files_sorted:
     print(f"Checking file: {file['name']} ({file['mimeType']})")
@@ -92,21 +111,3 @@ def send_message_to_ui(message, block_name):
     """
     # Example placeholder print statement (replace with actual UI communication logic)
     print(f"Message to {block_name}: {message}")
-
-def is_black_photo(image):
-    """
-    Determines if the given image is a black photo.
-    This function calculates the average brightness of the image and 
-    considers it a black photo if the brightness is below a certain threshold.
-    """
-    # Convert the image to grayscale
-    grayscale_image = image.convert('L')
-    # Calculate the average brightness of the image
-    stat = ImageStat.Stat(grayscale_image)
-    brightness = stat.mean[0]
-    
-    # Define a threshold below which the image is considered black
-    brightness_threshold = 10  # Adjust this value based on your images
-    
-    # Return True if the image is mostly black, False otherwise
-    return brightness < brightness_threshold
