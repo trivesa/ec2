@@ -37,19 +37,25 @@ def is_pure_black(image):
     return all(pixel < 10 for pixel in stat.mean)
 
 # Retrieve files from the specified folder
-results = drive_service.files().list(q=f"'{folder_id}' in parents and mimeType='image/jpeg'", fields="files(id, name)").execute()
+results = drive_service.files().list(q=f"'{folder_id}' in parents and mimeType='image/jpeg'", fields="files(id, name, mimeType)").execute()
 
 files = results.get('files', [])
 print("Files found in the folder or its subfolders:")
-for file in files:
-    print(f"Checking file: {file['name']} ({file['mimeType']})")
 
 black_photo_found = False
 label_photo_id = None
 
 for file in sorted(files, key=lambda x: x['name']):
+    # Check if 'mimeType' exists to avoid errors
+    if 'mimeType' not in file:
+        print(f"Skipping file without mimeType: {file['name']}")
+        continue
+
     file_id = file['id']
     file_name = file['name']
+    mime_type = file['mimeType']
+
+    print(f"Checking file: {file_name} ({mime_type})")
 
     # Download the image to memory
     image_file = download_image(file_id)
