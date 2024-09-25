@@ -1,86 +1,82 @@
-from googleapiclient.discovery import build
 from google.oauth2 import service_account
-import os
-import re
+from googleapiclient.discovery import build
+from googleapiclient.http import MediaIoBaseDownload
 from google.cloud import vision
-from google.cloud.vision_v1 import types
+import io
+import os
 
-# Set up Google Drive API credentials
-SERVICE_ACCOUNT_FILE = "/home/ec2-user/google-credentials/photo-to-listing-e89218601911.json"
-SCOPES = ['https://www.googleapis.com/auth/drive']
+# Set the path to the Google service account credentials JSON file
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/ec2-user/google-credentials/photo-to-listing-e89218601911.json"
 
-# New folder ID of the subfolder containing images
-FOLDER_ID = "1ABQ74hq28akUEV0BUOyue4ltztQA52PP"  # Updated with your provided folder ID
+# Set up the Google Cloud Vision API client
+vision_client = vision.ImageAnnotatorClient()
 
-# Print the folder ID to ensure it's correct
-print(f"Using folder ID: {FOLDER_ID}")
+# Set up Google Drive API client
+drive_service = build('drive', 'v3', credentials=service_account.Credentials.from_service_account_file(os.getenv('GOOGLE_APPLICATION_CREDENTIALS')))
 
-# Authenticate and create the Google Drive API client
-creds = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
-drive_service = build('drive', 'v3', credentials=creds)
+# Folder ID containing the images
+FOLDER_ID = '1ABQ74hq28akUEV0BUOyue4ltztQA52PP'  # Update this with the folder ID containing your images
 
-# Set up Google Vision API client
-vision_client = vision.ImageAnnotatorClient(credentials=creds)
+# Fetch all files in the folder
+results = drive_service.files().list(q=f"'{FOLDER_ID}' in parents", fields="files(id, name, mimeType)").execute()
+files = results.get('files', [])
 
-def extract_text_from_image(file_id):
-    """Extracts text from an image file stored in Google Drive using Google Vision API."""
-    try:
-        # Get the image file content from Google Drive
-        file = drive_service.files().get_media(fileId=file_id).execute()
-        
-        # Construct the image object for Vision API
-        image = types.Image(content=file)
-        
-        # Perform text detection on the image
+# Check if files were found
+if not files:
+    print("No files found in the folder or its subfolders.")
+else:
+    print(f"Files found in the folder or its subfolders:")
+    white_photo = None
+    label_photo = None
+
+    # Find the white photo and label photo
+    for file in files:
+        if 'white' in file['name'].lower() and file['mimeType'].startswith('image/'):
+            white_photo = file
+            print(f"Identified white photo: {file['name']} ({file['id']})")
+            break
+
+    # Find the label photo which is next in sequence
+    if white_photo:
+        white_photo_number = int(white_photo['name'].split('.')[0][-5:])
+        for file in files:
+            try:
+                file_number = int(file['name'].split('.')[0][-5:])
+                if file_number == white_photo_number + 1 and file['mimeType'].startswith('image/'):
+                    label_photo = file
+                    print(f"Identified label photo: {file['name']} ({file['id']})")
+                    break
+            except ValueError:
+                continue
+    
+    # If label photo is found, proceed to extract text
+    if label_photo:
+        file_id = label_photo['id']
+        print(f"Processing label photo with ID: {file_id}")
+
+        # Download the image content from Google Drive to memory
+        request = drive_service.files().get_media(fileId=file_id)
+        image_file = io.BytesIO()
+        downloader = MediaIoBaseDownload(image_file, request)
+        done = False
+        while not done:
+            status, done = downloader.next_chunk()
+            print(f"Download {int(status.progress() * 100)}% complete.")
+
+        # Move to the beginning of the BytesIO object to read the image
+        image_file.seek(0)
+
+        # Use the downloaded image content for Vision API text detection
+        image = vision.Image(content=image_file.read())
         response = vision_client.text_detection(image=image)
         texts = response.text_annotations
-        
-        if texts:
-            print("Extracted text from the label photo:")
+
+        # Print extracted texts
+        if not texts:
+            print("No text detected in the image.")
+        else:
+            print("Detected text:")
             for text in texts:
-                print(f"Text: {text.description}")
-            return texts[0].description  # Return the full extracted text
-        else:
-            print("No text found in the image.")
-            return None
-    except Exception as e:
-        print(f"Error extracting text from image: {e}")
-        return None
-
-try:
-    # List all image files in the specified folder
-    query = f"'{FOLDER_ID}' in parents and mimeType contains 'image/'"
-    results = drive_service.files().list(q=query, fields="files(id, name, mimeType, parents)").execute()
-    items = results.get('files', [])
-    
-    # Print the raw response for debugging
-    print(f"Raw response: {results}")
-    
-    if not items:
-        print('No files found in the folder or its subfolders.')
+                print(text.description)
     else:
-        print('Files in the folder or its subfolders:')
-        # Sort the items based on the last part of the file name assuming it's a sequence number
-        items.sort(key=lambda x: int(re.findall(r'\d+', x['name'])[-1]))
-        
-        # Identify the white photo (assumed to be the first photo)
-        white_photo = items[0]
-        print(f"Identified white photo: {white_photo['name']} ({white_photo['id']})")
-
-        # Identify the next photo in sequence as the label photo
-        if len(items) > 1:
-            label_photo = items[1]
-            print(f"Identified label photo: {label_photo['name']} ({label_photo['id']})")
-            
-            # Extract text from the identified label photo
-            label_text = extract_text_from_image(label_photo['id'])
-            
-            if label_text:
-                print(f"\nExtracted Text: {label_text}")
-            else:
-                print("No text extracted from the label photo.")
-        else:
-            print("No label photo found after the white photo.")
-
-except Exception as e:
-    print(f"Error accessing folder: {e}")
+        print("No label photo found after the white photo.")
