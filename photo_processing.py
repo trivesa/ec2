@@ -6,7 +6,7 @@ from googleapiclient.errors import HttpError
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/ec2-user/google-credentials/photo-to-listing-e89218601911.json"
 
 # Define the folder ID of the photo_processing folder
-folder_id = '1AAUkLJYB7atxv1gDPv_DYH10GkTXhdy3'  # Replace with your actual folder ID
+folder_id = '1A9k4cBKuiplG5XJpkzmN_6bl2Ighz-bf'  # Replace with your actual folder ID
 
 # Authenticate and create the Google Drive API client
 try:
