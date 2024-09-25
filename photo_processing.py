@@ -15,7 +15,7 @@ vision_client = vision.ImageAnnotatorClient()
 drive_service = build('drive', 'v3', credentials=service_account.Credentials.from_service_account_file(os.getenv('GOOGLE_APPLICATION_CREDENTIALS')))
 
 # Replace with the folder ID of the Google Drive subfolder
-folder_id = 'YOUR_SUBFOLDER_ID'  # Replace with the actual folder ID
+folder_id = '1ABQ74hq28akUEV0BUOyue4ltztQA52PP'  # Replace with the actual folder ID
 
 # Function to check if a photo is white (placeholder logic)
 def is_white_photo(image_file):
