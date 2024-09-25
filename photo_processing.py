@@ -4,6 +4,7 @@ from googleapiclient.http import MediaIoBaseDownload
 from google.cloud import vision
 import io
 import os
+from PIL import Image, ImageStat
 
 # Set the path to the Google service account credentials JSON file
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/ec2-user/google-credentials/photo-to-listing-e89218601911.json"
@@ -40,7 +41,7 @@ else:
     # Iterate over files to identify white photo and corresponding label photo
     for i in range(len(files)):
         current_file = files[i]
-        
+
         # Load and download current image to check if it's a white photo
         request = drive_service.files().get_media(fileId=current_file['id'])
         image_file = io.BytesIO()
@@ -52,20 +53,17 @@ else:
 
         image_file.seek(0)
 
-        # Check if current file is a white photo
-        image = vision.Image(content=image_file.read())
-        response = vision_client.image_properties(image=image)
-        color_info = response.image_properties_annotation.dominant_colors.colors
+        # Check if current file is a white photo by average brightness
+        image = Image.open(image_file)
+        stat = ImageStat.Stat(image)
+        avg_brightness = sum(stat.mean) / len(stat.mean)
 
-        # Check if the dominant color is close to pure white
-        white_threshold = 250
-        is_white = False
-        for color in color_info:
-            if color.color.red >= white_threshold and color.color.green >= white_threshold and color.color.blue >= white_threshold:
-                is_white = True
-                break
+        print(f"File: {current_file['name']} - Average Brightness: {avg_brightness}")
 
-        if is_white:
+        # Define a threshold for average brightness to consider an image as white
+        white_brightness_threshold = 220  # This threshold might need tuning
+
+        if avg_brightness > white_brightness_threshold:
             print(f"Identified white photo: {current_file['name']} ({current_file['id']})")
             white_photo_found = True
             if i < len(files) - 1:
