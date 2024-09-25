@@ -60,6 +60,8 @@ else:
         white_pixel_threshold = 0.8
         white_ratio = sum([c.pixel_fraction for c in properties.dominant_colors.colors if c.color.red >= 240 and c.color.green >= 240 and c.color.blue >= 240])
 
+        print(f"File: {current_file['name']} - White pixel ratio: {white_ratio}")
+
         if white_ratio > white_pixel_threshold:
             print(f"Identified white photo: {current_file['name']} ({current_file['id']})")
             white_photo_found = True
