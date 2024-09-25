@@ -2,9 +2,9 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseDownload
 from google.cloud import vision
+from PIL import Image, ImageStat
 import io
 import os
-from PIL import Image, ImageStat
 
 # Set the path to the Google service account credentials JSON file
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/ec2-user/google-credentials/photo-to-listing-e89218601911.json"
@@ -15,78 +15,76 @@ vision_client = vision.ImageAnnotatorClient()
 # Set up Google Drive API client
 drive_service = build('drive', 'v3', credentials=service_account.Credentials.from_service_account_file(os.getenv('GOOGLE_APPLICATION_CREDENTIALS')))
 
-# Replace with the file ID of the subfolder in Google Drive
-folder_id = '1ABQ74hq28akUEV0BUOyue4ltztQA52PP'
+# Replace with your actual subfolder ID from Google Drive
+subfolder_id = '1ABQ74hq28akUEV0BUOyue4ltztQA52PP'
 
-# Function to download an image from Google Drive to memory
-def download_image(file_id):
+# Get the list of files in the subfolder
+results = drive_service.files().list(
+    q=f"'{subfolder_id}' in parents and mimeType='image/jpeg'",
+    fields="files(id, name)").execute()
+
+files = results.get('files', [])
+if not files:
+    print("No files found in the folder or its subfolders.")
+    exit()
+
+print("Files found in the folder or its subfolders:")
+
+# Sort files by name to ensure sequential processing
+files = sorted(files, key=lambda f: f['name'])
+
+# Variables to track the black photo and its corresponding label photo
+black_photo_found = False
+processed_label_photos = set()  # To track already processed label photos
+
+for file in files:
+    file_id = file['id']
+    file_name = file['name']
+
+    # Print file being checked
+    print(f"Checking file: {file_name} (image/jpeg)")
+
+    # Download the file to memory for analysis
     request = drive_service.files().get_media(fileId=file_id)
     image_file = io.BytesIO()
     downloader = MediaIoBaseDownload(image_file, request)
     done = False
     while not done:
         status, done = downloader.next_chunk()
-        print(f"Download {int(status.progress() * 100)}% complete for {file_id}.")
     image_file.seek(0)
-    return image_file
+    print(f"Download 100% complete for {file_id}.")
 
-# Function to check if an image is a pure black photo
-def is_pure_black(image):
-    stat = ImageStat.Stat(image)
-    # Check if the average pixel value is close to 0 for a pure black image
-    return all(pixel < 10 for pixel in stat.mean)
-
-# Retrieve files from the specified folder
-results = drive_service.files().list(q=f"'{folder_id}' in parents and mimeType='image/jpeg'", fields="files(id, name, mimeType)").execute()
-
-files = results.get('files', [])
-print("Files found in the folder or its subfolders:")
-
-black_photo_found = False
-label_photo_id = None
-
-for file in sorted(files, key=lambda x: x['name']):
-    # Check if 'mimeType' exists to avoid errors
-    if 'mimeType' not in file:
-        print(f"Skipping file without mimeType: {file['name']}")
-        continue
-
-    file_id = file['id']
-    file_name = file['name']
-    mime_type = file['mimeType']
-
-    print(f"Checking file: {file_name} ({mime_type})")
-
-    # Download the image to memory
-    image_file = download_image(file_id)
+    # Open image to check if it's black or not
     image = Image.open(image_file)
-
-    # Check if the current image is a pure black photo
-    if not black_photo_found and is_pure_black(image):
-        print(f"Identified black photo: {file_name} ({file_id})")
-        black_photo_found = True
-    elif black_photo_found:
-        # This is the label photo following the black photo
+    stat = ImageStat.Stat(image)
+    brightness = sum(stat.mean) / len(stat.mean)
+    
+    # If the image is detected as black
+    if brightness < 10:  # Threshold for detecting black image (adjust as necessary)
+        if not black_photo_found:
+            black_photo_found = True
+            print(f"Identified black photo: {file_name} ({file_id})")
+        else:
+            print(f"Skipping duplicate black photo: {file_name}")
+    elif black_photo_found and file_name not in processed_label_photos:
+        # This is the label photo corresponding to the previous black photo
         print(f"Identified label photo: {file_name} ({file_id})")
-        label_photo_id = file_id
-        break
-    else:
-        print(f"Skipping non-black photo: {file_name}")
 
-# If a label photo was identified, extract the text
-if label_photo_id:
-    # Download and process the label photo
-    label_image_file = download_image(label_photo_id)
-    label_image = vision.Image(content=label_image_file.read())
-    response = vision_client.text_detection(image=label_image)
-    texts = response.text_annotations
+        # Process this label photo with Google Vision API
+        image.seek(0)  # Reset the image file pointer
+        content = image_file.read()
+        vision_image = vision.Image(content=content)
+        response = vision_client.text_detection(image=vision_image)
+        texts = response.text_annotations
 
-    # Print extracted texts
-    if not texts:
-        print("No text detected in the image.")
-    else:
-        print("Detected text:")
-        for text in texts:
-            print(text.description)
-else:
-    print("No label photo found after the black photo.")
+        # Print extracted texts
+        if not texts:
+            print("No text detected in the image.")
+        else:
+            print("Detected text:")
+            for text in texts:
+                print(text.description)
+
+        # Mark this label photo as processed and reset the flag for next pair
+        processed_label_photos.add(file_name)
+        black_photo_found = False
