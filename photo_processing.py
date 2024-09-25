@@ -31,6 +31,7 @@ else:
 
     # Find the white photo and label photo
     for file in files:
+        print(f"Checking file: {file['name']} ({file['mimeType']})")
         if 'white' in file['name'].lower() and file['mimeType'].startswith('image/'):
             white_photo = file
             print(f"Identified white photo: {file['name']} ({file['id']})")
@@ -39,14 +40,18 @@ else:
     # Find the label photo which is next in sequence
     if white_photo:
         white_photo_number = int(white_photo['name'].split('.')[0][-5:])
+        print(f"White photo sequence number: {white_photo_number}")
+        
         for file in files:
             try:
                 file_number = int(file['name'].split('.')[0][-5:])
+                print(f"Checking potential label photo: {file['name']} with sequence number {file_number}")
                 if file_number == white_photo_number + 1 and file['mimeType'].startswith('image/'):
                     label_photo = file
                     print(f"Identified label photo: {file['name']} ({file['id']})")
                     break
             except ValueError:
+                print(f"Skipping file with invalid number format: {file['name']}")
                 continue
     
     # If label photo is found, proceed to extract text
