@@ -2,7 +2,6 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseDownload
 from google.cloud import vision
-from PIL import Image, ImageStat
 import io
 import os
 
@@ -15,86 +14,82 @@ vision_client = vision.ImageAnnotatorClient()
 # Set up Google Drive API client
 drive_service = build('drive', 'v3', credentials=service_account.Credentials.from_service_account_file(os.getenv('GOOGLE_APPLICATION_CREDENTIALS')))
 
-# Replace with your actual subfolder ID from Google Drive
-subfolder_id = '1ABQ74hq28akUEV0BUOyue4ltztQA52PP'
+# Replace with the folder ID containing your images
+folder_id = '1ABQ74hq28akUEV0BUOyue4ltztQA52PP'
 
-# Get the list of files in the subfolder
-results = drive_service.files().list(
-    q=f"'{subfolder_id}' in parents and mimeType='image/jpeg'",
-    fields="files(id, name)").execute()
-
+# Fetch list of image files from Google Drive folder
+results = drive_service.files().list(q=f"'{folder_id}' in parents", fields="files(id, name)").execute()
 files = results.get('files', [])
-if not files:
-    print("No files found in the folder or its subfolders.")
-    exit()
 
-print("Files found in the folder or its subfolders:")
+# Sort files based on their name to ensure sequential processing
+files_sorted = sorted(files, key=lambda x: x['name'])
 
-# Sort files by name to ensure sequential processing
-files = sorted(files, key=lambda f: f['name'])
+# Variables to track the black and label photos
+black_photo_found = False
+last_black_photo = None
 
-# Variables to track the black photo and its corresponding label photo
-last_black_photo_index = -1
-
-for index, file in enumerate(files):
-    file_id = file['id']
-    file_name = file['name']
-
-    # Print file being checked
-    print(f"Checking file: {file_name} (image/jpeg)")
-
-    # Download the file to memory for analysis
-    request = drive_service.files().get_media(fileId=file_id)
+# Loop through all files to identify and process label photos
+for file in files_sorted:
+    print(f"Checking file: {file['name']} ({file['mimeType']})")
+    
+    # Download the image content
+    request = drive_service.files().get_media(fileId=file['id'])
     image_file = io.BytesIO()
     downloader = MediaIoBaseDownload(image_file, request)
     done = False
     while not done:
         status, done = downloader.next_chunk()
-    image_file.seek(0)  # Reset pointer to the beginning of the file
-    print(f"Download 100% complete for {file_id}.")
+    image_file.seek(0)
 
-    # Open image to check if it's black or not
-    try:
-        image = Image.open(image_file)
-        stat = ImageStat.Stat(image)
-        brightness = sum(stat.mean) / len(stat.mean)
-    except Exception as e:
-        print(f"Error processing image {file_name}: {e}")
+    # Load the image
+    vision_image = vision.Image(content=image_file.read())
+
+    # If this is the first image, consider it a black photo
+    if not black_photo_found:
+        # Check if the image is mostly black (could also use other logic)
+        if is_black_photo(vision_image):  # Assuming is_black_photo is a function to determine black photos
+            black_photo_found = True
+            last_black_photo = file
+            print(f"Identified black photo: {file['name']} ({file['id']})")
         continue
-
-    # If the image is detected as black
-    if brightness < 10:  # Threshold for detecting black image (adjust as necessary)
-        print(f"Identified black photo: {file_name} ({file_id})")
-        last_black_photo_index = index
-    elif last_black_photo_index == index - 1:  # Check if this is the label photo after black photo
-        print(f"Identified label photo: {file_name} ({file_id})")
-
-        # Reset the file pointer to the beginning before reading
-        image_file.seek(0)
-        content = image_file.read()  # Read the content into bytes
-        if not content:
-            print(f"Error: No content read from the image {file_name}.")
-            continue
-
-        # Create a vision.Image object with the content
-        vision_image = vision.Image(content=content)
-
-        # Check if the vision_image has content before calling the API
-        if vision_image.content:
-            try:
-                response = vision_client.text_detection(image=vision_image)
-                texts = response.text_annotations
-
-                # Print extracted texts
-                if not texts:
-                    print("No text detected in the image.")
-                else:
-                    print("Detected text:")
-                    for text in texts:
-                        print(text.description)
-            except Exception as e:
-                print(f"Error during text detection for {file_name}: {e}")
+    
+    # If we have a black photo, this file is the corresponding label photo
+    if black_photo_found:
+        print(f"Identified label photo: {file['name']} ({file['id']})")
+        
+        # Call Vision API to detect text in the label photo
+        response = vision_client.text_detection(image=vision_image)
+        texts = response.text_annotations
+        
+        # Check if any text was detected
+        if not texts:
+            # No text detected, send a message to the UI
+            send_message_to_ui("No label detected. Manual validate and input product information.", "extracted texts block")
+            print("No text detected in the image. Notification sent to UI.")
         else:
-            print(f"Error: vision.Image object is empty for {file_name}")
+            # Text detected, print it out or send it to the UI
+            print("Detected text:")
+            for text in texts:
+                print(text.description)
+                send_message_to_ui(text.description, "extracted texts block")
+        
+        # Reset flag to look for the next black photo
+        black_photo_found = False
 
 print("Processing complete.")
+
+def send_message_to_ui(message, block_name):
+    """
+    Sends a message to a specific block in the user interface.
+    This is a placeholder function. Implement the actual logic to send messages to your UI.
+    """
+    # Example placeholder print statement (replace with actual UI communication logic)
+    print(f"Message to {block_name}: {message}")
+
+def is_black_photo(vision_image):
+    """
+    Placeholder function to determine if a given image is a black photo.
+    Replace with your actual logic to detect black photos.
+    """
+    # Use vision API or image analysis to determine if the photo is black
+    return True  # Replace with actual condition
