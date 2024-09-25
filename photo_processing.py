@@ -17,10 +17,12 @@ drive_service = build('drive', 'v3', credentials=creds)
 # Folder ID for 'folder1' in the shared drive
 folder_id = '1AAUkLJYB7atxv1gDPv_DYH10GkTXhdy3'
 
-# Check if the folder is accessible
+# Check if the folder is accessible and get its metadata
 try:
-    folder_metadata = drive_service.files().get(fileId=folder_id).execute()
+    folder_metadata = drive_service.files().get(fileId=folder_id, fields='id, name, mimeType, owners, permissions').execute()
     print(f"Folder '{folder_metadata['name']}' found and accessible.")
+    print("Folder Metadata:")
+    print(folder_metadata)
 except Exception as e:
     print(f"Error accessing folder: {e}")
 
