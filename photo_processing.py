@@ -18,19 +18,14 @@ drive_service = build('drive', 'v3', credentials=service_account.Credentials.fro
 # Replace with the folder ID containing your images
 folder_id = '1ABQ74hq28akUEV0BUOyue4ltztQA52PP'
 
-# Fetch list of image files from Google Drive folder
-results = drive_service.files().list(
-    q=f"'{folder_id}' in parents and mimeType='image/jpeg'",
-    fields="files(id, name, mimeType)"
-).execute()
-files = results.get('files', [])
-
-# Sort files based on their name to ensure sequential processing
-files_sorted = sorted(files, key=lambda x: x['name'])
-
-# Variables to track the black and label photos
-black_photo_found = False
-last_black_photo = None
+# Define the send_message_to_ui function
+def send_message_to_ui(message, block_name):
+    """
+    Sends a message to a specific block in the user interface.
+    This is a placeholder function. Implement the actual logic to send messages to your UI.
+    """
+    # Example placeholder print statement (replace with actual UI communication logic)
+    print(f"Message to {block_name}: {message}")
 
 # Define the is_black_photo function here
 def is_black_photo(image):
@@ -50,6 +45,20 @@ def is_black_photo(image):
     
     # Return True if the image is mostly black, False otherwise
     return brightness < brightness_threshold
+
+# Fetch list of image files from Google Drive folder
+results = drive_service.files().list(
+    q=f"'{folder_id}' in parents and mimeType='image/jpeg'",
+    fields="files(id, name, mimeType)"
+).execute()
+files = results.get('files', [])
+
+# Sort files based on their name to ensure sequential processing
+files_sorted = sorted(files, key=lambda x: x['name'])
+
+# Variables to track the black and label photos
+black_photo_found = False
+last_black_photo = None
 
 # Loop through all files to identify and process label photos
 for file in files_sorted:
@@ -103,11 +112,3 @@ for file in files_sorted:
         black_photo_found = False
 
 print("Processing complete.")
-
-def send_message_to_ui(message, block_name):
-    """
-    Sends a message to a specific block in the user interface.
-    This is a placeholder function. Implement the actual logic to send messages to your UI.
-    """
-    # Example placeholder print statement (replace with actual UI communication logic)
-    print(f"Message to {block_name}: {message}")
