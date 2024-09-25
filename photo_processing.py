@@ -17,15 +17,16 @@ creds = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FI
 service = build('drive', 'v3', credentials=creds)
 
 try:
-    # List files in the specified folder and print the raw response
-    results = service.files().list(q=f"'{FOLDER_ID}' in parents", fields="files(id, name, mimeType)").execute()
+    # List all files in the specified folder and any subfolders
+    query = f"'{FOLDER_ID}' in parents and mimeType contains 'image/'"
+    results = service.files().list(q=query, fields="files(id, name, mimeType, parents)").execute()
     items = results.get('files', [])
     print(f"Raw response: {results}")  # Print the raw response for debugging
     if not items:
-        print('No files found in the folder.')
+        print('No files found in the folder or its subfolders.')
     else:
-        print('Files in the folder:')
+        print('Files found in the folder or its subfolders:')
         for item in items:
-            print(f"{item['name']} ({item['id']}) - Type: {item['mimeType']}")
+            print(f"{item['name']} ({item['id']}) - Type: {item['mimeType']} - Parent Folder ID: {item['parents']}")
 except Exception as e:
     print(f"Error accessing folder: {e}")
