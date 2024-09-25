@@ -34,10 +34,9 @@ print("Files found in the folder or its subfolders:")
 files = sorted(files, key=lambda f: f['name'])
 
 # Variables to track the black photo and its corresponding label photo
-black_photo_found = False
-processed_label_photos = set()  # To track already processed label photos
+last_black_photo_index = -1
 
-for file in files:
+for index, file in enumerate(files):
     file_id = file['id']
     file_name = file['name']
 
@@ -61,13 +60,9 @@ for file in files:
 
     # If the image is detected as black
     if brightness < 10:  # Threshold for detecting black image (adjust as necessary)
-        if not black_photo_found:
-            black_photo_found = True
-            print(f"Identified black photo: {file_name} ({file_id})")
-        else:
-            print(f"Skipping duplicate black photo: {file_name}")
-    elif black_photo_found and file_name not in processed_label_photos:
-        # This is the label photo corresponding to the previous black photo
+        print(f"Identified black photo: {file_name} ({file_id})")
+        last_black_photo_index = index
+    elif last_black_photo_index == index - 1:  # Check if this is the label photo after black photo
         print(f"Identified label photo: {file_name} ({file_id})")
 
         # Reset the file pointer to the beginning before reading
@@ -94,7 +89,3 @@ for file in files:
                     print(text.description)
         else:
             print(f"Error: vision.Image object is empty for {file_name}")
-
-        # Mark this label photo as processed and reset the flag for next pair
-        processed_label_photos.add(file_name)
-        black_photo_found = False
