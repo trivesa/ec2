@@ -72,18 +72,23 @@ for file in files:
 
         # Process this label photo with Google Vision API
         image.seek(0)  # Reset the image file pointer
-        content = image_file.read()
-        vision_image = vision.Image(content=content)
-        response = vision_client.text_detection(image=vision_image)
-        texts = response.text_annotations
+        content = image_file.read()  # Read the content into bytes
+        vision_image = vision.Image(content=content)  # Create a vision.Image object with the content
+        
+        # Check if the vision_image has content before calling the API
+        if vision_image.content:
+            response = vision_client.text_detection(image=vision_image)
+            texts = response.text_annotations
 
-        # Print extracted texts
-        if not texts:
-            print("No text detected in the image.")
+            # Print extracted texts
+            if not texts:
+                print("No text detected in the image.")
+            else:
+                print("Detected text:")
+                for text in texts:
+                    print(text.description)
         else:
-            print("Detected text:")
-            for text in texts:
-                print(text.description)
+            print(f"Error: vision.Image object is empty for {file_name}")
 
         # Mark this label photo as processed and reset the flag for next pair
         processed_label_photos.add(file_name)
