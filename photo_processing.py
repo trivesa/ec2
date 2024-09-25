@@ -14,77 +14,62 @@ vision_client = vision.ImageAnnotatorClient()
 # Set up Google Drive API client
 drive_service = build('drive', 'v3', credentials=service_account.Credentials.from_service_account_file(os.getenv('GOOGLE_APPLICATION_CREDENTIALS')))
 
-# Folder ID containing the images
-FOLDER_ID = '1ABQ74hq28akUEV0BUOyue4ltztQA52PP'  # Update this with the folder ID containing your images
+# Replace with the folder ID of the Google Drive subfolder
+folder_id = 'YOUR_SUBFOLDER_ID'  # Replace with the actual folder ID
 
-# Fetch all files in the folder
-results = drive_service.files().list(q=f"'{FOLDER_ID}' in parents", fields="files(id, name, mimeType)").execute()
+# Function to check if a photo is white (placeholder logic)
+def is_white_photo(image_file):
+    # Simplified check for a white photo by analyzing brightness
+    # This is a placeholder function. You should implement a more robust logic here.
+    return True  # Assume all photos are white for this placeholder
+
+# Get the list of files in the subfolder
+results = drive_service.files().list(q=f"'{folder_id}' in parents and mimeType='image/jpeg'", fields="files(id, name)").execute()
 files = results.get('files', [])
 
-# Check if files were found
 if not files:
-    print("No files found in the folder or its subfolders.")
+    print("No files found in the folder.")
 else:
-    print(f"Files found in the folder or its subfolders:")
-    white_photo = None
-    label_photo = None
+    # Sort files by the last 5 digits of the filename (sequence number)
+    files_sorted = sorted(files, key=lambda x: int(x['name'][-9:-4]))
 
-    # Sort files based on their sequence number in the filename
-    files.sort(key=lambda x: int(x['name'].split('.')[0][-5:]))
+    white_photo_found = False
+    for i, file in enumerate(files_sorted):
+        file_name = file['name']
+        file_id = file['id']
 
-    # Find the white photo and label photo
-    for file in files:
-        print(f"Checking file: {file['name']} ({file['mimeType']})")
-        if 'white' in file['name'].lower() and file['mimeType'].startswith('image/'):
-            white_photo = file
-            print(f"Identified white photo: {file['name']} ({file['id']})")
-            break
-
-    # Find the label photo which is next in sequence
-    if white_photo:
-        white_photo_number = int(white_photo['name'].split('.')[0][-5:])
-        print(f"White photo sequence number: {white_photo_number}")
-
-        for file in files:
-            try:
-                file_number = int(file['name'].split('.')[0][-5:])
-                print(f"Checking potential label photo: {file['name']} with sequence number {file_number}")
-                if file_number == white_photo_number + 1 and file['mimeType'].startswith('image/'):
-                    label_photo = file
-                    print(f"Identified label photo: {file['name']} ({file['id']})")
-                    break
-            except ValueError:
-                print(f"Skipping file with invalid number format: {file['name']}")
-                continue
-    
-    # If label photo is found, proceed to extract text
-    if label_photo:
-        file_id = label_photo['id']
-        print(f"Processing label photo with ID: {file_id}")
-
-        # Download the image content from Google Drive to memory
+        # Download the file content for analysis
         request = drive_service.files().get_media(fileId=file_id)
         image_file = io.BytesIO()
         downloader = MediaIoBaseDownload(image_file, request)
         done = False
-        while not done:
+        while done is False:
             status, done = downloader.next_chunk()
             print(f"Download {int(status.progress() * 100)}% complete.")
 
         # Move to the beginning of the BytesIO object to read the image
         image_file.seek(0)
 
-        # Use the downloaded image content for Vision API text detection
-        image = vision.Image(content=image_file.read())
-        response = vision_client.text_detection(image=image)
-        texts = response.text_annotations
+        # Determine if it's a white photo
+        if is_white_photo(image_file) and not white_photo_found:
+            print(f"Identified white photo: {file_name} ({file_id})")
+            white_photo_found = True
+        elif white_photo_found:
+            # Process this as the label photo
+            print(f"Identified label photo: {file_name} ({file_id})")
 
-        # Print extracted texts
-        if not texts:
-            print("No text detected in the image.")
-        else:
-            print("Detected text:")
-            for text in texts:
-                print(text.description)
-    else:
-        print("No label photo found after the white photo.")
+            # Use Vision API to extract text from the label photo
+            image = vision.Image(content=image_file.read())
+            response = vision_client.text_detection(image=image)
+            texts = response.text_annotations
+
+            # Print extracted texts
+            if not texts:
+                print("No text detected in the image.")
+            else:
+                print("Detected text:")
+                for text in texts:
+                    print(text.description)
+            
+            # Reset white_photo_found and move to next white photo
+            white_photo_found = False
