@@ -54,15 +54,18 @@ else:
 
         # Check if current file is a white photo
         image = vision.Image(content=image_file.read())
-        properties = vision_client.image_properties(image=image).image_properties_annotation
+        response = vision_client.image_properties(image=image)
+        color_info = response.image_properties_annotation.dominant_colors.colors
 
-        # Check if image has a high percentage of white pixels (simple heuristic for white photo)
-        white_pixel_threshold = 0.8
-        white_ratio = sum([c.pixel_fraction for c in properties.dominant_colors.colors if c.color.red >= 240 and c.color.green >= 240 and c.color.blue >= 240])
+        # Check if the dominant color is close to pure white
+        white_threshold = 250
+        is_white = False
+        for color in color_info:
+            if color.color.red >= white_threshold and color.color.green >= white_threshold and color.color.blue >= white_threshold:
+                is_white = True
+                break
 
-        print(f"File: {current_file['name']} - White pixel ratio: {white_ratio}")
-
-        if white_ratio > white_pixel_threshold:
+        if is_white:
             print(f"Identified white photo: {current_file['name']} ({current_file['id']})")
             white_photo_found = True
             if i < len(files) - 1:
