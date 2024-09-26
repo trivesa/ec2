@@ -119,6 +119,36 @@ def insert_label_data(image_url, extracted_text):
                     ],
                     "fields": "*"
                 }
+            },
+            # Set column width for columns A and B
+            {
+                "updateDimensionProperties": {
+                    "range": {
+                        "sheetId": sheet_id,
+                        "dimension": "COLUMNS",
+                        "startIndex": 0,
+                        "endIndex": 2
+                    },
+                    "properties": {
+                        "pixelSize": 350
+                    },
+                    "fields": "pixelSize"
+                }
+            },
+            # Set row height for the new row
+            {
+                "updateDimensionProperties": {
+                    "range": {
+                        "sheetId": sheet_id,
+                        "dimension": "ROWS",
+                        "startIndex": next_row - 1,
+                        "endIndex": next_row
+                    },
+                    "properties": {
+                        "pixelSize": 350
+                    },
+                    "fields": "pixelSize"
+                }
             }
         ]
 
@@ -201,4 +231,3 @@ for file in files_sorted:
         black_photo_found = False
 
 print("Processing complete.")
-
