@@ -16,7 +16,7 @@ vision_client = vision.ImageAnnotatorClient()
 drive_service = build('drive', 'v3', credentials=service_account.Credentials.from_service_account_file(os.getenv('GOOGLE_APPLICATION_CREDENTIALS')))
 
 # Replace with the folder ID containing your images
-folder_id = '1ABQ74hq28akUEV0BUOyue4ltztQA52PP'
+folder_id = '1B_zG8cBhUD4rPXkkaZB8ohT16HNcO2iL'
 
 # Define the send_message_to_ui function
 def send_message_to_ui(message, block_name):
