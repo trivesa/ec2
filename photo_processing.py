@@ -6,87 +6,135 @@ from PIL import Image, ImageStat
 import io
 import os
 
-# Set up credentials
+# Set the path to the Google service account credentials JSON file
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/ec2-user/google-credentials/photo-to-listing-e89218601911.json"
-credentials = service_account.Credentials.from_service_account_file(
-    '/home/ec2-user/google-credentials/photo-to-listing-e89218601911.json',
-    scopes=["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
-)
 
-# Google Sheets and Drive API clients
-sheets_service = build('sheets', 'v4', credentials=credentials)
-drive_service = build('drive', 'v3', credentials=credentials)
+# Set up the Google Cloud Vision API client
 vision_client = vision.ImageAnnotatorClient()
 
-# Google Sheet details
-SPREADSHEET_ID = '190TeRdEtXI9HXok8y2vomh_d26D0cyWgThArKQ_03_8'  # Replace with your Google Sheet ID
-SHEET_NAME = 'Sheet1'
+# Set up Google Drive API client
+drive_service = build('drive', 'v3', credentials=service_account.Credentials.from_service_account_file(os.getenv('GOOGLE_APPLICATION_CREDENTIALS')))
 
-# Folder ID containing the images
-folder_id = '1AAUkLJYB7atxv1gDPv_DYH10GkTXhdy3'  # Replace with your folder ID
+# Set up Google Sheets API client
+sheets_service = build('sheets', 'v4', credentials=service_account.Credentials.from_service_account_file(os.getenv('GOOGLE_APPLICATION_CREDENTIALS')))
 
-# Define the send_message_to_ui function (placeholder)
+# Define the Google Sheet ID and sheet name
+spreadsheet_id = '190TeRdEtXI9HXok8y2vomh_d26D0cyWgThArKQ_03_8'
+sheet_name = 'Sheet1'
+
+# Replace with the folder ID containing your images
+folder_id = '1AAUkLJYB7atxv1gDPv_DYH10GkTXhdy3'  # Update this with your specific folder ID
+
+# Define the send_message_to_ui function
 def send_message_to_ui(message, block_name):
+    """
+    Sends a message to a specific block in the user interface.
+    This is a placeholder function. Implement the actual logic to send messages to your UI.
+    """
+    # Example placeholder print statement (replace with actual UI communication logic)
     print(f"Message to {block_name}: {message}")
-
-# Define function to insert data into Google Sheets
-def insert_label_data(image_url, extracted_text, row):
-    try:
-        # Insert image URL in Column A
-        requests = [
-            {
-                "updateCells": {
-                    "rows": [
-                        {
-                            "values": [
-                                {
-                                    "userEnteredValue": {"formulaValue": f'=IMAGE("{image_url}")'}
-                                }
-                            ]
-                        }
-                    ],
-                    "fields": "userEnteredValue",
-                    "start": {
-                        "sheetId": 0,
-                        "rowIndex": row - 1,
-                        "columnIndex": 0
-                    }
-                }
-            },
-            # Insert text in Column B
-            {
-                "updateCells": {
-                    "rows": [
-                        {
-                            "values": [
-                                {
-                                    "userEnteredValue": {"stringValue": extracted_text}
-                                }
-                            ]
-                        }
-                    ],
-                    "fields": "userEnteredValue",
-                    "start": {
-                        "sheetId": 0,
-                        "rowIndex": row - 1,
-                        "columnIndex": 1
-                    }
-                }
-            }
-        ]
-        body = {"requests": requests}
-        sheets_service.spreadsheets().batchUpdate(spreadsheetId=SPREADSHEET_ID, body=body).execute()
-        print(f"Data inserted successfully at row {row}.")
-    except Exception as e:
-        print(f"Error inserting data: {e}")
 
 # Define the is_black_photo function
 def is_black_photo(image):
+    """
+    Determines if the given image is a black photo.
+    This function calculates the average brightness of the image and 
+    considers it a black photo if the brightness is below a certain threshold.
+    """
+    # Convert the image to grayscale
     grayscale_image = image.convert('L')
+    # Calculate the average brightness of the image
     stat = ImageStat.Stat(grayscale_image)
     brightness = stat.mean[0]
-    brightness_threshold = 10
+    
+    # Define a threshold below which the image is considered black
+    brightness_threshold = 10  # Adjust this value based on your images
+    
+    # Return True if the image is mostly black, False otherwise
     return brightness < brightness_threshold
+
+# Function to insert data into Google Sheets
+def insert_label_data(image_url, extracted_text):
+    """
+    Inserts label data into Google Sheets.
+    :param image_url: URL of the label image to be inserted into the sheet.
+    :param extracted_text: Extracted text from the label image.
+    """
+    try:
+        # Find the next empty row in the sheet
+        result = sheets_service.spreadsheets().values().get(
+            spreadsheetId=spreadsheet_id,
+            range=f'{sheet_name}!A:A'
+        ).execute()
+        
+        values = result.get('values', [])
+        next_row = len(values) + 1
+
+        # Prepare the request to insert the image and text
+        requests = [
+            {
+                "updateCells": {
+                    "range": {
+                        "sheetId": 0,
+                        "startRowIndex": next_row - 1,
+                        "endRowIndex": next_row,
+                        "startColumnIndex": 0,
+                        "endColumnIndex": 1
+                    },
+                    "rows": [
+                        {
+                            "values": [
+                                {
+                                    "userEnteredValue": {
+                                        "formulaValue": f'=IMAGE("{image_url}", 1)'
+                                    },
+                                    "userEnteredFormat": {
+                                        "wrapStrategy": "WRAP"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "fields": "*"
+                }
+            },
+            {
+                "updateCells": {
+                    "range": {
+                        "sheetId": 0,
+                        "startRowIndex": next_row - 1,
+                        "endRowIndex": next_row,
+                        "startColumnIndex": 1,
+                        "endColumnIndex": 2
+                    },
+                    "rows": [
+                        {
+                            "values": [
+                                {
+                                    "userEnteredValue": {
+                                        "stringValue": extracted_text
+                                    },
+                                    "userEnteredFormat": {
+                                        "wrapStrategy": "WRAP"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "fields": "*"
+                }
+            }
+        ]
+
+        # Execute the batch update request
+        sheets_service.spreadsheets().batchUpdate(
+            spreadsheetId=spreadsheet_id,
+            body={"requests": requests}
+        ).execute()
+        print(f"Data successfully inserted into Google Sheets for image {image_url}")
+    
+    except Exception as e:
+        print(f"Error inserting data: {e}")
 
 # Fetch list of image files from Google Drive folder
 results = drive_service.files().list(
@@ -98,12 +146,15 @@ files = results.get('files', [])
 # Sort files based on their name to ensure sequential processing
 files_sorted = sorted(files, key=lambda x: x['name'])
 
+# Variables to track the black and label photos
 black_photo_found = False
-row = 1  # Starting row for Google Sheets
+last_black_photo = None
 
+# Loop through all files to identify and process label photos
 for file in files_sorted:
     print(f"Checking file: {file['name']} ({file['mimeType']})")
-
+    
+    # Download the image content
     request = drive_service.files().get_media(fileId=file['id'])
     image_file = io.BytesIO()
     downloader = MediaIoBaseDownload(image_file, request)
@@ -112,33 +163,45 @@ for file in files_sorted:
         status, done = downloader.next_chunk()
     image_file.seek(0)
 
+    # Load the image for vision processing
     vision_image = vision.Image(content=image_file.read())
+
+    # Load the image for PIL processing
     image_file.seek(0)
     pil_image = Image.open(image_file)
 
+    # Check if the current photo is a black photo
     if not black_photo_found:
         if is_black_photo(pil_image):
             black_photo_found = True
+            last_black_photo = file
             print(f"Identified black photo: {file['name']} ({file['id']})")
         continue
-
+    
+    # If we have a black photo, this file is the corresponding label photo
     if black_photo_found:
         print(f"Identified label photo: {file['name']} ({file['id']})")
+        
+        # Call Vision API to detect text in the label photo
         response = vision_client.text_detection(image=vision_image)
         texts = response.text_annotations
-
+        
+        # Construct Google Drive image URL
+        image_url = f'https://drive.google.com/uc?id={file["id"]}'
+        
+        # Check if any text was detected
         if not texts:
+            # No text detected, send a message to the UI and Sheets
             send_message_to_ui("No label detected. Manual validate and input product information.", "extracted texts block")
-            print("No text detected in the image. Notification sent to UI.")
+            insert_label_data(image_url, "No label detected. Manual validate and input product information.")
+            print("No text detected in the image. Notification sent to UI and Sheets.")
         else:
+            # Text detected, construct the text layout and send it to the UI and Sheets
             extracted_text = "\n".join([text.description for text in texts])
             send_message_to_ui(extracted_text, "extracted texts block")
-
-            # Insert data into Google Sheets
-            image_url = f"https://drive.google.com/uc?id={file['id']}"
-            insert_label_data(image_url, extracted_text, row)
-            row += 1
-
+            insert_label_data(image_url, extracted_text)
+        
+        # Reset flag to look for the next black photo
         black_photo_found = False
 
 print("Processing complete.")
