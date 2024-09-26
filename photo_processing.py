@@ -112,3 +112,29 @@ for file in files_sorted:
         black_photo_found = False
 
 print("Processing complete.")
+
+from google.oauth2 import service_account
+from googleapiclient.discovery import build
+
+# Your existing Google Drive and Vision API setup
+# ...
+
+# Google Sheets API Setup
+sheets_service = build('sheets', 'v4', credentials=service_account.Credentials.from_service_account_file('/path/to/your/credentials.json'))
+
+# Google Sheets Document ID
+spreadsheet_id = '190TeRdEtXI9HXok8y2vomh_d26D0cyWgThArKQ_03_8'
+
+# Function to send data to Google Sheet
+def send_data_to_sheet(image_url, extracted_texts):
+    sheet_range = 'Sheet1!A:B'
+    values = [[image_url, extracted_texts]]
+    body = {'values': values}
+    sheets_service.spreadsheets().values().append(
+        spreadsheetId=spreadsheet_id,
+        range=sheet_range,
+        valueInputOption='RAW',
+        insertDataOption='INSERT_ROWS',
+        body=body
+    ).execute()
+
