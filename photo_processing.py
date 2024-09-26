@@ -232,7 +232,7 @@ for file in files_sorted:
                 send_message_to_ui(extracted_text, "extracted texts block")
                 insert_label_data(image_url, extracted_text)
 
-            # Reset flag to look for the next black photo
+            # Reset flag and last_black_photo to look for the next black photo
             black_photo_found = False
             last_black_photo = None
             print(f"Processed label photo: {file['name']} ({file['id']})")
