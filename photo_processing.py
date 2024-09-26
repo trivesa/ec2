@@ -229,5 +229,6 @@ for file in files_sorted:
         
         # Reset flag to look for the next black photo
         black_photo_found = False
-
+        print(f"Processed label photo: {file['name']} ({file['id']})")
+        
 print("Processing complete.")
