@@ -116,11 +116,13 @@ print("Processing complete.")
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
-# Your existing Google Drive and Vision API setup
-# ...
+# Set up the Google Sheets API client using the existing JSON file
+credentials = service_account.Credentials.from_service_account_file(
+    '/home/ec2-user/google-credentials/photo-to-listing-e89218601911.json',
+    scopes=["https://www.googleapis.com/auth/spreadsheets"]
+)
+sheets_service = build('sheets', 'v4', credentials=credentials)
 
-# Google Sheets API Setup
-sheets_service = build('sheets', 'v4', credentials=service_account.Credentials.from_service_account_file('/path/to/your/credentials.json'))
 
 # Google Sheets Document ID
 spreadsheet_id = '190TeRdEtXI9HXok8y2vomh_d26D0cyWgThArKQ_03_8'
