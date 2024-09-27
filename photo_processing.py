@@ -247,4 +247,13 @@ for file in files_sorted:
             insert_label_data(image_url, "No label detected. Manual validate and input product information.")
             print("No text detected in the image. Notification sent to UI and Sheets.")
         else:
-            #
+            # Text detected, construct the text layout and send it to the UI and Sheets
+            extracted_text = "\n".join([text.description for text in texts])
+            send_message_to_ui(extracted_text, "extracted texts block")
+            insert_label_data(image_url, extracted_text)
+        
+        # Reset flag to look for the next black photo
+        black_photo_found = False
+
+print("Processing complete.")
+
