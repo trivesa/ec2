@@ -26,6 +26,14 @@ spreadsheet_id = '190TeRdEtXI9HXok8y2vomh_d26D0cyWgThArKQ_03_8'
 sheet_name = 'Sheet1'
 sheet_id = 2114301033
 
+def sort_by_last_5_digits(file):
+    """
+    Custom sorting function to extract and compare the last 5 digits of file names.
+    """
+    # Assuming the last 5 digits are part of the filename before the extension
+    last_5_digits = file['name'][-9:-4]  # Adjust the slicing if your file naming is different
+    return int(last_5_digits)
+
 # Replace with the parent folder ID
 parent_folder_id = '1A9k4cBKuiplG5XJpkzmN_6bl2Ighz-bf'
 
