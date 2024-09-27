@@ -6,6 +6,7 @@ from google.cloud import vision
 from PIL import Image, ImageStat
 import io
 import os
+import subprocess  # For running shell commands
 
 app = Flask(__name__)
 
@@ -37,8 +38,6 @@ def sort_by_last_5_digits(file):
 # Replace with the parent folder ID
 parent_folder_id = '1A9k4cBKuiplG5XJpkzmN_6bl2Ighz-bf'
 
-# ... (include all the functions from your Python script here)
-
 @app.route('/trigger-script', methods=['POST'])
 def trigger_script():
     try:
@@ -64,5 +63,25 @@ def trigger_script():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/run-photo-processing', methods=['POST'])
+def run_photo_processing():
+    try:
+        # Replace this path with the actual path to your script
+        script_path = "/home/ec2-user/photo_processing.py"
+        
+        # Run the photo_processing.py script using subprocess
+        result = subprocess.run(['python3', script_path], capture_output=True, text=True)
+        
+        if result.returncode == 0:
+            # If the script runs successfully, return the output
+            return jsonify({"message": "Script executed successfully", "output": result.stdout}), 200
+        else:
+            # If there was an error running the script, return the error message
+            return jsonify({"error": "Script execution failed", "details": result.stderr}), 500
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
+
