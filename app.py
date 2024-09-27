@@ -38,6 +38,10 @@ def sort_by_last_5_digits(file):
 # Replace with the parent folder ID
 parent_folder_id = '1A9k4cBKuiplG5XJpkzmN_6bl2Ighz-bf'
 
+@app.route('/')
+def home():
+    return "Flask application is running!"
+
 @app.route('/trigger-script', methods=['POST'])
 def trigger_script():
     try:
@@ -88,5 +92,3 @@ def run_photo_processing():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
-
-
