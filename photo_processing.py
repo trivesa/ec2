@@ -23,8 +23,8 @@ spreadsheet_id = '190TeRdEtXI9HXok8y2vomh_d26D0cyWgThArKQ_03_8'
 sheet_name = 'Sheet1'
 sheet_id = 2114301033  # This is the 'sheetId' from the URL of the specific tab in the Google Sheet
 
-# Replace with the folder ID containing your images
-folder_id = '1AAUkLJYB7atxv1gDPv_DYH10GkTXhdy3'  # Update this with your specific folder ID
+# Replace with the parent folder ID
+parent_folder_id = '1A9k4cBKuiplG5XJpkzmN_6bl2Ighz-bf'
 
 # Define the send_message_to_ui function
 def send_message_to_ui(message, block_name):
@@ -190,9 +190,14 @@ def sort_by_last_5_digits(file):
     last_5_digits = file['name'][-9:-4]
     return int(last_5_digits)
 
-# Fetch list of image files from Google Drive folder
+# Find the latest added subfolder within the parent folder
+query = f"'{parent_folder_id}' in parents and mimeType='application/vnd.google-apps.folder' and trashed=false"
+results = drive_service.files().list(q=query, orderBy='createdTime desc', pageSize=1, fields="files(id)").execute()
+latest_subfolder = results.get('files', [])[0]
+
+# Fetch list of image files from the latest subfolder
 results = drive_service.files().list(
-    q=f"'{folder_id}' in parents and mimeType='image/jpeg'",
+    q=f"'{latest_subfolder['id']}' in parents and mimeType='image/jpeg'",
     fields="files(id, name, mimeType)"
 ).execute()
 files = results.get('files', [])
