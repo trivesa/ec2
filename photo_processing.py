@@ -71,10 +71,32 @@ def get_latest_subfolder(parent_folder_id):
     # Return the ID of the most recently created subfolder
     return folders[0]['id']
 
+# Function to get the correct sheetId based on sheet name
+def get_sheet_id(spreadsheet_id, sheet_name):
+    """
+    Gets the sheetId of a sheet by its name.
+    :param spreadsheet_id: The ID of the spreadsheet.
+    :param sheet_name: The name of the sheet to find the ID for.
+    :return: The sheetId if found, None otherwise.
+    """
+    try:
+        # Get the spreadsheet information
+        spreadsheet = sheets_service.spreadsheets().get(spreadsheetId=spreadsheet_id).execute()
+        sheets = spreadsheet.get('sheets', [])
+        for sheet in sheets:
+            if sheet.get("properties", {}).get("title") == sheet_name:
+                return sheet.get("properties", {}).get("sheetId")
+        print(f"Sheet with name '{sheet_name}' not found.")
+        return None
+    except Exception as e:
+        print(f"Error retrieving sheetId: {e}")
+        return None
+
 # Function to insert data into Google Sheets
-def insert_label_data(image_url, extracted_text):
+def insert_label_data(sheet_id, image_url, extracted_text):
     """
     Inserts label data into Google Sheets.
+    :param sheet_id: The ID of the sheet to insert data into.
     :param image_url: URL of the label image to be inserted into the sheet.
     :param extracted_text: Extracted text from the label image.
     """
@@ -97,7 +119,7 @@ def insert_label_data(image_url, extracted_text):
             {
                 "updateCells": {
                     "range": {
-                        "sheetId": 0,
+                        "sheetId": sheet_id,
                         "startRowIndex": next_row - 1,
                         "endRowIndex": next_row,
                         "startColumnIndex": 0,
@@ -123,7 +145,7 @@ def insert_label_data(image_url, extracted_text):
             {
                 "updateCells": {
                     "range": {
-                        "sheetId": 0,
+                        "sheetId": sheet_id,
                         "startRowIndex": next_row - 1,
                         "endRowIndex": next_row,
                         "startColumnIndex": 1,
@@ -149,7 +171,7 @@ def insert_label_data(image_url, extracted_text):
             {
                 "updateCells": {
                     "range": {
-                        "sheetId": 0,
+                        "sheetId": sheet_id,
                         "startRowIndex": next_row - 1,
                         "endRowIndex": next_row,
                         "startColumnIndex": 27,
@@ -183,9 +205,14 @@ def insert_label_data(image_url, extracted_text):
     
     except Exception as e:
         print(f"Error inserting data: {e}")
-
 # Get the latest subfolder ID
 latest_subfolder_id = get_latest_subfolder(parent_folder_id)
+
+# Get the correct sheet ID
+sheet_id = get_sheet_id(spreadsheet_id, sheet_name)
+if sheet_id is None:
+    print("Cannot proceed without a valid sheetId.")
+    exit()
 
 # Fetch list of image files from the latest subfolder
 results = drive_service.files().list(
@@ -234,26 +261,5 @@ for file in files_sorted:
         print(f"Identified label photo: {file['name']} ({file['id']})")
         
         # Call Vision API to detect text in the label photo
-        response = vision_client.text_detection(image=vision_image)
-        texts = response.text_annotations
-        
-        # Construct Google Drive image URL
-        image_url = f'https://drive.google.com/uc?id={file["id"]}'
-        
-        # Check if any text was detected
-        if not texts:
-            # No text detected, send a message to the UI and Sheets
-            send_message_to_ui("No label detected. Manual validate and input product information.", "extracted texts block")
-            insert_label_data(image_url, "No label detected. Manual validate and input product information.")
-            print("No text detected in the image. Notification sent to UI and Sheets.")
-        else:
-            # Text detected, construct the text layout and send it to the UI and Sheets
-            extracted_text = "\n".join([text.description for text in texts])
-            send_message_to_ui(extracted_text, "extracted texts block")
-            insert_label_data(image_url, extracted_text)
-        
-        # Reset flag to look for the next black photo
-        black_photo_found = False
-
-print("Processing complete.")
+        response = vision
 
