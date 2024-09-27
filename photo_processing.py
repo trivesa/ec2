@@ -21,10 +21,9 @@ sheets_service = build('sheets', 'v4', credentials=service_account.Credentials.f
 # Define the Google Sheet ID and sheet name
 spreadsheet_id = '190TeRdEtXI9HXok8y2vomh_d26D0cyWgThArKQ_03_8'
 sheet_name = 'Sheet1'
-sheet_id = 2114301033  # This is the 'sheetId' from the URL of the specific tab in the Google Sheet
 
-# Replace with the folder ID containing your images
-folder_id = '1AAUkLJYB7atxv1gDPv_DYH10GkTXhdy3'  # Update this with your specific folder ID
+# Define the parent Google Drive folder ID
+parent_folder_id = '1A9k4cBKuiplG5XJpkzmN_6bl2Ighz-bf'
 
 # Define the send_message_to_ui function
 def send_message_to_ui(message, block_name):
@@ -32,20 +31,45 @@ def send_message_to_ui(message, block_name):
     Sends a message to a specific block in the user interface.
     This is a placeholder function. Implement the actual logic to send messages to your UI.
     """
+    # Example placeholder print statement (replace with actual UI communication logic)
     print(f"Message to {block_name}: {message}")
 
 # Define the is_black_photo function
 def is_black_photo(image):
     """
     Determines if the given image is a black photo.
-    This function calculates the average brightness of the image and
+    This function calculates the average brightness of the image and 
     considers it a black photo if the brightness is below a certain threshold.
     """
+    # Convert the image to grayscale
     grayscale_image = image.convert('L')
+    # Calculate the average brightness of the image
     stat = ImageStat.Stat(grayscale_image)
     brightness = stat.mean[0]
+    
+    # Define a threshold below which the image is considered black
     brightness_threshold = 10  # Adjust this value based on your images
+    
+    # Return True if the image is mostly black, False otherwise
     return brightness < brightness_threshold
+
+# Function to find the latest subfolder in the parent folder
+def get_latest_subfolder(parent_folder_id):
+    """
+    Finds the latest subfolder in the parent folder based on creation time.
+    """
+    results = drive_service.files().list(
+        q=f"'{parent_folder_id}' in parents and mimeType='application/vnd.google-apps.folder'",
+        fields="files(id, name, createdTime)",
+        orderBy="createdTime desc"
+    ).execute()
+    
+    folders = results.get('files', [])
+    if not folders:
+        raise ValueError("No subfolders found in the parent folder.")
+    
+    # Return the ID of the most recently created subfolder
+    return folders[0]['id']
 
 # Function to insert data into Google Sheets
 def insert_label_data(image_url, extracted_text):
@@ -58,17 +82,22 @@ def insert_label_data(image_url, extracted_text):
         # Find the next empty row in the sheet
         result = sheets_service.spreadsheets().values().get(
             spreadsheetId=spreadsheet_id,
-            range=f'{sheet_name}!A:A'
+            range=f'{sheet_name}!AB:AB'
         ).execute()
+        
         values = result.get('values', [])
-        next_row = len(values) + 1
+        next_row = len([value for value in values if value]) + 1
 
-        # Prepare the requests to insert the image and text
+        # Check if there is an empty cell in the processing status column
+        if next_row <= len(values) and values[next_row - 1][0].strip() != "":
+            next_row += 1
+        
+        # Prepare the request to insert the image and text
         requests = [
             {
                 "updateCells": {
                     "range": {
-                        "sheetId": sheet_id,
+                        "sheetId": 0,
                         "startRowIndex": next_row - 1,
                         "endRowIndex": next_row,
                         "startColumnIndex": 0,
@@ -94,7 +123,7 @@ def insert_label_data(image_url, extracted_text):
             {
                 "updateCells": {
                     "range": {
-                        "sheetId": sheet_id,
+                        "sheetId": 0,
                         "startRowIndex": next_row - 1,
                         "endRowIndex": next_row,
                         "startColumnIndex": 1,
@@ -117,34 +146,30 @@ def insert_label_data(image_url, extracted_text):
                     "fields": "*"
                 }
             },
-            # Set column width for columns A and B
             {
-                "updateDimensionProperties": {
+                "updateCells": {
                     "range": {
-                        "sheetId": sheet_id,
-                        "dimension": "COLUMNS",
-                        "startIndex": 0,
-                        "endIndex": 2
+                        "sheetId": 0,
+                        "startRowIndex": next_row - 1,
+                        "endRowIndex": next_row,
+                        "startColumnIndex": 27,
+                        "endColumnIndex": 28
                     },
-                    "properties": {
-                        "pixelSize": 350
-                    },
-                    "fields": "pixelSize"
-                }
-            },
-            # Set row height for the new row
-            {
-                "updateDimensionProperties": {
-                    "range": {
-                        "sheetId": sheet_id,
-                        "dimension": "ROWS",
-                        "startIndex": next_row - 1,
-                        "endIndex": next_row
-                    },
-                    "properties": {
-                        "pixelSize": 350
-                    },
-                    "fields": "pixelSize"
+                    "rows": [
+                        {
+                            "values": [
+                                {
+                                    "userEnteredValue": {
+                                        "stringValue": "processed"
+                                    },
+                                    "userEnteredFormat": {
+                                        "wrapStrategy": "WRAP"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "fields": "*"
                 }
             }
         ]
@@ -155,23 +180,22 @@ def insert_label_data(image_url, extracted_text):
             body={"requests": requests}
         ).execute()
         print(f"Data successfully inserted into Google Sheets for image {image_url}")
+    
     except Exception as e:
         print(f"Error inserting data: {e}")
 
-# Custom sorting function to extract and compare the last 5 digits of file names
-def sort_by_last_5_digits(file):
-    last_5_digits = file['name'][-9:-4]
-    return int(last_5_digits)
+# Get the latest subfolder ID
+latest_subfolder_id = get_latest_subfolder(parent_folder_id)
 
-# Fetch list of image files from Google Drive folder
+# Fetch list of image files from the latest subfolder
 results = drive_service.files().list(
-    q=f"'{folder_id}' in parents and mimeType='image/jpeg'",
+    q=f"'{latest_subfolder_id}' in parents and mimeType='image/jpeg'",
     fields="files(id, name, mimeType)"
 ).execute()
 files = results.get('files', [])
 
-# Sort files based on the last 5 digits of their names
-files_sorted = sorted(files, key=sort_by_last_5_digits)
+# Sort files based on their name to ensure sequential processing
+files_sorted = sorted(files, key=lambda x: x['name'])
 
 # Variables to track the black and label photos
 black_photo_found = False
@@ -180,7 +204,7 @@ last_black_photo = None
 # Loop through all files to identify and process label photos
 for file in files_sorted:
     print(f"Checking file: {file['name']} ({file['mimeType']})")
-
+    
     # Download the image content
     request = drive_service.files().get_media(fileId=file['id'])
     image_file = io.BytesIO()
@@ -203,38 +227,24 @@ for file in files_sorted:
             black_photo_found = True
             last_black_photo = file
             print(f"Identified black photo: {file['name']} ({file['id']})")
-            continue
-
-    # If we have a black photo, find the label photo with the closest sequence number
+        continue
+    
+    # If we have a black photo, this file is the corresponding label photo
     if black_photo_found:
-        current_sequence_number = int(file['name'][-9:-4])
-        last_black_photo_sequence_number = int(last_black_photo['name'][-9:-4])
-
-        if current_sequence_number > last_black_photo_sequence_number:
-            print(f"Identified label photo: {file['name']} ({file['id']})")
-
-            # Call Vision API to detect text in the label photo
-            response = vision_client.text_detection(image=vision_image)
-            texts = response.text_annotations
-
-            # Construct Google Drive image URL
-            image_url = f'https://drive.google.com/uc?id={file["id"]}'
-
-            # Check if any text was detected
-            if not texts:
-                # No text detected, send a message to the UI and Sheets
-                send_message_to_ui("No label detected. Manual validate and input product information.", "extracted texts block")
-                insert_label_data(image_url, "No label detected. Manual validate and input product information.")
-                print("No text detected in the image. Notification sent to UI and Sheets.")
-            else:
-                # Text detected, construct the text layout and send it to the UI and Sheets
-                extracted_text = "\n".join([text.description for text in texts])
-                send_message_to_ui(extracted_text, "extracted texts block")
-                insert_label_data(image_url, extracted_text)
-
-            # Reset flag and last_black_photo to look for the next black photo
-            black_photo_found = False
-            last_black_photo = None
-            print(f"Processed label photo: {file['name']} ({file['id']})")
-
-print("Processing complete.")
+        print(f"Identified label photo: {file['name']} ({file['id']})")
+        
+        # Call Vision API to detect text in the label photo
+        response = vision_client.text_detection(image=vision_image)
+        texts = response.text_annotations
+        
+        # Construct Google Drive image URL
+        image_url = f'https://drive.google.com/uc?id={file["id"]}'
+        
+        # Check if any text was detected
+        if not texts:
+            # No text detected, send a message to the UI and Sheets
+            send_message_to_ui("No label detected. Manual validate and input product information.", "extracted texts block")
+            insert_label_data(image_url, "No label detected. Manual validate and input product information.")
+            print("No text detected in the image. Notification sent to UI and Sheets.")
+        else:
+            #
