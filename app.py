@@ -69,8 +69,8 @@ def run_photo_processing():
         # Replace this path with the actual path to your script
         script_path = "/home/ec2-user/photo_processing.py"
         
-        # Run the photo_processing.py script using subprocess
-        result = subprocess.run(['python3', script_path], capture_output=True, text=True)
+        # Run the photo_processing.py script using subprocess with a timeout
+        result = subprocess.run(['python3', script_path], capture_output=True, text=True, timeout=120)
         
         if result.returncode == 0:
             # If the script runs successfully, return the output
@@ -79,9 +79,14 @@ def run_photo_processing():
             # If there was an error running the script, return the error message
             return jsonify({"error": "Script execution failed", "details": result.stderr}), 500
 
+    except subprocess.TimeoutExpired:
+        # Handle the case where the script takes too long to run
+        return jsonify({"error": "Script execution timed out"}), 500
+
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
+
 
