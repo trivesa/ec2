@@ -12,7 +12,7 @@ logging.basicConfig(filename='perplexity_app.log', level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s %(message)s')
 
 # Set up Google Sheets API client
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/path/to/your/google-credentials.json"
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/ec2-user/google-credentials/photo-to-listing-e89218601911.json"
 sheets_service = build('sheets', 'v4', credentials=service_account.Credentials.from_service_account_file(os.getenv('GOOGLE_APPLICATION_CREDENTIALS')))
 
 # Define the Google Sheet ID and sheet name
