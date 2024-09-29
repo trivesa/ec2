@@ -55,6 +55,5 @@ response = openai.ChatCompletion.create(
     temperature=0.7
 )
 
-# Print the response
-print("Response:")
-print(response['choices'][0]['message']['content'].strip())
+# Output the response from OpenAI
+print(response['choices'][0]['message']['content'])
