@@ -1,8 +1,8 @@
 import openai
 import os
 
-# Replace 'your-api-key' with your actual OpenAI API key
-openai.api_key = os.getenv "sk-0ZmM3wMLzmOd-hQcAmOlNphK3IbpalKQseu4eebvlDT3BlbkFJ3mDX_5R4gT2cSXNCRdndUgr5WOcVeadTkyqKDl9zgA"
+# Option 2: Directly assign the key as a string
+openai.api_key = 'sk-0ZmM3wMLzmOd-hQcAmOlNphK3IbpalKQseu4eebvlDT3BlbkFJ3mDX_5R4gT2cSXNCRdndUgr5WOcVeadTkyqKDl9zgA'
 
 # Define the prompt for the test
 prompt = """
