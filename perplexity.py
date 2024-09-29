@@ -1,3 +1,25 @@
+import os
+import subprocess
+from flask import Flask, request, jsonify
+import requests
+import logging
+from google.oauth2 import service_account
+from googleapiclient.discovery import build
+
+# Check if port 5001 is in use, and kill the process if it is
+def free_port(port):
+    result = subprocess.run(f"sudo lsof -i :{port}", shell=True, capture_output=True, text=True)
+    if result.stdout:
+        pid = result.stdout.splitlines()[1].split()[1]
+        subprocess.run(f"sudo kill -9 {pid}", shell=True)
+
+# Free up port 5001 before running the app
+free_port(5001)
+
+app = Flask(__name__)
+
+# The rest of your code continues here...
+
 from flask import Flask, request, jsonify
 import requests
 import logging
