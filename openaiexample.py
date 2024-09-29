@@ -55,7 +55,7 @@ Optional Fields:
 
 # Make a request to OpenAI with the fashion listing expert instructions
 completion = openai.ChatCompletion.create(
-    model="gpt-4o-mini",
+    model="gpt-4o",
     messages=[
         {"role": "system", "content": "You are an eBay fashion product listing expert."},
         {"role": "user", "content": prompt}
