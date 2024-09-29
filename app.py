@@ -96,6 +96,26 @@ if __name__ == '__main__':
 import os
 import openai
 
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+@app.route('/generate-listing', methods=['POST'])
+def generate_listing():
+    data = request.json  # Get the data sent from Google Sheets
+    if not data or 'prompt' not in data:
+        return jsonify({'error': 'No prompt provided'}), 400
+
+    prompt = data['prompt']
+    # Process the prompt here (e.g., send to OpenAI, etc.)
+    
+    # For now, we will just return the prompt for testing purposes
+    return jsonify({'listing': f'Processed prompt: {prompt}'})
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+
+
 # Access the OpenAI API key from the environment variable
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
