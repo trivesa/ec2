@@ -1,8 +1,8 @@
 import openai
 import os
 
-# Set OpenAI API key
-openai.api_key = os.getenv("OPENAI_API_KEY")  # It's recommended to use environment variables for API keys
+# Ensure OpenAI API key is securely set via environment variables or directly
+openai.api_key = os.getenv("OPENAI_API_KEY")  # Replace with your key if necessary
 
 # Define the prompt
 prompt = """
@@ -44,9 +44,9 @@ Optional Fields:
 6. Lining Material (Materiale della fodera)
 """
 
-# Use chat_completions.create API in the latest OpenAI Python library
-response = openai.chat_completions.create(
-    model="gpt-4o",  # Updated to GPT-4o
+# Use Chat API in the latest OpenAI Python library
+response = openai.chat.create(
+    model="gpt-4",  # You can replace with "gpt-4o" depending on your subscription
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": prompt}
@@ -55,5 +55,6 @@ response = openai.chat_completions.create(
     temperature=0.7
 )
 
-# Print the response
-print(response["choices"][0]["message"]["content"])
+# Print the response from the model
+print(response['choices'][0]['message']['content'])
+
