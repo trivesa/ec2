@@ -44,8 +44,8 @@ Optional Fields:
 6. Lining Material (Materiale della fodera)
 """
 
-# Use Chat API in the latest OpenAI Python library
-response = openai.chat_completions.create(
+# Use ChatCompletion API in the latest OpenAI Python library
+response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",  # You can also use "gpt-4" if available
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
