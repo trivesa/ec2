@@ -7,8 +7,13 @@ from PIL import Image, ImageStat
 import io
 import os
 import subprocess  # For running shell commands
+import logging  # For logging
 
 app = Flask(__name__)
+
+# Setup logging
+logging.basicConfig(filename='app.log', level=logging.DEBUG, 
+                    format='%(asctime)s %(levelname)s %(message)s')
 
 # Set the path to the Google service account credentials JSON file
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/ec2-user/google-credentials/photo-to-listing-e89218601911.json"
@@ -31,8 +36,7 @@ def sort_by_last_5_digits(file):
     """
     Custom sorting function to extract and compare the last 5 digits of file names.
     """
-    # Assuming the last 5 digits are part of the filename before the extension
-    last_5_digits = file['name'][-9:-4]  # Adjust the slicing if your file naming is different
+    last_5_digits = file['name'][-9:-4]
     return int(last_5_digits)
 
 # Replace with the parent folder ID
@@ -45,10 +49,13 @@ def home():
 @app.route('/trigger-script', methods=['POST'])
 def trigger_script():
     try:
+        logging.info("Triggering the script...")
+        
         # Find the latest added subfolder within the parent folder
         query = f"'{parent_folder_id}' in parents and mimeType='application/vnd.google-apps.folder' and trashed=false"
         results = drive_service.files().list(q=query, orderBy='createdTime desc', pageSize=1, fields="files(id)").execute()
         latest_subfolder = results.get('files', [])[0]
+        logging.debug(f"Found latest subfolder: {latest_subfolder['id']}")
 
         # Fetch list of image files from the latest subfolder
         results = drive_service.files().list(
@@ -56,39 +63,64 @@ def trigger_script():
             fields="files(id, name, mimeType)"
         ).execute()
         files = results.get('files', [])
+        logging.debug(f"Found files: {files}")
 
         # Sort files based on the last 5 digits of their names
         files_sorted = sorted(files, key=sort_by_last_5_digits)
+        logging.debug(f"Sorted files: {files_sorted}")
 
         # Process the files (your existing logic here)
-        # ...
 
         return jsonify({"message": "Processing completed successfully"}), 200
     except Exception as e:
+        logging.error(f"Error triggering script: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
 @app.route('/run-photo-processing', methods=['POST'])
 def run_photo_processing():
     try:
-        # Replace this path with the actual path to your script
         script_path = "/home/ec2-user/photo_processing.py"
+        logging.info(f"Running photo processing script: {script_path}")
         
         # Run the photo_processing.py script using subprocess with a timeout
         result = subprocess.run(['python3', script_path], capture_output=True, text=True, timeout=120)
         
         if result.returncode == 0:
-            # If the script runs successfully, return the output
+            logging.info(f"Script executed successfully: {result.stdout}")
             return jsonify({"message": "Script executed successfully", "output": result.stdout}), 200
         else:
-            # If there was an error running the script, return the error message
+            logging.error(f"Script execution failed: {result.stderr}")
             return jsonify({"error": "Script execution failed", "details": result.stderr}), 500
 
     except subprocess.TimeoutExpired:
-        # Handle the case where the script takes too long to run
+        logging.error("Script execution timed out")
         return jsonify({"error": "Script execution timed out"}), 500
 
     except Exception as e:
+        logging.error(f"Error during script execution: {str(e)}")
         return jsonify({"error": str(e)}), 500
+
+@app.route('/generate-listing', methods=['POST'])
+def generate_listing():
+    try:
+        data = request.json  # Get the data sent from Google Sheets
+        if not data or 'prompt' not in data:
+            logging.warning("No prompt provided")
+            return jsonify({'error': 'No prompt provided'}), 400
+
+        prompt = data['prompt']
+        logging.info(f"Received prompt: {prompt}")
+
+        # Here, you would send the prompt to OpenAI API
+        # For now, we simulate a processed listing
+        listing_text = f"Processed prompt: {prompt}"
+
+        logging.info(f"Generated listing: {listing_text}")
+        return jsonify({'listing': listing_text})
+
+    except Exception as e:
+        logging.error(f"Error generating listing: {str(e)}")
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
@@ -96,29 +128,6 @@ if __name__ == '__main__':
 import os
 import openai
 
-from flask import Flask, request, jsonify
-
-app = Flask(__name__)
-
-@app.route('/generate-listing', methods=['POST'])
-def generate_listing():
-    data = request.json  # Get the data sent from Google Sheets
-    if not data or 'prompt' not in data:
-        return jsonify({'error': 'No prompt provided'}), 400
-
-    prompt = data['prompt']
-    # Process the prompt here (e.g., send to OpenAI, etc.)
-    
-    # For now, we will just return the prompt for testing purposes
-    return jsonify({'listing': f'Processed prompt: {prompt}'})
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
-
-
-# Access the OpenAI API key from the environment variable
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
-# Print to verify if the key is loaded (you can remove this later)
 print(f"OpenAI API Key: {openai.api_key}")
-
