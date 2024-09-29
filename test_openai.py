@@ -56,5 +56,4 @@ response = openai.ChatCompletion.create(
 )
 
 # Print the response content
-print(response['choices'][0]['message']['content'])
-
+print(response.choices[0].message.content)
