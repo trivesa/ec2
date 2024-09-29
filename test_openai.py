@@ -1,8 +1,8 @@
 import openai
 import os
 
-# Ensure OpenAI API key is securely set via environment variables or directly
-openai.api_key = "sk-0ZmM3wMLzmOd-hQcAmOlNphK3IbpalKQseu4eebvlDT3BlbkFJ3mDX_5R4gT2cSXNCRdndUgr5WOcVeadTkyqKDl9zgA"  # Replace with your key if necessary
+# Set the OpenAI API key
+openai.api_key = 'sk-0ZmM3wMLzmOd-hQcAmOlNphK3IbpalKQseu4eebvlDT3BlbkFJ3mDX_5R4gT2cSXNCRdndUgr5WOcVeadTkyqKDl9zgA'
 
 # Define the prompt
 prompt = """
@@ -12,12 +12,13 @@ Product Category: "Women's Shoes"
 Product Type: "shoes"
 Style Number: "CT1817-105-RV05Y063"
 
-Information Retrieval
+Information Retrieval:
 Please search for the product's information using the brand's official website as the primary source. If the required information is not available on the official website, use the following websites as secondary sources:
 1. Net-A-Porter
 2. Mytheresa
 3. Flannels
 4. Moda Operandi
+
 If you still cannot find the required information, use other reliable fashion retail websites or sources. If any mandatory field information is unavailable after all attempts, indicate "N/A".
 
 Fashion Product Listing Part 1: Mandatory and Optional Fields
@@ -44,17 +45,15 @@ Optional Fields:
 6. Lining Material (Materiale della fodera)
 """
 
-# Use Chat API in the latest OpenAI Python library
-response = openai.chat.create(
-    model="gpt-4",  # You can replace with "gpt-4o" depending on your subscription
-    messages=[
-        {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": prompt}
-    ],
+# Make a request to the OpenAI API
+response = openai.Completion.create(
+    engine="text-davinci-003",  # Model compatible with v0.28.0
+    prompt=prompt,
     max_tokens=500,
     temperature=0.7
 )
 
-# Print the response from the model
-print(response['choices'][0]['message']['content'])
+# Print the response
+print("Generated Listing:\n")
+print(response.choices[0].text.strip())
 
