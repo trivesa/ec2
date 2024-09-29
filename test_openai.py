@@ -2,7 +2,7 @@ import openai
 import os
 
 # Ensure OpenAI API key is securely set via environment variables or directly
-openai.api_key = os.getenv("OPENAI_API_KEY")  # Replace with your key if necessary
+openai.api_key = "sk-0ZmM3wMLzmOd-hQcAmOlNphK3IbpalKQseu4eebvlDT3BlbkFJ3mDX_5R4gT2cSXNCRdndUgr5WOcVeadTkyqKDl9zgA"  # Replace with your key if necessary
 
 # Define the prompt
 prompt = """
