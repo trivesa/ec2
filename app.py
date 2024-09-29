@@ -8,12 +8,16 @@ import io
 import os
 import subprocess  # For running shell commands
 import logging  # For logging
+import openai  # For OpenAI API
 
 app = Flask(__name__)
 
 # Setup logging
 logging.basicConfig(filename='app.log', level=logging.DEBUG, 
                     format='%(asctime)s %(levelname)s %(message)s')
+
+# Set the OpenAI API key
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 # Set the path to the Google service account credentials JSON file
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/ec2-user/google-credentials/photo-to-listing-e89218601911.json"
@@ -104,16 +108,69 @@ def run_photo_processing():
 def generate_listing():
     try:
         data = request.json  # Get the data sent from Google Sheets
-        if not data or 'prompt' not in data:
-            logging.warning("No prompt provided")
-            return jsonify({'error': 'No prompt provided'}), 400
+        if not data or 'brand' not in data:
+            logging.warning("Insufficient product details provided")
+            return jsonify({'error': 'Insufficient product details provided'}), 400
 
-        prompt = data['prompt']
-        logging.info(f"Received prompt: {prompt}")
+        # Extract product details from request
+        brand = data.get("brand", "Unknown Brand")
+        product_category = data.get("product_category", "Unknown Category")
+        product_type = data.get("product_type", "Unknown Type")
+        style_number = data.get("style_number", "Unknown Style Number")
 
-        # Here, you would send the prompt to OpenAI API
-        # For now, we simulate a processed listing
-        listing_text = f"Processed prompt: {prompt}"
+        # Define the prompt for OpenAI
+        prompt = f"""
+        You are an eBay fashion product listing expert. Use the following details for the listing:
+        Brand: "{brand}"
+        Product Category: "{product_category}"
+        Product Type: "{product_type}"
+        Style Number: "{style_number}"
+
+        Information Retrieval:
+        Please search for the product's information using the brand's official website as the primary source. 
+        If the required information is not available on the official website, use the following websites as secondary sources:
+        1. Net-A-Porter
+        2. Mytheresa
+        3. Flannels
+        4. Moda Operandi
+
+        If you still cannot find the required information, use other reliable fashion retail websites or sources. 
+        If any mandatory field information is unavailable after all attempts, indicate "N/A".
+
+        Fashion Product Listing Part 1: Mandatory and Optional Fields
+
+        Mandatory Fields:
+        1. Object Category (Categoria Oggetto) 
+        2. Store Category (Categoria del Negozio)
+        3. Brand (Marca) 
+        4. Size (Numero di scarpa EU) 
+        5. Department (Reparto) 
+        6. Color (Colore) 
+        7. Type (Tipo) 
+        8. Style (Stile) 
+        9. Condition of the Item (Condizione dell'oggetto) 
+        10. Price (Prezzo) 
+        11. Shipping Rule (Regola sulla spedizione)
+
+        Optional Fields:
+        1. MPN (MPN) 
+        2. Custom Label (Etichetta personalizzata - SKU) 
+        3. EAN (EAN) 
+        4. Material (Materiale della tomaia) 
+        5. Sole Material (Materiale della suola) 
+        6. Lining Material (Materiale della fodera)
+        """
+
+        # Send the prompt to the OpenAI API (using OpenAI Completion API)
+        response = openai.Completion.create(
+            model="gpt-4o",  # Since this is version 0.28.0, we use the correct model version
+            prompt=prompt,
+            max_tokens=500,
+            temperature=0.7
+        )
+
+        # Extract the generated product listing
+        listing_text = response.choices[0].text.strip()
 
         logging.info(f"Generated listing: {listing_text}")
         return jsonify({'listing': listing_text})
@@ -125,9 +182,3 @@ def generate_listing():
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 
-import os
-import openai
-
-openai.api_key = os.getenv('OPENAI_API_KEY')
-
-print(f"OpenAI API Key: {openai.api_key}")
