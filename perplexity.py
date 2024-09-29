@@ -15,9 +15,8 @@ logging.basicConfig(filename='perplexity_app.log', level=logging.DEBUG,
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/ec2-user/google-credentials/photo-to-listing-e89218601911.json"
 sheets_service = build('sheets', 'v4', credentials=service_account.Credentials.from_service_account_file(os.getenv('GOOGLE_APPLICATION_CREDENTIALS')))
 
-# Define the Google Sheet ID and sheet name
-spreadsheet_id = 'your-spreadsheet-id'
-sheet_name = 'Sheet1'
+# Define the Google Sheet ID (fixed)
+spreadsheet_id = '190TeRdEtXI9HXok8y2vomh_d26D0cyWgThArKQ_03_8'
 
 # Perplexity API key
 API_KEY = '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'
@@ -28,7 +27,7 @@ api_endpoint = 'https://api.perplexity.ai/chat/completions'
 @app.route('/generate-perplexity-listing', methods=['POST'])
 def generate_perplexity_listing():
     try:
-        # Extract data from Google Sheets request
+        # Extract data from the request
         data = request.json
         if not data or 'brand' not in data or 'styleNumber' not in data:
             return jsonify({'error': 'Invalid request, missing required fields.'}), 400
@@ -36,10 +35,24 @@ def generate_perplexity_listing():
         # Extract product details from the request
         brand = data['brand']
         style_number = data['styleNumber']
-        product_category = data.get('productCategory', 'Shoes')
+        product_category = data.get('productCategory', 'Shoes').lower()
 
         # Log the received data
-        logging.info(f"Received request for {brand}, style: {style_number}")
+        logging.info(f"Received request for {brand}, style: {style_number}, category: {product_category}")
+
+        # Map product categories to their respective sheet names
+        sheet_map = {
+            'shoes': 'shoes',
+            'bag': 'bag',
+            'clothing': 'clothing',
+            'scarf': 'scarf',
+            'belt': 'belt',
+            'watch': 'watch',
+            'other': 'other accessories'
+        }
+        
+        # Determine the sheet name dynamically
+        sheet_name = sheet_map.get(product_category, 'other accessories')
 
         # Define the messages for the conversation with Perplexity
         messages = [
@@ -92,7 +105,7 @@ def generate_perplexity_listing():
             body=body
         ).execute()
 
-        logging.info("Updated the Google Sheet with the generated listing.")
+        logging.info(f"Updated the Google Sheet {sheet_name} with the generated listing.")
         
         # Return success response
         return jsonify({'message': 'Listing generated and updated in Google Sheet successfully.'}), 200
