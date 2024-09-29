@@ -1,7 +1,8 @@
 import openai
+import os
 
-# Set your OpenAI API key here
-openai.api_key = 'sk-0ZmM3wMLzmOd-hQcAmOlNphK3IbpalKQseu4eebvlDT3BlbkFJ3mDX_5R4gT2cSXNCRdndUgr5WOcVeadTkyqKDl9zgA'
+# The API key is automatically picked up from the environment variable
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 completion = openai.ChatCompletion.create(
     model="gpt-4o-mini",
