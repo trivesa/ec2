@@ -2,7 +2,7 @@ import openai
 import os
 
 # Set OpenAI API key
-openai.api_key = 'sk-0ZmM3wMLzmOd-hQcAmOlNphK3IbpalKQseu4eebvlDT3BlbkFJ3mDX_5R4gT2cSXNCRdndUgr5WOcVeadTkyqKDl9zgA'
+openai.api_key = os.getenv("OPENAI_API_KEY")  # Use an environment variable for security, or replace with your API key directly
 
 # Define the prompt
 prompt = """
@@ -12,7 +12,7 @@ Product Category: "Women's Shoes"
 Product Type: "shoes"
 Style Number: "CT1817-105-RV05Y063"
 
-Information Retrieval
+Information Retrieval:
 Please search for the product's information using the brand's official website as the primary source. If the required information is not available on the official website, use the following websites as secondary sources:
 1. Net-A-Porter
 2. Mytheresa
@@ -20,7 +20,7 @@ Please search for the product's information using the brand's official website a
 4. Moda Operandi
 If you still cannot find the required information, use other reliable fashion retail websites or sources. If any mandatory field information is unavailable after all attempts, indicate "N/A".
 
-Fashion Product Listing Part 1: Mandatory and Optional Fields
+Fashion Product Listing Part 1: Mandatory and Optional Fields:
 
 Mandatory Fields:
 1. Object Category (Categoria Oggetto) 
@@ -44,16 +44,17 @@ Optional Fields:
 6. Lining Material (Materiale della fodera)
 """
 
-# Use ChatCompletion API in the latest OpenAI Python library
+# Use ChatCompletion API in the updated OpenAI Python library
 response = openai.ChatCompletion.create(
-    model="gpt-3.5-turbo",  # You can also use "gpt-4" depending on your subscription
+    model="gpt-3.5-turbo",  # You can use "gpt-4" if you have access
     messages=[
-        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "system", "content": "You are an eBay fashion product listing expert."},
         {"role": "user", "content": prompt}
     ],
     max_tokens=500,
     temperature=0.7
 )
 
-# Output the response from OpenAI
+# Print the response content
 print(response['choices'][0]['message']['content'])
+
