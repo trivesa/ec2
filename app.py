@@ -92,3 +92,13 @@ def run_photo_processing():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
+
+import os
+import openai
+
+# Access the OpenAI API key from the environment variable
+openai.api_key = os.getenv('OPENAI_API_KEY')
+
+# Print to verify if the key is loaded (you can remove this later)
+print(f"OpenAI API Key: {openai.api_key}")
+
