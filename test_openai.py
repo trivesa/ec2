@@ -1,10 +1,10 @@
 import openai
 import os
 
-# Option 2: Directly assign the key as a string
+# Set OpenAI API key
 openai.api_key = 'sk-0ZmM3wMLzmOd-hQcAmOlNphK3IbpalKQseu4eebvlDT3BlbkFJ3mDX_5R4gT2cSXNCRdndUgr5WOcVeadTkyqKDl9zgA'
 
-# Define the prompt for the test
+# Define the prompt
 prompt = """
 You are an eBay fashion product listing expert. Use the following details for the listing:
 Brand: "RENE CAOVILLA"
@@ -44,14 +44,17 @@ Optional Fields:
 6. Lining Material (Materiale della fodera)
 """
 
-# Call OpenAI API
-response = openai.Completion.create(
-  model="text-davinci-003",  # Replace with your model name if needed
-  prompt=prompt,
-  max_tokens=500,            # Adjust token limit as needed
-  temperature=0.7            # Adjust creativity level
+# Use ChatCompletion API in the latest OpenAI Python library
+response = openai.ChatCompletion.create(
+    model="gpt-3.5-turbo",  # You can also use "gpt-4" depending on your subscription
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": prompt}
+    ],
+    max_tokens=500,
+    temperature=0.7
 )
 
 # Print the response
 print("Response:")
-print(response.choices[0].text.strip())
+print(response['choices'][0]['message']['content'].strip())
