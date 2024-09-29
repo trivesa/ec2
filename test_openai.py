@@ -2,7 +2,7 @@ import openai
 import os
 
 # Set OpenAI API key
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = os.getenv("OPENAI_API_KEY")  # It's recommended to use environment variables for API keys
 
 # Define the prompt
 prompt = """
@@ -12,7 +12,7 @@ Product Category: "Women's Shoes"
 Product Type: "shoes"
 Style Number: "CT1817-105-RV05Y063"
 
-Information Retrieval:
+Information Retrieval
 Please search for the product's information using the brand's official website as the primary source. If the required information is not available on the official website, use the following websites as secondary sources:
 1. Net-A-Porter
 2. Mytheresa
@@ -20,7 +20,7 @@ Please search for the product's information using the brand's official website a
 4. Moda Operandi
 If you still cannot find the required information, use other reliable fashion retail websites or sources. If any mandatory field information is unavailable after all attempts, indicate "N/A".
 
-Fashion Product Listing Part 1: Mandatory and Optional Fields:
+Fashion Product Listing Part 1: Mandatory and Optional Fields
 
 Mandatory Fields:
 1. Object Category (Categoria Oggetto) 
@@ -44,9 +44,9 @@ Optional Fields:
 6. Lining Material (Materiale della fodera)
 """
 
-# Use ChatCompletion API with GPT-4o model
-response = openai.ChatCompletion.create(
-    model="gpt-4o",  # Using GPT-4o for cheaper and faster responses
+# Use chat_completions.create API in the latest OpenAI Python library
+response = openai.chat_completions.create(
+    model="gpt-4o",  # Updated to GPT-4o
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": prompt}
@@ -57,4 +57,3 @@ response = openai.ChatCompletion.create(
 
 # Print the response
 print(response["choices"][0]["message"]["content"])
-
