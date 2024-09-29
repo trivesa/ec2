@@ -40,20 +40,6 @@ def generate_perplexity_listing():
         # Log the received data
         logging.info(f"Received request for {brand}, style: {style_number}, category: {product_category}")
 
-        # Map product categories to their respective sheet names
-        sheet_map = {
-            'shoes': 'shoes',
-            'bag': 'bag',
-            'clothing': 'clothing',
-            'scarf': 'scarf',
-            'belt': 'belt',
-            'watch': 'watch',
-            'other': 'other accessories'
-        }
-        
-        # Determine the sheet name dynamically
-        sheet_name = sheet_map.get(product_category, 'other accessories')
-
         # Define the messages for the conversation with Perplexity
         messages = [
             {
@@ -93,22 +79,8 @@ def generate_perplexity_listing():
         # Log the generated listing text
         logging.info(f"Generated listing: {listing_text}")
 
-        # Update the Google Sheet with the generated listing
-        range_name = f'{sheet_name}!B2'  # Example: Update in cell B2
-        body = {
-            'values': [[listing_text]]
-        }
-        sheets_service.spreadsheets().values().update(
-            spreadsheetId=spreadsheet_id,
-            range=range_name,
-            valueInputOption='RAW',
-            body=body
-        ).execute()
-
-        logging.info(f"Updated the Google Sheet {sheet_name} with the generated listing.")
-        
-        # Return success response
-        return jsonify({'message': 'Listing generated and updated in Google Sheet successfully.'}), 200
+        # Return the generated listing back to the Google Sheets script
+        return jsonify({'listing': listing_text}), 200
 
     except requests.exceptions.RequestException as e:
         logging.error(f"Error in Perplexity API request: {e}")
@@ -118,4 +90,5 @@ def generate_perplexity_listing():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5002)
+    app.run(host='0.0.0.0', port=5001)
+
