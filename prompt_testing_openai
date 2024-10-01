@@ -1,11 +1,8 @@
 import openai
 import os
 
-import openai
-
 # Set your OpenAI API key
-openai.api_key = "sk-0ZmM3wMLzmOd-hQcAmOlNphK3IbpalKQseu4eebvlDT3BlbkFJ3mDX_5R4gT2cSXNCRdndUgr5WOcVeadTkyqKDl9zgA"
-
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def generate_listing():
     prompt = """
