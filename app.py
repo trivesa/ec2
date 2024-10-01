@@ -94,6 +94,13 @@ def generate_listing():
             logging.warning("No prompt provided")
             return jsonify({'error': 'No prompt provided'}), 400
 
+        logging.info(f"Received prompt: {prompt}")
+
+      except Exception as e:
+    logging.error(f"Error generating listing: {str(e)}")
+    logging.error(f"Full error details: {repr(e)}")
+    return jsonify({'error': str(e)}), 500
+
         prompt = data['prompt']
 
         response = openai.ChatCompletion.create(
