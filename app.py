@@ -96,7 +96,9 @@ def generate_listing():
 
         logging.info(f"Received prompt: {prompt}")
 
-      except Exception as e:
+      try:
+    # some code here
+except Exception as e:
     logging.error(f"Error generating listing: {str(e)}")
     logging.error(f"Full error details: {repr(e)}")
     return jsonify({'error': str(e)}), 500
