@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
-from googleapiclient.http import MediaIoBaseDownload
 from google.cloud import vision
 from PIL import Image, ImageStat
 import io
@@ -108,7 +107,8 @@ def run_photo_processing():
 def generate_listing():
     try:
         data = request.json  # Get the data sent from Google Sheets
-        if not data or 'brand' not in data:
+        # Validate required fields
+        if not data or not all(key in data for key in ['brand', 'product_category', 'product_type', 'style_number']):
             logging.warning("Insufficient product details provided")
             return jsonify({'error': 'Insufficient product details provided'}), 400
 
@@ -163,14 +163,18 @@ def generate_listing():
 
         # Send the prompt to the OpenAI API (using OpenAI Completion API)
         response = openai.Completion.create(
-            model="gpt-4o",  # Since this is version 0.28.0, we use the correct model version
+            model="gpt-4o",  # Use the correct model version
             prompt=prompt,
-            max_tokens=500,
+            max_tokens=1000,  # Increase max tokens to handle longer responses
             temperature=0.7
         )
 
-        # Extract the generated product listing
-        listing_text = response.choices[0].text.strip()
+        # Validate OpenAI response
+        if 'choices' in response and len(response['choices']) > 0:
+            listing_text = response['choices'][0]['text'].strip()
+        else:
+            logging.error("No valid response from OpenAI")
+            return jsonify({'error': 'No valid response from OpenAI'}), 500
 
         logging.info(f"Generated listing: {listing_text}")
         return jsonify({'listing': listing_text})
@@ -181,4 +185,3 @@ def generate_listing():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
-
