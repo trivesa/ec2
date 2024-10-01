@@ -96,12 +96,16 @@ def generate_listing():
 
         logging.info(f"Received prompt: {prompt}")
 
-      try:
-    # some code here
-except Exception as e:
-    logging.error(f"Error generating listing: {str(e)}")
-    logging.error(f"Full error details: {repr(e)}")
-    return jsonify({'error': str(e)}), 500
+      def some_function():
+        
+    try:
+        # Code that might raise an exception
+        do_something()
+    except Exception as e:
+        logging.error(f"Error generating listing: {str(e)}")
+        logging.error(f"Full error details: {repr(e)}")
+        return jsonify({'error': str(e)}), 500
+
 
         prompt = data['prompt']
 
