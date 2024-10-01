@@ -94,20 +94,8 @@ def generate_listing():
             logging.warning("No prompt provided")
             return jsonify({'error': 'No prompt provided'}), 400
 
-        logging.info(f"Received prompt: {prompt}")
-
-      def some_function():
-        
-    try:
-        # Code that might raise an exception
-        do_something()
-    except Exception as e:
-        logging.error(f"Error generating listing: {str(e)}")
-        logging.error(f"Full error details: {repr(e)}")
-        return jsonify({'error': str(e)}), 500
-
-
         prompt = data['prompt']
+        logging.info(f"Received prompt: {prompt}")
 
         response = openai.ChatCompletion.create(
             model="gpt-4o",
@@ -129,6 +117,7 @@ def generate_listing():
 
     except Exception as e:
         logging.error(f"Error generating listing: {str(e)}")
+        logging.error(f"Full error details: {repr(e)}")
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
