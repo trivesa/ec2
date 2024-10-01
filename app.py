@@ -162,12 +162,15 @@ def generate_listing():
         """
 
         # Send the prompt to the OpenAI API (using OpenAI Completion API)
-        response = openai.Completion.create(
-            model="gpt-4o",  # Use the correct model version
-            prompt=prompt,
-            max_tokens=1000,  # Increase max tokens to handle longer responses
-            temperature=0.7
-        )
+        response = openai.ChatCompletion.create(
+    model="gpt-4o",
+    messages=[
+        {"role": "system", "content": "You are an eBay fashion product listing expert."},
+        {"role": "user", "content": prompt}
+    ],
+    max_tokens=1000,
+    temperature=0.7
+)
 
         # Validate OpenAI response
         if 'choices' in response and len(response['choices']) > 0:
