@@ -1,0 +1,49 @@
+[2024-09-29 14:43:35 +0000] [89772] [INFO] Starting gunicorn 23.0.0
+[2024-09-29 14:43:35 +0000] [89772] [INFO] Listening at: http://0.0.0.0:5000 (89772)
+[2024-09-29 14:43:35 +0000] [89772] [INFO] Using worker: sync
+[2024-09-29 14:43:35 +0000] [89773] [INFO] Booting worker with pid: 89773
+[2024-09-29 14:43:36 +0000] [89774] [INFO] Booting worker with pid: 89774
+[2024-09-29 14:43:36 +0000] [89775] [INFO] Booting worker with pid: 89775
+[2024-09-29 14:43:36 +0000] [89776] [INFO] Booting worker with pid: 89776
+[2024-09-29 15:33:05 +0000] [91980] [INFO] Starting gunicorn 23.0.0
+[2024-09-29 15:33:05 +0000] [91980] [INFO] Listening at: http://0.0.0.0:5000 (91980)
+[2024-09-29 15:33:05 +0000] [91980] [INFO] Using worker: sync
+[2024-09-29 15:33:05 +0000] [91981] [INFO] Booting worker with pid: 91981
+[2024-09-29 15:33:05 +0000] [91982] [INFO] Booting worker with pid: 91982
+[2024-09-29 15:33:05 +0000] [91983] [INFO] Booting worker with pid: 91983
+[2024-09-29 15:33:05 +0000] [91984] [INFO] Booting worker with pid: 91984
+[2024-09-29 15:34:22 +0000] [91980] [ERROR] Worker (pid:91982) was sent SIGHUP!
+[2024-09-29 15:34:22 +0000] [91980] [ERROR] Worker (pid:91984) was sent SIGHUP!
+[2024-09-29 15:34:22 +0000] [91980] [ERROR] Worker (pid:91983) was sent SIGHUP!
+[2024-09-29 15:34:22 +0000] [91980] [ERROR] Worker (pid:91981) was sent SIGHUP!
+[2024-09-29 15:34:22 +0000] [92028] [INFO] Booting worker with pid: 92028
+[2024-09-29 15:34:22 +0000] [92033] [INFO] Booting worker with pid: 92033
+[2024-09-29 15:34:22 +0000] [92042] [INFO] Booting worker with pid: 92042
+[2024-09-29 15:34:22 +0000] [91980] [INFO] Handling signal: hup
+[2024-09-29 15:34:22 +0000] [91980] [INFO] Hang up: Master
+[2024-09-29 15:34:22 +0000] [92061] [INFO] Booting worker with pid: 92061
+[2024-09-29 15:34:22 +0000] [92060] [INFO] Booting worker with pid: 92060
+[2024-09-29 15:34:23 +0000] [92062] [INFO] Booting worker with pid: 92062
+[2024-09-29 15:34:23 +0000] [92063] [INFO] Booting worker with pid: 92063
+[2024-09-29 15:34:28 +0000] [92028] [INFO] Worker exiting (pid: 92028)
+OpenAI API Key: None
+[2024-09-29 15:34:28 +0000] [92033] [INFO] Worker exiting (pid: 92033)
+OpenAI API Key: None
+[2024-09-29 15:34:28 +0000] [91980] [ERROR] Worker (pid:92033) was sent SIGTERM!
+[2024-09-29 15:34:28 +0000] [91980] [ERROR] Worker (pid:92028) was sent SIGTERM!
+[2024-09-29 15:34:29 +0000] [92042] [INFO] Worker exiting (pid: 92042)
+OpenAI API Key: None
+[2024-09-29 18:57:19 +0000] [92062] [INFO] Worker exiting (pid: 92062)
+[2024-09-29 18:57:19 +0000] [92060] [INFO] Worker exiting (pid: 92060)
+OpenAI API Key: None
+OpenAI API Key: None
+[2024-09-29 18:57:19 +0000] [92061] [INFO] Worker exiting (pid: 92061)
+OpenAI API Key: None
+[2024-09-29 18:57:19 +0000] [92063] [INFO] Worker exiting (pid: 92063)
+OpenAI API Key: None
+[2024-09-29 18:57:20 +0000] [91980] [INFO] Handling signal: term
+[2024-09-29 18:57:20 +0000] [91980] [ERROR] Worker (pid:92060) was sent SIGTERM!
+[2024-09-29 18:57:20 +0000] [91980] [ERROR] Worker (pid:92062) was sent SIGTERM!
+[2024-09-29 18:57:20 +0000] [91980] [ERROR] Worker (pid:92061) was sent SIGTERM!
+[2024-09-29 18:57:20 +0000] [91980] [ERROR] Worker (pid:92063) was sent SIGTERM!
+[2024-09-29 18:57:20 +0000] [91980] [INFO] Shutting down: Master

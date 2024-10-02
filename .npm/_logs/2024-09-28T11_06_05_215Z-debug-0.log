@@ -1,0 +1,128 @@
+0 verbose cli /home/ec2-user/.nvm/versions/node/v20.17.0/bin/node /home/ec2-user/.nvm/versions/node/v20.17.0/bin/npm
+1 info using npm@10.8.2
+2 info using node@v20.17.0
+3 silly config load:file:/home/ec2-user/.nvm/versions/node/v20.17.0/lib/node_modules/npm/npmrc
+4 silly config load:file:/home/ec2-user/product-listing-generator/.npmrc
+5 silly config load:file:/home/ec2-user/.npmrc
+6 silly config load:file:/home/ec2-user/.nvm/versions/node/v20.17.0/etc/npmrc
+7 verbose title npm install express dotenv openai
+8 verbose argv "install" "express" "dotenv" "openai"
+9 verbose logfile logs-max:10 dir:/home/ec2-user/.npm/_logs/2024-09-28T11_06_05_215Z-
+10 verbose logfile /home/ec2-user/.npm/_logs/2024-09-28T11_06_05_215Z-debug-0.log
+11 silly packumentCache heap:487063552 maxSize:121765888 maxEntrySize:60882944
+12 silly logfile done cleaning log files
+13 silly idealTree buildDeps
+14 silly fetch manifest dotenv@^16.4.5
+15 silly packumentCache full:https://registry.npmjs.org/dotenv cache-miss
+16 http fetch GET 200 https://registry.npmjs.org/dotenv 238ms (cache revalidated)
+17 silly packumentCache full:https://registry.npmjs.org/dotenv set size:296969 disposed:false
+18 silly fetch manifest express@^4.21.0
+19 silly packumentCache full:https://registry.npmjs.org/express cache-miss
+20 http fetch GET 200 https://registry.npmjs.org/express 53ms (cache revalidated)
+21 silly packumentCache full:https://registry.npmjs.org/express set size:772826 disposed:false
+22 silly fetch manifest openai@^4.65.0
+23 silly packumentCache full:https://registry.npmjs.org/openai cache-miss
+24 http fetch GET 200 https://registry.npmjs.org/openai 51ms (cache revalidated)
+25 silly packumentCache full:https://registry.npmjs.org/openai set size:2328458 disposed:false
+26 silly fetch manifest zod@^3.23.8
+27 silly packumentCache full:https://registry.npmjs.org/zod cache-miss
+28 http fetch GET 200 https://registry.npmjs.org/zod 108ms (cache revalidated)
+29 silly packumentCache full:https://registry.npmjs.org/zod set size:15491132 disposed:false
+30 silly placeDep ROOT dotenv@16.4.5 REPLACE for: product-listing-generator@1.0.0 want: ^16.4.5
+31 silly placeDep ROOT express@4.21.0 REPLACE for: product-listing-generator@1.0.0 want: ^4.21.0
+32 silly placeDep ROOT openai@4.65.0 REPLACE for: product-listing-generator@1.0.0 want: ^4.65.0
+33 silly reify moves {}
+34 silly audit bulk request {
+34 silly audit   '@types/node': [ '18.19.54' ],
+34 silly audit   '@types/node-fetch': [ '2.6.11' ],
+34 silly audit   'abort-controller': [ '3.0.0' ],
+34 silly audit   accepts: [ '1.3.8' ],
+34 silly audit   agentkeepalive: [ '4.5.0' ],
+34 silly audit   'array-flatten': [ '1.1.1' ],
+34 silly audit   asynckit: [ '0.4.0' ],
+34 silly audit   'body-parser': [ '1.20.3' ],
+34 silly audit   bytes: [ '3.1.2' ],
+34 silly audit   'call-bind': [ '1.0.7' ],
+34 silly audit   'combined-stream': [ '1.0.8' ],
+34 silly audit   'content-disposition': [ '0.5.4' ],
+34 silly audit   'content-type': [ '1.0.5' ],
+34 silly audit   cookie: [ '0.6.0' ],
+34 silly audit   'cookie-signature': [ '1.0.6' ],
+34 silly audit   debug: [ '2.6.9' ],
+34 silly audit   'define-data-property': [ '1.1.4' ],
+34 silly audit   'delayed-stream': [ '1.0.0' ],
+34 silly audit   depd: [ '2.0.0' ],
+34 silly audit   destroy: [ '1.2.0' ],
+34 silly audit   'ee-first': [ '1.1.1' ],
+34 silly audit   encodeurl: [ '2.0.0', '1.0.2' ],
+34 silly audit   'es-define-property': [ '1.0.0' ],
+34 silly audit   'es-errors': [ '1.3.0' ],
+34 silly audit   'escape-html': [ '1.0.3' ],
+34 silly audit   etag: [ '1.8.1' ],
+34 silly audit   'event-target-shim': [ '5.0.1' ],
+34 silly audit   finalhandler: [ '1.3.1' ],
+34 silly audit   'form-data': [ '4.0.0' ],
+34 silly audit   'form-data-encoder': [ '1.7.2' ],
+34 silly audit   'formdata-node': [ '4.4.1' ],
+34 silly audit   forwarded: [ '0.2.0' ],
+34 silly audit   fresh: [ '0.5.2' ],
+34 silly audit   'function-bind': [ '1.1.2' ],
+34 silly audit   'get-intrinsic': [ '1.2.4' ],
+34 silly audit   gopd: [ '1.0.1' ],
+34 silly audit   'has-property-descriptors': [ '1.0.2' ],
+34 silly audit   'has-proto': [ '1.0.3' ],
+34 silly audit   'has-symbols': [ '1.0.3' ],
+34 silly audit   hasown: [ '2.0.2' ],
+34 silly audit   'http-errors': [ '2.0.0' ],
+34 silly audit   'humanize-ms': [ '1.2.1' ],
+34 silly audit   'iconv-lite': [ '0.4.24' ],
+34 silly audit   inherits: [ '2.0.4' ],
+34 silly audit   'ipaddr.js': [ '1.9.1' ],
+34 silly audit   'media-typer': [ '0.3.0' ],
+34 silly audit   'merge-descriptors': [ '1.0.3' ],
+34 silly audit   methods: [ '1.1.2' ],
+34 silly audit   mime: [ '1.6.0' ],
+34 silly audit   'mime-db': [ '1.52.0' ],
+34 silly audit   'mime-types': [ '2.1.35' ],
+34 silly audit   ms: [ '2.0.0', '2.1.3' ],
+34 silly audit   negotiator: [ '0.6.3' ],
+34 silly audit   'node-domexception': [ '1.0.0' ],
+34 silly audit   'node-fetch': [ '2.7.0' ],
+34 silly audit   'object-inspect': [ '1.13.2' ],
+34 silly audit   'on-finished': [ '2.4.1' ],
+34 silly audit   parseurl: [ '1.3.3' ],
+34 silly audit   'path-to-regexp': [ '0.1.10' ],
+34 silly audit   'proxy-addr': [ '2.0.7' ],
+34 silly audit   qs: [ '6.13.0' ],
+34 silly audit   'range-parser': [ '1.2.1' ],
+34 silly audit   'raw-body': [ '2.5.2' ],
+34 silly audit   'safe-buffer': [ '5.2.1' ],
+34 silly audit   'safer-buffer': [ '2.1.2' ],
+34 silly audit   send: [ '0.19.0' ],
+34 silly audit   'serve-static': [ '1.16.2' ],
+34 silly audit   'set-function-length': [ '1.2.2' ],
+34 silly audit   setprototypeof: [ '1.2.0' ],
+34 silly audit   'side-channel': [ '1.0.6' ],
+34 silly audit   statuses: [ '2.0.1' ],
+34 silly audit   toidentifier: [ '1.0.1' ],
+34 silly audit   tr46: [ '0.0.3' ],
+34 silly audit   'type-is': [ '1.6.18' ],
+34 silly audit   'undici-types': [ '5.26.5' ],
+34 silly audit   unpipe: [ '1.0.0' ],
+34 silly audit   'utils-merge': [ '1.0.1' ],
+34 silly audit   vary: [ '1.1.2' ],
+34 silly audit   'web-streams-polyfill': [ '4.0.0-beta.3' ],
+34 silly audit   'webidl-conversions': [ '3.0.1' ],
+34 silly audit   'whatwg-url': [ '5.0.0' ],
+34 silly audit   dotenv: [ '16.4.5' ],
+34 silly audit   express: [ '4.21.0' ],
+34 silly audit   openai: [ '4.65.0' ]
+34 silly audit }
+35 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 195ms
+36 silly audit report {}
+37 verbose cwd /home/ec2-user/product-listing-generator
+38 verbose os Linux 6.1.109-118.189.amzn2023.x86_64
+39 verbose node v20.17.0
+40 verbose npm  v10.8.2
+41 verbose exit 0
+42 info ok
