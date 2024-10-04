@@ -3,7 +3,7 @@
   "description": "Write a detailed eBay description using short paragraphs and bullet points. Highlight key features, benefits.",
   "instructions": [
     "Use the above Brand, Product Type, Style number searching for the product details to finish the ebay product listing as per the below request:",
-    "find the Mandatory and Optional product information listed below under 'Mandatory Fields' and 'Optional Fields'. Please ignore the Italian field names in the brackets and search only English Field names, But please respond with the English with Italian reference unchanged.",
+    "find the Mandatory and Optional product information listed below under 'Mandatory Fields' and 'Optional Fields'. Ignore the Italian field names in the brackets and search only English Field names, But keep the same English (Italian) field name structure in your response.",
     "if any fields have no information available on internet, or you cannot find it, leave it to be N/A.",
     "The tone is professional and Minimalist style."
   ],
