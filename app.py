@@ -25,16 +25,15 @@ sheets_service = build('sheets', 'v4', credentials=credentials)
 SPREADSHEET_ID = '190TeRdEtXI9HXok8y2vomh_d26D0cyWgThArKQ_03_8'
 
 # Tab IDs based on product type
-TAB_MAP = {
-    "shoes": 412710163,
-    "bag": 1072378141,
-    "clothing": 2105527688,
-    "scarf": 1804229712,
-    "belt": 1511370745,
-    "watch": 1010877484,
-    "other accessories": 931884089
+SHEET_MAP = {
+    "shoes": "shoes",
+    "bag": "bag",
+    "clothing": "clothing",
+    "scarf": "scarf",
+    "belt": "belt",
+    "watch": "watch",
+    "other accessories": "other accessories"
 }
-
 # Helper function to load template based on product type
 def load_template(product_type):
     """Loads the appropriate product listing template based on product type."""
@@ -47,18 +46,30 @@ def load_template(product_type):
         return None
 
 # Helper function to determine the correct tab ID based on product type
-def determine_sheet_id(product_type):
-    product_type = product_type.lower().strip()
-    return TAB_MAP.get(product_type, TAB_MAP['other accessories'])
+def determine_sheet_name(product_type):
+    """
+    Determines which sheet name to update based on product type.
+    """
+    sheet_map = {
+        'shoes': 'shoes',
+        'bag': 'bag',
+        'clothing': 'clothing',
+        'belt': 'belt',
+        'scarf': 'scarf',
+        'watch': 'watch',
+        'other accessories': 'other accessories'
+    }
+    return sheet_map.get(product_type, 'other accessories')
+
 
 # Google Sheets Integration: Update the target tab with response data
-def update_google_sheet(sheet_id, row_data):
+def update_google_sheet(sheet_name, row_data):
     """
-    Updates the target tab with the product listing data.
+    Updates the target tab (by sheet name) with the product listing data.
     """
     try:
-        # Get the headers from the first row of the target sheet
-        sheet_range = f"'{sheet_id}'!A1:AY1"
+        # Get the headers from the first row of the target sheet by name
+        sheet_range = f"'{sheet_name}'!A1:AY1"
         sheet = sheets_service.spreadsheets().values().get(
             spreadsheetId=SPREADSHEET_ID,
             range=sheet_range
@@ -69,7 +80,7 @@ def update_google_sheet(sheet_id, row_data):
         # Fetch all rows to find the next empty row
         result = sheets_service.spreadsheets().values().get(
             spreadsheetId=SPREADSHEET_ID,
-            range=f"'{sheet_id}'"
+            range=f"'{sheet_name}'"
         ).execute()
 
         rows = result.get('values', [])
@@ -84,8 +95,8 @@ def update_google_sheet(sheet_id, row_data):
             else:
                 new_row.append("")  # Leave blank if no matching field in response
 
-        # Insert the new row into the sheet
-        insert_range = f"'{sheet_id}'!A{next_empty_row}:AY{next_empty_row}"
+        # Insert the new row into the sheet by name
+        insert_range = f"'{sheet_name}'!A{next_empty_row}:AY{next_empty_row}"
         sheets_service.spreadsheets().values().update(
             spreadsheetId=SPREADSHEET_ID,
             range=insert_range,
@@ -93,10 +104,11 @@ def update_google_sheet(sheet_id, row_data):
             body={"values": [new_row]}
         ).execute()
 
-        logging.info(f"Row inserted successfully into tab: {sheet_id} at row {next_empty_row}")
+        logging.info(f"Row inserted successfully into sheet: {sheet_name} at row {next_empty_row}")
 
     except Exception as e:
         logging.error(f"Error updating Google Sheet: {str(e)}")
+
 
 
 @app.route('/generate-listing', methods=['POST'])
