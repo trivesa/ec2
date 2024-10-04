@@ -1,14 +1,49 @@
 {
-  "title": "Generate a concise eBay title for [Brand] [Product Type] including key features within 80 characters.",
-  "description": "Write a detailed eBay description for [Brand] [Product Type] with short paragraphs and bullet points. Include key features and benefits like [Style Number].",
+  "title": "Generate a concise eBay title for [Brand] [Product Type] within 80 characters, including key features to fill into below listing.",
+  "description": "Write a detailed eBay description using short paragraphs and bullet points. Highlight key features, benefits.",
+  "instructions": [
+    "Use the above Brand, Product Type, Style number searching for the product details to finish the ebay product listing as per the below request:",
+    "find the Mandatory and Optional product information listed below under 'Mandatory Fields' and 'Optional Fields'. Please ignore the Italian field names in the brackets and search only English Field names, But please respond with the English with Italian reference unchanged.",
+    "if any fields have no information available on internet, or you cannot find it, leave it to be N/A.",
+    "The tone is professional and Minimalist style."
+  ],
+  "fields": [
+    "Title (Titolo)",
+    "Subtitle (Sottotitolo)",
+    "Description (Descrizione)"
+  ],
   "mandatory_fields": [
-    "Object Category", "Store Category", "Brand", "Type", "Department", "Color",
-    "Condition of the Item", "Price", "Shipping Rule"
+    "Object Category (Categoria Oggetto)",
+    "Store Category (Categoria del Negozio)",
+    "Brand (Marca)",
+    "Type (Tipo)",
+    "Department (Reparto)",
+    "Color (Colore)",
+    "Condition of the Item (Condizione dell'oggetto)",
+    "Price (Prezzo)",
+    "Shipping Rule (Regola sulla spedizione)"
   ],
   "optional_fields": [
-    "Custom Label", "EAN", "Style", "Material", "Character", "Theme", "Features",
-    "Country of Manufacture", "Pattern", "Decorative Elements", "Vintage", 
-    "Fabric Type", "Handmade", "Year Manufactured", "MPN", "Quantity", 
-    "Unit of Measurement", "Personalized", "Width", "Garment Care", "Product Line"
+    "Custom Label (Etichetta personalizzata - SKU)",
+    "EAN (EAN)",
+    "Style (Stile)",
+    "Material (Materiale)",
+    "Character (Personaggio)",
+    "Theme (Tema)",
+    "Features (Caratteristiche)",
+    "Country of Manufacture (Paese di fabbricazione)",
+    "Pattern (Fantasia)",
+    "Decorative Elements (Elementi decorativi)",
+    "Vintage (Vintage)",
+    "Fabric Type (Tessuto)",
+    "Handmade (Fatto a mano)",
+    "Year Manufactured (Anno di fabbricazione)",
+    "MPN (MPN)",
+    "Quantity (Quantità)",
+    "Unit of Measurement (Unità di misura)",
+    "Personalized (Personalizzato)",
+    "Width (Larghezza)",
+    "Garment Care (Cura dell'indumento)",
+    "Product Line (Linea di prodotto)"
   ]
 }
