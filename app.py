@@ -107,9 +107,7 @@ def update_google_sheet(sheet_name, row_data):
 
 @app.route('/generate-listing', methods=['POST'])
 def generate_listing():
-    try:  # Start the try block
-
-        # Get the request data
+    try:
         data = request.json
         if not data or 'product_type' not in data or 'brand' not in data or 'style_number' not in data:
             logging.warning("Required fields (product_type, brand, style_number) are missing")
@@ -145,20 +143,25 @@ def generate_listing():
             temperature=0.7
         )
 
+        # Log the full OpenAI response
+        logging.info(f"OpenAI API response: {response}")
+
         if 'choices' in response and len(response['choices']) > 0:
             listing_text = response['choices'][0]['message']['content'].strip()
             logging.info(f"Generated listing: {listing_text}")
 
             # Prepare the row data for Google Sheets
             row_data = {
-                "title": listing_text,
-                "description": listing_text,
-                "brand": brand,
-                "style_number": style_number,
-                "product_type": product_type
+                "Title (Titolo)": listing_text, # Adjust the exact field names to match your sheet headers
+                "Description (Descrizione)": listing_text,
+                "Brand (Marca)": brand,
+                "Style Number": style_number,
+                # Add more fields as necessary, ensuring they match your sheet headers
             }
 
-            # Determine which sheet to update based on product type
+            logging.info(f"Row data prepared: {row_data}")
+
+            # Determine which tab to update based on product type
             sheet_name = determine_sheet_name(product_type)
 
             # Update Google Sheets with the generated listing
@@ -170,35 +173,10 @@ def generate_listing():
             logging.error("No valid response from OpenAI")
             return jsonify({'error': 'No valid response from OpenAI'}), 500
 
-    except Exception as e:  # Add the exception handling block here
-        logging.error(f"Error generating listing: {str(e)}")
-        return jsonify({'error': str(e)}), 500  # Return a JSON error response
-# Route handler: Trigger script (related to Google Drive processing)
-@app.route('/trigger-script', methods=['POST'])
-def trigger_script():
-    try:
-        logging.info("Triggering the script...")
-
-        # Find the latest added subfolder in Google Drive
-        query = f"'{PARENT_FOLDER_ID}' in parents and mimeType='application/vnd.google-apps.folder' and trashed=false"
-        results = drive_service.files().list(q=query, orderBy='createdTime desc', pageSize=1, fields="files(id)").execute()
-        latest_subfolder = results.get('files', [])[0]
-        logging.debug(f"Found latest subfolder: {latest_subfolder['id']}")
-
-        # Fetch and sort image files
-        results = drive_service.files().list(
-            q=f"'{latest_subfolder['id']}' in parents and mimeType='image/jpeg'",
-            fields="files(id, name, mimeType)"
-        ).execute()
-        files = results.get('files', [])
-        files_sorted = sorted(files, key=lambda file: file['name'][-9:-4])
-        logging.debug(f"Sorted files: {files_sorted}")
-
-        # Process the files (implement your logic here)
-        return jsonify({"message": "Processing completed successfully"}), 200
     except Exception as e:
-        logging.error(f"Error triggering script: {str(e)}")
-        return jsonify({"error": str(e)}), 500
+        logging.error(f"Error generating listing: {str(e)}")
+        return jsonify({'error': str(e)}), 500
+
 
 
 # Route handler: Trigger script (related to Google Drive processing)
