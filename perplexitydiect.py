@@ -59,9 +59,8 @@ def get_template(product_type):
     except json.JSONDecodeError:
         logging.error(f"Error decoding JSON from file: {abs_template_file}")
         return None
-
-def generate_prompt(template, brand, product_type, internal_reference):
-    prompt = f"Brand: {brand}\nProduct Type: {product_type}\nInternal Reference: {internal_reference}\n\n"
+def generate_prompt(template, brand, product_type, style_number):
+    prompt = f"Brand: {brand}\nProduct Type: {product_type}\nStyle Number: {style_number}\n\n"
     prompt += json.dumps(template, indent=2)
     return prompt
 
@@ -110,51 +109,11 @@ def get_sheet_name(product_type):
     }
     return sheet_mapping.get(product_type, "unknown")
 
-def extract_product_type(label_texts):
-    label_texts = label_texts.lower()
-    if 'shoes' in label_texts:
-        return 'shoes'
-    elif 'bag' in label_texts:
-        return 'bag'
-    elif 'clothing' in label_texts:
-        return 'clothing'
-    elif 'scarf' in label_texts:
-        return 'scarf'
-    elif 'belt' in label_texts:
-        return 'belt'
-    elif 'watch' in label_texts:
-        return 'watch'
-    elif any(acc in label_texts for acc in ['accessory', 'accessories']):
-        return 'other accessories'
-    return None
+def process_product(product_type, brand, style_number, index):
+    logging.info(f"Processing: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
 
-def extract_brand(label_texts):
-    # 这里需要一个更复杂的逻辑来提取品牌
-    # 可能需要一个预定义的品牌列表或使用NLP技术
-    # 暂时返回一个占位符
-    return "Unknown Brand"
-
-def process_product(product, index):
-    if len(product) < 3:
-        logging.warning(f"Skipping row {index} due to insufficient data: {product}")
-        return None
-
-    label_image, label_texts, internal_reference = product
-    logging.info(f"Raw product data: {product}")
-
-    label_image = label_image.strip()
-    label_texts = label_texts.strip()
-    internal_reference = internal_reference.strip()
-
-    logging.info(f"Processing: label image: '{label_image}', label texts: '{label_texts}', internal reference: '{internal_reference}'")
-
-    if not internal_reference:
-        logging.warning(f"Skipping row {index} due to empty internal reference")
-        return None
-
-    product_type = extract_product_type(label_texts)
     if not product_type:
-        logging.warning(f"Skipping row {index} due to unable to determine product type")
+        logging.warning(f"Skipping row {index} due to empty product type")
         return None
 
     sheet_name = get_sheet_name(product_type)
@@ -167,9 +126,7 @@ def process_product(product, index):
         logging.warning(f"Skipping row {index} due to missing template for product type: {product_type}")
         return None
 
-    brand = extract_brand(label_texts)
-
-    prompt = generate_prompt(template, brand, product_type, internal_reference)
+    prompt = generate_prompt(template, brand, product_type, style_number)
 
     try:
         api_response = call_perplexity_api(prompt)
@@ -189,31 +146,28 @@ def process_product(product, index):
 def main():
     logging.info(f"Current working directory: {os.getcwd()}")
     
-    # 读取产品信息，包括标题行
-    all_data = read_spreadsheet('Sheet1!A1:C')
-    logging.info(f"Read {len(all_data)} rows from spreadsheet (including header)")
+    # 读取产品信息
+    product_types = read_spreadsheet('Sheet1!E2:E')
+    brands = read_spreadsheet('Sheet1!F2:F')
+    style_numbers = read_spreadsheet('Sheet1!I2:I')
     
-    if len(all_data) < 2:
-        logging.error("Spreadsheet does not contain enough data")
+    logging.info(f"Read {len(product_types)} product types, {len(brands)} brands, and {len(style_numbers)} style numbers")
+    
+    # 确保所有列的长度相同
+    if not (len(product_types) == len(brands) == len(style_numbers)):
+        logging.error("Mismatch in column lengths. Please check the spreadsheet.")
         return
 
-    # 分离标题行和数据
-    headers = all_data[0]
-    products = all_data[1:]
-    
-    logging.info(f"Headers: {headers}")
-    logging.info(f"Processing {len(products)} products")
-    
-    # 验证标题行
-    expected_headers = ['label image', 'label texts', 'internal reference']
-    if headers != expected_headers:
-        logging.warning(f"Unexpected headers: {headers}. Expected: {expected_headers}")
-    
     # 用于存储每个sheet的数据
     sheet_data = {}
     
-    for index, product in enumerate(products, start=2):
-        result = process_product(product, index)
+    for index, (product_type, brand, style_number) in enumerate(zip(product_types, brands, style_numbers), start=2):
+        # 确保每个值都是字符串，并去除首尾空白
+        product_type = str(product_type[0]).strip() if product_type else ""
+        brand = str(brand[0]).strip() if brand else ""
+        style_number = str(style_number[0]).strip() if style_number else ""
+        
+        result = process_product(product_type, brand, style_number, index)
         if result:
             sheet_name, output_data = result
             if sheet_name not in sheet_data:
