@@ -1,14 +1,48 @@
 {
-  "title": "Generate a concise eBay title for [Brand] [Product Type] including key features within 80 characters.",
-  "description": "Write a detailed eBay description for [Brand] [Product Type] with short paragraphs and bullet points. Include key features and benefits like [Style Number].",
+  "title": "Generate a concise eBay title for [Brand] [Product Type] within 80 characters, including key features to fill into below listing.",
+  "description": "Write a detailed eBay description using short paragraphs and bullet points. Highlight key features, benefits.",
+  "instructions": [
+    "Use the above Brand, Product Type, Style number searching for the product details to finish the ebay product listing as per the below request:",
+    "find the Mandatory and Optional product information listed below under 'Mandatory Fields' and 'Optional Fields'. Please ignore the Italian field names in the brackets and search only English Field names, But please respond with the English with Italian reference unchanged.",
+    "if any fields have no information available on internet, or you cannot find it, leave it to be N/A.",
+    "The tone is professional and Minimalist style."
+  ],
+  "fields": [
+    "Title (Titolo)",
+    "Subtitle (Sottotitolo)",
+    "Description (Descrizione)"
+  ],
   "mandatory_fields": [
-    "Object Category", "Store Category", "Brand", "Type", "Department", "Color",
-    "Size", "Condition of the Item", "Price", "Shipping Rule"
+    "Object Category (Categoria Oggetto)",
+    "Store Category (Categoria del Negozio)",
+    "Brand (Marca)",
+    "Type (Tipo)",
+    "Department (Reparto)",
+    "Color (Colore)",
+    "Size (Taglia)",
+    "Condition of the Item (Condizione dell'oggetto)",
+    "Price (Prezzo)",
+    "Shipping Rule (Regola sulla spedizione)"
   ],
   "optional_fields": [
-    "EAN", "Material", "Style", "Pattern", "Size Type", "Belt Width", 
-    "Decorative Elements", "Theme", "Features", "Character", "Trim Material", 
-    "Country of Manufacture", "Handmade", "Vintage", "MPN", "Quantity", 
-    "Unit of Measurement", "Custom Label", "Personalized"
+    "EAN (EAN)",
+    "Material (Materiale)",
+    "Style (Stile)",
+    "Pattern (Fantasia)",
+    "Size Type (Tipo di taglia)",
+    "Belt Width (Larghezza della cintura)",
+    "Decorative Elements (Elementi decorativi)",
+    "Theme (Tema)",
+    "Features (Caratteristiche)",
+    "Character (Personaggio)",
+    "Trim Material (Materiale delle finiture)",
+    "Country of Manufacture (Paese di fabbricazione)",
+    "Handmade (Fatto a mano)",
+    "Vintage (Vintage)",
+    "MPN (MPN)",
+    "Quantity (Quantità)",
+    "Unit of Measurement (Unità di misura)",
+    "Custom Label (Etichetta personalizzata - SKU)",
+    "Personalized (Personalizzato)"
   ]
 }
