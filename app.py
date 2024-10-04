@@ -51,7 +51,6 @@ def determine_sheet_name(product_type):
     Determines which sheet name to update based on product type.
     """
     return SHEET_MAP.get(product_type, 'other accessories')
-
 # Google Sheets Integration: Update the target tab with response data
 def update_google_sheet(sheet_name, row_data):
     """
@@ -78,10 +77,20 @@ def update_google_sheet(sheet_name, row_data):
 
         # Prepare row data based on headers
         new_row = []
+        
+        # Mapping the response data to the sheet headers
+        field_mapping = {
+            'Title (Titolo)': 'title',
+            'Description (Descrizione)': 'description',
+            'Brand (Marca)': 'brand',
+            'Style Number': 'style_number',
+            # Add more mappings if needed for other fields
+        }
+
         for header in headers:
-            header_lower = header.strip().lower()  # Normalize for matching
-            if header_lower in row_data:
-                new_row.append(row_data[header_lower])
+            field_name = field_mapping.get(header.strip())
+            if field_name and field_name in row_data:
+                new_row.append(row_data[field_name])
             else:
                 new_row.append("")  # Leave blank if no matching field in response
 
@@ -102,6 +111,7 @@ def update_google_sheet(sheet_name, row_data):
 
     except Exception as e:
         logging.error(f"Error updating Google Sheet: {str(e)}")
+
 @app.route('/generate-listing', methods=['POST'])
 def generate_listing():
     try:  # Start the try block
@@ -207,20 +217,4 @@ def run_photo_processing():
         
         result = subprocess.run(['python3', script_path], capture_output=True, text=True, timeout=120)
         
-        if result.returncode == 0:
-            logging.info(f"Script executed successfully: {result.stdout}")
-            return jsonify({"message": "Script executed successfully", "output": result.stdout}), 200
-        else:
-            logging.error(f"Script execution failed: {result.stderr}")
-            return jsonify({"error": "Script execution failed", "details": result.stderr}), 500
-    except subprocess.TimeoutExpired:
-        logging.error("Script execution timed out")
-        return jsonify({"error": "Script execution timed out"}), 500
-    except Exception as e:
-        logging.error(f"Error during script execution: {str(e)}")
-        return jsonify({"error": str(e)}), 500
-
-
-# Flask app runner
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+        if result.returncode ==
