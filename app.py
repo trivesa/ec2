@@ -2,10 +2,22 @@ from flask import Flask, request, jsonify
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from google.cloud import vision
+import json
 import os
 import subprocess
 import logging
 import openai
+
+def load_template(product_type):
+    """Loads the appropriate product listing template based on product type."""
+    try:
+        with open(f'/home/ec2-user/templates/{product_type}_template.json', 'r') as file:
+            template = json.load(file)
+        return template
+    except FileNotFoundError:
+        logging.error(f"Template for {product_type} not found!")
+        return None
+
 
 app = Flask(__name__)
 
