@@ -77,29 +77,47 @@ def update_google_sheet(sheet_name, row_data):
 
         # Prepare row data based on headers
         new_row = []
-        
-        # Mapping the response data to the sheet headers
-        field_mapping = {
-            'Title (Titolo)': 'title',
-            'Description (Descrizione)': 'description',
-            'Brand (Marca)': 'brand',
-            'Style Number': 'style_number',
-            # Add more mappings if needed for other fields
+        mapping = {
+            "title": row_data['title'],
+            "description": row_data['description'],
+            "brand": row_data['brand'],
+            "size": row_data.get('size', ''),  # Optional field
+            "department": row_data.get('department', ''),
+            "color": row_data.get('color', ''),
+            "type": row_data.get('type', ''),
+            "style": row_data.get('style', ''),
+            "condition of the item": row_data.get('condition', ''),
+            "mpn": row_data.get('mpn', ''),
+            "custom label": row_data.get('custom_label', ''),
+            "material": row_data.get('material', ''),
+            "sole material": row_data.get('sole_material', ''),
+            "lining material": row_data.get('lining_material', ''),
+            "closure type": row_data.get('closure_type', ''),
+            "fit": row_data.get('fit', ''),
+            "product line": row_data.get('product_line', ''),
+            "outer material": row_data.get('outer_material', ''),
+            "pattern": row_data.get('pattern', ''),
+            "season": row_data.get('season', ''),
+            "theme": row_data.get('theme', ''),
+            "width": row_data.get('width', ''),
+            "year manufactured": row_data.get('year_manufactured', ''),
+            "activity": row_data.get('activity', ''),
+            "vintage": row_data.get('vintage', ''),
+            "handmade": row_data.get('handmade', ''),
+            "country of manufacture": row_data.get('country_of_manufacture', '')
         }
 
+        # Fill the new_row with the mapped data in the order of headers
         for header in headers:
-            field_name = field_mapping.get(header.strip())
-            if field_name and field_name in row_data:
-                new_row.append(row_data[field_name])
+            header_lower = header.strip().lower()
+            if header_lower in mapping:
+                new_row.append(mapping[header_lower])
             else:
                 new_row.append("")  # Leave blank if no matching field in response
 
-        # Log the row data being inserted
-        logging.info(f"Row data to be inserted: {new_row}")
-
         # Insert the new row into the sheet by name
         insert_range = f"'{sheet_name}'!A{next_empty_row}:AY{next_empty_row}"
-        response = sheets_service.spreadsheets().values().update(
+        sheets_service.spreadsheets().values().update(
             spreadsheetId=SPREADSHEET_ID,
             range=insert_range,
             valueInputOption="RAW",
@@ -107,10 +125,10 @@ def update_google_sheet(sheet_name, row_data):
         ).execute()
 
         logging.info(f"Row inserted successfully into sheet: {sheet_name} at row {next_empty_row}")
-        logging.info(f"Response from Sheets API: {response}")  # Log the Sheets API response
 
     except Exception as e:
         logging.error(f"Error updating Google Sheet: {str(e)}")
+
 
 @app.route('/generate-listing', methods=['POST'])
 def generate_listing():
