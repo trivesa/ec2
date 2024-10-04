@@ -209,10 +209,10 @@ def trigger_script():
 
 
 # Route handler: Trigger script (related to Google Drive processing)
-@app.route('/trigger-script', methods=['POST'])
-def trigger_script():
+@app.route('/trigger-google-drive-script', methods=['POST'])  # Changed endpoint to avoid conflict
+def trigger_google_drive_script():
     try:
-        logging.info("Triggering the script...")
+        logging.info("Triggering the Google Drive script...")
 
         # Find the latest added subfolder in Google Drive
         query = f"'{PARENT_FOLDER_ID}' in parents and mimeType='application/vnd.google-apps.folder' and trashed=false"
@@ -231,12 +231,10 @@ def trigger_script():
             fields="files(id, name)"
         ).execute()
         files = results.get('files', [])
-        files_sorted = sorted(files, key=lambda file: file['name'][-9:-4])  # Sort by last 5 digits of file name
+        files_sorted = sorted(files, key=lambda file: file['name'][-9:-4])
         logging.debug(f"Sorted files: {files_sorted}")
 
-        # Process the sorted files (here you can add the logic to process each file)
-        # You can add logic to extract text, detect objects, etc. from the images.
-
+        # Process the files (you can add your image processing logic here)
         return jsonify({"message": "Processing completed successfully", "files_processed": len(files_sorted)}), 200
 
     except Exception as e:
@@ -248,10 +246,9 @@ def trigger_script():
 @app.route('/run-photo-processing', methods=['POST'])
 def run_photo_processing():
     try:
-        script_path = "/home/ec2-user/photo_processing.py"  # Assuming the script is in this path
+        script_path = "/home/ec2-user/photo_processing.py"
         logging.info(f"Running photo processing script: {script_path}")
         
-        # Running the external Python script
         result = subprocess.run(['python3', script_path], capture_output=True, text=True, timeout=120)
         
         if result.returncode == 0:
