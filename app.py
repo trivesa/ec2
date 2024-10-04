@@ -24,7 +24,7 @@ sheets_service = build('sheets', 'v4', credentials=credentials)
 # Google Spreadsheet ID
 SPREADSHEET_ID = '190TeRdEtXI9HXok8y2vomh_d26D0cyWgThArKQ_03_8'
 
-# Tab IDs based on product type
+# Sheet names based on product type
 SHEET_MAP = {
     "shoes": "shoes",
     "bag": "bag",
@@ -45,22 +45,12 @@ def load_template(product_type):
         logging.error(f"Template for {product_type} not found!")
         return None
 
-# Helper function to determine the correct tab ID based on product type
+# Helper function to determine the correct sheet name based on product type
 def determine_sheet_name(product_type):
     """
     Determines which sheet name to update based on product type.
     """
-    sheet_map = {
-        'shoes': 'shoes',
-        'bag': 'bag',
-        'clothing': 'clothing',
-        'belt': 'belt',
-        'scarf': 'scarf',
-        'watch': 'watch',
-        'other accessories': 'other accessories'
-    }
-    return sheet_map.get(product_type, 'other accessories')
-
+    return SHEET_MAP.get(product_type, 'other accessories')
 
 # Google Sheets Integration: Update the target tab with response data
 def update_google_sheet(sheet_name, row_data):
@@ -108,9 +98,6 @@ def update_google_sheet(sheet_name, row_data):
 
     except Exception as e:
         logging.error(f"Error updating Google Sheet: {str(e)}")
-
-
-
 @app.route('/generate-listing', methods=['POST'])
 def generate_listing():
     try:
@@ -162,11 +149,11 @@ def generate_listing():
                 "product_type": product_type
             }
 
-            # Determine which tab to update based on product type
-            sheet_id = determine_sheet_id(product_type)
+            # Determine which sheet to update based on product type
+            sheet_name = determine_sheet_name(product_type)
 
             # Update Google Sheets with the generated listing
-            update_google_sheet(sheet_id, row_data)
+            update_google_sheet(sheet_name, row_data)
 
             return jsonify({'listing': listing_text}), 200
 
@@ -177,56 +164,6 @@ def generate_listing():
     except Exception as e:
         logging.error(f"Error generating listing: {str(e)}")
         return jsonify({'error': str(e)}), 500
-
-# Route handler: Trigger script (related to Google Drive processing)
-@app.route('/trigger-script', methods=['POST'])
-def trigger_script():
-    try:
-        logging.info("Triggering the script...")
-
-        # Find the latest added subfolder in Google Drive
-        query = f"'{PARENT_FOLDER_ID}' in parents and mimeType='application/vnd.google-apps.folder' and trashed=false"
-        results = drive_service.files().list(q=query, orderBy='createdTime desc', pageSize=1, fields="files(id)").execute()
-        latest_subfolder = results.get('files', [])[0]
-        logging.debug(f"Found latest subfolder: {latest_subfolder['id']}")
-
-        # Fetch and sort image files
-        results = drive_service.files().list(
-            q=f"'{latest_subfolder['id']}' in parents and mimeType='image/jpeg'",
-            fields="files(id, name, mimeType)"
-        ).execute()
-        files = results.get('files', [])
-        files_sorted = sorted(files, key=sort_by_last_5_digits)
-        logging.debug(f"Sorted files: {files_sorted}")
-
-        # Process the files (implement your logic here)
-        return jsonify({"message": "Processing completed successfully"}), 200
-    except Exception as e:
-        logging.error(f"Error triggering script: {str(e)}")
-        return jsonify({"error": str(e)}), 500
-
-
-# Route handler: Run photo processing script
-@app.route('/run-photo-processing', methods=['POST'])
-def run_photo_processing():
-    try:
-        script_path = "/home/ec2-user/photo_processing.py"
-        logging.info(f"Running photo processing script: {script_path}")
-        
-        result = subprocess.run(['python3', script_path], capture_output=True, text=True, timeout=120)
-        
-        if result.returncode == 0:
-            logging.info(f"Script executed successfully: {result.stdout}")
-            return jsonify({"message": "Script executed successfully", "output": result.stdout}), 200
-        else:
-            logging.error(f"Script execution failed: {result.stderr}")
-            return jsonify({"error": "Script execution failed", "details": result.stderr}), 500
-    except subprocess.TimeoutExpired:
-        logging.error("Script execution timed out")
-        return jsonify({"error": "Script execution timed out"}), 500
-    except Exception as e:
-        logging.error(f"Error during script execution: {str(e)}")
-        return jsonify({"error": str(e)}), 500
 
 
 # Flask app runner
