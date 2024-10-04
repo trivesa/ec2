@@ -1,0 +1,15 @@
+{
+  "title": "Generate a concise eBay title for [Brand] [Product Type] including key features within 80 characters.",
+  "description": "Write a detailed eBay description for [Brand] [Product Type] with short paragraphs and bullet points. Include key features and benefits like [Style Number].",
+  "mandatory_fields": [
+    "Object Category", "Store Category", "Brand", "Size", "Department", "Color",
+    "Type", "Style", "Condition of the Item", "Price", "Shipping Rule"
+  ],
+  "optional_fields": [
+    "MPN", "Custom Label", "EAN", "Material", "Sole Material", "Lining Material",
+    "Closure Type", "Fit", "Product Line", "Insole Material", "Outer Material",
+    "Pattern", "Season", "Theme", "Product Variants", "Width", "Year Manufactured",
+    "Activity", "Vintage", "Customized", "Toe Shape", "Heel Height", "Handmade",
+    "Country of Manufacture"
+  ]
+}
