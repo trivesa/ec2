@@ -208,13 +208,67 @@ def trigger_script():
         return jsonify({"error": str(e)}), 500
 
 
+# Route handler: Trigger script (related to Google Drive processing)
+@app.route('/trigger-script', methods=['POST'])
+def trigger_script():
+    try:
+        logging.info("Triggering the script...")
+
+        # Find the latest added subfolder in Google Drive
+        query = f"'{PARENT_FOLDER_ID}' in parents and mimeType='application/vnd.google-apps.folder' and trashed=false"
+        results = drive_service.files().list(q=query, orderBy='createdTime desc', pageSize=1, fields="files(id, name)").execute()
+        latest_subfolder = results.get('files', [])[0] if results.get('files') else None
+
+        if not latest_subfolder:
+            logging.error("No subfolder found in the Google Drive folder")
+            return jsonify({"error": "No subfolder found"}), 404
+
+        logging.debug(f"Found latest subfolder: {latest_subfolder['id']}")
+
+        # Fetch and sort image files in the subfolder
+        results = drive_service.files().list(
+            q=f"'{latest_subfolder['id']}' in parents and mimeType='image/jpeg'",
+            fields="files(id, name)"
+        ).execute()
+        files = results.get('files', [])
+        files_sorted = sorted(files, key=lambda file: file['name'][-9:-4])  # Sort by last 5 digits of file name
+        logging.debug(f"Sorted files: {files_sorted}")
+
+        # Process the sorted files (here you can add the logic to process each file)
+        # You can add logic to extract text, detect objects, etc. from the images.
+
+        return jsonify({"message": "Processing completed successfully", "files_processed": len(files_sorted)}), 200
+
+    except Exception as e:
+        logging.error(f"Error triggering script: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
+
 # Route handler: Run photo processing script
 @app.route('/run-photo-processing', methods=['POST'])
 def run_photo_processing():
     try:
-        script_path = "/home/ec2-user/photo_processing.py"
+        script_path = "/home/ec2-user/photo_processing.py"  # Assuming the script is in this path
         logging.info(f"Running photo processing script: {script_path}")
         
+        # Running the external Python script
         result = subprocess.run(['python3', script_path], capture_output=True, text=True, timeout=120)
         
-        if result.returncode ==
+        if result.returncode == 0:
+            logging.info(f"Script executed successfully: {result.stdout}")
+            return jsonify({"message": "Script executed successfully", "output": result.stdout}), 200
+        else:
+            logging.error(f"Script execution failed: {result.stderr}")
+            return jsonify({"error": "Script execution failed", "details": result.stderr}), 500
+    except subprocess.TimeoutExpired:
+        logging.error("Script execution timed out")
+        return jsonify({"error": "Script execution timed out"}), 500
+    except Exception as e:
+        logging.error(f"Error during script execution: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
+
+# Flask app runner
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+
