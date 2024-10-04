@@ -116,11 +116,20 @@ def process_product(product, index):
         return None
 
     product_type, brand, style_number = product
-    logging.info(f"Processing: Product type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
+    logging.info(f"Raw product data: {product}")  # 添加这行来记录原始数据
+    
+    # 使用 strip() 去除可能的空白字符
+    product_type = product_type.strip()
+    brand = brand.strip()
+    style_number = style_number.strip()
+
+    logging.info(f"Processing: product type: '{product_type}', brand: '{brand}', style number: '{style_number}'")
 
     if not product_type:
         logging.warning(f"Skipping row {index} due to empty product type")
         return None
+
+    # 其余代码保持不变...
 
     sheet_name = get_sheet_name(product_type)
     if sheet_name == "unknown":
@@ -152,9 +161,25 @@ def process_product(product, index):
 def main():
     logging.info(f"Current working directory: {os.getcwd()}")
     
-    # 读取产品信息
-    products = read_spreadsheet('Sheet1!A2:C')
-    logging.info(f"Read {len(products)} products from spreadsheet")
+    # 读取产品信息，包括标题行
+    all_data = read_spreadsheet('Sheet1!A1:C')
+    logging.info(f"Read {len(all_data)} rows from spreadsheet (including header)")
+    
+    if len(all_data) < 2:
+        logging.error("Spreadsheet does not contain enough data")
+        return
+
+    # 分离标题行和数据
+    headers = all_data[0]
+    products = all_data[1:]
+    
+    logging.info(f"Headers: {headers}")
+    logging.info(f"Processing {len(products)} products")
+    
+    # 验证标题行
+    expected_headers = ['product type', 'brand', 'style number']
+    if [h.lower() for h in headers] != expected_headers:
+        logging.warning(f"Unexpected headers: {headers}. Expected: {expected_headers}")
     
     # 用于存储每个sheet的数据
     sheet_data = {}
