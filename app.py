@@ -10,6 +10,7 @@ import json  # Make sure this is imported for handling JSON
 
 app = Flask(__name__)
 
+# Setup logging
 logging.basicConfig(filename='app.log', level=logging.DEBUG, 
                     format='%(asctime)s %(levelname)s %(message)s')
 
@@ -21,7 +22,6 @@ os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/ec2-user/google-credential
 vision_client = vision.ImageAnnotatorClient()
 drive_service = build('drive', 'v3', credentials=service_account.Credentials.from_service_account_file(os.getenv('GOOGLE_APPLICATION_CREDENTIALS')))
 sheets_service = build('sheets', 'v4', credentials=service_account.Credentials.from_service_account_file(os.getenv('GOOGLE_APPLICATION_CREDENTIALS')))
-
 # Constants
 SPREADSHEET_ID = '190TeRdEtXI9HXok8y2vomh_d26D0cyWgThArKQ_03_8'
 SHEET_NAME = 'Sheet1'
@@ -32,7 +32,6 @@ PARENT_FOLDER_ID = '1A9k4cBKuiplG5XJpkzmN_6bl2Ighz-bf'
 def load_template(product_type):
     """Loads the appropriate product listing template based on product type."""
     try:
-        # Load the JSON template based on product_type
         with open(f'/home/ec2-user/templates/{product_type}_template.json', 'r') as file:
             template = json.load(file)
         return template
@@ -40,90 +39,16 @@ def load_template(product_type):
         logging.error(f"Template for {product_type} not found!")
         return None
 
-# Route handlers
-@app.route('/')
-def home():
-    return "Flask application is running!"
-
-@app.route('/generate-listing', methods=['POST'])
-def generate_listing():
-    try:
-        data = request.json
-        # Ensure that the required fields are provided
-        if not data or 'product_type' not in data or 'brand' not in data or 'style_number' not in data:
-            logging.warning("Required fields (product_type, brand, style_number) are missing")
-            return jsonify({'error': 'Required fields are missing'}), 400
-
-        # Load the appropriate template based on product type
-        product_type = data['product_type']
-        brand = data['brand']
-        style_number = data['style_number']
-
-        template = load_template(product_type)
-        if not template:
-            return jsonify({'error': f'Template for product type {product_type} not found'}), 400
-
-        # Fill in the template with the provided brand, product type, and style number
-        title = template['title'].replace("[Brand]", brand).replace("[Product Type]", product_type)
-        description = template['description'].replace("[Brand]", brand).replace("[Product Type]", product_type).replace("[Style Number]", style_number)
-
-        prompt = f"{title}\n{description}\nMandatory Fields: {', '.join(template['mandatory_fields'])}\nOptional Fields: {', '.join(template['optional_fields'])}"
-
-        logging.info(f"Generated prompt: {prompt}")
-
-        # Send the filled-in prompt to OpenAI API
-        response = openai.ChatCompletion.create(
-            model="gpt-4",
-            messages=[
-                {"role": "system", "content": "You are an eBay fashion product listing expert."},
-                {"role": "user", "content": prompt}
-            ],
-            max_tokens=1000,
-            temperature=0.7
-        )
-
-        if 'choices' in response and len(response['choices']) > 0:
-            listing_text = response['choices'][0]['message']['content'].strip()
-            logging.info(f"Generated listing: {listing_text}")
-            return jsonify({'listing': listing_text})
-        else:
-            logging.error("No valid response from OpenAI")
-            return jsonify({'error': 'No valid response from OpenAI'}), 500
-
-    except Exception as e:
-        logging.error(f"Error generating listing: {str(e)}")
-        return jsonify({'error': str(e)}), 500
-
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
-
-
-# Configuration
-openai.api_key = os.getenv('OPENAI_API_KEY')
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/ec2-user/google-credentials/photo-to-listing-e89218601911.json"
-
-# API clients setup
-vision_client = vision.ImageAnnotatorClient()
-drive_service = build('drive', 'v3', credentials=service_account.Credentials.from_service_account_file(os.getenv('GOOGLE_APPLICATION_CREDENTIALS')))
-sheets_service = build('sheets', 'v4', credentials=service_account.Credentials.from_service_account_file(os.getenv('GOOGLE_APPLICATION_CREDENTIALS')))
-
-# Constants
-SPREADSHEET_ID = '190TeRdEtXI9HXok8y2vomh_d26D0cyWgThArKQ_03_8'
-SHEET_NAME = 'Sheet1'
-SHEET_ID = 2114301033
-PARENT_FOLDER_ID = '1A9k4cBKuiplG5XJpkzmN_6bl2Ighz-bf'
-
-# Helper functions
+# Helper function to sort files by the last 5 digits
 def sort_by_last_5_digits(file):
     last_5_digits = file['name'][-9:-4]
     return int(last_5_digits)
-
-# Route handlers
+# Route handler: Home route
 @app.route('/')
 def home():
     return "Flask application is running!"
 
+# Route handler: Trigger script (related to Google Drive processing)
 @app.route('/trigger-script', methods=['POST'])
 def trigger_script():
     try:
@@ -145,12 +70,12 @@ def trigger_script():
         logging.debug(f"Sorted files: {files_sorted}")
 
         # Process the files (implement your logic here)
-
         return jsonify({"message": "Processing completed successfully"}), 200
     except Exception as e:
         logging.error(f"Error triggering script: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
+# Route handler: Run photo processing script
 @app.route('/run-photo-processing', methods=['POST'])
 def run_photo_processing():
     try:
@@ -171,7 +96,7 @@ def run_photo_processing():
     except Exception as e:
         logging.error(f"Error during script execution: {str(e)}")
         return jsonify({"error": str(e)}), 500
-
+# Route handler: Generate product listing
 @app.route('/generate-listing', methods=['POST'])
 def generate_listing():
     try:
@@ -220,12 +145,7 @@ def generate_listing():
     except Exception as e:
         logging.error(f"Error generating listing: {str(e)}")
         return jsonify({'error': str(e)}), 500
-
-
-    except Exception as e:
-        logging.error(f"Error generating listing: {str(e)}")
-        logging.error(f"Full error details: {repr(e)}")
-        return jsonify({'error': str(e)}), 500
-
+# Flask app runner
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
+
