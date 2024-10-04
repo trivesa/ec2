@@ -90,15 +90,31 @@ def run_photo_processing():
 def generate_listing():
     try:
         data = request.json
-        if not data or 'prompt' not in data:
-            logging.warning("No prompt provided")
-            return jsonify({'error': 'No prompt provided'}), 400
+        # Ensure that the required fields are provided
+        if not data or 'product_type' not in data or 'brand' not in data or 'style_number' not in data:
+            logging.warning("Required fields (product_type, brand, style_number) are missing")
+            return jsonify({'error': 'Required fields are missing'}), 400
 
-        prompt = data['prompt']
-        logging.info(f"Received prompt: {prompt}")
+        # Load the appropriate template based on product type
+        product_type = data['product_type']
+        brand = data['brand']
+        style_number = data['style_number']
 
+        template = load_template(product_type)
+        if not template:
+            return jsonify({'error': f'Template for product type {product_type} not found'}), 400
+
+        # Fill in the template with the provided brand, product type, and style number
+        title = template['title'].replace("[Brand]", brand).replace("[Product Type]", product_type)
+        description = template['description'].replace("[Brand]", brand).replace("[Product Type]", product_type).replace("[Style Number]", style_number)
+
+        prompt = f"{title}\n{description}\nMandatory Fields: {', '.join(template['mandatory_fields'])}\nOptional Fields: {', '.join(template['optional_fields'])}"
+
+        logging.info(f"Generated prompt: {prompt}")
+
+        # Send the filled-in prompt to OpenAI API
         response = openai.ChatCompletion.create(
-            model="gpt-4o",
+            model="gpt-4",
             messages=[
                 {"role": "system", "content": "You are an eBay fashion product listing expert."},
                 {"role": "user", "content": prompt}
@@ -114,6 +130,11 @@ def generate_listing():
         else:
             logging.error("No valid response from OpenAI")
             return jsonify({'error': 'No valid response from OpenAI'}), 500
+
+    except Exception as e:
+        logging.error(f"Error generating listing: {str(e)}")
+        return jsonify({'error': str(e)}), 500
+
 
     except Exception as e:
         logging.error(f"Error generating listing: {str(e)}")
