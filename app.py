@@ -43,6 +43,53 @@ def load_template(product_type):
 def sort_by_last_5_digits(file):
     last_5_digits = file['name'][-9:-4]
     return int(last_5_digits)
+
+# Google Sheets Integration
+def update_google_sheet(sheet_name, row_data):
+    """
+    Updates the target sheet with the response data.
+    """
+    try:
+        # Fetch the sheet by name
+        sheet = sheets_service.spreadsheets().values().get(
+            spreadsheetId=SPREADSHEET_ID,
+            range=sheet_name + "!A1:AY1"
+        ).execute()
+
+        # Get the headers from the first row
+        headers = sheet.get('values', [])[0]
+
+        # Find the next empty row
+        result = sheets_service.spreadsheets().values().get(
+            spreadsheetId=SPREADSHEET_ID,
+            range=sheet_name
+        ).execute()
+
+        # Find the next available row for insertion
+        rows = result.get('values', [])
+        next_empty_row = len(rows) + 1
+
+        # Prepare the row data
+        new_row = []
+        for header in headers:
+            if header in row_data:
+                new_row.append(row_data[header])
+            else:
+                new_row.append("")  # Empty if field is not present
+
+        # Insert the new row into the sheet
+        sheets_service.spreadsheets().values().update(
+            spreadsheetId=SPREADSHEET_ID,
+            range=f"{sheet_name}!A{next_empty_row}:AY{next_empty_row}",
+            valueInputOption="RAW",
+            body={"values": [new_row]}
+        ).execute()
+
+        logging.info(f"Row inserted successfully into sheet: {sheet_name} at row {next_empty_row}")
+
+    except Exception as e:
+        logging.error(f"Error updating Google Sheet: {str(e)}")
+
 # Route handler: Home route
 @app.route('/')
 def home():
@@ -96,7 +143,8 @@ def run_photo_processing():
     except Exception as e:
         logging.error(f"Error during script execution: {str(e)}")
         return jsonify({"error": str(e)}), 500
-# Route handler: Generate product listing
+
+# Route handler: Generate product listing and send to Google Sheets
 @app.route('/generate-listing', methods=['POST'])
 def generate_listing():
     try:
@@ -137,7 +185,24 @@ def generate_listing():
         if 'choices' in response and len(response['choices']) > 0:
             listing_text = response['choices'][0]['message']['content'].strip()
             logging.info(f"Generated listing: {listing_text}")
-            return jsonify({'listing': listing_text})
+
+            # Prepare row data for Google Sheets
+            row_data = {
+                "Title": listing_text,
+                "Description": listing_text,
+                "Brand": brand,
+                "Style Number": style_number,
+                "Product Type": product_type
+            }
+
+            # Determine which sheet to update
+            sheet_name = determine_sheet_name(product_type)
+
+            # Update Google Sheet with the response
+            update_google_sheet(sheet_name, row_data)
+
+            return jsonify({'listing': listing_text}), 200
+
         else:
             logging.error("No valid response from OpenAI")
             return jsonify({'error': 'No valid response from OpenAI'}), 500
@@ -145,7 +210,22 @@ def generate_listing():
     except Exception as e:
         logging.error(f"Error generating listing: {str(e)}")
         return jsonify({'error': str(e)}), 500
+
+# Helper function to determine the correct sheet based on product type
+def determine_sheet_name(product_type):
+    """
+    Determines which sheet to update based on product type.
+    """
+    sheet_map = {
+        'shoes': 'shoes',
+        'bag': 'bag',
+        'clothing': 'clothing',
+        'belt': 'belt',
+        'scarf': 'scarf',
+        'watch': 'watch'
+    }
+    return sheet_map.get(product_type, 'other accessories')
+
 # Flask app runner
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
-
