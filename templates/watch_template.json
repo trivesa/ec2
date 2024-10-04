@@ -1,0 +1,16 @@
+{
+  "title": "Generate a concise eBay title for [Brand] [Product Type] including key features within 80 characters.",
+  "description": "Write a detailed eBay description for [Brand] [Product Type] with short paragraphs and bullet points. Include key features and benefits like [Style Number].",
+  "mandatory_fields": [
+    "Object Category", "Store Category", "Brand", "Department", "Type", "Movement",
+    "Display", "Case Size", "Case Material", "Band Color", "Band Material", 
+    "Watch Shape", "Dial Color", "Water Resistance", "Condition of the Item", 
+    "Price", "Shipping Rule"
+  ],
+  "optional_fields": [
+    "MPN", "Custom Label", "EAN", "Year Manufactured", "Warranty", "Service",
+    "Vintage", "Serial Number", "Payment Options and Offers", "Lug Width", "Clasp Type",
+    "Dial Style", "Features", "Case Finish", "Warranty Type", "Bezel Color",
+    "Maximum Wrist Circumference", "Theme", "Handmade", "Country of Manufacture"
+  ]
+}

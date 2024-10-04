@@ -946,3 +946,40 @@ cd vestiaire_project
 scrapy genspider vestiaire_spider us.vestiairecollective.com
 git pull origin master
 git pull origin master
+cd ~/ec2-scripts 
+nano vestiaire_spider.py
+ls
+CD vestiaire_project
+cd vestiaire_project
+cd ~
+git add .
+git rm --cached .nvm
+git status
+git add .
+git commit -m "updateec2togit"
+cd
+ls
+git pull origin master
+git config pull.rebase false
+      git pull origin master
+git status
+   git commit -m "完成合并，删除 openaiexample.py"
+git config --global user.name "yinxianzhi70"
+   git config --global user.email “yinxianzhi@gmail.com”
+   git push origin master
+cd vestiaire_project
+   scrapy crawl vestiaire_spider -o 图片链接.json
+cd vestiaire_project
+scrapy crawl vestiaire_spider -o 图片链接.json
+python3 app.py
+mkdir ~/templates
+nano ~/templates/clothing_template.json
+nano ~/templates/shoes_template.json
+nano ~/templates/bag_template.json
+nano ~/templates/watch_template.json
+nano ~/templates/scarf_template.json
+nano ~/templates/belt_template.json
+nano ~/templates/other_accessories_template.json
+scp local_file_path ec2-user@ec2-ip-address:/home/ec2-user/templates
+scp file.json ec2-user@15.161.150.190:/home/ec2-user/templates
+scp file.json ec2-user@15.161.150.190:/home/ec2-user/templates

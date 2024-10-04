@@ -1,0 +1,16 @@
+{
+  "title": "Generate a concise eBay title for [Brand] [Product Type] within 80 characters including key features.",
+  "description": "Write a detailed eBay description for [Brand] [Product Type] with short paragraphs and bullet points. Include key features and benefits like [Style Number].",
+  "mandatory_fields": [
+    "Object Category", "Store Category", "Brand", "Cut", "Department", "Type", "Style",
+    "Condition of the Item", "Price", "Shipping Rule"
+  ],
+  "optional_fields": [
+    "MPN", "Custom Label", "EAN", "Material", "Color", "Tissue", "Size Type", 
+    "Fit", "Sleeve Length", "Unit of Measurement", "Character", "Season", 
+    "Vintage", "Neckline", "Theme", "Activity", "Decorative Elements", "Occasion", 
+    "Knitting Style", "Graphic Printing", "Garment Care", "Country of Manufacture", 
+    "Fabric Type", "Personalized", "Year Manufactured", "Handmade", "Pattern", 
+    "Closure Type", "Accents", "Product Line"
+  ]
+}
