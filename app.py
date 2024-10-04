@@ -214,4 +214,13 @@ def run_photo_processing():
             logging.error(f"Script execution failed: {result.stderr}")
             return jsonify({"error": "Script execution failed", "details": result.stderr}), 500
     except subprocess.TimeoutExpired:
-        logging.error("Script execution timed out
+        logging.error("Script execution timed out")
+        return jsonify({"error": "Script execution timed out"}), 500
+    except Exception as e:
+        logging.error(f"Error during script execution: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
+
+# Flask app runner
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
