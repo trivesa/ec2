@@ -153,21 +153,29 @@ def main():
     
     logging.info(f"Read {len(product_types)} product types, {len(brands)} brands, and {len(style_numbers)} style numbers")
     
-    # 确保所有列的长度相同
-    if not (len(product_types) == len(brands) == len(style_numbers)):
-        logging.error("Mismatch in column lengths. Please check the spreadsheet.")
+    # 找出最短的列的长度
+    min_length = min(len(product_types), len(brands), len(style_numbers))
+    
+    if min_length == 0:
+        logging.error("One or more columns are empty. Please check the spreadsheet.")
         return
+
+    logging.info(f"Processing {min_length} rows with complete data")
 
     # 用于存储每个sheet的数据
     sheet_data = {}
     
-    for index, (product_type, brand, style_number) in enumerate(zip(product_types, brands, style_numbers), start=2):
+    for index in range(min_length):
         # 确保每个值都是字符串，并去除首尾空白
-        product_type = str(product_type[0]).strip() if product_type else ""
-        brand = str(brand[0]).strip() if brand else ""
-        style_number = str(style_number[0]).strip() if style_number else ""
+        product_type = str(product_types[index][0]).strip() if product_types[index] else ""
+        brand = str(brands[index][0]).strip() if brands[index] else ""
+        style_number = str(style_numbers[index][0]).strip() if style_numbers[index] else ""
         
-        result = process_product(product_type, brand, style_number, index)
+        if not all([product_type, brand, style_number]):
+            logging.warning(f"Skipping row {index+2} due to missing data: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
+            continue
+        
+        result = process_product(product_type, brand, style_number, index+2)
         if result:
             sheet_name, output_data = result
             if sheet_name not in sheet_data:
