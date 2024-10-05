@@ -1,6 +1,6 @@
 {
-  "title": "Generate a concise eBay title for [Brand] [Product Type] within 80 characters, including key features to fill into below listing.",
-  "description": "Write a detailed eBay description using short paragraphs and bullet points. Highlight key features, benefits.",
+  "title": "Generate a concise ebay product title for [Brand] [Product Type] within 80 characters, including key features to fill into below listing.",
+  "description": "Write a detailed ebay product description using short paragraphs and bullet points. Highlight key features, benefits.",
   "instructions": [
     "Use the above Brand, Product Type, Style number searching for the product details to finish the ebay product listing as per the below request:",
     "find the Mandatory and Optional product information listed below under 'Mandatory Fields' and 'Optional Fields'. Please ignore the Italian field names in the brackets and search only English Field names, But keep the same English (Italian) field name structure in your response.",

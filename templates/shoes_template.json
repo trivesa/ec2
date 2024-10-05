@@ -1,10 +1,15 @@
 {
   "title": "Generate a concise eBay title for [Brand] [Product Type] within 80 characters, including key features to fill into below listing.",
-  "description": "Write a detailed eBay description using short paragraphs and bullet points. Highlight key features, benefits.",
+  "description": "Write a detailed eBay description using short paragraphs and bullet points. Highlight key features, benefits, and provide specific details about materials, craftsmanship, and technical specifications.",
   "instructions": [
     "Use the above Brand, Product Type, Style number searching for the product details to finish the ebay product listing as per the below request:",
-    "find the Mandatory and Optional product information listed below under 'Mandatory Fields' and 'Optional Fields'. Please ignore the Italian field names in the brackets and search only English Field names, But keep the same English (Italian) field name structure in your response.",
-    "if any fields have no information available on internet, or you cannot find it, leave it to be N/A.",
+    "Find the Mandatory and Optional product information listed below under 'Mandatory Fields' and 'Optional Fields'.",
+    "Please ignore the Italian field names in the brackets and search only English Field names, But please respond with the English with Italian reference unchanged.",
+    "If any fields have no information available on internet, or you cannot find it, leave it to be N/A.",
+    "Provide specific price ranges based on current market data when possible.",
+    "Include detailed size information, including available sizes and fit recommendations.",
+    "Fill in as many optional fields as possible, especially technical specifications.",
+    "Provide detailed information about materials used and manufacturing processes.",
     "The tone is professional and Minimalist style."
   ],
   "fields": [
@@ -61,6 +66,11 @@
     "Shoe Shaft Style (Stile del gambale)",
     "Signed (Firmato)",
     "Handmade (Fatto a mano)",
-    "Country of Manufacture (Paese di fabbricazione)"
+    "Country of Manufacture (Paese di fabbricazione)",
+    "Manufacturing Process (Processo di fabbricazione)",
+    "Sustainability Features (Caratteristiche di sostenibilità)",
+    "Care Instructions (Istruzioni per la cura)",
+    "Packaging (Imballaggio)",
+    "Warranty Information (Informazioni sulla garanzia)"
   ]
 }
