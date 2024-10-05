@@ -66,7 +66,7 @@ def generate_prompt(template, brand, product_type, style_number):
     prompt += json.dumps(template, indent=2)
     return prompt
 
-def call_perplexity_api(prompt):
+def call_perplexity_api(prompt, expected_product_type):
     headers = {
         'Authorization': f'Bearer {PERPLEXITY_API_KEY}',
         'Content-Type': 'application/json'
@@ -89,12 +89,12 @@ def call_perplexity_api(prompt):
         response.raise_for_status()
         response_json = response.json()
         content = response_json['choices'][0]['message']['content']
-        return parse_api_response(content)
+        return parse_api_response(content, expected_product_type)
     except Exception as e:
         logging.error(f"Error calling Perplexity API: {str(e)}")
         return None
 
-def parse_api_response(response):
+def parse_api_response(response, expected_product_type):
     parsed_data = {}
     current_field = None
 
@@ -110,7 +110,38 @@ def parse_api_response(response):
     for key, value in parsed_data.items():
         parsed_data[key] = value.strip()
 
+    # 验证产品类型
+    if 'Type' in parsed_data:
+        actual_product_type = parsed_data['Type'].lower()
+        if expected_product_type.lower() not in actual_product_type:
+            logging.warning(f"Product type mismatch. Expected: {expected_product_type}, Got: {actual_product_type}")
+            return None
+
+    # 验证必填字段
+    required_fields = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Description (Descrizione)']
+    for field in required_fields:
+        if field not in parsed_data or not parsed_data[field]:
+            logging.warning(f"Missing required field: {field}")
+            return None
+
     return parsed_data
+
+def validate_product_type(parsed_data, expected_type):
+    keywords = {
+        "耳坠": ["earring", "ear drop", "dangle", "stud"],
+        "眼镜盒": ["sunglasses case", "eyewear case", "glasses case"],
+        # 添加更多产品类型和相关关键词
+    }
+    
+    description = parsed_data.get('Description (Descrizione)', '').lower()
+    expected_keywords = keywords.get(expected_type.lower(), [])
+    
+    for keyword in expected_keywords:
+        if keyword in description:
+            return True
+    
+    logging.warning(f"Product type validation failed. Expected: {expected_type}")
+    return False
 
 def get_sheet_name(product_type):
     product_type = product_type.lower().strip()
@@ -125,7 +156,7 @@ def get_sheet_name(product_type):
     }
     return sheet_mapping.get(product_type, "unknown")
 
-def process_product(product_type, brand, style_number, index):
+def process_product(product_type, brand, style_number, index, max_retries=2):
     logging.info(f"Processing: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
 
     if not product_type:
@@ -142,19 +173,23 @@ def process_product(product_type, brand, style_number, index):
         logging.warning(f"Skipping row {index} due to missing template for product type: {product_type}")
         return None
 
-    prompt = generate_prompt(template, brand, product_type, style_number)
+    for attempt in range(max_retries):
+        prompt = generate_prompt(template, brand, product_type, style_number)
+        parsed_data = call_perplexity_api(prompt, product_type)
+        
+        if parsed_data and validate_product_type(parsed_data, product_type):
+            logging.info(f"Parsed data for {product_type} - {brand} - {style_number}:\n{json.dumps(parsed_data, indent=2)}")
 
-    parsed_data = call_perplexity_api(prompt)
-    if not parsed_data:
-        return None
+            output_data = []
+            for field in template['mandatory_fields'] + template['optional_fields']:
+                output_data.append(parsed_data.get(field, 'N/A'))
 
-    logging.info(f"Parsed data for {product_type} - {brand} - {style_number}:\n{json.dumps(parsed_data, indent=2)}")
+            return sheet_name, output_data
+        else:
+            logging.warning(f"Attempt {attempt + 1} failed. Retrying...")
 
-    output_data = []
-    for field in template['mandatory_fields'] + template['optional_fields']:
-        output_data.append(parsed_data.get(field, 'N/A'))
-
-    return sheet_name, output_data
+    logging.error(f"Failed to process product after {max_retries} attempts")
+    return None
 
 def main():
     logging.info(f"Current working directory: {os.getcwd()}")
