@@ -62,6 +62,7 @@ def get_template(product_type):
 
 def generate_prompt(template, brand, product_type, style_number):
     prompt = f"Brand: {brand}\nProduct Type: {product_type}\nStyle Number: {style_number}\n\n"
+    prompt += "First, confirm the exact product type. Then, generate a detailed eBay listing based on the following template:\n\n"
     prompt += json.dumps(template, indent=2)
     return prompt
 
@@ -83,42 +84,32 @@ def call_perplexity_api(prompt):
         'search_recency_filter': 'month',
         'frequency_penalty': 1
     }
-    response = requests.post(PERPLEXITY_API_URL, headers=headers, json=data)
-    response_json = response.json()
-    logging.info(f"Perplexity API raw response: {response_json}")
-    return response_json['choices'][0]['message']['content']
+    try:
+        response = requests.post(PERPLEXITY_API_URL, headers=headers, json=data)
+        response.raise_for_status()
+        response_json = response.json()
+        content = response_json['choices'][0]['message']['content']
+        return parse_api_response(content)
+    except Exception as e:
+        logging.error(f"Error calling Perplexity API: {str(e)}")
+        return None
 
-def parse_api_response(response, template):
+def parse_api_response(response):
     parsed_data = {}
     current_field = None
-    current_section = None
 
     for line in response.split('\n'):
         line = line.strip()
         if line.startswith('### '):
             current_field = line.replace('### ', '').strip()
             parsed_data[current_field] = ''
-            current_section = None
-        elif line.startswith('#### '):
-            current_section = line.replace('#### ', '').strip()
-        elif line.startswith('- **') and ':' in line:
-            key, value = line.split(':', 1)
-            key = key.replace('- **', '').replace('**', '').strip()
-            value = value.strip()
-            parsed_data[key] = value
         elif current_field and line:
-            if current_section:
-                if current_section not in parsed_data:
-                    parsed_data[current_section] = ''
-                parsed_data[current_section] += line + ' '
-            else:
-                parsed_data[current_field] += line + ' '
+            parsed_data[current_field] += line + ' '
 
-    # 清理和格式化数据
+    # 清理数据
     for key, value in parsed_data.items():
         parsed_data[key] = value.strip()
 
-    logging.info(f"Parsed data: {json.dumps(parsed_data, indent=2)}")
     return parsed_data
 
 def get_sheet_name(product_type):
@@ -153,16 +144,11 @@ def process_product(product_type, brand, style_number, index):
 
     prompt = generate_prompt(template, brand, product_type, style_number)
 
-    try:
-        api_response = call_perplexity_api(prompt)
-        logging.info("Successfully called Perplexity API")
-        logging.info(f"API response content:\n{api_response}")
-    except Exception as e:
-        logging.error(f"Error calling Perplexity API: {str(e)}")
+    parsed_data = call_perplexity_api(prompt)
+    if not parsed_data:
         return None
 
-    parsed_data = parse_api_response(api_response, template)
-    logging.info(f"Parsed data: {json.dumps(parsed_data, indent=2)}")
+    logging.info(f"Parsed data for {product_type} - {brand} - {style_number}:\n{json.dumps(parsed_data, indent=2)}")
 
     output_data = []
     for field in template['mandatory_fields'] + template['optional_fields']:
