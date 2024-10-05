@@ -134,7 +134,7 @@ def call_perplexity_api(prompt):
         logging.error(f"Error calling Perplexity API: {str(e)}")
         return None
 
-   def parse_api_response(response):
+def parse_api_response(response):
     logging.info(f"Parsing response: {response}")
     parsed_data = {}
     current_field = None
