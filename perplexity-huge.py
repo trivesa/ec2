@@ -128,35 +128,41 @@ def call_perplexity_api(prompt):
         response.raise_for_status()
         response_json = response.json()
         content = response_json['choices'][0]['message']['content']
+        logging.info(f"Raw API Response: {content}")
         return parse_api_response(content)
     except Exception as e:
         logging.error(f"Error calling Perplexity API: {str(e)}")
         return None
 
-def parse_api_response(response):
-    parsed_data = {}
-    current_field = None
+   def parse_api_response(response):
+       logging.info(f"Parsing response: {response}")
+       parsed_data = {}
+       current_field = None
 
-    for line in response.split('\n'):
-        line = line.strip()
-        if line.startswith('### '):
-            current_field = line.replace('### ', '').strip()
-            parsed_data[current_field] = ''
-        elif current_field and line:
-            parsed_data[current_field] += line + ' '
+       for line in response.split('\n'):
+           line = line.strip()
+           logging.info(f"Processing line: {line}")
+           if line.startswith('### '):
+               current_field = line.replace('### ', '').strip()
+               parsed_data[current_field] = ''
+               logging.info(f"Found field: {current_field}")
+           elif current_field and line:
+               parsed_data[current_field] += line + ' '
 
-    # 清理数据
-    for key, value in parsed_data.items():
-        parsed_data[key] = value.strip()
+       # 清理数据
+       for key, value in parsed_data.items():
+           parsed_data[key] = value.strip()
 
-    # 验证必填字段
-    required_fields = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Description (Descrizione)']
-    for field in required_fields:
-        if field not in parsed_data or not parsed_data[field]:
-            logging.warning(f"Missing required field: {field}")
-            return None
+       logging.info(f"Parsed data: {json.dumps(parsed_data, indent=2)}")
 
-    return parsed_data
+       # 验证必填字段
+       required_fields = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Description (Descrizione)']
+       for field in required_fields:
+           if field not in parsed_data or not parsed_data[field]:
+               logging.warning(f"Missing required field: {field}")
+               return None
+
+       return parsed_data
 
 def get_sheet_name(product_type):
     product_type = product_type.lower().strip()
