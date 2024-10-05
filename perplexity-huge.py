@@ -23,6 +23,39 @@ PERPLEXITY_API_URL = 'https://api.perplexity.ai/chat/completions'
 # Google spreadsheet ID
 SPREADSHEET_ID = '190TeRdEtXI9HXok8y2vomh_d26D0cyWgThArKQ_03_8'
 
+# 通用 prompt 指令
+GENERAL_INSTRUCTIONS = """
+Use the provided Brand, Product Type, and Style number to search for product details and complete the eBay product listing as per the below requirements:
+Find the Mandatory and Optional product information listed under 'Mandatory Fields' and 'Optional Fields'.
+IMPORTANT: You MUST use the EXACT field names as provided, including both English and Italian parts. Every field name should be in the format: 'English Name (Italian Name)'. Do not omit or change any part of the field names.
+If any fields have no information available on the internet, or you cannot find it, use 'N/A' as the value.
+Provide specific price ranges based on current market data when possible.
+Include detailed size information, including available sizes and fit recommendations.
+Fill in as many optional fields as possible, especially technical specifications.
+Provide detailed information about materials used and manufacturing processes.
+The tone should be professional and follow a minimalist style.
+Ensure all field names in your response follow the 'English (Italian)' format, even if you're only able to provide information for the English part.
+
+Instructions for the Title:
+- Brand Name: Include the brand for recognition (e.g., 'Nike').
+- Product Type: Clearly state what the item is (e.g., 'Men's Running Shoes').
+- Key Features: Include important features such as model name, color, or technology (e.g., 'Air Max', 'Black/White', 'Flyknit').
+- Size: If possible, include the size range (e.g., 'US 8-13').
+- Style Number: ALWAYS include the style number at the end of the title.
+
+Instructions for the Description:
+1. Catchy Introduction: Start with a brief, engaging statement that highlights the product's key features or benefits.
+2. Unique Selling Point: Explain what makes this product stand out from similar items.
+3. Key Features and Benefits: Focus on the most important features (technology, materials, design) and explain how they benefit the user.
+4. Product Specifications: Provide specific details about the product's characteristics and any proprietary technologies used.
+5. Fit and Sizing: Offer detailed information about the fit, including size options and how the product compares to standard sizing.
+6. Materials and Construction: Describe the materials used in different parts of the product and any special manufacturing processes.
+7. Performance and Usage: Explain what activities or occasions the product is best suited for.
+8. Care Instructions: Provide guidance on how to clean and maintain the product.
+9. Warranty and Returns: Mention any warranty information and your return policy.
+10. Call to Action: Encourage the buyer to make a purchase, highlighting any limited availability or special offers.
+"""
+
 def read_spreadsheet(range_name):
     sheet = sheets_service.spreadsheets()
     result = sheet.values().get(spreadsheetId=SPREADSHEET_ID, range=range_name).execute()
@@ -62,7 +95,8 @@ def get_template(product_type):
 
 def generate_prompt(template, brand, product_type, style_number):
     prompt = f"Brand: {brand}\nProduct Type: {product_type}\nStyle Number: {style_number}\n\n"
-    prompt += "Generate a detailed eBay listing based on the following template:\n\n"
+    prompt += GENERAL_INSTRUCTIONS
+    prompt += "\nGenerate a detailed eBay listing based on the following template:\n\n"
     prompt += json.dumps(template, indent=2)
     return prompt
 
