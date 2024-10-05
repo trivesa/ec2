@@ -86,16 +86,34 @@ def call_perplexity_api(prompt):
 def parse_api_response(response, template):
     parsed_data = {}
     current_field = None
+    current_section = None
+
     for line in response.split('\n'):
-        if ':' in line:
+        line = line.strip()
+        if line.startswith('### '):
+            current_field = line.replace('### ', '').strip()
+            parsed_data[current_field] = ''
+            current_section = None
+        elif line.startswith('#### '):
+            current_section = line.replace('#### ', '').strip()
+        elif line.startswith('- **') and ':' in line:
             key, value = line.split(':', 1)
-            key = key.strip()
+            key = key.replace('- **', '').replace('**', '').strip()
             value = value.strip()
-            if key in template['mandatory_fields'] or key in template['optional_fields']:
-                current_field = key
-                parsed_data[current_field] = value
-        elif current_field and line.strip():
-            parsed_data[current_field] += ' ' + line.strip()
+            parsed_data[key] = value
+        elif current_field and line:
+            if current_section:
+                if current_section not in parsed_data:
+                    parsed_data[current_section] = ''
+                parsed_data[current_section] += line + ' '
+            else:
+                parsed_data[current_field] += line + ' '
+
+    # 清理和格式化数据
+    for key, value in parsed_data.items():
+        parsed_data[key] = value.strip()
+
+    logging.info(f"Parsed data: {json.dumps(parsed_data, indent=2)}")
     return parsed_data
 
 def get_sheet_name(product_type):
