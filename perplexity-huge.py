@@ -135,34 +135,34 @@ def call_perplexity_api(prompt):
         return None
 
    def parse_api_response(response):
-       logging.info(f"Parsing response: {response}")
-       parsed_data = {}
-       current_field = None
+    logging.info(f"Parsing response: {response}")
+    parsed_data = {}
+    current_field = None
 
-       for line in response.split('\n'):
-           line = line.strip()
-           logging.info(f"Processing line: {line}")
-           if line.startswith('### '):
-               current_field = line.replace('### ', '').strip()
-               parsed_data[current_field] = ''
-               logging.info(f"Found field: {current_field}")
-           elif current_field and line:
-               parsed_data[current_field] += line + ' '
+    for line in response.split('\n'):
+        line = line.strip()
+        logging.info(f"Processing line: {line}")
+        if line.startswith('### '):
+            current_field = line.replace('### ', '').strip()
+            parsed_data[current_field] = ''
+            logging.info(f"Found field: {current_field}")
+        elif current_field and line:
+            parsed_data[current_field] += line + ' '
 
-       # 清理数据
-       for key, value in parsed_data.items():
-           parsed_data[key] = value.strip()
+    # 清理数据
+    for key, value in parsed_data.items():
+        parsed_data[key] = value.strip()
 
-       logging.info(f"Parsed data: {json.dumps(parsed_data, indent=2)}")
+    logging.info(f"Parsed data: {json.dumps(parsed_data, indent=2)}")
 
-       # 验证必填字段
-       required_fields = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Description (Descrizione)']
-       for field in required_fields:
-           if field not in parsed_data or not parsed_data[field]:
-               logging.warning(f"Missing required field: {field}")
-               return None
+    # 验证必填字段
+    required_fields = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Description (Descrizione)']
+    for field in required_fields:
+        if field not in parsed_data or not parsed_data[field]:
+            logging.warning(f"Missing required field: {field}")
+            return None
 
-       return parsed_data
+    return parsed_data
 
 def get_sheet_name(product_type):
     product_type = product_type.lower().strip()
