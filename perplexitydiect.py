@@ -6,7 +6,38 @@ from google.oauth2 import service_account
 import requests
 import logging
 
-# ... (前面的代码保持不变)
+# 设置日志
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+# 设置Google Sheets API
+SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
+SERVICE_ACCOUNT_FILE = '/home/ec2-user/google-credentials/photo-to-listing-e89218601911.json'
+credentials = service_account.Credentials.from_service_account_file(
+    SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+sheets_service = build('sheets', 'v4', credentials=credentials)
+
+# Perplexity API设置
+PERPLEXITY_API_KEY = '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'
+PERPLEXITY_API_URL = 'https://api.perplexity.ai/chat/completions'
+
+# Google spreadsheet ID
+SPREADSHEET_ID = '190TeRdEtXI9HXok8y2vomh_d26D0cyWgThArKQ_03_8'
+
+def read_spreadsheet(range_name):
+    sheet = sheets_service.spreadsheets()
+    result = sheet.values().get(spreadsheetId=SPREADSHEET_ID, range=range_name).execute()
+    values = result.get('values', [])
+    logging.info(f"Read {len(values)} rows from spreadsheet")
+    if not values:
+        logging.warning("No data found in spreadsheet")
+    return values
+
+def write_to_spreadsheet(range_name, values):
+    body = {'values': values}
+    sheets_service.spreadsheets().values().update(
+        spreadsheetId=SPREADSHEET_ID, range=range_name,
+        valueInputOption='USER_ENTERED', body=body).execute()
+    logging.info(f"Written {len(values)} rows to spreadsheet")
 
 def get_template(product_type):
     if not product_type:
@@ -88,7 +119,18 @@ def parse_api_response(response):
 
     return parsed_data
 
-# 移除 validate_product_type 函数
+def get_sheet_name(product_type):
+    product_type = product_type.lower().strip()
+    sheet_mapping = {
+        "shoes": "shoes",
+        "bag": "bag",
+        "clothing": "clothing",
+        "scarf": "scarf",
+        "belt": "belt",
+        "watch": "watch",
+        "other accessories": "other accessories"
+    }
+    return sheet_mapping.get(product_type, "unknown")
 
 def process_product(product_type, brand, style_number, index, max_retries=2):
     logging.info(f"Processing: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
@@ -124,8 +166,6 @@ def process_product(product_type, brand, style_number, index, max_retries=2):
 
     logging.error(f"Failed to process product after {max_retries} attempts")
     return None
-
-# ... (main 函数和其他部分保持不变)
 
 def main():
     logging.info(f"Current working directory: {os.getcwd()}")
