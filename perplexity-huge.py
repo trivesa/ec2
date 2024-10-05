@@ -26,6 +26,7 @@ SPREADSHEET_ID = '190TeRdEtXI9HXok8y2vomh_d26D0cyWgThArKQ_03_8'
 # 通用 prompt 指令
 GENERAL_INSTRUCTIONS = """
 Use the provided Brand, Product Type, and Style number to search for product details and complete the eBay product listing as per the below requirements:
+Create Title (Titolo), Subtitle (Sottotitolo) and Description (Descrizione).
 Find the Mandatory and Optional product information listed under 'Mandatory Fields' and 'Optional Fields'.
 IMPORTANT: You MUST use the EXACT field names as provided, including both English and Italian parts. Every field name should be in the format: 'English Name (Italian Name)'. Do not omit or change any part of the field names.
 If any fields have no information available on the internet, or you cannot find it, use 'N/A' as the value.
@@ -36,14 +37,18 @@ Provide detailed information about materials used and manufacturing processes.
 The tone should be professional and follow a minimalist style.
 Ensure all field names in your response follow the 'English (Italian)' format, even if you're only able to provide information for the English part.
 
-Instructions for the Title:
+Instructions for the Title (Titolo):
 - Brand Name: Include the brand for recognition (e.g., 'Nike').
 - Product Type: Clearly state what the item is (e.g., 'Men's Running Shoes').
 - Key Features: Include important features such as model name, color, or technology (e.g., 'Air Max', 'Black/White', 'Flyknit').
 - Size: If possible, include the size range (e.g., 'US 8-13').
 - Style Number: ALWAYS include the style number at the end of the title.
 
-Instructions for the Description:
+Instructions for the subtitle (Sottotitolo)
+Complementary: It should add value beyond what the main title already says.
+Concise: Keep it short and clear, under 55 characters.
+
+Instructions for the Description (Descrizione):
 1. Catchy Introduction: Start with a brief, engaging statement that highlights the product's key features or benefits.
 2. Unique Selling Point: Explain what makes this product stand out from similar items.
 3. Key Features and Benefits: Focus on the most important features (technology, materials, design) and explain how they benefit the user.
