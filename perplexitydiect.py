@@ -59,6 +59,7 @@ def get_template(product_type):
     except json.JSONDecodeError:
         logging.error(f"Error decoding JSON from file: {abs_template_file}")
         return None
+
 def generate_prompt(template, brand, product_type, style_number):
     prompt = f"Brand: {brand}\nProduct Type: {product_type}\nStyle Number: {style_number}\n\n"
     prompt += json.dumps(template, indent=2)
@@ -70,13 +71,17 @@ def call_perplexity_api(prompt):
         'Content-Type': 'application/json'
     }
     data = {
-        'model': 'llama-3.1-sonar-large-128k-online',
+        'model': 'llama-3.1-sonar-huge-128k-online',
         'messages': [
             {'role': 'system', 'content': 'You are an eBay fashion product listing expert.'},
             {'role': 'user', 'content': prompt}
         ],
-        'max_tokens': 500,
-        'temperature': 0.7
+        'max_tokens': 1000,
+        'temperature': 0.2,
+        'top_p': 0.9,
+        'return_citations': True,
+        'search_recency_filter': 'month',
+        'frequency_penalty': 1
     }
     response = requests.post(PERPLEXITY_API_URL, headers=headers, json=data)
     response_json = response.json()
