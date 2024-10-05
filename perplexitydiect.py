@@ -6,43 +6,12 @@ from google.oauth2 import service_account
 import requests
 import logging
 
-# 设置日志
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-# 设置Google Sheets API
-SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-SERVICE_ACCOUNT_FILE = '/home/ec2-user/google-credentials/photo-to-listing-e89218601911.json'
-credentials = service_account.Credentials.from_service_account_file(
-    SERVICE_ACCOUNT_FILE, scopes=SCOPES)
-sheets_service = build('sheets', 'v4', credentials=credentials)
-
-# Perplexity API设置
-PERPLEXITY_API_KEY = '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'
-PERPLEXITY_API_URL = 'https://api.perplexity.ai/chat/completions'
-
-# Google spreadsheet ID
-SPREADSHEET_ID = '190TeRdEtXI9HXok8y2vomh_d26D0cyWgThArKQ_03_8'
-
-def read_spreadsheet(range_name):
-    sheet = sheets_service.spreadsheets()
-    result = sheet.values().get(spreadsheetId=SPREADSHEET_ID, range=range_name).execute()
-    values = result.get('values', [])
-    logging.info(f"Read {len(values)} rows from spreadsheet")
-    if not values:
-        logging.warning("No data found in spreadsheet")
-    return values
-
-def write_to_spreadsheet(range_name, values):
-    body = {'values': values}
-    sheets_service.spreadsheets().values().update(
-        spreadsheetId=SPREADSHEET_ID, range=range_name,
-        valueInputOption='USER_ENTERED', body=body).execute()
-    logging.info(f"Written {len(values)} rows to spreadsheet")
+# ... (前面的代码保持不变)
 
 def get_template(product_type):
     if not product_type:
         logging.error("Product type is empty")
-        return None
+        return None, None
     
     product_type = product_type.lower().replace(" ", "_")
     template_file = f'templates/{product_type}_template.json'
@@ -51,22 +20,22 @@ def get_template(product_type):
     
     if not os.path.exists(abs_template_file):
         logging.error(f"Template file does not exist: {abs_template_file}")
-        return None
+        return None, None
     
     try:
         with open(abs_template_file, 'r') as file:
-            return json.load(file)
+            return json.load(file), product_type
     except json.JSONDecodeError:
         logging.error(f"Error decoding JSON from file: {abs_template_file}")
-        return None
+        return None, None
 
 def generate_prompt(template, brand, product_type, style_number):
     prompt = f"Brand: {brand}\nProduct Type: {product_type}\nStyle Number: {style_number}\n\n"
-    prompt += "First, confirm the exact product type. Then, generate a detailed eBay listing based on the following template:\n\n"
+    prompt += "Generate a detailed eBay listing based on the following template:\n\n"
     prompt += json.dumps(template, indent=2)
     return prompt
 
-def call_perplexity_api(prompt, expected_product_type):
+def call_perplexity_api(prompt):
     headers = {
         'Authorization': f'Bearer {PERPLEXITY_API_KEY}',
         'Content-Type': 'application/json'
@@ -89,12 +58,12 @@ def call_perplexity_api(prompt, expected_product_type):
         response.raise_for_status()
         response_json = response.json()
         content = response_json['choices'][0]['message']['content']
-        return parse_api_response(content, expected_product_type)
+        return parse_api_response(content)
     except Exception as e:
         logging.error(f"Error calling Perplexity API: {str(e)}")
         return None
 
-def parse_api_response(response, expected_product_type):
+def parse_api_response(response):
     parsed_data = {}
     current_field = None
 
@@ -110,13 +79,6 @@ def parse_api_response(response, expected_product_type):
     for key, value in parsed_data.items():
         parsed_data[key] = value.strip()
 
-    # 验证产品类型
-    if 'Type' in parsed_data:
-        actual_product_type = parsed_data['Type'].lower()
-        if expected_product_type.lower() not in actual_product_type:
-            logging.warning(f"Product type mismatch. Expected: {expected_product_type}, Got: {actual_product_type}")
-            return None
-
     # 验证必填字段
     required_fields = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Description (Descrizione)']
     for field in required_fields:
@@ -126,35 +88,7 @@ def parse_api_response(response, expected_product_type):
 
     return parsed_data
 
-def validate_product_type(parsed_data, expected_type):
-    keywords = {
-        "耳坠": ["earring", "ear drop", "dangle", "stud"],
-        "眼镜盒": ["sunglasses case", "eyewear case", "glasses case"],
-        # 添加更多产品类型和相关关键词
-    }
-    
-    description = parsed_data.get('Description (Descrizione)', '').lower()
-    expected_keywords = keywords.get(expected_type.lower(), [])
-    
-    for keyword in expected_keywords:
-        if keyword in description:
-            return True
-    
-    logging.warning(f"Product type validation failed. Expected: {expected_type}")
-    return False
-
-def get_sheet_name(product_type):
-    product_type = product_type.lower().strip()
-    sheet_mapping = {
-        "shoes": "shoes",
-        "bag": "bag",
-        "clothing": "clothing",
-        "scarf": "scarf",
-        "belt": "belt",
-        "watch": "watch",
-        "other accessories": "other accessories"
-    }
-    return sheet_mapping.get(product_type, "unknown")
+# 移除 validate_product_type 函数
 
 def process_product(product_type, brand, style_number, index, max_retries=2):
     logging.info(f"Processing: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
@@ -168,17 +102,17 @@ def process_product(product_type, brand, style_number, index, max_retries=2):
         logging.warning(f"Unknown product type: {product_type}")
         return None
 
-    template = get_template(product_type)
+    template, validated_product_type = get_template(product_type)
     if not template:
         logging.warning(f"Skipping row {index} due to missing template for product type: {product_type}")
         return None
 
     for attempt in range(max_retries):
-        prompt = generate_prompt(template, brand, product_type, style_number)
-        parsed_data = call_perplexity_api(prompt, product_type)
+        prompt = generate_prompt(template, brand, validated_product_type, style_number)
+        parsed_data = call_perplexity_api(prompt)
         
-        if parsed_data and validate_product_type(parsed_data, product_type):
-            logging.info(f"Parsed data for {product_type} - {brand} - {style_number}:\n{json.dumps(parsed_data, indent=2)}")
+        if parsed_data:
+            logging.info(f"Parsed data for {validated_product_type} - {brand} - {style_number}:\n{json.dumps(parsed_data, indent=2)}")
 
             output_data = []
             for field in template['mandatory_fields'] + template['optional_fields']:
@@ -190,6 +124,8 @@ def process_product(product_type, brand, style_number, index, max_retries=2):
 
     logging.error(f"Failed to process product after {max_retries} attempts")
     return None
+
+# ... (main 函数和其他部分保持不变)
 
 def main():
     logging.info(f"Current working directory: {os.getcwd()}")
