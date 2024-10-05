@@ -79,7 +79,9 @@ def call_perplexity_api(prompt):
         'temperature': 0.7
     }
     response = requests.post(PERPLEXITY_API_URL, headers=headers, json=data)
-    return response.json()['choices'][0]['message']['content']
+    response_json = response.json()
+    logging.info(f"Perplexity API raw response: {response_json}")
+    return response_json['choices'][0]['message']['content']
 
 def parse_api_response(response, template):
     parsed_data = {}
@@ -131,11 +133,13 @@ def process_product(product_type, brand, style_number, index):
     try:
         api_response = call_perplexity_api(prompt)
         logging.info("Successfully called Perplexity API")
+        logging.info(f"API response content:\n{api_response}")
     except Exception as e:
         logging.error(f"Error calling Perplexity API: {str(e)}")
         return None
 
     parsed_data = parse_api_response(api_response, template)
+    logging.info(f"Parsed data: {json.dumps(parsed_data, indent=2)}")
 
     output_data = []
     for field in template['mandatory_fields'] + template['optional_fields']:
