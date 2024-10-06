@@ -5,6 +5,7 @@ from googleapiclient.discovery import build
 from google.oauth2 import service_account
 import requests
 import logging
+import re
 
 # 设置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -102,10 +103,31 @@ def get_template(product_type):
         return None, None
 
 def generate_prompt(template, brand, product_type, style_number):
-    prompt = f"Brand: {brand}\nProduct Type: {product_type}\nStyle Number: {style_number}\n\n"
-    prompt += GENERAL_INSTRUCTIONS
-    prompt += "\nGenerate a detailed eBay listing based on the following template:\n\n"
-    prompt += json.dumps(template, indent=2)
+    prompt = f"""
+    Brand: {brand}
+    Product Type: {product_type}
+    Style Number: {style_number}
+
+    Please generate a detailed eBay listing using the following format:
+
+    **Title (Titolo):** [Generate a concise, descriptive title]
+    **Subtitle (Sottotitolo):** [Generate a brief, catchy subtitle]
+    **Description (Descrizione):**
+    [Generate a detailed, multi-paragraph description]
+
+    **Mandatory Fields:**
+    """
+    
+    for field in template['mandatory_fields']:
+        prompt += f"\n**{field}:** [Generate appropriate content]"
+    
+    prompt += "\n\n**Optional Fields:**"
+    
+    for field in template['optional_fields']:
+        prompt += f"\n**{field}:** [Generate appropriate content if available, or 'N/A' if not applicable]"
+    
+    prompt += "\n\n" + GENERAL_INSTRUCTIONS
+    
     return prompt
 
 def call_perplexity_api(prompt):
@@ -137,17 +159,35 @@ def call_perplexity_api(prompt):
         logging.error(f"Error calling Perplexity API: {str(e)}")
         return None
 
-import re
-import json
-
 def get_sheet_name(product_type):
     return product_type.lower().strip().replace(" ", "_")
 
 def extract_fields_from_response(raw_response, template):
     extracted_data = {}
-    for field in template['mandatory_fields'] + template['optional_fields']:
-        field_match = re.search(rf'{re.escape(field)}:\s*(.+)', raw_response, re.IGNORECASE | re.MULTILINE)
-        extracted_data[field] = field_match.group(1).strip() if field_match else 'N/A'
+    
+    # 提取 Title, Subtitle, 和 Description
+    title_match = re.search(r'\*\*Title \(Titolo\):\*\* (.+)', raw_response)
+    subtitle_match = re.search(r'\*\*Subtitle \(Sottotitolo\):\*\* (.+)', raw_response)
+    description_match = re.search(r'\*\*Description \(Descrizione\):\*\*\n([\s\S]+?)(?=\n\n\*\*|$)', raw_response)
+    
+    if title_match:
+        extracted_data['Title (Titolo)'] = title_match.group(1).strip()
+    if subtitle_match:
+        extracted_data['Subtitle (Sottotitolo)'] = subtitle_match.group(1).strip()
+    if description_match:
+        extracted_data['Description (Descrizione)'] = description_match.group(1).strip()
+    
+    # 提取其他字段
+    all_fields = template['mandatory_fields'] + template['optional_fields']
+    for field in all_fields:
+        if field not in extracted_data:  # 避免覆盖已提取的特殊字段
+            field_match = re.search(rf'\*\*{re.escape(field)}:\*\* (.+)', raw_response, re.IGNORECASE | re.MULTILINE)
+            if field_match:
+                extracted_data[field] = field_match.group(1).strip()
+            else:
+                extracted_data[field] = 'N/A'
+                logging.warning(f"Field '{field}' not found in API response")
+    
     return extracted_data
 
 def process_product(product_type, brand, style_number, index, max_retries=2):
@@ -170,6 +210,7 @@ def process_product(product_type, brand, style_number, index, max_retries=2):
         if raw_response:
             logging.info(f"Raw API Response received for {product_type} - {brand} - {style_number}")
             extracted_data = extract_fields_from_response(raw_response, template)
+            logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
             return sheet_name, extracted_data
         else:
             logging.warning("API call failed or returned empty response")
