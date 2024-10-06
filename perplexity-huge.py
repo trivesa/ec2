@@ -49,16 +49,20 @@ Complementary: It should add value beyond what the main title already says.
 Concise: Keep it short and clear, under 55 characters.
 
 Instructions for the Description (Descrizione):
-1. Catchy Introduction: Start with a brief, engaging statement that highlights the product's key features or benefits.
-2. Unique Selling Point: Explain what makes this product stand out from similar items.
-3. Key Features and Benefits: Focus on the most important features (technology, materials, design) and explain how they benefit the user.
-4. Product Specifications: Provide specific details about the product's characteristics and any proprietary technologies used.
-5. Fit and Sizing: Offer detailed information about the fit, including size options and how the product compares to standard sizing.
-6. Materials and Construction: Describe the materials used in different parts of the product and any special manufacturing processes.
-7. Performance and Usage: Explain what activities or occasions the product is best suited for.
-8. Care Instructions: Provide guidance on how to clean and maintain the product.
-9. Warranty and Returns: Mention any warranty information and your return policy.
-10. Call to Action: Encourage the buyer to make a purchase, highlighting any limited availability or special offers.
+Create a comprehensive product description that includes the following elements, but do not use these as headings in the final description:
+1. Start with a brief, engaging statement that highlights the product's key features or benefits.
+2. Explain what makes this product stand out from similar items.
+3. Focus on the most important features (technology, materials, design) and explain how they benefit the user.
+4. Provide specific details about the product's characteristics and any proprietary technologies used.
+5. Offer detailed information about the fit, including size options and how the product compares to standard sizing.
+6. Describe the materials used in different parts of the product and any special manufacturing processes.
+7. Explain what activities or occasions the product is best suited for.
+8. Provide guidance on how to clean and maintain the product.
+9. Mention any warranty information and your return policy.
+10. Conclude with an encouragement for the buyer to make a purchase, highlighting any limited availability or special offers.
+
+Combine all these elements into a cohesive, flowing description without using separate headings or sections.
+...
 """
 
 def read_spreadsheet(range_name):
@@ -133,7 +137,6 @@ def call_perplexity_api(prompt):
     except Exception as e:
         logging.error(f"Error calling Perplexity API: {str(e)}")
         return None
-
 def parse_api_response(response, product_type, brand, style_number):
     logging.info(f"Parsing response")
     parsed_data = {}
@@ -150,6 +153,15 @@ def parse_api_response(response, product_type, brand, style_number):
     # 清理数据
     for key, value in parsed_data.items():
         parsed_data[key] = value.strip()
+
+    # 清理描述中的子标题
+    if 'Description (Descrizione)' in parsed_data:
+        description_lines = parsed_data['Description (Descrizione)'].split('\n')
+        cleaned_description = []
+        for line in description_lines:
+            if not any(subtitle in line.lower() for subtitle in ['catchy introduction:', 'unique selling point:', 'key features and benefits:', 'product specifications:', 'fit and sizing:', 'materials and construction:', 'performance and usage:', 'care instructions:', 'warranty and returns:', 'call to action:']):
+                cleaned_description.append(line)
+        parsed_data['Description (Descrizione)'] = ' '.join(cleaned_description).strip()
 
     logging.info(f"Parsed data: {json.dumps(parsed_data, indent=2)}")
 
