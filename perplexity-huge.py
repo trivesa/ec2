@@ -24,9 +24,9 @@ PERPLEXITY_API_URL = 'https://api.perplexity.ai/chat/completions'
 # Google spreadsheet ID
 SPREADSHEET_ID = '190TeRdEtXI9HXok8y2vomh_d26D0cyWgThArKQ_03_8'
 
-# 通用 prompt 指令
 GENERAL_INSTRUCTIONS = """
 Use the provided Brand, Product Type, and Style number to search for product details and complete the eBay product listing as per the below requirements:
+
 Create Title (Titolo), Subtitle (Sottotitolo) and Description (Descrizione).
 Find the Mandatory and Optional product information listed under 'Mandatory Fields' and 'Optional Fields'.
 IMPORTANT: You MUST use the EXACT field names as provided, including both English and Italian parts. Every field name should be in the format: 'English Name (Italian Name)'. Do not omit or change any part of the field names.
@@ -50,21 +50,40 @@ Complementary: It should add value beyond what the main title already says.
 Concise: Keep it short and clear, under 55 characters.
 
 Instructions for the Description (Descrizione):
-Create a comprehensive product description that includes the following elements, but do not use these as headings in the final description:
-1. Start with a brief, engaging statement that highlights the product's key features or benefits.
-2. Explain what makes this product stand out from similar items.
-3. Focus on the most important features (technology, materials, design) and explain how they benefit the user.
-4. Provide specific details about the product's characteristics and any proprietary technologies used.
-5. Offer detailed information about the fit, including size options and how the product compares to standard sizing.
-6. Describe the materials used in different parts of the product and any special manufacturing processes.
-7. Explain what activities or occasions the product is best suited for.
-8. Provide guidance on how to clean and maintain the product.
-9. Mention any warranty information and your return policy.
-10. Conclude with an encouragement for the buyer to make a purchase, highlighting any limited availability or special offers.
+Create a comprehensive product description using bullet points for better readability. Include the following elements:
 
-Combine all these elements into a cohesive, flowing description without using separate headings or sections.
+• Product Overview:
+  - Brief, engaging statement highlighting key features or benefits
+  - Explanation of what makes this product stand out
+
+• Key Features:
+  - Focus on the most important features (technology, materials, design)
+  - Explain how these features benefit the user
+  - Provide specific details about product characteristics and proprietary technologies
+
+• Size and Fit:
+  - Detailed information about fit, including size options
+  - Comparison to standard sizing
+
+• Materials and Construction:
+  - Description of materials used in different parts of the product
+  - Information on special manufacturing processes
+
+• Intended Use:
+  - Explanation of activities or occasions the product is best suited for
+
+• Care Instructions:
+  - Guidance on how to clean and maintain the product
+
+• After-Sales:
+  - Mention of warranty information and return policy within 14 days according to the European regulations.
+
+• Purchase Encouragement:
+  - Conclusion encouraging the buyer to make a purchase
+  - Highlight any limited availability or special offers
+
+Combine all these elements into a cohesive, flowing description using bullet points, without separate headings or sections. Ensure the description is easy to read, informative, and engaging.
 """
-
 def read_spreadsheet(range_name):
     sheet = sheets_service.spreadsheets()
     result = sheet.values().get(spreadsheetId=SPREADSHEET_ID, range=range_name).execute()
