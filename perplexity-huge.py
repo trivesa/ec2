@@ -25,7 +25,7 @@ PERPLEXITY_API_URL = 'https://api.perplexity.ai/chat/completions'
 SPREADSHEET_ID = '190TeRdEtXI9HXok8y2vomh_d26D0cyWgThArKQ_03_8'
 
 GENERAL_INSTRUCTIONS = """
-Use the provided Brand, Product Type, and Style number to search for product details and complete the eBay product listing as per the below requirements:
+Use the provided Brand, Product Type, Style number, Additional Information, and Size Information to search for product details and complete the eBay product listing as per the below requirements:
 
 Create Title (Titolo), Subtitle (Sottotitolo), Short Description (Breve Descrizione), and Description (Descrizione).
 Find the Mandatory and Optional product information listed under 'Mandatory Fields' and 'Optional Fields'.
@@ -123,12 +123,20 @@ def get_template(product_type):
     except json.JSONDecodeError:
         logging.error(f"Error decoding JSON from file: {abs_template_file}")
         return None, None
-        
-def generate_prompt(template, brand, product_type, style_number):
+
+def get_size_info(row):
+    for cell in row:
+        if cell.strip():
+            return f"Size {cell.strip()}"
+    return ""
+
+def generate_prompt(template, brand, product_type, style_number, additional_info, size_info):
     prompt = f"""
     Brand: {brand}
     Product Type: {product_type}
     Style Number: {style_number}
+    Additional Information: {additional_info}
+    Size Information: {size_info}
 
     Please generate a detailed eBay listing using the following format:
 
@@ -256,8 +264,8 @@ def extract_fields_from_response(raw_response, template):
     logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
     return extracted_data
 
-def process_product(product_type, brand, style_number, index, max_retries=2):
-    logging.info(f"Processing: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
+def process_product(product_type, brand, style_number, additional_info, size_info, index, max_retries=2):
+    logging.info(f"Processing: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}', Additional Info: '{additional_info}', Size Info: '{size_info}'")
 
     if not product_type:
         logging.warning(f"Skipping row {index} due to empty product type")
@@ -273,6 +281,8 @@ def process_product(product_type, brand, style_number, index, max_retries=2):
         # Generate product description
         description_prompt = f"""
         Generate a detailed product description for {brand} {product_type} with style number {style_number}.
+        Additional Information: {additional_info}
+        Size Information: {size_info}
         Please format your response exactly as follows:
 
         **Title (Titolo):** [Your title here]
@@ -289,9 +299,11 @@ def process_product(product_type, brand, style_number, index, max_retries=2):
             logging.warning(f"Failed to generate description on attempt {attempt + 1}")
             continue
 
-        # 生成 Mandatory 和 Optional 字段
+        # Generate Mandatory and Optional fields
         fields_prompt = f"""
         For the {brand} {product_type} with style number {style_number}, 
+        Additional Information: {additional_info}
+        Size Information: {size_info}
         provide information for the following fields. Use 'N/A' if the information is not available or not applicable.
 
         Mandatory Fields:
@@ -308,10 +320,14 @@ def process_product(product_type, brand, style_number, index, max_retries=2):
             logging.warning(f"Failed to generate fields on attempt {attempt + 1}")
             continue
 
-        # 分别处理描述和字段
+        # Process description and fields separately
         description_data = extract_fields_from_response(description_response, template)
         fields_data = extract_fields_from_response(fields_response, template)
         extracted_data = {**description_data, **fields_data}
+        
+        # Add size information to the title
+        if 'Title (Titolo)' in extracted_data and size_info:
+            extracted_data['Title (Titolo)'] += f" {size_info}"
         
         logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
         return sheet_name, extracted_data
@@ -322,15 +338,17 @@ def process_product(product_type, brand, style_number, index, max_retries=2):
 def main():
     logging.info(f"Current working directory: {os.getcwd()}")
     
-    # 读取产品信息
+    # Read product information
     product_types = read_spreadsheet('Sheet1!E2:E')
     brands = read_spreadsheet('Sheet1!F2:F')
     style_numbers = read_spreadsheet('Sheet1!I2:I')
+    additional_info = read_spreadsheet('Sheet1!J2:J')
+    size_info = read_spreadsheet('Sheet1!K2:X')
     
-    logging.info(f"Read {len(product_types)} product types, {len(brands)} brands, and {len(style_numbers)} style numbers")
+    logging.info(f"Read {len(product_types)} product types, {len(brands)} brands, {len(style_numbers)} style numbers, {len(additional_info)} additional info entries, and {len(size_info)} size info entries")
     
-    # 找出最短的列的长度
-    min_length = min(len(product_types), len(brands), len(style_numbers))
+    # Find the length of the shortest column
+    min_length = min(len(product_types), len(brands), len(style_numbers), len(additional_info), len(size_info))
     
     if min_length == 0:
         logging.error("One or more columns are empty. Please check the spreadsheet.")
@@ -338,44 +356,46 @@ def main():
 
     logging.info(f"Processing {min_length} rows with complete data")
 
-    # 用于存储每个sheet的数据
+    # Store data for each sheet
     sheet_data = {}
     
     for index in range(min_length):
         product_type = str(product_types[index][0]).strip() if product_types[index] else ""
         brand = str(brands[index][0]).strip() if brands[index] else ""
         style_number = str(style_numbers[index][0]).strip() if style_numbers[index] else ""
+        add_info = str(additional_info[index][0]).strip() if additional_info[index] else ""
+        size = get_size_info(size_info[index]) if size_info[index] else ""
         
         if not all([product_type, brand, style_number]):
             logging.warning(f"Skipping row {index+2} due to missing data: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
             continue
         
-        result = process_product(product_type, brand, style_number, index+2)
+        result = process_product(product_type, brand, style_number, add_info, size, index+2)
         if result:
             sheet_name, extracted_data = result
             if sheet_name not in sheet_data:
                 sheet_data[sheet_name] = []
             sheet_data[sheet_name].append(extracted_data)
 
-    # 将数据写入相应的sheet
+    # Write data to respective sheets
     for sheet_name, data in sheet_data.items():
         try:
             if ensure_sheet_exists(sheet_name):
-                # 获取sheet的字段名（第一行）
+                # Get field names (first row) of the sheet
                 field_names = sheets_service.spreadsheets().values().get(
                     spreadsheetId=SPREADSHEET_ID, range=f"'{sheet_name}'!A1:ZZ1").execute().get('values', [[]])[0]
 
-                # 准备要写入的数据
+                # Prepare data to write
                 rows_to_write = []
                 for item in data:
                     row = [item.get(field, 'N/A') for field in field_names]
                     rows_to_write.append(row)
 
-                # 获取sheet的当前行数
+                # Get current row count of the sheet
                 sheet_info = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID, ranges=[f"'{sheet_name}'"], includeGridData=True).execute()
                 current_row = len(sheet_info['sheets'][0]['data'][0]['rowData']) + 1
 
-                # 写入数据
+                # Write data
                 range_name = f"'{sheet_name}'!A{current_row}"
                 write_to_spreadsheet(range_name, rows_to_write)
                 logging.info(f"Successfully wrote {len(rows_to_write)} rows to sheet '{sheet_name}'")
