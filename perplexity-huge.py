@@ -27,7 +27,7 @@ SPREADSHEET_ID = '190TeRdEtXI9HXok8y2vomh_d26D0cyWgThArKQ_03_8'
 GENERAL_INSTRUCTIONS = """
 Use the provided Brand, Product Type, and Style number to search for product details and complete the eBay product listing as per the below requirements:
 
-Create Title (Titolo), Subtitle (Sottotitolo) and Description (Descrizione).
+Create Title (Titolo), Subtitle (Sottotitolo), Short Description (Breve Descrizione), and Description (Descrizione).
 Find the Mandatory and Optional product information listed under 'Mandatory Fields' and 'Optional Fields'.
 IMPORTANT: You MUST use the EXACT field names as provided, including both English and Italian parts. Every field name should be in the format: 'English Name (Italian Name)'. Do not omit or change any part of the field names.
 If any fields have no information available on the internet, or you cannot find it, use 'N/A' as the value.
@@ -134,6 +134,7 @@ def generate_prompt(template, brand, product_type, style_number):
 
     **Title (Titolo):** [Generate a concise, descriptive title]
     **Subtitle (Sottotitolo):** [Generate a brief, catchy subtitle]
+    **Short Description (Breve Descrizione):** [Generate a brief summary of the product, about 2-3 sentences]
     **Description (Descrizione):** [Generate a detailed, multi-paragraph description]
     
     **Mandatory Fields:**
@@ -215,9 +216,10 @@ def extract_fields_from_response(raw_response, template):
     logging.info(f"Raw response to extract: {raw_response}")
     extracted_data = {}
     
-    # 提取 Title, Subtitle, 和 Description
+    # Extract Title, Subtitle, Short Description, and Description
     title_match = re.search(r'\*\*Title \(Titolo\):\*\* (.+)', raw_response)
     subtitle_match = re.search(r'\*\*Subtitle \(Sottotitolo\):\*\* (.+)', raw_response)
+    short_description_match = re.search(r'\*\*Short Description \(Breve Descrizione\):\*\* (.+)', raw_response)
     description_match = re.search(r'\*\*Description \(Descrizione\):\*\*\n([\s\S]+?)(?=\n\n\*\*|$)', raw_response)
     
     if title_match:
@@ -230,10 +232,17 @@ def extract_fields_from_response(raw_response, template):
     else:
         logging.warning("Failed to extract Subtitle")
     
+    if short_description_match:
+        extracted_data['Short Description (Breve Descrizione)'] = short_description_match.group(1).strip()
+    else:
+        logging.warning("Failed to extract Short Description")
+    
     if description_match:
         extracted_data['Description (Descrizione)'] = description_match.group(1).strip()
     else:
         logging.warning("Failed to extract Description")
+    
+    # ... rest of the function remains the same
     
     # 提取其他字段
     all_fields = template['mandatory_fields'] + template['optional_fields']
@@ -263,13 +272,14 @@ def process_product(product_type, brand, style_number, index, max_retries=2):
         return None
 
     for attempt in range(max_retries):
-        # 生成产品描述
+        # Generate product description
         description_prompt = f"""
         Generate a detailed product description for {brand} {product_type} with style number {style_number}.
         Please format your response exactly as follows:
 
         **Title (Titolo):** [Your title here]
         **Subtitle (Sottotitolo):** [Your subtitle here]
+        **Short Description (Breve Descrizione):** [Your brief summary here, about 2-3 sentences]
         **Description (Descrizione):**
         [Your multi-line description here]
 
