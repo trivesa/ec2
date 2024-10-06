@@ -137,6 +137,7 @@ def call_perplexity_api(prompt):
     except Exception as e:
         logging.error(f"Error calling Perplexity API: {str(e)}")
         return None
+
 def parse_api_response(response, product_type, brand, style_number):
     logging.info(f"Parsing response")
     parsed_data = {}
@@ -144,14 +145,18 @@ def parse_api_response(response, product_type, brand, style_number):
 
     for line in response.split('\n'):
         line = line.strip()
-        if line.startswith('### '):
-            current_section = line.replace('### ', '').strip()
+        if line.startswith('**') and line.endswith(':**'):
+            current_section = line.strip('*: ')
             parsed_data[current_section] = {}
-        elif line.startswith('- **') and current_section:
-            key, value = line.split(':', 1)
-            key = key.replace('- **', '').replace('**', '').strip()
-            value = value.strip()
-            parsed_data[current_section][key] = value
+        elif line.startswith('###'):
+            current_section = line.strip('# ')
+            parsed_data[current_section] = {}
+        elif line.startswith('1. **') or line.startswith('- **'):
+            if current_section:
+                key, value = line.split(':', 1)
+                key = key.replace('1. **', '').replace('- **', '').replace('**', '').strip()
+                value = value.strip()
+                parsed_data[current_section][key] = value
 
     logging.info(f"Parsed data: {json.dumps(parsed_data, indent=2)}")
 
