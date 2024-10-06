@@ -347,14 +347,14 @@ def main():
     
     logging.info(f"Read {len(product_types)} product types, {len(brands)} brands, {len(style_numbers)} style numbers, {len(additional_info)} additional info entries, and {len(size_info)} size info entries")
     
-    # Find the length of the shortest column
-    min_length = min(len(product_types), len(brands), len(style_numbers), len(additional_info), len(size_info))
+    # Find the length of the mandatory columns
+    min_length = min(len(product_types), len(brands), len(style_numbers))
     
     if min_length == 0:
-        logging.error("One or more columns are empty. Please check the spreadsheet.")
+        logging.error("One or more mandatory columns are empty. Please check the spreadsheet.")
         return
 
-    logging.info(f"Processing {min_length} rows with complete data")
+    logging.info(f"Processing {min_length} rows with mandatory data")
 
     # Store data for each sheet
     sheet_data = {}
@@ -363,11 +363,11 @@ def main():
         product_type = str(product_types[index][0]).strip() if product_types[index] else ""
         brand = str(brands[index][0]).strip() if brands[index] else ""
         style_number = str(style_numbers[index][0]).strip() if style_numbers[index] else ""
-        add_info = str(additional_info[index][0]).strip() if additional_info[index] else ""
-        size = get_size_info(size_info[index]) if size_info[index] else ""
+        add_info = str(additional_info[index][0]).strip() if index < len(additional_info) and additional_info[index] else ""
+        size = get_size_info(size_info[index]) if index < len(size_info) and size_info[index] else ""
         
         if not all([product_type, brand, style_number]):
-            logging.warning(f"Skipping row {index+2} due to missing data: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
+            logging.warning(f"Skipping row {index+2} due to missing mandatory data: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
             continue
         
         result = process_product(product_type, brand, style_number, add_info, size, index+2)
