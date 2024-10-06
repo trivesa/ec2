@@ -129,23 +129,21 @@ def call_perplexity_api(prompt):
         response_json = response.json()
         content = response_json['choices'][0]['message']['content']
         logging.info(f"Raw API Response: {content}")
-        return parse_api_response(content)
+        return content  # 返回原始内容，而不是直接解析
     except Exception as e:
         logging.error(f"Error calling Perplexity API: {str(e)}")
         return None
 
 def parse_api_response(response):
-    logging.info(f"Parsing response: {response}")
+    logging.info(f"Parsing response")
     parsed_data = {}
     current_field = None
 
     for line in response.split('\n'):
         line = line.strip()
-        logging.info(f"Processing line: {line}")
         if line.startswith('### '):
             current_field = line.replace('### ', '').strip()
             parsed_data[current_field] = ''
-            logging.info(f"Found field: {current_field}")
         elif current_field and line:
             parsed_data[current_field] += line + ' '
 
@@ -163,19 +161,6 @@ def parse_api_response(response):
             return None
 
     return parsed_data
-
-def get_sheet_name(product_type):
-    product_type = product_type.lower().strip()
-    sheet_mapping = {
-        "shoes": "shoes",
-        "bag": "bag",
-        "clothing": "clothing",
-        "scarf": "scarf",
-        "belt": "belt",
-        "watch": "watch",
-        "other accessories": "other accessories"
-    }
-    return sheet_mapping.get(product_type, "unknown")
 
 def process_product(product_type, brand, style_number, index, max_retries=2):
     logging.info(f"Processing: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
@@ -196,18 +181,20 @@ def process_product(product_type, brand, style_number, index, max_retries=2):
 
     for attempt in range(max_retries):
         prompt = generate_prompt(template, brand, validated_product_type, style_number)
-        parsed_data = call_perplexity_api(prompt)
+        raw_response = call_perplexity_api(prompt)
         
-        if parsed_data:
-            logging.info(f"Parsed data for {validated_product_type} - {brand} - {style_number}:\n{json.dumps(parsed_data, indent=2)}")
+        if raw_response:
+            parsed_data = parse_api_response(raw_response)
+            if parsed_data:
+                logging.info(f"Parsed data for {validated_product_type} - {brand} - {style_number}:\n{json.dumps(parsed_data, indent=2)}")
 
-            output_data = []
-            for field in template['mandatory_fields'] + template['optional_fields']:
-                output_data.append(parsed_data.get(field, 'N/A'))
+                output_data = []
+                for field in template['mandatory_fields'] + template['optional_fields']:
+                    output_data.append(parsed_data.get(field, 'N/A'))
 
-            return sheet_name, output_data
-        else:
-            logging.warning(f"Attempt {attempt + 1} failed. Retrying...")
+                return sheet_name, output_data
+        
+        logging.warning(f"Attempt {attempt + 1} failed. Retrying...")
 
     logging.error(f"Failed to process product after {max_retries} attempts")
     return None
