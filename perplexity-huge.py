@@ -138,44 +138,46 @@ def call_perplexity_api(prompt):
         logging.error(f"Error calling Perplexity API: {str(e)}")
         return None
 
+import re
+import json
+import logging
+
 def parse_api_response(response, product_type, brand, style_number):
-    logging.info(f"Parsing response")
-    parsed_data = {}
-    current_section = None
+    logging.info(f"Parsing response using regex")
 
-    for line in response.split('\n'):
-        line = line.strip()
-        if line.startswith('**') and line.endswith(':**'):
-            current_section = line.strip('*: ')
-            parsed_data[current_section] = {}
-        elif line.startswith('###'):
-            current_section = line.strip('# ')
-            parsed_data[current_section] = {}
-        elif line.startswith('1. **') or line.startswith('- **'):
-            if current_section:
-                parts = line.split(':', 1)
-                if len(parts) == 2:
-                    key, value = parts
-                    key = key.replace('1. **', '').replace('- **', '').replace('**', '').strip()
-                    value = value.strip()
-                    parsed_data[current_section][key] = value
+    # 使用正则表达式提取字段
+    title_match = re.search(r'Title \(Titolo\):\s*(.+)', response)
+    subtitle_match = re.search(r'Subtitle \(Sottotitolo\):\s*(.+)', response)
+    description_match = re.search(r'Description \(Descrizione\):\s*([\s\S]+?)(?=\n\n|\Z)', response)
 
-    logging.info(f"Parsed data: {json.dumps(parsed_data, indent=2)}")
+    title = title_match.group(1) if title_match else None
+    subtitle = subtitle_match.group(1) if subtitle_match else None
+    description = description_match.group(1).strip() if description_match else None
 
-    # 提取字段
-    fields = parsed_data.get('Fields', {})
-    title = fields.get('Title (Titolo)')
-    subtitle = fields.get('Subtitle (Sottotitolo)')
-    description = fields.get('Description (Descrizione)')
+    # 提取强制字段和可选字段
+    mandatory_fields = {}
+    optional_fields = {}
 
-    if description is None:
-        description = ' '.join(value for key, value in fields.items() if key not in ['Title (Titolo)', 'Subtitle (Sottotitolo)'])
+    mandatory_match = re.search(r'Mandatory Fields:([\s\S]+?)(?=Optional Fields|\Z)', response)
+    optional_match = re.search(r'Optional Fields:([\s\S]+)', response)
 
-    # 清理描述中的子标题
-    if description:
-        description_lines = description.split('\n')
-        cleaned_description = [line for line in description_lines if not any(subtitle in line.lower() for subtitle in ['catchy introduction:', 'unique selling point:', 'key features and benefits:', 'product specifications:', 'fit and sizing:', 'materials and construction:', 'performance and usage:', 'care instructions:', 'warranty and returns:', 'call to action:'])]
-        description = ' '.join(cleaned_description).strip()
+    if mandatory_match:
+        mandatory_text = mandatory_match.group(1)
+        mandatory_fields = dict(re.findall(r'(\w+[^:]+):\s*(.+)', mandatory_text))
+
+    if optional_match:
+        optional_text = optional_match.group(1)
+        optional_fields = dict(re.findall(r'(\w+[^:]+):\s*(.+)', optional_text))
+
+    result = {
+        'Title (Titolo)': title,
+        'Subtitle (Sottotitolo)': subtitle,
+        'Description (Descrizione)': description,
+        **mandatory_fields,
+        **optional_fields
+    }
+
+    logging.info(f"Parsed data: {json.dumps(result, indent=2)}")
 
     # 添加关键词验证
     keywords = [product_type.lower(), brand.lower(), style_number.lower()]
@@ -183,14 +185,6 @@ def parse_api_response(response, product_type, brand, style_number):
     if not all(keyword in content for keyword in keywords):
         logging.warning(f"Generated content may not match the product. Missing keywords: {product_type}, {brand}, or {style_number}")
         return None
-
-    result = {
-        'Title (Titolo)': title,
-        'Subtitle (Sottotitolo)': subtitle,
-        'Description (Descrizione)': description,
-        **parsed_data.get('Mandatory Fields', {}),
-        **parsed_data.get('Optional Fields', {})
-    }
 
     return result
 
