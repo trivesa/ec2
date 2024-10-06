@@ -184,6 +184,7 @@ def get_sheet_name(product_type):
     return product_type.lower().strip().replace(" ", "_")
 
 def extract_fields_from_response(raw_response, template):
+    logging.info(f"Raw response to extract: {raw_response}")
     extracted_data = {}
     
     # 提取 Title, Subtitle, 和 Description
@@ -193,10 +194,18 @@ def extract_fields_from_response(raw_response, template):
     
     if title_match:
         extracted_data['Title (Titolo)'] = title_match.group(1).strip()
+    else:
+        logging.warning("Failed to extract Title")
+    
     if subtitle_match:
         extracted_data['Subtitle (Sottotitolo)'] = subtitle_match.group(1).strip()
+    else:
+        logging.warning("Failed to extract Subtitle")
+    
     if description_match:
         extracted_data['Description (Descrizione)'] = description_match.group(1).strip()
+    else:
+        logging.warning("Failed to extract Description")
     
     # 提取其他字段
     all_fields = template['mandatory_fields'] + template['optional_fields']
@@ -209,6 +218,7 @@ def extract_fields_from_response(raw_response, template):
                 extracted_data[field] = 'N/A'
                 logging.warning(f"Field '{field}' not found in API response")
     
+    logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
     return extracted_data
 
 def process_product(product_type, brand, style_number, index, max_retries=2):
@@ -228,7 +238,13 @@ def process_product(product_type, brand, style_number, index, max_retries=2):
         # 生成产品描述
         description_prompt = f"""
         Generate a detailed product description for {brand} {product_type} with style number {style_number}.
-        Include Title (Titolo), Subtitle (Sottotitolo), and Description (Descrizione).
+        Please format your response exactly as follows:
+
+        **Title (Titolo):** [Your title here]
+        **Subtitle (Sottotitolo):** [Your subtitle here]
+        **Description (Descrizione):**
+        [Your multi-line description here]
+
         Use bullet points for better readability in the description.
         """
         description_response = call_perplexity_api(description_prompt, 0.3)
@@ -256,9 +272,10 @@ def process_product(product_type, brand, style_number, index, max_retries=2):
             logging.warning(f"Failed to generate fields on attempt {attempt + 1}")
             continue
 
-        # 合并响应
-        combined_response = f"{description_response}\n\n{fields_response}"
-        extracted_data = extract_fields_from_response(combined_response, template)
+        # 分别处理描述和字段
+        description_data = extract_fields_from_response(description_response, template)
+        fields_data = extract_fields_from_response(fields_response, template)
+        extracted_data = {**description_data, **fields_data}
         
         logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
         return sheet_name, extracted_data
@@ -318,15 +335,15 @@ def main():
                 rows_to_write.append(row)
 
             # 获取sheet的当前行数
-            sheet_info = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID, ranges=[sheet_name], includeGridData=True).execute()
-            current_row = len(sheet_info['sheets'][0]['data'][0]['rowData']) + 1
+sheet_info = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID, ranges=[sheet_name], includeGridData=True).execute()
+current_row = len(sheet_info['sheets'][0]['data'][0]['rowData']) + 1
 
-            # 写入数据
-            range_name = f"{sheet_name}!A{current_row}"
-            write_to_spreadsheet(range_name, rows_to_write)
-            logging.info(f"Successfully wrote {len(rows_to_write)} rows to sheet '{sheet_name}'")
-        except Exception as e:
-            logging.error(f"Error writing to sheet '{sheet_name}': {str(e)}")
+# 写入数据
+range_name = f"{sheet_name}!A{current_row}"
+write_to_spreadsheet(range_name, rows_to_write)
+logging.info(f"Successfully wrote {len(rows_to_write)} rows to sheet '{sheet_name}'")
+    except Exception as e:
+        logging.error(f"Error writing to sheet '{sheet_name}': {str(e)}")
 
 if __name__ == '__main__':
     main()
