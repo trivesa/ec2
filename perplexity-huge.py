@@ -62,7 +62,6 @@ Create a comprehensive product description that includes the following elements,
 10. Conclude with an encouragement for the buyer to make a purchase, highlighting any limited availability or special offers.
 
 Combine all these elements into a cohesive, flowing description without using separate headings or sections.
-...
 """
 
 def read_spreadsheet(range_name):
@@ -133,73 +132,23 @@ def call_perplexity_api(prompt):
         response_json = response.json()
         content = response_json['choices'][0]['message']['content']
         logging.info(f"Raw API Response: {content}")
-        return content  # 返回原始内容，而不是直接解析
+        return content
     except Exception as e:
         logging.error(f"Error calling Perplexity API: {str(e)}")
         return None
 
 import re
 import json
-import logging
-
-def parse_api_response(response, product_type, brand, style_number):
-    logging.info(f"Parsing response using regex")
-
-    # 使用正则表达式提取字段
-    title_match = re.search(r'Title \(Titolo\):\s*(.+)', response)
-    subtitle_match = re.search(r'Subtitle \(Sottotitolo\):\s*(.+)', response)
-    description_match = re.search(r'Description \(Descrizione\):\s*([\s\S]+?)(?=\n\n|\Z)', response)
-
-    title = title_match.group(1) if title_match else None
-    subtitle = subtitle_match.group(1) if subtitle_match else None
-    description = description_match.group(1).strip() if description_match else None
-
-    # 提取强制字段和可选字段
-    mandatory_fields = {}
-    optional_fields = {}
-
-    mandatory_match = re.search(r'Mandatory Fields:([\s\S]+?)(?=Optional Fields|\Z)', response)
-    optional_match = re.search(r'Optional Fields:([\s\S]+)', response)
-
-    if mandatory_match:
-        mandatory_text = mandatory_match.group(1)
-        mandatory_fields = dict(re.findall(r'(\w+[^:]+):\s*(.+)', mandatory_text))
-
-    if optional_match:
-        optional_text = optional_match.group(1)
-        optional_fields = dict(re.findall(r'(\w+[^:]+):\s*(.+)', optional_text))
-
-    result = {
-        'Title (Titolo)': title,
-        'Subtitle (Sottotitolo)': subtitle,
-        'Description (Descrizione)': description,
-        **mandatory_fields,
-        **optional_fields
-    }
-
-    logging.info(f"Parsed data: {json.dumps(result, indent=2)}")
-
-    return result
-
-def validate_product_type(parsed_data, expected_type):
-    generated_type = parsed_data.get('Object Category (Categoria Oggetto)', '').lower()
-    if expected_type.lower() not in generated_type:
-        logging.warning(f"Generated product type '{generated_type}' does not match expected type '{expected_type}'")
-        return False
-    return True
 
 def get_sheet_name(product_type):
-    product_type = product_type.lower().strip()
-    sheet_mapping = {
-        "shoes": "shoes",
-        "bag": "bag",
-        "clothing": "clothing",
-        "scarf": "scarf",
-        "belt": "belt",
-        "watch": "watch",
-        "other accessories": "other accessories"
-    }
-    return sheet_mapping.get(product_type, "unknown")
+    return product_type.lower().strip().replace(" ", "_")
+
+def extract_fields_from_response(raw_response, template):
+    extracted_data = {}
+    for field in template['mandatory_fields'] + template['optional_fields']:
+        field_match = re.search(rf'{re.escape(field)}:\s*(.+)', raw_response, re.IGNORECASE | re.MULTILINE)
+        extracted_data[field] = field_match.group(1).strip() if field_match else 'N/A'
+    return extracted_data
 
 def process_product(product_type, brand, style_number, index, max_retries=2):
     logging.info(f"Processing: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
@@ -209,35 +158,19 @@ def process_product(product_type, brand, style_number, index, max_retries=2):
         return None
 
     sheet_name = get_sheet_name(product_type)
-    if sheet_name == "unknown":
-        logging.warning(f"Unknown product type: {product_type}")
-        return None
-
-    template, validated_product_type = get_template(product_type)
+    template, _ = get_template(product_type)
     if not template:
         logging.warning(f"Skipping row {index} due to missing template for product type: {product_type}")
         return None
 
     for attempt in range(max_retries):
-        prompt = generate_prompt(template, brand, validated_product_type, style_number)
+        prompt = generate_prompt(template, brand, product_type, style_number)
         raw_response = call_perplexity_api(prompt)
         
         if raw_response:
-            logging.info(f"Raw API Response received for {validated_product_type} - {brand} - {style_number}")
-            parsed_data = parse_api_response(raw_response, product_type, brand, style_number)
-            if parsed_data:
-                if validate_product_type(parsed_data, product_type):
-                    logging.info(f"Parsed data for {validated_product_type} - {brand} - {style_number}:\n{json.dumps(parsed_data, indent=2)}")
-
-                    output_data = []
-                    for field in template['mandatory_fields'] + template['optional_fields']:
-                        output_data.append(parsed_data.get(field, 'N/A'))
-
-                    return sheet_name, output_data
-                else:
-                    logging.warning(f"Product type validation failed. Generated type: {parsed_data.get('Object Category (Categoria Oggetto)', 'N/A')}, Expected type: {product_type}")
-            else:
-                logging.warning("Failed to parse API response")
+            logging.info(f"Raw API Response received for {product_type} - {brand} - {style_number}")
+            extracted_data = extract_fields_from_response(raw_response, template)
+            return sheet_name, extracted_data
         else:
             logging.warning("API call failed or returned empty response")
         
@@ -269,7 +202,6 @@ def main():
     sheet_data = {}
     
     for index in range(min_length):
-        # 确保每个值都是字符串，并去除首尾空白
         product_type = str(product_types[index][0]).strip() if product_types[index] else ""
         brand = str(brands[index][0]).strip() if brands[index] else ""
         style_number = str(style_numbers[index][0]).strip() if style_numbers[index] else ""
@@ -280,22 +212,32 @@ def main():
         
         result = process_product(product_type, brand, style_number, index+2)
         if result:
-            sheet_name, output_data = result
+            sheet_name, extracted_data = result
             if sheet_name not in sheet_data:
                 sheet_data[sheet_name] = []
-            sheet_data[sheet_name].append(output_data)
+            sheet_data[sheet_name].append(extracted_data)
 
     # 将数据写入相应的sheet
     for sheet_name, data in sheet_data.items():
         try:
+            # 获取sheet的字段名（第一行）
+            field_names = sheets_service.spreadsheets().values().get(
+                spreadsheetId=SPREADSHEET_ID, range=f"{sheet_name}!A1:ZZ1").execute().get('values', [[]])[0]
+
+            # 准备要写入的数据
+            rows_to_write = []
+            for item in data:
+                row = [item.get(field, 'N/A') for field in field_names]
+                rows_to_write.append(row)
+
             # 获取sheet的当前行数
             sheet_info = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID, ranges=[sheet_name], includeGridData=True).execute()
             current_row = len(sheet_info['sheets'][0]['data'][0]['rowData']) + 1
 
             # 写入数据
             range_name = f"{sheet_name}!A{current_row}"
-            write_to_spreadsheet(range_name, data)
-            logging.info(f"Successfully wrote {len(data)} rows to sheet '{sheet_name}'")
+            write_to_spreadsheet(range_name, rows_to_write)
+            logging.info(f"Successfully wrote {len(rows_to_write)} rows to sheet '{sheet_name}'")
         except Exception as e:
             logging.error(f"Error writing to sheet '{sheet_name}': {str(e)}")
 
