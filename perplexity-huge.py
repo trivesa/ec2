@@ -84,6 +84,7 @@ Create a comprehensive product description using bullet points for better readab
 
 Combine all these elements into a cohesive, flowing description using bullet points, without separate headings or sections. Ensure the description is easy to read, informative, and engaging.
 """
+
 def read_spreadsheet(range_name):
     sheet = sheets_service.spreadsheets()
     result = sheet.values().get(spreadsheetId=SPREADSHEET_ID, range=range_name).execute()
@@ -93,28 +94,14 @@ def read_spreadsheet(range_name):
         logging.warning("No data found in spreadsheet")
     return values
 
-def write_to_sheet(sheet, data):
-    try:
-        title = data.get("Title (Titolo)", "")
-        subtitle = data.get("Subtitle (Sottotitolo)", "")
-        description = data.get("Description (Descrizione)", "")
-        
-        logging.info(f"Preparing to write data. Title: {title[:50]}...")
-        logging.info(f"Subtitle length: {len(subtitle)}")
-        logging.info(f"Description length: {len(description)}")
-        
-        row = [title, subtitle, description]  # 添加其他字段
-        
-        sheet.append_row(row)
-        logging.info("Successfully wrote row to sheet")
-        
-        # 验证写入是否成功
-        last_row = sheet.get_all_values()[-1]
-        logging.info(f"Last row written: {last_row[:3]}")  # 只打印前三列
-        
-    except Exception as e:
-        logging.error(f"Error writing to sheet: {str(e)}")
-        logging.error(f"Data that failed to write: {data}")
+def write_to_spreadsheet(range_name, values):
+    body = {
+        'values': values
+    }
+    result = sheets_service.spreadsheets().values().update(
+        spreadsheetId=SPREADSHEET_ID, range=range_name,
+        valueInputOption='RAW', body=body).execute()
+    logging.info(f"Written {result.get('updatedCells')} cells to spreadsheet")
 
 def get_template(product_type):
     if not product_type:
@@ -165,7 +152,7 @@ def generate_prompt(template, brand, product_type, style_number):
     
     return prompt
 
-def call_perplexity_api(prompt):
+def call_perplexity_api(prompt, temperature):
     headers = {
         'Authorization': f'Bearer {PERPLEXITY_API_KEY}',
         'Content-Type': 'application/json'
@@ -177,10 +164,9 @@ def call_perplexity_api(prompt):
             {'role': 'user', 'content': prompt}
         ],
         'max_tokens': 1000,
-        'temperature': 0.2,
+        'temperature': temperature,
         'top_p': 0.9,
         'return_citations': True,
-        'search_recency_filter': 'month',
         'frequency_penalty': 1
     }
     try:
@@ -239,18 +225,43 @@ def process_product(product_type, brand, style_number, index, max_retries=2):
         return None
 
     for attempt in range(max_retries):
-        prompt = generate_prompt(template, brand, product_type, style_number)
-        raw_response = call_perplexity_api(prompt)
+        # 生成产品描述
+        description_prompt = f"""
+        Generate a detailed product description for {brand} {product_type} with style number {style_number}.
+        Include Title (Titolo), Subtitle (Sottotitolo), and Description (Descrizione).
+        Use bullet points for better readability in the description.
+        """
+        description_response = call_perplexity_api(description_prompt, 0.3)
         
-        if raw_response:
-            logging.info(f"Raw API Response received for {product_type} - {brand} - {style_number}")
-            extracted_data = extract_fields_from_response(raw_response, template)
-            logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
-            return sheet_name, extracted_data
-        else:
-            logging.warning("API call failed or returned empty response")
+        if not description_response:
+            logging.warning(f"Failed to generate description on attempt {attempt + 1}")
+            continue
+
+        # 生成 Mandatory 和 Optional 字段
+        fields_prompt = f"""
+        For the {brand} {product_type} with style number {style_number}, 
+        provide information for the following fields. Use 'N/A' if the information is not available or not applicable.
+
+        Mandatory Fields:
+        {', '.join(template['mandatory_fields'])}
+
+        Optional Fields:
+        {', '.join(template['optional_fields'])}
+
+        Please provide the information in a structured format, with each field on a new line.
+        """
+        fields_response = call_perplexity_api(fields_prompt, 0.1)
         
-        logging.warning(f"Attempt {attempt + 1} failed. Retrying...")
+        if not fields_response:
+            logging.warning(f"Failed to generate fields on attempt {attempt + 1}")
+            continue
+
+        # 合并响应
+        combined_response = f"{description_response}\n\n{fields_response}"
+        extracted_data = extract_fields_from_response(combined_response, template)
+        
+        logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
+        return sheet_name, extracted_data
 
     logging.error(f"Failed to process product after {max_retries} attempts")
     return None
