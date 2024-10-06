@@ -135,8 +135,7 @@ def generate_prompt(template, brand, product_type, style_number):
     **Title (Titolo):** [Generate a concise, descriptive title]
     **Subtitle (Sottotitolo):** [Generate a brief, catchy subtitle]
     **Description (Descrizione):** [Generate a detailed, multi-paragraph description]
-    **Short Description (Breve Descrizione):** [Generate a brief product description]
-
+    
     **Mandatory Fields:**
     """
     
