@@ -242,8 +242,6 @@ def extract_fields_from_response(raw_response, template):
     else:
         logging.warning("Failed to extract Description")
     
-    # ... rest of the function remains the same
-    
     # 提取其他字段
     all_fields = template['mandatory_fields'] + template['optional_fields']
     for field in all_fields:
