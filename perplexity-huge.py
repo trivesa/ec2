@@ -140,48 +140,48 @@ def call_perplexity_api(prompt):
 def parse_api_response(response, product_type, brand, style_number):
     logging.info(f"Parsing response")
     parsed_data = {}
-    current_field = None
+    current_section = None
 
     for line in response.split('\n'):
         line = line.strip()
         if line.startswith('### '):
-            current_field = line.replace('### ', '').strip()
-            parsed_data[current_field] = ''
-        elif current_field and line:
-            parsed_data[current_field] += line + ' '
-
-    # 清理数据
-    for key, value in parsed_data.items():
-        parsed_data[key] = value.strip()
-
-    # 清理描述中的子标题
-    if 'Description (Descrizione)' in parsed_data:
-        description_lines = parsed_data['Description (Descrizione)'].split('\n')
-        cleaned_description = []
-        for line in description_lines:
-            if not any(subtitle in line.lower() for subtitle in ['catchy introduction:', 'unique selling point:', 'key features and benefits:', 'product specifications:', 'fit and sizing:', 'materials and construction:', 'performance and usage:', 'care instructions:', 'warranty and returns:', 'call to action:']):
-                cleaned_description.append(line)
-        parsed_data['Description (Descrizione)'] = ' '.join(cleaned_description).strip()
+            current_section = line.replace('### ', '').strip()
+            parsed_data[current_section] = {}
+        elif line.startswith('- **') and current_section:
+            key, value = line.split(':', 1)
+            key = key.replace('- **', '').replace('**', '').strip()
+            value = value.strip()
+            parsed_data[current_section][key] = value
 
     logging.info(f"Parsed data: {json.dumps(parsed_data, indent=2)}")
 
-    # 验证必填字段
-    required_fields = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Description (Descrizione)']
-    for field in required_fields:
-        if field not in parsed_data or not parsed_data[field]:
-            logging.warning(f"Missing required field: {field}")
-            return None
+    # 提取字段
+    title = parsed_data.get('Fields', {}).get('Title (Titolo)')
+    subtitle = parsed_data.get('Fields', {}).get('Subtitle (Sottotitolo)')
+    description = parsed_data.get('Fields', {}).get('Description (Descrizione)')
+
+    # 清理描述中的子标题
+    if description:
+        description_lines = description.split('\n')
+        cleaned_description = [line for line in description_lines if not any(subtitle in line.lower() for subtitle in ['catchy introduction:', 'unique selling point:', 'key features and benefits:', 'product specifications:', 'fit and sizing:', 'materials and construction:', 'performance and usage:', 'care instructions:', 'warranty and returns:', 'call to action:'])]
+        description = ' '.join(cleaned_description).strip()
 
     # 添加关键词验证
     keywords = [product_type.lower(), brand.lower(), style_number.lower()]
-    title = parsed_data.get('Title (Titolo)', '').lower()
-    description = parsed_data.get('Description (Descrizione)', '').lower()
-
-    if not all(keyword in title or keyword in description for keyword in keywords):
+    content = ((title or '') + ' ' + (subtitle or '') + ' ' + (description or '')).lower()
+    if not all(keyword in content for keyword in keywords):
         logging.warning(f"Generated content may not match the product. Missing keywords: {product_type}, {brand}, or {style_number}")
         return None
 
-    return parsed_data
+    result = {
+        'Title (Titolo)': title,
+        'Subtitle (Sottotitolo)': subtitle,
+        'Description (Descrizione)': description,
+        **parsed_data.get('Mandatory Fields', {}),
+        **parsed_data.get('Optional Fields', {})
+    }
+
+    return result
 
 def validate_product_type(parsed_data, expected_type):
     generated_type = parsed_data.get('Object Category (Categoria Oggetto)', '').lower()
