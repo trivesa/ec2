@@ -74,12 +74,28 @@ def read_spreadsheet(range_name):
         logging.warning("No data found in spreadsheet")
     return values
 
-def write_to_spreadsheet(range_name, values):
-    body = {'values': values}
-    sheets_service.spreadsheets().values().update(
-        spreadsheetId=SPREADSHEET_ID, range=range_name,
-        valueInputOption='USER_ENTERED', body=body).execute()
-    logging.info(f"Written {len(values)} rows to spreadsheet")
+def write_to_sheet(sheet, data):
+    try:
+        title = data.get("Title (Titolo)", "")
+        subtitle = data.get("Subtitle (Sottotitolo)", "")
+        description = data.get("Description (Descrizione)", "")
+        
+        logging.info(f"Preparing to write data. Title: {title[:50]}...")
+        logging.info(f"Subtitle length: {len(subtitle)}")
+        logging.info(f"Description length: {len(description)}")
+        
+        row = [title, subtitle, description]  # 添加其他字段
+        
+        sheet.append_row(row)
+        logging.info("Successfully wrote row to sheet")
+        
+        # 验证写入是否成功
+        last_row = sheet.get_all_values()[-1]
+        logging.info(f"Last row written: {last_row[:3]}")  # 只打印前三列
+        
+    except Exception as e:
+        logging.error(f"Error writing to sheet: {str(e)}")
+        logging.error(f"Data that failed to write: {data}")
 
 def get_template(product_type):
     if not product_type:
