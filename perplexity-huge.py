@@ -134,7 +134,7 @@ def call_perplexity_api(prompt):
         logging.error(f"Error calling Perplexity API: {str(e)}")
         return None
 
-def parse_api_response(response):
+def parse_api_response(response, product_type, brand, style_number):
     logging.info(f"Parsing response")
     parsed_data = {}
     current_field = None
@@ -160,7 +160,36 @@ def parse_api_response(response):
             logging.warning(f"Missing required field: {field}")
             return None
 
+    # 添加关键词验证
+    keywords = [product_type.lower(), brand.lower(), style_number.lower()]
+    title = parsed_data.get('Title (Titolo)', '').lower()
+    description = parsed_data.get('Description (Descrizione)', '').lower()
+
+    if not all(keyword in title or keyword in description for keyword in keywords):
+        logging.warning(f"Generated content may not match the product. Missing keywords: {product_type}, {brand}, or {style_number}")
+        return None
+
     return parsed_data
+
+def validate_product_type(parsed_data, expected_type):
+    generated_type = parsed_data.get('Object Category (Categoria Oggetto)', '').lower()
+    if expected_type.lower() not in generated_type:
+        logging.warning(f"Generated product type '{generated_type}' does not match expected type '{expected_type}'")
+        return False
+    return True
+
+def get_sheet_name(product_type):
+    product_type = product_type.lower().strip()
+    sheet_mapping = {
+        "shoes": "shoes",
+        "bag": "bag",
+        "clothing": "clothing",
+        "scarf": "scarf",
+        "belt": "belt",
+        "watch": "watch",
+        "other accessories": "other accessories"
+    }
+    return sheet_mapping.get(product_type, "unknown")
 
 def process_product(product_type, brand, style_number, index, max_retries=2):
     logging.info(f"Processing: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
@@ -184,8 +213,8 @@ def process_product(product_type, brand, style_number, index, max_retries=2):
         raw_response = call_perplexity_api(prompt)
         
         if raw_response:
-            parsed_data = parse_api_response(raw_response)
-            if parsed_data:
+            parsed_data = parse_api_response(raw_response, product_type, brand, style_number)
+            if parsed_data and validate_product_type(parsed_data, product_type):
                 logging.info(f"Parsed data for {validated_product_type} - {brand} - {style_number}:\n{json.dumps(parsed_data, indent=2)}")
 
                 output_data = []
@@ -193,6 +222,9 @@ def process_product(product_type, brand, style_number, index, max_retries=2):
                     output_data.append(parsed_data.get(field, 'N/A'))
 
                 return sheet_name, output_data
+            else:
+                logging.warning("Product type validation failed. Retrying...")
+                continue
         
         logging.warning(f"Attempt {attempt + 1} failed. Retrying...")
 
