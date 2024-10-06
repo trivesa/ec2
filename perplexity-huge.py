@@ -153,17 +153,23 @@ def parse_api_response(response, product_type, brand, style_number):
             parsed_data[current_section] = {}
         elif line.startswith('1. **') or line.startswith('- **'):
             if current_section:
-                key, value = line.split(':', 1)
-                key = key.replace('1. **', '').replace('- **', '').replace('**', '').strip()
-                value = value.strip()
-                parsed_data[current_section][key] = value
+                parts = line.split(':', 1)
+                if len(parts) == 2:
+                    key, value = parts
+                    key = key.replace('1. **', '').replace('- **', '').replace('**', '').strip()
+                    value = value.strip()
+                    parsed_data[current_section][key] = value
 
     logging.info(f"Parsed data: {json.dumps(parsed_data, indent=2)}")
 
     # 提取字段
-    title = parsed_data.get('Fields', {}).get('Title (Titolo)')
-    subtitle = parsed_data.get('Fields', {}).get('Subtitle (Sottotitolo)')
-    description = parsed_data.get('Fields', {}).get('Description (Descrizione)')
+    fields = parsed_data.get('Fields', {})
+    title = fields.get('Title (Titolo)')
+    subtitle = fields.get('Subtitle (Sottotitolo)')
+    description = fields.get('Description (Descrizione)')
+
+    if description is None:
+        description = ' '.join(value for key, value in fields.items() if key not in ['Title (Titolo)', 'Subtitle (Sottotitolo)'])
 
     # 清理描述中的子标题
     if description:
