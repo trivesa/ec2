@@ -134,8 +134,8 @@ def generate_prompt(template, brand, product_type, style_number):
 
     **Title (Titolo):** [Generate a concise, descriptive title]
     **Subtitle (Sottotitolo):** [Generate a brief, catchy subtitle]
-    **Description (Descrizione):**
-    [Generate a detailed, multi-paragraph description]
+    **Description (Descrizione):** [Generate a detailed, multi-paragraph description]
+    **Short Description (Breve Descrizione):** [Generate a brief product description]
 
     **Mandatory Fields:**
     """
@@ -160,9 +160,9 @@ def call_perplexity_api(prompt, temperature):
     data = {
         'model': 'llama-3.1-sonar-huge-128k-online',
         'messages': [
-            {'role': 'system', 'content': 'You are an eBay fashion product listing expert.'},
-            {'role': 'user', 'content': prompt}
-        ],
+    {'role': 'system', 'content': 'You are a luxury consumer goods industry expert, specializing in high-end fashion and luxury brand product descriptions and market positioning.'},
+    {'role': 'user', 'content': prompt}
+     ],
         'max_tokens': 1000,
         'temperature': temperature,
         'top_p': 0.9,
