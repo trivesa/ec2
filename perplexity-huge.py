@@ -181,7 +181,63 @@ def call_perplexity_api(prompt, temperature):
         return None
 
 def get_sheet_name(product_type):
-    return product_type.lower().strip().replace(" ", "_")
+    return product_type.lower().strip()  # 移除了 replace(" ", "_")
+
+def ensure_sheet_exists(sheet_name):
+    try:
+        sheet_metadata = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID).execute()
+        sheets = sheet_metadata.get('sheets', '')
+        for sheet in sheets:
+            if sheet['properties']['title'] == sheet_name:
+                logging.info(f"Sheet '{sheet_name}' already exists.")
+                return True
+        
+        # 如果工作表不存在，创建它
+        request_body = {
+            'requests': [{
+                'addSheet': {
+                    'properties': {
+                        'title': sheet_name
+                    }
+                }
+            }]
+        }
+        sheets_service.spreadsheets().batchUpdate(
+            spreadsheetId=SPREADSHEET_ID,
+            body=request_body
+        ).execute()
+        logging.info(f"Sheet '{sheet_name}' has been created.")
+        return True
+    except Exception as e:
+        logging.error(f"Error ensuring sheet '{sheet_name}' exists: {str(e)}")
+        return False
+
+# 在主循环中修改写入操作
+for sheet_name, data in sheet_data.items():
+    try:
+        if ensure_sheet_exists(sheet_name):
+            # 获取sheet的字段名（第一行）
+            field_names = sheets_service.spreadsheets().values().get(
+                spreadsheetId=SPREADSHEET_ID, range=f"'{sheet_name}'!A1:ZZ1").execute().get('values', [[]])[0]
+
+            # 准备要写入的数据
+            rows_to_write = []
+            for item in data:
+                row = [item.get(field, 'N/A') for field in field_names]
+                rows_to_write.append(row)
+
+            # 获取sheet的当前行数
+            sheet_info = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID, ranges=[f"'{sheet_name}'"], includeGridData=True).execute()
+            current_row = len(sheet_info['sheets'][0]['data'][0]['rowData']) + 1
+
+            # 写入数据
+            range_name = f"'{sheet_name}'!A{current_row}"
+            write_to_spreadsheet(range_name, rows_to_write)
+            logging.info(f"Successfully wrote {len(rows_to_write)} rows to sheet '{sheet_name}'")
+        else:
+            logging.error(f"Unable to ensure '{sheet_name}' sheet exists. Skipping write operation.")
+    except Exception as e:
+        logging.error(f"Error writing to sheet '{sheet_name}': {str(e)}")
 
 def extract_fields_from_response(raw_response, template):
     logging.info(f"Raw response to extract: {raw_response}")
@@ -320,6 +376,15 @@ def main():
             if sheet_name not in sheet_data:
                 sheet_data[sheet_name] = []
             sheet_data[sheet_name].append(extracted_data)
+
+    def write_to_spreadsheet(range_name, values):
+    body = {
+        'values': values
+    }
+    result = sheets_service.spreadsheets().values().update(
+        spreadsheetId=SPREADSHEET_ID, range=range_name,
+        valueInputOption='RAW', body=body).execute()
+    logging.info(f"Written {result.get('updatedCells')} cells to spreadsheet")
 
     # 将数据写入相应的sheet
     for sheet_name, data in sheet_data.items():
