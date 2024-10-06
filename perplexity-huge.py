@@ -377,38 +377,32 @@ def main():
                 sheet_data[sheet_name] = []
             sheet_data[sheet_name].append(extracted_data)
 
-    def write_to_spreadsheet(range_name, values):
-    body = {
-        'values': values
-    }
-    result = sheets_service.spreadsheets().values().update(
-        spreadsheetId=SPREADSHEET_ID, range=range_name,
-        valueInputOption='RAW', body=body).execute()
-    logging.info(f"Written {result.get('updatedCells')} cells to spreadsheet")
-
     # 将数据写入相应的sheet
     for sheet_name, data in sheet_data.items():
         try:
-            # 获取sheet的字段名（第一行）
-            field_names = sheets_service.spreadsheets().values().get(
-                spreadsheetId=SPREADSHEET_ID, range=f"{sheet_name}!A1:ZZ1").execute().get('values', [[]])[0]
+            if ensure_sheet_exists(sheet_name):
+                # 获取sheet的字段名（第一行）
+                field_names = sheets_service.spreadsheets().values().get(
+                    spreadsheetId=SPREADSHEET_ID, range=f"'{sheet_name}'!A1:ZZ1").execute().get('values', [[]])[0]
 
-            # 准备要写入的数据
-            rows_to_write = []
-            for item in data:
-                row = [item.get(field, 'N/A') for field in field_names]
-                rows_to_write.append(row)
+                # 准备要写入的数据
+                rows_to_write = []
+                for item in data:
+                    row = [item.get(field, 'N/A') for field in field_names]
+                    rows_to_write.append(row)
 
-            # 获取sheet的当前行数
-sheet_info = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID, ranges=[sheet_name], includeGridData=True).execute()
-current_row = len(sheet_info['sheets'][0]['data'][0]['rowData']) + 1
+                # 获取sheet的当前行数
+                sheet_info = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID, ranges=[f"'{sheet_name}'"], includeGridData=True).execute()
+                current_row = len(sheet_info['sheets'][0]['data'][0]['rowData']) + 1
 
-# 写入数据
-range_name = f"{sheet_name}!A{current_row}"
-write_to_spreadsheet(range_name, rows_to_write)
-logging.info(f"Successfully wrote {len(rows_to_write)} rows to sheet '{sheet_name}'")
-    except Exception as e:
-        logging.error(f"Error writing to sheet '{sheet_name}': {str(e)}")
+                # 写入数据
+                range_name = f"'{sheet_name}'!A{current_row}"
+                write_to_spreadsheet(range_name, rows_to_write)
+                logging.info(f"Successfully wrote {len(rows_to_write)} rows to sheet '{sheet_name}'")
+            else:
+                logging.error(f"Unable to ensure '{sheet_name}' sheet exists. Skipping write operation.")
+        except Exception as e:
+            logging.error(f"Error writing to sheet '{sheet_name}': {str(e)}")
 
 if __name__ == '__main__':
     main()
