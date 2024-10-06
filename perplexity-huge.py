@@ -1,5 +1,6 @@
 import json
 import os
+import time
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
@@ -98,10 +99,16 @@ def write_to_spreadsheet(range_name, values):
     body = {
         'values': values
     }
-    result = sheets_service.spreadsheets().values().update(
-        spreadsheetId=SPREADSHEET_ID, range=range_name,
-        valueInputOption='RAW', body=body).execute()
-    logging.info(f"Written {result.get('updatedCells')} cells to spreadsheet")
+    logging.info(f"Attempting to write {len(values)} rows to range: {range_name}")
+    logging.info(f"First row of data: {values[0] if values else 'No data'}")
+    try:
+        result = sheets_service.spreadsheets().values().update(
+            spreadsheetId=SPREADSHEET_ID, range=range_name,
+            valueInputOption='RAW', body=body).execute()
+        logging.info(f"Write result: {result}")
+        logging.info(f"Updated {result.get('updatedCells')} cells")
+    except Exception as e:
+        logging.error(f"Error writing to spreadsheet: {str(e)}")
 
 def get_template(product_type):
     if not product_type:
@@ -182,7 +189,12 @@ def call_perplexity_api(prompt, temperature):
         response.raise_for_status()
         response_json = response.json()
         content = response_json['choices'][0]['message']['content']
-        logging.info(f"Raw API Response: {content}")
+        
+        # 保存API响应到文件
+        with open(f'api_response_{int(time.time())}.json', 'w') as f:
+            json.dump(response_json, f, indent=2)
+        
+        logging.info(f"API response saved to file. Content: {content[:200]}...")  # 只记录前200个字符
         return content
     except Exception as e:
         logging.error(f"Error calling Perplexity API: {str(e)}")
@@ -219,36 +231,20 @@ def ensure_sheet_exists(sheet_name):
     except Exception as e:
         logging.error(f"Error ensuring sheet '{sheet_name}' exists: {str(e)}")
         return False
-
 def extract_fields_from_response(raw_response, template):
     logging.info(f"Raw response to extract: {raw_response}")
     extracted_data = {}
-
-    # Extract Title, Subtitle, Short Description, and Description
-    title_match = re.search(r'\*\*Title \(Titolo\):\*\*\s*(.+)', raw_response)
-    subtitle_match = re.search(r'\*\*Subtitle \(Sottotitolo\):\*\*\s*(.+)', raw_response)
-    short_description_match = re.search(r'\*\*Short Description \(Breve Descrizione\):\*\*\s*(.+)', raw_response)
-    description_match = re.search(r'\*\*Description \(Descrizione\):\*\*\s*([\s\S]+?)(?=\n\n\*\*|$)', raw_response)
-
-    if title_match:
-        extracted_data['Title (Titolo)'] = title_match.group(1).strip()
-    else:
-        logging.warning("Failed to extract Title")
-
-    if subtitle_match:
-        extracted_data['Subtitle (Sottotitolo)'] = subtitle_match.group(1).strip()
-    else:
-        logging.warning("Failed to extract Subtitle")
-
-    if short_description_match:
-        extracted_data['Short Description (Breve Descrizione)'] = short_description_match.group(1).strip()
-    else:
-        logging.warning("Failed to extract Short Description")
-
-    if description_match:
-        extracted_data['Description (Descrizione)'] = description_match.group(1).strip()
-    else:
-        logging.warning("Failed to extract Description")
+    
+    fields_to_extract = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
+    
+    for field in fields_to_extract:
+        pattern = rf'\*\*{re.escape(field)}:\*\*\s*([\s\S]+?)(?=\n\n\*\*|$)'
+        match = re.search(pattern, raw_response, re.DOTALL)
+        if match:
+            extracted_data[field] = match.group(1).strip()
+            logging.info(f"Successfully extracted {field}: {extracted_data[field][:100]}...")
+        else:
+            logging.warning(f"Failed to extract {field}")
 
     # Extract other fields
     all_fields = template['mandatory_fields'] + template['optional_fields']
@@ -335,6 +331,45 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
     logging.error(f"Failed to process product after {max_retries} attempts")
     return None
 
+def verify_written_data(sheet_name, start_row, num_rows):
+    range_name = f"'{sheet_name}'!A{start_row}:ZZ{start_row + num_rows - 1}"
+    result = sheets_service.spreadsheets().values().get(spreadsheetId=SPREADSHEET_ID, range=range_name).execute()
+    values = result.get('values', [])
+    logging.info(f"Verifying written data in {sheet_name} from row {start_row} to {start_row + num_rows - 1}")
+    for row_index, row in enumerate(values):
+        logging.info(f"Row {start_row + row_index}:")
+        for col_index, value in enumerate(row):
+            logging.info(f"  Column {col_index + 1}: {value[:100]}...")  # 只记录前100个字符
+
+def prepare_data_for_write(data):
+    return [[str(cell) if cell is not None else '' for cell in row] for row in data]
+
+def clear_range_format(sheet_name, start_row, end_row):
+    range_name = f"'{sheet_name}'!A{start_row}:ZZ{end_row}"
+    clear_request = {
+        "requests": [
+            {
+                "updateCells": {
+                    "range": {
+                        "sheetId": get_sheet_id(sheet_name),
+                        "startRowIndex": start_row - 1,
+                        "endRowIndex": end_row
+                    },
+                    "fields": "userEnteredFormat"
+                }
+            }
+        ]
+    }
+    sheets_service.spreadsheets().batchUpdate(spreadsheetId=SPREADSHEET_ID, body=clear_request).execute()
+    logging.info(f"Cleared format for range: {range_name}")
+
+def get_sheet_id(sheet_name):
+    sheet_metadata = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID).execute()
+    for sheet in sheet_metadata.get('sheets', ''):
+        if sheet['properties']['title'] == sheet_name:
+            return sheet['properties']['sheetId']
+    return None
+
 def main():
     logging.info(f"Current working directory: {os.getcwd()}")
     
@@ -385,6 +420,16 @@ def main():
                 field_names = sheets_service.spreadsheets().values().get(
                     spreadsheetId=SPREADSHEET_ID, range=f"'{sheet_name}'!A1:ZZ1").execute().get('values', [[]])[0]
 
+                logging.info(f"Sheet field names: {field_names}")
+                logging.info(f"Extracted data keys: {list(data[0].keys())}")
+
+                # Ensure all required fields are present
+                required_fields = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
+                for field in required_fields:
+                    if field not in field_names:
+                        field_names.append(field)
+                        logging.info(f"Added missing field to sheet: {field}")
+
                 # Prepare data to write
                 rows_to_write = []
                 for item in data:
@@ -395,10 +440,20 @@ def main():
                 sheet_info = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID, ranges=[f"'{sheet_name}'"], includeGridData=True).execute()
                 current_row = len(sheet_info['sheets'][0]['data'][0]['rowData']) + 1
 
+                # Clear format of the range to be written
+                clear_range_format(sheet_name, current_row, current_row + len(rows_to_write))
+
+                # Prepare data for write
+                rows_to_write = prepare_data_for_write(rows_to_write)
+
                 # Write data
                 range_name = f"'{sheet_name}'!A{current_row}"
                 write_to_spreadsheet(range_name, rows_to_write)
-                logging.info(f"Successfully wrote {len(rows_to_write)} rows to sheet '{sheet_name}'")
+                
+                # Verify written data
+                verify_written_data(sheet_name, current_row, len(rows_to_write))
+                
+                logging.info(f"Successfully wrote and verified {len(rows_to_write)} rows to sheet '{sheet_name}'")
             else:
                 logging.error(f"Unable to ensure '{sheet_name}' sheet exists. Skipping write operation.")
         except Exception as e:
