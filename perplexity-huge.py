@@ -213,18 +213,23 @@ def process_product(product_type, brand, style_number, index, max_retries=2):
         raw_response = call_perplexity_api(prompt)
         
         if raw_response:
+            logging.info(f"Raw API Response received for {validated_product_type} - {brand} - {style_number}")
             parsed_data = parse_api_response(raw_response, product_type, brand, style_number)
-            if parsed_data and validate_product_type(parsed_data, product_type):
-                logging.info(f"Parsed data for {validated_product_type} - {brand} - {style_number}:\n{json.dumps(parsed_data, indent=2)}")
+            if parsed_data:
+                if validate_product_type(parsed_data, product_type):
+                    logging.info(f"Parsed data for {validated_product_type} - {brand} - {style_number}:\n{json.dumps(parsed_data, indent=2)}")
 
-                output_data = []
-                for field in template['mandatory_fields'] + template['optional_fields']:
-                    output_data.append(parsed_data.get(field, 'N/A'))
+                    output_data = []
+                    for field in template['mandatory_fields'] + template['optional_fields']:
+                        output_data.append(parsed_data.get(field, 'N/A'))
 
-                return sheet_name, output_data
+                    return sheet_name, output_data
+                else:
+                    logging.warning(f"Product type validation failed. Generated type: {parsed_data.get('Object Category (Categoria Oggetto)', 'N/A')}, Expected type: {product_type}")
             else:
-                logging.warning("Product type validation failed. Retrying...")
-                continue
+                logging.warning("Failed to parse API response")
+        else:
+            logging.warning("API call failed or returned empty response")
         
         logging.warning(f"Attempt {attempt + 1} failed. Retrying...")
 
