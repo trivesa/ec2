@@ -179,13 +179,6 @@ def parse_api_response(response, product_type, brand, style_number):
 
     logging.info(f"Parsed data: {json.dumps(result, indent=2)}")
 
-    # 添加关键词验证
-    keywords = [product_type.lower(), brand.lower(), style_number.lower()]
-    content = ((title or '') + ' ' + (subtitle or '') + ' ' + (description or '')).lower()
-    if not all(keyword in content for keyword in keywords):
-        logging.warning(f"Generated content may not match the product. Missing keywords: {product_type}, {brand}, or {style_number}")
-        return None
-
     return result
 
 def validate_product_type(parsed_data, expected_type):
