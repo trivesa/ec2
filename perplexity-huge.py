@@ -391,7 +391,7 @@ def main():
 
     logging.info(f"Processing {min_length} rows with mandatory data")
 
-    # Initialize sheet_data dictionary
+    # Store data for each sheet
     sheet_data = {}
     
     for index in range(min_length):
@@ -416,58 +416,41 @@ def main():
     for sheet_name, data in sheet_data.items():
         try:
             if ensure_sheet_exists(sheet_name):
-                # 获取当前表格的字段名称
-                current_field_names = sheets_service.spreadsheets().values().get(
+                # Get field names (first row) of the sheet
+                field_names = sheets_service.spreadsheets().values().get(
                     spreadsheetId=SPREADSHEET_ID, range=f"'{sheet_name}'!A1:ZZ1").execute().get('values', [[]])[0]
 
-                logging.info(f"Current sheet field names: {current_field_names}")
+                logging.info(f"Sheet field names: {field_names}")
+                logging.info(f"Extracted data keys: {list(data[0].keys())}")
 
-                # 定义期望的字段顺序和它们应该在的列索引
-                expected_fields = {
-                    'Title (Titolo)': 0,
-                    'Subtitle (Sottotitolo)': 1,
-                    'Short Description (Breve Descrizione)': 2,
-                    'Description (Descrizione)': 3
-                }
+                # Ensure all required fields are present
+                required_fields = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
+                for field in required_fields:
+                    if field not in field_names:
+                        field_names.append(field)
+                        logging.info(f"Added missing field to sheet: {field}")
 
-                # 创建字段到列索引的映射
-                field_to_column = {field: index for index, field in enumerate(current_field_names)}
-
-                # 准备要写入的数据
+                # Prepare data to write
                 rows_to_write = []
                 for item in data:
-                    row = [''] * len(current_field_names)  # 初始化所有列为空字符串
-                    for field, expected_index in expected_fields.items():
-                        if field in item:
-                            if field in field_to_column:
-                                actual_index = field_to_column[field]
-                                row[actual_index] = item[field]
-                            else:
-                                logging.warning(f"Field '{field}' not found in sheet. Data: {item[field][:100]}...")
-                    
-                    # 填充其他字段
-                    for field, value in item.items():
-                        if field in field_to_column and field not in expected_fields:
-                            column_index = field_to_column[field]
-                            row[column_index] = value
-
+                    row = [item.get(field, 'N/A') for field in field_names]
                     rows_to_write.append(row)
 
-                # 获取当前行数
+                # Get current row count of the sheet
                 sheet_info = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID, ranges=[f"'{sheet_name}'"], includeGridData=True).execute()
                 current_row = len(sheet_info['sheets'][0]['data'][0]['rowData']) + 1
 
-                # 清除要写入范围的格式
+                # Clear format of the range to be written
                 clear_range_format(sheet_name, current_row, current_row + len(rows_to_write))
 
-                # 准备数据写入
+                # Prepare data for write
                 rows_to_write = prepare_data_for_write(rows_to_write)
 
-                # 写入数据
+                # Write data
                 range_name = f"'{sheet_name}'!A{current_row}"
                 write_to_spreadsheet(range_name, rows_to_write)
                 
-                # 验证写入的数据
+                # Verify written data
                 verify_written_data(sheet_name, current_row, len(rows_to_write))
                 
                 logging.info(f"Successfully wrote and verified {len(rows_to_write)} rows to sheet '{sheet_name}'")
