@@ -422,14 +422,13 @@ def main():
 
                 logging.info(f"Current sheet field names: {current_field_names}")
 
-                # 定义期望的字段顺序
-                expected_field_order = [
-                    'Title (Titolo)', 
-                    'Subtitle (Sottotitolo)', 
-                    'Short Description (Breve Descrizione)', 
-                    'Description (Descrizione)'
-                    # ... 添加其他字段，按照您希望的顺序
-                ]
+                # 定义期望的字段顺序和它们应该在的列索引
+                expected_fields = {
+                    'Title (Titolo)': 0,
+                    'Subtitle (Sottotitolo)': 1,
+                    'Short Description (Breve Descrizione)': 2,
+                    'Description (Descrizione)': 3
+                }
 
                 # 创建字段到列索引的映射
                 field_to_column = {field: index for index, field in enumerate(current_field_names)}
@@ -437,15 +436,18 @@ def main():
                 # 准备要写入的数据
                 rows_to_write = []
                 for item in data:
-                    row = ['N/A'] * len(current_field_names)  # 初始化所有列为'N/A'
-                    for field in expected_field_order:
-                        if field in field_to_column:
-                            column_index = field_to_column[field]
-                            row[column_index] = item.get(field, 'N/A')
+                    row = [''] * len(current_field_names)  # 初始化所有列为空字符串
+                    for field, expected_index in expected_fields.items():
+                        if field in item:
+                            if field in field_to_column:
+                                actual_index = field_to_column[field]
+                                row[actual_index] = item[field]
+                            else:
+                                logging.warning(f"Field '{field}' not found in sheet. Data: {item[field][:100]}...")
                     
                     # 填充其他字段
                     for field, value in item.items():
-                        if field in field_to_column and field not in expected_field_order:
+                        if field in field_to_column and field not in expected_fields:
                             column_index = field_to_column[field]
                             row[column_index] = value
 
