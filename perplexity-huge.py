@@ -372,6 +372,45 @@ def get_sheet_id(sheet_name):
 
 def main():
     logging.info(f"Current working directory: {os.getcwd()}")
+    
+    # Read product information
+    product_types = read_spreadsheet('Sheet1!E2:E')
+    brands = read_spreadsheet('Sheet1!F2:F')
+    style_numbers = read_spreadsheet('Sheet1!I2:I')
+    additional_info = read_spreadsheet('Sheet1!J2:J')
+    size_info = read_spreadsheet('Sheet1!K2:X')
+    
+    logging.info(f"Read {len(product_types)} product types, {len(brands)} brands, {len(style_numbers)} style numbers, {len(additional_info)} additional info entries, and {len(size_info)} size info entries")
+    
+    # Find the length of the mandatory columns
+    min_length = min(len(product_types), len(brands), len(style_numbers))
+    
+    if min_length == 0:
+        logging.error("One or more mandatory columns are empty. Please check the spreadsheet.")
+        return
+
+    logging.info(f"Processing {min_length} rows with mandatory data")
+
+    # Initialize sheet_data dictionary
+    sheet_data = {}
+    
+    for index in range(min_length):
+        product_type = str(product_types[index][0]).strip() if product_types[index] else ""
+        brand = str(brands[index][0]).strip() if brands[index] else ""
+        style_number = str(style_numbers[index][0]).strip() if style_numbers[index] else ""
+        add_info = str(additional_info[index][0]).strip() if index < len(additional_info) and additional_info[index] else ""
+        size = get_size_info(size_info[index]) if index < len(size_info) and size_info[index] else ""
+        
+        if not all([product_type, brand, style_number]):
+            logging.warning(f"Skipping row {index+2} due to missing mandatory data: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
+            continue
+        
+        result = process_product(product_type, brand, style_number, add_info, size, index+2)
+        if result:
+            sheet_name, extracted_data = result
+            if sheet_name not in sheet_data:
+                sheet_data[sheet_name] = []
+            sheet_data[sheet_name].append(extracted_data)
 
     # Write data to respective sheets
     for sheet_name, data in sheet_data.items():
@@ -434,8 +473,6 @@ def main():
                 logging.error(f"Unable to ensure '{sheet_name}' sheet exists. Skipping write operation.")
         except Exception as e:
             logging.error(f"Error writing to sheet '{sheet_name}': {str(e)}")
-
-# ... (其余代码保持不变)
 
 if __name__ == '__main__':
     main()
