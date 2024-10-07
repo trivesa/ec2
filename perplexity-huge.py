@@ -231,8 +231,9 @@ def ensure_sheet_exists(sheet_name):
     except Exception as e:
         logging.error(f"Error ensuring sheet '{sheet_name}' exists: {str(e)}")
         return False
+
 def extract_fields_from_response(raw_response, template):
-    logging.info(f"Raw response to extract: {raw_response}")
+    logging.info(f"Raw response to extract: {raw_response[:500]}...")  # 只记录前500个字符
     extracted_data = {}
     
     fields_to_extract = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
@@ -433,8 +434,14 @@ def main():
                 # Prepare data to write
                 rows_to_write = []
                 for item in data:
-                    row = [item.get(field, 'N/A') for field in field_names]
+                    row = []
+                    for field in field_names:
+                        value = item.get(field, 'N/A')
+                        if isinstance(value, str) and len(value) > 50000:
+                            value = value[:50000] + "... (truncated)"
+                        row.append(value)
                     rows_to_write.append(row)
+                    logging.info(f"Prepared row: {row[:5]}...")  # 只记录前5个字段
 
                 # Get current row count of the sheet
                 sheet_info = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID, ranges=[f"'{sheet_name}'"], includeGridData=True).execute()
