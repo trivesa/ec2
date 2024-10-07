@@ -372,85 +372,61 @@ def get_sheet_id(sheet_name):
 
 def main():
     logging.info(f"Current working directory: {os.getcwd()}")
-    
-    # Read product information
-    product_types = read_spreadsheet('Sheet1!E2:E')
-    brands = read_spreadsheet('Sheet1!F2:F')
-    style_numbers = read_spreadsheet('Sheet1!I2:I')
-    additional_info = read_spreadsheet('Sheet1!J2:J')
-    size_info = read_spreadsheet('Sheet1!K2:X')
-    
-    logging.info(f"Read {len(product_types)} product types, {len(brands)} brands, {len(style_numbers)} style numbers, {len(additional_info)} additional info entries, and {len(size_info)} size info entries")
-    
-    # Find the length of the mandatory columns
-    min_length = min(len(product_types), len(brands), len(style_numbers))
-    
-    if min_length == 0:
-        logging.error("One or more mandatory columns are empty. Please check the spreadsheet.")
-        return
-
-    logging.info(f"Processing {min_length} rows with mandatory data")
-
-    # Store data for each sheet
-    sheet_data = {}
-    
-    for index in range(min_length):
-        product_type = str(product_types[index][0]).strip() if product_types[index] else ""
-        brand = str(brands[index][0]).strip() if brands[index] else ""
-        style_number = str(style_numbers[index][0]).strip() if style_numbers[index] else ""
-        add_info = str(additional_info[index][0]).strip() if index < len(additional_info) and additional_info[index] else ""
-        size = get_size_info(size_info[index]) if index < len(size_info) and size_info[index] else ""
-        
-        if not all([product_type, brand, style_number]):
-            logging.warning(f"Skipping row {index+2} due to missing mandatory data: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
-            continue
-        
-        result = process_product(product_type, brand, style_number, add_info, size, index+2)
-        if result:
-            sheet_name, extracted_data = result
-            if sheet_name not in sheet_data:
-                sheet_data[sheet_name] = []
-            sheet_data[sheet_name].append(extracted_data)
 
     # Write data to respective sheets
     for sheet_name, data in sheet_data.items():
         try:
             if ensure_sheet_exists(sheet_name):
-                # Get field names (first row) of the sheet
-                field_names = sheets_service.spreadsheets().values().get(
+                # 获取当前表格的字段名称
+                current_field_names = sheets_service.spreadsheets().values().get(
                     spreadsheetId=SPREADSHEET_ID, range=f"'{sheet_name}'!A1:ZZ1").execute().get('values', [[]])[0]
 
-                logging.info(f"Sheet field names: {field_names}")
-                logging.info(f"Extracted data keys: {list(data[0].keys())}")
+                logging.info(f"Current sheet field names: {current_field_names}")
 
-                # Ensure all required fields are present
-                required_fields = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
-                for field in required_fields:
-                    if field not in field_names:
-                        field_names.append(field)
-                        logging.info(f"Added missing field to sheet: {field}")
+                # 定义期望的字段顺序
+                expected_field_order = [
+                    'Title (Titolo)', 
+                    'Subtitle (Sottotitolo)', 
+                    'Short Description (Breve Descrizione)', 
+                    'Description (Descrizione)'
+                    # ... 添加其他字段，按照您希望的顺序
+                ]
 
-                # Prepare data to write
+                # 创建字段到列索引的映射
+                field_to_column = {field: index for index, field in enumerate(current_field_names)}
+
+                # 准备要写入的数据
                 rows_to_write = []
                 for item in data:
-                    row = [item.get(field, 'N/A') for field in field_names]
+                    row = ['N/A'] * len(current_field_names)  # 初始化所有列为'N/A'
+                    for field in expected_field_order:
+                        if field in field_to_column:
+                            column_index = field_to_column[field]
+                            row[column_index] = item.get(field, 'N/A')
+                    
+                    # 填充其他字段
+                    for field, value in item.items():
+                        if field in field_to_column and field not in expected_field_order:
+                            column_index = field_to_column[field]
+                            row[column_index] = value
+
                     rows_to_write.append(row)
 
-                # Get current row count of the sheet
+                # 获取当前行数
                 sheet_info = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID, ranges=[f"'{sheet_name}'"], includeGridData=True).execute()
                 current_row = len(sheet_info['sheets'][0]['data'][0]['rowData']) + 1
 
-                # Clear format of the range to be written
+                # 清除要写入范围的格式
                 clear_range_format(sheet_name, current_row, current_row + len(rows_to_write))
 
-                # Prepare data for write
+                # 准备数据写入
                 rows_to_write = prepare_data_for_write(rows_to_write)
 
-                # Write data
+                # 写入数据
                 range_name = f"'{sheet_name}'!A{current_row}"
                 write_to_spreadsheet(range_name, rows_to_write)
                 
-                # Verify written data
+                # 验证写入的数据
                 verify_written_data(sheet_name, current_row, len(rows_to_write))
                 
                 logging.info(f"Successfully wrote and verified {len(rows_to_write)} rows to sheet '{sheet_name}'")
@@ -458,6 +434,8 @@ def main():
                 logging.error(f"Unable to ensure '{sheet_name}' sheet exists. Skipping write operation.")
         except Exception as e:
             logging.error(f"Error writing to sheet '{sheet_name}': {str(e)}")
+
+# ... (其余代码保持不变)
 
 if __name__ == '__main__':
     main()
