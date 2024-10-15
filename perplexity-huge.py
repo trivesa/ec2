@@ -239,10 +239,17 @@ def ensure_sheet_exists(sheet_name):
 
 def extract_fields_from_response(raw_response, template, brand, style_number, size_info):
     extracted_data = {}
-    title_match = re.search(r'\*\*Title \(Titolo\):\*\*(.*?)(?=\*\*|$)', raw_response, re.DOTALL)
-    if title_match:
-        title = title_match.group(1).strip()
-        # 并添加缺失的元素
+    
+    # 使用更宽松的正则表达式来匹配字段
+    field_pattern = r'\*\*(.*?):\*\*(.*?)(?=\*\*|$)'
+    matches = re.findall(field_pattern, raw_response, re.DOTALL)
+    
+    for field, value in matches:
+        extracted_data[field.strip()] = value.strip()
+    
+    # 处理标题
+    if 'Title (Titolo)' in extracted_data:
+        title = extracted_data['Title (Titolo)']
         if brand not in title:
             title = f"{brand} {title}"
         if style_number not in title:
@@ -251,22 +258,11 @@ def extract_fields_from_response(raw_response, template, brand, style_number, si
             title = f"{title}, {size_info}"
         extracted_data['Title (Titolo)'] = title[:80]  # 限制标题长度为80个字符
     
-    extracted_data['Subtitle (Sottotitolo)'] = re.search(r'\*\*Subtitle \(Sottotitolo\):\*\*(.*?)(?=\*\*|$)', raw_response, re.DOTALL).group(1).strip()
-    extracted_data['Short Description (Breve Descrizione)'] = re.search(r'\*\*Short Description \(Breve Descrizione\):\*\*(.*?)(?=\*\*|$)', raw_response, re.DOTALL).group(1).strip()
-    extracted_data['Description (Descrizione)'] = re.search(r'\*\*Description \(Descrizione\):\*\*(.*?)(?=\*\*|$)', raw_response, re.DOTALL).group(1).strip()
+    # 为所有模板中的字段设置默认值
+    for field in template:
+        if field not in extracted_data:
+            extracted_data[field] = 'N/A'
     
-    # Extract other fields
-    all_fields = template['mandatory_fields'] + template['optional_fields']
-    for field in all_fields:
-        if field not in extracted_data:  # Avoid overwriting already extracted special fields
-            field_match = re.search(rf'\*\*{re.escape(field)}:\*\*\s*(.+)', raw_response, re.IGNORECASE | re.MULTILINE)
-            if field_match:
-                extracted_data[field] = field_match.group(1).strip()
-            else:
-                extracted_data[field] = 'N/A'
-                logging.warning(f"Field '{field}' not found in API response")
-
-    logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
     return extracted_data
 
 def process_product(product_type, brand, style_number, additional_info, size_info, internal_reference, max_retries=2):
@@ -290,13 +286,56 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
         Size Information: {size_info}
         Please format your response exactly as follows:
 
-        **Title (Titolo):** [Your title here, following the structure: brand + product name + key features + style number + size]
+        **Title (Titolo):** [Your title here]
         **Subtitle (Sottotitolo):** [Your subtitle here]
-        **Short Description (Breve Descrizione):** [Your brief summary here, about 2-3 sentences]
-        **Description (Descrizione):**
-        [Your multi-line description here]
+        **Short Description (Breve Descrizione):** [Your brief summary here]
+        **Description (Descrizione):** [Your detailed description here]
 
-        Use bullet points for better readability in the description.
+        Then, provide information for the following fields:
+
+        **Object Category (Categoria Oggetto):**
+        **Store Category (Categoria del Negozio):**
+        **Brand (Marca):**
+        **Cut (Taglia):**
+        **Department (Reparto):**
+        **Type (Tipo):**
+        **Style (Stile):**
+        **Condition of the Item (Condizione dell'oggetto):**
+        **Price (Prezzo):**
+        **Shipping Rule (Regola sulla spedizione):**
+        **MPN (MPN):**
+        **Custom Label (Etichetta personalizzata - SKU):**
+        **EAN (EAN):**
+        **Material (Materiale):**
+        **Color (Colore):**
+        **Tissue (Tessuto):**
+        **Size Type (Tipo di taglia):**
+        **Fit (Vestibilità):**
+        **Sleeve Length (Lunghezza della manica):**
+        **Unit of Measurement (Unità di misura):**
+        **Character (Personaggio):**
+        **Season (Stagione):**
+        **Vintage (Vintage):**
+        **Neckline (Scollatura):**
+        **Theme (Tema):**
+        **Activity (Attività):**
+        **Decorative Elements (Elementi decorativi):**
+        **Characteristics (Caratteristiche):**
+        **Occasion (Occasione):**
+        **Knitting Style (Stile lavorazione a maglia):**
+        **Graphic Printing (Stampa grafica):**
+        **Garment Care (Cura dell'indumento):**
+        **Country of Manufacture (Paese di fabbricazione):**
+        **Fabric Type (Tipo di tessuto):**
+        **Personalized (Personalizzato):**
+        **Year Manufactured (Anno di fabbricazione):**
+        **Handmade (Fatto a mano):**
+        **Pattern (Fantasia):**
+        **Closure Type (Tipo di chiusura):**
+        **Accents (Dettagli decorativi):**
+        **Product Line (Linea di prodotto):**
+
+        If you don't have information for a field, use 'N/A'.
         """
         description_response = call_perplexity_api(description_prompt, 0.3)
         
@@ -325,21 +364,15 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
             logging.warning(f"Failed to generate fields on attempt {attempt + 1}")
             continue
 
-        # Process description and fields separately
-        description_data = extract_fields_from_response(description_response, template, brand, style_number, size_info)
-        fields_data = extract_fields_from_response(fields_response, template, brand, style_number, size_info)
-        extracted_data = {**description_data, **fields_data}
+        combined_response = f"{description_response}\n\n{fields_response}"
+        template, _ = get_template(product_type)
+        extracted_data = extract_fields_from_response(combined_response, template, brand, style_number, size_info)
         
-        # Add size information to the title
-        if 'Title (Titolo)' in extracted_data and size_info:
-            extracted_data['Title (Titolo)'] += f" {size_info}"
-        
-        # 添加 internal reference 和 style number
+        # 添加内部引用和样式编号
         extracted_data['Internal Reference'] = internal_reference
         extracted_data['Style Number'] = style_number
         
-        logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
-        return sheet_name, extracted_data
+        return get_sheet_name(product_type), extracted_data
 
     logging.error(f"Failed to process product after {max_retries} attempts")
     return None
