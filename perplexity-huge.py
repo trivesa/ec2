@@ -41,13 +41,15 @@ Ensure all field names in your response follow the 'English (Italian)' format, e
 
 Instructions for the Title (Titolo):
 Structure of the title: brand name + product name + key features + style number + shoe size or clothing size or belt size or sizes if it is other products.
-Requirements of each sections of the title:
- 1) Brand Name: Include the brand for recognition (e.g., 'Nike').
- 2) Product Name: Clearly state what the item is (e.g., 'Men's Running Shoes').
- 3) Key Features: Include important features such as model name, style name, or technology (e.g., 'Air Max', 'Black/White', 'Flyknit').
- 4) Style Number: ALWAYS include the style number
- 5) Size: Always include the shoe size or clothing size or belt size or sizes if there are other products in the END OF THE TITLE, separate with other parts of the title with a comma.
- 6) Keep the title within 80 characters.
+Requirements of each section of the title:
+ 1) Brand Name: Include the brand for recognition (e.g., 'PRADA').
+ 2) Product Name: Clearly state what the item is (e.g., 'America's Cup T-Shirt').
+ 3) Key Features: Include important features such as model name, style name, or technology (e.g., 'Luna Rossa Collection').
+ 4) Style Number: ALWAYS include the style number.
+ 5) Size: Always include the shoe size or clothing size or belt size or sizes if there are other products, separated from other parts of the title with a comma.
+ 6) Keep the title within 80 characters if possible.
+
+Example: "PRADA America's Cup T-Shirt Luna Rossa Collection ABC123, 12Y"
 
 Instructions for the subtitle (Sottotitolo)
 Complementary: It should add value beyond what the main title already says.
@@ -235,21 +237,24 @@ def ensure_sheet_exists(sheet_name):
         logging.error(f"Error ensuring sheet '{sheet_name}' exists: {str(e)}")
         return False
 
-def extract_fields_from_response(raw_response, template):
-    logging.info(f"Raw response to extract: {raw_response[:500]}...")  # 只记录前500个字符
+def extract_fields_from_response(raw_response, template, brand, style_number, size_info):
     extracted_data = {}
+    title_match = re.search(r'\*\*Title \(Titolo\):\*\*(.*?)(?=\*\*|$)', raw_response, re.DOTALL)
+    if title_match:
+        title = title_match.group(1).strip()
+        # 并添加缺失的元素
+        if brand not in title:
+            title = f"{brand} {title}"
+        if style_number not in title:
+            title = f"{title} {style_number}"
+        if size_info and size_info not in title:
+            title = f"{title}, {size_info}"
+        extracted_data['Title (Titolo)'] = title[:80]  # 限制标题长度为80个字符
     
-    fields_to_extract = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
+    extracted_data['Subtitle (Sottotitolo)'] = re.search(r'\*\*Subtitle \(Sottotitolo\):\*\*(.*?)(?=\*\*|$)', raw_response, re.DOTALL).group(1).strip()
+    extracted_data['Short Description (Breve Descrizione)'] = re.search(r'\*\*Short Description \(Breve Descrizione\):\*\*(.*?)(?=\*\*|$)', raw_response, re.DOTALL).group(1).strip()
+    extracted_data['Description (Descrizione)'] = re.search(r'\*\*Description \(Descrizione\):\*\*(.*?)(?=\*\*|$)', raw_response, re.DOTALL).group(1).strip()
     
-    for field in fields_to_extract:
-        pattern = rf'\*\*{re.escape(field)}:\*\*\s*([\s\S]+?)(?=\n\n\*\*|$)'
-        match = re.search(pattern, raw_response, re.DOTALL)
-        if match:
-            extracted_data[field] = match.group(1).strip()
-            logging.info(f"Successfully extracted {field}: {extracted_data[field][:100]}...")
-        else:
-            logging.warning(f"Failed to extract {field}")
-
     # Extract other fields
     all_fields = template['mandatory_fields'] + template['optional_fields']
     for field in all_fields:
@@ -285,7 +290,7 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
         Size Information: {size_info}
         Please format your response exactly as follows:
 
-        **Title (Titolo):** [Your title here]
+        **Title (Titolo):** [Your title here, following the structure: brand + product name + key features + style number + size]
         **Subtitle (Sottotitolo):** [Your subtitle here]
         **Short Description (Breve Descrizione):** [Your brief summary here, about 2-3 sentences]
         **Description (Descrizione):**
@@ -321,8 +326,8 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
             continue
 
         # Process description and fields separately
-        description_data = extract_fields_from_response(description_response, template)
-        fields_data = extract_fields_from_response(fields_response, template)
+        description_data = extract_fields_from_response(description_response, template, brand, style_number, size_info)
+        fields_data = extract_fields_from_response(fields_response, template, brand, style_number, size_info)
         extracted_data = {**description_data, **fields_data}
         
         # Add size information to the title
@@ -348,28 +353,6 @@ def verify_written_data(sheet_name, start_row, num_rows):
         logging.info(f"Row {start_row + row_index}:")
         for col_index, value in enumerate(row):
             logging.info(f"  Column {col_index + 1}: {value[:100]}...")  # 只记录前100个字符
-
-def prepare_data_for_write(data):
-    return [[str(cell) if cell is not None else '' for cell in row] for row in data]
-
-def clear_range_format(sheet_name, start_row, end_row):
-    range_name = f"'{sheet_name}'!A{start_row}:ZZ{end_row}"
-    clear_request = {
-        "requests": [
-            {
-                "updateCells": {
-                    "range": {
-                        "sheetId": get_sheet_id(sheet_name),
-                        "startRowIndex": start_row - 1,
-                        "endRowIndex": end_row
-                    },
-                    "fields": "userEnteredFormat"
-                }
-            }
-        ]
-    }
-    sheets_service.spreadsheets().batchUpdate(spreadsheetId=SPREADSHEET_ID, body=clear_request).execute()
-    logging.info(f"Cleared format for range: {range_name}")
 
 def get_sheet_id(sheet_name):
     sheet_metadata = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID).execute()
@@ -429,7 +412,7 @@ def main():
         add_info = row[column_indices.get('Additional Info', -1)].strip() if column_indices.get('Additional Info', -1) < len(row) else ""
         
         # 假设尺寸信息在 'Additional Info' 列之后的所有列
-        size_info = " ".join([cell.strip() for cell in row[column_indices['Additional Info']+1:] if cell.strip()])
+        size_info = " ".join([cell.strip() for cell in row[column_indices.get('Additional Info', -1)+1:] if cell.strip()])
         
         if not all([product_type, brand, style_number]):
             logging.warning(f"Skipping row due to missing mandatory data: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
@@ -437,7 +420,10 @@ def main():
         
         result = process_product(product_type, brand, style_number, add_info, size_info, internal_reference)
         if result:
-            sheet_name, extracted_data = result
+            sheet_name, raw_extracted_data = result
+            template, _ = get_template(product_type)
+            # 使用新的 extract_fields_from_response 函数
+            extracted_data = extract_fields_from_response(raw_extracted_data, template, brand, style_number, size_info)
             if sheet_name not in sheet_data:
                 sheet_data[sheet_name] = []
             sheet_data[sheet_name].append(extracted_data)
@@ -476,9 +462,6 @@ def main():
 
                 # 清除要写入范围的格式
                 clear_range_format(sheet_name, current_row, current_row + len(rows_to_write))
-
-                # 准备数据写入
-                rows_to_write = prepare_data_for_write(rows_to_write)
 
                 # 写入数据
                 range_name = f"'{sheet_name}'!A{current_row}"
