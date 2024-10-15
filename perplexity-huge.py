@@ -264,17 +264,17 @@ def extract_fields_from_response(raw_response, template):
     logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
     return extracted_data
 
-def process_product(product_type, brand, style_number, additional_info, size_info, index, internal_reference, max_retries=2):
+def process_product(product_type, brand, style_number, additional_info, size_info, internal_reference, max_retries=2):
     logging.info(f"Processing: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}', Additional Info: '{additional_info}', Size Info: '{size_info}'")
 
     if not product_type:
-        logging.warning(f"Skipping row {index} due to empty product type")
+        logging.warning(f"Skipping row due to empty product type")
         return None
 
     sheet_name = get_sheet_name(product_type)
     template, _ = get_template(product_type)
     if not template:
-        logging.warning(f"Skipping row {index} due to missing template for product type: {product_type}")
+        logging.warning(f"Skipping row due to missing template for product type: {product_type}")
         return None
 
     for attempt in range(max_retries):
@@ -378,44 +378,64 @@ def get_sheet_id(sheet_name):
             return sheet['properties']['sheetId']
     return None
 
+def get_column_indices(headers):
+    column_indices = {}
+    for index, header in enumerate(headers):
+        clean_header = header.strip().lower()
+        if 'internal reference' in clean_header:
+            column_indices['Internal Reference'] = index
+        elif 'product category' in clean_header:
+            column_indices['Product Category'] = index
+        elif 'product type' in clean_header:
+            column_indices['Product Type'] = index
+        elif 'brand' in clean_header:
+            column_indices['Brand'] = index
+        elif 'style number' in clean_header:
+            column_indices['Style Number'] = index
+        elif 'additional info' in clean_header:
+            column_indices['Additional Info'] = index
+        # 可以继续添加其他需要的列
+    return column_indices
+
 def main():
     logging.info(f"Current working directory: {os.getcwd()}")
     
-    # 添加读取 internal reference 的行
-    internal_references = read_spreadsheet('Sheet1!A2:A')
-    product_types = read_spreadsheet('Sheet1!E2:E')
-    brands = read_spreadsheet('Sheet1!F2:F')
-    style_numbers = read_spreadsheet('Sheet1!I2:I')
-    additional_info = read_spreadsheet('Sheet1!J2:J')
-    size_info = read_spreadsheet('Sheet1!K2:X')
+    # 读取表头
+    headers = read_spreadsheet('Sheet1!A1:ZZ1')[0]
+    logging.info(f"Headers: {headers}")
     
-    logging.info(f"Read {len(internal_references)} internal references, {len(product_types)} product types, {len(brands)} brands, {len(style_numbers)} style numbers, {len(additional_info)} additional info entries, and {len(size_info)} size info entries")
+    # 动态获取列索引
+    column_indices = get_column_indices(headers)
+    logging.info(f"Column indices: {column_indices}")
     
-    # 更新最小长度计算
-    min_length = min(len(internal_references), len(product_types), len(brands), len(style_numbers))
+    # 读取数据
+    all_data = read_spreadsheet('Sheet1!A2:ZZ')
     
-    if min_length == 0:
-        logging.error("One or more mandatory columns are empty. Please check the spreadsheet.")
+    logging.info(f"Read {len(all_data)} rows of data")
+    
+    if len(all_data) == 0:
+        logging.error("No data found in spreadsheet.")
         return
-
-    logging.info(f"Processing {min_length} rows with mandatory data")
 
     # Store data for each sheet
     sheet_data = {}
     
-    for index in range(min_length):
-        internal_reference = str(internal_references[index][0]).strip() if internal_references[index] else ""
-        product_type = str(product_types[index][0]).strip() if product_types[index] else ""
-        brand = str(brands[index][0]).strip() if brands[index] else ""
-        style_number = str(style_numbers[index][0]).strip() if style_numbers[index] else ""
-        add_info = str(additional_info[index][0]).strip() if index < len(additional_info) and additional_info[index] else ""
-        size = get_size_info(size_info[index]) if index < len(size_info) and size_info[index] else ""
+    for row in all_data:
+        internal_reference = row[column_indices.get('Internal Reference', -1)].strip() if column_indices.get('Internal Reference', -1) < len(row) else ""
+        product_category = row[column_indices.get('Product Category', -1)].strip() if column_indices.get('Product Category', -1) < len(row) else ""
+        product_type = row[column_indices.get('Product Type', -1)].strip() if column_indices.get('Product Type', -1) < len(row) else ""
+        brand = row[column_indices.get('Brand', -1)].strip() if column_indices.get('Brand', -1) < len(row) else ""
+        style_number = row[column_indices.get('Style Number', -1)].strip() if column_indices.get('Style Number', -1) < len(row) else ""
+        add_info = row[column_indices.get('Additional Info', -1)].strip() if column_indices.get('Additional Info', -1) < len(row) else ""
         
-        if not all([internal_reference, product_type, brand, style_number]):
-            logging.warning(f"Skipping row {index+2} due to missing mandatory data: Internal Reference: '{internal_reference}', Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
+        # 假设尺寸信息在 'Additional Info' 列之后的所有列
+        size_info = " ".join([cell.strip() for cell in row[column_indices['Additional Info']+1:] if cell.strip()])
+        
+        if not all([product_type, brand, style_number]):
+            logging.warning(f"Skipping row due to missing mandatory data: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
             continue
         
-        result = process_product(product_type, brand, style_number, add_info, size, index+2, internal_reference)
+        result = process_product(product_type, brand, style_number, add_info, size_info, internal_reference)
         if result:
             sheet_name, extracted_data = result
             if sheet_name not in sheet_data:
@@ -438,53 +458,33 @@ def main():
                 for item in data:
                     row = [''] * len(field_names)  # 初始化一个空行，长度与字段名数量相同
                     
-                    # 填入固定栏位
-                    fixed_fields = {
-                        'Internal Reference': 0,
-                        'Title (Titolo)': 1,
-                        'Subtitle (Sottotitolo)': 2,
-                        'Short Description (Breve Descrizione)': 3,
-                        'Description (Descrizione)': 4
-                    }
-                    for field, index in fixed_fields.items():
-                        row[index] = item.get(field, 'N/A')
-                    
-                    # 处理特殊字段
-                    mpn_index = field_names.index('MPN (MPN)') if 'MPN (MPN)' in field_names else -1
-                    if mpn_index != -1:
-                        row[mpn_index] = item.get('Style Number', 'N/A')
-                    
-                    style_number_index = field_names.index('Style Number') if 'Style Number' in field_names else -1
-                    if style_number_index != -1:
-                        row[style_number_index] = item.get('Style Number', 'N/A')
-                    
-                    custom_label_index = field_names.index('Custom Label (Etichetta personalizzata - SKU)') if 'Custom Label (Etichetta personalizzata - SKU)' in field_names else -1
-                    if custom_label_index != -1:
-                        row[custom_label_index] = item.get('Internal Reference', 'N/A')
-                    
-                    # 处理其他字段
+                    # 填入所有字段
                     for i, field in enumerate(field_names):
-                        if i not in [0, 1, 2, 3, 4, mpn_index, style_number_index, custom_label_index]:  # 跳过已处理的字段
+                        if field == 'MPN (MPN)':
+                            row[i] = item.get('Style Number', 'N/A')
+                        elif field == 'Custom Label (Etichetta personalizzata - SKU)':
+                            row[i] = item.get('Internal Reference', 'N/A')
+                        else:
                             row[i] = item.get(field, 'N/A')
                     
                     rows_to_write.append(row)
                     logging.info(f"Prepared row: {row[:10]}...")  # 只记录前10个字段
 
-                # Get current row count of the sheet
+                # 获取当前工作表的行数
                 sheet_info = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID, ranges=[f"'{sheet_name}'"], includeGridData=True).execute()
                 current_row = len(sheet_info['sheets'][0]['data'][0]['rowData']) + 1
 
-                # Clear format of the range to be written
+                # 清除要写入范围的格式
                 clear_range_format(sheet_name, current_row, current_row + len(rows_to_write))
 
-                # Prepare data for write
+                # 准备数据写入
                 rows_to_write = prepare_data_for_write(rows_to_write)
 
-                # Write data
+                # 写入数据
                 range_name = f"'{sheet_name}'!A{current_row}"
                 write_to_spreadsheet(range_name, rows_to_write)
                 
-                # Verify written data
+                # 验证写入的数据
                 verify_written_data(sheet_name, current_row, len(rows_to_write))
                 
                 logging.info(f"Successfully wrote and verified {len(rows_to_write)} rows to sheet '{sheet_name}'")
