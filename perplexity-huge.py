@@ -240,9 +240,17 @@ def ensure_sheet_exists(sheet_name):
 def extract_fields_from_response(raw_response, template, brand, style_number, size_info):
     extracted_data = {}
     
+    if not isinstance(raw_response, str):
+        logging.error(f"raw_response is not a string. Type: {type(raw_response)}")
+        raw_response = str(raw_response)  # 尝试���非字符串对象转换为字符串
+    
     # 使用更宽松的正则表达式来匹配字段
     field_pattern = r'\*\*(.*?):\*\*(.*?)(?=\*\*|$)'
-    matches = re.findall(field_pattern, raw_response, re.DOTALL)
+    try:
+        matches = re.findall(field_pattern, raw_response, re.DOTALL)
+    except Exception as e:
+        logging.error(f"Error in regex findall: {str(e)}")
+        matches = []
     
     for field, value in matches:
         extracted_data[field.strip()] = value.strip()
@@ -365,6 +373,10 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
             continue
 
         combined_response = f"{description_response}\n\n{fields_response}"
+        if not isinstance(combined_response, str):
+            logging.error(f"combined_response is not a string. Type: {type(combined_response)}")
+            combined_response = str(combined_response)
+        
         template, _ = get_template(product_type)
         extracted_data = extract_fields_from_response(combined_response, template, brand, style_number, size_info)
         
@@ -451,15 +463,18 @@ def main():
             logging.warning(f"Skipping row due to missing mandatory data: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
             continue
         
-        result = process_product(product_type, brand, style_number, add_info, size_info, internal_reference)
-        if result:
-            sheet_name, raw_extracted_data = result
-            template, _ = get_template(product_type)
-            # 使用新的 extract_fields_from_response 函数
-            extracted_data = extract_fields_from_response(raw_extracted_data, template, brand, style_number, size_info)
-            if sheet_name not in sheet_data:
-                sheet_data[sheet_name] = []
-            sheet_data[sheet_name].append(extracted_data)
+        try:
+            result = process_product(product_type, brand, style_number, add_info, size_info, internal_reference)
+            if result:
+                sheet_name, raw_extracted_data = result
+                template, _ = get_template(product_type)
+                extracted_data = extract_fields_from_response(raw_extracted_data, template, brand, style_number, size_info)
+                if sheet_name not in sheet_data:
+                    sheet_data[sheet_name] = []
+                sheet_data[sheet_name].append(extracted_data)
+        except Exception as e:
+            logging.error(f"Error processing row: {str(e)}")
+            continue
 
     # Write data to respective sheets
     for sheet_name, data in sheet_data.items():
