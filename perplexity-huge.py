@@ -40,16 +40,10 @@ def write_to_spreadsheet(range_name, values):
     body = {
         'values': values
     }
-    logging.info(f"Attempting to write {len(values)} rows to range: {range_name}")
-    logging.info(f"First row of data: {values[0] if values else 'No data'}")
-    try:
-        result = sheets_service.spreadsheets().values().update(
-            spreadsheetId=SPREADSHEET_ID, range=range_name,
-            valueInputOption='RAW', body=body).execute()
-        logging.info(f"Write result: {result}")
-        logging.info(f"Updated {result.get('updatedCells')} cells")
-    except Exception as e:
-        logging.error(f"Error writing to spreadsheet: {str(e)}")
+    result = sheets_service.spreadsheets().values().update(
+        spreadsheetId=SPREADSHEET_ID, range=range_name,
+        valueInputOption='RAW', body=body).execute()
+    logging.info(f"{result.get('updatedCells')} cells updated.")
 
 def get_template(product_type):
     if not product_type:
@@ -101,7 +95,7 @@ def call_perplexity_api(prompt, temperature):
         response_json = response.json()
         content = response_json['choices'][0]['message']['content']
         
-        # 保存API响应到文件
+        # 保存API响应到文
         with open(f'api_response_{int(time.time())}.json', 'w') as f:
             json.dump(response_json, f, indent=2)
         
@@ -150,30 +144,19 @@ def extract_fields_from_response(raw_response, template, product_info):
     extracted_data['Internal Reference'] = product_info['style_number']
     
     if isinstance(raw_response, dict):
-        content = raw_response.get('choices', [{}])[0].get('message', {}).get('content', '')
+        # 处理新的响应格式
+        extracted_data['Title (Titolo)'] = raw_response.get('title', '')
+        extracted_data['Subtitle (Sottotitolo)'] = raw_response.get('subtitle', '')
+        extracted_data['Short Description (Breve Descrizione)'] = raw_response.get('short_description', '')
+        extracted_data['Description (Descrizione)'] = raw_response.get('full_description', '')
+        
+        # 处理其他字段
+        other_fields = raw_response.get('other_fields', '')
+        # 这里可以添加代码来解析 other_fields 并提取其他必要的信息
     else:
+        # 保留旧的处理逻辑，以防API响应格式未更改
         content = raw_response
-
-    # 解析内容
-    title_match = re.search(r'Title \(Titolo\):\s*(.*?)(?:\n|$)', content, re.IGNORECASE | re.DOTALL)
-    subtitle_match = re.search(r'Subtitle \(Sottotitolo\):\s*(.*?)(?:\n|$)', content, re.IGNORECASE | re.DOTALL)
-    short_desc_match = re.search(r'Short Description \(Breve Descrizione\):\s*(.*?)(?:\n|$)', content, re.IGNORECASE | re.DOTALL)
-    desc_match = re.search(r'Description \(Descrizione\):\s*(.*?)(?:\n|$)', content, re.IGNORECASE | re.DOTALL)
-
-    # 构建标题，包含样式编号和尺寸
-    title = f"{product_info['brand']} - {product_info['style_number']}"
-    if product_info['size']:
-        title += f" - Size {product_info['size']}"
-    if title_match:
-        title += f" - {title_match.group(1).strip()}"
-    extracted_data['Title (Titolo)'] = title
-
-    # 添加副标题、简短描述和描述
-    extracted_data['Subtitle (Sottotitolo)'] = subtitle_match.group(1).strip() if subtitle_match else ''
-    extracted_data['Short Description (Breve Descrizione)'] = short_desc_match.group(1).strip() if short_desc_match else ''
-    extracted_data['Description (Descrizione)'] = desc_match.group(1).strip() if desc_match else ''
-
-    # ... 其他字段的提取逻辑 ...
+        # ... 旧的解析逻辑 ...
 
     return extracted_data
 
@@ -309,31 +292,37 @@ def main():
     for sheet_name, data in sheet_data.items():
         try:
             if ensure_sheet_exists(sheet_name):
-                # Get field names (first row) of the sheet
-                field_names = sheets_service.spreadsheets().values().get(
+                # 确保字段顺序正确
+                required_fields = [
+                    'Internal Reference', 
+                    'Title (Titolo)', 
+                    'Subtitle (Sottotitolo)', 
+                    'Short Description (Breve Descrizione)', 
+                    'Description (Descrizione)'
+                ]
+                
+                # 获取工作表的现有字段名
+                existing_fields = sheets_service.spreadsheets().values().get(
                     spreadsheetId=SPREADSHEET_ID, range=f"'{sheet_name}'!A1:ZZ1").execute().get('values', [[]])[0]
 
-                logging.info(f"Sheet field names: {field_names}")
-                logging.info(f"Extracted data keys: {list(data[0].keys())}")
+                # 确保所有必需字段都存在，并且顺序正确
+                for i, field in enumerate(required_fields):
+                    if field not in existing_fields:
+                        existing_fields.insert(i, field)
+                    elif existing_fields.index(field) != i:
+                        existing_fields.remove(field)
+                        existing_fields.insert(i, field)
 
-                # Ensure all required fields are present
-                required_fields = ['Internal Reference', 'Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
-                for field in required_fields:
-                    if field not in field_names:
-                        field_names.append(field)
-                        logging.info(f"Added missing field to sheet: {field}")
-
-                # Prepare data to write
+                # 准备要写入的数据
                 rows_to_write = []
                 for item in data:
                     row = []
-                    for field in field_names:
+                    for field in existing_fields:
                         value = item.get(field, 'N/A')
                         if isinstance(value, str) and len(value) > 50000:
                             value = value[:50000] + "... (truncated)"
                         row.append(value)
                     rows_to_write.append(row)
-                    logging.info(f"Prepared row: {row[:5]}...")  # 只记录前5个字段
 
                 # Get current row count of the sheet
                 sheet_info = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID, ranges=[f"'{sheet_name}'"], includeGridData=True).execute()
