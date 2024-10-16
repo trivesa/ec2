@@ -440,22 +440,31 @@ def main():
                 logging.info(f"Sheet field names: {field_names}")
                 logging.info(f"Extracted data keys: {list(data[0].keys())}")
 
-                # Ensure all required fields are present
-                required_fields = ['Internal Reference', 'Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
-                for field in required_fields:
-                    if field not in field_names:
-                        field_names.append(field)
-                        logging.info(f"Added missing field to sheet: {field}")
-
                 # Prepare data to write
                 rows_to_write = []
                 for item in data:
-                    row = []
-                    for field in field_names:
-                        value = item.get(field, 'N/A')
-                        if isinstance(value, str) and len(value) > 50000:
-                            value = value[:50000] + "... (truncated)"
-                        row.append(value)
+                    row = [''] * len(field_names)  # Initialize row with empty strings
+                    for i, field in enumerate(field_names):
+                        if field == 'Internal Reference':
+                            row[i] = item.get('Internal Reference', '')
+                        elif field == 'Title (Titolo)':
+                            row[i] = item.get('Title (Titolo)', '')
+                        elif field == 'Subtitle (Sottotitolo)':
+                            row[i] = item.get('Subtitle (Sottotitolo)', '')
+                        elif field == 'Short Description (Breve Descrizione)':
+                            row[i] = item.get('Short Description (Breve Descrizione)', '')
+                        elif field == 'Description (Descrizione)':
+                            row[i] = item.get('Description (Descrizione)', '')
+                        elif field == 'MPN (MPN)':
+                            row[i] = item.get('MPN (MPN)', '')
+                        elif field == 'Custom Label (Etichetta personalizzata - SKU)':
+                            row[i] = item.get('Custom Label (Etichetta personalizzata - SKU)', '')
+                        else:
+                            row[i] = item.get(field, 'N/A')
+                        
+                        if isinstance(row[i], str) and len(row[i]) > 50000:
+                            row[i] = row[i][:50000] + "... (truncated)"
+                    
                     rows_to_write.append(row)
                     logging.info(f"Prepared row: {row[:5]}...")  # 只记录前5个字段
 
