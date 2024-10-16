@@ -41,15 +41,13 @@ Ensure all field names in your response follow the 'English (Italian)' format, e
 
 Instructions for the Title (Titolo):
 Structure of the title: brand name + product name + key features + style number + shoe size or clothing size or belt size or sizes if it is other products.
-Requirements of each section of the title:
- 1) Brand Name: Include the brand for recognition (e.g., 'PRADA').
- 2) Product Name: Clearly state what the item is (e.g., 'America's Cup T-Shirt').
- 3) Key Features: Include important features such as model name, style name, or technology (e.g., 'Luna Rossa Collection').
- 4) Style Number: ALWAYS include the style number.
- 5) Size: Always include the shoe size or clothing size or belt size or sizes if there are other products, separated from other parts of the title with a comma.
- 6) Keep the title within 80 characters if possible.
-
-Example: "PRADA America's Cup T-Shirt Luna Rossa Collection ABC123, 12Y"
+Requirements of each sections of the title:
+ 1) Brand Name: Include the brand for recognition (e.g., 'Nike').
+ 2) Product Name: Clearly state what the item is (e.g., 'Men's Running Shoes').
+ 3) Key Features: Include important features such as model name, style name, or technology (e.g., 'Air Max', 'Black/White', 'Flyknit').
+ 4) Style Number: ALWAYS include the style number
+ 5) Size: Always include the shoe size or clothing size or belt size or sizes if there are other products in the END OF THE TITLE, separate with other parts of the title with a comma.
+ 6) Keep the title within 80 characters.
 
 Instructions for the subtitle (Sottotitolo)
 Complementary: It should add value beyond what the main title already says.
@@ -237,53 +235,46 @@ def ensure_sheet_exists(sheet_name):
         logging.error(f"Error ensuring sheet '{sheet_name}' exists: {str(e)}")
         return False
 
-def extract_fields_from_response(raw_response, template, brand, style_number, size_info):
+def extract_fields_from_response(raw_response, template):
+    logging.info(f"Raw response to extract: {raw_response[:500]}...")  # 只记录前500个字符
     extracted_data = {}
     
-    if not isinstance(raw_response, str):
-        logging.error(f"raw_response is not a string. Type: {type(raw_response)}")
-        raw_response = str(raw_response)  # 尝试���非字符串对象转换为字符串
+    fields_to_extract = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
     
-    # 使用更宽松的正则表达式来匹配字段
-    field_pattern = r'\*\*(.*?):\*\*(.*?)(?=\*\*|$)'
-    try:
-        matches = re.findall(field_pattern, raw_response, re.DOTALL)
-    except Exception as e:
-        logging.error(f"Error in regex findall: {str(e)}")
-        matches = []
-    
-    for field, value in matches:
-        extracted_data[field.strip()] = value.strip()
-    
-    # 处理标题
-    if 'Title (Titolo)' in extracted_data:
-        title = extracted_data['Title (Titolo)']
-        if brand not in title:
-            title = f"{brand} {title}"
-        if style_number not in title:
-            title = f"{title} {style_number}"
-        if size_info and size_info not in title:
-            title = f"{title}, {size_info}"
-        extracted_data['Title (Titolo)'] = title[:80]  # 限制标题长度为80个字符
-    
-    # 为所有模板中的字段设置默认值
-    for field in template:
-        if field not in extracted_data:
-            extracted_data[field] = 'N/A'
-    
+    for field in fields_to_extract:
+        pattern = rf'\*\*{re.escape(field)}:\*\*\s*([\s\S]+?)(?=\n\n\*\*|$)'
+        match = re.search(pattern, raw_response, re.DOTALL)
+        if match:
+            extracted_data[field] = match.group(1).strip()
+            logging.info(f"Successfully extracted {field}: {extracted_data[field][:100]}...")
+        else:
+            logging.warning(f"Failed to extract {field}")
+
+    # Extract other fields
+    all_fields = template['mandatory_fields'] + template['optional_fields']
+    for field in all_fields:
+        if field not in extracted_data:  # Avoid overwriting already extracted special fields
+            field_match = re.search(rf'\*\*{re.escape(field)}:\*\*\s*(.+)', raw_response, re.IGNORECASE | re.MULTILINE)
+            if field_match:
+                extracted_data[field] = field_match.group(1).strip()
+            else:
+                extracted_data[field] = 'N/A'
+                logging.warning(f"Field '{field}' not found in API response")
+
+    logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
     return extracted_data
 
-def process_product(product_type, brand, style_number, additional_info, size_info, internal_reference, max_retries=2):
+def process_product(product_type, brand, style_number, additional_info, size_info, index, internal_reference, max_retries=2):
     logging.info(f"Processing: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}', Additional Info: '{additional_info}', Size Info: '{size_info}'")
 
     if not product_type:
-        logging.warning(f"Skipping row due to empty product type")
+        logging.warning(f"Skipping row {index} due to empty product type")
         return None
 
     sheet_name = get_sheet_name(product_type)
     template, _ = get_template(product_type)
     if not template:
-        logging.warning(f"Skipping row due to missing template for product type: {product_type}")
+        logging.warning(f"Skipping row {index} due to missing template for product type: {product_type}")
         return None
 
     for attempt in range(max_retries):
@@ -296,54 +287,11 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
 
         **Title (Titolo):** [Your title here]
         **Subtitle (Sottotitolo):** [Your subtitle here]
-        **Short Description (Breve Descrizione):** [Your brief summary here]
-        **Description (Descrizione):** [Your detailed description here]
+        **Short Description (Breve Descrizione):** [Your brief summary here, about 2-3 sentences]
+        **Description (Descrizione):**
+        [Your multi-line description here]
 
-        Then, provide information for the following fields:
-
-        **Object Category (Categoria Oggetto):**
-        **Store Category (Categoria del Negozio):**
-        **Brand (Marca):**
-        **Cut (Taglia):**
-        **Department (Reparto):**
-        **Type (Tipo):**
-        **Style (Stile):**
-        **Condition of the Item (Condizione dell'oggetto):**
-        **Price (Prezzo):**
-        **Shipping Rule (Regola sulla spedizione):**
-        **MPN (MPN):**
-        **Custom Label (Etichetta personalizzata - SKU):**
-        **EAN (EAN):**
-        **Material (Materiale):**
-        **Color (Colore):**
-        **Tissue (Tessuto):**
-        **Size Type (Tipo di taglia):**
-        **Fit (Vestibilità):**
-        **Sleeve Length (Lunghezza della manica):**
-        **Unit of Measurement (Unità di misura):**
-        **Character (Personaggio):**
-        **Season (Stagione):**
-        **Vintage (Vintage):**
-        **Neckline (Scollatura):**
-        **Theme (Tema):**
-        **Activity (Attività):**
-        **Decorative Elements (Elementi decorativi):**
-        **Characteristics (Caratteristiche):**
-        **Occasion (Occasione):**
-        **Knitting Style (Stile lavorazione a maglia):**
-        **Graphic Printing (Stampa grafica):**
-        **Garment Care (Cura dell'indumento):**
-        **Country of Manufacture (Paese di fabbricazione):**
-        **Fabric Type (Tipo di tessuto):**
-        **Personalized (Personalizzato):**
-        **Year Manufactured (Anno di fabbricazione):**
-        **Handmade (Fatto a mano):**
-        **Pattern (Fantasia):**
-        **Closure Type (Tipo di chiusura):**
-        **Accents (Dettagli decorativi):**
-        **Product Line (Linea di prodotto):**
-
-        If you don't have information for a field, use 'N/A'.
+        Use bullet points for better readability in the description.
         """
         description_response = call_perplexity_api(description_prompt, 0.3)
         
@@ -372,19 +320,21 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
             logging.warning(f"Failed to generate fields on attempt {attempt + 1}")
             continue
 
-        combined_response = f"{description_response}\n\n{fields_response}"
-        if not isinstance(combined_response, str):
-            logging.error(f"combined_response is not a string. Type: {type(combined_response)}")
-            combined_response = str(combined_response)
+        # Process description and fields separately
+        description_data = extract_fields_from_response(description_response, template)
+        fields_data = extract_fields_from_response(fields_response, template)
+        extracted_data = {**description_data, **fields_data}
         
-        template, _ = get_template(product_type)
-        extracted_data = extract_fields_from_response(combined_response, template, brand, style_number, size_info)
+        # Add size information to the title
+        if 'Title (Titolo)' in extracted_data and size_info:
+            extracted_data['Title (Titolo)'] += f" {size_info}"
         
-        # 添加内部引用和样式编号
+        # 添加 internal reference 和 style number
         extracted_data['Internal Reference'] = internal_reference
         extracted_data['Style Number'] = style_number
         
-        return get_sheet_name(product_type), extracted_data
+        logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
+        return sheet_name, extracted_data
 
     logging.error(f"Failed to process product after {max_retries} attempts")
     return None
@@ -399,6 +349,28 @@ def verify_written_data(sheet_name, start_row, num_rows):
         for col_index, value in enumerate(row):
             logging.info(f"  Column {col_index + 1}: {value[:100]}...")  # 只记录前100个字符
 
+def prepare_data_for_write(data):
+    return [[str(cell) if cell is not None else '' for cell in row] for row in data]
+
+def clear_range_format(sheet_name, start_row, end_row):
+    range_name = f"'{sheet_name}'!A{start_row}:ZZ{end_row}"
+    clear_request = {
+        "requests": [
+            {
+                "updateCells": {
+                    "range": {
+                        "sheetId": get_sheet_id(sheet_name),
+                        "startRowIndex": start_row - 1,
+                        "endRowIndex": end_row
+                    },
+                    "fields": "userEnteredFormat"
+                }
+            }
+        ]
+    }
+    sheets_service.spreadsheets().batchUpdate(spreadsheetId=SPREADSHEET_ID, body=clear_request).execute()
+    logging.info(f"Cleared format for range: {range_name}")
+
 def get_sheet_id(sheet_name):
     sheet_metadata = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID).execute()
     for sheet in sheet_metadata.get('sheets', ''):
@@ -406,75 +378,49 @@ def get_sheet_id(sheet_name):
             return sheet['properties']['sheetId']
     return None
 
-def get_column_indices(headers):
-    column_indices = {}
-    for index, header in enumerate(headers):
-        clean_header = header.strip().lower()
-        if 'internal reference' in clean_header:
-            column_indices['Internal Reference'] = index
-        elif 'product category' in clean_header:
-            column_indices['Product Category'] = index
-        elif 'product type' in clean_header:
-            column_indices['Product Type'] = index
-        elif 'brand' in clean_header:
-            column_indices['Brand'] = index
-        elif 'style number' in clean_header:
-            column_indices['Style Number'] = index
-        elif 'additional info' in clean_header:
-            column_indices['Additional Info'] = index
-        # 可以继续添加其他需要的列
-    return column_indices
-
 def main():
     logging.info(f"Current working directory: {os.getcwd()}")
     
-    # 读取表头
-    headers = read_spreadsheet('Sheet1!A1:ZZ1')[0]
-    logging.info(f"Headers: {headers}")
+    # 添加读取 internal reference 的行
+    internal_references = read_spreadsheet('Sheet1!A2:A')
+    product_types = read_spreadsheet('Sheet1!E2:E')
+    brands = read_spreadsheet('Sheet1!F2:F')
+    style_numbers = read_spreadsheet('Sheet1!I2:I')
+    additional_info = read_spreadsheet('Sheet1!J2:J')
+    size_info = read_spreadsheet('Sheet1!K2:X')
     
-    # 动态获取列索引
-    column_indices = get_column_indices(headers)
-    logging.info(f"Column indices: {column_indices}")
+    logging.info(f"Read {len(internal_references)} internal references, {len(product_types)} product types, {len(brands)} brands, {len(style_numbers)} style numbers, {len(additional_info)} additional info entries, and {len(size_info)} size info entries")
     
-    # 读取数据
-    all_data = read_spreadsheet('Sheet1!A2:ZZ')
+    # 更新最小长度计算
+    min_length = min(len(internal_references), len(product_types), len(brands), len(style_numbers))
     
-    logging.info(f"Read {len(all_data)} rows of data")
-    
-    if len(all_data) == 0:
-        logging.error("No data found in spreadsheet.")
+    if min_length == 0:
+        logging.error("One or more mandatory columns are empty. Please check the spreadsheet.")
         return
+
+    logging.info(f"Processing {min_length} rows with mandatory data")
 
     # Store data for each sheet
     sheet_data = {}
     
-    for row in all_data:
-        internal_reference = row[column_indices.get('Internal Reference', -1)].strip() if column_indices.get('Internal Reference', -1) < len(row) else ""
-        product_category = row[column_indices.get('Product Category', -1)].strip() if column_indices.get('Product Category', -1) < len(row) else ""
-        product_type = row[column_indices.get('Product Type', -1)].strip() if column_indices.get('Product Type', -1) < len(row) else ""
-        brand = row[column_indices.get('Brand', -1)].strip() if column_indices.get('Brand', -1) < len(row) else ""
-        style_number = row[column_indices.get('Style Number', -1)].strip() if column_indices.get('Style Number', -1) < len(row) else ""
-        add_info = row[column_indices.get('Additional Info', -1)].strip() if column_indices.get('Additional Info', -1) < len(row) else ""
+    for index in range(min_length):
+        internal_reference = str(internal_references[index][0]).strip() if internal_references[index] else ""
+        product_type = str(product_types[index][0]).strip() if product_types[index] else ""
+        brand = str(brands[index][0]).strip() if brands[index] else ""
+        style_number = str(style_numbers[index][0]).strip() if style_numbers[index] else ""
+        add_info = str(additional_info[index][0]).strip() if index < len(additional_info) and additional_info[index] else ""
+        size = get_size_info(size_info[index]) if index < len(size_info) and size_info[index] else ""
         
-        # 假设尺寸信息在 'Additional Info' 列之后的所有列
-        size_info = " ".join([cell.strip() for cell in row[column_indices.get('Additional Info', -1)+1:] if cell.strip()])
-        
-        if not all([product_type, brand, style_number]):
-            logging.warning(f"Skipping row due to missing mandatory data: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
+        if not all([internal_reference, product_type, brand, style_number]):
+            logging.warning(f"Skipping row {index+2} due to missing mandatory data: Internal Reference: '{internal_reference}', Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
             continue
         
-        try:
-            result = process_product(product_type, brand, style_number, add_info, size_info, internal_reference)
-            if result:
-                sheet_name, raw_extracted_data = result
-                template, _ = get_template(product_type)
-                extracted_data = extract_fields_from_response(raw_extracted_data, template, brand, style_number, size_info)
-                if sheet_name not in sheet_data:
-                    sheet_data[sheet_name] = []
-                sheet_data[sheet_name].append(extracted_data)
-        except Exception as e:
-            logging.error(f"Error processing row: {str(e)}")
-            continue
+        result = process_product(product_type, brand, style_number, add_info, size, index+2, internal_reference)
+        if result:
+            sheet_name, extracted_data = result
+            if sheet_name not in sheet_data:
+                sheet_data[sheet_name] = []
+            sheet_data[sheet_name].append(extracted_data)
 
     # Write data to respective sheets
     for sheet_name, data in sheet_data.items():
@@ -492,30 +438,53 @@ def main():
                 for item in data:
                     row = [''] * len(field_names)  # 初始化一个空行，长度与字段名数量相同
                     
-                    # 填入所有字段
+                    # 填入固定栏位
+                    fixed_fields = {
+                        'Internal Reference': 0,
+                        'Title (Titolo)': 1,
+                        'Subtitle (Sottotitolo)': 2,
+                        'Short Description (Breve Descrizione)': 3,
+                        'Description (Descrizione)': 4
+                    }
+                    for field, index in fixed_fields.items():
+                        row[index] = item.get(field, 'N/A')
+                    
+                    # 处理特殊字段
+                    mpn_index = field_names.index('MPN (MPN)') if 'MPN (MPN)' in field_names else -1
+                    if mpn_index != -1:
+                        row[mpn_index] = item.get('Style Number', 'N/A')
+                    
+                    style_number_index = field_names.index('Style Number') if 'Style Number' in field_names else -1
+                    if style_number_index != -1:
+                        row[style_number_index] = item.get('Style Number', 'N/A')
+                    
+                    custom_label_index = field_names.index('Custom Label (Etichetta personalizzata - SKU)') if 'Custom Label (Etichetta personalizzata - SKU)' in field_names else -1
+                    if custom_label_index != -1:
+                        row[custom_label_index] = item.get('Internal Reference', 'N/A')
+                    
+                    # 处理其他字段
                     for i, field in enumerate(field_names):
-                        if field == 'MPN (MPN)':
-                            row[i] = item.get('Style Number', 'N/A')
-                        elif field == 'Custom Label (Etichetta personalizzata - SKU)':
-                            row[i] = item.get('Internal Reference', 'N/A')
-                        else:
+                        if i not in [0, 1, 2, 3, 4, mpn_index, style_number_index, custom_label_index]:  # 跳过已处理的字段
                             row[i] = item.get(field, 'N/A')
                     
                     rows_to_write.append(row)
                     logging.info(f"Prepared row: {row[:10]}...")  # 只记录前10个字段
 
-                # 获取当前工作表的行数
+                # Get current row count of the sheet
                 sheet_info = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID, ranges=[f"'{sheet_name}'"], includeGridData=True).execute()
                 current_row = len(sheet_info['sheets'][0]['data'][0]['rowData']) + 1
 
-                # 清除要写入范围的格式
+                # Clear format of the range to be written
                 clear_range_format(sheet_name, current_row, current_row + len(rows_to_write))
 
-                # 写入数据
+                # Prepare data for write
+                rows_to_write = prepare_data_for_write(rows_to_write)
+
+                # Write data
                 range_name = f"'{sheet_name}'!A{current_row}"
                 write_to_spreadsheet(range_name, rows_to_write)
                 
-                # 验证写入的数据
+                # Verify written data
                 verify_written_data(sheet_name, current_row, len(rows_to_write))
                 
                 logging.info(f"Successfully wrote and verified {len(rows_to_write)} rows to sheet '{sheet_name}'")
