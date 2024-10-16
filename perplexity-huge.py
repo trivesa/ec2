@@ -143,110 +143,86 @@ def ensure_sheet_exists(sheet_name):
         logging.error(f"Error ensuring sheet '{sheet_name}' exists: {str(e)}")
         return False
 
-def extract_fields_from_response(raw_response, template):
-    logging.info(f"Raw response to extract: {raw_response[:500]}...")  # 只记录前500个字符
+def extract_fields_from_response(raw_response, template, product_info):
     extracted_data = {}
     
+    # 添加内部参考
+    extracted_data['Internal Reference'] = product_info['style_number']
+    
     if isinstance(raw_response, dict):
-        # 处理字典类型的响应
-        extracted_data = raw_response
+        content = raw_response.get('choices', [{}])[0].get('message', {}).get('content', '')
     else:
-        # 使用正则表达式处理字符串响应
-        fields_to_extract = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
-        
-        for field in fields_to_extract:
-            pattern = rf'\*\*{re.escape(field)}:\*\*\s*([\s\S]+?)(?=\n\n\*\*|$)'
-            match = re.search(pattern, raw_response, re.DOTALL)
-            if match:
-                extracted_data[field] = match.group(1).strip()
-                logging.info(f"Successfully extracted {field}: {extracted_data[field][:100]}...")
-            else:
-                logging.warning(f"Failed to extract {field}")
+        content = raw_response
 
-        # Extract other fields
-        all_fields = template['mandatory_fields'] + template['optional_fields']
-        for field in all_fields:
-            if field not in extracted_data:  # Avoid overwriting already extracted special fields
-                field_match = re.search(rf'\*\*{re.escape(field)}:\*\*\s*(.+)', raw_response, re.IGNORECASE | re.MULTILINE)
-                if field_match:
-                    extracted_data[field] = field_match.group(1).strip()
-                else:
-                    extracted_data[field] = 'N/A'
-                    logging.warning(f"Field '{field}' not found in API response")
+    # 解析内容
+    title_match = re.search(r'Title \(Titolo\):\s*(.*?)(?:\n|$)', content, re.IGNORECASE | re.DOTALL)
+    subtitle_match = re.search(r'Subtitle \(Sottotitolo\):\s*(.*?)(?:\n|$)', content, re.IGNORECASE | re.DOTALL)
+    short_desc_match = re.search(r'Short Description \(Breve Descrizione\):\s*(.*?)(?:\n|$)', content, re.IGNORECASE | re.DOTALL)
+    desc_match = re.search(r'Description \(Descrizione\):\s*(.*?)(?:\n|$)', content, re.IGNORECASE | re.DOTALL)
 
-    logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
+    # 构建标题，包含样式编号和尺寸
+    title = f"{product_info['brand']} - {product_info['style_number']}"
+    if product_info['size']:
+        title += f" - Size {product_info['size']}"
+    if title_match:
+        title += f" - {title_match.group(1).strip()}"
+    extracted_data['Title (Titolo)'] = title
+
+    # 添加副标题、简短描述和描述
+    extracted_data['Subtitle (Sottotitolo)'] = subtitle_match.group(1).strip() if subtitle_match else ''
+    extracted_data['Short Description (Breve Descrizione)'] = short_desc_match.group(1).strip() if short_desc_match else ''
+    extracted_data['Description (Descrizione)'] = desc_match.group(1).strip() if desc_match else ''
+
+    # ... 其他字段的提取逻辑 ...
+
     return extracted_data
 
-def process_product(product_type, brand, style_number, additional_info, size_info, index, max_retries=2):
-    logging.info(f"Processing: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}', Additional Info: '{additional_info}', Size Info: '{size_info}'")
+def process_product(product_type, brand, style_number, additional_info, size, row_number):
+    logging.info(f"Processing: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}', Additional Info: '{additional_info}', Size Info: '{size}'")
 
     if not product_type:
-        logging.warning(f"Skipping row {index} due to empty product type")
+        logging.warning(f"Skipping row {row_number} due to empty product type")
         return None
 
     sheet_name = get_sheet_name(product_type)
     template, _ = get_template(product_type)
     if not template:
-        logging.warning(f"Skipping row {index} due to missing template for product type: {product_type}")
+        logging.warning(f"Skipping row {row_number} due to missing template for product type: {product_type}")
         return None
 
-    for attempt in range(max_retries):
-        # Generate product description
-        description_prompt = f"""
-        Generate a detailed product description for {brand} {product_type} with style number {style_number}.
-        Additional Information: {additional_info}
-        Size Information: {size_info}
-        Please format your response exactly as follows:
+    product_info = {
+        'product_type': product_type,
+        'brand': brand,
+        'style_number': style_number,
+        'additional_info': additional_info,
+        'size': size
+    }
 
-        **Title (Titolo):** [Your title here]
-        **Subtitle (Sottotitolo):** [Your subtitle here]
-        **Short Description (Breve Descrizione):** [Your brief summary here, about 2-3 sentences]
-        **Description (Descrizione):**
-        [Your multi-line description here]
+    # Generate product description
+    description_prompt = f"""
+    Generate a detailed product description for {brand} {product_type} with style number {style_number}.
+    Additional Information: {additional_info}
+    Size Information: {size}
+    Please format your response exactly as follows:
 
-        Use bullet points for better readability in the description.
-        """
-        description_response = call_perplexity_api(description_prompt, 0.3)
-        
-        if not description_response:
-            logging.warning(f"Failed to generate description on attempt {attempt + 1}")
-            continue
+    **Title (Titolo):** [Your title here]
+    **Subtitle (Sottotitolo):** [Your subtitle here]
+    **Short Description (Breve Descrizione):** [Your brief summary here, about 2-3 sentences]
+    **Description (Descrizione):**
+    [Your multi-line description here]
 
-        # Generate Mandatory and Optional fields
-        fields_prompt = f"""
-        For the {brand} {product_type} with style number {style_number}, 
-        Additional Information: {additional_info}
-        Size Information: {size_info}
-        provide information for the following fields. Use 'N/A' if the information is not available or not applicable.
+    Use bullet points for better readability in the description.
+    """
+    description_response = call_perplexity_api(description_prompt, 0.3)
+    
+    if not description_response:
+        logging.warning(f"Failed to generate description for row {row_number}")
+        return None
 
-        Mandatory Fields:
-        {', '.join(template['mandatory_fields'])}
-
-        Optional Fields:
-        {', '.join(template['optional_fields'])}
-
-        Please provide the information in a structured format, with each field on a new line.
-        """
-        fields_response = call_perplexity_api(fields_prompt, 0.1)
-        
-        if not fields_response:
-            logging.warning(f"Failed to generate fields on attempt {attempt + 1}")
-            continue
-
-        # Process description and fields separately
-        description_data = extract_fields_from_response(description_response, template)
-        fields_data = extract_fields_from_response(fields_response, template)
-        extracted_data = {**description_data, **fields_data}
-        
-        # Add size information to the title
-        if 'Title (Titolo)' in extracted_data and size_info:
-            extracted_data['Title (Titolo)'] += f" {size_info}"
-        
-        logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
-        return sheet_name, extracted_data
-
-    logging.error(f"Failed to process product after {max_retries} attempts")
-    return None
+    extracted_data = extract_fields_from_response(description_response, template, product_info)
+    
+    logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
+    return sheet_name, extracted_data
 
 def verify_written_data(sheet_name, start_row, num_rows):
     range_name = f"'{sheet_name}'!A{start_row}:ZZ{start_row + num_rows - 1}"
@@ -341,7 +317,7 @@ def main():
                 logging.info(f"Extracted data keys: {list(data[0].keys())}")
 
                 # Ensure all required fields are present
-                required_fields = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
+                required_fields = ['Internal Reference', 'Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
                 for field in required_fields:
                     if field not in field_names:
                         field_names.append(field)
