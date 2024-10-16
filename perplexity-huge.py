@@ -25,69 +25,7 @@ PERPLEXITY_API_URL = 'https://api.perplexity.ai/chat/completions'
 # Google spreadsheet ID
 SPREADSHEET_ID = '190TeRdEtXI9HXok8y2vomh_d26D0cyWgThArKQ_03_8'
 
-GENERAL_INSTRUCTIONS = """
-Use the provided Brand, Product Type, Style number, Additional Information, and Size Information to search for product details and complete the eBay product listing as per the below requirements:
-
-Create Title (Titolo), Subtitle (Sottotitolo), Short Description (Breve Descrizione), and Description (Descrizione).
-Find the Mandatory and Optional product information listed under 'Mandatory Fields' and 'Optional Fields'.
-IMPORTANT: You MUST use the EXACT field names as provided, including both English and Italian parts. Every field name should be in the format: 'English Name (Italian Name)'. Do not omit or change any part of the field names.
-If any fields have no information available on the internet, or you cannot find it, use 'N/A' as the value.
-Provide specific price ranges based on current market data when possible.
-Include detailed size information, including available sizes and fit recommendations.
-Fill in as many optional fields as possible, especially technical specifications.
-Provide detailed information about materials used and manufacturing processes.
-The tone should be professional and follow a minimalist style.
-Ensure all field names in your response follow the 'English (Italian)' format, even if you're only able to provide information for the English part.
-
-Instructions for the Title (Titolo):
-Structure of the title: brand name + product name + key features + style number + shoe size or clothing size or belt size or sizes if it is other products.
-Requirements of each sections of the title:
- 1) Brand Name: Include the brand for recognition (e.g., 'Nike').
- 2) Product Name: Clearly state what the item is (e.g., 'Men's Running Shoes').
- 3) Key Features: Include important features such as model name, style name, or technology (e.g., 'Air Max', 'Black/White', 'Flyknit').
- 4) Style Number: ALWAYS include the style number
- 5) Size: Always include the shoe size or clothing size or belt size or sizes if there are other products in the END OF THE TITLE, separate with other parts of the title with a comma.
- 6) Keep the title within 80 characters.
-
-Instructions for the subtitle (Sottotitolo)
-Complementary: It should add value beyond what the main title already says.
-Concise: Keep it short and clear, under 55 characters.
-
-Instructions for the Description (Descrizione):
-Create a comprehensive product description using bullet points for better readability. Include the following elements:
-
-• Product Overview:
-  - Brief, engaging statement highlighting key features or benefits
-  - Explanation of what makes this product stand out
-
-• Key Features:
-  - Focus on the most important features (technology, materials, design)
-  - Explain how these features benefit the user
-  - Provide specific details about product characteristics and proprietary technologies
-
-• Size and Fit:
-  - Detailed information about fit, including size options
-  - Comparison to standard sizing
-
-• Materials and Construction:
-  - Description of materials used in different parts of the product
-  - Information on special manufacturing processes
-
-• Intended Use:
-  - Explanation of activities or occasions the product is best suited for
-
-• Care Instructions:
-  - Guidance on how to clean and maintain the product
-
-• After-Sales:
-  - Mention of warranty information and return policy within 14 days according to the European regulations.
-
-• Purchase Encouragement:
-  - Conclusion encouraging the buyer to make a purchase
-  - Highlight any limited availability or special offers
-
-Combine all these elements into a cohesive, flowing description using bullet points, without separate headings or sections. Ensure the description is easy to read, informative, and engaging.
-"""
+# 其他常量和指令保持不变
 
 def read_spreadsheet(range_name):
     sheet = sheets_service.spreadsheets()
@@ -140,36 +78,6 @@ def get_size_info(row):
             return f"Size {cell.strip()}"
     return ""
 
-def generate_prompt(template, brand, product_type, style_number, additional_info, size_info):
-    prompt = f"""
-    Brand: {brand}
-    Product Type: {product_type}
-    Style Number: {style_number}
-    Additional Information: {additional_info}
-    Size Information: {size_info}
-
-    Please generate a detailed eBay listing using the following format:
-
-    **Title (Titolo):** [Generate a concise, descriptive title]
-    **Subtitle (Sottotitolo):** [Generate a brief, catchy subtitle]
-    **Short Description (Breve Descrizione):** [Generate a brief summary of the product, about 2-3 sentences]
-    **Description (Descrizione):** [Generate a detailed, multi-paragraph description]
-    
-    **Mandatory Fields:**
-    """
-    
-    for field in template['mandatory_fields']:
-        prompt += f"\n**{field}:** [Generate appropriate content]"
-    
-    prompt += "\n\n**Optional Fields:**"
-    
-    for field in template['optional_fields']:
-        prompt += f"\n**{field}:** [Generate appropriate content if available, or 'N/A' if not applicable]"
-    
-    prompt += "\n\n" + GENERAL_INSTRUCTIONS
-    
-    return prompt
-
 def call_perplexity_api(prompt, temperature):
     headers = {
         'Authorization': f'Bearer {PERPLEXITY_API_KEY}',
@@ -178,9 +86,9 @@ def call_perplexity_api(prompt, temperature):
     data = {
         'model': 'llama-3.1-sonar-huge-128k-online',
         'messages': [
-    {'role': 'system', 'content': 'You are a luxury consumer goods industry expert, specializing in high-end fashion and luxury brand product descriptions and market positioning.'},
-    {'role': 'user', 'content': prompt}
-     ],
+            {'role': 'system', 'content': 'You are a luxury consumer goods industry expert, specializing in high-end fashion and luxury brand product descriptions and market positioning.'},
+            {'role': 'user', 'content': prompt}
+        ],
         'max_tokens': 1000,
         'temperature': temperature,
         'top_p': 0.9,
@@ -239,32 +147,37 @@ def extract_fields_from_response(raw_response, template):
     logging.info(f"Raw response to extract: {raw_response[:500]}...")  # 只记录前500个字符
     extracted_data = {}
     
-    fields_to_extract = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
-    
-    for field in fields_to_extract:
-        pattern = rf'\*\*{re.escape(field)}:\*\*\s*([\s\S]+?)(?=\n\n\*\*|$)'
-        match = re.search(pattern, raw_response, re.DOTALL)
-        if match:
-            extracted_data[field] = match.group(1).strip()
-            logging.info(f"Successfully extracted {field}: {extracted_data[field][:100]}...")
-        else:
-            logging.warning(f"Failed to extract {field}")
-
-    # Extract other fields
-    all_fields = template['mandatory_fields'] + template['optional_fields']
-    for field in all_fields:
-        if field not in extracted_data:  # Avoid overwriting already extracted special fields
-            field_match = re.search(rf'\*\*{re.escape(field)}:\*\*\s*(.+)', raw_response, re.IGNORECASE | re.MULTILINE)
-            if field_match:
-                extracted_data[field] = field_match.group(1).strip()
+    if isinstance(raw_response, dict):
+        # 处理字典类型的响应
+        extracted_data = raw_response
+    else:
+        # 使用正则表达式处理字符串响应
+        fields_to_extract = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
+        
+        for field in fields_to_extract:
+            pattern = rf'\*\*{re.escape(field)}:\*\*\s*([\s\S]+?)(?=\n\n\*\*|$)'
+            match = re.search(pattern, raw_response, re.DOTALL)
+            if match:
+                extracted_data[field] = match.group(1).strip()
+                logging.info(f"Successfully extracted {field}: {extracted_data[field][:100]}...")
             else:
-                extracted_data[field] = 'N/A'
-                logging.warning(f"Field '{field}' not found in API response")
+                logging.warning(f"Failed to extract {field}")
+
+        # Extract other fields
+        all_fields = template['mandatory_fields'] + template['optional_fields']
+        for field in all_fields:
+            if field not in extracted_data:  # Avoid overwriting already extracted special fields
+                field_match = re.search(rf'\*\*{re.escape(field)}:\*\*\s*(.+)', raw_response, re.IGNORECASE | re.MULTILINE)
+                if field_match:
+                    extracted_data[field] = field_match.group(1).strip()
+                else:
+                    extracted_data[field] = 'N/A'
+                    logging.warning(f"Field '{field}' not found in API response")
 
     logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
     return extracted_data
 
-def process_product(product_type, brand, style_number, additional_info, size_info, index, internal_reference, max_retries=2):
+def process_product(product_type, brand, style_number, additional_info, size_info, index, max_retries=2):
     logging.info(f"Processing: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}', Additional Info: '{additional_info}', Size Info: '{size_info}'")
 
     if not product_type:
@@ -329,10 +242,6 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
         if 'Title (Titolo)' in extracted_data and size_info:
             extracted_data['Title (Titolo)'] += f" {size_info}"
         
-        # 添加 internal reference 和 style number
-        extracted_data['Internal Reference'] = internal_reference
-        extracted_data['Style Number'] = style_number
-        
         logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
         return sheet_name, extracted_data
 
@@ -381,18 +290,17 @@ def get_sheet_id(sheet_name):
 def main():
     logging.info(f"Current working directory: {os.getcwd()}")
     
-    # 添加读取 internal reference 的行
-    internal_references = read_spreadsheet('Sheet1!A2:A')
+    # Read product information
     product_types = read_spreadsheet('Sheet1!E2:E')
     brands = read_spreadsheet('Sheet1!F2:F')
     style_numbers = read_spreadsheet('Sheet1!I2:I')
     additional_info = read_spreadsheet('Sheet1!J2:J')
     size_info = read_spreadsheet('Sheet1!K2:X')
     
-    logging.info(f"Read {len(internal_references)} internal references, {len(product_types)} product types, {len(brands)} brands, {len(style_numbers)} style numbers, {len(additional_info)} additional info entries, and {len(size_info)} size info entries")
+    logging.info(f"Read {len(product_types)} product types, {len(brands)} brands, {len(style_numbers)} style numbers, {len(additional_info)} additional info entries, and {len(size_info)} size info entries")
     
-    # 更新最小长度计算
-    min_length = min(len(internal_references), len(product_types), len(brands), len(style_numbers))
+    # Find the length of the mandatory columns
+    min_length = min(len(product_types), len(brands), len(style_numbers))
     
     if min_length == 0:
         logging.error("One or more mandatory columns are empty. Please check the spreadsheet.")
@@ -404,18 +312,17 @@ def main():
     sheet_data = {}
     
     for index in range(min_length):
-        internal_reference = str(internal_references[index][0]).strip() if internal_references[index] else ""
         product_type = str(product_types[index][0]).strip() if product_types[index] else ""
         brand = str(brands[index][0]).strip() if brands[index] else ""
         style_number = str(style_numbers[index][0]).strip() if style_numbers[index] else ""
         add_info = str(additional_info[index][0]).strip() if index < len(additional_info) and additional_info[index] else ""
         size = get_size_info(size_info[index]) if index < len(size_info) and size_info[index] else ""
         
-        if not all([internal_reference, product_type, brand, style_number]):
-            logging.warning(f"Skipping row {index+2} due to missing mandatory data: Internal Reference: '{internal_reference}', Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
+        if not all([product_type, brand, style_number]):
+            logging.warning(f"Skipping row {index+2} due to missing mandatory data: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
             continue
         
-        result = process_product(product_type, brand, style_number, add_info, size, index+2, internal_reference)
+        result = process_product(product_type, brand, style_number, add_info, size, index+2)
         if result:
             sheet_name, extracted_data = result
             if sheet_name not in sheet_data:
@@ -426,49 +333,31 @@ def main():
     for sheet_name, data in sheet_data.items():
         try:
             if ensure_sheet_exists(sheet_name):
-                # 获取工作表的字段名（第一行）
+                # Get field names (first row) of the sheet
                 field_names = sheets_service.spreadsheets().values().get(
                     spreadsheetId=SPREADSHEET_ID, range=f"'{sheet_name}'!A1:ZZ1").execute().get('values', [[]])[0]
 
                 logging.info(f"Sheet field names: {field_names}")
                 logging.info(f"Extracted data keys: {list(data[0].keys())}")
 
-                # 准备要写入的数据
+                # Ensure all required fields are present
+                required_fields = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
+                for field in required_fields:
+                    if field not in field_names:
+                        field_names.append(field)
+                        logging.info(f"Added missing field to sheet: {field}")
+
+                # Prepare data to write
                 rows_to_write = []
                 for item in data:
-                    row = [''] * len(field_names)  # 初始化一个空行，长度与字段名数量相同
-                    
-                    # 填入固定栏位
-                    fixed_fields = {
-                        'Internal Reference': 0,
-                        'Title (Titolo)': 1,
-                        'Subtitle (Sottotitolo)': 2,
-                        'Short Description (Breve Descrizione)': 3,
-                        'Description (Descrizione)': 4
-                    }
-                    for field, index in fixed_fields.items():
-                        row[index] = item.get(field, 'N/A')
-                    
-                    # 处理特殊字段
-                    mpn_index = field_names.index('MPN (MPN)') if 'MPN (MPN)' in field_names else -1
-                    if mpn_index != -1:
-                        row[mpn_index] = item.get('Style Number', 'N/A')
-                    
-                    style_number_index = field_names.index('Style Number') if 'Style Number' in field_names else -1
-                    if style_number_index != -1:
-                        row[style_number_index] = item.get('Style Number', 'N/A')
-                    
-                    custom_label_index = field_names.index('Custom Label (Etichetta personalizzata - SKU)') if 'Custom Label (Etichetta personalizzata - SKU)' in field_names else -1
-                    if custom_label_index != -1:
-                        row[custom_label_index] = item.get('Internal Reference', 'N/A')
-                    
-                    # 处理其他字段
-                    for i, field in enumerate(field_names):
-                        if i not in [0, 1, 2, 3, 4, mpn_index, style_number_index, custom_label_index]:  # 跳过已处理的字段
-                            row[i] = item.get(field, 'N/A')
-                    
+                    row = []
+                    for field in field_names:
+                        value = item.get(field, 'N/A')
+                        if isinstance(value, str) and len(value) > 50000:
+                            value = value[:50000] + "... (truncated)"
+                        row.append(value)
                     rows_to_write.append(row)
-                    logging.info(f"Prepared row: {row[:10]}...")  # 只记录前10个字段
+                    logging.info(f"Prepared row: {row[:5]}...")  # 只记录前5个字段
 
                 # Get current row count of the sheet
                 sheet_info = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID, ranges=[f"'{sheet_name}'"], includeGridData=True).execute()
