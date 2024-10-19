@@ -40,18 +40,11 @@ The tone should be professional and follow a minimalist style.
 Ensure all field names in your response follow the 'English (Italian)' format, even if you're only able to provide information for the English part.
 
 Instructions for the Title (Titolo):
-Structure of the title: brand name + product name + style number + shoe size or clothing size or belt size or sizes if it is other products.
-Requirements of each sections of the title:
- 1) Brand Name: Include the brand for recognition (e.g., 'Nike').
- 2) Product Name: Clearly state what the item is (e.g., 'Men's Running Shoes'), Include collection name, or model name, or style name, or technology (e.g., 'Air Max', 'Black/White', 'Flyknit').
-3) Style Number: ALWAYS include the style number, but only use "Style" instead of "Style Number" to save characters.
-5) Size: Always include the shoe size or clothing size or belt size or sizes if there are other products in the END OF THE TITLE, separate with other parts of the title with a comma.
-6) keep the title within 80 characters.
-
-Examples:
-1.Gucci Women's Rhyton sneaker, with Gucci logo, style 528892 DRW00 9522, EU 40
-2.Fendi O'Lock loafers, Style 7D1550AJZFF0R7R, UK 44
-3. LOUIS VUITTON Low Key Hobo Handbag, Style M24974, Size M
+- Brand Name: Include the brand for recognition (e.g., 'Nike').
+- Product Type: Clearly state what the item is (e.g., 'Men's Running Shoes').
+- Key Features: Include important features such as model name, color, or technology (e.g., 'Air Max', 'Black/White', 'Flyknit').
+- Size: If possible, include the size range (e.g., 'US 8-13').
+- Style Number: ALWAYS include the style number at the end of the title.
 
 Instructions for the subtitle (Sottotitolo)
 Complementary: It should add value beyond what the main title already says.
@@ -268,8 +261,8 @@ def extract_fields_from_response(raw_response, template):
     logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
     return extracted_data
 
-def process_product(product_type, brand, style_number, additional_info, size_info, internal_reference, index, max_retries=2):
-    logging.info(f"Processing: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}', Additional Info: '{additional_info}', Size Info: '{size_info}', Internal Reference: '{internal_reference}'")
+def process_product(product_type, brand, style_number, additional_info, size_info, index, max_retries=2):
+    logging.info(f"Processing: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}', Additional Info: '{additional_info}', Size Info: '{size_info}'")
 
     if not product_type:
         logging.warning(f"Skipping row {index} due to empty product type")
@@ -331,14 +324,7 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
         
         # Add size information to the title
         if 'Title (Titolo)' in extracted_data and size_info:
-            extracted_data['Title (Titolo)'] += f", {size_info}"
-        
-        # Add internal reference
-        extracted_data['Internal Reference'] = internal_reference
-        
-        # Set MPN and Custom Label
-        extracted_data['MPN (MPN)'] = style_number
-        extracted_data['Custom Label (Etichetta personalizzata - SKU)'] = internal_reference
+            extracted_data['Title (Titolo)'] += f" {size_info}"
         
         logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
         return sheet_name, extracted_data
@@ -389,17 +375,16 @@ def main():
     logging.info(f"Current working directory: {os.getcwd()}")
     
     # Read product information
-    internal_references = read_spreadsheet('Sheet1!A2:A')
     product_types = read_spreadsheet('Sheet1!E2:E')
     brands = read_spreadsheet('Sheet1!F2:F')
     style_numbers = read_spreadsheet('Sheet1!I2:I')
     additional_info = read_spreadsheet('Sheet1!J2:J')
     size_info = read_spreadsheet('Sheet1!K2:X')
     
-    logging.info(f"Read {len(internal_references)} internal references, {len(product_types)} product types, {len(brands)} brands, {len(style_numbers)} style numbers, {len(additional_info)} additional info entries, and {len(size_info)} size info entries")
+    logging.info(f"Read {len(product_types)} product types, {len(brands)} brands, {len(style_numbers)} style numbers, {len(additional_info)} additional info entries, and {len(size_info)} size info entries")
     
     # Find the length of the mandatory columns
-    min_length = min(len(internal_references), len(product_types), len(brands), len(style_numbers))
+    min_length = min(len(product_types), len(brands), len(style_numbers))
     
     if min_length == 0:
         logging.error("One or more mandatory columns are empty. Please check the spreadsheet.")
@@ -411,18 +396,17 @@ def main():
     sheet_data = {}
     
     for index in range(min_length):
-        internal_reference = str(internal_references[index][0]).strip() if internal_references[index] else ""
         product_type = str(product_types[index][0]).strip() if product_types[index] else ""
         brand = str(brands[index][0]).strip() if brands[index] else ""
         style_number = str(style_numbers[index][0]).strip() if style_numbers[index] else ""
         add_info = str(additional_info[index][0]).strip() if index < len(additional_info) and additional_info[index] else ""
         size = get_size_info(size_info[index]) if index < len(size_info) and size_info[index] else ""
         
-        if not all([internal_reference, product_type, brand, style_number]):
-            logging.warning(f"Skipping row {index+2} due to missing mandatory data: Internal Reference: '{internal_reference}', Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
+        if not all([product_type, brand, style_number]):
+            logging.warning(f"Skipping row {index+2} due to missing mandatory data: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
             continue
         
-        result = process_product(product_type, brand, style_number, add_info, size, internal_reference, index+2)
+        result = process_product(product_type, brand, style_number, add_info, size, index+2)
         if result:
             sheet_name, extracted_data = result
             if sheet_name not in sheet_data:
@@ -440,31 +424,22 @@ def main():
                 logging.info(f"Sheet field names: {field_names}")
                 logging.info(f"Extracted data keys: {list(data[0].keys())}")
 
+                # Ensure all required fields are present
+                required_fields = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
+                for field in required_fields:
+                    if field not in field_names:
+                        field_names.append(field)
+                        logging.info(f"Added missing field to sheet: {field}")
+
                 # Prepare data to write
                 rows_to_write = []
                 for item in data:
-                    row = [''] * len(field_names)  # Initialize row with empty strings
-                    for i, field in enumerate(field_names):
-                        if field == 'Internal Reference':
-                            row[i] = item.get('Internal Reference', '')
-                        elif field == 'Title (Titolo)':
-                            row[i] = item.get('Title (Titolo)', '')
-                        elif field == 'Subtitle (Sottotitolo)':
-                            row[i] = item.get('Subtitle (Sottotitolo)', '')
-                        elif field == 'Short Description (Breve Descrizione)':
-                            row[i] = item.get('Short Description (Breve Descrizione)', '')
-                        elif field == 'Description (Descrizione)':
-                            row[i] = item.get('Description (Descrizione)', '')
-                        elif field == 'MPN (MPN)':
-                            row[i] = item.get('MPN (MPN)', '')
-                        elif field == 'Custom Label (Etichetta personalizzata - SKU)':
-                            row[i] = item.get('Custom Label (Etichetta personalizzata - SKU)', '')
-                        else:
-                            row[i] = item.get(field, 'N/A')
-                        
-                        if isinstance(row[i], str) and len(row[i]) > 50000:
-                            row[i] = row[i][:50000] + "... (truncated)"
-                    
+                    row = []
+                    for field in field_names:
+                        value = item.get(field, 'N/A')
+                        if isinstance(value, str) and len(value) > 50000:
+                            value = value[:50000] + "... (truncated)"
+                        row.append(value)
                     rows_to_write.append(row)
                     logging.info(f"Prepared row: {row[:5]}...")  # 只记录前5个字段
 
