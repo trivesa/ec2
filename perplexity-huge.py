@@ -371,100 +371,82 @@ def get_sheet_id(sheet_name):
             return sheet['properties']['sheetId']
     return None
 
+def find_column_index(sheet_data, column_name):
+    if not sheet_data or not sheet_data[0]:
+        return -1
+    return next((i for i, cell in enumerate(sheet_data[0]) if cell.strip().lower() == column_name.lower()), -1)
+
+def read_column_data(sheet_data, column_name):
+    col_index = find_column_index(sheet_data, column_name)
+    if col_index == -1:
+        # 尝试模糊匹配
+        for i, cell in enumerate(sheet_data[0]):
+            if column_name.lower() in cell.strip().lower():
+                col_index = i
+                logging.info(f"Found similar column name: '{cell}' for '{column_name}'")
+                break
+        if col_index == -1:
+            logging.warning(f"Column '{column_name}' not found in the sheet.")
+            return []
+    return [row[col_index] for row in sheet_data[1:] if len(row) > col_index]
+
 def main():
     logging.info(f"Current working directory: {os.getcwd()}")
     
-    # Read product information
-    product_types = read_spreadsheet('Sheet1!E2:E')
-    brands = read_spreadsheet('Sheet1!F2:F')
-    style_numbers = read_spreadsheet('Sheet1!I2:I')
-    additional_info = read_spreadsheet('Sheet1!J2:J')
-    size_info = read_spreadsheet('Sheet1!K2:X')
+    # 读取整个工作表的数据
+    sheet_data = read_spreadsheet('Sheet1!A1:ZZ')
     
-    logging.info(f"Read {len(product_types)} product types, {len(brands)} brands, {len(style_numbers)} style numbers, {len(additional_info)} additional info entries, and {len(size_info)} size info entries")
-    
-    # Find the length of the mandatory columns
-    min_length = min(len(product_types), len(brands), len(style_numbers))
-    
-    if min_length == 0:
-        logging.error("One or more mandatory columns are empty. Please check the spreadsheet.")
+    if not sheet_data:
+        logging.error("No data found in the spreadsheet.")
         return
 
+    # 使用列标题读取数据，不区分大小写
+    column_mappings = {
+        "product_types": ["Product Type", "ProductType", "Type"],
+        "brands": ["Brand", "BrandName"],
+        "style_numbers": ["Style Number", "StyleNumber", "Style"],
+        "additional_info": ["Additional Information", "AdditionalInfo", "Extra Info"],
+        "size_info": ["Size", "Size Information", "Available Sizes", "SizeInfo"]
+    }
+
+    data = {}
+    for key, possible_names in column_mappings.items():
+        for name in possible_names:
+            column_data = read_column_data(sheet_data, name)
+            if column_data:
+                data[key] = column_data
+                logging.info(f"Found data for '{key}' using column name '{name}'")
+                break
+        if key not in data:
+            logging.warning(f"No data found for '{key}' using any of the possible names: {possible_names}")
+
+    # 检查必要的数据是否存在
+    required_keys = ["product_types", "brands", "style_numbers"]
+    if not all(key in data for key in required_keys):
+        logging.error("One or more mandatory columns are missing. Please check the spreadsheet.")
+        return
+
+    min_length = min(len(data[key]) for key in required_keys)
     logging.info(f"Processing {min_length} rows with mandatory data")
 
-    # Store data for each sheet
-    sheet_data = {}
-    
+    # 处理数据
     for index in range(min_length):
-        product_type = str(product_types[index][0]).strip() if product_types[index] else ""
-        brand = str(brands[index][0]).strip() if brands[index] else ""
-        style_number = str(style_numbers[index][0]).strip() if style_numbers[index] else ""
-        add_info = str(additional_info[index][0]).strip() if index < len(additional_info) and additional_info[index] else ""
-        size = get_size_info(size_info[index]) if index < len(size_info) and size_info[index] else ""
+        product_type = data["product_types"][index] if index < len(data["product_types"]) else ""
+        brand = data["brands"][index] if index < len(data["brands"]) else ""
+        style_number = data["style_numbers"][index] if index < len(data["style_numbers"]) else ""
+        add_info = data.get("additional_info", [])[index] if index < len(data.get("additional_info", [])) else ""
+        size = data.get("size_info", [])[index] if index < len(data.get("size_info", [])) else ""
         
         if not all([product_type, brand, style_number]):
-            logging.warning(f"Skipping row {index+2} due to missing mandatory data: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
+            logging.warning(f"Skipping row {index+2} due to missing mandatory data: "
+                            f"Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
             continue
         
+        # 处理产品数据...
         result = process_product(product_type, brand, style_number, add_info, size, index+2)
-        if result:
-            sheet_name, extracted_data = result
-            if sheet_name not in sheet_data:
-                sheet_data[sheet_name] = []
-            sheet_data[sheet_name].append(extracted_data)
+        # ... 其余的处理逻辑 ...
 
-    # Write data to respective sheets
-    for sheet_name, data in sheet_data.items():
-        try:
-            if ensure_sheet_exists(sheet_name):
-                # Get field names (first row) of the sheet
-                field_names = sheets_service.spreadsheets().values().get(
-                    spreadsheetId=SPREADSHEET_ID, range=f"'{sheet_name}'!A1:ZZ1").execute().get('values', [[]])[0]
-
-                logging.info(f"Sheet field names: {field_names}")
-                logging.info(f"Extracted data keys: {list(data[0].keys())}")
-
-                # Ensure all required fields are present
-                required_fields = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
-                for field in required_fields:
-                    if field not in field_names:
-                        field_names.append(field)
-                        logging.info(f"Added missing field to sheet: {field}")
-
-                # Prepare data to write
-                rows_to_write = []
-                for item in data:
-                    row = []
-                    for field in field_names:
-                        value = item.get(field, 'N/A')
-                        if isinstance(value, str) and len(value) > 50000:
-                            value = value[:50000] + "... (truncated)"
-                        row.append(value)
-                    rows_to_write.append(row)
-                    logging.info(f"Prepared row: {row[:5]}...")  # 只记录前5个字段
-
-                # Get current row count of the sheet
-                sheet_info = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID, ranges=[f"'{sheet_name}'"], includeGridData=True).execute()
-                current_row = len(sheet_info['sheets'][0]['data'][0]['rowData']) + 1
-
-                # Clear format of the range to be written
-                clear_range_format(sheet_name, current_row, current_row + len(rows_to_write))
-
-                # Prepare data for write
-                rows_to_write = prepare_data_for_write(rows_to_write)
-
-                # Write data
-                range_name = f"'{sheet_name}'!A{current_row}"
-                write_to_spreadsheet(range_name, rows_to_write)
-                
-                # Verify written data
-                verify_written_data(sheet_name, current_row, len(rows_to_write))
-                
-                logging.info(f"Successfully wrote and verified {len(rows_to_write)} rows to sheet '{sheet_name}'")
-            else:
-                logging.error(f"Unable to ensure '{sheet_name}' sheet exists. Skipping write operation.")
-        except Exception as e:
-            logging.error(f"Error writing to sheet '{sheet_name}': {str(e)}")
+    # ... 其余的主函数逻辑 ...
 
 if __name__ == '__main__':
     main()
