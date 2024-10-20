@@ -1,0 +1,25 @@
+{
+  "id": "526a0f3b-ab4f-46e0-9bcb-2ba5cadf65c7",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728774424,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 317,
+    "total_tokens": 466
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Thong Sandal 659229 J8710 1000\n**Subtitle (Sottotitolo):** Luxurious Black Thong Sandals for Men\n**Short Description (Breve Descrizione):** Elevate your summer style with Gucci's sleek and sophisticated thong sandals. Crafted in black rubber, these sandals feature the iconic Gucci logo and are designed for comfort and elegance. Perfect for casual outings and beachwear.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with Gucci's Thong Sandal 659229 J8710 1000. Here are some key features:\n\n- **Style Number:** 659229 J8710 1000\n- **Size:** 46\n- **Material:** High-quality black rubber for durability and comfort\n- **Design:** Sleek and minimalist thong design with the iconic Gucci logo\n- **Comfort:** Ergonomically designed for optimal comfort and support\n- **Versatility:** Perfect for casual outings, beachwear, and poolside lounging\n- **Brand Authenticity:** Genuine Gucci product, ensuring the highest standards of quality and craftsmanship\n- **Return Policy:** Varies by retailer, with options ranging from 3 to 14 days for returns\n\nThese Gucci thong sandals are a must-have for anyone looking to add a touch of luxury to their summer wardrobe. With their timeless design and exceptional quality, they are sure to make a statement wherever you go."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

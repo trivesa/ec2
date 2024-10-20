@@ -1,0 +1,25 @@
+{
+  "id": "bb5c7dbd-4fbe-4b91-8878-833be51bc2f6",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728792999,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 388,
+    "total_tokens": 541
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High 'White Demetra Red'\n**Subtitle (Sottotitolo):** Luxury Basketball Sneakers with Eco-Friendly Demetra Material\n**Short Description (Breve Descrizione):** The Gucci Basket High 'White Demetra Red' combines high-fashion aesthetics with '90s basketball silhouettes, featuring interlocking 'G' canvas and eco-friendly Demetra material. The bold red rubber outsole and Gucci branding add a modern touch. Crafted in Italy, these sneakers embody luxury and sustainability.\n\n**Description (Descrizione):**\n- **Inspiration:** Inspired by the classic basketball styles of the '90s, these high-top sneakers blend court-ready functionality with Gucci's signature high-fashion flair.\n- **Materials:**\n  - **Upper:** Made from interlocking 'G' canvas and smooth white Demetra, Gucci's eco-friendly material.\n  - **Outsole:** Bold red rubber outsole for durability and style.\n- **Design Elements:**\n  - **Gucci Branding:** Gucci logos throughout the shoe for a distinctive look.\n  - **Color Scheme:** White upper with bold red accents, creating a striking contrast.\n- **Manufacturing:** Crafted in Italy, ensuring high-quality craftsmanship.\n- **Size Information:** Available in size 39.5.\n- **Product Details:**\n  - **Style Number:** 673077 2SHG0 9076\n  - **Retail Price:** $950\n  - **Release Date:** January 1, 2024\n- **Additional Features:**\n  - **Eco-Friendly:** The use of Demetra material reflects Gucci's commitment to sustainability.\n  - **High-Quality Construction:** Ensures durability and long-lasting wear.\n  - **Versatile Style:** Suitable for both casual and fashion-forward occasions."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "241b7c6d-eeed-4834-9ece-bcd10cd2dc7b",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728295292,
+  "usage": {
+    "prompt_tokens": 319,
+    "completion_tokens": 594,
+    "total_tokens": 913
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Based on the provided search results, here is the information for the GUCCI belt with style number 524103-AP00G-1000:\n\n**Mandatory Fields:**\n1. **Object Category (Categoria Oggetto):** Belt\n2. **Store Category (Categoria del Negozio):** Accessories\n3. **Brand (Marca):** Gucci\n4. **Type (Tipo):** Leather Belt\n5. **Department (Reparto):** Women's Accessories\n6. **Color (Colore):** Black\n7. **Size (Taglia):** 75 cm (Note: The provided size information of 120x80cm seems incorrect for a belt. The correct size is typically measured in length, and 75 cm is a common size for Gucci belts as seen in the search results.)\n8. **Condition of the Item (Condizione dell'oggetto):** New\n9. **Price (Prezzo):** N/A (Prices vary across different sources and are not provided in a consistent format.)\n10. **Shipping Rule (Regola sulla spedizione):** N/A (Shipping rules are not provided in the search results and can vary by seller.)\n\n**Optional Fields:**\n1. **EAN (EAN):** N/A\n2. **Material (Materiale):** Calfskin Leather\n3. **Style (Stile):** Classic with Torchon Double G Buckle\n4. **Pattern (Fantasia):** N/A\n5. **Size Type (Tipo di taglia):** Standard Belt Size\n6. **Belt Width (Larghezza della cintura):** 2.5 cm (as per similar models)\n7. **Decorative Elements (Elementi decorativi):** Torchon Double G Metal Buckle\n8. **Theme (Tema):** Luxury Fashion\n9. **Features (Caratteristiche):** Can be worn as a hip or waist belt\n10. **Character (Personaggio):** N/A\n11. **Trim Material (Materiale delle finiture):** Gold-toned hardware\n12. **Country of Manufacture (Paese di fabbricazione):** Italy\n13. **Handmade (Fatto a mano):** N/A\n14. **Vintage (Vintage):** No\n15. **MPN (MPN):** 524103-AP00G-1000\n16. **Quantity (Quantit\u00e0):** N/A\n17. **Unit of Measurement (Unit\u00e0 di misura):** Centimeters\n18. **Custom Label (Etichetta personalizzata - SKU):** N/A\n19. **Personalized (Personalizzato):** No\n\n**Note:** Some fields are filled based on similar models or general information about Gucci belts, as the specific details are not provided in the search results."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "ad0813f8-1940-4908-a050-bc7f3d17175a",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728777438,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 431,
+    "total_tokens": 583
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton 25 Sneakers\n**Subtitle (Sottotitolo):** Luxurious and Sustainable Footwear for the Fashion-Conscious\n**Short Description (Breve Descrizione):** The Gucci Rhyton 25 sneakers are a testament to Gucci's commitment to luxury and sustainability. Crafted from Demetra, an eco-friendly material that combines animal-free raw materials from sustainable, renewable, and bio-based sources, these shoes offer a unique blend of style and eco-consciousness. Perfect for those who value high fashion and environmental responsibility.\n\n**Description (Descrizione):**\n\n- **Material and Construction:**\n  - The Gucci Rhyton 25 sneakers are primarily made from Demetra, a cutting-edge, eco-friendly material that mimics the feel and performance of traditional leather.\n  - This innovative material is created using the same processes as tanning, ensuring a pliable and resilient performance with a supple finish.\n\n- **Design and Features:**\n  - The sneakers feature a sleek and modern design, perfect for making a statement in high fashion.\n  - The white ivory color gives the shoes a timeless and versatile look that can be paired with a variety of outfits.\n  - The Gucci logo tag adds a touch of luxury and authenticity.\n  - The rubber sole provides durability and comfort, while the low heel offers a stylish and practical design.\n\n- **Size and Fit:**\n  - This particular model is available in size 44.5, ensuring a comfortable fit for those who prefer a slightly larger size.\n  - Please note that sizes may vary slightly, so it is recommended to refer to the size chart for the most accurate fit.\n\n- **Additional Details:**\n  - The shoes come with an original box and dust bag, adding to the luxury experience.\n  - The production time for these shoes is 3-5 working days, ensuring a quick delivery for eager customers.\n  - The Gucci Rhyton 25 sneakers are a perfect choice for commemorating special occasions in high fashion, offering a unique design and luxurious feel."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

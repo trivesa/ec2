@@ -1,0 +1,25 @@
+{
+  "id": "d437c8ae-dbc6-4797-99a7-1ea53fe70190",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729116850,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 464,
+    "total_tokens": 617
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Bottega Veneta Nappa Maxi Intrecciato Lido Mule Sandals\n**Subtitle (Sottotitolo):** Exquisite Italian Craftsmanship in Every Step\n**Short Description (Breve Descrizione):** Elevate your style with the Bottega Veneta Nappa Maxi Intrecciato Lido Mule Sandals, featuring intricate Italian craftsmanship and luxurious nappa leather. These sandals are designed for comfort and versatility, perfect for both casual and formal occasions. Size 36.5 ensures a precise fit for those seeking elegance and sophistication.\n\n**Description (Descrizione):**\n\n- **Craftsmanship:** Each pair of Bottega Veneta Nappa Maxi Intrecciato Lido Mule Sandals is meticulously crafted in Italy, showcasing the brand's commitment to exceptional quality and attention to detail.\n- **Materials:** The sandals are made from luxurious nappa leather, known for its softness and durability, ensuring a comfortable and long-lasting wear.\n- **Design:** The Intrecciato technique, a signature Bottega Veneta feature, adds a unique and sophisticated touch to the sandals, making them stand out with their woven leather design.\n- **Comfort:** The padded insoles and soft leather straps provide unparalleled comfort, allowing you to wear these sandals for extended periods without discomfort.\n- **Versatility:** Whether you're attending a formal event or enjoying a casual day out, these sandals are versatile enough to complement a variety of outfits, from elegant dresses to casual jeans and tops.\n- **Size Information:** This pair is available in size 36.5, ensuring a precise fit that will make you feel confident and stylish.\n- **Style Number:** 639943VBP302019\n- **Additional Features:**\n  - **Intrecciato Woven Leather:** The iconic Intrecciato weaving technique adds a touch of sophistication and elegance.\n  - **Nappa Leather:** Soft and durable, ensuring long-lasting comfort and style.\n  - **Padded Insoles:** Enhanced comfort for extended wear.\n  - **Versatile Design:** Suitable for both formal and casual occasions.\n  - **Italian Craftsmanship:** Each pair is meticulously crafted in Italy, reflecting the brand's commitment to quality and detail."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

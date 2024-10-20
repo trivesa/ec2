@@ -1,0 +1,25 @@
+{
+  "id": "d32a56a5-7fe0-4858-9a46-dc0df7a16513",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728784704,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 418,
+    "total_tokens": 571
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Tennis 1977 'Blue Ivory' Sneakers\n**Subtitle (Sottotitolo):** Elegant and Versatile Low-Top Shoes\n**Short Description (Breve Descrizione):** Embodying the essence of Gucci's timeless style, the Tennis 1977 'Blue Ivory' sneakers offer a sophisticated blend of comfort and fashion. Crafted with high-quality materials, these shoes are perfect for both casual and formal occasions. The distinctive blue and ivory jacquard denim design adds a unique touch to any outfit.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The Gucci Tennis 1977 'Blue Ivory' sneakers feature a striking blue and ivory jacquard denim upper, showcasing the iconic GG print.\n  - The shoes are designed with a low-top silhouette, providing a versatile and stylish look.\n  - High-quality materials ensure durability and comfort.\n\n- **Comfort and Fit:**\n  - The shoes are designed to provide optimal comfort, making them suitable for daily wear.\n  - The size 41.5 ensures a snug fit, ideal for those seeking a precise and comfortable fit.\n\n- **Style and Versatility:**\n  - The 'Blue Ivory' color scheme offers a versatile aesthetic that can be paired with a variety of outfits, from casual jeans to more formal attire.\n  - The distinctive GG print adds a touch of luxury and sophistication, making these shoes a standout piece in any wardrobe.\n\n- **Additional Details:**\n  - The shoes are available in various sizes, but this particular model is size 41.5.\n  - The style number 606111 2KQ10 4463 ensures authenticity and helps in identifying the specific model.\n\n- **Retail Information:**\n  - These shoes can be found on various luxury retail platforms, including StockX, Balaan, Della Moda, and Kicks Crew, with prices ranging from $365.00 to $1,341.00."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

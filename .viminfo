@@ -24,9 +24,13 @@
 
 # File marks:
 '0  1  0  ~/.git/MERGE_MSG
-|4,48,1,0,1727895084,"~/.git/MERGE_MSG"
+|4,48,1,0,1729425684,"~/.git/MERGE_MSG"
+'1  1  0  ~/.git/MERGE_MSG
+|4,49,1,0,1727895084,"~/.git/MERGE_MSG"
 
 # Jumplist (newest first):
+-'  1  0  ~/.git/MERGE_MSG
+|4,39,1,0,1729425684,"~/.git/MERGE_MSG"
 -'  1  0  ~/.git/MERGE_MSG
 |4,39,1,0,1727895084,"~/.git/MERGE_MSG"
 

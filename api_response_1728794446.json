@@ -1,0 +1,25 @@
+{
+  "id": "3a0442ce-8706-4ca2-b2e9-6cadae246b34",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728794446,
+  "usage": {
+    "prompt_tokens": 552,
+    "completion_tokens": 1000,
+    "total_tokens": 1552
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "length",
+      "message": {
+        "role": "assistant",
+        "content": "Here is the information for the GUCCI shoes with style number 466904 A9LF0 1000 in a structured format:\n\n**Mandatory Fields:**\n\n1. **Object Category (Categoria Oggetto):** Shoes\n2. **Store Category (Categoria del Negozio):** Women's Shoes\n3. **Brand (Marca):** Gucci\n4. **Size (Numero di scarpa EU):** 38.5\n5. **Department (Reparto):** Women's\n6. **Color (Colore):** Black\n7. **Type (Tipo):** Driving Shoes\n8. **Style (Stile):** Micro Sima\n9. **Condition of the Item (Condizione dell'oggetto):** New\n10. **Price (Prezzo):** N/A (Price not provided in the query)\n11. **Shipping Rule (Regola sulla spedizione):** N/A (Shipping information not provided in the query)\n\n**Optional Fields:**\n\n1. **MPN (MPN):** 466904 A9LF0 1000\n2. **Custom Label (Etichetta personalizzata - SKU):** N/A\n3. **EAN (EAN):** N/A\n4. **Material (Materiale della tomaia):** N/A (Material not specified in the query)\n5. **Sole Material (Materiale della suola):** N/A (Sole material not specified in the query)\n6. **Lining Material (Materiale della fodera):** N/A (Lining material not specified in the query)\n7. **Closure Type (Chiusura):** N/A (Closure type not specified in the query)\n8. **Fit (Vestibilit\u00e0):** N/A (Fit not specified in the query)\n9. **Product Line (Linea prodotto):** N/A (Product line not specified in the query)\n10. **Insole Material (Materiale della soletta):** N/A (Insole material not specified in the query)\n11. **Outer Material (Materiale tomaia):** N/A (Outer material not specified in the query)\n12. **Pattern (Fantasia):** N/A (Pattern not specified in the query)\n13. **Season (Stagione):** N/A (Season not specified in the query)\n14. **Theme (Tema):** N/A (Theme not specified in the query)\n15. **Product Variants (Varianti di prodotto):** N/A (Product variants not specified in the query)\n16. **Payment and Offers (Regole di pagamento):** N/A (Payment and offers not specified in the query)\n17. **Object Warnings (Avvertenze per l'oggetto):** N/A (Object warnings not specified in the query)\n18. **Width (Larghezza della scarpa):** N/A (Width not specified in the query)\n19. **Year Manufactured (Anno di fabbricazione):** N/A (Year manufactured not specified in the query)\n20. **Activity (Attivit\u00e0):** N/A (Activity not specified in the query)\n21. **Vintage (Vintage):** No\n22. **Customized (Personalizzato):** No\n23. **Model (Modello):** Micro Sima\n24. **Decorative Elements (Elementi decorativi):** N/A (Decorative elements not specified in the query)\n25. **Occasion (Occasione):** N/A (Occasion not specified in the query)\n26. **Toe Shape (Forma della punta):** N/A (Toe shape not specified in the query)\n27. **Toe Cap Material (Materiale del puntale):** N/A (Toe cap material not specified in the query)\n28. **Pronation (Pronazione):** N/A (Pronation not specified in the query)\n29. **Calf Circumference (Circonferenza del polpaccio):** N/A (Calf circumference not specified in the query)\n30. **Shaft Height (Altezza del gambale):** N/A (Shaft height not specified in the query)\n31. **Heel Height (Altezza del tacco):** N/A (Heel height not specified in the query)\n32. **Heel Style (Stile del tacco):** N/A (Heel style not specified in the query)\n33. **Shoe Shaft Style (Stile del gambale):** N/A (Shoe shaft style not specified in the query)\n34. **Signed (Firmato):** No\n35. **Handmade (Fatto a mano):** N/A (Handmade status not specified in the query)\n36. **Country of"
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "6eafccb6-cb67-4898-a5e2-919d7a6440e7",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728833022,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 413,
+    "total_tokens": 565
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton 'Mouth Print' Sneakers\n**Subtitle (Sottotitolo):** Iconic Luxury with a Bold Statement\n**Short Description (Breve Descrizione):** The Gucci Rhyton 'Mouth Print' sneakers, style number 552093 A9L00 9522, are a bold and iconic addition to any luxury footwear collection. Crafted with Italian handcrafted leather, these shoes embody the '90s vibes and hip-hop scene with their classic silhouette and clean construction. Available in size 34.5.\n\n**Description (Descrizione):**\n\n- **Design Inspiration:** The Gucci Rhyton 'Mouth Print' sneakers are inspired by the '90s hip-hop scene, combining classic style with modern boldness.\n- **Material:** Italian handcrafted leather ensures durability and luxury, with a classic off-white color that adds a sporty touch.\n- **Silhouette:** The Rhyton sneakers feature a clean and classic silhouette, making them a versatile choice for various outfits.\n- **Size Information:** This pair is available in size 34.5, ensuring a comfortable fit for those who prefer a slightly smaller size.\n- **Style Number:** 552093 A9L00 9522, a unique identifier for this specific model.\n- **Brand Heritage:** Gucci, a renowned luxury fashion brand, guarantees high-quality craftsmanship and attention to detail.\n- **Key Features:**\n  - **Mouth Print Design:** A bold and eye-catching print that adds a unique touch to the classic silhouette.\n  - **Italian Craftsmanship:** Ensures high-quality and durability.\n  - **Classic Off-White Color:** Adds a sporty and versatile touch to the design.\n  - **Comfortable Fit:** Size 34.5 provides a comfortable fit for those who prefer a slightly smaller size.\n  - **Luxury Brand:** Gucci's reputation for high-quality and stylish designs makes these sneakers a valuable addition to any footwear collection."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

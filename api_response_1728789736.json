@@ -1,0 +1,25 @@
+{
+  "id": "3b763d3f-c011-4621-b643-9cb18b471908",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728789736,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 404,
+    "total_tokens": 556
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High 'Demetra' Multicolor Sneakers\n**Subtitle (Sottotitolo):** Inspired by 90's Basketball Shoes, Style Number 661303 2SH90 1072\n**Short Description (Breve Descrizione):** Embrace the vibrant spirit of Gucci's Basket High 'Demetra' sneakers, a bold reinterpretation of 90's basketball shoes. Crafted with a mix of leather and fabric, these shoes feature a multicolor design that adds a playful touch to any outfit. Available in size 40.5.\n\n**Description (Descrizione):**\n\n- **Inspiration:** Drawing inspiration from the iconic basketball shoes of the 90's, Gucci's Basket High 'Demetra' sneakers bring a nostalgic yet modern twist to the classic design.\n- **Materials:** The shoes are made from a combination of high-quality leather and fabric, ensuring durability and comfort.\n- **Design:** The multicolor design is a standout feature, with a vibrant palette that adds a playful and stylish touch to any outfit.\n- **Details:**\n  - **Style Number:** 661303 2SH90 1072\n  - **Size:** 40.5\n  - **Upper Material:** Leather and fabric\n  - **Color:** Multicolor\n  - **Inspiration:** 90's basketball shoes\n- **Additional Features:**\n  - **Non-Slip Sole:** Ensures stability and grip\n  - **Wear-Resistant:** Built to last with high-quality materials\n  - **Retro Aesthetic:** A nod to the classic basketball shoes of the 90's, with a modern twist\n- **Packaging:**\n  - **Dust Bag:** Included for storage and protection\n  - **Shoe Box:** Original Gucci box for authenticity and presentation\n- **Authenticity:** Guaranteed genuine Gucci product, ensuring the highest quality and craftsmanship."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

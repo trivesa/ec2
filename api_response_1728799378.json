@@ -1,0 +1,25 @@
+{
+  "id": "128831c8-0aaf-4cc8-b670-fba89b98904b",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728799377,
+  "usage": {
+    "prompt_tokens": 323,
+    "completion_tokens": 644,
+    "total_tokens": 967
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Based on the provided sources, here is the structured information for the GUCCI scarf with style number 344994 4G200 9269:\n\n**Mandatory Fields:**\n1. **Object Category (Categoria Oggetto):** Scarf\n2. **Store Category (Categoria del Negozio):** Women's Accessories\n3. **Brand (Marca):** Gucci\n4. **Color (Colore):** Blue\n5. **Type (Tipo):** Scarf\n6. **Department (Reparto):** Women's Accessories\n7. **Material (Materiale):** Wool\n8. **Pattern (Fantasia):** GG Pattern\n9. **Country of Manufacture (Paese di fabbricazione):** Italy\n10. **Condition of the Item (Condizione dell'oggetto):** N/A (Varies by source, but generally new or pre-owned)\n11. **Price (Prezzo):** N/A (Varies by source)\n12. **Shipping Rule (Regola sulla spedizione):** N/A (Varies by source)\n\n**Optional Fields:**\n1. **Custom Label (Etichetta personalizzata - SKU):** 344994 4G200 9269\n2. **EAN (EAN):** N/A\n3. **Style (Stile):** Classic\n4. **Theme (Tema):** Luxury\n5. **Tissue (Tessuto):** Wool\n6. **Season (Stagione):** N/A\n7. **Features (Caratteristiche):** GG Pattern, Wool Material\n8. **Decorative Elements (Elementi decorativi):** GG Pattern\n9. **Width (Larghezza):** 40 cm\n10. **Garment Care (Cura dell'indumento):** N/A\n11. **Handmade (Fatto a mano):** N/A\n12. **MPN (MPN):** 344994 4G200 9269\n13. **Quantity (Quantit\u00e0):** N/A\n14. **Unit of Measurement (Unit\u00e0 di misura):** N/A\n15. **Accessories (Accessori):** N/A\n16. **Length (Lunghezza):** 180 cm\n17. **Trim Material (Materiale delle finiture):** N/A\n18. **Personalized (Personalizzato):** N/A\n\n**Sources:**\n- ** Vestiaire Collective:** Wool scarf Gucci Blue in Wool - 47913139\n- ** Vestiaire Collective:** Wool scarf & pocket square Gucci Blue in Wool\n- ** VIP Station:** NEW GUCCI SCARFS 344994 4G200 9269 WOOL BLUE\n- ** ZALORA Malaysia:** Buy Gucci For Women | Sale Up to 90% @ ZALORA Malaysia\n\n**Note:** Some fields may have varying information depending on the source, but the provided information is based on the most consistent and reliable data available."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "66cc6550-731d-42bc-9c9e-7f192c605221",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728828753,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 446,
+    "total_tokens": 595
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Ace Perforated Interlocking G Sneaker\n**Subtitle (Sottotitolo):** Elegant and Minimalist Design for Women\n**Short Description (Breve Descrizione):** The Gucci Ace Perforated Interlocking G sneaker is a sophisticated and stylish choice for women, featuring a minimalist logo approach and intricate perforated design. Crafted from soft white leather, this shoe is enhanced with subtle pink leather details at the back. Perfect for those seeking a blend of elegance and comfort.\n\n**Description (Descrizione):**\n\n- **Design and Craftsmanship:**\n  - The Gucci Ace Perforated Interlocking G sneaker is meticulously crafted from soft, white leather, ensuring a luxurious feel and appearance.\n  - The emblematic Ace sneaker is enhanced with a minimalist logo approach, featuring the iconic Interlocking G motif on the side, created using a sophisticated perforated technique.\n  - Soft pink leather details at the back of the shoe add a subtle hint of color to the all-white style, providing a touch of elegance.\n\n- **Key Features:**\n  - **Style Number:** 598527 AYO70 9094\n  - **Size:** 34\n  - **Color:** White with pink leather details\n  - **Material:** Soft white leather\n  - **Sole:** Rubber\n  - **Heel Height:** 0.8 inches (flat)\n  - **Additional Features:** Perforated Interlocking G, pink leather detail at the back, includes box and dust bag\n\n- **Comfort and Versatility:**\n  - The Gucci Ace Perforated Interlocking G sneaker is designed to provide comfort and versatility, making it suitable for a variety of occasions, from casual outings to more formal events.\n  - The rubber sole ensures durability and stability, while the flat heel height provides ease of wear.\n\n- **Quality and Authenticity:**\n  - This product is of the highest quality, ensuring a long-lasting and satisfying wear.\n  - The production time is 3-5 working days, ensuring prompt delivery of your new Gucci Ace Perforated Interlocking G sneaker."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "021cde87-97c3-4f28-af92-52f2b7a55558",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728802127,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 416,
+    "total_tokens": 563
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Square Muffler Scarf\n**Subtitle (Sottotitolo):** Authentic Luxury Scarf in Anthracite Gray\n**Short Description (Breve Descrizione):** Elevate your style with this authentic GUCCI GG Jacquard Square Muffler Scarf, crafted from a luxurious blend of 80% wool and 20% silk. The scarf features the iconic GG pattern in anthracite gray, perfect for adding a touch of sophistication to any outfit. Made in Italy, this scarf is a testament to GUCCI's commitment to quality and design.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury with this GUCCI GG Jacquard Square Muffler Scarf, designed to make a statement. Here are the key features of this exquisite accessory:\n\n- **Material:** 80% wool and 20% silk, ensuring a soft, warm, and durable wear.\n- **Size:** 140 cm x 140 cm, providing ample coverage and versatility in styling.\n- **Pattern:** The iconic GG pattern in anthracite gray, adding a sophisticated touch to any outfit.\n- **Authenticity:** 100% authentic GUCCI product, guaranteed to meet the brand's high standards.\n- **Origin:** Made in Italy, reflecting the country's renowned craftsmanship and attention to detail.\n- **Condition:** New with tags, ensuring the scarf is in pristine condition.\n- **Packaging:** Includes the original GUCCI tag and paper bag, adding to the luxury experience.\n- **Style Number:** 281942 3G704 1062, for easy identification and verification.\n- **Versatility:** Perfect for both casual and formal occasions, making it a versatile addition to your wardrobe.\n\nThis GUCCI GG Jacquard Square Muffler Scarf is a timeless piece that embodies the brand's commitment to quality, design, and luxury. Whether you're looking to elevate your everyday style or make a statement at a special event, this scarf is sure to impress."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

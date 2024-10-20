@@ -1,0 +1,25 @@
+{
+  "id": "e5ffb8f9-9a14-4951-b080-e74c65eaaca6",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728789658,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 444,
+    "total_tokens": 596
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High Sneaker\n**Subtitle (Sottotitolo):** White and Blue High-Top Sneakers with Iconic Gucci Details\n**Short Description (Breve Descrizione):** Inspired by 90s basketball sneakers, the Gucci Basket High Sneaker combines classic sportswear with luxurious Gucci flair. Crafted from white Demetra, a pliable and resilient material, these high-top sneakers feature signature Gucci details and a sleek, paneled design. Perfect for making a statement, these sneakers are both stylish and durable.\n\n**Description (Descrizione):**\n\n- **Material and Craftsmanship:** The Gucci Basket High Sneaker is crafted from white Demetra, a material that offers pliable and resilient performance with a supple finish. This innovative material is created using the same processes used for tanning, ensuring a high-quality and durable finish.\n- **Design Elements:**\n  - **Round Toe:** The shoe features a round toe with perforated details, adding a touch of elegance and breathability.\n  - **Lace-Up Closure:** The lace-up closure ensures a secure and adjustable fit.\n  - **Signature Details:** Iconic Gucci details are prominently displayed at the vamp, tongue, and sole, making these sneakers unmistakably Gucci.\n  - **Paneled Design:** The shoe's paneled design adds a sleek and modern touch, while the synthetic upper and lining provide comfort and durability.\n  - **Rubber Sole:** The rubber sole offers excellent grip and durability, making these sneakers perfect for everyday wear.\n- **Additional Features:**\n  - **Size Information:** This particular model is available in size 40.5.\n  - **Made in Italy:** Each pair is meticulously crafted in Italy, ensuring the highest standards of quality and craftsmanship.\n  - **Style Number:** 661301 2SHA0 9014\n- **Styling Tips:** The white and blue color scheme makes these sneakers versatile and easy to style, perfect for casual outings or more formal events. Pair them with jeans and a t-shirt for a relaxed look or with a dress for a more elegant ensemble."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

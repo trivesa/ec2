@@ -1,0 +1,25 @@
+{
+  "id": "e2ad7139-3bb9-4126-a810-d49cd42eb1f4",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728811492,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 384,
+    "total_tokens": 536
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton 'Mouth Print' Sneakers\n**Subtitle (Sottotitolo):** Classic '90s Vibes with a Bold Twist\n**Short Description (Breve Descrizione):** Embodying the essence of '90s hip-hop culture, the Gucci Rhyton 'Mouth Print' sneakers offer a classic silhouette with a bold, eye-catching design. Crafted from Italian handcrafted leather, these shoes are a testament to Gucci's commitment to quality and style. Available in size 41.5.\n\n**Description (Descrizione):**\n\n- **Style Number:** 552093 A9L00 9522\n- **Design Inspiration:** The Gucci Rhyton 'Mouth Print' sneakers draw inspiration from the '90s hip-hop scene, blending classic vibes with a modern twist.\n- **Materials:** Italian handcrafted leather ensures durability and luxury, while the off-white color adds a sporty touch.\n- **Key Features:**\n  - **Classic Silhouette:** The Rhyton sneakers maintain a clean construction that echoes the '90s era.\n  - **Bold Design:** The 'Mouth Print' motif adds a bold, eye-catching element to the classic design.\n  - **Quality Craftsmanship:** Each pair is meticulously crafted to uphold Gucci's high standards of quality.\n- **Size Information:** Available in size 41.5, ensuring a comfortable fit for those who appreciate the finer details in footwear.\n- **Brand Authenticity:** Guaranteed authentic Gucci product, ensuring you receive a genuine luxury item.\n- **Versatility:** Perfect for casual outings or making a statement at more formal events, these sneakers offer versatility and style.\n- **Market Availability:** Available on various platforms such as GOAT, StockX, and ETEFT, ensuring accessibility for luxury footwear enthusiasts worldwide."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

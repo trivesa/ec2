@@ -1,0 +1,25 @@
+{
+  "id": "9fd20428-ce39-4208-8b56-4f9fdd3a0cb5",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728296122,
+  "usage": {
+    "prompt_tokens": 154,
+    "completion_tokens": 410,
+    "total_tokens": 564
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Cognac Arcadie Leather Bag\n**Subtitle (Sottotitolo):** Elegant and Versatile Top-Handle Bag\n**Short Description (Breve Descrizione):** The Cognac Arcadie Leather Bag by Miu Miu is a sophisticated and versatile accessory that combines elegance with practicality. Its light padding gives it a voluminous look, while the gold-tone hardware and varnished metal lettering logo add a touch of luxury. This bag is perfect for daily use, comfortably holding essentials like an iPhone 15 Pro Max, a Miu Miu card holder, and a large Miu Miu wallet.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - Crafted from high-quality leather, ensuring durability and a luxurious feel.\n  - Light padding provides a voluminous look and a cosmopolitan style.\n  - Leather handles and a detachable, adjustable 105 cm leather shoulder strap offer versatility in carrying options.\n  - Gold-tone hardware and varnished metal lettering logo on the front add a sophisticated touch.\n  - Zipper closure ensures secure storage.\n  - Cotton satin lining with a zipper pocket for additional organization.\n  - Equipped with purse feet to protect the bag from scratches.\n\n- **Functionality:**\n  - Spacious interior can comfortably hold an iPhone 15 Pro Max, a Miu Miu card holder, a large Miu Miu wallet, and other small items.\n  - Detachable shoulder strap allows for easy transition between handbag and shoulder bag.\n\n- **Additional Details:**\n  - Product code: 5BB142_2CR3_F0046_V_OON\n  - Size: M\n  - Imported\n  - Free shipping and returns\n  - Secure payment options available\n  - Delivered in sustainably designed and produced packaging.\n\nThis bag is a perfect blend of style and functionality, making it an ideal choice for those seeking a high-quality, versatile accessory."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

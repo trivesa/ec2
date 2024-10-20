@@ -1,0 +1,25 @@
+{
+  "id": "17f0e953-29f7-4cd0-8502-57cbf8b3cc69",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728803286,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 327,
+    "total_tokens": 474
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Square Muffler Scarf\n**Subtitle (Sottotitolo):** Luxurious Wool and Silk Blend Scarf with Iconic GG Pattern\n**Short Description (Breve Descrizione):** Elevate your style with this authentic GUCCI GG Jacquard Square Muffler Scarf, crafted from a luxurious blend of wool and silk. This elegant accessory features the iconic GG pattern in a sophisticated dark gray hue. Perfect for adding a touch of luxury to any outfit.\n\n**Description (Descrizione):**\n\n- **Model Number:** 281942 3G704 1062\n- **Material:** 80% wool, 20% silk\n- **Size:** 140 cm x 140 cm\n- **Color:** Dark gray (anthracite)\n- **Pattern:** Iconic GG Jacquard pattern\n- **Origin:** Made in Italy\n- **Condition:** New with tags\n- **Authenticity:** 100% authentic GUCCI product\n- **Packaging:** Includes original GUCCI tag and paper bag\n\nThis GUCCI GG Jacquard Square Muffler Scarf is a timeless piece that combines the brand's signature style with exceptional craftsmanship. The dark gray color and GG pattern create a versatile accessory that can be easily paired with a variety of outfits, from casual to formal. The luxurious blend of wool and silk ensures a soft, comfortable wear that will keep you warm and stylish throughout the seasons. Perfect for those who appreciate the finer details of luxury fashion, this scarf is a must-have for any GUCCI enthusiast."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

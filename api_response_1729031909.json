@@ -1,0 +1,25 @@
+{
+  "id": "575300e4-5d69-4144-8db4-9ccc48a03710",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729031909,
+  "usage": {
+    "prompt_tokens": 171,
+    "completion_tokens": 357,
+    "total_tokens": 528
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Wool Scarf - 644365 4G718 6468\n**Subtitle (Sottotitolo):** Authentic Red and Black Checkered Scarf with Logo Detail\n**Short Description (Breve Descrizione):** Elevate your style with this luxurious GUCCI GG Jacquard wool scarf, featuring a striking red and black checkered pattern and iconic logo detail. Crafted from high-quality wool, this scarf is both stylish and warm. New with tags, it measures 240x35cm.\n\n**Description (Descrizione):**\n\n- **Luxurious Material**: This GUCCI scarf is made from 100% wool, ensuring warmth and comfort while maintaining a sophisticated look.\n- **Iconic Design**: The scarf features a classic GG diamond check pattern in red and black, a timeless design that embodies the essence of GUCCI\u2019s luxury aesthetic.\n- **Logo Detail**: The scarf is adorned with the iconic GUCCI logo, adding a touch of authenticity and exclusivity.\n- **Fringe Detail**: The scarf includes a stylish fringe at the ends, adding a subtle yet elegant touch to the overall design.\n- **Size**: The scarf measures 240x35cm, making it versatile for various styling options.\n- **Authenticity**: This scarf is 100% authentic GUCCI, ensuring the highest quality and craftsmanship.\n- **New with Tags**: The scarf comes new with tags, guaranteeing its pristine condition and authenticity.\n- **Style Number**: 644365 4G718 6468, ensuring you are purchasing a genuine GUCCI product.\n- **Perfect Accessory**: This scarf is ideal for adding a touch of luxury to any outfit, whether for casual wear or formal occasions."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

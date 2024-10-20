@@ -1,0 +1,25 @@
+{
+  "id": "eebb481b-84ec-4285-a23a-e83cb9240b25",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728813832,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 406,
+    "total_tokens": 556
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Sneakers - Multicolour Leather Trainers\n**Subtitle (Sottotitolo):** Authentic Gucci Style 700291 2SH90 3760, Size 40 EU\n**Short Description (Breve Descrizione):** Elevate your style with these authentic Gucci Basket sneakers, featuring a vibrant multicolour design crafted from high-quality leather. Perfect for both men and women, these trainers are a statement piece for any fashion-forward individual. With a size 40 EU fit, they are ready to make a stylish impression.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with these Gucci Basket sneakers, model number 700291 2SH90 3760. Here are the key features that make these trainers stand out:\n\n- **Authenticity**: These shoes are genuine Gucci products, ensuring the highest quality and craftsmanship.\n- **Material**: Crafted from premium leather, these sneakers offer durability and a luxurious feel.\n- **Design**: The multicolour design adds a playful and stylish touch, making them versatile for various outfits.\n- **Size**: Available in size 40 EU, with a sole length of 27.3cm, ensuring a comfortable fit for both men and women.\n- **Condition**: Never worn, these trainers come in their original packaging, complete with a dust bag and shoe box.\n- **Details**: The model number 700291 2SH90 3760 guarantees authenticity and helps in verifying the product's legitimacy.\n- **Origin**: Made in Italy, these shoes embody the craftsmanship and style that Gucci is renowned for.\n- **Retail Information**: Originally priced at 790 euros, these sneakers are a valuable addition to any fashion collection.\n\nWhether you're looking to make a statement or simply want to own a piece of luxury fashion, these Gucci Basket sneakers are an excellent choice. Their unique design and high-quality materials make them a standout piece in any wardrobe."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

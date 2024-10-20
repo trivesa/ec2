@@ -1,0 +1,25 @@
+{
+  "id": "b873be9c-cac6-43c4-9465-c18b2e0f5cac",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728787954,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 413,
+    "total_tokens": 564
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low 'White Demetra Red'\n**Subtitle (Sottotitolo):** Elegant Casual Wear with a Touch of Luxury\n**Short Description (Breve Descrizione):** The Gucci Basket Low 'White Demetra Red' brings a sophisticated blend of elegance and casual style, featuring a striking white and red color combination. Crafted in Italy, these shoes embody the luxury and quality that Gucci is renowned for. Perfect for those who seek to elevate their everyday look with a touch of high-end fashion.\n\n**Description (Descrizione):**\n\n- **Style Number:** 697882 2SHJ0 9090\n- **Size:** 41\n- **Color:** White and Red\n- **Composition:**\n  - **Upper:** Other Textile\n  - **Sole:** EL (Elastomer)\n- **Manufacturing:** Made in Italy\n- **Key Features:**\n  - **Elegant Design:** The Gucci Basket Low 'White Demetra Red' features a sleek and stylish design that combines white and red hues, adding a touch of sophistication to any outfit.\n  - **Quality Materials:** The shoes are crafted with high-quality materials, ensuring durability and comfort.\n  - **Versatility:** Perfect for casual wear, these shoes can easily transition from everyday activities to more formal occasions, making them a versatile addition to any wardrobe.\n  - **Brand Heritage:** Gucci's commitment to luxury and excellence is evident in every detail of these shoes, from the craftsmanship to the design.\n  - **Comfort:** Designed for comfort, the Gucci Basket Low 'White Demetra Red' ensures a pleasant wearing experience, making them ideal for extended wear.\n  - **Authenticity:** Each pair is authenticated by Gucci, guaranteeing the authenticity and quality of the product.\n\nExperience the luxury and elegance of Gucci with the Basket Low 'White Demetra Red', a perfect blend of style and comfort for the discerning fashion enthusiast."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

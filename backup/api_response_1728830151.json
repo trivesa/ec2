@@ -1,0 +1,25 @@
+{
+  "id": "8304015e-f7f2-494d-b642-b2b7eb5684f6",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728830151,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 416,
+    "total_tokens": 565
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Padded Web Slide Sandals\n**Subtitle (Sottotitolo):** Green and Red Nylon Slides for Women\n**Short Description (Breve Descrizione):** Embrace the iconic Gucci style with these padded Web slide sandals, featuring green and red nylon and black details crafted from sustainable materials. Made in Italy, these slides offer a unique blend of comfort and luxury. Perfect for casual yet stylish occasions.\n\n**Description (Descrizione):**\n\nExperience the essence of Gucci with these distinctive padded Web slide sandals. Here are the key features:\n\n- **Style Number:** 700320 UFR30 3060\n- **Material:** Green and red Web padded nylon, with black details in Demetra\u2014crafted from at least 70% of vegetable raw materials from renewable sources (viscose, wood pulp, bio-based polyurethane).\n- **Sole:** Rubber sole for durability and comfort.\n- **Design:** Flat design with an oversized material that stands out in green and red, the iconic colors of the House Web.\n- **Size:** Available in size 40.\n- **Manufacturing:** Made in Italy, ensuring high-quality craftsmanship.\n- **Care Instructions:**\n  - Protect from direct light, heat, and rain.\n  - If wet, dry immediately with a soft cloth.\n  - Fill the shoe with tissue paper to maintain shape and absorb humidity, then store in the provided flannel bag and box.\n  - Clean with a soft, dry cloth or brush.\n- **Packaging:** Includes a special case, storage bag, and booklet.\n- **Weight:** Approximately 762g (weight may vary slightly by size).\n- **Dimensions:** Total Length: 26.5cm, Shoe Width: 10.5cm, Heel Height: 2cm (dimensions may vary slightly by size).\n\nThese Gucci Padded Web Slide Sandals are a testament to Gucci's commitment to innovation and sustainability, making them a must-have for any fashion enthusiast."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

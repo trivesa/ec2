@@ -1,0 +1,25 @@
+{
+  "id": "0bd1787e-898b-4894-886d-7b47433089ed",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728827459,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 486,
+    "total_tokens": 636
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI G74 Web Casual Shoes Pink Blue 624484-0PV20-9561\n**Subtitle (Sottotitolo):** Elegant and Versatile Sneakers for Women\n**Short Description (Breve Descrizione):** The GUCCI G74 Web Casual Shoes in Pink Blue, style number 624484-0PV20-9561, are a stylish and comfortable choice for everyday wear. Featuring a unique web design and a blend of materials, these shoes offer a perfect balance of fashion and functionality. Available in size 35.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The GUCCI G74 Web Casual Shoes are crafted with a mix of high-quality materials, including leather and suede, ensuring durability and a luxurious feel.\n  - The distinctive web design on the sides adds a touch of classic Gucci style, making these shoes instantly recognizable.\n  - The pink and blue color scheme provides a versatile and trendy look that can be paired with a variety of outfits.\n\n- **Comfort and Fit:**\n  - Designed for comfort, these shoes feature a cushioned insole and a supportive sole, ensuring a comfortable fit throughout the day.\n  - The size 35 option is perfect for those looking for a precise fit without compromising on style.\n\n- **Versatility:**\n  - These shoes are versatile enough to be worn casually or dressed up for more formal occasions, making them a versatile addition to any wardrobe.\n  - The low-top design and sleek silhouette make them easy to pair with dresses, skirts, or jeans.\n\n- **Authenticity and Quality:**\n  - The GUCCI G74 Web Casual Shoes are authentic Gucci products, ensuring the highest quality and craftsmanship.\n  - The attention to detail and the use of premium materials reflect Gucci's commitment to excellence in luxury fashion.\n\n- **Additional Information:**\n  - Style Number: 624484-0PV20-9561\n  - Size: 35\n  - Color: Pink Blue\n  - Material: Leather and Suede\n  - Design: Web Design on the Sides\n  - Sole: Supportive and Cushioned\n  - Fit: Comfortable and Precise\n\nThese shoes are a testament to Gucci's ability to blend timeless style with modern comfort, making them a must-have for any fashion-conscious individual."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

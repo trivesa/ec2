@@ -1,0 +1,25 @@
+{
+  "id": "9a824c96-1951-43dd-a59d-373f4c4b0867",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728793879,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 423,
+    "total_tokens": 574
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High 'White Demetra Red' Sneakers\n**Subtitle (Sottotitolo):** High-Top Basketball-Inspired Sneakers with Sustainable Materials\n**Short Description (Breve Descrizione):** Embrace the fusion of high-fashion and basketball heritage with the Gucci Basket High 'White Demetra Red' sneakers. Crafted from eco-friendly materials, these shoes offer a unique blend of style and sustainability. Perfect for those who value both fashion and environmental responsibility.\n\n**Description (Descrizione):**\n\n- **Style Number:** 673077 2SHG0 9076\n- **Size:** 39\n- **Design Inspiration:** Inspired by the iconic basketball sneakers of the 90s, these high-top shoes embody the self-expression and on-court aesthetic of that era.\n- **Materials:**\n  - **Upper:** A mix of GG Supreme canvas and white Demetra, a new eco-friendly material crafted from animal-free raw materials primarily sourced from sustainable, renewable, and bio-based sources.\n  - **Details:** White rubber details, rubber Interlocking G patch, contrast padding at the ankle, and Gucci logo detail.\n- **Features:**\n  - **Lace-Up Closure:** Ensures a secure and adjustable fit.\n  - **Low Heel:** 1\u2033, 2.5 cm height for a comfortable and stylish silhouette.\n  - **Additional Laces:** An extra pair of laces is included for versatility.\n  - **Distressed Effect:** Treated for a distressed look that adds to the shoe's unique charm.\n- **Sustainability:** The use of Demetra material underscores Gucci's commitment to environmental sustainability and ethical fashion practices.\n- **Brand Authenticity:** Genuine Gucci product, ensuring the highest quality and craftsmanship.\n- **Release Date:** January 1, 2024\n- **Retail Price:** $950\n\nExperience the perfect blend of high-fashion, sustainability, and basketball heritage with the Gucci Basket High 'White Demetra Red' sneakers."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

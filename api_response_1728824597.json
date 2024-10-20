@@ -1,0 +1,25 @@
+{
+  "id": "d1cd7990-7da2-4657-bba1-04351e40f50f",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728824597,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 434,
+    "total_tokens": 586
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton 25 Sneaker\n**Subtitle (Sottotitolo):** Ivory/Navy Luxury Sneaker with Eschatology 1921 Prints\n**Short Description (Breve Descrizione):** The Gucci Rhyton 25 sneaker, style number 663340 2SH00 9522, is a luxurious and stylish footwear option featuring ivory and navy hues with distinctive '25' and 'Gucci Eschatology 1921' prints. Crafted from sustainable materials, this shoe combines fashion and eco-friendliness. Available in size 35.5, it offers a perfect blend of comfort and high-end fashion.\n\n**Description (Descrizione):**\n- **Design and Materials:**\n  - The Gucci Rhyton 25 sneaker is crafted from animal-free raw materials that are primarily from sustainable, renewable, and bio-based sources.\n  - The shoe features a striking ivory and navy colorway with '25' and 'Gucci Eschatology 1921' prints, adding a unique touch to its design.\n  - The use of eco-friendly materials aligns with Gucci's commitment to sustainability.\n\n- **Key Features:**\n  - **Gucci Logo Tag:** The shoe includes a Gucci logo tag, ensuring authenticity and brand recognition.\n  - **Rubber Sole:** The rubber sole provides durability and traction, making it suitable for various occasions.\n  - **Lace-Up Closure:** The lace-up closure offers a secure and adjustable fit.\n  - **Size:** Available in size 35.5, catering to specific foot sizes.\n\n- **Additional Details:**\n  - **Style Number:** 663340 2SH00 9522\n  - **Category:** Rhyton Sneaker\n  - **Release Date:** May 25, 2021\n  - **Retail Price:** $890\n\nThis Gucci Rhyton 25 sneaker is a testament to Gucci's dedication to combining high-end fashion with sustainable practices, making it a desirable choice for those who value both style and eco-consciousness."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

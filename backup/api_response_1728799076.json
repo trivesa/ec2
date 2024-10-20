@@ -1,0 +1,25 @@
+{
+  "id": "ebc6d261-a85b-40f3-bd61-404f8dc81b79",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728799076,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 354,
+    "total_tokens": 501
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Blue Wool Scarf 344994 4G200 9269\n**Subtitle (Sottotitolo):** Luxurious Italian Craftsmanship in Iconic GG Pattern\n**Short Description (Breve Descrizione):** This GUCCI scarf is a masterpiece of Italian craftsmanship, featuring the iconic GG pattern in a rich blue wool fabric. Perfect for adding a touch of luxury to any outfit, this scarf is both stylish and versatile. Made in Italy, it embodies the essence of high-end fashion.\n\n**Description (Descrizione):**\n\n- **Material and Craftsmanship:**\n  - Made from high-quality wool, ensuring warmth and durability.\n  - Crafted with meticulous attention to detail, showcasing GUCCI's renowned Italian craftsmanship.\n\n- **Design and Pattern:**\n  - Features the iconic GG pattern, a signature motif that symbolizes GUCCI's heritage and style.\n  - The vibrant blue color adds a sophisticated touch to any ensemble.\n\n- **Dimensions and Versatility:**\n  - Measures 40 cm x 180 cm, providing ample length for various styling options.\n  - Suitable for both men and women, making it a versatile accessory for any wardrobe.\n\n- **Authenticity and Quality:**\n  - Authentic GUCCI product, ensuring the highest standards of quality and authenticity.\n  - Model number 344994 4G200 9269, guaranteeing its legitimacy and exclusivity.\n\n- **Care and Maintenance:**\n  - To preserve its quality, it is recommended to follow specific care instructions, ensuring the scarf remains in excellent condition.\n\nThis GUCCI scarf is a timeless piece that combines elegance with practicality, making it an indispensable accessory for those who appreciate luxury and sophistication."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "37a2de2a-f100-4d99-a6bb-b69afcb3a7c6",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729079018,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 404,
+    "total_tokens": 556
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Alexander McQueen Oversized Sneaker 202401 MCQUE AL09\n**Subtitle (Sottotitolo):** Luxury Footwear with Contemporary Elegance\n**Short Description (Breve Descrizione):** The Alexander McQueen Oversized Sneaker 202401 MCQUE AL09 is a statement piece that combines luxury materials with avant-garde design. Crafted with high-quality leather, this shoe features an oversized silhouette and intricate details that elevate any outfit. Perfect for those who seek to make a bold fashion statement.\n\n**Description (Descrizione):**\n\n- **Design and Craftsmanship:**\n  - The Alexander McQueen Oversized Sneaker 202401 MCQUE AL09 is meticulously crafted with premium leather, ensuring durability and a luxurious feel.\n  - The oversized silhouette is a hallmark of McQueen's avant-garde design legacy, offering a bold and contemporary look.\n  - The shoe features intricate embroidery and embossed details, such as the Alexander McQueen logo on the back and tongue, adding a touch of sophistication.\n\n- **Comfort and Fit:**\n  - The shoe is designed to fit true to size, with a comfortable fit that molds to the foot over time.\n  - The leather upper provides a solid and supportive structure, while the chunky sole adds stability and a unique aesthetic.\n\n- **Style and Versatility:**\n  - The all-white colorway offers versatility and can be paired with a variety of outfits, from casual to formal.\n  - The oversized design makes a bold statement, perfect for those who want to stand out in the crowd.\n\n- **Additional Details:**\n  - Size: 41\n  - Material: High-quality leather\n  - Color: White\n  - Style Number: 202401 MCQUE AL09\n  - Brand: Alexander McQueen\n\nThis shoe is a testament to Alexander McQueen's commitment to luxury and innovative design, making it a must-have for fashion enthusiasts and collectors alike."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

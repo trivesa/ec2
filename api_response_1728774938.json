@@ -1,0 +1,25 @@
+{
+  "id": "edd1e92f-0ba3-407b-a288-88f619834e1e",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728774938,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 324,
+    "total_tokens": 477
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High 'Black Demetra Red' Sneakers\n**Subtitle (Sottotitolo):** Luxurious High-Top Sneakers with Iconic Gucci Design\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Basket High 'Black Demetra Red' sneakers, featuring a sleek high-top design and the iconic Gucci interlocking G logo. Crafted with premium materials, these shoes offer both comfort and luxury. Perfect for making a statement in any setting.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the Gucci Basket High 'Black Demetra Red' sneakers. Here are some key features:\n\n- **Style Number:** 673077 2SHG0 1066\n- **Size:** 45.5\n- **Design:** High-top sneakers with a bold black and red color scheme, featuring the iconic Gucci interlocking G logo.\n- **Materials:** Premium leather and synthetic materials for durability and comfort.\n- **Comfort:** Cushioned insoles and supportive high-top design for all-day wear.\n- **Versatility:** Suitable for both casual and formal occasions, adding a touch of luxury to any outfit.\n- **Authenticity:** Original Gucci product with the brand's signature quality and craftsmanship.\n- **Packaging:** Includes original Gucci box for a luxurious unboxing experience.\n\nThese Gucci Basket High sneakers are a testament to Gucci's commitment to excellence in fashion and craftsmanship, making them a must-have for any luxury footwear enthusiast."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

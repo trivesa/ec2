@@ -1,0 +1,25 @@
+{
+  "id": "056c067a-2f4b-4509-b509-fbd3cd7f8780",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728824039,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 307,
+    "total_tokens": 460
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Women's Basket Low Top Sneakers\n**Subtitle (Sottotitolo):** White Green Edition - 700290 2SHG0 9089\n**Short Description (Breve Descrizione):** Elevate your style with Gucci's iconic Basket sneakers, featuring a sleek white and green design. Crafted in Italy, these shoes blend luxury and comfort. Available in size 35.5.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with Gucci's Basket Low Top Sneakers. Here are the key features:\n\n- **Style Number:** 700290 2SHG0 9089\n- **Color:** White Green\n- **Size:** 35.5\n- **Made in:** Italy\n- **Composition:** Upper made from a combination of elastic and other textiles, with an elastic sole\n- **Design:** Classic low-top silhouette with a bold white and green color scheme, perfect for making a statement\n- **Quality:** High-quality materials and craftsmanship ensure durability and comfort\n- **Brand:** Gucci, a renowned luxury fashion brand known for its exquisite designs and attention to detail\n- **Ideal for:** Everyday wear, casual outings, or as a stylish addition to any fashion-forward ensemble\n\nThese Gucci Basket sneakers are not just a fashion statement but also a testament to the brand's commitment to quality and style. With their versatile design and luxurious materials, they are sure to complement any wardrobe."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

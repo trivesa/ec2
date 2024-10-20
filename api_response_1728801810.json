@@ -1,0 +1,25 @@
+{
+  "id": "2dcd5020-280b-4b03-9bb7-66e75450c7ab",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728801810,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 428,
+    "total_tokens": 575
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Wool and Silk Scarf 281942 3G704 6978\n**Subtitle (Sottotitolo):** Luxurious Pink Scarf with Elegance and Sophistication\n**Short Description (Breve Descrizione):** This GUCCI scarf, style number 281942 3G704 6978, is a stunning blend of wool and silk, offering a luxurious and sophisticated accessory for any occasion. Its vibrant pink hue adds a touch of elegance to any outfit. Perfect for those who appreciate high-quality materials and timeless fashion.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury with the GUCCI Wool and Silk Scarf, style number 281942 3G704 6978. This exquisite accessory is crafted from a rich blend of wool and silk, ensuring a soft, comfortable, and durable wear.\n\n- **Material:** Wool and Silk blend\n- **Size:** 140x140 cm, providing ample coverage and versatility\n- **Color:** Vibrant pink, adding a pop of color to any outfit\n- **Style:** Classic square shape, perfect for wrapping around the neck or using as a stylish accessory\n- **Brand:** GUCCI, synonymous with high-end fashion and quality craftsmanship\n- **Style Number:** 281942 3G704 6978, ensuring authenticity and exclusivity\n\nThis scarf is not only a fashion statement but also a testament to GUCCI\u2019s commitment to excellence. Whether you\u2019re looking to elevate a casual outfit or add a touch of sophistication to a formal ensemble, this scarf is the perfect choice.\n\n- **Care Instructions:** To maintain the quality and longevity of the scarf, it is recommended to follow the specific care instructions provided by GUCCI.\n- **Authenticity:** Guaranteed original GUCCI product, ensuring you receive a genuine luxury item.\n- **Packaging:** Delivered in its original packaging, complete with tags and any additional accessories.\n\nIndulge in the luxury of GUCCI with this stunning wool and silk scarf, perfect for those who appreciate the finer details in fashion."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "db8fdde5-bfd5-4d6f-a3b5-e6d6feb570f2",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728776999,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 380,
+    "total_tokens": 532
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Rhyton Leather Sneaker 'Ivory'\n**Subtitle (Sottotitolo):** Luxurious Comfort in Every Step\n**Short Description (Breve Descrizione):** Elevate your style with the GUCCI Rhyton Leather Sneaker 'Ivory', a masterpiece of luxury footwear that combines comfort and elegance. Crafted from high-quality leather, this shoe features a sleek design and a sophisticated color palette. Perfect for those who demand the best in fashion and comfort.\n\n**Description (Descrizione):**\n\n- **Style Number:** 498916 A9L00 9522\n- **Size:** 44.5\n- **Material:** High-quality leather for durability and style\n- **Design:** Sleek and sophisticated design that exudes luxury\n- **Color:** Ivory, a versatile and timeless color choice\n- **Comfort:** Designed for ultimate comfort, ensuring a smooth and comfortable walking experience\n- **Brand:** GUCCI, a renowned luxury fashion brand known for its exceptional craftsmanship and attention to detail\n- **Features:**\n  - **Leather Construction:** The shoe is made from premium leather, ensuring a long-lasting and stylish finish.\n  - **Elegant Aesthetic:** The ivory color and sleek design make this shoe perfect for both casual and formal occasions.\n  - **Quality Assurance:** GUCCI's commitment to quality ensures that every pair meets the highest standards of craftsmanship and material quality.\n  - **Versatility:** Suitable for a variety of outfits, from casual streetwear to more formal attire.\n  - **Brand Heritage:** Part of GUCCI's esteemed collection, reflecting the brand's legacy of luxury and fashion excellence.\n\nExperience the epitome of luxury footwear with the GUCCI Rhyton Leather Sneaker 'Ivory', a testament to the brand's dedication to quality and style."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

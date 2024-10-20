@@ -1,0 +1,25 @@
+{
+  "id": "a9cf7e07-944e-4a5e-87a4-238a6a83298b",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728787352,
+  "usage": {
+    "prompt_tokens": 549,
+    "completion_tokens": 904,
+    "total_tokens": 1453
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Here is the information for the GUCCI shoes with style number 630607 DRW00 9522:\n\n**Mandatory Fields:**\n1. **Object Category (Categoria Oggetto):** Shoes\n2. **Store Category (Categoria del Negozio):** Luxury Fashion\n3. **Brand (Marca):** Gucci\n4. **Size (Numero di scarpa EU):** 41\n5. **Department (Reparto):** Men's\n6. **Color (Colore):** Ivory/Red\n7. **Type (Tipo):** Sneakers\n8. **Style (Stile):** Rhyton Interlocking Disk\n9. **Condition of the Item (Condizione dell'oggetto):** New\n10. **Price (Prezzo):** $890 (Retail Price)\n11. **Shipping Rule (Regola sulla spedizione):** N/A (Varies by seller)\n\n**Optional Fields:**\n1. **MPN (MPN):** 630607 DRW00 9522\n2. **Custom Label (Etichetta personalizzata - SKU):** N/A\n3. **EAN (EAN):** N/A\n4. **Material (Materiale della tomaia):** N/A\n5. **Sole Material (Materiale della suola):** N/A\n6. **Lining Material (Materiale della fodera):** N/A\n7. **Closure Type (Chiusura):** N/A\n8. **Fit (Vestibilit\u00e0):** N/A\n9. **Product Line (Linea prodotto):** Rhyton\n10. **Insole Material (Materiale della soletta):** N/A\n11. **Outer Material (Materiale tomaia):** N/A\n12. **Pattern (Fantasia):** Disk Print\n13. **Season (Stagione):** N/A\n14. **Theme (Tema):** N/A\n15. **Product Variants (Varianti di prodotto):** N/A\n16. **Payment and Offers (Regole di pagamento):** N/A\n17. **Object Warnings (Avvertenze per l'oggetto):** N/A\n18. **Width (Larghezza della scarpa):** N/A\n19. **Year Manufactured (Anno di fabbricazione):** 2020\n20. **Activity (Attivit\u00e0):** N/A\n21. **Vintage (Vintage):** No\n22. **Customized (Personalizzato):** No\n23. **Model (Modello):** Rhyton Interlocking Disk\n24. **Decorative Elements (Elementi decorativi):** Interlocking Disk\n25. **Occasion (Occasione):** N/A\n26. **Toe Shape (Forma della punta):** N/A\n27. **Toe Cap Material (Materiale del puntale):** N/A\n28. **Pronation (Pronazione):** N/A\n29. **Calf Circumference (Circonferenza del polpaccio):** N/A\n30. **Shaft Height (Altezza del gambale):** N/A\n31. **Heel Height (Altezza del tacco):** N/A\n32. **Heel Style (Stile del tacco):** N/A\n33. **Shoe Shaft Style (Stile del gambale):** N/A\n34. **Signed (Firmato):** No\n35. **Handmade (Fatto a mano):** No\n36. **Country of Manufacture (Paese di fabbricazione):** N/A\n37. **Manufacturing Process (Processo di fabbricazione):** N/A\n38. **Sustainability Features (Caratteristiche di sostenibilit\u00e0):** N/A\n39. **Care Instructions (Istruzioni per la cura):** N/A\n40. **Packaging (Imballaggio):** N/A\n41. **Warranty Information (Informazioni sulla garanzia):** N/A\n\n**Note:** The information provided is based on the available data from the sources listed. Some fields may not be applicable or available, and thus are marked as \"N/A\"."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

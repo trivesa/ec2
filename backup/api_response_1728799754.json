@@ -1,0 +1,25 @@
+{
+  "id": "3b5b8d16-b7f2-4543-ab8a-d5ab8ac876b3",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728799754,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 405,
+    "total_tokens": 552
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Scarf 281942 3G704 6978 - Luxurious Pink Wool/Silk Accessory\n**Subtitle (Sottotitolo):** Elegance Embodied in a Soft, Pink Gucci Scarf\n**Short Description (Breve Descrizione):** This GUCCI scarf, style number 281942 3G704 6978, is a stunning accessory made from a blend of wool and silk. Its soft pink hue adds a touch of elegance to any outfit. Perfect for those who appreciate luxury and sophistication.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury with the GUCCI scarf, style number 281942 3G704 6978. This exquisite accessory is crafted from a high-quality blend of wool and silk, ensuring a soft and comfortable wear.\n\n- **Material:** Made from a luxurious blend of wool and silk, providing warmth and a smooth texture.\n- **Color:** Soft pink hue that adds a touch of sophistication to any outfit.\n- **Size:** 140 cm x 140 cm, perfect for wrapping around your neck or as a stylish accessory.\n- **Style Number:** 281942 3G704 6978, ensuring authenticity and exclusivity.\n- **Condition:** New with tags, guaranteeing its pristine condition.\n- **Brand:** GUCCI, synonymous with luxury and high-end fashion.\n- **Perfect For:** Adding a luxurious touch to casual or formal outfits, making it a versatile accessory for any occasion.\n- **Care Instructions:** To maintain its quality, it is recommended to dry clean or hand wash with care.\n- **Authenticity:** Guaranteed original GUCCI product, ensuring you are purchasing a genuine luxury item.\n\nThis GUCCI scarf is not just an accessory; it is a statement piece that reflects your appreciation for luxury and style. Whether you are dressing up or adding a touch of elegance to a casual outfit, this scarf is sure to make a lasting impression."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

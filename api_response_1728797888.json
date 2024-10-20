@@ -1,0 +1,25 @@
+{
+  "id": "3e9743a2-9cc3-49aa-ad9a-ca5a334a9574",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728797888,
+  "usage": {
+    "prompt_tokens": 146,
+    "completion_tokens": 402,
+    "total_tokens": 548
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Marmont Thin Belt - Style 409417 FAA6B 8048\n**Subtitle (Sottotitolo):** Luxurious Leather Belt with Double G Buckle\n**Short Description (Breve Descrizione):** Elevate your style with the GUCCI GG Marmont Thin Belt, featuring a sleek double G buckle and high-quality leather. This belt is a perfect accessory for adding a touch of luxury to any outfit. Crafted with precision and attention to detail, it embodies the essence of GUCCI's timeless elegance.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury with the GUCCI GG Marmont Thin Belt, style number 409417 FAA6B 8048. This exquisite accessory is designed to make a statement with its sleek and sophisticated design.\n\n- **Material:** High-quality leather ensures durability and a luxurious feel.\n- **Buckle:** The iconic double G buckle adds a touch of elegance and sophistication, making it a standout piece in any wardrobe.\n- **Size:** Available in various sizes to fit perfectly around your waist. This specific model is size 80, with a length of 31.5 inches and a width of 0.8 inches.\n- **Packaging:** Includes a dust bag for storage and protection, maintaining the belt's pristine condition.\n- **Style:** The thin design makes it versatile and easy to pair with a variety of outfits, from casual to formal.\n- **Craftsmanship:** Each belt is crafted with meticulous attention to detail, reflecting GUCCI's commitment to excellence and quality.\n- **Authenticity:** Guaranteed 100% authentic GUCCI product, ensuring you are investing in a genuine luxury item.\n\nThis belt is not only a fashion statement but also a testament to GUCCI's legacy of creating timeless and luxurious accessories. Whether you're dressing up or dressing down, the GG Marmont Thin Belt is the perfect accessory to elevate your style."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

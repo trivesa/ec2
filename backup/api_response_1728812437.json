@@ -1,0 +1,25 @@
+{
+  "id": "98f0dc00-24d1-46bd-934f-a038f236f9d7",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728812437,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 378,
+    "total_tokens": 527
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Women's Padded Web Slide Sandal\n**Subtitle (Sottotitolo):** Green and Red Nylon Sandals with Iconic Web Detail\n**Short Description (Breve Descrizione):** Elevate your summer style with these vibrant GUCCI sandals, featuring a green and red nylon design adorned with the iconic Web motif. Crafted with comfort and style in mind, these sandals are perfect for casual outings and beach trips. Available in size 41.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The GUCCI Women's Padded Web Slide Sandal is crafted from durable nylon and rubber, ensuring both comfort and durability.\n  - The striking green and red color scheme adds a bold touch to any outfit.\n  - The iconic Web motif, a signature GUCCI element, adds a touch of luxury and sophistication.\n\n- **Comfort and Practicality:**\n  - The padded design provides extra comfort for long wear.\n  - The slide sandal style makes it easy to slip on and off, perfect for beach trips or casual outings.\n\n- **Style and Versatility:**\n  - The vibrant colors and iconic Web detail make these sandals a statement piece for any summer look.\n  - Pair them with a variety of outfits, from casual beachwear to more dressed-up summer ensembles.\n\n- **Product Details:**\n  - Style Number: 700320 UFR30 3060\n  - Size: 41\n  - Material: Nylon and Rubber\n  - Color: Green and Red\n  - Brand: GUCCI\n\n- **Additional Information:**\n  - For a genuine GUCCI product, ensure to purchase from authorized retailers or the official GUCCI website.\n  - The product is designed to provide both style and comfort, making it a versatile addition to any wardrobe."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

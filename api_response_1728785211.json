@@ -1,0 +1,25 @@
+{
+  "id": "79dd04a1-ec92-4eb7-808d-5c10eb57b6d1",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728785211,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 512,
+    "total_tokens": 665
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Tennis 1977 Low Top Sneakers\n**Subtitle (Sottotitolo):** Blue Ivory Jacquard Denim Sneakers - 606111 2KQ10 4463\n**Short Description (Breve Descrizione):** Embrace the timeless elegance of Gucci's Tennis 1977 low top sneakers, crafted in blue and ivory jacquard denim. This stylish pair combines classic sportswear with luxurious materials, perfect for adding a sophisticated touch to any outfit. Available in size 41.5.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The Gucci Tennis 1977 sneakers are designed with a low top silhouette, offering a sleek and versatile look.\n  - Crafted from blue and ivory jacquard denim, these shoes blend sporty appeal with high-end fashion.\n  - The denim fabric adds a unique texture and visual interest, making these sneakers stand out.\n\n- **Comfort and Fit:**\n  - Designed for comfort, these sneakers feature a cushioned insole and a soft, breathable lining.\n  - The low top design ensures a snug fit around the ankle, providing support without restricting movement.\n  - Available in size 41.5, ensuring a precise fit for those who value both style and comfort.\n\n- **Brand and Quality:**\n  - Gucci is renowned for its commitment to quality and craftsmanship, ensuring that every pair of Tennis 1977 sneakers meets the highest standards.\n  - The attention to detail in the stitching and material selection reflects Gucci's dedication to excellence.\n\n- **Style and Versatility:**\n  - These sneakers are perfect for casual outings, adding a touch of luxury to everyday wear.\n  - The blue and ivory color scheme is versatile and can be easily paired with a variety of outfits, from jeans to shorts.\n  - The jacquard denim pattern adds a sophisticated element, making these sneakers suitable for more formal occasions as well.\n\n- **Additional Information:**\n  - Style Number: 606111 2KQ10 4463\n  - Size: 41.5\n  - Material: Blue and Ivory Jacquard Denim\n  - Type: Low Top Sneakers\n  - Brand: Gucci\n\nExperience the perfect blend of style and comfort with Gucci's Tennis 1977 low top sneakers. Whether you're looking for a casual yet luxurious addition to your wardrobe or a statement piece for special occasions, these sneakers are sure to impress."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

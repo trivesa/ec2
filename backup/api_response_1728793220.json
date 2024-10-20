@@ -1,0 +1,25 @@
+{
+  "id": "06b6a2f6-e3aa-4370-9ec5-f11f32929bef",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728793220,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 358,
+    "total_tokens": 509
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Run Sneaker 'Black Yellow' 680938-USM10-8480\n**Subtitle (Sottotitolo):** High-End Fashion Sneakers for the Discerning Individual\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Run Sneaker 'Black Yellow', a sophisticated blend of comfort and luxury. Crafted in Italy, these sneakers feature a textile upper and an EL sole, ensuring both durability and elegance. Perfect for those who demand the best in fashion.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the Gucci Run Sneaker 'Black Yellow' 680938-USM10-8480. Here are some key features that make these sneakers stand out:\n\n- **Craftsmanship:** Made in Italy, these sneakers embody the highest standards of craftsmanship, ensuring a product that is both durable and aesthetically pleasing.\n- **Materials:** The textile upper provides a comfortable fit, while the EL sole offers resilience and long-lasting performance.\n- **Design:** The black and yellow color scheme adds a touch of sophistication and versatility, making these sneakers suitable for a variety of occasions.\n- **Size:** Available in size 39.5, ensuring a precise fit for those who value comfort and style.\n- **Brand Authenticity:** Authentic Gucci product, guaranteeing the quality and prestige associated with the brand.\n- **Style Number:** 680938-USM10-8480, a unique identifier that confirms the authenticity and exclusivity of these sneakers.\n\nWhether you're looking to make a statement or simply want to enjoy the comfort and luxury that Gucci offers, the Gucci Run Sneaker 'Black Yellow' is an excellent choice."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

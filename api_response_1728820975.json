@@ -1,0 +1,25 @@
+{
+  "id": "43cae12f-9890-4c2a-8e8c-1b2c1d0026b9",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728820975,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 384,
+    "total_tokens": 536
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Sneakers - Green White Black\n**Subtitle (Sottotitolo):** Luxurious and Versatile Footwear for the Fashion-Conscious\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Basket Sneakers in Green White Black, featuring a unique blend of colors and premium materials. Perfect for both casual and sophisticated occasions, these shoes are a testament to Gucci's commitment to luxury and craftsmanship. Available in size 36.5.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the Gucci Basket Sneakers in Green White Black, style number 700291 2SH90 3760. These shoes are designed to make a statement, combining bold colors with exceptional craftsmanship.\n\n- **Unique Color Scheme:** The Green White Black color palette adds a touch of sophistication and versatility, making these shoes suitable for a variety of outfits and occasions.\n- **Premium Materials:** Crafted with high-quality materials, these sneakers ensure durability and comfort, while maintaining the luxurious feel that Gucci is known for.\n- **Gucci's Signature Style:** The iconic Gucci logo and distinctive design elements make these shoes instantly recognizable, reflecting the brand's rich heritage and commitment to fashion excellence.\n- **Versatile Wear:** Whether you're dressing up or dressing down, these sneakers are perfect for adding a touch of luxury to your ensemble.\n- **Size Information:** Available in size 36.5, ensuring a comfortable and precise fit.\n- **Authenticity:** Genuine Gucci product, guaranteeing the highest standards of quality and craftsmanship.\n- **Packaging:** Includes original Gucci packaging, such as a dust bag and shoe box, to preserve the luxury experience.\n\nEmbrace the essence of luxury with the Gucci Basket Sneakers in Green White Black, a true masterpiece of fashion and craftsmanship."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

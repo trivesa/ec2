@@ -1,0 +1,25 @@
+{
+  "id": "c727d8b9-822c-4460-98a6-959401c13d39",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728778516,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 471,
+    "total_tokens": 622
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Tennis 1977 'Blue Ivory' Sneakers\n**Subtitle (Sottotitolo):** Elegant Denim GG Print Low-Top Shoes\n**Short Description (Breve Descrizione):** Embrace the timeless elegance of Gucci's Tennis 1977 'Blue Ivory' sneakers, featuring a unique denim GG print design. Crafted with high-quality materials and meticulous attention to detail, these shoes are perfect for those who seek a blend of luxury and casual style. Available in size 44.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The Gucci Tennis 1977 'Blue Ivory' sneakers are designed with a distinctive denim GG print, adding a touch of sophistication to any outfit.\n  - The shoes are made from high-quality denim and feature a low-top silhouette, ensuring comfort and versatility.\n  - The blue and ivory color scheme offers a classic and versatile look that can be easily paired with a variety of outfits.\n\n- **Features:**\n  - **Style Number:** 606111 2KQ10 4463\n  - **Size:** 44\n  - **Closure:** Lace-up closure for a secure and adjustable fit\n  - **Sole:** Rubber outsole for durability and traction\n  - **Upper Material:** Denim with GG print\n  - **Insole:** Cushioned insole for added comfort\n\n- **Luxury and Craftsmanship:**\n  - Gucci's Tennis 1977 'Blue Ivory' sneakers embody the brand's commitment to luxury and craftsmanship.\n  - Each pair is meticulously crafted to ensure the highest quality and attention to detail.\n  - The denim GG print design is a testament to Gucci's innovative approach to fashion, blending traditional craftsmanship with modern style.\n\n- **Versatility:**\n  - These sneakers are perfect for both casual and formal occasions, offering a versatile look that can be dressed up or down.\n  - The classic design ensures that the shoes will remain stylish for years to come, making them a valuable addition to any wardrobe.\n\nExperience the epitome of luxury and style with Gucci's Tennis 1977 'Blue Ivory' sneakers. Whether you're looking for a statement piece or a versatile addition to your wardrobe, these shoes are sure to impress."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

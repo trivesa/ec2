@@ -1,0 +1,25 @@
+{
+  "id": "72bb7dd6-77e3-4110-8173-523d8280005d",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728781174,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 374,
+    "total_tokens": 525
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High 'Black Demetra Red'\n**Subtitle (Sottotitolo):** Elevate Your Style with Sustainable Luxury\n**Short Description (Breve Descrizione):** The Gucci Basket High 'Black Demetra Red' (673077 2SHG0 1066) embodies the perfect blend of high-end fashion and eco-friendly design. Crafted from sustainable, renewable, and bio-based materials, this shoe offers a stylish and responsible choice for luxury footwear enthusiasts. Available in size 43, it's a must-have for those who value both fashion and sustainability.\n\n**Description (Descrizione):**\n\n- **Sustainable Materials:** The Gucci Basket High 'Black Demetra Red' is made from animal-free raw materials that are primarily sourced from sustainable, renewable, and bio-based sources, reflecting Gucci's commitment to eco-friendly fashion.\n- **Design and Style:** This shoe features a sleek black and red color scheme, with the iconic interlocking G logo, making it a standout piece in any wardrobe. The high-top design provides additional support and comfort.\n- **Quality and Craftsmanship:** Each pair is meticulously crafted to ensure high-quality and durability, ensuring that the shoe maintains its luxurious feel and appearance over time.\n- **Comfort and Fit:** The shoe is designed to fit true to size, offering enhanced comfort and a snug fit, making it perfect for daily wear.\n- **Size Information:** Available in size 43, ensuring a precise fit for those who prefer a comfortable and stylish shoe.\n- **Brand Authenticity:** This shoe is a genuine Gucci product, reflecting the brand's dedication to luxury and sustainability.\n- **Availability:** Available in stock at select retailers, ensuring that you can get your hands on this stylish and eco-friendly shoe."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

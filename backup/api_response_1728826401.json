@@ -1,0 +1,25 @@
+{
+  "id": "2ffe0c5d-17b2-44b1-a531-28688ca791d9",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728826401,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 427,
+    "total_tokens": 578
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Donna Light Blue Demetra Sneaker\n**Subtitle (Sottotitolo):** Eco-Friendly Luxury Sneaker with Sustainable Materials\n**Short Description (Breve Descrizione):** The Gucci Basket Donna Light Blue Demetra Sneaker is a stylish and eco-friendly footwear option that combines the classic basketball sneaker look with sustainable materials. Crafted primarily from Demetra, an innovative material that offers pliable and resilient performance, this shoe is perfect for those who value both style and sustainability. Available in size 35.\n\n**Description (Descrizione):**\n\nThe Gucci Basket Donna Light Blue Demetra Sneaker is a testament to Gucci's commitment to innovation and sustainability. Here are some key features of this luxury sneaker:\n\n- **Eco-Friendly Material:** The shoe is crafted primarily from Demetra, a material that combines animal-free raw materials from sustainable, renewable, and bio-based sources. This ensures a reduced environmental impact without compromising on style or performance.\n- **Classic Design:** Inspired by basketball sneakers from the \u201890s, the Gucci Basket Donna features a low-top style with distinctive features and detailing that evoke the self-expression of on-court aesthetics.\n- **Light Blue Color:** The shoe is offered in a light blue color with a lightly distressed effect, adding a touch of modernity to its classic design.\n- **Rubber Interlocking G Patch:** The shoe features a rubber interlocking G patch, a signature Gucci detail that adds a touch of luxury to the overall design.\n- **Gucci Logo Detail:** The Gucci logo is prominently displayed, ensuring authenticity and brand recognition.\n- **Rubber Sole:** The shoe has a durable rubber sole that provides comfort and stability.\n- **Accessories:** The shoe comes with a box and dust bag, making it a complete luxury package.\n- **Size Options:** Available in size 35, ensuring a perfect fit for smaller foot sizes.\n- **Production Time:** The production time is 3-5 working days, ensuring quick delivery of this high-quality product."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

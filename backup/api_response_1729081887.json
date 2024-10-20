@@ -1,0 +1,25 @@
+{
+  "id": "1aeff33b-43a6-4d80-94bb-b7c9cf5d7404",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729081887,
+  "usage": {
+    "prompt_tokens": 145,
+    "completion_tokens": 541,
+    "total_tokens": 686
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Medium Dior Book Tote in Ecru and Blue Dior Oblique Embroidery\n**Subtitle (Sottotitolo):** A Timeless Classic with Exquisite Craftsmanship\n**Short Description (Breve Descrizione):** The Medium Dior Book Tote, designed by Maria Grazia Chiuri, is a masterpiece of elegance and functionality. Crafted in ecru and blue Dior Oblique embroidery, this bag embodies the House's signature savoir-faire. Perfect for daily essentials, it can be carried by hand or worn over the shoulder.\n\n**Description (Descrizione):**\n\n- **Design and Craftsmanship:**\n  - Part of the iconic Dior Book Tote collection, this medium tote is designed by Maria Grazia Chiuri, Creative Director of Christian Dior.\n  - The bag is fully embroidered with the ecru and blue Dior Oblique motif, showcasing the House's exceptional craftsmanship.\n  - Adorned with the Christian Dior Paris signature on the front, adding a touch of luxury.\n\n- **Dimensions and Capacity:**\n  - Dimensions: 36 x 27.5 x 16.5 cm / 14 x 11 x 6.5 inches (Length x Height x Width).\n  - Handle length: 42 cm / 16.5 inches.\n  - Handle drop length: 16 cm / 6.5 inches.\n  - Weight: 655 g / 23 ounces.\n  - The bag can accommodate a 15-inch laptop, a pouch, a wallet, a phone, sunglasses, and lipstick.\n\n- **Additional Features:**\n  - Dust bag included for protection and storage.\n  - Made in Italy, ensuring the highest quality and craftsmanship.\n  - Exclusive customization service available in select stores, allowing for personalized touches.\n\n- **Versatility:**\n  - Designed to be versatile, the Medium Dior Book Tote can be carried by hand or worn over the shoulder, making it perfect for daily use and travel.\n  - The bag's size and design make it suitable for both professional and casual settings.\n\n- **Collection and Sizes:**\n  - The Dior Book Tote comes in four unique sizes: mini, small, medium, and large, offering a range of options to suit different needs and preferences.\n  - Each size is designed to cater to specific requirements, from everyday essentials to larger items for travel.\n\nThis Medium Dior Book Tote in ecru and blue Dior Oblique embroidery is a testament to Dior's commitment to elegance and practicality, making it a must-have for those who appreciate luxury and versatility."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

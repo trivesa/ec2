@@ -1,0 +1,25 @@
+{
+  "id": "fa916c79-6995-4b27-9a03-7d5ee20a0a24",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728772456,
+  "usage": {
+    "prompt_tokens": 145,
+    "completion_tokens": 333,
+    "total_tokens": 478
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Authentic Gucci Children's Strawberry Print Nylon Belt Bag Waist Bag\n**Subtitle (Sottotitolo):** Stylish and Versatile Gucci Bag for Kids\n**Short Description (Breve Descrizione):** This authentic Gucci children's bag features a vibrant strawberry print on water-resistant nylon, perfect for everyday use. With its adjustable waist strap and zip closure, it's both practical and stylish. Ideal for kids who love nautical themes with boats and sea horses.\n\n**Description (Descrizione):**\n\n- **Style Number:** 502095 URIAN 4352\n- **Material:** Water-resistant nylon with Gucci Merveilleux print\n- **Design:** Nautical theme featuring boats and sea horses, adding a playful touch\n- **Closure:** Zip closure at the main compartment for secure storage\n- **Adjustability:** Adjustable waist strap for a comfortable fit\n- **Size Information:** Please refer to the Gucci size chart for accurate measurements\n- **Additional Features:**\n  - **Versatility:** Can be worn as a belt bag or waist bag, perfect for various activities\n  - **Durability:** Made with high-quality, water-resistant nylon for long-lasting use\n  - **Authenticity:** Genuine Gucci product, ensuring superior craftsmanship and design\n  - **Care Instructions:** Follow the care instructions provided with the bag to maintain its quality and longevity\n  - **Packaging:** Includes a Gucci dust bag and authenticity cards for verification\n\nThis Gucci bag is a delightful addition to any child's wardrobe, combining fun and functionality with the iconic Gucci style."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

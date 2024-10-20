@@ -1,0 +1,25 @@
+{
+  "id": "c1e5ea2d-cf27-4a26-9d94-97287bd6f342",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728778979,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 458,
+    "total_tokens": 608
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High Sneaker 'White Blue'\n**Subtitle (Sottotitolo):** Elevate Your Style with Gucci's Iconic Basket High Sneaker\n**Short Description (Breve Descrizione):** The Gucci Basket High Sneaker 'White Blue' (661301 2SHA0 9014) is a stylish and versatile high-top shoe that combines comfort and luxury. With its sleek design and premium materials, it's perfect for making a statement. Available in size 44.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The Gucci Basket High Sneaker features a high-top design with a breathable and wear-resistant upper, ensuring durability and comfort.\n  - The shoe is crafted with premium materials, showcasing Gucci's commitment to quality and craftsmanship.\n  - The 'White Blue' colorway, specifically the White Demetra, adds a touch of elegance and sophistication.\n\n- **Key Features:**\n  - **Non-Slip Sole:** The shoe features a non-slip sole, providing excellent grip and stability.\n  - **High-Quality Construction:** The shoe is built to last, with a focus on durability and wear resistance.\n  - **Iconic Gucci Branding:** The shoe proudly displays Gucci's iconic branding, making it a statement piece for any fashion enthusiast.\n\n- **Style and Versatility:**\n  - The Gucci Basket High Sneaker is versatile and can be paired with a variety of outfits, from casual to formal.\n  - Its sleek design makes it suitable for both everyday wear and special occasions.\n  - The shoe's high-top design adds a sporty touch, while the premium materials maintain a luxurious feel.\n\n- **Product Details:**\n  - **Product Code:** 661301 2SHA0 9014\n  - **Colorway:** White Demetra (White Blue)\n  - **Size:** 44\n  - **Release Date:** November 12, 2021\n\nExperience the perfect blend of style and comfort with the Gucci Basket High Sneaker 'White Blue'. Whether you're looking to elevate your casual wear or make a statement at a formal event, this shoe is sure to impress."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

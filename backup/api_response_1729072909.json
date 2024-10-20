@@ -1,0 +1,25 @@
+{
+  "id": "b791f804-50ae-45d3-910a-460d71db93d8",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729072909,
+  "usage": {
+    "prompt_tokens": 607,
+    "completion_tokens": 776,
+    "total_tokens": 1383
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Given the specific style number and additional information provided, I will generate a detailed product description and fill in the required fields based on the information available from the provided sources.\n\n**Title (Titolo):** Alexander McQueen Oversized Sneaker\n**Subtitle (Sottotitolo):** Luxury Men's Sneaker with Distinctive Design\n**Short Description (Breve Descrizione):** Experience the epitome of luxury footwear with Alexander McQueen's oversized sneaker, featuring a bold, chunky sole and sleek upper design.\n**Description (Descrizione):** This Alexander McQueen oversized sneaker embodies the brand's avant-garde spirit with its exaggerated proportions and meticulous craftsmanship. The chunky sole provides a statement-making base, while the sleek upper design ensures a sophisticated look. Perfect for those who seek to make a fashion statement, this sneaker combines comfort and style, making it an ideal choice for casual yet stylish occasions.\n\n**Object Category (Categoria Oggetto):** Shoes\n**Store Category (Categoria del Negozio):** Men's Shoes\n**Brand (Marca):** Alexander McQueen\n**Cut (Taglia):** 41\n**Department (Reparto):** Men\n**Type (Tipo):** Sneakers\n**Style (Stile):** Oversized\n**Condition of the Item (Condizione dell'oggetto):** New\n**Price (Prezzo):** N/A (Specific price not provided for this style number)\n**Shipping Rule (Regola sulla spedizione):** Complimentary Express Shipping and Returns\n**MPN (MPN):** 202401 MCQUE AL09\n**Custom Label (Etichetta personalizzata - SKU):** N/A\n**EAN (EAN):** N/A\n**Material (Materiale):** Leather\n**Color (Colore):** N/A (Specific color not provided for this style number)\n**Tissue (Tessuto):** N/A\n**Size Type (Tipo di taglia):** Standard\n**Fit (Vestibilit\u00e0):** N/A\n**Sleeve Length (Lunghezza della manica):** N/A\n**Unit of Measurement (Unit\u00e0 di misura):** N/A\n**Character (Personaggio):** N/A\n**Season (Stagione):** N/A\n**Vintage (Vintage):** No\n**Neckline (Scollatura):** N/A\n**Theme (Tema):** N/A\n**Activity (Attivit\u00e0):** N/A\n**Decorative Elements (Elementi decorativi):** N/A\n**Characteristics (Caratteristiche):** Oversized, chunky sole\n**Occasion (Occasione):** Casual\n**Knitting Style (Stile lavorazione a maglia):** N/A\n**Graphic Printing (Stampa grafica):** N/A\n**Garment Care (Cura dell'indumento):** N/A\n**Country of Manufacture (Paese di fabbricazione):** Italy (Based on general information about Alexander McQueen products)\n**Fabric Type (Tipo di tessuto):** N/A\n**Personalized (Personalizzato):** No\n**Year Manufactured (Anno di fabbricazione):** N/A\n**Handmade (Fatto a mano):** N/A\n**Pattern (Fantasia):** N/A\n**Closure Type (Tipo di chiusura):** Lace-up\n**Accents (Dettagli decorativi):** N/A\n**Product Line (Linea di prodotto):** N/A\n\nPlease note that specific details such as price, color, and certain other fields could not be determined from the provided sources and are marked as 'N/A'."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

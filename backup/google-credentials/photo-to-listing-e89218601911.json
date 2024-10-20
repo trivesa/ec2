@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "photo-to-listing",
+  "private_key_id": "e892186019116ce65420e1c2b87da847d10f28b6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCazsbM4k1y/dBo\na3OLBwHPR9dneioVZw62nSlZ7XFKDM46GBNM7Ewn4NO4c9sfYUkThOsOaYV45jmR\nlDAzjclOANly/UMi5HPETmgK3xupCeIrUmwixh47EKu/CaqpQGNPx79cvhVVJNOY\nQMpIoKFgXg8UE4vEmKmdJrcPdo+2p1i1piu2QzHzQ2CnHbRtnucbKVpjkNH/KSXr\naLImoyRJA2Fk8dPwn0ZdPf06OfgRisbObn+B39y/vU+/HgUvB6hXuSIUSPodsBLy\nfjbfTCp9ICERXHXM13zOLN4ojLNdBCdLt328sqgo3cuyJs0ZaeVFI1TExRRiSde7\n35GshDvHAgMBAAECggEAGjSippAweCTLIMH/vysifUo2BohBk3nsnbEhDN4K7XQZ\nfPASZFUj1yRR8sl58GfxjOJVQA1Q0NR4LlKdjjyUNSYjqTmCIef2SObU6fI2pnjL\n1nWPZJuRBoKd8CrcvuXtadXwaOysg8tGHmHpXD4E02FYwBdG87K8E6Q4HN//F/Yc\nuANMu430Tn7Js2FhMOZWdXCILNxA3DHm6P1z/Jjmz9Uk/0ztA7KIP0T9iMm18nyC\nM8OW4k4DOAnJQXI33CCAOTpAWMjHJ2IqkPwjkHPQ/urKhAi6sLA0m3srliddAJmR\nPHvl+38iyz5ZD4d9rdSKJgh2O+PEWoWzziBb3fIMkQKBgQDN+Bzph+U9EuLHG3zz\ndui+aWjo0LuyAxmJ5EY8RiksZdr8rJqwMlCNGVK0Vj0a1Yubj9ekqJQB/Ymzm0Of\n6Vit1ozzCwyIdS31jin4E3PIWOCYpoA1fuq2EJaBngNi/mJuKQYGrVF1P1xeCeKn\nJUZcm6iH7GBu98A+CMBnG9GGbQKBgQDAaUONnlBMjZpsLM8HtPUIEhehxPFUZuIU\nOxejeRPZgMPD08GCtTnpLLkB9iR9snS+98CPfI7geuvQrXzdBrmhn7axY5LuuVKs\nM/JM0ANc3Qq/x5hkdEF61Ex+wTQXpp1AFH+oRWWTlwHcGYIZ7ITSHw78MCwm0S0b\nKEun8176gwKBgQDFmzFB7BtHCQOBuyGaA48wf7kjBH/PPaIW5WdtFHMUIXSDzqVq\nPhuCA7WRRtvBDvet+8cMNqApeLHQGzo6BYoK3jjEROl1UdcSK56gXylKIdr5GWUP\n7gAJRMjg+lSNeTm+LqWValsofe2EWz+U1PI4jy6VmXa7f/50hbjyM4JF0QKBgB7Q\nvQDxWerowtKQWpfhY1zniOFfqUbbM1oKHL8RpRwwgynZwCQu4hd2Eis+QJng+tGa\n3DwetsM87Id/QYAkk5ZO/fNq/x08kQEDUMr8hY1Z2V7dmIp+E/6YAahLSQyAoq6g\nmdFZS+tXQ/T8INoGBz+fucap8GhHF/JBgdxkHdIBAoGAF9WgX6KA7fc2mwSZ1CdR\nxf+v2nP/c6kbzzfCfBSAKUzORQFRA6GldeckuHO2g2OCb+fZgrOiBV7J/lGI6MSH\nq1Gh+tXn+ju1yzBb0KwTFxE/oBiLJKCDNN6Bo0gLfmbiPgJBtj9ij/bOvBkjcNNH\nKvfPliSuFtU+XIf2RLu9TRk=\n-----END PRIVATE KEY-----\n",
+  "client_email": "photo-to-listing-automation@photo-to-listing.iam.gserviceaccount.com",
+  "client_id": "110067556017709285162",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/photo-to-listing-automation%40photo-to-listing.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "cfe23866-7074-423b-b252-20d0e70c900d",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728792562,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 481,
+    "total_tokens": 632
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Tennis 1977 'Black Cotton' - 606111 GZO30 1094\n**Subtitle (Sottotitolo):** Classic Elegance in a Timeless Design\n**Short Description (Breve Descrizione):** The Gucci Tennis 1977 'Black Cotton' embodies the essence of vintage sportswear with a luxurious twist. Crafted in high-quality materials, these shoes offer a timeless appeal that transcends seasons. Perfect for those who appreciate classic elegance.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The Gucci Tennis 1977 'Black Cotton' features a sleek and sophisticated design, combining black cotton with subtle blue and red accents.\n  - The shoe's upper is made from cotton, providing a lightweight and breathable wear.\n  - The outsole is designed for durability and traction, ensuring a comfortable walking experience.\n\n- **Style and Versatility:**\n  - Inspired by the 1970s tennis era, these shoes bring a vintage charm to modern fashion.\n  - The minimalist design makes them versatile and easy to pair with a variety of outfits, from casual to more formal occasions.\n\n- **Size and Fit:**\n  - Available in size 39.5, ensuring a snug and comfortable fit.\n  - The shoe's design accommodates a wide range of foot shapes, providing a secure and supportive wear.\n\n- **Brand and Quality:**\n  - Gucci's commitment to quality and craftsmanship is evident in every detail of the Tennis 1977 'Black Cotton'.\n  - The shoe's construction and materials reflect the brand's dedication to luxury and excellence.\n\n- **Additional Features:**\n  - The shoe features the iconic Gucci logo, adding a touch of luxury to the overall design.\n  - The combination of black, blue, and red colors creates a visually appealing contrast that adds to the shoe's aesthetic appeal.\n\n- **Product Specifications:**\n  - Style Number: 606111 GZO30 1094\n  - Size: 39.5\n  - Material: Cotton\n  - Color: Black with blue and red accents\n\nThis Gucci Tennis 1977 'Black Cotton' is a testament to the brand's ability to blend classic style with modern luxury, making it a must-have for anyone who appreciates timeless fashion."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

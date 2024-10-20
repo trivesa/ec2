@@ -1,0 +1,25 @@
+{
+  "id": "ec680dc5-aa80-4f76-baf4-e2a154c0402b",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728794586,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 373,
+    "total_tokens": 525
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High-Top Sneakers - 661303 2SH90 1072\n**Subtitle (Sottotitolo):** Multicolor Luxury Basketball-Inspired Shoes\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Basket High-Top Sneakers, featuring a vibrant multicolor design inspired by 90's basketball shoes. Crafted with premium materials, these shoes offer a unique blend of sporty elegance and luxury fashion. Available in size 38.5.\n\n**Description (Descrizione):**\n\nExperience the fusion of sports heritage and high-end fashion with the Gucci Basket High-Top Sneakers. Here are the key features that make these shoes a standout:\n\n- **Inspiration:** Inspired by 90's basketball shoes, these sneakers bring a nostalgic touch with a modern twist.\n- **Design:** The multicolor design is a bold statement, combining various hues to create a visually striking effect.\n- **Materials:** Crafted with high-quality leather and fabric uppers, ensuring durability and comfort.\n- **Size:** Available in size 38.5, perfect for those looking for a precise fit.\n- **Style Number:** 661303 2SH90 1072, a unique identifier for this specific model.\n- **Luxury Touch:** The Gucci logo and branding elements add a touch of luxury, making these shoes a premium addition to any wardrobe.\n- **Versatility:** Suitable for casual wear, these sneakers can easily transition from streetwear to high-fashion settings.\n- **Authenticity:** Genuine Gucci product, ensuring the highest standards of craftsmanship and quality.\n\nWhether you're looking to make a fashion statement or simply want to own a piece of luxury footwear, the Gucci Basket High-Top Sneakers are an excellent choice."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

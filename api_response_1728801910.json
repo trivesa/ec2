@@ -1,0 +1,25 @@
+{
+  "id": "05b36fd2-76b6-4f39-9e6b-d6376ebd68cb",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728801910,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 390,
+    "total_tokens": 537
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Square Muffler Scarf\n**Subtitle (Sottotitolo):** Luxurious Wool and Silk Blend Scarf with Iconic GG Pattern\n**Short Description (Breve Descrizione):** This GUCCI GG Jacquard Square Muffler Scarf, style number 281942 3G704 1062, is a sophisticated accessory that combines luxury and elegance. Crafted from a blend of wool and silk, it features the iconic GG pattern in a dark gray hue. Perfect for adding a touch of high-end style to any outfit.\n\n**Description (Descrizione):**\n\n- **Material:** This scarf is made from a luxurious blend of 80% wool and 20% silk, ensuring a soft, warm, and durable wear.\n- **Pattern:** The iconic GG pattern is intricately woven into the fabric, creating a striking and recognizable design that is quintessentially GUCCI.\n- **Color:** The scarf is available in a sophisticated dark gray (anthracite) color, making it versatile and easy to pair with a variety of outfits.\n- **Size:** The scarf measures 140 cm x 140 cm, providing ample coverage and versatility in styling.\n- **Authenticity:** This scarf is 100% authentic and comes with a GUCCI tag and paper bag, ensuring its genuine luxury status.\n- **Origin:** Made in Italy, this scarf embodies the high-quality craftsmanship and attention to detail that GUCCI is renowned for.\n- **Care:** To maintain its luxurious quality, it is recommended to follow specific care instructions to ensure the longevity of the scarf.\n- **Style:** The square muffler design allows for multiple styling options, from a chic wrap-around look to a sophisticated draped effect.\n- **Occasion:** Suitable for both casual and formal occasions, this scarf is a versatile accessory that can elevate any outfit with its timeless elegance."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

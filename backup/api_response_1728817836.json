@@ -1,0 +1,25 @@
+{
+  "id": "3013e0d7-491d-46a3-aaa7-d80c92e0e992",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728817836,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 441,
+    "total_tokens": 591
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Tennis 1977 'White Mini GG' Sneaker\n**Subtitle (Sottotitolo):** Luxurious Elegance in a Classic Design\n**Short Description (Breve Descrizione):** The Gucci Tennis 1977 'White Mini GG' sneaker combines timeless elegance with modern style, featuring a subtle yet distinctive Mini GG pattern. Crafted with luxury materials, this shoe embodies Gucci's iconic heritage. Available in size 38.\n\n**Description (Descrizione):**\n\n- **Design and Material:**\n  - The Gucci Tennis 1977 'White Mini GG' sneaker is designed with a focus on luxury and modern style, incorporating a touch of Gucci's iconic heritage.\n  - The shoe features a subtle yet distinctive Mini GG pattern, adding a sophisticated touch to its classic design.\n  - Crafted with high-quality materials, this sneaker ensures durability and comfort.\n\n- **Key Features:**\n  - Style Number: 606110 99W90 9085\n  - Size: 38\n  - Color: White with Mini GG pattern\n  - Brand: Gucci\n  - Model: Tennis 1977\n  - Gender: Women's (WMNS)\n\n- **Additional Details:**\n  - The shoe's design is inspired by Gucci's rich history, blending vintage elements with contemporary style.\n  - The Mini GG pattern adds a subtle yet distinctive touch, making this sneaker a standout piece in any wardrobe.\n  - Perfect for casual and formal occasions, this shoe is versatile and stylish.\n\n- **Authenticity:**\n  - This product is an authentic Gucci item, ensuring the highest quality and craftsmanship.\n  - The style number 606110 99W90 9085 guarantees its authenticity and exclusivity.\n\n- **Availability:**\n  - This shoe is available in stock and ready for purchase.\n  - For more information and to buy, please visit authorized retailers or online marketplaces like Poshmark, Joe Fashion Style, Sneaker Souqq, Kickscrew, or GOAT."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

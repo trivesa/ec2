@@ -1,0 +1,25 @@
+{
+  "id": "6589b142-4bcc-41b2-94a3-00109eb29dca",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729071282,
+  "usage": {
+    "prompt_tokens": 616,
+    "completion_tokens": 741,
+    "total_tokens": 1357
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Wool Scarf\n**Subtitle (Sottotitolo):** Red and Black GG Logo Scarf\n**Short Description (Breve Descrizione):** Authentic GUCCI GG Jacquard wool scarf in red and black, featuring the iconic GG logo and fringe trims.\n**Description (Descrizione):** This luxurious GUCCI GG Jacquard wool scarf is crafted from high-quality wool in contrasting red and black colors. The reversible design is defined by the House's iconic GG monogram, first introduced in the 1970s as an evolution of the original Gucci rhombi design from the 1930s. The scarf features fringe trims and measures 240x35cm (14\" x 94\"). Made in Italy, this scarf is a symbol of Gucci's heritage and a statement piece for any wardrobe.\n\n**Object Category (Categoria Oggetto):** Scarves\n**Store Category (Categoria del Negozio):** Men's Accessories\n**Brand (Marca):** GUCCI\n**Cut (Taglia):** One Size\n**Department (Reparto):** Men's\n**Type (Tipo):** Scarf\n**Style (Stile):** GG Jacquard\n**Condition of the Item (Condizione dell'oggetto):** New with tags\n**Price (Prezzo):** $335.70 (as per)\n**Shipping Rule (Regola sulla spedizione):** N/A\n**MPN (MPN):** 644365 4G718 6468\n**Custom Label (Etichetta personalizzata - SKU):** 644365 4G718 6468\n**EAN (EAN):** N/A\n**Material (Materiale):** Wool\n**Color (Colore):** Red and Black\n**Tissue (Tessuto):** Wool Jacquard\n**Size Type (Tipo di taglia):** One Size\n**Fit (Vestibilit\u00e0):** N/A\n**Sleeve Length (Lunghezza della manica):** N/A\n**Unit of Measurement (Unit\u00e0 di misura):** cm\n**Character (Personaggio):** N/A\n**Season (Stagione):** N/A\n**Vintage (Vintage):** No\n**Neckline (Scollatura):** N/A\n**Theme (Tema):** N/A\n**Activity (Attivit\u00e0):** N/A\n**Decorative Elements (Elementi decorativi):** GG Logo, Fringe Trims\n**Characteristics (Caratteristiche):** Reversible, Iconic GG Monogram\n**Occasion (Occasione):** Formal, Casual\n**Knitting Style (Stile lavorazione a maglia):** N/A\n**Graphic Printing (Stampa grafica):** N/A\n**Garment Care (Cura dell'indumento):** N/A\n**Country of Manufacture (Paese di fabbricazione):** Italy\n**Fabric Type (Tipo di tessuto):** Wool Jacquard\n**Personalized (Personalizzato):** No\n**Year Manufactured (Anno di fabbricazione):** N/A\n**Handmade (Fatto a mano):** No\n**Pattern (Fantasia):** GG Jacquard\n**Closure Type (Tipo di chiusura):** N/A\n**Accents (Dettagli decorativi):** Fringe Trims\n**Product Line (Linea di prodotto):** GUCCI GG Collection"
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

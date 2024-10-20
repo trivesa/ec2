@@ -1,0 +1,25 @@
+{
+  "id": "7cbf17d2-9c49-4bcd-85bd-326190f21868",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728786000,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 439,
+    "total_tokens": 591
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High-Top Sneaker\n**Subtitle (Sottotitolo):** White and Blue High-Top Sneaker with Distinctive Features\n**Short Description (Breve Descrizione):** Inspired by 90s basketball sneakers, the Gucci Basket high-top sneaker combines bold style with eco-friendly materials. Crafted from Demetra, a pliable and resilient material, this shoe features a mix of brightly colored fabrics and a lightly distressed effect. Perfect for making a statement, this sneaker is both stylish and sustainable.\n\n**Description (Descrizione):**\n\n- **Inspiration:** The Gucci Basket high-top sneaker draws inspiration from the iconic basketball sneakers of the 90s, blending nostalgic charm with modern eco-friendly materials.\n- **Material:** Crafted primarily from Demetra, a material created with the same processes used for tanning, offering pliable and resilient performance with a supple finish.\n- **Design:**\n  - **Upper:** Synthetic upper with a mix of brightly colored fabrics and a lightly distressed effect.\n  - **Lacing:** Lace-up closure for a secure fit.\n  - **Details:**\n    - **Gucci Logo:** Rubber Interlocking G patch at the side.\n    - **Ankle Padding:** Contrast padding at the ankle for added comfort.\n    - **Tongue and Vamp:** Signature details at the vamp, tongue, and sole.\n    - **Paneled Design:** Paneled construction for a structured look.\n  - **Sole:** Rubber sole with a low heel.\n- **Sustainability:** The eco-friendly Demetra material combines animal-free raw materials primarily from sustainable, renewable, and bio-based sources.\n- **Size:** Available in size 41.5.\n- **Additional Features:**\n  - **Box and Dust Bag:** Includes a box and dust bag for storage and protection.\n  - **Production Time:** Production time is 3-5 working days.\n  - **Quality:** This product is of the best quality, ensuring durability and comfort.\n  - **Made in Italy:** Crafted with precision and care in Italy."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

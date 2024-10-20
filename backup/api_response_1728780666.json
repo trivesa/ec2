@@ -1,0 +1,25 @@
+{
+  "id": "310e872f-b8a8-4b6a-a807-3890c2f9db6d",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728780666,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 356,
+    "total_tokens": 508
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Sneaker in Grey, Yellow, and Blue\n**Subtitle (Sottotitolo):** Vintage Basketball Style Meets Modern Street Fashion\n**Short Description (Breve Descrizione):** The Gucci Basket 'Grey/Yellow/Blue' (703645-2SH90-1280) is a stylish fusion of vintage basketball aesthetics and contemporary streetwear, handcrafted in Italy from supple leather. This sneaker offers a unique blend of classic and modern elements, perfect for those who appreciate both heritage and innovation. Available in size 43.5.\n\n**Description (Descrizione):**\n\n- **Craftsmanship:** Handcrafted in Italy, ensuring exceptional quality and attention to detail.\n- **Material:** Supple leather provides a luxurious feel and durable wear.\n- **Design:** Inspired by vintage basketball styles, with a modern twist that aligns with current street fashion trends.\n- **Color Scheme:** A vibrant combination of grey, yellow, and blue, creating a visually striking appearance.\n- **Size:** Available in size 43.5, catering to a specific fit requirement.\n- **Style Number:** 703645-2SH90-1280, for easy identification and authenticity verification.\n- **Brand Heritage:** Gucci, a renowned luxury fashion brand, guarantees a high-end product with a strong focus on style and quality.\n- **Versatility:** Suitable for both casual and more formal occasions, thanks to its versatile design and premium materials.\n- **Authenticity:** Genuine Gucci product, ensuring authenticity and exclusivity.\n- **Availability:** Available at select retailers, such as Solesense and StockX, for those looking to add this unique piece to their collection."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

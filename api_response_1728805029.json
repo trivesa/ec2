@@ -1,0 +1,25 @@
+{
+  "id": "92835539-557b-4d54-a5bd-1926e32162c1",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728805028,
+  "usage": {
+    "prompt_tokens": 504,
+    "completion_tokens": 804,
+    "total_tokens": 1308
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Based on the provided search results, here is the information for the GUCCI bag with style number 658556 K9GOT 8861:\n\n**Mandatory Fields:**\n\n1. **Object Category (Categoria Oggetto):** Handbag\n2. **Store Category (Categoria del Negozio):** Luxury Handbags\n3. **Department (Reparto):** Women's Accessories\n4. **Brand (Marca):** GUCCI\n5. **Color (Colore esterno):** Beige Ebony\n6. **Style (Stile):** Neo Vintage\n7. **Material (Materiale esterno):** Leather\n8. **Closure Type (Chiusura):** N/A\n9. **Lining Material (Materiale della fodera):** N/A\n10. **Hardware Material (Materiale delle finiture):** N/A\n11. **Product Line (Linea prodotto):** Neo Vintage\n12. **Pattern (Fantasia):** N/A\n13. **Condition of the Item (Condizione dell'oggetto):** New\n14. **Price (Prezzo):** 850\u20ac (as per Vestiaire Collective)\n15. **Shipping Rule (Regola sulla spedizione):** N/A\n\n**Optional Fields:**\n\n1. **Custom Label (Etichetta personalizzata - SKU):** 658556 K9GOT 8861\n2. **EAN (EAN):** N/A\n3. **MPN (MPN):** N/A\n4. **Handle Drop (Altezza del manico):** N/A\n5. **Handle/Strap Drop (Lunghezza della tracolla):** N/A\n6. **Size (Dimensioni):** Mini\n7. **Features (Caratteristiche):** N/A\n8. **Vintage (Vintage):** Neo Vintage (not actual vintage)\n9. **Unit of Measurement (Unit\u00e0 di misura):** N/A\n10. **Accents (Elementi decorativi):** N/A\n11. **Theme (Tema):** N/A\n12. **Occasion (Occasione):** N/A\n13. **Year Manufactured (Anno di fabbricazione):** N/A\n14. **Product Variants (Varianti di prodotto):** N/A\n15. **Payment Options and Offers (Regole di pagamento):** N/A\n16. **Shipping (Regola sulla spedizione):** N/A\n17. **Object Warnings (Avvertenze per l'oggetto):** N/A\n18. **Country/Region of Manufacture (Paese di fabbricazione):** Italy\n19. **Lining Color (Colore della fodera):** N/A\n20. **Handle/Strap Color (Colore del manico, tracolla):** N/A\n21. **Trim Color (Colore delle rifiniture):** N/A\n22. **Fabric Type (Tessuto):** N/A\n23. **Personalized (Personalizzato):** N/A\n24. **Accessories (Accessori):** N/A\n25. **Bag Width (Larghezza della borsa):** N/A\n26. **Bag Height (Altezza della borsa):** N/A\n27. **Bag Depth (Profondit\u00e0 della borsa):** N/A\n28. **Bag Shape (Forma):** N/A\n29. **Decorative Elements (Elementi decorativi):** N/A\n30. **Finish (Finitura):** N/A\n31. **Country of Manufacture (Paese di fabbricazione):** Italy\n\n**Note:** Some fields are marked as N/A because the information is not available in the provided search results."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

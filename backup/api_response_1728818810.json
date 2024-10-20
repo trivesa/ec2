@@ -1,0 +1,25 @@
+{
+  "id": "53323ad5-fdf1-46c6-9a37-ad616efc2839",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728818810,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 404,
+    "total_tokens": 555
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Ace Perforated Interlocking G (Women's) 598527 AYO70 9094\n**Subtitle (Sottotitolo):** Elegant White Leather Sneakers with Iconic Interlocking G Detail\n**Short Description (Breve Descrizione):** Elevate your style with these Gucci Ace Perforated Interlocking G sneakers, featuring white leather and distinctive gray leather details on the back. The interlocking double G motif adds a touch of luxury to these versatile shoes. Perfect for everyday wear, these sneakers are both stylish and comfortable.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - Crafted from high-quality white leather, these sneakers exude sophistication and elegance.\n  - The interlocking double G motif, perforated through the flower, adds a unique and iconic touch.\n  - Gray leather details on the back provide a subtle contrast, enhancing the overall aesthetic.\n\n- **Comfort and Versatility:**\n  - Designed for comfort, these sneakers are perfect for daily wear, whether you're dressing up or dressing down.\n  - The versatile design makes them suitable for a variety of occasions, from casual outings to more formal events.\n\n- **Size Information:**\n  - Available in size 37.5, ensuring a precise fit for those who prefer a snug and comfortable shoe.\n\n- **Additional Features:**\n  - The Gucci Ace Perforated Interlocking G sneakers are a testament to Gucci's commitment to quality and style.\n  - The combination of white and gray leather creates a timeless look that complements any wardrobe.\n\n- **Authenticity:**\n  - Ensure you purchase from authorized retailers to guarantee authenticity and enjoy the full luxury experience that Gucci offers.\n\nThese Gucci Ace Perforated Interlocking G sneakers are a must-have for anyone looking to add a touch of luxury to their footwear collection. With their elegant design and comfortable fit, they are sure to become a favorite pair."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

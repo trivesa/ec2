@@ -1,0 +1,25 @@
+{
+  "id": "4b1a431a-fd98-4a3a-833f-8df3fdc1da8c",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728829445,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 389,
+    "total_tokens": 539
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton 'Mouth Print' Sneakers\n**Subtitle (Sottotitolo):** Classic Off-White Leather with Bold Graphic Detail\n**Short Description (Breve Descrizione):** The Gucci Rhyton 'Mouth Print' sneakers, style number 552093 A9L00 9522, are a striking addition to Gucci's line of luxury footwear. Featuring Italian handcrafted leather in classic off-white, these sneakers embody the '90s vibes and hip-hop scene with their clean construction and bold graphic detail. Available in size 35.\n\n**Description (Descrizione):**\n\n- **Craftsmanship:** The Gucci Rhyton 'Mouth Print' sneakers are meticulously crafted in Italy, showcasing Gucci's commitment to high-quality craftsmanship.\n- **Design:** The classic off-white leather silhouette is accented with a bold, eye-catching 'Mouth Print' graphic, adding a playful and distinctive touch to the shoe.\n- **Style:** Inspired by the '90s and hip-hop culture, these sneakers offer a clean and sporty look that is both timeless and trendy.\n- **Comfort:** Designed for comfort and durability, the Rhyton sneakers feature a sturdy sole and comfortable fit, making them perfect for everyday wear.\n- **Details:**\n  - **Style Number:** 552093 A9L00 9522\n  - **Size:** 35\n  - **Material:** Italian handcrafted leather\n  - **Color:** Classic off-white with bold graphic detail\n  - **Inspiration:** '90s vibes and hip-hop scene\n- **Additional Information:** The Gucci Rhyton 'Mouth Print' sneakers are a versatile and stylish choice for those looking to add a touch of luxury to their footwear collection. With their unique design and high-quality construction, these sneakers are sure to make a statement."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

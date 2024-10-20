@@ -1,0 +1,25 @@
+{
+  "id": "6a6196a9-254d-4692-991c-8c3f6c47cade",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728775602,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 408,
+    "total_tokens": 561
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low 'White Demetra Green'\n**Subtitle (Sottotitolo):** Elegant and Versatile Sneakers for the Modern Connoisseur\n**Short Description (Breve Descrizione):** Embrace the essence of luxury with the Gucci Basket Low 'White Demetra Green' sneakers, featuring a sophisticated blend of white and green hues. Crafted in Italy, these shoes epitomize the brand's commitment to quality and style. Perfect for those who seek to elevate their casual wear with a touch of high-end fashion.\n\n**Description (Descrizione):**\n\n- **Craftsmanship and Materials:**\n  - Made in Italy, ensuring the highest standards of craftsmanship.\n  - Upper material: Other textile, providing durability and comfort.\n  - Sole material: EL (Ethylene-Vinyl Acetate), offering flexibility and resilience.\n\n- **Design and Style:**\n  - The 'White Demetra Green' colorway adds a unique and stylish twist to the classic Basket Low design.\n  - The combination of white and green creates a visually appealing contrast that is both modern and timeless.\n  - The Gucci logo subtly integrated into the design, reinforcing the brand's luxury heritage.\n\n- **Size Information:**\n  - Available in size 45.5, catering to a wide range of foot sizes for a comfortable fit.\n\n- **Product Details:**\n  - Product code: 698785-2SHG0\n  - Color code: 9089\n  - Composition: UPPER: OTHER TEXTILE - SOLE: EL\n  - Made in Italy, ensuring the highest quality standards.\n\n- **Versatility:**\n  - Suitable for various occasions, from casual outings to more formal events, thanks to their elegant and versatile design.\n  - Perfect for those who appreciate high-quality, stylish footwear that makes a statement.\n\nExperience the luxury of Gucci with these exceptional sneakers, designed to elevate your wardrobe and make a lasting impression."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

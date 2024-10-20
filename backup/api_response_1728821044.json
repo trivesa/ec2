@@ -1,0 +1,25 @@
+{
+  "id": "80fe1ac4-15ae-4046-8e9a-fdf5305f09e2",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728821044,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 355,
+    "total_tokens": 507
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Sneakers in Green, White, and Black\n**Subtitle (Sottotitolo):** Iconic Style with Multicolored Elegance\n**Short Description (Breve Descrizione):** Elevate your wardrobe with the Gucci Basket Sneakers, featuring a vibrant green, white, and black color scheme. Crafted from high-quality leather, these sneakers embody the brand's signature style and sophistication. Perfect for both casual and stylish occasions.\n\n**Description (Descrizione):**\n\n- **Model Number:** 700291 2SH90 3760\n- **Size:** 36.5 EU\n- **Material:** High-quality leather for durability and comfort\n- **Color Scheme:** A striking combination of green, white, and black, adding a pop of color to any outfit\n- **Design:** Classic basket silhouette with Gucci's iconic logo, ensuring a timeless and stylish look\n- **Comfort:** Designed for everyday wear, these sneakers offer a comfortable fit and a sturdy sole\n- **Authenticity:** Genuine Gucci product, ensuring the highest standards of quality and craftsmanship\n- **Packaging:** Includes original Gucci dust bag and shoe box for a luxurious unboxing experience\n- **Versatility:** Suitable for both men and women, making it a versatile addition to any wardrobe\n- **Style Tips:** Pair these sneakers with casual jeans and a t-shirt for a relaxed look, or with a dress for a more elegant ensemble\n- **Quality Control:** Each pair undergoes rigorous quality checks to ensure the highest standards of quality and authenticity\n\nExperience the essence of Gucci's luxury with these stunning Basket Sneakers, perfect for those who appreciate high-quality fashion and timeless style."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

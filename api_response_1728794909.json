@@ -1,0 +1,25 @@
+{
+  "id": "f2d5d52b-48dc-46cd-bbb3-a357ed716330",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728794908,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 404,
+    "total_tokens": 557
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High 'Black Demetra Red' Sneakers\n**Subtitle (Sottotitolo):** Luxurious High-Top Sneakers with Interlocking G Detail\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Basket High 'Black Demetra Red' sneakers, featuring a sleek high-top design adorned with the iconic Interlocking G logo. Crafted with premium materials, these shoes offer a perfect blend of luxury and comfort. Available in size 45.5.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the Gucci Basket High 'Black Demetra Red' sneakers. Here are some key features:\n\n- **Design:** High-top sneakers with a bold and sleek silhouette, perfect for making a statement.\n- **Materials:** Crafted from high-quality materials that ensure durability and comfort.\n- **Interlocking G Logo:** The iconic Interlocking G logo is prominently displayed, adding a touch of Gucci's signature style.\n- **Color Scheme:** The shoes feature a striking black and red color scheme, known as 'Black Demetra Red', which adds a pop of color to any outfit.\n- **Size:** Available in size 45.5, ensuring a comfortable fit for those who prefer a slightly larger size.\n- **Authenticity:** Genuine Gucci product, ensuring the highest standards of craftsmanship and quality.\n- **Style Number:** 673077 2SHG0 1066, making it easy to identify and verify the authenticity of the product.\n- **Luxury Appeal:** Perfect for those who appreciate high-end fashion and want to elevate their shoe collection with a luxurious and stylish pair.\n\nThese Gucci Basket High 'Black Demetra Red' sneakers are a must-have for anyone looking to add a touch of luxury to their wardrobe. With their sleek design, premium materials, and iconic Interlocking G logo, they are sure to make a statement."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

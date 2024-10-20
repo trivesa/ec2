@@ -1,0 +1,25 @@
+{
+  "id": "81450cce-8450-4e84-a127-9eaaaf9b0401",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728790610,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 455,
+    "total_tokens": 606
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Tennis 1977 'Blue Ivory' Sneakers\n**Subtitle (Sottotitolo):** Elegant Denim Design with Iconic GG Print\n**Short Description (Breve Descrizione):** Experience the fusion of sporty elegance and high-end fashion with the Gucci Tennis 1977 'Blue Ivory' sneakers. Crafted with a unique denim jacquard fabric and adorned with the iconic GG print, these shoes offer a stylish twist on classic tennis footwear. Perfect for those who seek to make a statement with their footwear.\n\n**Description (Descrizione):**\n\n- **Design and Fabrication:**\n  - The Gucci Tennis 1977 'Blue Ivory' sneakers are meticulously crafted with a denim jacquard fabric, showcasing a distinctive blue and ivory color palette.\n  - The iconic GG print is seamlessly integrated into the design, adding a touch of luxury and sophistication.\n  - The low-top silhouette ensures a versatile and comfortable fit, suitable for both casual and formal occasions.\n\n- **Key Features:**\n  - **Style Number:** 606111 2KQ10 4463\n  - **Size:** 40\n  - **Material:** Denim jacquard fabric\n  - **Color:** Blue and ivory\n  - **Print:** Iconic GG print\n  - **Design:** Low-top sneakers with a sporty yet elegant aesthetic\n\n- **Additional Details:**\n  - The shoes are designed to provide a comfortable fit while maintaining a stylish appearance.\n  - The denim jacquard fabric ensures durability and a unique texture.\n  - The GG print adds a distinctive touch, making these shoes a standout piece in any wardrobe.\n\n- **Ideal for:**\n  - Fashion enthusiasts who appreciate high-end design and craftsmanship.\n  - Individuals looking for versatile footwear that can be dressed up or down.\n  - Those who value the iconic Gucci brand and its commitment to luxury and style.\n\n- **Retail Information:**\n  - Available at various luxury retailers, including KICKS CREW, GOAT, Dellamoda, and StockX.\n  - Price varies depending on the retailer, ranging from $365.00 to $1,341.00."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "8bc1be2c-7b27-4b5d-b004-0eec28e2bb19",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728784858,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 391,
+    "total_tokens": 544
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Tennis 1977 Denim GG Print Sneakers\n**Subtitle (Sottotitolo):** Blue Ivory Jacquard Denim Low Top Sneakers\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Tennis 1977 Denim GG Print Sneakers, featuring a distinctive blue and ivory jacquard denim design. Crafted with high-quality materials and adorned with the iconic GG print, these sneakers are a perfect blend of comfort and luxury. Available in size 41.5.\n\n**Description (Descrizione):**\nExperience the epitome of luxury footwear with the Gucci Tennis 1977 Denim GG Print Sneakers. Here are some key features that make these sneakers stand out:\n\n- **Design:** The sneakers feature a blue and ivory jacquard denim design, creating a unique and stylish look that is sure to turn heads.\n- **GG Print:** The iconic GG print is prominently displayed on the denim, adding a touch of Gucci's signature style to the sneakers.\n- **Materials:** Crafted with high-quality denim and other premium materials, these sneakers are built to last and provide exceptional comfort.\n- **Low Top Design:** The low top design makes these sneakers versatile and suitable for a variety of occasions, from casual outings to more formal events.\n- **Size:** Available in size 41.5, ensuring a comfortable fit for those who prefer a slightly larger size.\n- **Brand Authenticity:** These sneakers are genuine Gucci products, guaranteeing the highest standards of quality and craftsmanship.\n- **Style Number:** 606111 2KQ10 4463, making it easy to identify and verify the authenticity of the sneakers.\n- **Luxury Appeal:** The combination of high-quality materials, iconic design, and the prestige of the Gucci brand make these sneakers a must-have for anyone looking to elevate their footwear collection."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

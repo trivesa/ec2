@@ -1,0 +1,25 @@
+{
+  "id": "fdb17b98-29f5-46bf-9f06-10526a062555",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728788301,
+  "usage": {
+    "prompt_tokens": 550,
+    "completion_tokens": 1000,
+    "total_tokens": 1550
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "length",
+      "message": {
+        "role": "assistant",
+        "content": "Given the information provided in the search results, it appears that the item with the style number 449413 BMJ1G 4231 is not a pair of shoes but a Gucci crossbody bag. Here is the information requested, adapted to reflect that the item is a bag:\n\n1. **Object Category (Categoria Oggetto):** Handbag\n2. **Store Category (Categoria del Negozio):** Luxury Handbags\n3. **Brand (Marca):** Gucci\n4. **Size (Numero di scarpa EU):** N/A (This field is not applicable as the item is a bag, not shoes. However, the dimensions are 22 cm in width, 17 cm in height, and 7 cm in depth.)\n5. **Department (Reparto):** Women's Accessories\n6. **Color (Colore):** Blue\n7. **Type (Tipo):** Crossbody Bag\n8. **Style (Stile):** Modern Luxury\n9. **Condition of the Item (Condizione dell'oggetto):** New\n10. **Price (Prezzo):** \u20ac1,220.99\n11. **Shipping Rule (Regola sulla spedizione):** 1-2 business days\n\n**Optional Fields:**\n\n1. **MPN (MPN):** 449413_BMJ1G_4231\n2. **Custom Label (Etichetta personalizzata - SKU):** 449413_BMJ1G_4231_116424\n3. **EAN (EAN):** N/A\n4. **Material (Materiale della tomaia):** Leather\n5. **Sole Material (Materiale della suola):** N/A (Applicable to shoes, not bags)\n6. **Lining Material (Materiale della fodera):** Lined interior\n7. **Closure Type (Chiusura):** Zip\n8. **Fit (Vestibilit\u00e0):** N/A (Applicable to clothing and shoes, not bags)\n9. **Product Line (Linea prodotto):** Gucci Crossbody Bags\n10. **Insole Material (Materiale della soletta):** N/A (Applicable to shoes, not bags)\n11. **Outer Material (Materiale tomaia):** Leather\n12. **Pattern (Fantasia):** N/A\n13. **Season (Stagione):** N/A\n14. **Theme (Tema):** Luxury Fashion\n15. **Product Variants (Varianti di prodotto):** N/A\n16. **Payment and Offers (Regole di pagamento):** Various payment methods available\n17. **Object Warnings (Avvertenze per l'oggetto):** N/A\n18. **Width (Larghezza della scarpa):** N/A (Applicable to shoes, not bags)\n19. **Year Manufactured (Anno di fabbricazione):** N/A\n20. **Activity (Attivit\u00e0):** N/A\n21. **Vintage (Vintage):** No\n22. **Customized (Personalizzato):** No\n23. **Model (Modello):** 449413_BMJ1G_4231\n24. **Decorative Elements (Elementi decorativi):** Visible logo\n25. **Occasion (Occasione):** Everyday, Special Occasions\n26. **Toe Shape (Forma della punta):** N/A (Applicable to shoes, not bags)\n27. **Toe Cap Material (Materiale del puntale):** N/A (Applicable to shoes, not bags)\n28. **Pronation (Pronazione):** N/A (Applicable to shoes, not bags)\n29. **Calf Circumference (Circonferenza del polpaccio):** N/A (Applicable to shoes, not bags)\n30. **Shaft Height (Altezza del gambale):** N/A (Applicable to shoes, not bags)\n31. **Heel Height (Altezza del tacco):** N/A (Applicable to shoes, not bags)\n32. **Heel Style (Stile del tacco):** N/A (Applicable to shoes, not bags)\n33. **Shoe Shaft Style (Stile del gambale):** N/A (Applicable to shoes, not bags)\n34. **Signed (Firmato):** N/A\n35. **Handmade (Fatto a mano):** N/A\n36. **Country of Manufacture (Paese di fabbricazione):** Italy\n37. **Manufacturing Process (Processo di fabbricazione):** N/A\n38. **Sustainability Features (Caratteristiche di"
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

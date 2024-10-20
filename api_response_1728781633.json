@@ -1,0 +1,25 @@
+{
+  "id": "5605cbf4-9d11-4e93-827d-8dc1df39a23d",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728781633,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 410,
+    "total_tokens": 561
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low 'White Demetra Green' Sneakers\n**Subtitle (Sottotitolo):** Luxurious Italian Craftsmanship in a Classic Design\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Basket Low 'White Demetra Green' sneakers, featuring a timeless design and exceptional Italian craftsmanship. These shoes are made from high-quality materials and are designed to make a statement. Perfect for those who appreciate luxury and comfort.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the Gucci Basket Low 'White Demetra Green' sneakers. Here are some key features that make these shoes stand out:\n\n- **Product Code:** 698785 2SHG0 9089\n- **Color:** White Demetra Green, a sophisticated and versatile color combination that complements any outfit.\n- **Size:** Available in size 43, ensuring a comfortable fit for those who prefer a slightly larger shoe.\n- **Material:** The upper is made from other textile materials, while the sole is crafted from high-quality EL, ensuring durability and comfort.\n- **Manufacturing:** Made in Italy, these shoes embody the country's renowned craftsmanship and attention to detail.\n- **Design:** The classic low-top design is both stylish and versatile, making these shoes perfect for casual and formal occasions alike.\n- **Quality:** Gucci's commitment to quality is evident in every stitch and detail, ensuring that these shoes will last for years to come.\n- **Style:** The Demetra Green accents add a touch of elegance and sophistication, making these shoes a must-have for any fashion enthusiast.\n- **Comfort:** Designed for comfort and style, these shoes are perfect for daily wear, whether you're running errands or attending a special event.\n\nWith the Gucci Basket Low 'White Demetra Green' sneakers, you're not just buying a pair of shoes; you're investing in a piece of luxury fashion history."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

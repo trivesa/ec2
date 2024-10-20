@@ -1,0 +1,25 @@
+{
+  "id": "336e56e5-2904-4b74-8611-831add857590",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728816563,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 372,
+    "total_tokens": 522
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Sneakers - Green, White, and Black\n**Subtitle (Sottotitolo):** Authentic Luxury Footwear with Style Number 700291 2SH90 3760\n**Short Description (Breve Descrizione):** Elevate your style with these Gucci Basket sneakers, featuring a vibrant green, white, and black color scheme. Crafted from high-quality materials, these shoes offer a perfect blend of comfort and luxury. Ideal for both casual and stylish occasions.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the Gucci Basket sneakers, style number 700291 2SH90 3760. Here are some key features:\n\n- **Color Scheme:** The shoes boast a striking green, white, and black color combination, adding a bold touch to any outfit.\n- **Material:** Crafted from premium leather, ensuring durability and a luxurious feel.\n- **Size:** Available in size 39, providing a comfortable fit for both men and women.\n- **Design:** The Gucci Basket design is a classic, with a sleek silhouette and iconic Gucci branding.\n- **Authenticity:** Guaranteed authenticity, ensuring you are purchasing a genuine Gucci product.\n- **Packaging:** Includes the original dust bag and shoe box, preserving the luxury experience.\n- **Style Versatility:** Suitable for both casual and stylish occasions, making these sneakers a versatile addition to your wardrobe.\n- **Quality Control:** Each pair undergoes rigorous quality control to ensure the highest standards of craftsmanship and material quality.\n- **Brand Heritage:** Gucci, a renowned luxury brand, brings its signature style and sophistication to these sneakers.\n\nWhether you're looking to make a statement or simply enjoy the comfort of high-quality footwear, the Gucci Basket sneakers are an excellent choice."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

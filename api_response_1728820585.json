@@ -1,0 +1,25 @@
+{
+  "id": "1599400c-d7b7-41f4-8108-3a54c71963ee",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728820585,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 468,
+    "total_tokens": 620
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Basket High-Top Sneakers - 661310 2SH80 9062\n**Subtitle (Sottotitolo):** Elevate Your Style with GUCCI's Vibrant Basket High-Tops\n**Short Description (Breve Descrizione):** Experience the fusion of high fashion and athletic elegance with GUCCI's Basket High-Top Sneakers. Featuring a bold multi-color design, these shoes are perfect for making a statement. Crafted with meticulous attention to detail, they embody the luxury and sophistication that GUCCI is renowned for.\n\n**Description (Descrizione):**\n\n- **Design and Colorway:** The GUCCI Basket High-Top Sneakers, style number 661310 2SH80 9062, showcase a striking multi-color design that includes white, Demetra green, purple, orange, and blue hues. This vibrant color palette adds a playful touch to any outfit, making these shoes ideal for those who dare to stand out.\n\n- **Quality and Craftsmanship:** True to GUCCI's commitment to excellence, these sneakers are crafted with high-quality materials and meticulous attention to detail. The result is a pair of shoes that not only looks stunning but also offers durability and comfort.\n\n- **Size Information:** Available in size 36.5, ensuring a perfect fit for those who seek both style and comfort.\n\n- **Style Versatility:** Whether you're aiming for a casual, sporty look or a more sophisticated, fashion-forward ensemble, these high-top sneakers are versatile enough to complement a wide range of outfits.\n\n- **Brand Authenticity:** As a genuine GUCCI product, these sneakers come with the assurance of authenticity and the prestige associated with one of the world's leading luxury fashion brands.\n\n- **Retail and Availability:** Originally priced at $990, these shoes can be found on various online platforms such as StockX, BALAAN, and Kickscrew, offering a range of purchasing options for discerning shoppers.\n\n- **Additional Features:**\n  - High-top design for added support and style.\n  - Multi-color Demetra pattern for a unique aesthetic.\n  - GUCCI's signature quality and craftsmanship.\n  - Available in size 36.5 for a tailored fit.\n  - Perfect for making a bold fashion statement."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

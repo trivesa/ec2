@@ -1,0 +1,25 @@
+{
+  "id": "dca77867-1f97-41ae-86a1-9e3c65df742e",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729031973,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 439,
+    "total_tokens": 589
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Vintage Web Plexiglas Skeleton Dial Watch YA143503\n**Subtitle (Sottotitolo):** A Timeless Fusion of Elegance and Innovation\n**Short Description (Breve Descrizione):** Embodying the essence of luxury and style, the GUCCI YA143503 watch combines vintage charm with modern sophistication. This sleek timepiece features a distinctive Plexiglas case and band in iconic red and green hues, complemented by a skeleton dial that adds a touch of elegance. Perfect for those who appreciate the fusion of classic and contemporary design.\n\n**Description (Descrizione):**\n\n- **Case and Band:**\n  - **Case Material:** Durable Plexiglas, ensuring a lightweight and stylish design.\n  - **Case Shape:** Rectangle, measuring 40 mm x 24 mm for a sleek and modern look.\n  - **Band Material:** Plexiglas, in signature red and green colors, adding a vibrant touch to the overall design.\n  - **Band Length:** 6.25 inches, suitable for a variety of wrist sizes.\n\n- **Dial and Movement:**\n  - **Dial Type:** Skeleton dial, showcasing the intricate mechanics of the watch.\n  - **Movement:** Quartz, providing reliable and precise timekeeping.\n\n- **Additional Features:**\n  - **Crown:** Pull/push crown for easy time setting.\n  - **Case Back:** Snapped, engraved bee motif case back, adding a touch of whimsy and brand heritage.\n  - **Crystal:** Scratch-resistant mineral crystal, protecting the dial from scratches and wear.\n\n- **Warranty and Authenticity:**\n  - **Authenticity:** Brand new, authentic GUCCI watch.\n  - **Warranty:** Manufacturer's warranty is honored, ensuring peace of mind with your purchase.\n\n- **Return Policy:**\n  - **Returns:** Available with various return policies depending on the retailer, ranging from 14 to 30 days.\n\nThis GUCCI YA143503 watch is a testament to the brand's commitment to blending timeless style with innovative design, making it a must-have accessory for any fashion-conscious individual."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

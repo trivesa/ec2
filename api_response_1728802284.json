@@ -1,0 +1,25 @@
+{
+  "id": "fac1babd-6e9d-488f-840d-9e486a429d5a",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728802284,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 421,
+    "total_tokens": 568
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Square Muffler Scarf\n**Subtitle (Sottotitolo):** Authentic Luxury Scarf in Dark Grey Wool and Silk\n**Short Description (Breve Descrizione):** Elevate your style with this authentic GUCCI GG Jacquard Square Muffler Scarf, crafted from a luxurious blend of 80% wool and 20% silk. This dark grey scarf features the iconic GG pattern and is made in Italy. Perfect for adding a touch of sophistication to any outfit.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury with this GUCCI GG Jacquard Square Muffler Scarf. Here are some key features that make this scarf a must-have accessory:\n\n- **Material:** This scarf is made from a high-quality blend of 80% wool and 20% silk, ensuring warmth and comfort.\n- **Design:** The iconic GG pattern is intricately woven into the fabric, creating a sophisticated and timeless design.\n- **Color:** The dark grey (anthracite) color is versatile and can be paired with a variety of outfits.\n- **Size:** The scarf measures 140 cm x 140 cm, making it perfect for wrapping around your neck or using as a stylish shawl.\n- **Authenticity:** This scarf is 100% authentic and comes with tags and a paper bag, guaranteeing its genuineness.\n- **Origin:** Made in Italy, this scarf embodies the craftsmanship and quality that GUCCI is renowned for.\n- **Style Number:** 281942 3G704 1062, ensuring you are purchasing a genuine GUCCI product.\n- **Condition:** New with tags, ensuring it is in pristine condition.\n- **Care:** To maintain its quality, it is recommended to follow the care instructions provided by GUCCI.\n\nThis GUCCI GG Jacquard Square Muffler Scarf is a luxurious accessory that will elevate your wardrobe and make a statement. Its timeless design and high-quality materials ensure it will be a cherished piece for years to come."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

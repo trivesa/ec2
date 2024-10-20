@@ -1,0 +1,25 @@
+{
+  "id": "36134e56-e812-4166-b6a0-ef5b1f476703",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728778041,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 353,
+    "total_tokens": 503
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Micro Sima Driving Shoes\n**Subtitle (Sottotitolo):** Black Leather Driving Shoes with Classic Elegance\n**Short Description (Breve Descrizione):** Elevate your driving experience with the GUCCI Micro Sima Driving Shoes, crafted in luxurious black leather. These sleek and sophisticated shoes are designed for comfort and style, perfect for both casual and formal occasions. Size 44 available.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury with the GUCCI Micro Sima Driving Shoes, style number 466904 A9LF0 1000. Here are some key features:\n\n- **Luxurious Material:** Made from high-quality black leather, these shoes exude sophistication and elegance.\n- **Classic Design:** The Micro Sima Driving Shoes feature a timeless design that complements any outfit, from casual wear to formal attire.\n- **Comfortable Fit:** Designed for comfort, these shoes ensure a smooth driving experience and are perfect for daily wear.\n- **Size Availability:** Available in size 44, ensuring a precise fit for those who value both style and comfort.\n- **Versatility:** Ideal for both casual and formal occasions, these shoes are versatile and can be paired with a variety of outfits.\n- **Brand Authenticity:** Authentic GUCCI product, guaranteeing the highest standards of craftsmanship and quality.\n- **Quality Construction:** Built to last, these shoes are a testament to GUCCI's commitment to excellence in luxury footwear.\n\nWhether you're driving or just looking for a stylish addition to your wardrobe, the GUCCI Micro Sima Driving Shoes are an excellent choice. Their blend of comfort, elegance, and versatility makes them a must-have for any fashion-conscious individual."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

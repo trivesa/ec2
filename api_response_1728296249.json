@@ -1,0 +1,25 @@
+{
+  "id": "50cb50ec-c63f-47ff-a393-2770a11ba79c",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728296249,
+  "usage": {
+    "prompt_tokens": 319,
+    "completion_tokens": 600,
+    "total_tokens": 919
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Here is the information for the GUCCI belt with style number 524103-AP00G-1000:\n\n**Mandatory Fields:**\n\n1. **Object Category (Categoria Oggetto):** Belt\n2. **Store Category (Categoria del Negozio):** Accessories\n3. **Brand (Marca):** GUCCI\n4. **Type (Tipo):** Leather Belt\n5. **Department (Reparto):** Women's Accessories\n6. **Color (Colore):** Black\n7. **Size (Taglia):** 75 cm (Note: The provided size information of 120x80cm seems incorrect for a belt. Based on other sources, the correct size is 75 cm.)\n8. **Condition of the Item (Condizione dell'oggetto):** New\n9. **Price (Prezzo):** N/A (Price varies by source)\n10. **Shipping Rule (Regola sulla spedizione):** N/A (Shipping rules vary by source)\n\n**Optional Fields:**\n\n1. **EAN (EAN):** N/A\n2. **Material (Materiale):** Leather (Calfskin)\n3. **Style (Stile):** Classic\n4. **Pattern (Fantasia):** Textured torchon Double G metal buckle\n5. **Size Type (Tipo di taglia):** Standard\n6. **Belt Width (Larghezza della cintura):** 2.5 cm\n7. **Decorative Elements (Elementi decorativi):** Textured torchon Double G metal buckle, Textured torchon metal loop\n8. **Theme (Tema):** Luxury\n9. **Features (Caratteristiche):** Can be worn as a hip or waist belt\n10. **Trim Material (Materiale delle finiture):** Metal (Gold-toned)\n11. **Country of Manufacture (Paese di fabbricazione):** Italy\n12. **Handmade (Fatto a mano):** N/A\n13. **Vintage (Vintage):** No\n14. **MPN (MPN):** N/A\n15. **Quantity (Quantit\u00e0):** N/A\n16. **Unit of Measurement (Unit\u00e0 di misura):** Centimeters\n17. **Custom Label (Etichetta personalizzata - SKU):** N/A\n18. **Personalized (Personalizzato):** No\n\n**Sources:**\n- ****: https://www.nuovilook.com/en/belts/8639-gucci.html\n- ****: https://us.vestiairecollective.com/women-accessories/belts/gucci/black-leather-gucci-belt-32042866.shtml\n- ****: https://www.vipstation.com.hk/en/item/gucci-524103ap00g100075-belts.html"
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

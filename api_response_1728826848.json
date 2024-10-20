@@ -1,0 +1,25 @@
+{
+  "id": "c7898855-1585-4072-8e63-2fdd6da0f141",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728826848,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 428,
+    "total_tokens": 577
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Padded Web Slide Sandal in Green and Red Nylon\n**Subtitle (Sottotitolo):** Style 700320 UFR30 3060 - Size 35\n**Short Description (Breve Descrizione):** Embrace the iconic Gucci style with these padded Web slide sandals, featuring green and red nylon with black details crafted from sustainable materials. Made in Italy, these flat sandals offer a unique interpretation of padded nylon inspired by outerwear. Perfect for casual yet stylish occasions.\n\n**Description (Descrizione):**\n\n- **Design Inspiration:** Inspired by outerwear, these slide sandals offer a new interpretation of padded nylon, showcasing the iconic green and red colors of the House Web.\n- **Materials:**\n  - **Upper Material:** Green and red Web padded nylon.\n  - **Details:** Black details in Demetra, crafted from at least 70% of vegetable raw materials from renewable sources (viscose, wood pulp, bio-based polyurethane).\n  - **Sole:** Rubber sole.\n- **Key Features:**\n  - **Style:** Flat slide sandals.\n  - **Manufacturing:** Made in Italy.\n  - **Size:** 35.\n- **Care Instructions:**\n  - **Protection:** Protect from direct light, heat, and rain. If wet, dry immediately with a soft cloth.\n  - **Storage:** Fill the shoe with tissue paper to maintain shape and absorb humidity, then store in the provided flannel bag and box.\n  - **Cleaning:** Clean with a soft, dry cloth or brush.\n- **Authenticity:** 100% authentic Gucci product, ensuring the highest quality and craftsmanship.\n- **Packaging:** Includes special case, storage bag, and booklet.\n- **Weight:** Approximately 762g.\n- **Dimensions:** Total Length: 26.5cm, Shoe Width: 10.5cm, Heel Height: 2cm.\n- **Additional Information:** Part of the Sherry line, these sandals are designed for women and feature the iconic Gucci Web pattern."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

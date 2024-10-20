@@ -1,0 +1,25 @@
+{
+  "id": "6f742117-b017-4d3a-b42e-8de959609f02",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728293828,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 375,
+    "total_tokens": 528
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Leather Belt with Torchon Double G Buckle\n**Subtitle (Sottotitolo):** Classic Elegance with a Twist\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Leather Belt featuring a torchon Double G buckle, a timeless piece that combines classic elegance with a modern twist. Crafted from high-quality black leather, this belt is versatile and can be worn at the waist or on the hips. Its textured torchon metal buckle adds a sophisticated touch to any outfit.\n\n**Description (Descrizione):**\n\n- **Product Code:** 524103-AP00G-1000\n- **Material:** Black leather\n- **Hardware:** Gold-toned\n- **Buckle:** Textured torchon Double G metal buckle\n- **Loop:** Textured torchon metal loop\n- **Width:** 2.5cm\n- **Size:** 120x80cm\n- **Origin:** Made in Italy\n- **Versatility:** Can be worn as a hip or waist belt\n- **Sizing:** Sizing will differ based on where the belt is worn; please refer to the size guide to find your size.\n\nThis Gucci Leather Belt with a torchon Double G buckle is a masterpiece of luxury fashion. The twisted effect of the torchon design lends dimension to the leather, while the gold-toned hardware adds a touch of sophistication. Whether you choose to wear it at the waist or on the hips, this belt is sure to elevate your style with its classic yet modern appeal. The textured torchon metal buckle and loop are meticulously crafted to ensure a high-quality finish that reflects Gucci's commitment to excellence. Perfect for those who appreciate timeless fashion with a contemporary twist, this belt is a must-have accessory for any fashion enthusiast."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

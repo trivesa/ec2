@@ -1,0 +1,25 @@
+{
+  "id": "b51da7ef-1c8d-4993-8f32-2bd2e88e06a8",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728807542,
+  "usage": {
+    "prompt_tokens": 504,
+    "completion_tokens": 850,
+    "total_tokens": 1354
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Based on the provided search results, here is the information for the GUCCI bag with style number 643882 H9HLN 1000:\n\n**Mandatory Fields:**\n\n1. **Object Category (Categoria Oggetto):** Handbag\n2. **Store Category (Categoria del Negozio):** Luxury Handbags\n3. **Department (Reparto):** Accessories\n4. **Brand (Marca):** Gucci\n5. **Color (Colore esterno):** Black\n6. **Style (Stile):** Off The Grid Mini\n7. **Material (Materiale esterno):** Synthetic/Nylon\n8. **Closure Type (Chiusura):** Zip\n9. **Lining Material (Materiale della fodera):** N/A\n10. **Hardware Material (Materiale delle finiture):** N/A\n11. **Product Line (Linea prodotto):** Off The Grid\n12. **Pattern (Fantasia):** Embroidered logo pattern\n13. **Condition of the Item (Condizione dell'oggetto):** New\n14. **Price (Prezzo):** $805.00 (as per END. (US))\n15. **Shipping Rule (Regola sulla spedizione):** N/A\n\n**Optional Fields:**\n\n1. **Custom Label (Etichetta personalizzata - SKU):** 643882 H9HLN 1000\n2. **EAN (EAN):** N/A\n3. **MPN (MPN):** N/A\n4. **Handle Drop (Altezza del manico):** N/A\n5. **Handle/Strap Drop (Lunghezza della tracolla):** N/A\n6. **Size (Dimensioni):** H 16.5cm, W 12cm, D 6cm (as per Vestiaire Collective)\n7. **Features (Caratteristiche):** Environmental Friendly Series (as per Kickscrew)\n8. **Vintage (Vintage):** No\n9. **Unit of Measurement (Unit\u00e0 di misura):** cm\n10. **Accents (Elementi decorativi):** Embroidered logo pattern\n11. **Theme (Tema):** Luxury\n12. **Occasion (Occasione):** Everyday\n13. **Year Manufactured (Anno di fabbricazione):** N/A\n14. **Product Variants (Varianti di prodotto):** N/A\n15. **Payment Options and Offers (Regole di pagamento):** N/A\n16. **Shipping (Regola sulla spedizione):** N/A\n17. **Object Warnings (Avvertenze per l'oggetto):** N/A\n18. **Country/Region of Manufacture (Paese di fabbricazione):** N/A\n19. **Lining Color (Colore della fodera):** N/A\n20. **Handle/Strap Color (Colore del manico, tracolla):** N/A\n21. **Trim Color (Colore delle rifiniture):** N/A\n22. **Fabric Type (Tessuto):** Synthetic/Nylon\n23. **Personalized (Personalizzato):** No\n24. **Accessories (Accessori):** Dust Bag (as per Vestiaire Collective)\n25. **Bag Width (Larghezza della borsa):** 12cm\n26. **Bag Height (Altezza della borsa):** 16.5cm\n27. **Bag Depth (Profondit\u00e0 della borsa):** 6cm\n28. **Bag Shape (Forma):** Mini Messenger\n29. **Decorative Elements (Elementi decorativi):** Embroidered logo pattern\n30. **Finish (Finitura):** N/A\n31. **Country of Manufacture (Paese di fabbricazione):** N/A\n\nPlease note that some fields are marked as N/A due to the lack of specific information in the provided search results."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

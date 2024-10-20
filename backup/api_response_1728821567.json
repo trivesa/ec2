@@ -1,0 +1,25 @@
+{
+  "id": "791e404c-4ef4-4f12-9373-d4111a750de3",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728821567,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 467,
+    "total_tokens": 617
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Basket High-Top Sneakers\n**Subtitle (Sottotitolo):** Vibrant Demetra Multi-Color Edition - 661310 2SH80 9062\n**Short Description (Breve Descrizione):** Elevate your style with the GUCCI Basket High-Top Sneakers, featuring a bold multi-color design inspired by the Demetra collection. Crafted with high-quality materials, these sneakers offer both comfort and fashion. Perfect for those who want to make a statement.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the GUCCI Basket High-Top Sneakers, style number 661310 2SH80 9062. This vibrant edition is part of the Demetra collection, showcasing a unique blend of colors that include white, green, purple, orange, and blue.\n\n- **Design and Materials:**\n  - High-top design for added support and style.\n  - Upper made from premium materials, ensuring durability and comfort.\n  - The multi-color Demetra design adds a playful and eye-catching touch.\n\n- **Comfort and Performance:**\n  - Cushioned insoles for enhanced comfort.\n  - Rubber outsoles provide excellent grip and durability.\n\n- **Size Information:**\n  - Available in size 36, ensuring a perfect fit for those who prefer a snug and comfortable wear.\n\n- **Authenticity and Quality:**\n  - GUCCI's commitment to quality is evident in every detail, from stitching to material selection.\n  - Each pair is carefully inspected to meet the brand's high standards.\n\n- **Style and Versatility:**\n  - Perfect for casual outings, sports activities, or as a statement piece in your wardrobe.\n  - The bold color scheme makes these sneakers a standout accessory for any outfit.\n\n- **Additional Details:**\n  - Style Number: 661310 2SH80 9062\n  - Colorway: White Demetra/Green/Purple/Orange/Blue\n  - Retail Price: $990\n\nEmbrace the luxury and creativity of GUCCI with these exceptional high-top sneakers. Whether you're looking to elevate your everyday style or make a bold fashion statement, the GUCCI Basket High-Top Sneakers are the perfect choice."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "daae77c9-a9df-4e4c-8963-9476a331fcff",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728780027,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 449,
+    "total_tokens": 601
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton Leather Sneaker\n**Subtitle (Sottotitolo):** Distressed Elegance in Ivory\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Rhyton Leather Sneaker, featuring a distressed ivory design that combines luxury with a rugged edge. Crafted with high-quality leather, this shoe is perfect for those who seek a unique blend of sophistication and casual flair. Available in size 43.5.\n\n**Description (Descrizione):**\n\n- **Design and Craftsmanship:** The Gucci Rhyton Leather Sneaker, style number 498916 A9L00 9522, is a masterpiece of Italian craftsmanship. The shoe boasts a distressed ivory leather upper, adding a touch of rugged elegance to any outfit.\n- **Comfort and Fit:** Designed for comfort and style, this sneaker features a cushioned insole and a durable outsole. It is recommended to size down for the best fit, ensuring a snug and comfortable wear.\n- **Luxury Details:** The Gucci Rhyton is adorned with the brand's iconic logo, subtly integrated into the design. The distressed finish gives the shoe a unique, worn-in look that adds to its charm.\n- **Versatility:** Whether you're dressing up or dressing down, the Gucci Rhyton Leather Sneaker is versatile enough to complement a variety of outfits. Pair it with jeans for a casual look or with a suit for a more formal occasion.\n- **Quality and Durability:** Made with high-quality materials, this sneaker is built to last. The leather upper is durable and resistant to wear, ensuring that the shoe remains in excellent condition over time.\n- **Authenticity:** This product is an authentic Gucci item, guaranteed to meet the brand's high standards of quality and design. The style number 498916 A9L00 9522 ensures its authenticity and exclusivity.\n- **Size Information:** This shoe is available in size 43.5, perfect for those who seek a precise fit. Please note that sizing may vary slightly, so it is recommended to refer to the size chart for the best fit."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

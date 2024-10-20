@@ -1,0 +1,25 @@
+{
+  "id": "a74f748f-0f06-436a-98c9-8ad65d05ff8b",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728807952,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 467,
+    "total_tokens": 614
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Marmont Super Mini Bag\n**Subtitle (Sottotitolo):** Elegant White Chevron Leather Handbag\n**Short Description (Breve Descrizione):** The GUCCI GG Marmont Super Mini Bag in white chevron leather is a quintessential luxury accessory, combining timeless elegance with modern sophistication. Its compact size and versatile design make it perfect for daily use. Crafted with high-quality materials and meticulous attention to detail, this bag embodies the essence of GUCCI's luxury craftsmanship.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The GG Marmont Super Mini Bag is crafted from white chevron leather, showcasing GUCCI's signature GG motif.\n  - The bag features a sleek, modern design with a structured shape and a secure closure.\n  - The interior is lined with a luxurious fabric, ensuring durability and a touch of sophistication.\n\n- **Size Information:**\n  - The bag is designed in a super mini size, ideal for carrying essentials such as a phone, wallet, and keys.\n  - Dimensions: Not specified in the provided sources, but typical super mini bags are approximately 6 inches wide and 4 inches tall.\n\n- **Hardware and Details:**\n  - The bag is adorned with silver-toned hardware, adding a touch of luxury and sophistication.\n  - The iconic GG logo is prominently displayed on the front, emphasizing the brand's heritage and style.\n\n- **Versatility:**\n  - The bag can be worn as a crossbody bag or carried by hand, making it versatile for various occasions.\n  - Its compact size and stylish design make it suitable for both casual and formal events.\n\n- **Product Details:**\n  - Style Number: 476433 DTD5N 9022\n  - Color: White/Ivory with silver-toned hardware\n  - Material: Chevron leather\n  - Brand: GUCCI\n  - Line: GG Marmont\n\n- **Additional Information:**\n  - The bag is available on various platforms, including GUCCI's official website and other luxury goods retailers.\n  - Pricing may vary depending on the region and retailer, with one source listing it at HK$9,390.00."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "77b6125d-e981-4989-8682-21ee59c9e8d0",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728807561,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 388,
+    "total_tokens": 535
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Interlocking Bag - Gray Women's Dollar Calf Leather Mod. 510314 CAO0G 1226\n\n**Subtitle (Sottotitolo):** Elegant and Versatile Shoulder Bag with Iconic Gucci Design\n\n**Short Description (Breve Descrizione):** This Gucci Interlocking Bag is a sophisticated accessory made from high-quality dollar calf leather. Featuring a chain shoulder strap with leather insert and a clip button closure adorned with the iconic GUCCI logo, it offers a perfect blend of style and functionality. Ideal for daily use and special occasions.\n\n**Description (Descrizione):**\n\n- **Material:** Crafted from luxurious dollar calf leather, ensuring durability and a premium feel.\n- **Design:** The bag features a sleek and versatile design with a chain shoulder strap that includes a leather insert for added comfort.\n- **Closure:** Secured with a clip button closure, adorned with the iconic metal GUCCI logo.\n- **Interior:** Lined interior with one compartment and an inside pocket with zip closure for secure storage.\n- **Card Holder Spaces:** 18 card holder spaces for organized storage of your essentials.\n- **Dimensions:**\n  - **Width:** 19 cm\n  - **Height:** 11.5 cm\n  - **Depth:** 4.5 cm\n- **Color:** Available in gray (Loess) and light blue (Caspian) options.\n- **Origin:** Made in Italy, ensuring high-quality craftsmanship.\n- **Packaging:** Includes a Gucci box for a luxurious unboxing experience.\n- **Return Policy:** 14-day returns for added peace of mind.\n- **Shipping:** Eligible for free shipping with various delivery options available, including standard and quick delivery services.\n- **Customs Duties:** Customs duties are included in the price for shipments to select locations, ensuring a hassle-free shopping experience."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

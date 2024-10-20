@@ -1,0 +1,25 @@
+{
+  "id": "2e9ca92d-102f-471c-9ad3-0321c1698f3f",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728810604,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 419,
+    "total_tokens": 566
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Off The Grid Shoulder Bag\n**Subtitle (Sottotitolo):** Stylish and Versatile ECONYL Nylon Bag with Leather Trims\n**Short Description (Breve Descrizione):** The GUCCI Off The Grid Shoulder Bag, style number 625850 H9HAN 1000, is a sleek and versatile accessory crafted from ECONYL nylon and adorned with leather trims. This bag features an allover double G pattern and a logo patch on the front, making it a stylish addition to any outfit. Its adjustable and detachable shoulder strap ensures comfort and flexibility.\n\n**Description (Descrizione):**\n\n- **Material:** The bag is made from ECONYL nylon, a sustainable and durable material, complemented by high-quality leather trims.\n- **Design:** The bag features an allover double G pattern, a signature GUCCI motif, and a logo patch on the front for a touch of luxury.\n- **Functionality:**\n  - **Exterior:** The bag includes one zip pocket for secure storage.\n  - **Interior:** It features one phone case, accommodating a cell phone up to 3.1\u201dW x 6.6\u201dH x .4\u201dD.\n- **Handles and Straps:**\n  - **Top Handles:** Leather top handles with a 2\u201d drop.\n  - **Shoulder Strap:** Detachable and adjustable shoulder strap with a 19.7\u201d drop.\n- **Closure:** The bag is secured with a zipper closure.\n- **Dimensions:** 6.3\u201dW x 8.7\u201dH x 3.4\u201dD.\n- **Weight:** 1.3lbs.\n- **Style:** The bag is designed to be versatile and stylish, suitable for various occasions and outfits.\n- **Sustainability:** The use of ECONYL nylon reflects GUCCI\u2019s commitment to sustainability and eco-friendly practices.\n- **Authenticity:** This product is an authentic GUCCI item, ensuring the highest quality and craftsmanship."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

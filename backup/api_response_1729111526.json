@@ -1,0 +1,25 @@
+{
+  "id": "a10ba659-edd5-4d74-b18f-5530184fcfd1",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729111526,
+  "usage": {
+    "prompt_tokens": 160,
+    "completion_tokens": 376,
+    "total_tokens": 536
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Marmont Thin Leather Belt\n**Subtitle (Sottotitolo):** Elegant and Timeless Accessory with Double G Buckle\n**Short Description (Breve Descrizione):** Elevate your style with the GUCCI GG Marmont thin leather belt, featuring a sleek double G buckle on a 20mm wide leather strap. Perfect for adding a touch of luxury to any outfit. Available in a versatile beige color.\n\n**Description (Descrizione):**\n\n- **Luxury Craftsmanship:** The GUCCI GG Marmont thin leather belt is a testament to the brand's commitment to quality and craftsmanship. Made from high-quality leather, it ensures durability and a timeless appeal.\n- **Iconic Design:** The belt features the iconic double G buckle, a signature element of the GG Marmont collection. This distinctive design element adds a touch of sophistication and elegance to any outfit.\n- **Versatile Style:** With a width of 20mm and a maximum length of 200cm, this belt is versatile and can be easily paired with a variety of outfits, from casual jeans to formal dresses.\n- **Size Information:**\n  - **Width:** 20cm\n  - **Length:** 200cm (Maximum)\n- **Product Details:**\n  - **Style Number:** 409417-FAA6B-8048\n  - **Material:** Leather\n  - **Color:** Beige\n  - **Buckle:** Double G buckle in a sleek finish\n- **Perfect for:** Adding a luxurious touch to your daily attire, making it ideal for both casual and formal occasions.\n- **Authenticity:** This product is an authentic GUCCI item, ensuring the highest quality and authenticity.\n- **Packaging:** Includes a dust bag for protection and storage."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "6a42dce5-3213-49d9-8c40-b3fa5f473276",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728777724,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 416,
+    "total_tokens": 567
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Run Sneaker 'Black Yellow' - 680938 USM10 8480\n**Subtitle (Sottotitolo):** High-End Fashion Sneakers with Iconic Gucci Design\n**Short Description (Breve Descrizione):** Experience the fusion of sporty elegance and Gucci's signature style with these 'Black Yellow' Run Sneakers. Crafted from GG technical knit fabric, these shoes feature the iconic Interlocking G and a bi-color sole for a striking chromatic contrast. Perfect for those who seek high-end fashion with a sporty twist.\n\n**Description (Descrizione):**\n- **Design Inspiration:** Inspired by the sporting world, these sneakers are reinterpreted through Gucci's unique lens, combining athletic flair with luxury fashion.\n- **Materials:** The upper is made from GG technical knit fabric, ensuring both durability and style.\n- **Key Features:**\n  - **Iconic Logo:** The Interlocking G logo adds a touch of sophistication and authenticity.\n  - **Bi-Color Sole:** A playful note of chromatic contrast is achieved with the black and yellow sole, enhancing the overall aesthetic.\n  - **Fit:** True to size, these sneakers offer a comfortable fit similar to retail versions.\n- **Size Information:** Available in size 10.5, ensuring a precise fit for those who demand both style and comfort.\n- **Additional Details:**\n  - **Product Code:** 680938 USM10 8480\n  - **Color Code:** 8480\n  - **Color:** Black Yellow\n  - **Made in:** Italy\n  - **Composition:** Upper: Textile - Sole: EL\n- **Retail Information:**\n  - **Unit Retail Price:** \u20ac675.00\n  - **Note:** Prices may vary depending on the retailer and availability.\n\nThese Gucci Run Sneakers are a testament to Gucci's ability to blend sporty elements with high-end fashion, making them a must-have for fashion enthusiasts and collectors alike."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

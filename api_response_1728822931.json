@@ -1,0 +1,25 @@
+{
+  "id": "01f23d4d-f861-4dc7-a0e9-ffb55aa4e29c",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728822931,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 393,
+    "total_tokens": 542
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Padded Web Slide Sandal\n**Subtitle (Sottotitolo):** Green and Red Nylon Slide Sandal for Women\n**Short Description (Breve Descrizione):** Elevate your style with the GUCCI Padded Web Slide Sandal, featuring a vibrant green and red nylon design. This sleek and comfortable sandal is perfect for casual yet stylish occasions. Crafted with high-quality materials, it embodies the luxury and sophistication that GUCCI is renowned for.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The GUCCI Padded Web Slide Sandal is crafted from durable and stylish nylon, ensuring both comfort and durability.\n  - The sandal features a striking green and red color scheme, adding a bold touch to any outfit.\n  - The iconic GUCCI Web motif is prominently displayed, adding a touch of luxury and brand heritage.\n\n- **Comfort and Versatility:**\n  - Designed for comfort, the padded footbed provides excellent support and cushioning.\n  - The slide design makes it easy to slip on and off, perfect for beach trips, pool days, or casual outings.\n\n- **Size and Fit:**\n  - Available in size 36, ensuring a precise fit for those who prefer a snug and comfortable wear.\n  - The sandal is designed to fit true to size, providing a consistent and reliable fit.\n\n- **Brand Authenticity:**\n  - This product is an authentic GUCCI item, ensuring the highest quality and craftsmanship.\n  - The GUCCI logo and branding are discreetly integrated into the design, affirming the product's authenticity and luxury status.\n\n- **Additional Information:**\n  - Style Number: 700320 UFR30 3060\n  - Material: Nylon\n  - Color: Green and Red\n  - Size: 36\n  - Ideal for casual, stylish occasions and everyday wear."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

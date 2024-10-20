@@ -1,0 +1,25 @@
+{
+  "id": "949aac8c-c083-48ea-9934-46cd47f37595",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728820288,
+  "usage": {
+    "prompt_tokens": 548,
+    "completion_tokens": 968,
+    "total_tokens": 1516
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Based on the provided information and search results, here is the structured information for the GUCCI shoes with style number 721228 JAACP 5307:\n\n**Mandatory Fields:**\n\n1. **Object Category (Categoria Oggetto):** Scarpe\n2. **Store Category (Categoria del Negozio):** Scarpe da donna\n3. **Brand (Marca):** GUCCI x Adidas\n4. **Size (Numero di scarpa EU):** 37 (Note: The provided size is 37, but the example in the search results is for size 41 EU. Ensure the correct size is used.)\n5. **Department (Reparto):** Donna\n6. **Color (Colore):** Rosa trasparente\n7. **Type (Tipo):** Sandali\n8. **Style (Stile):** Slides\n9. **Condition of the Item (Condizione dell'oggetto):** Nuovo con scatola\n10. **Price (Prezzo):** N/A (Not provided in the search results)\n11. **Shipping Rule (Regola sulla spedizione):** International Priority Shipping via eBay's Programma di spedizione internazionale\n\n**Optional Fields:**\n\n1. **MPN (MPN):** 721228 JAACP 5307\n2. **Custom Label (Etichetta personalizzata - SKU):** N/A\n3. **EAN (EAN):** N/A\n4. **Material (Materiale della tomaia):** Gomma\n5. **Sole Material (Materiale della suola):** Gomma\n6. **Lining Material (Materiale della fodera):** N/A\n7. **Closure Type (Chiusura):** N/A (Slides do not have a closure)\n8. **Fit (Vestibilit\u00e0):** N/A\n9. **Product Line (Linea prodotto):** GUCCI x Adidas\n10. **Insole Material (Materiale della soletta):** N/A\n11. **Outer Material (Materiale tomaia):** Gomma\n12. **Pattern (Fantasia):** N/A\n13. **Season (Stagione):** N/A\n14. **Theme (Tema):** N/A\n15. **Product Variants (Varianti di prodotto):** N/A\n16. **Payment and Offers (Regole di pagamento):** N/A\n17. **Object Warnings (Avvertenze per l'oggetto):** N/A\n18. **Width (Larghezza della scarpa):** N/A\n19. **Year Manufactured (Anno di fabbricazione):** N/A\n20. **Activity (Attivit\u00e0):** N/A\n21. **Vintage (Vintage):** No\n22. **Customized (Personalizzato):** No\n23. **Model (Modello):** GUCCI x Adidas Slides\n24. **Decorative Elements (Elementi decorativi):** Logo GUCCI x Adidas\n25. **Occasion (Occasione):** N/A\n26. **Toe Shape (Forma della punta):** N/A (Slides do not have a distinct toe shape)\n27. **Toe Cap Material (Materiale del puntale):** N/A\n28. **Pronation (Pronazione):** N/A\n29. **Calf Circumference (Circonferenza del polpaccio):** N/A\n30. **Shaft Height (Altezza del gambale):** N/A\n31. **Heel Height (Altezza del tacco):** N/A\n32. **Heel Style (Stile del tacco):** N/A\n33. **Shoe Shaft Style (Stile del gambale):** N/A\n34. **Signed (Firmato):** No\n35. **Handmade (Fatto a mano):** No\n36. **Country of Manufacture (Paese di fabbricazione):** N/A\n37. **Manufacturing Process (Processo di fabbricazione):** N/A\n38. **Sustainability Features (Caratteristiche di sostenibilit\u00e0):** N/A\n39. **Care Instructions (Istruzioni per la cura):** N/A\n40. **Packaging (Imballaggio):** Scatola originale\n41. **Warranty Information (Informazioni sulla garanzia):** N/A\n\nPlease note that some fields are not applicable or not available based on the provided information and search results."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

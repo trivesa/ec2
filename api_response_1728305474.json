@@ -1,0 +1,25 @@
+{
+  "id": "a6260e0b-6496-45ed-9596-f6b82c9ac260",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728305474,
+  "usage": {
+    "prompt_tokens": 155,
+    "completion_tokens": 506,
+    "total_tokens": 661
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Balenciaga Zen Logo-Print Faux Leather Sneakers\n**Subtitle (Sottotitolo):** Elegant and Sporty Footwear for Women\n**Short Description (Breve Descrizione):** Embrace the fusion of elegance and sportiness with Balenciaga's Zen sneakers, featuring lightweight faux leather uppers and a sleek design inspired by classic sports shoes. Perfect for casual yet stylish outfits. Available in size 8.\n\n**Description (Descrizione):**\n\nBalenciaga's Zen sneakers are a testament to the brand's ability to blend high fashion with athletic wear. Here are some key features that make these shoes stand out:\n\n- **Inspiration:** The Zen sneakers are modelled after classic sports shoes, drawing inspiration from football and martial arts, ensuring a sporty yet sophisticated look.\n- **Materials:** The shoes feature lightweight faux leather uppers, providing comfort and durability. The faux leather is detailed with topstitching, adding a touch of craftsmanship.\n- **Design Elements:**\n  - **Logo Print:** The shoes boast a distinctive logo print, adding a touch of brand identity and style.\n  - **Elasticated Tongues:** The elasticated tongues ensure a snug fit and ease of wear.\n  - **Cushioned Foam Insoles:** The insoles are cushioned with foam for added support and comfort.\n- **Size and Fit:**\n  - **True to Size:** The shoes fit true to size, so you can confidently choose your normal size.\n  - **Full Sizes Only:** Available in full sizes, so if you take a half size, it's recommended to go up to the nearest whole size.\n  - **European Sizing:** The shoes follow European sizing standards.\n- **Color:** The shoes are available in a striking black and white color combination, making them versatile and easy to pair with various outfits.\n- **Style Number:** 617540 W2CG1 1090\n- **Delivery and Returns:**\n  - **Free Returns:** Free returns are offered within 14 days of delivery.\n  - **Exchange and Return Period:** You have 28 days to request an exchange or return.\n  - **Convenient Return Process:** Returns can be collected from your nearest UPS drop off point.\n\nThese Balenciaga Zen sneakers are perfect for women who want to add a touch of luxury and sportiness to their wardrobe. With their sleek design and comfortable fit, they are ideal for casual yet stylish outfits."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

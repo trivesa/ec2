@@ -1,0 +1,25 @@
+{
+  "id": "67f7c660-50b2-4a60-a853-282ae138f25f",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728797414,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 367,
+    "total_tokens": 514
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Wool Scarf\n**Subtitle (Sottotitolo):** Luxurious Wool Scarf with Iconic GG Pattern\n**Short Description (Breve Descrizione):** Elevate your style with the GUCCI GG Jacquard Wool Scarf, featuring the iconic GG pattern in a luxurious wool fabric. Perfect for adding a touch of sophistication to any outfit. This scarf is designed with the style number 644365 4G718 6468.\n\n**Description (Descrizione):**\n\n- **Material:** Crafted from high-quality wool, ensuring warmth and comfort.\n- **Design:** The scarf features the iconic GG pattern, a signature motif of GUCCI, in a striking red and blue color combination.\n- **Size:** The scarf measures 14\" x 94\" (35 cm x 240 cm), providing ample length for versatile styling.\n- **Style Number:** 644365 4G718 6468, ensuring authenticity and exclusivity.\n- **Brand:** GUCCI, synonymous with luxury and high-end fashion.\n- **Authenticity:** 100% authentic GUCCI product, guaranteed to meet the brand's high standards.\n- **Versatility:** Perfect for dressing up or adding a casual touch to any outfit, suitable for both formal and casual occasions.\n- **Quality:** The wool fabric is durable and long-lasting, ensuring the scarf remains a staple in your wardrobe for years to come.\n- **Care Instructions:** To maintain the scarf's quality, it is recommended to follow the specific care instructions provided by GUCCI.\n- **Packaging:** The scarf comes with its original tags and packaging, ensuring it arrives in pristine condition.\n- **Warranty:** Covered by the standard GUCCI warranty, providing peace of mind with your purchase."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

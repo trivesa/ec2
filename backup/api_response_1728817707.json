@@ -1,0 +1,25 @@
+{
+  "id": "6322507d-890e-4d04-8450-74fc971ca1e5",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728817707,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 443,
+    "total_tokens": 596
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low-Top Sneaker in Light Blue Demetra Pink\n**Subtitle (Sottotitolo):** A fusion of vintage basketball style with eco-friendly innovation\n**Short Description (Breve Descrizione):** Embracing the spirit of 90s basketball sneakers, the Gucci Basket Low-Top Sneaker combines vibrant colors with sustainable materials. Crafted primarily from Demetra, an eco-friendly material that offers pliable and resilient performance. This shoe is a perfect blend of style and sustainability.\n\n**Description (Descrizione):**\n\nThe Gucci Basket Low-Top Sneaker, style number 700291 2SHW0 4870, is a testament to Gucci's commitment to blending fashion with eco-conscious design. Here are some key features:\n\n- **Eco-Friendly Material:** The shoe is crafted primarily from Demetra, a material that combines animal-free raw materials from sustainable, renewable, and bio-based sources. This ensures a supple finish and durable performance.\n- **Vintage Inspiration:** Inspired by 90s basketball sneakers, the Gucci Basket features a low-top design with distinctive detailing and a lightly distressed effect, evoking the self-expression of on-court aesthetics.\n- **Color Scheme:** The shoe is presented in a striking light blue and Demetra pink color combination, adding a vibrant touch to any outfit.\n- **Gucci Branding:** The shoe features a rubber interlocking G patch and Gucci logo detail, reinforcing the brand's iconic identity.\n- **Comfort and Durability:** The rubber sole provides comfort and durability, making the shoe suitable for both casual wear and active lifestyles.\n- **Size Information:** Available in size 38.5, ensuring a precise fit for those who value both style and comfort.\n- **Packaging:** Includes a box and dust bag, adding a touch of luxury to the overall product experience.\n- **Production Quality:** The shoe is made in Italy, ensuring high-quality craftsmanship and attention to detail.\n- **Composition:** The upper is made from a combination of EL and other textiles, while the sole is made from EL, providing a durable and comfortable wear."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "88aa7448-5b32-46ce-b7dd-1758375c5de3",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728775732,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 462,
+    "total_tokens": 612
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Rhyton Leather Sneaker\n**Subtitle (Sottotitolo):** Distressed Ivory Leather Sneaker for Men\n**Short Description (Breve Descrizione):** The GUCCI Rhyton Leather Sneaker, style number 498916 A9L00 9522, is a luxurious and stylish footwear piece featuring distressed ivory leather. This sneaker combines high-quality materials with a unique aesthetic, making it a standout in any fashion collection. Available in size 45, it offers a comfortable and stylish fit.\n\n**Description (Descrizione):**\n\n- **Material and Craftsmanship:** The GUCCI Rhyton Leather Sneaker is crafted from high-quality, distressed ivory leather, showcasing the brand's attention to detail and commitment to luxury.\n- **Design and Style:** The sneaker features a bold and distinctive design, with the distressed leather adding a touch of rugged elegance. The ivory color provides a versatile and timeless look that can be paired with a variety of outfits.\n- **Size Information:** This sneaker is available in size 45, ensuring a comfortable fit for those who prefer a slightly larger shoe size.\n- **Brand Authenticity:** The GUCCI Rhyton Leather Sneaker is an authentic GUCCI product, guaranteed to meet the brand's high standards of quality and craftsmanship.\n- **Additional Features:**\n  - **Style Number:** 498916 A9L00 9522\n  - **Leather Type:** Distressed Ivory Leather\n  - **Gender:** Men's\n  - **Size:** 45\n  - **Brand:** GUCCI\n  - **Product Type:** Sneaker\n- **Market Availability:** This sneaker can be found on various online platforms, including Kickscrew, Rainy Clouds OG, and StockX, offering a range of pricing options to suit different budgets.\n- **Pricing:** The price for this sneaker varies, with listings ranging from $307.00 to $2,600.00, depending on the retailer and availability.\n- **Quality and Durability:** As a GUCCI product, this sneaker is built to last, with durable materials and meticulous craftsmanship ensuring a long-lasting and comfortable wear."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

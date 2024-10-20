@@ -1,0 +1,25 @@
+{
+  "id": "12e0367b-690a-465a-a6cd-102b85c12bf5",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728335991,
+  "usage": {
+    "prompt_tokens": 154,
+    "completion_tokens": 377,
+    "total_tokens": 531
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Cognac Arcadie Leather Bag\n**Subtitle (Sottotitolo):** Elegant and Timeless Design\n**Short Description (Breve Descrizione):** The Cognac Arcadie Leather Bag by Miu Miu is a masterpiece of luxury fashion, blending elegance with functionality. Its light padding and cosmopolitan style make it a versatile accessory for any occasion. Crafted with high-quality leather and gold-tone hardware, this bag exudes sophistication and timeless appeal.\n\n**Description (Descrizione):**\n\n- **Elegant Design**: The Arcadie leather bag is designed to translate current fashion trends into a material form, offering a voluminous look with light padding and a cosmopolitan style.\n- **Quality Materials**: Made from high-quality leather, this bag features leather handles and a detachable, adjustable 105 cm leather shoulder strap for versatility.\n- **Distinctive Details**: The gold-tone hardware and varnished metal lettering logo on the front add a touch of luxury, crossing the boundaries between function and decoration.\n- **Practical Features**:\n  - Zipper closure for secure storage\n  - Cotton satin lining with a zipper pocket for organizing small items\n  - Purse feet to protect the bag from scratches\n- **Capacity**: This bag can comfortably hold an iPhone 15 Pro Max, a Miu Miu card holder, a large Miu Miu wallet, and other small items.\n- **Size Information**: Size M\n- **Product Code**: 5BB142_2CR3_F0046_V_OON\n- **Additional Services**:\n  - Free shipping and returns\n  - Secure payment options\n  - Sustainably designed and produced packaging\n\nExperience the essence of luxury with the Cognac Arcadie Leather Bag, a perfect blend of style and functionality."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

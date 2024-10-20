@@ -1,0 +1,25 @@
+{
+  "id": "8537cfce-57f9-4e14-a729-ff14de6e54fb",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728830694,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 359,
+    "total_tokens": 512
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Wmns Basket 'White Green' Sneakers\n**Subtitle (Sottotitolo):** Luxurious Low-Top Sneakers in White and Green\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Wmns Basket 'White Green' sneakers, featuring a sleek low-top design and a vibrant color palette. Crafted in Italy, these shoes combine elegance and comfort. Available in size 38.5.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the Gucci Wmns Basket 'White Green' sneakers. Here are some key features:\n\n- **Style Number:** 700290 2SHG0 9089\n- **Color:** White and Green\n- **Size:** 38.5\n- **Material:**\n  - **Upper:** EL (Elastane) and other textiles\n  - **Sole:** EL (Elastane)\n- **Manufacturing:** Made in Italy\n- **Design:** Low-top sneakers with a sleek and modern silhouette\n- **Comfort:** Designed for both style and comfort, perfect for everyday wear\n- **Brand:** Gucci, a renowned luxury fashion brand\n- **Additional Features:**\n  - **Quality Construction:** High-quality materials and craftsmanship ensure durability and long-lasting wear\n  - **Versatility:** Suitable for casual and semi-formal occasions, adding a touch of luxury to any outfit\n  - **Authenticity:** Genuine Gucci product, ensuring authenticity and exclusivity\n\nThese Gucci Wmns Basket 'White Green' sneakers are a testament to Gucci's commitment to excellence in design and craftsmanship, making them a must-have for any fashion enthusiast."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

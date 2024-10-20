@@ -1,0 +1,25 @@
+{
+  "id": "42734cb3-6f70-44b0-8c58-f2045a15007c",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728800476,
+  "usage": {
+    "prompt_tokens": 141,
+    "completion_tokens": 572,
+    "total_tokens": 713
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI G-Timeless 36mm Ladies Watch YA1264045\n**Subtitle (Sottotitolo):** Elegant Black Dial with Stars and Planet Moonphase\n**Short Description (Breve Descrizione):** The GUCCI G-Timeless YA1264045 is a sophisticated ladies watch featuring a 36mm stainless steel case, a stunning black dial adorned with stars and planet motifs, and a precise quartz movement. This Swiss-made watch is complemented by a black leather strap and offers water resistance up to 50 meters. It embodies the essence of fine Italian style and contemporary fashion.\n\n**Description (Descrizione):**\n\n- **Elegant Design**: The GUCCI G-Timeless YA1264045 boasts an elegant 36mm stainless steel case that showcases a unique black dial with a stars and planet motif, adding a touch of celestial charm to its design.\n- **Precision Timekeeping**: Powered by a quartz movement, this watch ensures precise and accurate timekeeping, making it a reliable accessory for daily wear.\n- **Comfortable Wear**: The watch is presented on a black leather strap, fastened with a pin-buckle clasp, providing a secure and comfortable fit on the wrist.\n- **Durability**: The watch features a scratch-resistant sapphire crystal glass and is water-resistant up to 50 meters, ensuring durability and protection against everyday wear and tear.\n- **Authenticity**: This watch is 100% authentic, brand new, and comes with a 2-year GUCCI warranty, guaranteeing its quality and craftsmanship.\n- **Key Features**:\n  - **Case Material**: Stainless Steel\n  - **Dial Color**: Black with Stars and Planet Motif\n  - **Movement**: Quartz\n  - **Case Size**: 36mm\n  - **Strap Material**: Leather\n  - **Water Resistance**: 50 meters\n  - **Warranty**: 2-Year GUCCI Warranty\n- **Additional Information**:\n  - **Brand**: GUCCI\n  - **Series**: G-Timeless\n  - **Gender**: Ladies\n  - **Origin**: Swiss Made\n  - **Functions**: Date, Hour, Minute, Second, Moonphase\n  - **Crystal**: Scratch-Resistant Sapphire\n  - **Bezel**: Fixed\n  - **Crown**: Push/Pull\n  - **Band Type/Color/Width**: Strap/Black/17mm\n  - **Clasp**: Tang\n  - **Case Thickness/Shape**: 7mm/Round\n  - **Case Back**: Solid\n  - **Dial Type/Hands/Markers**: Analog/Silver-tone/Bee, Heart, and Star Index\n  - **Warranty**: 2-Year WatchWarehouse Warranty (for purchases from WatchWarehouse)"
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

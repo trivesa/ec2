@@ -1,0 +1,25 @@
+{
+  "id": "eb03a033-3b96-4ed0-9ad1-024bcc073f4f",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728336095,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 356,
+    "total_tokens": 509
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Leather Belt with Torchon Double G Buckle\n**Subtitle (Sottotitolo):** Luxurious Black Leather Belt with Iconic Double G Design\n**Short Description (Breve Descrizione):** Elevate your style with this GUCCI leather belt featuring a torchon Double G buckle, perfect for adding a touch of luxury to any outfit. Crafted from high-quality black leather, this belt is versatile and can be worn at the waist or on the hips. The iconic Double G design adds a sophisticated touch to any ensemble.\n\n**Description (Descrizione):**\n\n- **Material:** High-quality black leather ensures durability and a luxurious feel.\n- **Buckle:** The torchon Double G buckle is a standout feature, adding a textured and dimensional element to the belt.\n- **Design:** The Double G emblem, an archival reprisal of the House's signature emblem, is introduced with a torchon design for a unique and stylish look.\n- **Hardware:** Gold-toned hardware complements the black leather, adding a touch of sophistication.\n- **Versatility:** This belt can be worn as a hip or waist belt, offering flexibility in styling.\n- **Size:** Available in size 75 cm, with a width of 2.5 cm, ensuring a comfortable and secure fit.\n- **Craftsmanship:** Made in Italy, this belt reflects the high standards of GUCCI's craftsmanship.\n- **Style Number:** 524103-AP00G-1000, ensuring authenticity and exclusivity.\n- **Additional Information:** The size information provided (120x80cm) does not match the standard belt size format. For accurate sizing, please refer to the size guide to find your perfect fit."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

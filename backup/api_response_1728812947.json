@@ -1,0 +1,25 @@
+{
+  "id": "b2c093c6-068b-40eb-86e3-6c84063663ca",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728812947,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 395,
+    "total_tokens": 547
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low-Top Sneaker in Vibrant Colors\n**Subtitle (Sottotitolo):** A Bold Statement with Pink, Purple, and Yellow Accents\n**Short Description (Breve Descrizione):**\nExperience the epitome of luxury with the Gucci Basket Low-Top Sneaker, featuring a striking combination of pink, purple, and yellow accents. Crafted with high-quality materials, these shoes offer both comfort and a bold statement. Perfect for those who seek to make a fashion statement.\n\n**Description (Descrizione):**\n\n- **Style Number:** 700291 2SH90 5870\n- **Size:** 40.5\n- **Key Features:**\n  - **Vibrant Color Scheme:** A mix of pink, purple, and yellow accents creates a bold and eye-catching design.\n  - **High-Quality Materials:** Ensures durability and comfort for long-lasting wear.\n  - **Low-Top Design:** Offers a sleek and versatile silhouette suitable for various occasions.\n  - **Gucci Branding:** Embodies the luxury and sophistication that Gucci is renowned for.\n- **Design Elements:**\n  - **Mixed Accents:** The combination of pink, purple, and yellow adds a playful yet sophisticated touch.\n  - **Comfortable Fit:** Designed to provide a comfortable fit for daily wear.\n  - **Versatile Style:** Suitable for casual outings, fashion events, or as a statement piece in your wardrobe.\n- **Additional Information:**\n  - **Availability:** Available in various sizes, including 40.5.\n  - **Pricing:** Varies depending on the retailer, ranging from $290.00 to $1,149.00.\n  - **Retailers:** Available at various online retailers such as Kickscrew, Flexdog, StockX, and Ottodisanpietro."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

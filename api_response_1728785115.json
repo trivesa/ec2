@@ -1,0 +1,25 @@
+{
+  "id": "9596a435-e0ee-4873-a4ba-cec07dd6979f",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728785115,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 372,
+    "total_tokens": 525
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Tennis 1977 'Blue Ivory' Sneakers\n**Subtitle (Sottotitolo):** Elegant Denim GG Print Low-Top Shoes\n**Short Description (Breve Descrizione):** Embrace the essence of Gucci's timeless style with the Tennis 1977 'Blue Ivory' sneakers. Crafted with a unique denim GG print, these low-top shoes offer a sophisticated blend of comfort and luxury. Perfect for those who appreciate the fusion of classic design and modern flair.\n\n**Description (Descrizione):**\n\n- **Elegant Design**: The Gucci Tennis 1977 'Blue Ivory' sneakers feature a distinctive denim GG print, creating a stylish and versatile look that complements any outfit.\n- **Comfort and Quality**: Made with high-quality materials, these shoes ensure comfort and durability, making them perfect for both casual and formal occasions.\n- **Unique Details**: The denim GG print adds a unique touch to the classic low-top design, showcasing Gucci's commitment to innovative fashion.\n- **Size Information**: Available in size 41.5, ensuring a precise fit for those who value both style and comfort.\n- **Luxury Branding**: The Gucci logo and signature details emphasize the brand's heritage and craftsmanship, making these shoes a statement piece in any wardrobe.\n- **Versatility**: Whether you're dressing up or dressing down, the Gucci Tennis 1977 'Blue Ivory' sneakers are designed to elevate your style with their timeless elegance and modern appeal.\n- **Authenticity**: Each pair is carefully crafted to meet Gucci's high standards, ensuring that you receive an authentic and luxurious product.\n- **Style Number**: 606111 2KQ10 4463, a unique identifier that guarantees the authenticity and exclusivity of these Gucci shoes."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

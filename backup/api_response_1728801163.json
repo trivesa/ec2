@@ -1,0 +1,25 @@
+{
+  "id": "42d373e7-96fe-496b-bca4-553313480a96",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728801163,
+  "usage": {
+    "prompt_tokens": 312,
+    "completion_tokens": 660,
+    "total_tokens": 972
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Based on the provided sources, here is the structured information for the GUCCI belt with style number 409417 AP00T 5729:\n\n1. **Object Category (Categoria Oggetto):** Belt\n2. **Store Category (Categoria del Negozio):** Accessories\n3. **Brand (Marca):** Gucci\n4. **Type (Tipo):** Thin Belt\n5. **Department (Reparto):** Women's Accessories\n6. **Color (Colore):** Almond (Note: The color mentioned in the query does not match the sources provided. The sources mention \"Almond\" for the specific style number, but other colors like \"White and Gold\" are mentioned for different versions of the 409417 style.)\n7. **Size (Taglia):** 70cm / 80cm (Different sizes are available for the same style number.)\n8. **Condition of the Item (Condizione dell'oggetto):** New (For new items as per. For pre-owned items, the condition can vary, e.g., \"Very Good\" as per.)\n9. **Price (Prezzo):** N/A (Prices are not provided in the sources in a format that can be directly copied. They are dynamic and may vary based on the retailer and location.)\n10. **Shipping Rule (Regola sulla spedizione):** Free returns within a specified period (e.g., 14 days for pre-owned items, 30 days for new items from Gucci's official website.)\n\n**Optional Fields:**\n\n1. **EAN (EAN):** N/A\n2. **Material (Materiale):** Leather\n3. **Style (Stile):** GG Marmont Thin Belt\n4. **Pattern (Fantasia):** N/A\n5. **Size Type (Tipo di taglia):** N/A\n6. **Belt Width (Larghezza della cintura):** Thin\n7. **Decorative Elements (Elementi decorativi):** Double G Buckle\n8. **Theme (Tema):** N/A\n9. **Features (Caratteristiche):** N/A\n10. **Character (Personaggio):** N/A\n11. **Trim Material (Materiale delle finiture):** N/A\n12. **Country of Manufacture (Paese di fabbricazione):** N/A\n13. **Handmade (Fatto a mano):** N/A\n14. **Vintage (Vintage):** No\n15. **MPN (MPN):** 409417 AP00T 5729\n16. **Quantity (Quantit\u00e0):** N/A\n17. **Unit of Measurement (Unit\u00e0 di misura):** cm\n18. **Custom Label (Etichetta personalizzata - SKU):** N/A\n19. **Personalized (Personalizzato):** No\n\n**Note:** Some fields may have different values based on the specific item and source. The information provided is based on the sources given and may not cover all variations of the product."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

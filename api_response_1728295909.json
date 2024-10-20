@@ -1,0 +1,25 @@
+{
+  "id": "0a4b0796-941b-43fd-9c58-69e0fd62027f",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728295909,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 493,
+    "total_tokens": 645
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** FENDI FZZ411A4GCF0G8T Exquisite Evening Dress\n**Subtitle (Sottotitolo):** A Masterpiece of Elegance and Craftsmanship\n\n**Short Description (Breve Descrizione):**\nExperience the epitome of luxury with the FENDI FZZ411A4GCF0G8T evening dress, a stunning creation that embodies the brand's commitment to elegance and craftsmanship. This dress is designed to make a statement, perfect for special occasions. Crafted with the finest materials, it ensures a timeless appeal.\n\n**Description (Descrizione):**\n\n- **Craftsmanship:** The FENDI FZZ411A4GCF0G8T evening dress is meticulously crafted with attention to detail, showcasing the brand's dedication to excellence. Made in Italy, it reflects the country's rich heritage in fashion.\n- **Design:** This dress features a sophisticated design that combines elegance with modernity. The silhouette is both flattering and dramatic, making it ideal for evening events.\n- **Materials:** The dress is made from high-quality materials that provide comfort and durability. The fabric choice ensures a luxurious feel, making it a pleasure to wear.\n- **Size Information:** Available in Size 9, ensuring a perfect fit for those who seek a tailored look.\n- **Style:** The FENDI FZZ411A4GCF0G8T is a versatile piece that can be styled in various ways to suit different occasions. Whether it's a formal gala or a sophisticated dinner party, this dress is sure to impress.\n- **Key Features:**\n  - **Elegant Silhouette:** Designed to accentuate the figure, creating a stunning visual effect.\n  - **Luxurious Fabric:** Ensures a comfortable and luxurious feel.\n  - **Attention to Detail:** Every element, from stitching to embellishments, is meticulously crafted.\n  - **Versatility:** Suitable for a range of formal events, offering endless styling possibilities.\n- **Brand Heritage:** FENDI's commitment to quality and style is evident in every aspect of this dress, making it a true masterpiece of Italian fashion.\n\nThis FENDI FZZ411A4GCF0G8T evening dress is a testament to the brand's legacy in creating pieces that are both timeless and contemporary. It is a must-have for anyone who appreciates the art of high-end fashion."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

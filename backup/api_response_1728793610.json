@@ -1,0 +1,25 @@
+{
+  "id": "2d92c500-40fa-4b1e-a7e1-8d86b7e3943e",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728793610,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 376,
+    "total_tokens": 526
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High 'Demetra' Multicolor Sneakers\n**Subtitle (Sottotitolo):** Inspired by 90's Basketball Shoes, Style Number 661303 2SH90 1072\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Basket High 'Demetra' sneakers, a vibrant and retro-inspired design that combines comfort and luxury. Crafted with a mix of leather and fabric, these high-top sneakers are a statement piece for any fashion enthusiast. Available in size 39.\n\n**Description (Descrizione):**\n\n- **Inspiration:** The Gucci Basket High 'Demetra' sneakers draw inspiration from the iconic basketball shoes of the 90's, blending nostalgic charm with modern luxury.\n- **Materials:** The shoes feature a multi-color and fabric upper, combining durability and style. The use of high-quality materials ensures a long-lasting and comfortable wear.\n- **Design:** The high-top design provides additional ankle support and a sleek silhouette. The vibrant color palette adds a bold touch to any outfit, making these sneakers perfect for those who dare to stand out.\n- **Comfort:** Designed for both comfort and style, these sneakers are ideal for daily wear, whether you're hitting the streets or making a fashion statement.\n- **Details:**\n  - Style Number: 661303 2SH90 1072\n  - Size: 39\n  - High-top design for added support and style\n  - Multi-color and fabric upper for a unique look\n  - Inspired by 90's basketball shoes for a retro flair\n  - Perfect for fashion enthusiasts looking for a statement piece\n- **Brand:** Gucci, renowned for its luxury and high-quality products, ensures that these sneakers meet the highest standards of craftsmanship and design."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

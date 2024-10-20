@@ -1,0 +1,25 @@
+{
+  "id": "69bbafdf-47b3-4aa5-9182-0ce41f300238",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728800297,
+  "usage": {
+    "prompt_tokens": 141,
+    "completion_tokens": 499,
+    "total_tokens": 640
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI G-Timeless 36mm Ladies Watch YA1264045\n**Subtitle (Sottotitolo):** Elegant Black Leather Watch with Moonphase Dial\n**Short Description (Breve Descrizione):** The GUCCI G-Timeless YA1264045 is a sophisticated ladies watch featuring a 36mm stainless steel case, a black leather strap, and a captivating moonphase dial adorned with stars and planet motifs. This elegant timepiece combines style and functionality, perfect for everyday wear. With its quartz movement and 50-meter water resistance, it offers reliability and durability.\n\n**Description (Descrizione):**\n\n- **Case and Band:**\n  - **Case Material:** Stainless Steel\n  - **Case Size:** 36mm\n  - **Case Shape:** Round\n  - **Band Material:** Black Leather\n  - **Band Type:** Strap\n  - **Band Width:** 17mm\n  - **Clasp Type:** Tang\n\n- **Dial and Movement:**\n  - **Dial Color:** Black with Stars and Planet Motif\n  - **Dial Type:** Analog\n  - **Hands and Markers:** Silver-tone hands and Bee, Heart, and Star indices\n  - **Movement:** Quartz\n  - **Functions:** Date, Hour, Minute, Second, Moonphase\n\n- **Additional Features:**\n  - **Bezel:** Fixed\n  - **Crown:** Push/Pull\n  - **Crystal:** Scratch-resistant Sapphire\n  - **Water Resistance:** 50 meters / 165 feet\n  - **Origin:** Swiss Made\n  - **Warranty:** 2-year warranty\n\n- **Style and Versatility:**\n  - The GUCCI G-Timeless YA1264045 is a versatile accessory that complements a variety of outfits, from casual to formal.\n  - Its sleek design and moonphase dial make it a standout piece in any watch collection.\n  - Perfect for those who appreciate the blend of fashion and functionality in a luxury timepiece.\n\n- **Authenticity and Quality:**\n  - 100% Authentic GUCCI product\n  - Brand new and complete with manufacturer\u2019s packaging\n  - Guaranteed to be free from defects and covered by a 2-year warranty\n\nThis watch is a testament to GUCCI\u2019s commitment to luxury and elegance, making it a must-have for anyone looking to add a touch of sophistication to their wardrobe."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

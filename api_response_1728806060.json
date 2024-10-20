@@ -1,0 +1,25 @@
+{
+  "id": "6be590d3-9ef8-460d-945b-438d023a144b",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728806060,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 394,
+    "total_tokens": 541
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Off The Grid Shoulder Bag\n**Subtitle (Sottotitolo):** Stylish and Versatile ECONYL Nylon Bag with Leather Trims\n**Short Description (Breve Descrizione):** The GUCCI Off The Grid Shoulder Bag, style number 625850 H9HAN 1000, is a sleek and versatile accessory crafted from ECONYL nylon and adorned with leather trims. This bag features an allover double G pattern and a logo patch to the front, making it a stylish addition to any outfit. Its adjustable and detachable shoulder strap ensures comfortable wearability.\n\n**Description (Descrizione):**\n\n- **Material:** Crafted from ECONYL nylon, a sustainable and durable material, and finished with high-quality leather trims.\n- **Design:** The bag features an allover double G pattern, a signature GUCCI motif, and a logo patch to the front for a touch of luxury.\n- **Functionality:**\n  - **Exterior:** Equipped with 1 zip pocket for secure storage.\n  - **Interior:** Includes 1 phone case that can fit a cell phone up to 3.1\u201dW x 6.6\u201dH x .4\u201dD.\n- **Handles and Straps:**\n  - **Leather Top Handles:** With a 2\u201d drop for comfortable hand carry.\n  - **Detachable and Adjustable Shoulder Strap:** With a 19.7\u201d drop for versatile wearability.\n- **Closure:** Secure zipper closure to protect your belongings.\n- **Dimensions:** 6.3\u201dW x 8.7\u201dH x 3.4\u201dD, weighing 1.3lbs.\n- **Hardware:** Palladium-toned metal hardware adds a touch of sophistication.\n- **Style:** Perfect for everyday use, this bag is both stylish and practical, making it a great addition to any wardrobe."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "00d0ae7b-d6b2-47dc-9619-5c7444eef414",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729081783,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 451,
+    "total_tokens": 603
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Alexander McQueen 202401 MCQUE AL09 Luxury Sneakers\n**Subtitle (Sottotitolo):** Elevate Your Style with Oversized Elegance\n**Short Description (Breve Descrizione):** Experience the epitome of luxury footwear with Alexander McQueen's 202401 MCQUE AL09 sneakers. Crafted with meticulous attention to detail, these oversized sneakers blend contemporary style with timeless sophistication. Perfect for making a statement, they are designed to elevate any outfit.\n\n**Description (Descrizione):**\n\n- **Craftsmanship:** The 202401 MCQUE AL09 sneakers are a testament to Alexander McQueen's commitment to exceptional craftsmanship. Each pair is meticulously crafted to ensure a flawless blend of comfort and style.\n- **Design:** Inspired by the brand's iconic aesthetic, these sneakers feature an oversized silhouette that is both bold and elegant. The sleek design elements and precise detailing make them a standout piece in any wardrobe.\n- **Materials:** Made from high-quality materials, these sneakers offer durability and a luxurious feel. The carefully selected materials ensure that the shoes maintain their shape and appearance over time.\n- **Size Information:** Available in size 41, these sneakers are designed to fit comfortably while maintaining their stylish oversized look.\n- **Style Versatility:** Whether you're dressing up or dressing down, the 202401 MCQUE AL09 sneakers are versatile enough to complement a variety of outfits. Pair them with casual jeans for a relaxed look or with a suit for a more formal occasion.\n- **Brand Heritage:** As part of the Alexander McQueen collection, these sneakers embody the brand's legacy of pushing boundaries in fashion. They are a perfect choice for those who appreciate luxury and want to make a statement with their footwear.\n- **Additional Features:**\n  - **Free Express Shipping:** Enjoy complimentary express shipping on your order, ensuring that your new sneakers arrive quickly and efficiently.\n  - **Free Returns:** If you need to return your shoes, take advantage of free returns via courier collection for added convenience.\n  - **Quality Guarantee:** Each pair of Alexander McQueen shoes is backed by a commitment to quality, ensuring that you receive a product that meets the highest standards of luxury footwear."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

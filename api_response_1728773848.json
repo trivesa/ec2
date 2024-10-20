@@ -1,0 +1,25 @@
+{
+  "id": "f7f5d423-5832-435f-9a7d-45c63c536e09",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728773848,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 406,
+    "total_tokens": 557
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High 'Black Demetra Red'\n**Subtitle (Sottotitolo):** Elevate Your Street Style with Luxury and Sport-Inspired Elements\n**Short Description (Breve Descrizione):** The Gucci Basket High 'Black Demetra Red' combines luxury with sport-inspired elements, featuring a striking design that elevates street style. With its unique colorway and high-quality materials, this shoe is perfect for those who seek both comfort and style. Available in size 46.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The Gucci Basket High 'Black Demetra Red' boasts a sleek and modern design, blending black, demetra red, and beige tones to create a visually striking effect.\n  - Crafted with high-quality materials, these shoes ensure durability and comfort.\n\n- **Colorway:**\n  - The shoe features a black demetra/beige/ebony colorway, adding a touch of sophistication to any outfit.\n  - The demetra red accents provide a bold and eye-catching contrast.\n\n- **Style and Versatility:**\n  - Perfect for both casual and formal occasions, these shoes can easily be paired with a variety of outfits.\n  - The sport-inspired elements make them ideal for everyday wear, while the luxury touches elevate them to a more refined level.\n\n- **Product Details:**\n  - Brand: Gucci\n  - Product Code: 673077-2SHG0-1066\n  - Size: 46\n  - Main Color: Black\n  - Colorway: Black Demetra/Beige/Ebony\n\n- **Additional Features:**\n  - The Gucci Basket High 'Black Demetra Red' is designed to provide both comfort and style, making it a versatile addition to any shoe collection.\n  - The combination of luxury and sport-inspired elements makes this shoe a standout piece in the Gucci collection."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

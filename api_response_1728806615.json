@@ -1,0 +1,25 @@
+{
+  "id": "7272af9b-214e-4c4c-8009-6847680741f3",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728806615,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 365,
+    "total_tokens": 512
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Off The Grid GG Messenger Bag 643858 H9HKN 7560\n**Subtitle (Sottotitolo):** Sustainable Luxury in a Versatile Design\n**Short Description (Breve Descrizione):** Embrace eco-friendly luxury with the GUCCI Off The Grid GG Messenger Bag, crafted from ECONYL GG nylon and adorned with recycled polyester ribbons and palladium-colored hardware. This versatile bag is perfect for daily use, combining style and sustainability. Its unisex design makes it suitable for both men and women.\n\n**Description (Descrizione):**\n\n- **Material and Construction:**\n  - Made from ECONYL GG nylon, a sustainable and eco-friendly material.\n  - Features leather details for added durability and luxury.\n  - Includes recycled polyester ribbons and drawstring for a sustainable touch.\n  - Palladium-colored hardware adds a touch of sophistication.\n\n- **Design Elements:**\n  - Black ribbon trim adds a sleek and modern aesthetic.\n  - Unisex design makes it versatile for both men and women.\n  - Classic messenger bag style with a contemporary twist.\n\n- **Size Information:**\n  - Please note that specific size dimensions are not provided in the available information. For accurate size details, it is recommended to consult the official GUCCI website or contact a GUCCI retailer.\n\n- **Additional Features:**\n  - Part of the Off The Grid collection, emphasizing sustainability and eco-friendliness.\n  - Ideal for daily use, travel, or as a stylish accessory.\n  - The bag's durable construction ensures long-lasting use.\n\nThis GUCCI Off The Grid GG Messenger Bag 643858 H9HKN 7560 is a testament to GUCCI's commitment to sustainable luxury, combining eco-friendly materials with timeless design."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

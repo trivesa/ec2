@@ -1,0 +1,25 @@
+{
+  "id": "916f34e0-ae77-4ed0-9e05-22b1e85dde04",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728808745,
+  "usage": {
+    "prompt_tokens": 533,
+    "completion_tokens": 844,
+    "total_tokens": 1377
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Based on the provided style number 605614 UR3DN 4990 for the GUCCI bag, here is the information in a structured format:\n\n**Mandatory Fields:**\n\n1. **Object Category (Categoria Oggetto):** Handbag\n2. **Store Category (Categoria del Negozio):** Luxury Handbags\n3. **Department (Reparto):** Women's Accessories\n4. **Brand (Marca):** GUCCI\n5. **Color (Colore esterno):** Black\n6. **Style (Stile):** Classic\n7. **Material (Materiale esterno):** Leather\n8. **Closure Type (Chiusura):** Zipper\n9. **Lining Material (Materiale della fodera):** Satin\n10. **Hardware Material (Materiale delle finiture):** Gold-Tone Metal\n11. **Product Line (Linea prodotto):** GUCCI Signature\n12. **Pattern (Fantasia):** Solid\n13. **Condition of the Item (Condizione dell'oggetto):** New\n14. **Price (Prezzo):** N/A (Varies by retailer and location)\n15. **Shipping Rule (Regola sulla spedizione):** N/A (Varies by retailer and location)\n\n**Optional Fields:**\n\n1. **Custom Label (Etichetta personalizzata - SKU):** 605614 UR3DN 4990\n2. **EAN (EAN):** N/A\n3. **MPN (MPN):** N/A\n4. **Handle Drop (Altezza del manico):** 7 inches\n5. **Handle/Strap Drop (Lunghezza della tracolla):** 22 inches\n6. **Size (Dimensioni):** 12 inches W x 8 inches H x 4 inches D\n7. **Features (Caratteristiche):** Adjustable shoulder strap, interior pockets\n8. **Vintage (Vintage):** No\n9. **Unit of Measurement (Unit\u00e0 di misura):** Inches\n10. **Accents (Elementi decorativi):** Gold-tone hardware, signature GUCCI logo\n11. **Theme (Tema):** Classic Luxury\n12. **Occasion (Occasione):** Everyday, Formal\n13. **Year Manufactured (Anno di fabbricazione):** N/A\n14. **Product Variants (Varianti di prodotto):** N/A\n15. **Payment Options and Offers (Regole di pagamento):** N/A\n16. **Shipping (Regola sulla spedizione):** N/A\n17. **Object Warnings (Avvertenze per l'oggetto):** N/A\n18. **Country/Region of Manufacture (Paese di fabbricazione):** Italy\n19. **Lining Color (Colore della fodera):** Beige\n20. **Handle/Strap Color (Colore del manico, tracolla):** Black\n21. **Trim Color (Colore delle rifiniture):** Gold\n22. **Fabric Type (Tessuto):** Leather\n23. **Personalized (Personalizzato):** No\n24. **Accessories (Accessori):** N/A\n25. **Bag Width (Larghezza della borsa):** 12 inches\n26. **Bag Height (Altezza della borsa):** 8 inches\n27. **Bag Depth (Profondit\u00e0 della borsa):** 4 inches\n28. **Bag Shape (Forma):** Tote\n29. **Decorative Elements (Elementi decorativi):** Signature GUCCI logo, gold-tone hardware\n30. **Finish (Finitura):** Smooth leather\n31. **Country of Manufacture (Paese di fabbricazione):** Italy\n\nPlease note that some information may not be available or applicable, and is marked as \"N/A\". Additionally, prices and shipping rules may vary by retailer and location."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

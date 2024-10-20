@@ -1,0 +1,25 @@
+{
+  "id": "033ca4e0-50ba-47f0-93f8-c27828727e32",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728798902,
+  "usage": {
+    "prompt_tokens": 141,
+    "completion_tokens": 460,
+    "total_tokens": 601
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI G-Timeless YA1264077 Unisex Watch\n**Subtitle (Sottotitolo):** Elegant Brown Stripe Motif with Stainless Steel and Leather\n**Short Description (Breve Descrizione):** The GUCCI G-Timeless YA1264077 is a sophisticated unisex watch featuring a brown stripe motif dial, stainless steel case, and a brown leather strap. This watch combines elegance with durability, perfect for everyday wear. Its classic design and high-quality materials make it a timeless accessory.\n\n**Description (Descrizione):**\n\n- **Case and Movement:**\n  - **Case Material:** Stainless Steel\n  - **Case Size:** 38 mm\n  - **Case Thickness:** 9 mm\n  - **Case Shape:** Round\n  - **Movement:** Quartz\n  - **Case Back:** Solid\n\n- **Dial and Hands:**\n  - **Dial Color:** Brown with Stripe Motif\n  - **Dial Type:** Analog\n  - **Hands:** Yellow Gold-tone\n  - **Second Markers:** Pyramid markers at the 3, 6, and 9 o'clock positions\n\n- **Band and Clasp:**\n  - **Band Material:** Leather\n  - **Band Type:** Strap\n  - **Band Color:** Brown with Stripe Pattern\n  - **Band Width:** 19 mm\n  - **Clasp:** Tang\n\n- **Additional Features:**\n  - **Bezel:** Fixed Yellow Gold PVD\n  - **Crown:** Pull/Push\n  - **Crystal:** Scratch Resistant Sapphire\n  - **Water Resistance:** 50 meters / 165 feet\n  - **Functions:** Hour, Minute\n  - **Warranty:** 2-Year International Warranty\n  - **Origin:** Swiss Made\n\n- **Style and Versatility:**\n  - **Gender:** Unisex\n  - **Series:** G-Timeless\n  - **Style Number:** YA1264077\n  - **Perfect for:** Everyday wear, formal occasions, and as a stylish accessory.\n\nThis GUCCI G-Timeless YA1264077 watch is a blend of classic design and modern functionality, making it a versatile and elegant choice for any occasion."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

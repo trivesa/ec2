@@ -1,0 +1,25 @@
+{
+  "id": "90d39ba2-c861-4f58-ba7f-a9d0c9451cd1",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728816179,
+  "usage": {
+    "prompt_tokens": 148,
+    "completion_tokens": 406,
+    "total_tokens": 554
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Tennis 1977 GG Logo Black Multi Women's Shoes\n**Subtitle (Sottotitolo):** Elegant and Bold Sneakers with Iconic GG Pattern\n**Short Description (Breve Descrizione):** The Gucci Tennis 1977 GG Logo Black Multi women's shoes offer a stylish blend of classic and contemporary design. Featuring the iconic GG pattern and a bold mix of denim and red canvas, these shoes are perfect for making a statement. With a size 39 fit, they are ideal for those seeking a comfortable yet fashionable footwear option.\n\n**Description (Descrizione):**\n\n- **Iconic Design:** The Gucci Tennis 1977 GG Logo Black Multi shoes are characterized by the distinctive GG pattern that covers the entire body of the shoe, adding a touch of luxury and sophistication.\n- **Bold and Contemporary Look:** The shoes feature a mix of denim and red canvas, offering a bold and contemporary aesthetic that is sure to turn heads.\n- **Signature Details:** The signature green and red web stripe adds to the shoe's iconic design, making it instantly recognizable as a Gucci product.\n- **Raised Double G Letter Pattern:** The sole of the shoe features a raised double G letter interwoven pattern, adding an extra layer of detail and craftsmanship.\n- **Comfort and Style:** With a size 39 fit, these shoes are designed to provide comfort and style, making them perfect for everyday wear or special occasions.\n- **Versatility:** The Gucci Tennis 1977 GG Logo Black Multi shoes can be paired with a variety of outfits, from casual jeans and t-shirts to more formal dresses and skirts.\n- **Quality and Durability:** As with all Gucci products, these shoes are crafted with high-quality materials and attention to detail, ensuring they will last for years to come.\n- **Authenticity:** The shoes come with the official Gucci style number 606110 UN320 1291, guaranteeing their authenticity and exclusivity."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

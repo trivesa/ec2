@@ -1,0 +1,25 @@
+{
+  "id": "19ffb7c0-27ca-492d-abc2-a5d2bf190796",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728796010,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 384,
+    "total_tokens": 535
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low 'White Demetra Red' Sneakers\n**Subtitle (Sottotitolo):** Elegant Sportswear with Sustainable Materials\n**Short Description (Breve Descrizione):** The Gucci Basket Low 'White Demetra Red' sneakers blend sporty elegance with eco-friendly innovation, featuring Demetra, a sustainable material derived from renewable and bio-based sources. With a mix of white and red, these shoes offer a stylish and environmentally conscious choice. Perfect for casual wear with a touch of sophistication.\n\n**Description (Descrizione):**\n\n- **Inspiration:** Inspired by the basketball shoes of the 90s, the Gucci Basket Low 'White Demetra Red' sneakers bring a modern twist to classic sportswear.\n- **Sustainable Material:** Made primarily from Demetra, a sustainable material that uses a process comparable to tanning techniques, making it soft and malleable. This eco-friendly material is derived from sustainable, renewable, and bio-based sources that are free of animal components.\n- **Design Elements:**\n  - **Color Scheme:** A striking combination of white and red, with a slightly worn effect.\n  - **Signature Details:** Rubber interlocking double G on the sides, adding a touch of Gucci's signature style.\n  - **Sole:** Rubber sole for durability and comfort.\n- **Additional Features:**\n  - **Size:** Available in size 42.\n  - **Packaging:** Includes box and dust bag.\n  - **Production Time:** 3-5 working days for production.\n- **Quality Assurance:** This product is of the best quality, ensuring a high standard of craftsmanship and materials.\n- **Style Number:** 697882 2SHJ0 9090\n- **Origin:** Made in Italy, reflecting Gucci's commitment to quality and craftsmanship."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

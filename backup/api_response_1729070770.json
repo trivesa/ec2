@@ -1,0 +1,25 @@
+{
+  "id": "aef2d11f-82e2-42c5-bb41-a297378056d8",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729070770,
+  "usage": {
+    "prompt_tokens": 607,
+    "completion_tokens": 733,
+    "total_tokens": 1340
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Alexander McQueen Oversized Sneaker 202401 MCQUE AL09\n**Subtitle (Sottotitolo):** Luxury Men's Sneaker with Distinctive Oversized Design\n**Short Description (Breve Descrizione):** Experience the avant-garde style of Alexander McQueen with these oversized sneakers, featuring a bold, chunky sole and sleek, luxurious leather upper.\n**Description (Descrizione):** Crafted with meticulous attention to detail, these Alexander McQueen oversized sneakers embody the brand's commitment to avant-garde design and exceptional craftsmanship. The chunky sole provides a bold, statement-making base, while the luxurious leather upper offers a sleek, sophisticated finish. The oversized silhouette is both modern and daring, making these sneakers a standout piece in any wardrobe. Perfect for those who appreciate high-end fashion and are not afraid to make a statement.\n\n**Object Category (Categoria Oggetto):** Shoes\n**Store Category (Categoria del Negozio):** Men's Shoes\n**Brand (Marca):** Alexander McQueen\n**Cut (Taglia):** 41\n**Department (Reparto):** Men's\n**Type (Tipo):** Sneakers\n**Style (Stile):** Oversized\n**Condition of the Item (Condizione dell'oggetto):** New\n**Price (Prezzo):** N/A (Varies by retailer)\n**Shipping Rule (Regola sulla spedizione):** Complimentary Express Shipping and Returns\n**MPN (MPN):** 202401 MCQUE AL09\n**Custom Label (Etichetta personalizzata - SKU):** 202401 MCQUE AL09\n**EAN (EAN):** N/A\n**Material (Materiale):** Leather\n**Color (Colore):** N/A (Varies by model)\n**Tissue (Tessuto):** Leather\n**Size Type (Tipo di taglia):** Standard\n**Fit (Vestibilit\u00e0):** True to Size\n**Sleeve Length (Lunghezza della manica):** N/A\n**Unit of Measurement (Unit\u00e0 di misura):** N/A\n**Character (Personaggio):** N/A\n**Season (Stagione):** N/A\n**Vintage (Vintage):** No\n**Neckline (Scollatura):** N/A\n**Theme (Tema):** Luxury Fashion\n**Activity (Attivit\u00e0):** Casual Wear\n**Decorative Elements (Elementi decorativi):** Embossed Logo\n**Characteristics (Caratteristiche):** Oversized Silhouette, Chunky Sole\n**Occasion (Occasione):** Everyday Wear\n**Knitting Style (Stile lavorazione a maglia):** N/A\n**Graphic Printing (Stampa grafica):** N/A\n**Garment Care (Cura dell'indumento):** N/A\n**Country of Manufacture (Paese di fabbricazione):** Italy\n**Fabric Type (Tipo di tessuto):** Leather\n**Personalized (Personalizzato):** No\n**Year Manufactured (Anno di fabbricazione):** N/A\n**Handmade (Fatto a mano):** No\n**Pattern (Fantasia):** N/A\n**Closure Type (Tipo di chiusura):** Lace-Up\n**Accents (Dettagli decorativi):** Silver-Tone Studs\n**Product Line (Linea di prodotto):** Alexander McQueen Men's Shoes"
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "dfd66c4a-38f5-40ce-a0d3-86af52a5f36c",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728827592,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 376,
+    "total_tokens": 528
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton 'Mouth Print' Sneakers\n**Subtitle (Sottotitolo):** Iconic Luxury with a Bold Twist\n**Short Description (Breve Descrizione):** Embodying the essence of '90s hip-hop culture, the Gucci Rhyton 'Mouth Print' sneakers are a bold statement piece. Crafted with Italian handcrafted leather, these shoes feature a classic off-white silhouette with a striking mouth print design. Perfect for those who crave a mix of luxury and edginess.\n\n**Description (Descrizione):**\n\n- **Style Number:** 552093 A9L00 9522\n- **Size:** 34.5\n- **Key Features:**\n  - **Classic Silhouette:** Inspired by the '90s hip-hop scene, these sneakers offer a timeless design that blends sporty elegance with a touch of nostalgia.\n  - **Italian Handcrafted Leather:** Ensuring durability and luxury, the off-white leather construction adds a sophisticated touch to the overall design.\n  - **Mouth Print Design:** A bold and eye-catching feature, the mouth print motif adds a playful and daring element to these high-end sneakers.\n  - **Quality and Craftsmanship:** True to Gucci's heritage, these shoes are meticulously crafted to provide both comfort and style.\n  - **Versatility:** Whether you're aiming for a casual look or a more dressed-up ensemble, the Gucci Rhyton 'Mouth Print' sneakers are versatile enough to complement a variety of outfits.\n  - **Brand Authenticity:** Guaranteed authenticity ensures that you are purchasing a genuine Gucci product, reflecting the brand's commitment to excellence and luxury.\n  - **Return Policy:** Various return policies are available depending on the retailer, offering flexibility and peace of mind with your purchase."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

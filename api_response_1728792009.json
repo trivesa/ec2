@@ -1,0 +1,25 @@
+{
+  "id": "a370d5d9-7e5a-4f4a-aac9-fa4b69faa4b8",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728792009,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 403,
+    "total_tokens": 552
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Thong Sandal 659229 J8710 1000\n**Subtitle (Sottotitolo):** Elegant Black Rubber Sandals with Iconic GG Logo\n**Short Description (Breve Descrizione):** Elevate your style with these sleek Gucci Thong Sandals, featuring a versatile black color and the iconic GG logo. Crafted from rubber, these sandals offer a comfortable fit and a sophisticated look. Perfect for pairing with any outfit.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - These Gucci Thong Sandals are made from high-quality rubber, ensuring durability and comfort.\n  - The sleek black color makes them versatile and easy to pair with any outfit.\n  - The iconic GG logo is prominently featured on the strap, adding a touch of luxury and sophistication.\n\n- **Key Features:**\n  - Chevron patterned rubber insole for added grip and comfort.\n  - Tonal GG logo on the strap for a stylish and recognizable touch.\n  - Rubber outsole for durability and traction.\n  - Fits true to size, ensuring a comfortable fit for size 40.\n\n- **Style and Versatility:**\n  - Perfect for casual and formal occasions alike, these sandals can be dressed up or down.\n  - The black color is versatile and can be paired with a variety of outfits, from shorts to trousers.\n  - The iconic GG logo adds a touch of luxury, making these sandals a statement piece.\n\n- **Additional Information:**\n  - Style Number: 659229 J8710 1000\n  - Size: 40\n  - Material: Rubber\n  - Color: Black\n  - Logo: GG logo on the strap\n\nThese Gucci Thong Sandals are a must-have for anyone looking to add a touch of luxury and sophistication to their wardrobe. With their sleek design, versatile color, and iconic GG logo, they are perfect for any occasion."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

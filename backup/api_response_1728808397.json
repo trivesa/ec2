@@ -1,0 +1,25 @@
+{
+  "id": "deff4f1a-fa7c-49f2-8c07-27bf95f32e90",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728808397,
+  "usage": {
+    "prompt_tokens": 504,
+    "completion_tokens": 894,
+    "total_tokens": 1398
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Given the style number 605614 22DAN 8303, specific details about this product are not provided in the search results. However, based on the structure of Gucci product codes and general information about Gucci bags, here is a structured format with available and inferred information. Note that specific details like color, material, and pattern cannot be accurately determined without direct access to the product or its official description.\n\n### Mandatory Fields\n1. **Object Category (Categoria Oggetto):** Handbag\n2. **Store Category (Categoria del Negozio):** Children's Bags\n3. **Department (Reparto):** Children's Accessories\n4. **Brand (Marca):** Gucci\n5. **Color (Colore esterno):** N/A\n6. **Style (Stile):** N/A\n7. **Material (Materiale esterno):** N/A\n8. **Closure Type (Chiusura):** N/A\n9. **Lining Material (Materiale della fodera):** N/A\n10. **Hardware Material (Materiale delle finiture):** Metal (based on general Gucci bag features)\n11. **Product Line (Linea prodotto):** Children's Bags\n12. **Pattern (Fantasia):** N/A\n13. **Condition of the Item (Condizione dell'oggetto):** New (assuming it's a new product)\n14. **Price (Prezzo):** N/A\n15. **Shipping Rule (Regola sulla spedizione):** N/A\n\n### Optional Fields\n1. **Custom Label (Etichetta personalizzata - SKU):** 605614 22DAN 8303\n2. **EAN (EAN):** N/A\n3. **MPN (MPN):** N/A\n4. **Handle Drop (Altezza del manico):** N/A\n5. **Handle/Strap Drop (Lunghezza della tracolla):** N/A\n6. **Size (Dimensioni):** N/A\n7. **Features (Caratteristiche):** N/A\n8. **Vintage (Vintage):** No\n9. **Unit of Measurement (Unit\u00e0 di misura):** N/A\n10. **Accents (Elementi decorativi):** N/A\n11. **Theme (Tema):** N/A\n12. **Occasion (Occasione):** N/A\n13. **Year Manufactured (Anno di fabbricazione):** N/A\n14. **Product Variants (Varianti di prodotto):** N/A\n15. **Payment Options and Offers (Regole di pagamento):** N/A\n16. **Shipping (Regola sulla spedizione):** N/A\n17. **Object Warnings (Avvertenze per l'oggetto):** N/A\n18. **Country/Region of Manufacture (Paese di fabbricazione):** N/A\n19. **Lining Color (Colore della fodera):** N/A\n20. **Handle/Strap Color (Colore del manico, tracolla):** N/A\n21. **Trim Color (Colore delle rifiniture):** N/A\n22. **Fabric Type (Tessuto):** N/A\n23. **Personalized (Personalizzato):** No\n24. **Accessories (Accessori):** N/A\n25. **Bag Width (Larghezza della borsa):** N/A\n26. **Bag Height (Altezza della borsa):** N/A\n27. **Bag Depth (Profondit\u00e0 della borsa):** N/A\n28. **Bag Shape (Forma):** N/A\n29. **Decorative Elements (Elementi decorativi):** N/A\n30. **Finish (Finitura):** N/A\n31. **Country of Manufacture (Paese di fabbricazione):** N/A\n\nPlease note that specific details about the product with style number 605614 22DAN 8303 cannot be provided without direct access to the product's official description or specifications. The information above is based on general knowledge about Gucci bags and may not accurately reflect the specific product."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

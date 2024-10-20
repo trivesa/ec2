@@ -1,0 +1,25 @@
+{
+  "id": "0d446d44-9070-43ee-8516-be74c2a9c466",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728806659,
+  "usage": {
+    "prompt_tokens": 504,
+    "completion_tokens": 815,
+    "total_tokens": 1319
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Based on the provided search results, here is the information for the GUCCI bag with style number 643858 H9HKN 7560:\n\n**Mandatory Fields:**\n\n1. **Object Category (Categoria Oggetto):** Handbag\n2. **Store Category (Categoria del Negozio):** Luxury Handbags\n3. **Department (Reparto):** Accessories\n4. **Brand (Marca):** Gucci\n5. **Color (Colore esterno):** Black\n6. **Style (Stile):** Messenger Bag\n7. **Material (Materiale esterno):** ECONYL GG nylon\n8. **Closure Type (Chiusura):** Drawstring\n9. **Lining Material (Materiale della fodera):** N/A\n10. **Hardware Material (Materiale delle finiture):** Palladium\n11. **Product Line (Linea prodotto):** Off The Grid\n12. **Pattern (Fantasia):** N/A\n13. **Condition of the Item (Condizione dell'oggetto):** New\n14. **Price (Prezzo):** $550.00\n15. **Shipping Rule (Regola sulla spedizione):** N/A\n\n**Optional Fields:**\n\n1. **Custom Label (Etichetta personalizzata - SKU):** 643858 H9HKN 7560\n2. **EAN (EAN):** N/A\n3. **MPN (MPN):** N/A\n4. **Handle Drop (Altezza del manico):** N/A\n5. **Handle/Strap Drop (Lunghezza della tracolla):** N/A\n6. **Size (Dimensioni):** N/A\n7. **Features (Caratteristiche):** Black ribbon trim, leather details, recycled polyester ribbons\n8. **Vintage (Vintage):** No\n9. **Unit of Measurement (Unit\u00e0 di misura):** N/A\n10. **Accents (Elementi decorativi):** Leather details, palladium hardware\n11. **Theme (Tema):** N/A\n12. **Occasion (Occasione):** N/A\n13. **Year Manufactured (Anno di fabbricazione):** N/A\n14. **Product Variants (Varianti di prodotto):** N/A\n15. **Payment Options and Offers (Regole di pagamento):** N/A\n16. **Shipping (Regola sulla spedizione):** N/A\n17. **Object Warnings (Avvertenze per l'oggetto):** N/A\n18. **Country/Region of Manufacture (Paese di fabbricazione):** N/A\n19. **Lining Color (Colore della fodera):** N/A\n20. **Handle/Strap Color (Colore del manico, tracolla):** N/A\n21. **Trim Color (Colore delle rifiniture):** Black\n22. **Fabric Type (Tessuto):** ECONYL GG nylon\n23. **Personalized (Personalizzato):** No\n24. **Accessories (Accessori):** N/A\n25. **Bag Width (Larghezza della borsa):** N/A\n26. **Bag Height (Altezza della borsa):** N/A\n27. **Bag Depth (Profondit\u00e0 della borsa):** N/A\n28. **Bag Shape (Forma):** Messenger Bag\n29. **Decorative Elements (Elementi decorativi):** Leather details, palladium hardware\n30. **Finish (Finitura):** N/A\n31. **Country of Manufacture (Paese di fabbricazione):** N/A\n\n**Note:** Some fields are marked as N/A because the information is not available in the provided search results."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

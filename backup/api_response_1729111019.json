@@ -1,0 +1,25 @@
+{
+  "id": "9e722782-1442-4836-93f7-f43f69a0b569",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729111019,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 417,
+    "total_tokens": 570
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Bottega Veneta Nappa Maxi Intrecciato Lido Mule Sandals 639943VBP302019\n**Subtitle (Sottotitolo):** Exquisite Hand-Woven Nappa Leather Mule Sandals\n**Short Description (Breve Descrizione):** Elevate your style with these stunning Bottega Veneta Nappa Maxi Intrecciato Lido Mule Sandals, featuring intricate hand-woven nappa leather and a sleek, sophisticated design. Perfect for adding a touch of luxury to any outfit. Crafted in Italy, these sandals embody the brand's commitment to craftsmanship and elegance.\n\n**Description (Descrizione):**\n- **Craftsmanship**: These sandals are meticulously crafted with Bottega Veneta's signature Intrecciato technique, showcasing the brand's dedication to artisanal craftsmanship.\n- **Material**: Made from high-quality nappa leather, ensuring durability and a luxurious feel.\n- **Design**: The Nappa Maxi Intrecciato Lido Mule Sandals feature a sleek, minimalist design that adds a sophisticated touch to any outfit.\n- **Comfort**: Designed for comfort, these sandals are perfect for daily wear, whether you're dressing up or keeping it casual.\n- **Size**: Available in size 36.5, ensuring a precise fit.\n- **Brand Heritage**: Bottega Veneta, founded in 1966, is renowned for its artisanal leather goods and innovative designs, making these sandals a testament to the brand's legacy.\n- **Versatility**: These sandals are versatile and can be paired with a variety of outfits, from formal events to casual gatherings.\n- **Quality**: Each pair is carefully crafted in Italy, reflecting the brand's commitment to quality and craftsmanship.\n- **Style Number**: 639943VBP302019, a unique identifier for this specific model.\n- **Luxury Appeal**: The Nappa Maxi Intrecciato Lido Mule Sandals embody the essence of luxury footwear, combining elegance with comfort and durability."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

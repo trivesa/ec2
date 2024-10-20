@@ -1,0 +1,25 @@
+{
+  "id": "be3b184a-3429-482c-a60d-d96fe8a5a584",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728779254,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 457,
+    "total_tokens": 608
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low 'White Demetra Green' - 698785 2SHG0 9089\n**Subtitle (Sottotitolo):** Elegant and Versatile Sneakers for the Modern Gentleman\n**Short Description (Breve Descrizione):** The Gucci Basket Low 'White Demetra Green' is a sophisticated and stylish sneaker that combines classic design with modern flair. Crafted in Italy, these shoes feature a white and green color scheme and are made from high-quality materials. Perfect for casual yet stylish occasions.\n\n**Description (Descrizione):**\n\n- **Design and Craftsmanship:** The Gucci Basket Low 'White Demetra Green' is a testament to Gucci's commitment to excellence in design and craftsmanship. Made in Italy, these sneakers are crafted with meticulous attention to detail, ensuring a premium quality that is both durable and visually appealing.\n\n- **Materials:** The upper is made from other textile materials, providing a comfortable and breathable fit, while the sole is made from elastic materials (EL), ensuring flexibility and durability.\n\n- **Color Scheme:** The shoes feature a striking white and green color scheme, with the demetra green accents adding a touch of elegance and sophistication. The color code 9089 perfectly captures the essence of Gucci's iconic style.\n\n- **Size Information:** Available in size 44, these sneakers are designed to fit comfortably and securely, making them ideal for daily wear.\n\n- **Versatility:** Whether you're looking for a stylish addition to your casual wardrobe or a sophisticated accessory for more formal occasions, the Gucci Basket Low 'White Demetra Green' is versatile enough to complement any outfit.\n\n- **Retail Information:** The unit retail price for these shoes is \u20ac790.00, reflecting their high-quality materials and craftsmanship.\n\n- **Additional Details:**\n  - **Product Code:** 698785-2SHG0\n  - **Color Code:** 9089\n  - **Composition:** Upper: Other Textile - Sole: EL\n  - **Made in:** Italy\n\nThese Gucci Basket Low 'White Demetra Green' sneakers are a must-have for anyone who appreciates luxury, style, and exceptional craftsmanship."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "8ab99b94-c24f-4193-8ffc-37bffd4b1b7e",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728798650,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 410,
+    "total_tokens": 557
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Silk and Wool Scarf 281942 3G704 6978\n**Subtitle (Sottotitolo):** Luxurious Pink Scarf with Iconic GUCCI Design\n**Short Description (Breve Descrizione):** This GUCCI scarf, style number 281942 3G704 6978, is a stunning blend of silk and wool, featuring a vibrant pink hue and the brand's signature design. Perfect for adding a touch of luxury to any outfit, this scarf is both stylish and versatile. Its high-quality materials ensure durability and comfort.\n\n**Description (Descrizione):**\n\n- **Material:** Crafted from a luxurious blend of silk and wool, this scarf offers a soft, comfortable texture and a sophisticated look.\n- **Size:** The scarf measures 140x140 cm, providing ample coverage and versatility for styling.\n- **Design:** The vibrant pink color and iconic GUCCI pattern make this scarf a standout accessory that can elevate any outfit.\n- **Quality:** GUCCI's commitment to excellence is evident in the meticulous craftsmanship and high-quality materials used in this scarf.\n- **Versatility:** Whether you're dressing up for a special occasion or adding a touch of elegance to a casual outfit, this scarf is perfect for any occasion.\n- **Authenticity:** This scarf is a genuine GUCCI product, ensuring that you are purchasing a high-quality, authentic item.\n- **Care Instructions:** To maintain the scarf's luxurious texture and vibrant color, it is recommended to follow the care instructions provided by GUCCI.\n- **Packaging:** The scarf comes with its original tags and packaging, making it a perfect gift or a special treat for yourself.\n- **Return Policy:** Please note that returns are accepted within 14 days, and the buyer is responsible for return shipping costs.\n- **Shipping:** The scarf is shipped from various locations, including Europe and the United States, with estimated delivery times ranging from 3-6 business days depending on the destination."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "ce54a343-a772-43e9-97b0-7228527995f4",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728803016,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 352,
+    "total_tokens": 499
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Microssima Two-Tone Wool Muffler Scarf\n**Subtitle (Sottotitolo):** Luxurious Two-Tone Wool Scarf with Iconic GG Pattern\n**Short Description (Breve Descrizione):** Elevate your style with the GUCCI GG Microssima Two-Tone Wool Muffler Scarf, featuring a sophisticated blend of beige tones and the iconic GG pattern. Crafted from high-quality wool, this scarf offers warmth and elegance. Perfect for adding a touch of luxury to any outfit.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury with the GUCCI GG Microssima Two-Tone Wool Muffler Scarf. This exquisite accessory is designed to make a statement, combining timeless elegance with modern sophistication.\n\n- **Style Number:** 344994 4G200 9279\n- **Material:** 100% Wool\n- **Design:** Two-tone beige color scheme with the iconic GG pattern, adding a touch of sophistication to any outfit.\n- **Size:** 180x40 cm, providing ample warmth and versatility.\n- **Craftsmanship:** High-quality wool construction ensures durability and comfort.\n- **Versatility:** Perfect for dressing up or down, this scarf can be styled in multiple ways to suit any occasion.\n- **Authenticity:** 100% Authentic GUCCI product, ensuring the highest standards of quality and craftsmanship.\n- **Care Instructions:** To maintain the scarf's luxurious feel, it is recommended to dry clean only.\n\nThis GUCCI GG Microssima Two-Tone Wool Muffler Scarf is a must-have accessory for anyone looking to elevate their wardrobe with a touch of luxury and sophistication."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

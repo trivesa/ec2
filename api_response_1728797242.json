@@ -1,0 +1,25 @@
+{
+  "id": "e12f86b5-4218-4718-a561-f2945748299f",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728797242,
+  "usage": {
+    "prompt_tokens": 148,
+    "completion_tokens": 438,
+    "total_tokens": 586
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Supreme Monogram Leather Belt 414516 HUH4V 1099\n**Subtitle (Sottotitolo):** Luxurious Leather Belt with Iconic GG Monogram Buckle\n**Short Description (Breve Descrizione):** Elevate your style with the GUCCI GG Supreme Monogram Leather Belt, featuring a sleek design and the iconic GG monogram buckle. Crafted from high-quality leather, this belt is a testament to GUCCI's commitment to luxury and sophistication. Perfect for adding a touch of elegance to any outfit.\n\n**Description (Descrizione):**\n\n- **Design and Craftsmanship:**\n  - The GUCCI GG Supreme Monogram Leather Belt is meticulously crafted from premium leather, ensuring durability and a luxurious feel.\n  - The belt features a sleek and slim design, making it versatile for both casual and formal occasions.\n\n- **Iconic GG Monogram Buckle:**\n  - The centerpiece of this belt is the iconic GG monogram buckle, a symbol of GUCCI's heritage and style.\n  - The buckle is made from high-quality metal, adding a touch of sophistication and elegance to the overall design.\n\n- **Size Information:**\n  - Please refer to the size chart provided by GUCCI or authorized retailers to ensure the best fit.\n\n- **Additional Features:**\n  - The belt is part of the GG Marmont collection, known for its modern and sophisticated designs.\n  - The GUCCI GG Supreme Monogram Leather Belt is a statement piece that can elevate any outfit, making it a must-have accessory for fashion enthusiasts.\n\n- **Return Policy:**\n  - For purchases made directly from GUCCI, enjoy free 30-day returns.\n  - For purchases from other retailers, return policies may vary; for example, Credomen offers 14-day returns.\n\n- **Authenticity:**\n  - Ensure authenticity by purchasing from GUCCI or authorized retailers to guarantee the quality and legitimacy of the product.\n\nThis belt is a perfect blend of style and luxury, making it an ideal accessory for those who appreciate high-end fashion."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

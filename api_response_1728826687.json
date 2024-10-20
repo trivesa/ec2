@@ -1,0 +1,25 @@
+{
+  "id": "193bdd39-fa1b-4d7b-ae73-8ec8383b0ca9",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728826687,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 341,
+    "total_tokens": 490
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Padded Web Slide Sandals\n**Subtitle (Sottotitolo):** Green and Red Nylon Slide Sandals for Women\n**Short Description (Breve Descrizione):** Elevate your summer style with Gucci's Padded Web Slide Sandals, featuring a vibrant green and red nylon design. Crafted with comfort and luxury in mind, these sandals are perfect for casual yet stylish outings. Available in size 35.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with Gucci's Padded Web Slide Sandals. Here are some key features that make these sandals a must-have:\n\n- **Style Number:** 700320 UFR30 3060\n- **Material:** Durable and stylish green and red nylon, complemented by rubber for added comfort and durability.\n- **Design:** The iconic Gucci web motif is prominently featured, adding a touch of sophistication and brand heritage.\n- **Comfort:** Padded insoles ensure a comfortable fit, making these sandals ideal for long days out.\n- **Versatility:** Perfect for a variety of occasions, from casual beach days to more formal summer events.\n- **Size:** Available in size 35, ensuring a precise fit for smaller foot sizes.\n- **Brand Authenticity:** Genuine Gucci product, guaranteeing high-quality craftsmanship and attention to detail.\n- **Availability:** Available at various online retailers, including Kickscrew and StockX, though availability may vary.\n\nEmbrace the luxury and style of Gucci with these Padded Web Slide Sandals, designed to make a statement with their bold color scheme and iconic web motif."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

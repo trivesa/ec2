@@ -1,0 +1,25 @@
+{
+  "id": "089b8944-5552-464a-85e7-b6228494eeeb",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728797789,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 337,
+    "total_tokens": 484
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Wool Scarf - 644365 4G718 6468\n**Subtitle (Sottotitolo):** Luxurious Wool Scarf with Iconic GG Pattern\n**Short Description (Breve Descrizione):** Elevate your style with this authentic GUCCI GG Jacquard Wool Scarf, featuring a striking red and navy blue design. Crafted from high-quality wool, this scarf is both stylish and comfortable. Perfect for adding a touch of luxury to any outfit.\n\n**Description (Descrizione):**\n\n- **Material:** Made from 100% wool, ensuring warmth and durability.\n- **Design:** The scarf features the iconic GG jacquard pattern in a vibrant red and navy blue color scheme, adding a sophisticated touch to any ensemble.\n- **Size:** Measures 14\" x 94\" (35 cm x 240 cm), providing ample length for styling versatility.\n- **Style Number:** 644365 4G718 6468, ensuring authenticity and exclusivity.\n- **Brand:** GUCCI, synonymous with luxury and high-end fashion.\n- **Authenticity:** 100% authentic GUCCI product, guaranteeing quality and craftsmanship.\n- **Care Instructions:** To maintain the scarf's quality, it is recommended to dry clean or hand wash in cold water.\n- **Versatility:** Suitable for both casual and formal occasions, making it a versatile accessory for any wardrobe.\n- **Packaging:** Comes with original tags and packaging, ensuring a genuine GUCCI experience.\n- **Warranty:** Covered by the standard GUCCI warranty, providing peace of mind with your purchase."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

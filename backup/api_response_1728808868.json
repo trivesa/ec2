@@ -1,0 +1,25 @@
+{
+  "id": "890d2f3e-691a-46fa-b833-c161d8c7bda8",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728808868,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 435,
+    "total_tokens": 582
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Marmont Super Mini Bag\n**Subtitle (Sottotitolo):** Elegant and Compact Luxury Handbag\n**Short Description (Breve Descrizione):** The GUCCI GG Marmont Super Mini Bag is a sophisticated and versatile accessory, perfect for everyday use. Crafted in white chevron leather, it features the iconic GG logo and a sleek, compact design. Ideal for carrying essentials in style.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The GUCCI GG Marmont Super Mini Bag is made from high-quality white chevron leather, ensuring durability and a luxurious feel.\n  - The bag features the iconic GG logo in silver-toned hardware, adding a touch of elegance and sophistication.\n  - The compact size makes it perfect for carrying small essentials such as a phone, wallet, and keys.\n\n- **Size Information:**\n  - The bag measures approximately 6 inches in width, 4 inches in height, and 2 inches in depth.\n  - The chain strap is adjustable, allowing for a versatile and comfortable fit.\n\n- **Key Features:**\n  - **GG Logo:** The bag features the iconic GG logo in silver-toned hardware, adding a touch of elegance and sophistication.\n  - **Chevron Leather:** The white chevron leather provides a luxurious feel and ensures durability.\n  - **Compact Design:** The super mini size makes it perfect for everyday use, carrying small essentials in style.\n  - **Adjustable Strap:** The chain strap is adjustable, allowing for a versatile and comfortable fit.\n\n- **Additional Details:**\n  - **Style Number:** 476433 DTD5N 9022\n  - **Brand:** GUCCI\n  - **Collection:** GG Marmont\n  - **Color:** White\n  - **Hardware:** Silver-toned\n\nThis GUCCI GG Marmont Super Mini Bag is a must-have accessory for anyone looking to add a touch of luxury to their everyday look. Its compact size, elegant design, and high-quality materials make it perfect for carrying small essentials in style."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

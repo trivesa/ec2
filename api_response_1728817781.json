@@ -1,0 +1,25 @@
+{
+  "id": "5cc7cca9-fd36-4347-8ac9-e29f22fd2190",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728817781,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 391,
+    "total_tokens": 540
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Ace Perforated Interlocking G Women's Shoes\n**Subtitle (Sottotitolo):** Elegant White Leather with Gray Accents, Style 598527 AYO70 9094\n\n**Short Description (Breve Descrizione):**\nExperience the epitome of luxury with Gucci's Ace Perforated Interlocking G women's shoes. Crafted from high-quality white leather, these shoes feature an iconic interlocking double G motif through a floral pattern, complemented by gray leather details on the back. Perfect for those who seek elegance and sophistication.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  \u2022 **Upper Material:** High-quality white leather for a luxurious feel and appearance.\n  \u2022 **Design Elements:** The shoes feature an interlocking double G motif through a floral pattern, adding a touch of sophistication and elegance.\n  \u2022 **Color Accents:** Gray leather details on the back provide a subtle contrast to the white leather.\n\n- **Style and Comfort:**\n  \u2022 **Style Number:** 598527 AYO70 9094\n  \u2022 **Size:** Available in size 38 for a comfortable fit.\n  \u2022 **Perforation:** The shoes include perforations for added breathability and style.\n\n- **Brand Authenticity:**\n  \u2022 **Gucci Branding:** The shoes are authentic Gucci products, ensuring the highest quality and craftsmanship.\n  \u2022 **Quality Assurance:** Each pair is meticulously designed and manufactured to meet Gucci's high standards.\n\n- **Additional Information:**\n  \u2022 **Pricing:** Prices may vary depending on the retailer, ranging from $280.00 to $662.00, and \u20ac312.00 to \u20ac823.00.\n  \u2022 **Availability:** Available in stock at various retailers such as StockX, GOAT, and KicksCrew."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

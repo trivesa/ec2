@@ -1,0 +1,25 @@
+{
+  "id": "b87e5211-bde0-40d9-b0c2-d567ad39ad4f",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728805448,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 446,
+    "total_tokens": 593
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Kids GG Supreme Tote Bag\n**Subtitle (Sottotitolo):** Authentic Luxury Tote Bag in Banana Print Canvas with Leather Details\n**Short Description (Breve Descrizione):** This GUCCI Kids GG Supreme Tote Bag, style number 605614 22DAN 8303, is a vibrant and stylish accessory perfect for young fashion enthusiasts. Crafted with high-quality banana print canvas and complemented by leather details, it embodies the brand's iconic design and exceptional craftsmanship. Ideal for everyday use, it combines functionality with luxury.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The bag features a striking banana print canvas exterior, showcasing the iconic GG Supreme pattern.\n  - Leather details add a touch of sophistication and durability.\n  - The interior is designed with practicality in mind, offering ample space for essentials.\n\n- **Authenticity and Quality:**\n  - The bag includes a serial number tag on a high-quality leather patch inside, ensuring authenticity.\n  - The serial number consists of 10 to 13 digits, with the first set indicating the style number and the second the supplier code.\n  - The standard Gucci logo, featuring two uppercase interlocking 'G's with a fine point at the top and a slightly thicker middle, is consistently and evenly spaced.\n\n- **Hardware and Interior Tag:**\n  - The hardware is made of sturdy, solid metal with 'GUCCI' cleanly engraved, reflecting the brand's commitment to quality.\n  - The interior tag is a rectangular leather patch featuring the brand's trademark, logo, and 'made in Italy' in lowercase letters, all centered and with clear, precise font.\n\n- **Size Information:**\n  - Please refer to the official GUCCI website or authorized retailers for detailed size information and specifications.\n\n- **Additional Features:**\n  - The bag is designed to be both functional and stylish, making it perfect for daily use.\n  - The banana print canvas and leather details ensure durability and longevity.\n  - The bag's design adheres to GUCCI's high standards of quality and precision, making it a valuable addition to any luxury collection."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

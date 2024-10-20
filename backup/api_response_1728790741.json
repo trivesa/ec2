@@ -1,0 +1,25 @@
+{
+  "id": "6cff8b12-1756-4013-b0b5-f54879915144",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728790741,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 368,
+    "total_tokens": 517
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Tennis 1977 'Black Cotton' Sneakers\n**Subtitle (Sottotitolo):** Classic Elegance with a Sporty Twist\n**Short Description (Breve Descrizione):** Embodying the essence of Gucci's timeless style, the Tennis 1977 'Black Cotton' sneakers blend classic elegance with a sporty twist. Crafted with high-quality materials and meticulous attention to detail, these shoes are perfect for those who seek sophistication and comfort. Available in size 40.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the Gucci Tennis 1977 'Black Cotton' sneakers. Here are some key features that make these shoes stand out:\n\n- **Style Number:** 606111 GZO30 1094\n- **Material:** High-quality black cotton with blue and red accents, ensuring a durable and stylish finish.\n- **Design:** Inspired by the classic tennis shoes of the 1970s, these sneakers feature a sleek and minimalist design that exudes elegance and sophistication.\n- **Comfort:** Designed for comfort and versatility, these shoes are perfect for both casual and formal occasions.\n- **Size:** Available in size 40, ensuring a snug and comfortable fit.\n- **Authenticity:** Guaranteed authenticity, ensuring that you are purchasing a genuine Gucci product.\n- **Return Policy:** Various return policies are available depending on the retailer, ranging from 3 to 90 days, providing peace of mind with your purchase.\n\nWhether you're looking to elevate your everyday style or make a statement at a special event, the Gucci Tennis 1977 'Black Cotton' sneakers are the perfect choice. Their timeless design and exceptional quality make them a valuable addition to any shoe collection."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

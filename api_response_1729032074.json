@@ -1,0 +1,25 @@
+{
+  "id": "f7ad2c9a-bb76-4ef2-bc42-ed00066072ec",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729032074,
+  "usage": {
+    "prompt_tokens": 183,
+    "completion_tokens": 336,
+    "total_tokens": 519
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Marmont Thin Belt\n**Subtitle (Sottotitolo):** Luxurious Leather Belt with Iconic Double G Buckle\n**Short Description (Breve Descrizione):** Elevate your style with this sleek GUCCI GG Marmont thin belt, crafted from high-quality leather and adorned with the iconic Double G buckle. Perfect for adding a touch of sophistication to any outfit. New with tags, this belt is available in a versatile size to fit various waistlines.\n\n**Description (Descrizione):**\n\n- **Luxurious Material:** This belt is made from premium leather, ensuring durability and a luxurious feel.\n- **Iconic Design:** The Double G buckle is a hallmark of GUCCI's timeless elegance, adding a sophisticated touch to any ensemble.\n- **Versatile Size:** With a width of 20mm and a maximum length of 200cm, this belt is designed to fit a variety of waist sizes comfortably.\n- **Style Number:** 409417-FAA6B-8048, ensuring authenticity and exclusivity.\n- **New with Tags:** This belt comes in pristine condition, complete with its original tags and packaging.\n- **Perfect Accessory:** Whether you're dressing up for a formal event or adding a chic touch to a casual outfit, this belt is the perfect accessory.\n- **Quality Craftsmanship:** GUCCI's commitment to quality is evident in every detail, from the stitching to the buckle, ensuring a long-lasting and stylish accessory.\n- **Authentic GUCCI:** This belt is a genuine GUCCI product, guaranteeing the highest standards of quality and design."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

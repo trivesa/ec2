@@ -1,0 +1,25 @@
+{
+  "id": "0e948e5e-8103-473c-b213-63837255a459",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728792081,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 444,
+    "total_tokens": 594
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI 510304 CAO0G 4231 - Luxurious Leather Shoes\n**Subtitle (Sottotitolo):** Elevate Your Style with GUCCI's Exquisite Craftsmanship\n**Short Description (Breve Descrizione):** Experience the epitome of luxury with GUCCI's 510304 CAO0G 4231 shoes, featuring a stunning blend of elegance and sophistication. Crafted with high-quality leather, these shoes are designed to make a statement. Available in size 6, they are perfect for those who demand the best.\n\n**Description (Descrizione):**\n\n- **Elegant Design:** The GUCCI 510304 CAO0G 4231 shoes are a masterpiece of Italian craftsmanship, showcasing a sleek and sophisticated design that is sure to turn heads.\n- **Premium Materials:** Made from the finest leather, these shoes exude luxury and durability, ensuring they will remain a staple in your wardrobe for years to come.\n- **Comfort and Fit:** With a focus on comfort and fit, these shoes are designed to provide a seamless wearing experience. The size 6 ensures a snug and comfortable fit for those with smaller feet.\n- **Versatility:** Whether you're attending a formal event or just want to elevate your everyday look, these shoes are versatile enough to complement any outfit.\n- **Iconic Branding:** The GUCCI logo is subtly integrated into the design, adding a touch of authenticity and exclusivity to these already stunning shoes.\n- **Quality and Durability:** GUCCI's commitment to quality is evident in every detail, from the stitching to the finish, ensuring these shoes will withstand the test of time.\n- **Style Statement:** The 510304 CAO0G 4231 shoes are not just footwear; they are a statement piece that reflects your taste for the finer things in life.\n\n**Note:** The provided style number 510304 CAO0G 4231 is actually associated with a handbag, not shoes. The description above is a creative interpretation for a hypothetical shoe product with the same style number. For accurate information, please refer to the official GUCCI website or authorized retailers."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

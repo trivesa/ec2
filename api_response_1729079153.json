@@ -1,0 +1,25 @@
+{
+  "id": "f0efdc4d-3f00-41cd-b8ff-4577ad73e987",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729079153,
+  "usage": {
+    "prompt_tokens": 140,
+    "completion_tokens": 428,
+    "total_tokens": 568
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Vintage Web Plexiglas Skeleton Dial Watch YA143503\n**Subtitle (Sottotitolo):** A Timeless Fusion of Elegance and Innovation\n**Short Description (Breve Descrizione):** The GUCCI YA143503 watch combines vintage charm with modern sophistication, featuring a unique plexiglas skeleton dial and a striking green and red Web bangle. This stylish timepiece is perfect for those who appreciate the blend of classic and contemporary design. With its quartz movement and durable construction, it offers both reliability and style.\n\n**Description (Descrizione):**\n\n- **Case and Dial:**\n  - **Case Size:** 24x40mm, rectangular shape\n  - **Case Material:** Resin plastic with a stainless steel base\n  - **Dial:** Skeleton cut skeleton dial, showcasing the watch's inner mechanics\n  - **Glass:** Mineral, shatter-resistant with an antireflective coating\n\n- **Strap and Closure:**\n  - **Strap Material:** Transparent plexiglas bangle with green and red Web design\n  - **Band Length:** 6.22 inches\n  - **Closure:** Bangle closure on spring bar\n\n- **Movement and Functionality:**\n  - **Movement Type:** Quartz (battery powered)\n  - **Seconds Hand:** Ticking\n  - **Water Protection:** 3 ATM (30 meters)\n  - **Crown:** Screw down crown\n\n- **Additional Features:**\n  - **Bezel:** Yellow gold toned steel, brushed/polished\n  - **Back Case Rear:** Solid\n  - **Warranty:** 2-Year Warranty from authorized retailers\n\n- **Authenticity and Quality:**\n  - **Authenticity:** 100% authentic GUCCI product\n  - **Quality:** High-quality materials and craftsmanship ensure durability and style\n\nThis GUCCI YA143503 watch is a testament to the brand's commitment to innovative design and exceptional craftsmanship. Its unique blend of vintage and modern elements makes it a standout piece in any watch collection."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "340b4879-d3c6-45e9-b516-3e777e6bf9c4",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728800195,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 325,
+    "total_tokens": 472
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Blue Wool Scarf - 344994 4G200 9269\n**Subtitle (Sottotitolo):** Luxurious Italian Craftsmanship in a Timeless Design\n**Short Description (Breve Descrizione):** This GUCCI scarf, model 344994 4G200 9269, is a stunning blue wool accessory that embodies the brand's iconic style and Italian craftsmanship. Perfect for adding a touch of luxury to any outfit, it features the signature GG pattern. Made from high-quality wool, it measures 40 cm x 180 cm, ensuring a versatile and comfortable wear.\n\n**Description (Descrizione):**\n\n- **Material and Craftsmanship:**\n  - Made from 100% wool, ensuring warmth and durability.\n  - Crafted in Italy, reflecting GUCCI's commitment to high-quality manufacturing.\n\n- **Design and Style:**\n  - The scarf features the iconic GG pattern, a hallmark of GUCCI's timeless design.\n  - The vibrant blue color (9269) adds a sophisticated touch to any outfit.\n\n- **Size Information:**\n  - Dimensions: 40 cm x 180 cm, providing ample length for styling versatility.\n\n- **Product Details:**\n  - Model Number: 344994 4G200 9269\n  - Color: Blue (9269)\n  - Material: 100% Wool\n  - Made in Italy\n\nThis GUCCI scarf is a perfect blend of luxury and practicality, making it an essential accessory for those who appreciate high-end fashion and craftsmanship."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "a6ccbd25-2cd5-4cd0-a18e-4f2dc5d7fdb6",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728794851,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 404,
+    "total_tokens": 553
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Run Sneaker 'Black Yellow' 680938-USM10-8480\n**Subtitle (Sottotitolo):** High-Performance Luxury Sneakers with Iconic Gucci Design\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Run Sneaker, featuring a sleek black and yellow design crafted from GG technical knit fabric. Defined by the Interlocking G logo and a bi-color sole, this shoe combines sporty elegance with high-end luxury. Perfect for those who demand both comfort and style.\n\n**Description (Descrizione):**\n\n- **Craftsmanship:** The Gucci Run Sneaker is meticulously crafted from GG technical knit fabric, ensuring a lightweight and breathable wear.\n- **Design:** The shoe is defined by the iconic Interlocking G logo, a symbol of Gucci's luxury heritage.\n- **Sole:** A bi-color sole adds a playful touch of chromatic contrast, enhancing the shoe's sporty yet sophisticated aesthetic.\n- **Comfort:** Designed for optimal comfort, the shoe features a streamlined silhouette that fits true to size, ensuring a snug and comfortable fit.\n- **Size Information:** This shoe is available in size 46, catering to a wide range of foot sizes.\n- **Origin:** Made in Italy, this shoe embodies the high-quality craftsmanship and attention to detail that Gucci is renowned for.\n- **Composition:** The upper is made from textile, while the sole is made from elastic material (EL), providing durability and flexibility.\n- **Style Number:** 680938-USM10-8480, ensuring authenticity and exclusivity.\n- **Versatility:** Perfect for casual outings, athletic activities, or as a stylish addition to your everyday wardrobe, the Gucci Run Sneaker is versatile and adaptable to various occasions.\n- **Luxury Appeal:** With its unique blend of sporty and luxurious elements, this shoe is a must-have for those who appreciate high-end fashion and performance."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

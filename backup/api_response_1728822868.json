@@ -1,0 +1,25 @@
+{
+  "id": "c19a95fc-c040-4912-9489-a985314547c1",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728822868,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 333,
+    "total_tokens": 482
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Padded Web Slide Sandal in Green and Red Nylon\n**Subtitle (Sottotitolo):** Elegant and Sporty Sandals for Women\n**Short Description (Breve Descrizione):** The Gucci Padded Web Slide Sandal combines elegance and sportiness with its vibrant green and red nylon design. Featuring the iconic Gucci web pattern, these sandals are perfect for casual yet stylish outings. Crafted with comfort and durability in mind, they are a must-have for any fashion-conscious woman.\n\n**Description (Descrizione):**\n\n- **Style Number:** 700320 UFR30 3060\n- **Size:** 36\n- **Material:** Green and red nylon with rubber details\n- **Design:**\n  - The sandals feature the iconic Gucci web pattern in green and red nylon, adding a touch of classic Gucci style.\n  - The padded web slide design ensures comfort and ease of wear.\n  - The rubber details provide durability and a sporty touch.\n- **Key Features:**\n  - Padded web slide design for comfort\n  - Iconic Gucci web pattern in green and red nylon\n  - Rubber details for durability\n  - Perfect for casual yet stylish outings\n- **Additional Information:**\n  - These sandals are ideal for everyday wear, whether you're heading to the beach, a casual dinner, or a leisurely walk.\n  - The vibrant colors and iconic design make them a standout piece in any wardrobe.\n  - The combination of nylon and rubber ensures both comfort and durability, making them a practical choice for long-lasting wear."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

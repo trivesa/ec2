@@ -1,0 +1,25 @@
+{
+  "id": "b8e45554-ba3a-4044-bbe2-342a897bed73",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728774232,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 374,
+    "total_tokens": 523
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Run Sneaker in Black Yellow Beige\n**Subtitle (Sottotitolo):** High-End Fashion with Sporting Elegance\n**Short Description (Breve Descrizione):** Experience the fusion of luxury and sport with the Gucci Run Sneaker, featuring a sleek black, yellow, and beige design. Crafted from GG technical knit fabric, these shoes embody the essence of high-end fashion with standout logo details. Perfect for making a stylish statement.\n\n**Description (Descrizione):**\n\n- **Design Inspiration:** The Gucci Run Sneaker draws inspiration from the sporting world, reinterpreted through Gucci's unique lens. This results in a streamlined silhouette that combines elegance with athletic flair.\n- **Materials:** The upper is made from GG technical knit fabric, ensuring a lightweight and comfortable fit. The bi-color sole adds a playful touch with its chromatic contrast.\n- **Key Features:**\n  - **Logo Details:** Standout logo elements, including the iconic Interlocking G, add a touch of luxury and authenticity.\n  - **Sole Design:** The remastered sole features high-definition accuracy, enhancing both the aesthetic and comfort of the shoe.\n  - **Fit:** True to size and designed to provide enhanced fit and comfort compared to retail versions.\n- **Product Specifications:**\n  - **Style Number:** 680938 USM10 8480\n  - **Size:** 46\n  - **Color:** Black Yellow Beige\n  - **Composition:** Upper: Textile, Sole: EL\n  - **Made in:** Italy\n- **Authenticity:** Each pair comes with the original retail box, ensuring authenticity and quality.\n- **Perfect for:** Those seeking to blend high fashion with sporty elegance, making these sneakers ideal for casual yet stylish occasions."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

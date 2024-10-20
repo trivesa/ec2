@@ -1,0 +1,25 @@
+{
+  "id": "f6378209-76c1-41f7-a466-0f4b39802a17",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728776120,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 344,
+    "total_tokens": 493
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Run Sneaker 'Black Yellow'\n**Subtitle (Sottotitolo):** High-End Fashion Sneakers with Distinctive Style\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Run Sneaker 'Black Yellow', featuring a bold and modern design. Crafted in Italy, these sneakers combine textile upper with an elastic sole for comfort and durability. Perfect for those who seek a statement piece in their footwear collection.\n\n**Description (Descrizione):**\n\n- **Style Number:** 680938 USM10 8480\n- **Size:** 45\n- **Color:** Black Yellow\n- **Composition:** Upper made from textile, sole made from elastic materials\n- **Manufacturing:** Made in Italy, ensuring high-quality craftsmanship\n- **Design:** Low-top sneakers with a sleek and contemporary silhouette\n- **Comfort:** Designed for both style and comfort, ideal for daily wear\n- **Versatility:** Suitable for casual outings, fashion events, and everything in between\n- **Brand:** Gucci, synonymous with luxury and high-end fashion\n- **Additional Features:**\n  - **Textile Upper:** Provides a lightweight and breathable feel\n  - **Elastic Sole:** Offers flexibility and durability\n  - **Distinctive Color Scheme:** Black and yellow hues create a striking visual effect\n  - **Quality Assurance:** Guaranteed by Gucci's commitment to excellence\n\nExperience the epitome of luxury footwear with the Gucci Run Sneaker 'Black Yellow'. Whether you're looking to make a fashion statement or simply want to add a touch of elegance to your wardrobe, these sneakers are sure to impress."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

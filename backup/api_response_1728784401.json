@@ -1,0 +1,25 @@
+{
+  "id": "411761ba-12f1-456f-9ddc-63e1b358abfd",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728784401,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 386,
+    "total_tokens": 538
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Micro Sima Driving Shoes\n**Subtitle (Sottotitolo):** Luxurious Leather Driving Shoes for Men\n**Short Description (Breve Descrizione):** Elevate your style with the GUCCI Micro Sima Driving Shoes, featuring premium leather and sleek design. Perfect for casual yet sophisticated occasions, these shoes are crafted with meticulous attention to detail. Available in size 41.5.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the GUCCI Micro Sima Driving Shoes. These exquisite shoes are designed to make a statement, combining comfort and elegance in a single, stylish package.\n\n- **Premium Leather:** Crafted from high-quality leather, these shoes are not only durable but also exude a sense of sophistication and refinement.\n- **Sleek Design:** The sleek and minimalist design of the Micro Sima Driving Shoes makes them versatile and suitable for a variety of occasions, from casual outings to more formal events.\n- **Comfortable Fit:** Designed for comfort, these shoes feature a soft, cushioned interior that ensures a comfortable fit throughout the day.\n- **Meticulous Craftsmanship:** Each pair is meticulously crafted to ensure the highest quality and attention to detail, reflecting GUCCI's commitment to excellence.\n- **Size 41.5:** Available in size 41.5, these shoes are perfect for those looking for a precise fit.\n- **Luxury Branding:** As a GUCCI product, these shoes carry the prestige and luxury associated with the brand, making them a valuable addition to any wardrobe.\n- **Versatility:** Whether you're driving, walking, or just lounging, these shoes are designed to complement your style and provide comfort in every situation.\n\nEmbrace the luxury and sophistication of GUCCI with the Micro Sima Driving Shoes, a testament to the brand's dedication to quality and style."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

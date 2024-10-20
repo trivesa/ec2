@@ -1,0 +1,25 @@
+{
+  "id": "fa08d51d-1e07-4125-a374-90b38333a8b5",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728810761,
+  "usage": {
+    "prompt_tokens": 504,
+    "completion_tokens": 894,
+    "total_tokens": 1398
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Based on the provided search results, here is the information for the GUCCI bag with style number 625850 H9HAN 1000:\n\n**Mandatory Fields:**\n\n1. **Object Category (Categoria Oggetto):** Handbag\n2. **Store Category (Categoria del Negozio):** Men's Bags\n3. **Department (Reparto):** Men's Accessories\n4. **Brand (Marca):** Gucci\n5. **Color (Colore esterno):** Black\n6. **Style (Stile):** Off The Grid\n7. **Material (Materiale esterno):** Black GG nylon made from ECONYL\n8. **Closure Type (Chiusura):** Zipper closure\n9. **Lining Material (Materiale della fodera):** N/A\n10. **Hardware Material (Materiale delle finiture):** Palladium-toned metal hardware\n11. **Product Line (Linea prodotto):** Off The Grid Series\n12. **Pattern (Fantasia):** N/A\n13. **Condition of the Item (Condizione dell'oggetto):** New\n14. **Price (Prezzo):** Varies by source (e.g., $207.99, $400.00, HK$4,940.00)\n15. **Shipping Rule (Regola sulla spedizione):** Varies by source (e.g., estimated delivery from Oct 14 to Oct 23)\n\n**Optional Fields:**\n\n1. **Custom Label (Etichetta personalizzata - SKU):** 625850 H9HAN 1000\n2. **EAN (EAN):** N/A\n3. **MPN (MPN):** N/A\n4. **Handle Drop (Altezza del manico):** 2\u201d drop\n5. **Handle/Strap Drop (Lunghezza della tracolla):** 19.7\u201d drop\n6. **Size (Dimensioni):** 6.3\u201dW x 8.7\u201dH x 3.4\u201dD\n7. **Features (Caratteristiche):** Exterior zip pocket, interior phone case\n8. **Vintage (Vintage):** No\n9. **Unit of Measurement (Unit\u00e0 di misura):** Inches\n10. **Accents (Elementi decorativi):** Leather detail with Gucci script logo\n11. **Theme (Tema):** N/A\n12. **Occasion (Occasione):** N/A\n13. **Year Manufactured (Anno di fabbricazione):** N/A\n14. **Product Variants (Varianti di prodotto):** N/A\n15. **Payment Options and Offers (Regole di pagamento):** Varies by source\n16. **Shipping (Regola sulla spedizione):** Varies by source\n17. **Object Warnings (Avvertenze per l'oggetto):** N/A\n18. **Country/Region of Manufacture (Paese di fabbricazione):** N/A\n19. **Lining Color (Colore della fodera):** N/A\n20. **Handle/Strap Color (Colore del manico, tracolla):** Black\n21. **Trim Color (Colore delle rifiniture):** Palladium-toned\n22. **Fabric Type (Tessuto):** Nylon\n23. **Personalized (Personalizzato):** No\n24. **Accessories (Accessori):** N/A\n25. **Bag Width (Larghezza della borsa):** 6.3\u201d\n26. **Bag Height (Altezza della borsa):** 8.7\u201d\n27. **Bag Depth (Profondit\u00e0 della borsa):** 3.4\u201d\n28. **Bag Shape (Forma):** N/A\n29. **Decorative Elements (Elementi decorativi):** Leather detail with Gucci script logo\n30. **Finish (Finitura):** N/A\n31. **Country of Manufacture (Paese di fabbricazione):** N/A\n\nPlease note that some information may not be available or consistent across all sources."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "53ed3427-47c0-4b09-9c86-6c14121110af",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728782743,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 408,
+    "total_tokens": 560
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Green Demetra Men's Sneakers\n**Subtitle (Sottotitolo):** Luxurious Low-Top Sneakers in Green with Distinctive Demetra Details\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Basket Green Demetra, a sophisticated low-top sneaker that combines green and black accents with a touch of white. Crafted in Italy, these shoes are a testament to Gucci's commitment to luxury and quality. Perfect for those who seek a blend of comfort and high-end fashion.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the Gucci Basket Green Demetra, designed to make a statement. Here are some key features that make these sneakers stand out:\n\n- **Style Number:** 697882 2SH90 3760\n- **Size:** 42.5\n- **Color:** Green with black and white accents, creating a striking visual effect.\n- **Composition:** Upper made from other textile materials, ensuring durability and comfort, while the sole is crafted from elastic materials (EL) for a smooth, flexible feel.\n- **Manufacturing:** Made in Italy, reflecting Gucci's dedication to craftsmanship and quality.\n- **Design:** The low-top design offers a versatile look that can be dressed up or down, making it perfect for various occasions.\n- **Details:** The Demetra details add a unique touch, making these sneakers a standout piece in any wardrobe.\n- **Quality:** As with all Gucci products, these sneakers are built to last, combining style with longevity.\n- **Comfort:** Designed to provide comfort without compromising on style, these sneakers are ideal for daily wear.\n\nWhether you're looking to elevate your casual look or add a touch of luxury to your formal attire, the Gucci Basket Green Demetra is the perfect choice. Its unique blend of colors and high-quality materials makes it a must-have for fashion enthusiasts."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

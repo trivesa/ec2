@@ -1,0 +1,25 @@
+{
+  "id": "214581fa-76fe-42f7-b6e1-d6d94a6ad410",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728825367,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 398,
+    "total_tokens": 548
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI G74 Web Casual Shoes\n**Subtitle (Sottotitolo):** Pink Blue Edition, Style Number 624484 0PV20 9561\n**Short Description (Breve Descrizione):** Elevate your style with the GUCCI G74 Web Casual Shoes, featuring a striking pink and blue color scheme. Crafted with premium materials and adorned with the iconic GUCCI web pattern, these shoes are perfect for making a statement. Available in size 35.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the GUCCI G74 Web Casual Shoes. Here are some key features that make these shoes stand out:\n\n- **Iconic Design:** The shoes feature the signature GUCCI web pattern, a timeless and iconic design element that adds a touch of sophistication to any outfit.\n- **Premium Materials:** Crafted with high-quality materials, these shoes ensure durability and comfort, making them perfect for daily wear.\n- **Color Scheme:** The pink and blue color combination is both bold and elegant, offering a versatile look that can be dressed up or down.\n- **Size:** Available in size 35, ensuring a snug and comfortable fit.\n- **Style Number:** 624484 0PV20 9561, a unique identifier for this specific model.\n- **Versatility:** Whether you're heading to a casual gathering or a more formal event, these shoes are designed to complement a variety of outfits.\n- **Brand Heritage:** As a product of GUCCI, one of the world's leading luxury fashion brands, these shoes embody the brand's commitment to quality and style.\n- **Comfort:** Designed with comfort in mind, these shoes are perfect for long days or nights out.\n- **Fashion Statement:** The GUCCI G74 Web Casual Shoes are a statement piece, sure to draw attention and elevate your fashion profile.\n\nEmbrace the luxury and sophistication of GUCCI with these exceptional shoes."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

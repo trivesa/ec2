@@ -1,0 +1,25 @@
+{
+  "id": "83e0a635-3082-4473-8f4b-8dc41a60ee0a",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728826508,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 465,
+    "total_tokens": 616
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low Top Sneakers\n**Subtitle (Sottotitolo):** Light Blue Demetra Pink Edition - Style 700291 2SHW0 4870\n**Short Description (Breve Descrizione):** Embodying the essence of 90s basketball sneakers, the Gucci Basket Low Top Sneakers in Light Blue Demetra Pink offer a stylish and eco-friendly choice. Crafted primarily from Demetra, a sustainable and bio-based material, these shoes combine comfort with a distinctive aesthetic. Perfect for those seeking a blend of fashion and sustainability.\n\n**Description (Descrizione):**\n\n- **Eco-Friendly Material**: The Gucci Basket Low Top Sneakers are made primarily from Demetra, an innovative material that combines animal-free raw materials from sustainable, renewable, and bio-based sources. This eco-friendly approach ensures a pliable and resilient performance with a supple finish.\n\n- **Design Inspiration**: Inspired by the iconic basketball sneakers of the 90s, these low-top shoes feature a mix of brightly colored fabrics with a lightly distressed effect. The design captures the self-expression and on-court aesthetic of the era, making them a stylish addition to any wardrobe.\n\n- **Key Features**:\n  - **Upper Material**: Demetra and other textiles\n  - **Sole Material**: Rubber\n  - **Logo Detail**: Rubber Interlocking G patch and GG logo detail\n  - **Color**: Light Blue Demetra Pink\n  - **Size**: Available in various sizes, including size 35\n  - **Additional Items**: Includes box and dust bag\n\n- **Production and Delivery**:\n  - **Production Time**: 3-5 working days\n  - **Delivery**: Ships to all countries with a tracking number. Free shipping on all orders.\n\n- **Return Policy**:\n  - **Return Window**: 60 days from the date of purchase (14 days during sales periods)\n  - **Return Conditions**: Unworn and unwashed items with the original receipt\n  - **Refund Processing**: 1-3 business days after return processing\n\nExperience the perfect blend of style, comfort, and sustainability with the Gucci Basket Low Top Sneakers in Light Blue Demetra Pink."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

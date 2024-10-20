@@ -1,0 +1,25 @@
+{
+  "id": "f9b5d01c-0fda-4b83-a2ce-de23df79b049",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728773551,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 419,
+    "total_tokens": 572
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High 'Black Demetra Red'\n**Subtitle (Sottotitolo):** Elevate Your Street Style with Luxury and Sport-Inspired Elements\n**Short Description (Breve Descrizione):** The Gucci Basket High 'Black Demetra Red' (673077-2SHG0-1066) combines the essence of luxury with sport-inspired elements, offering a striking design that elevates street style. Crafted with meticulous attention to detail, this shoe is perfect for those who seek to make a statement. Available in size 46.5, it ensures a comfortable and stylish fit.\n\n**Description (Descrizione):**\n\n- **Design and Style:** The Gucci Basket High 'Black Demetra Red' features a bold and eye-catching design that seamlessly blends luxury with sport-inspired elements. The black and red color scheme creates a striking contrast that adds to the shoe's allure.\n- **Materials and Craftsmanship:** Made with high-quality materials, this shoe showcases Gucci's commitment to craftsmanship and attention to detail. The use of premium materials ensures durability and comfort.\n- **Key Features:**\n  - **Style Number:** 673077-2SHG0-1066\n  - **Size:** 46.5\n  - **Color Scheme:** Black and Demetra Red\n  - **Design Elements:** Sport-inspired with luxury touches\n- **Comfort and Versatility:** Designed for both comfort and style, the Gucci Basket High 'Black Demetra Red' is versatile enough to be worn on various occasions, from casual outings to more formal events.\n- **Brand Heritage:** Gucci, a renowned luxury fashion brand, brings its expertise in creating high-end products that are both stylish and durable. This shoe embodies the brand's commitment to excellence and innovation.\n- **Purchase Information:** Available for purchase at various online retailers, including Kickscrew, GOAT, and Solesense, ensuring that you can find the perfect fit and price."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

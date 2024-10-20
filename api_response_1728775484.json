@@ -1,0 +1,25 @@
+{
+  "id": "59e42133-d7bd-469b-90f7-9bd041670195",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728775483,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 495,
+    "total_tokens": 648
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low 'White Demetra Green' 698785-2SHG0-9089\n**Subtitle (Sottotitolo):** Elevate Your Style with Gucci's Iconic Basket Low Sneakers\n**Short Description (Breve Descrizione):** Experience the epitome of luxury footwear with Gucci's Basket Low 'White Demetra Green' sneakers. Crafted in Italy, these shoes blend timeless design with high-quality materials. Perfect for those who seek to make a statement with their footwear.\n\n**Description (Descrizione):**\n\n- **Craftsmanship and Materials:**\n  - Made in Italy, ensuring the highest standards of craftsmanship and quality.\n  - Upper constructed from other textile materials, providing durability and comfort.\n  - Sole made from EL (Ethylene-Vinyl Acetate) for superior grip and longevity.\n\n- **Design and Style:**\n  - The 'White Demetra Green' colorway offers a fresh and vibrant aesthetic, perfect for adding a touch of sophistication to any outfit.\n  - The Basket Low design is a classic Gucci silhouette, known for its sleek and versatile appeal.\n  - The combination of white and demetra green creates a striking visual effect, making these shoes a standout piece in any wardrobe.\n\n- **Size Information:**\n  - Available in size 45.5, ensuring a comfortable fit for those who prefer a slightly larger size.\n\n- **Product Details:**\n  - Product code: 698785-2SHG0-9089\n  - Color code: 9089\n  - Composition: Upper - Other Textile, Sole - EL\n  - Made in Italy\n\n- **Luxury and Authenticity:**\n  - Authentic Gucci product, guaranteeing the highest quality and authenticity.\n  - Perfect for those who value luxury and style, these shoes are a testament to Gucci's commitment to excellence.\n\n- **Versatility:**\n  - Suitable for a variety of occasions, from casual daily wear to more formal events.\n  - The versatile design ensures these shoes can be paired with a wide range of outfits, making them a valuable addition to any wardrobe.\n\nExperience the luxury and sophistication of Gucci with the Basket Low 'White Demetra Green' sneakers. Whether you're looking to elevate your everyday style or make a statement at a special event, these shoes are sure to impress."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

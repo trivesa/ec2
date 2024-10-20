@@ -1,0 +1,25 @@
+{
+  "id": "f7993a6d-2b7e-4947-aa5d-829ee663ec1a",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728811118,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 436,
+    "total_tokens": 583
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI 691281 ZAFHJ 2286 Dark Blue Lapel Wool Suit Jacket\n**Subtitle (Sottotitolo):** Exquisite Tailoring and Sophisticated Elegance\n**Short Description (Breve Descrizione):** Elevate your wardrobe with the GUCCI 691281 ZAFHJ 2286, a meticulously crafted dark blue lapel wool suit jacket that embodies the essence of luxury and sophistication. Perfect for formal occasions, this piece showcases GUCCI's commitment to exceptional tailoring and timeless style. Its dark blue hue and classic lapel design make it versatile and elegant.\n\n**Description (Descrizione):**\n\n- **Craftsmanship and Materials:**\n  - Made from high-quality wool, ensuring warmth and durability.\n  - Expertly tailored to provide a flattering fit and a sophisticated silhouette.\n  - The dark blue color is both versatile and timeless, suitable for a variety of formal events.\n\n- **Design Elements:**\n  - Classic lapel design adds a touch of elegance and sophistication.\n  - The jacket's construction is designed to provide comfort and flexibility, making it perfect for long events.\n  - The subtle detailing and precise stitching reflect GUCCI's dedication to craftsmanship.\n\n- **Authenticity and Quality Assurance:**\n  - This product features the GUCCI Tag, an NFC-enabled authentication system that ensures the product's authenticity and provides peace of mind for the buyer.\n  - Each piece is carefully inspected to meet GUCCI's high standards of quality and design.\n\n- **Sizing and Fit:**\n  - Available in various sizes to cater to different body types and preferences.\n  - The tailored fit ensures a flattering silhouette, making it ideal for formal occasions.\n\n- **Additional Information:**\n  - For sizing information, please refer to the specific size chart provided by the retailer.\n  - This product is part of GUCCI's commitment to delivering high-quality, stylish clothing that stands the test of time.\n\nExperience the epitome of luxury and sophistication with the GUCCI 691281 ZAFHJ 2286, a true masterpiece of high-end fashion."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

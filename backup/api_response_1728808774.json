@@ -1,0 +1,25 @@
+{
+  "id": "587f3474-e831-444c-b9c6-47dd2e241aab",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728808774,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 383,
+    "total_tokens": 530
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Marmont Super Mini Bag\n**Subtitle (Sottotitolo):** Elegant and Versatile in Ivory and Silver Hardware\n**Short Description (Breve Descrizione):** The GUCCI GG Marmont Super Mini Bag, style number 476433 DTD5N 9022, is a compact yet stylish accessory featuring ivory chevron leather and silver hardware. Perfect for everyday use, it combines elegance with practicality. Its small size makes it ideal for carrying essentials while maintaining a sophisticated look.\n\n**Description (Descrizione):**\n\n- **Design and Material:**\n  - Crafted from high-quality ivory chevron leather, ensuring durability and a luxurious feel.\n  - Adorned with silver hardware, adding a touch of sophistication and elegance.\n  - The iconic GG Marmont logo is prominently displayed, symbolizing the brand's heritage and style.\n\n- **Size and Functionality:**\n  - Super mini size, perfect for carrying small essentials such as a phone, keys, and wallet.\n  - Crossbody strap allows for hands-free convenience, making it ideal for daily outings and events.\n  - Compact design ensures it fits comfortably under the arm or across the body.\n\n- **Versatility:**\n  - Suitable for a variety of occasions, from casual daily use to more formal events.\n  - The neutral color palette makes it easy to pair with different outfits and styles.\n  - The bag's versatility ensures it remains a timeless piece in any wardrobe.\n\n- **Additional Details:**\n  - Style number: 476433 DTD5N 9022\n  - Line: GG Marmont\n  - Color: Ivory with silver hardware\n  - Material: Chevron leather\n  - Size: Super mini\n  - Ideal for those seeking a stylish and practical accessory that embodies GUCCI's luxury and craftsmanship."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

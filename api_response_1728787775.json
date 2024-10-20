@@ -1,0 +1,25 @@
+{
+  "id": "1552f6ee-4e97-4f3e-8566-f0fe76871ee2",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728787775,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 402,
+    "total_tokens": 552
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton 25 Sneakers\n**Subtitle (Sottotitolo):** Luxurious and Sustainable Fashion for the Discerning Individual\n**Short Description (Breve Descrizione):** The Gucci Rhyton 25 sneakers, style number 663339 2SH00 9522, embody the perfect blend of luxury and eco-friendliness. Crafted from Demetra, a sustainable and resilient material, these shoes offer a unique design and luxurious feel. Perfect for commemorating special occasions in high fashion.\n\n**Description (Descrizione):**\n\n- **Material and Craftsmanship:** The Gucci Rhyton 25 sneakers are crafted primarily from Demetra, a new eco-friendly material that combines animal-free raw materials from sustainable, renewable, and bio-based sources. This material offers pliable and resilient performance with a supple finish, achieved through the same processes used for tanning.\n\n- **Design and Features:**\n  - **Color:** White Ivory\n  - **Size:** 41\n  - **Gucci Logo Tag:** A distinctive Gucci logo tag adds a touch of authenticity and luxury.\n  - **Rubber Sole:** Durable and comfortable, ensuring long-lasting wear.\n  - **Low Heel:** A stylish and practical design element.\n  - **Inclusions:** Comes with the original retail box and dust bag.\n\n- **Sustainability:** The use of Demetra in these sneakers reflects Gucci\u2019s commitment to sustainability and eco-friendliness, making them a choice for those who value both luxury and environmental responsibility.\n\n- **Quality Assurance:** Each pair is carefully crafted to ensure the highest quality and authenticity, making them a valuable addition to any luxury footwear collection.\n\n- **Style and Versatility:** The Gucci Rhyton 25 sneakers are perfect for a variety of occasions, from casual outings to more formal events, offering a versatile and stylish choice for the discerning individual."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

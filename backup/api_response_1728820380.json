@@ -1,0 +1,25 @@
+{
+  "id": "61754976-53a6-4faa-9f25-b361947ea059",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728820380,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 393,
+    "total_tokens": 544
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Denim Series Breathable Wear-Resistant Double G Jacquard Flat Shoes\n**Subtitle (Sottotitolo):** Elegant and Versatile Footwear for the Modern Woman\n**Short Description (Breve Descrizione):** Experience the perfect blend of style and comfort with the GUCCI Denim Series Breathable Wear-Resistant Double G Jacquard Flat Shoes. Crafted with a mix of premium materials, these shoes offer a sophisticated and versatile look. Available in size 37, they are ideal for everyday wear.\n\n**Description (Descrizione):**\n\n- **Material and Construction:**\n  - Made from a durable blend of leather, rubber, nylon, polyester, suede, satin, and cotton, ensuring long-lasting wear.\n  - Breathable design for optimal comfort and freshness.\n\n- **Design and Style:**\n  - Features the iconic Double G Jacquard pattern, adding a touch of elegance and sophistication.\n  - Part of the Gucci Denim Series, combining casual and luxurious elements.\n  - Flat heel design for a comfortable and versatile look.\n\n- **Key Features:**\n  - Wear-resistant construction for durability.\n  - Breathable materials for enhanced comfort.\n  - Double G Jacquard pattern for a stylish and distinctive look.\n  - Available in a vibrant blue color, perfect for making a statement.\n\n- **Size and Fit:**\n  - Available in size 37, ensuring a precise and comfortable fit.\n  - Designed to fit snugly without compromising on style.\n\n- **Brand and Quality:**\n  - Authentic GUCCI product, guaranteeing high-quality craftsmanship and materials.\n  - Part of the renowned Gucci Denim Series, known for its blend of casual and luxurious elements.\n\n- **Additional Information:**\n  - Style number: 580877 2KQ50 4462.\n  - Ideal for everyday wear, from casual outings to more formal events."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

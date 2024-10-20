@@ -1,0 +1,25 @@
+{
+  "id": "ffa8bdde-605f-4f69-ae49-685dd064ca0d",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728802760,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 371,
+    "total_tokens": 518
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Square Muffler Scarf\n**Subtitle (Sottotitolo):** Luxurious Anthracite Wool and Silk Scarf\n**Short Description (Breve Descrizione):** This exquisite GUCCI GG Jacquard Square Muffler Scarf, style number 281942 3G704 1062, is crafted from a blend of 80% wool and 20% silk, offering a luxurious and stylish accessory for any occasion. Its anthracite color and iconic GG pattern make it a timeless piece. Perfect for adding a touch of elegance to any outfit.\n\n**Description (Descrizione):**\n\n- **Material and Composition:**\n  - Made from a luxurious blend of 80% wool and 20% silk, ensuring warmth and softness.\n  - The high-quality materials guarantee durability and long-lasting wear.\n\n- **Design and Pattern:**\n  - Features the iconic GG pattern, a signature motif of the GUCCI brand.\n  - The anthracite color provides a versatile and sophisticated look that complements a variety of outfits.\n\n- **Size Information:**\n  - Measures 140 cm x 140 cm, making it a versatile accessory that can be styled in multiple ways.\n\n- **Authenticity and Origin:**\n  - 100% authentic GUCCI product, ensuring the highest quality and craftsmanship.\n  - Made in Italy, reflecting the brand's commitment to excellence and tradition.\n\n- **Additional Details:**\n  - Comes with original tags and packaging, including a GUCCI paper bag.\n  - Ideal for both casual and formal occasions, adding a touch of luxury to any ensemble.\n\nThis GUCCI GG Jacquard Square Muffler Scarf is a must-have accessory for anyone seeking to elevate their style with a timeless and luxurious piece."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

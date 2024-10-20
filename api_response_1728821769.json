@@ -1,0 +1,25 @@
+{
+  "id": "50411177-f9f7-4511-92f5-2e579195680a",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728821768,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 476,
+    "total_tokens": 626
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Basket High-Top Sneakers 661310 2SH80 9062\n**Subtitle (Sottotitolo):** Elevate Your Style with GUCCI's Iconic Basket Sneakers\n**Short Description (Breve Descrizione):** Experience the fusion of high fashion and athletic elegance with GUCCI's Basket High-Top Sneakers. Crafted with meticulous attention to detail, these shoes feature a vibrant multi-color Demetra design that adds a touch of sophistication to any outfit. Available in size 36.\n\n**Description (Descrizione):**\n\n- **Design and Craftsmanship:**\n  - The GUCCI Basket High-Top Sneakers 661310 2SH80 9062 are a testament to GUCCI's commitment to excellence in design and craftsmanship.\n  - The shoes feature a high-top silhouette, perfect for making a statement.\n  - The multi-color Demetra design, with a palette of white, green, purple, orange, and blue, adds a playful yet sophisticated touch.\n\n- **Materials and Comfort:**\n  - Made from high-quality materials, these sneakers ensure durability and comfort.\n  - The interior is designed to provide a snug fit, making them ideal for daily wear.\n\n- **Style and Versatility:**\n  - These sneakers are versatile and can be paired with a variety of outfits, from casual streetwear to more formal ensembles.\n  - The iconic GUCCI logo adds a touch of luxury, making them a standout piece in any wardrobe.\n\n- **Size and Availability:**\n  - Available in size 36, ensuring a perfect fit for those who seek both style and comfort.\n  - Stocked by various retailers, including BALAAN and Kickscrew, ensuring easy access to this coveted style.\n\n- **Retail Information:**\n  - The retail price for these sneakers is $990, reflecting their high-quality materials and craftsmanship.\n  - They can also be found on platforms like StockX, offering a range of prices from $295 to $996, depending on the condition and availability.\n\n- **Authenticity and Trust:**\n  - StockX Verified ensures that every item is inspected for authenticity, providing peace of mind for buyers.\n  - The promise of quality and authenticity is backed by GUCCI's reputation for excellence in luxury fashion."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

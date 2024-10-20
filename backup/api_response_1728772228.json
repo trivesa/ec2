@@ -1,0 +1,25 @@
+{
+  "id": "74fc29ee-9da3-4c3a-afe0-33857e1fada0",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728772228,
+  "usage": {
+    "prompt_tokens": 505,
+    "completion_tokens": 932,
+    "total_tokens": 1437
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Given the provided style number and additional information, here is the structured information for the GUCCI bag:\n\n### Mandatory Fields\n1. **Object Category (Categoria Oggetto):** Handbag\n2. **Store Category (Categoria del Negozio):** Women's Handbags\n3. **Department (Reparto):** Women's Accessories\n4. **Brand (Marca):** GUCCI\n5. **Color (Colore esterno):** N/A (Specific color not provided)\n6. **Style (Stile):** N/A (Specific style not provided, but style number is 502095 URIAN 4352)\n7. **Material (Materiale esterno):** N/A (Specific material not provided)\n8. **Closure Type (Chiusura):** N/A (Specific closure type not provided)\n9. **Lining Material (Materiale della fodera):** N/A (Specific lining material not provided)\n10. **Hardware Material (Materiale delle finiture):** N/A (Specific hardware material not provided)\n11. **Product Line (Linea prodotto):** N/A (Specific product line not provided)\n12. **Pattern (Fantasia):** N/A (Specific pattern not provided)\n13. **Condition of the Item (Condizione dell'oggetto):** N/A (Condition not provided)\n14. **Price (Prezzo):** N/A (Price not provided)\n15. **Shipping Rule (Regola sulla spedizione):** Free Shipping, Returns & Complimentary Gift Wrapping\n\n### Optional Fields\n1. **Custom Label (Etichetta personalizzata - SKU):** 502095 URIAN 4352\n2. **EAN (EAN):** N/A\n3. **MPN (MPN):** N/A\n4. **Handle Drop (Altezza del manico):** N/A\n5. **Handle/Strap Drop (Lunghezza della tracolla):** N/A\n6. **Size (Dimensioni):** Size 44\n7. **Features (Caratteristiche):** N/A\n8. **Vintage (Vintage):** N/A\n9. **Unit of Measurement (Unit\u00e0 di misura):** N/A\n10. **Accents (Elementi decorativi):** N/A\n11. **Theme (Tema):** N/A\n12. **Occasion (Occasione):** N/A\n13. **Year Manufactured (Anno di fabbricazione):** N/A\n14. **Product Variants (Varianti di prodotto):** N/A\n15. **Payment Options and Offers (Regole di pagamento):** N/A\n16. **Shipping (Regola sulla spedizione):** Free Shipping, Returns & Complimentary Gift Wrapping\n17. **Object Warnings (Avvertenze per l'oggetto):** N/A\n18. **Country/Region of Manufacture (Paese di fabbricazione):** Italy (Typically for GUCCI products)\n19. **Lining Color (Colore della fodera):** N/A\n20. **Handle/Strap Color (Colore del manico, tracolla):** N/A\n21. **Trim Color (Colore delle rifiniture):** N/A\n22. **Fabric Type (Tessuto):** N/A\n23. **Personalized (Personalizzato):** N/A\n24. **Accessories (Accessori):** N/A\n25. **Bag Width (Larghezza della borsa):** N/A\n26. **Bag Height (Altezza della borsa):** N/A\n27. **Bag Depth (Profondit\u00e0 della borsa):** N/A\n28. **Bag Shape (Forma):** N/A\n29. **Decorative Elements (Elementi decorativi):** N/A\n30. **Finish (Finitura):** N/A\n31. **Country of Manufacture (Paese di fabbricazione):** Italy (Typically for GUCCI products)\n\n**Note:** The specific details for the bag with style number 502095 URIAN 4352 are not provided in the search results. The information provided is based on general knowledge about GUCCI products and the details available in the search results. For accurate and detailed information, it is recommended to consult the official GUCCI website or contact a GUCCI representative."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

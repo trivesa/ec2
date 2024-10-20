@@ -1,0 +1,25 @@
+{
+  "id": "5f02cc66-e9b7-4f95-be81-21bae2fc163e",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728816626,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 394,
+    "total_tokens": 544
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Sneakers in Green, White, and Black\n**Subtitle (Sottotitolo):** Luxurious Multicolored Leather Trainers - Style 700291 2SH90 3760\n**Short Description (Breve Descrizione):** Elevate your style with these iconic Gucci Basket sneakers, featuring a vibrant green, white, and black color scheme. Crafted from high-quality leather, these trainers are both stylish and durable. Perfect for making a statement in any casual setting.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the Gucci Basket sneakers, style number 700291 2SH90 3760. These stunning shoes are designed to make a bold statement with their striking green, white, and black color palette.\n\n- **Material:** High-quality leather ensures durability and a premium feel.\n- **Design:** The multicolored design adds a touch of sophistication and versatility, making these sneakers suitable for both casual and semi-formal occasions.\n- **Comfort:** Designed for comfort, these trainers feature a well-crafted sole that provides excellent support and stability.\n- **Authenticity:** Guaranteed authenticity, ensuring you are purchasing a genuine Gucci product.\n- **Size Information:** Available in size 39, ensuring a perfect fit for those seeking a stylish and comfortable shoe.\n- **Additional Details:**\n  - **Product Code:** 700291 2SH90 3760\n  - **Composition:** Upper made from leather, with a durable sole.\n  - **Made in:** Italy, reflecting Gucci's commitment to high-quality craftsmanship.\n  - **Original Packaging:** Includes dust bag and shoe box, maintaining the luxury experience.\n  - **Condition:** Brand new, never worn, ensuring you receive a pristine product.\n\nThese Gucci Basket sneakers are a must-have for anyone looking to elevate their footwear collection with a piece of luxury fashion."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "531004f7-fbae-48d1-a435-cdb7fe3b9fe2",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728796983,
+  "usage": {
+    "prompt_tokens": 148,
+    "completion_tokens": 334,
+    "total_tokens": 482
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Diamond Check Logo Scarf\n**Subtitle (Sottotitolo):** Luxurious Wool Scarf with Iconic GG Pattern\n**Short Description (Breve Descrizione):** Elevate your style with this authentic GUCCI GG Diamond Check Logo Scarf, crafted from high-quality wool and featuring the iconic GG pattern. Perfect for adding a touch of luxury to any outfit. This scarf measures 14\" x 94\" (35 cm x 240 cm) and is available in a striking navy and red color combination.\n\n**Description (Descrizione):**\n\n- **Authenticity:** This scarf is 100% authentic GUCCI, ensuring the highest quality and craftsmanship.\n- **Material:** Made from luxurious wool, providing warmth and comfort.\n- **Design:** The scarf features the iconic GG Diamond Check Logo pattern, a classic GUCCI design element.\n- **Size:** Measures 14\" x 94\" (35 cm x 240 cm), making it versatile for various styling options.\n- **Color:** Available in a bold navy and red color combination, adding a pop of color to any outfit.\n- **Versatility:** Can be used as a scarf, pocket square, or even as a stylish accessory for a bag or hat.\n- **Care Instructions:** To maintain its quality, it is recommended to dry clean or hand wash this scarf.\n- **Style Number:** 644365 4G718 6468, ensuring you are purchasing a genuine GUCCI product.\n- **Perfect for:** Anyone looking to add a luxurious touch to their wardrobe with a timeless and iconic GUCCI design."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

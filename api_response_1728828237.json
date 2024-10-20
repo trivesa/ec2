@@ -1,0 +1,25 @@
+{
+  "id": "95a097ed-d6ec-456c-8ae1-3b85fd77a004",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728828236,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 407,
+    "total_tokens": 559
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton 25 Sneakers\n**Subtitle (Sottotitolo):** Ivory and Navy Luxury Sneakers with Sustainable Materials\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Rhyton 25 sneakers, featuring a unique blend of ivory and navy hues crafted from sustainable, renewable, and bio-based materials. The '25' and 'Gucci Eschatology 1921' prints add a touch of elegance and historical significance. Perfect for those who value luxury and eco-friendliness.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury and sustainability with the Gucci Rhyton 25 sneakers. Here are some key features that make these shoes stand out:\n\n- **Sustainable Materials:** The Gucci Rhyton 25 sneakers are made from animal-free raw materials that are primarily from sustainable, renewable, and bio-based sources, reflecting Gucci's commitment to eco-friendly fashion.\n- **Unique Design:** The shoes feature a striking ivory and navy colorway with '25' and 'Gucci Eschatology 1921' prints, adding a layer of sophistication and historical depth.\n- **Comfort and Durability:** Equipped with a rubber sole and lace-up closure, these sneakers ensure comfort and durability for everyday wear.\n- **Authenticity:** The Gucci logo tag guarantees the authenticity and quality of the product.\n- **Size Information:** Available in size 34.5, ensuring a perfect fit for those who prefer a more tailored look.\n- **Style Number:** 663340 2SH00 9522, making it easy to identify and verify the product.\n- **Luxury Branding:** As a product of Gucci, these sneakers embody the brand's legacy of luxury and high-end fashion.\n\nWhether you're looking for a stylish addition to your wardrobe or a statement piece that reflects your values, the Gucci Rhyton 25 sneakers are an excellent choice."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "3acfc2b1-77cb-4c2d-9576-d66272fb1b59",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728796362,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 546,
+    "total_tokens": 699
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low 'White Demetra Green'\n**Subtitle (Sottotitolo):** Elevate Your Style with Gucci's Iconic Sneakers\n**Short Description (Breve Descrizione):** The Gucci Basket Low 'White Demetra Green' is a stylish and versatile sneaker that combines classic design with modern flair. Crafted in Italy, these shoes feature a white and green color scheme that adds a touch of sophistication to any outfit. Perfect for those who appreciate high-quality fashion.\n\n**Description (Descrizione):**\n\n- **Design and Craftsmanship:** The Gucci Basket Low 'White Demetra Green' (style number 698785 2SHG0 9089) is meticulously crafted in Italy, ensuring the highest quality and attention to detail. The upper is made from other textile materials, while the sole is made from elastic (EL), providing both comfort and durability.\n\n- **Color Scheme:** The shoes feature a striking white and green color scheme, with the white base complemented by demetra green accents. This unique color combination adds a touch of elegance and sophistication to the overall design.\n\n- **Size Information:** This particular model is available in size 40.5, ensuring a comfortable fit for those who prefer a slightly larger size.\n\n- **Versatility:** The Gucci Basket Low 'White Demetra Green' is versatile enough to be paired with a variety of outfits, from casual streetwear to more formal ensembles. Whether you're looking to make a statement or add a subtle touch of luxury to your wardrobe, these shoes are an excellent choice.\n\n- **Brand Heritage:** Gucci is renowned for its commitment to excellence and innovation in fashion. The Gucci Basket Low 'White Demetra Green' embodies this heritage, offering a blend of timeless style and contemporary flair that is quintessentially Gucci.\n\n- **Retail Information:** These shoes are available at various retailers, including Kickscrew and StockX, with prices ranging from $288.00 to $565.00, depending on the retailer and availability. For wholesale inquiries, Designers Distribution offers the shoes at \u20ac3,950.00.\n\n- **Additional Features:**\n  - **Composition:** Upper: Other textile - Sole: EL\n  - **Made in:** Italy\n  - **Product Code:** 698785-2SHG0\n  - **Color Code:** 9089\n  - **Color:** White Green\n\nExperience the luxury and sophistication of Gucci with the Basket Low 'White Demetra Green'. Perfect for fashion enthusiasts who appreciate high-quality craftsmanship and timeless style."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

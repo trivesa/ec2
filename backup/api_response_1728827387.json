@@ -1,0 +1,25 @@
+{
+  "id": "40c54f06-0670-4250-871e-b068c0edf3ec",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728827387,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 371,
+    "total_tokens": 521
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Women's Rhyton '25 Sneaker\n**Subtitle (Sottotitolo):** Ivory Demetra with '25' and 'Gucci Eschatology 1921' Prints\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Women's Rhyton '25 sneaker, featuring a unique blend of sustainable materials and iconic Gucci prints. Crafted from Ivory Demetra, this shoe combines eco-friendly design with high-end fashion. Perfect for those who value both style and sustainability.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury and sustainability with the Gucci Women's Rhyton '25 sneaker. Here are some key features that make this shoe stand out:\n\n- **Sustainable Materials:** Made from Ivory Demetra, which is crafted from animal-free raw materials that are primarily from sustainable, renewable, and bio-based sources.\n- **Unique Prints:** Features '25' and 'Gucci Eschatology 1921' prints, adding a touch of historical elegance and modern flair.\n- **Comfort and Durability:** Equipped with a rubber sole for long-lasting wear and a lace-up closure for a secure fit.\n- **Authenticity:** Includes a Gucci logo tag, ensuring the shoe's authenticity and high-quality craftsmanship.\n- **Size Information:** Available in size 35, ensuring a precise fit for the discerning fashionista.\n- **Style Number:** 663340 2SH00 9522, making it easy to identify and verify the authenticity of the shoe.\n- **Luxury Branding:** A true representation of Gucci's commitment to blending high-end fashion with sustainable practices, making it a must-have for those who value both style and eco-friendliness."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

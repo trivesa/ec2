@@ -1,0 +1,25 @@
+{
+  "id": "ae8eeb3a-a6b9-4f2d-bcfc-0880935774b9",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728822169,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 357,
+    "total_tokens": 508
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Women's Basket Low Top Sneakers\n**Subtitle (Sottotitolo):** Elegant White and Green Design\n**Short Description (Breve Descrizione):** Elevate your style with these Gucci Women's Basket Low Top Sneakers, featuring a striking white and green color scheme. Crafted in Italy, these sneakers blend luxury and comfort. Perfect for casual yet sophisticated looks.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with Gucci's Women's Basket Low Top Sneakers. Here are the key features:\n\n- **Style Number:** 700290 2SHG0 9089\n- **Size:** 36\n- **Color Scheme:** White and Green, offering a fresh and vibrant aesthetic.\n- **Manufacturing:** Made in Italy, ensuring high-quality craftsmanship and attention to detail.\n- **Composition:**\n  - **Upper:** A combination of leather and other textiles, providing durability and style.\n  - **Sole:** Elastic material, ensuring flexibility and comfort.\n- **Design:** Low-top design with a sleek silhouette, perfect for everyday wear.\n- **Brand:** Gucci, synonymous with luxury and elegance.\n- **Additional Features:**\n  - **Versatility:** Suitable for a variety of occasions, from casual outings to more formal events.\n  - **Comfort:** Designed to provide long-lasting comfort without compromising on style.\n  - **Authenticity:** Genuine Gucci product, guaranteeing the highest standards of quality and design.\n\nThese Gucci Women's Basket Low Top Sneakers are a must-have for anyone looking to add a touch of luxury to their footwear collection. With their unique color scheme and high-quality materials, they are sure to make a statement."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

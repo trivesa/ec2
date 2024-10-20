@@ -1,0 +1,25 @@
+{
+  "id": "4db0b47e-9a0c-47d7-b888-9abc1b93ccd3",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728774016,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 318,
+    "total_tokens": 467
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Run Sneaker Black Yellow Beige\n**Subtitle (Sottotitolo):** High-End Fashion with Sporting Elegance\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Run Sneaker, featuring a unique blend of high-end fashion and sporting elegance. Crafted from GG technical knit fabric, these sneakers are defined by the iconic Interlocking G and a bi-color sole. Perfect for making a fashion statement.\n\n**Description (Descrizione):**\n\n- **Design Inspiration:** The Gucci Run Sneaker draws inspiration from the sporting world, interpreted through the Gucci lens with standout logo details.\n- **Material:** Crafted from GG technical knit fabric, ensuring both comfort and style.\n- **Key Features:**\n  - **Interlocking G:** The iconic Interlocking G motif adds a touch of luxury and sophistication.\n  - **Bi-Color Sole:** A playful note of chromatic contrast is achieved with a bi-color sole, completing the style.\n  - **Size Information:** Available in size 46, ensuring a comfortable fit.\n- **Product Details:**\n  - **Style Number:** 680938 USM10 8480\n  - **Composition:** Upper made from textile, with an EL (ethylene-vinyl acetate) sole.\n  - **Made In:** Italy, reflecting Gucci's commitment to high-quality craftsmanship.\n- **Authenticity:** Ensure authenticity by purchasing from authorized retailers or reputable sources to guarantee the quality and legitimacy of the product."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

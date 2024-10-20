@@ -1,0 +1,25 @@
+{
+  "id": "88a03c61-11da-4ceb-9791-8e111f7b0d6b",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728798710,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 365,
+    "total_tokens": 512
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Square Muffler Scarf\n**Subtitle (Sottotitolo):** Luxurious Gray Silk and Wool Scarf with Iconic GG Pattern\n**Short Description (Breve Descrizione):** This exquisite GUCCI scarf, style number 281942 3G704 1062, is a masterpiece of luxury fashion, combining the finest materials with the iconic GG pattern. Crafted from 80% wool and 20% silk, it offers a perfect blend of warmth and elegance. Its square shape and generous size make it versatile for various styling options.\n\n**Description (Descrizione):**\n\n- **Material:** This scarf is made from a luxurious blend of 80% wool and 20% silk, ensuring a soft, warm, and durable wear.\n- **Design:** The scarf features the iconic GG pattern, a hallmark of GUCCI's timeless style and sophistication.\n- **Size:** The scarf measures 140 cm x 140 cm, providing ample coverage and versatility for different styling options.\n- **Color:** The scarf is available in a sophisticated dark gray (anthracite) color, perfect for adding a touch of elegance to any outfit.\n- **Authenticity:** This scarf is 100% authentic, guaranteed to be an original GUCCI product.\n- **Manufacturing:** Made in Italy, it reflects the high-quality craftsmanship and attention to detail that GUCCI is renowned for.\n- **Packaging:** The scarf comes with its original tags and is packaged in a GUCCI paper bag, ensuring it arrives in pristine condition.\n- **Styling:** Whether you choose to wear it as a stylish accessory or as a cozy layering piece, this scarf is sure to make a statement with its classic GG pattern and luxurious materials."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

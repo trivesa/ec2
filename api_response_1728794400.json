@@ -1,0 +1,25 @@
+{
+  "id": "47eb31d2-04f2-4896-8a99-603638af0874",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728794400,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 354,
+    "total_tokens": 506
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Micro Sima Driving Shoes\n**Subtitle (Sottotitolo):** Luxurious Leather Driving Shoes for Men\n**Short Description (Breve Descrizione):** Experience the epitome of luxury with the GUCCI Micro Sima Driving Shoes, crafted from high-quality leather and designed for comfort and style. These sleek driving shoes are perfect for both casual and formal occasions. With a focus on Italian craftsmanship, they embody the essence of GUCCI's commitment to excellence.\n\n**Description (Descrizione):**\n\n- **Style Number:** 466904 A9LF0 1000\n- **Size:** 38.5\n- **Material:** High-quality black leather, ensuring durability and a luxurious feel.\n- **Design:** Sleek and minimalist, with a focus on comfort and versatility.\n- **Key Features:**\n  - **Leather Construction:** Made entirely from premium leather, showcasing GUCCI's dedication to quality.\n  - **Driving Shoe Design:** Designed for comfort and ease, perfect for driving and everyday wear.\n  - **Italian Craftsmanship:** Each pair is meticulously crafted in Italy, reflecting GUCCI's commitment to exceptional craftsmanship.\n  - **Versatility:** Suitable for both casual and formal occasions, making them a versatile addition to any wardrobe.\n- **Additional Details:**\n  - **Color:** Black, offering a timeless and sophisticated look.\n  - **Comfort:** Designed to provide superior comfort, making them ideal for long drives or daily wear.\n  - **Authenticity:** Guaranteed authentic GUCCI product, ensuring you receive a genuine luxury item.\n\nExperience the luxury and comfort of GUCCI's Micro Sima Driving Shoes, a testament to the brand's dedication to quality and style."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

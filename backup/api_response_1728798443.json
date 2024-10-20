@@ -1,0 +1,25 @@
+{
+  "id": "059c724e-7ba1-440a-aa80-e6b3b55331d6",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728798443,
+  "usage": {
+    "prompt_tokens": 141,
+    "completion_tokens": 391,
+    "total_tokens": 532
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI G-Timeless Scarf is Not Available; Introducing GG Jacquard Wool Silk Scarf\n\n**Subtitle (Sottotitolo):** Experience the Elegance of GUCCI's GG Jacquard Wool Silk Scarf\n\n**Short Description (Breve Descrizione):**\nThe YA1264045 style number corresponds to a GUCCI watch, not a scarf. Instead, discover the luxurious GG Jacquard Wool Silk Scarf, a testament to GUCCI's craftsmanship and style. This scarf combines the finest wool and silk to create a sophisticated accessory perfect for any occasion.\n\n**Description (Descrizione):**\n\n- **Material:** Crafted from a blend of high-quality wool and silk, ensuring a soft, luxurious texture that wraps comfortably around the neck.\n- **Design:** The GG Jacquard pattern is a classic GUCCI motif, adding a touch of timeless elegance to any outfit. The subtle yet distinctive design makes it versatile for both casual and formal wear.\n- **Color Options:** Available in various colors, including Brown/Beige and Grey, allowing you to choose the perfect shade to match your personal style.\n- **Size Information:** The scarf is designed to be one-size-fits-all, providing a comfortable fit for most adults.\n- **Care Instructions:** To maintain the scarf's luxurious quality, it is recommended to dry clean only.\n- **Brand Authenticity:** This scarf is an authentic GUCCI product, ensuring the highest standards of quality and craftsmanship.\n- **Availability:** In stock and ready for immediate shipping, ensuring you can enjoy your new scarf without delay.\n\n**Note:** The YA1264045 style number refers to a GUCCI watch, specifically the G-Timeless model with a black dial featuring stars and a planet motif, and is not associated with a scarf. For those interested in GUCCI scarves, the GG Jacquard Wool Silk Scarf is a highly recommended alternative."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

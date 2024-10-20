@@ -1,0 +1,25 @@
+{
+  "id": "19b6c902-c099-4883-981a-d5b2fb8aadf3",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728801489,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 304,
+    "total_tokens": 451
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Wool Silk Scarf\n**Subtitle (Sottotitolo):** Luxurious Grey Scarf with Iconic GG Pattern\n**Short Description (Breve Descrizione):** Elevate your style with this authentic GUCCI GG Jacquard Wool Silk Scarf, featuring a timeless grey hue and the iconic GG pattern. Crafted from a blend of wool and silk, this scarf offers both warmth and sophistication. Perfect for adding a touch of luxury to any outfit.\n\n**Description (Descrizione):**\n\n- **Style Number:** 281942 3G704 1962\n- **Material:** 80% Wool, 20% Silk\n- **Dimensions:** 140 cm x 140 cm\n- **Color:** Light Grey\n- **Pattern:** Iconic GG Jacquard pattern\n- **Origin:** Made in Italy\n- **Condition:** New with tag\n- **Features:**\n  - Luxurious blend of wool and silk for comfort and durability\n  - Classic GG pattern adds a timeless touch to any outfit\n  - Versatile size allows for multiple styling options\n  - Perfect for both casual and formal occasions\n  - Authentic GUCCI product ensures high-quality craftsmanship and attention to detail\n\nThis GUCCI GG Jacquard Wool Silk Scarf is a must-have accessory for anyone looking to add a touch of luxury to their wardrobe. Its versatile design and high-quality materials make it a versatile and stylish choice for any occasion."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

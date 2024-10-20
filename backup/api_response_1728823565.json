@@ -1,0 +1,25 @@
+{
+  "id": "6da18641-0407-407a-b5ad-e8c2cb535db5",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728823565,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 405,
+    "total_tokens": 556
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Denim Series Breathable Wear-Resistant Double G Jacquard Flat Shoes\n**Subtitle (Sottotitolo):** Elegant and Versatile Footwear for Women\n**Short Description (Breve Descrizione):** Experience the epitome of luxury with the GUCCI Denim Series Breathable Wear-Resistant Double G Jacquard Flat Shoes. Crafted with a blend of premium materials, these shoes offer both style and comfort. Perfect for everyday wear, they embody the iconic GUCCI aesthetic.\n\n**Description (Descrizione):**\n\nThe GUCCI Denim Series Breathable Wear-Resistant Double G Jacquard Flat Shoes are a testament to the brand's commitment to excellence. Here are some key features that make these shoes stand out:\n\n- **Material:** These shoes are made from a sophisticated blend of leather, rubber, nylon, polyester, suede, satin, and cotton, ensuring durability and versatility.\n- **Design:** The Double G Jacquard pattern adds a touch of elegance, while the breathable design ensures comfort throughout the day.\n- **Size:** Available in various sizes, including size 36, to cater to different foot shapes and preferences.\n- **Color:** The blue color option adds a classic and timeless appeal to any outfit.\n- **Brand Authenticity:** Guaranteed authentic GUCCI product, ensuring the highest quality and craftsmanship.\n- **Style Code:** 580877 2KQ50 4462, making it easy to identify and verify the product.\n- **Gender:** Designed specifically for women, these shoes are perfect for those who appreciate luxury and style.\n- **Versatility:** Suitable for a wide range of occasions, from casual daily wear to more formal events.\n- **Comfort:** The breathable and wear-resistant design ensures long-lasting comfort and durability.\n- **Luxury Appeal:** The iconic GUCCI logo and Double G pattern make these shoes a statement piece in any wardrobe.\n\nExperience the luxury and sophistication of GUCCI with these exceptional flat shoes."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

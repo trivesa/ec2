@@ -1,0 +1,25 @@
+{
+  "id": "87ee96f9-2a07-4f1f-9370-698463ac5423",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728800140,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 347,
+    "total_tokens": 494
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Silk and Wool Scarf - 281942 3G704 6978\n**Subtitle (Sottotitolo):** Luxurious Pink Scarf with Elegant Design\n**Short Description (Breve Descrizione):** This GUCCI scarf, style number 281942 3G704 6978, is a stunning accessory made from a blend of silk and wool. Its vibrant pink color and elegant design make it a perfect addition to any outfit. Crafted with high-quality materials, it offers both comfort and style.\n\n**Description (Descrizione):**\n\n- **Material:** The scarf is made from a luxurious blend of silk and wool, ensuring a soft and comfortable wear.\n- **Size:** The scarf measures 140x140 cm, providing ample coverage and versatility in styling.\n- **Color:** The vibrant pink hue adds a pop of color to any outfit, making it a versatile accessory for various occasions.\n- **Design:** The scarf features an elegant design that reflects GUCCI's signature style, combining sophistication with modern flair.\n- **Quality:** As with all GUCCI products, this scarf is crafted with high-quality materials and attention to detail, ensuring durability and long-lasting appeal.\n- **Care Instructions:** To maintain the scarf's quality, it is recommended to follow the care instructions provided by the manufacturer.\n- **Authenticity:** This scarf is an authentic GUCCI product, guaranteed to meet the brand's high standards of quality and craftsmanship.\n- **Packaging:** The scarf comes with its original tags and packaging, ensuring it arrives in pristine condition.\n- **Return Policy:** Please refer to the seller's return policy for any questions regarding returns or exchanges."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

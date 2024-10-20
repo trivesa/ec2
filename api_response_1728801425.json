@@ -1,0 +1,25 @@
+{
+  "id": "4157daeb-dec0-4e10-9473-b78655e14c36",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728801425,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 406,
+    "total_tokens": 553
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Wool Silk Scarf - 281942 3G704 1962\n**Subtitle (Sottotitolo):** Luxurious Grey Scarf with Iconic GG Pattern\n**Short Description (Breve Descrizione):** This exquisite GUCCI scarf, style number 281942 3G704 1962, is crafted from a blend of wool and silk, featuring the iconic GG pattern in a sophisticated light grey hue. Perfect for adding a touch of luxury to any outfit, this scarf is both stylish and versatile. Made in Italy, it embodies the high-quality craftsmanship that GUCCI is renowned for.\n\n**Description (Descrizione):**\n\n- **Material:** This scarf is made from a luxurious blend of 80% wool and 20% silk, ensuring a soft, warm, and durable wear.\n- **Design:** The scarf features the iconic GG pattern, a classic design element that is synonymous with GUCCI's timeless style.\n- **Color:** The light grey color is versatile and sophisticated, making it easy to pair with a variety of outfits.\n- **Size:** The scarf measures 140 cm x 140 cm, providing ample coverage and versatility in styling.\n- **Origin:** Made in Italy, this scarf reflects the high-quality craftsmanship and attention to detail that GUCCI is known for.\n- **Authenticity:** This scarf is 100% original, ensuring that you are purchasing a genuine GUCCI product.\n- **Condition:** New with tag, ensuring that the scarf is in pristine condition.\n- **Style Number:** 281942 3G704 1962, making it easy to verify the authenticity and specific details of the scarf.\n- **Care Instructions:** To maintain the quality and longevity of the scarf, it is recommended to follow the care instructions provided by GUCCI.\n- **Luxury Appeal:** This scarf is a perfect accessory for those who appreciate high-end fashion and the timeless elegance of GUCCI's designs."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

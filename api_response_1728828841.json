@@ -1,0 +1,25 @@
+{
+  "id": "16e18a05-938e-4c95-9ca9-2b60a9648be9",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728828841,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 341,
+    "total_tokens": 490
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Ace Perforated Interlocking G Women's Shoes\n**Subtitle (Sottotitolo):** Elegant White Leather with Grey Accents\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Ace Perforated Interlocking G women's shoes, featuring a sleek white leather design adorned with the iconic interlocking G motif and subtle grey leather details. Perfect for adding a touch of luxury to any outfit. Available in size 34.\n\n**Description (Descrizione):**\n\n- **Design:** The Gucci Ace Perforated Interlocking G shoes are crafted from high-quality white leather, ensuring durability and a sophisticated look.\n- **Iconic Motif:** The shoes feature the iconic interlocking double G motif through a flower pattern, adding a distinctive and luxurious touch.\n- **Grey Accents:** Subtle grey leather details on the back provide a stylish contrast to the white leather, enhancing the overall aesthetic.\n- **Perforation:** The perforated design adds a modern and breathable element to the shoes, perfect for everyday wear.\n- **Size:** Available in size 34, ensuring a comfortable fit for those who prefer a more precise sizing.\n- **Versatility:** These shoes are versatile and can be paired with a variety of outfits, from casual to formal, making them a valuable addition to any wardrobe.\n- **Quality:** Gucci's commitment to quality is evident in every detail, from the stitching to the material selection, ensuring these shoes will last for years to come.\n- **Authenticity:** Ensure you purchase from authorized retailers to guarantee authenticity and enjoy the true luxury of Gucci's craftsmanship."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

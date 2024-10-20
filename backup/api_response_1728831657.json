@@ -1,0 +1,25 @@
+{
+  "id": "7f68e0a4-dbb5-4daa-9cd3-3371868eb531",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728831657,
+  "usage": {
+    "prompt_tokens": 553,
+    "completion_tokens": 920,
+    "total_tokens": 1473
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Here is the information for the GUCCI shoes with style number 700291 2SHW0 4870:\n\n**Mandatory Fields:**\n1. **Object Category (Categoria Oggetto):** Sneakers\n2. **Store Category (Categoria del Negozio):** Women's Shoes\n3. **Brand (Marca):** Gucci\n4. **Size (Numero di scarpa EU):** 37.5\n5. **Department (Reparto):** Women's\n6. **Color (Colore):** Light Blue Demetra Pink\n7. **Type (Tipo):** Low-Top Sneaker\n8. **Style (Stile):** Basket\n9. **Condition of the Item (Condizione dell'oggetto):** New\n10. **Price (Prezzo):** N/A (varies by retailer)\n11. **Shipping Rule (Regola sulla spedizione):** Varies by retailer (e.g., 3-day express delivery at BALAAN)\n\n**Optional Fields:**\n1. **MPN (MPN):** 700291-2SHW0-4870\n2. **Custom Label (Etichetta personalizzata - SKU):** N/A\n3. **EAN (EAN):** N/A\n4. **Material (Materiale della tomaia):** EL+OTHER TEXTILE\n5. **Sole Material (Materiale della suola):** EL\n6. **Lining Material (Materiale della fodera):** N/A\n7. **Closure Type (Chiusura):** N/A\n8. **Fit (Vestibilit\u00e0):** N/A\n9. **Product Line (Linea prodotto):** Basket\n10. **Insole Material (Materiale della soletta):** N/A\n11. **Outer Material (Materiale tomaia):** EL+OTHER TEXTILE\n12. **Pattern (Fantasia):** N/A\n13. **Season (Stagione):** N/A\n14. **Theme (Tema):** N/A\n15. **Product Variants (Varianti di prodotto):** N/A\n16. **Payment and Offers (Regole di pagamento):** Varies by retailer\n17. **Object Warnings (Avvertenze per l'oggetto):** N/A\n18. **Width (Larghezza della scarpa):** N/A\n19. **Year Manufactured (Anno di fabbricazione):** N/A\n20. **Activity (Attivit\u00e0):** N/A\n21. **Vintage (Vintage):** No\n22. **Customized (Personalizzato):** No\n23. **Model (Modello):** Basket\n24. **Decorative Elements (Elementi decorativi):** N/A\n25. **Occasion (Occasione):** N/A\n26. **Toe Shape (Forma della punta):** N/A\n27. **Toe Cap Material (Materiale del puntale):** N/A\n28. **Pronation (Pronazione):** N/A\n29. **Calf Circumference (Circonferenza del polpaccio):** N/A\n30. **Shaft Height (Altezza del gambale):** N/A\n31. **Heel Height (Altezza del tacco):** N/A\n32. **Heel Style (Stile del tacco):** N/A\n33. **Shoe Shaft Style (Stile del gambale):** N/A\n34. **Signed (Firmato):** No\n35. **Handmade (Fatto a mano):** No\n36. **Country of Manufacture (Paese di fabbricazione):** Italy\n37. **Manufacturing Process (Processo di fabbricazione):** N/A\n38. **Sustainability Features (Caratteristiche di sostenibilit\u00e0):** N/A\n39. **Care Instructions (Istruzioni per la cura):** N/A\n40. **Packaging (Imballaggio):** N/A\n41. **Warranty Information (Informazioni sulla garanzia):** N/A\n\nPlease note that some fields are not available or not applicable due to the lack of detailed information in the provided sources."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

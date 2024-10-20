@@ -1,0 +1,25 @@
+{
+  "id": "f673fb1e-fd64-4252-ae1a-369afa5ab5b8",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728783889,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 375,
+    "total_tokens": 526
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low 'White Demetra Green' Sneakers\n**Subtitle (Sottotitolo):** Luxurious Comfort in a Classic Design\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Basket Low 'White Demetra Green' sneakers, featuring a timeless design and premium materials. Crafted in Italy, these shoes offer a perfect blend of comfort and luxury. Available in size 42.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the Gucci Basket Low 'White Demetra Green' sneakers. Here are some key features that make these shoes stand out:\n\n- **Craftsmanship:** Made in Italy, these sneakers showcase Gucci's commitment to exceptional craftsmanship and attention to detail.\n- **Materials:** The upper is made from high-quality textile materials, while the sole is crafted from durable EL (ethylene-vinyl acetate) for long-lasting wear.\n- **Design:** The classic low-top design is complemented by a striking white and demetra green color scheme, adding a touch of sophistication to any outfit.\n- **Comfort:** Designed for comfort, these sneakers feature a cushioned insole and a supportive sole, ensuring a comfortable fit throughout the day.\n- **Size:** Available in size 42, ensuring a precise fit for those who value comfort and style.\n- **Product Code:** 698785 2SHG0 9089, ensuring authenticity and exclusivity.\n- **Brand Heritage:** Gucci, a renowned luxury brand, guarantees a product that embodies the essence of high-end fashion and craftsmanship.\n\nWhether you're looking to make a statement or simply want to add a touch of luxury to your everyday look, the Gucci Basket Low 'White Demetra Green' sneakers are the perfect choice."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

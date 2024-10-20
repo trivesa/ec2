@@ -1,0 +1,25 @@
+{
+  "id": "d328295f-20fa-453a-b083-43d3db947aea",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728808846,
+  "usage": {
+    "prompt_tokens": 504,
+    "completion_tokens": 993,
+    "total_tokens": 1497
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Based on the provided sources, here is the structured information for the GUCCI bag with style number 476433 DTD5N 9022:\n\n**Mandatory Fields:**\n\n1. **Object Category (Categoria Oggetto):** Handbags\n2. **Store Category (Categoria del Negozio):** Women's Handbags\n3. **Department (Reparto):** Women's Accessories\n4. **Brand (Marca):** Gucci\n5. **Color (Colore esterno):** White\n6. **Style (Stile):** GG Marmont Super Mini\n7. **Material (Materiale esterno):** Chevron Leather\n8. **Closure Type (Chiusura):** Snap Fastening\n9. **Lining Material (Materiale della fodera):** N/A\n10. **Hardware Material (Materiale delle finiture):** Antiqued Silver-Tone\n11. **Product Line (Linea prodotto):** GG Marmont\n12. **Pattern (Fantasia):** Chevron\n13. **Condition of the Item (Condizione dell'oggetto):** New\n14. **Price (Prezzo):** HK$9,390.00 (Note: This price is from a specific retailer and may vary)\n15. **Shipping Rule (Regola sulla spedizione):** Free 30-day returns (Note: This information is from Gucci's official website and may vary by retailer)\n\n**Optional Fields:**\n\n1. **Custom Label (Etichetta personalizzata - SKU):** 476433 DTD5N 9022\n2. **EAN (EAN):** N/A\n3. **MPN (MPN):** N/A\n4. **Handle Drop (Altezza del manico):** N/A\n5. **Handle/Strap Drop (Lunghezza della tracolla):** N/A\n6. **Size (Dimensioni):** Super Mini\n7. **Features (Caratteristiche):** Matelass\u00e9 Leather, Snap Fastening, Antiqued Silver-Tone Logo\n8. **Vintage (Vintage):** No\n9. **Unit of Measurement (Unit\u00e0 di misura):** N/A\n10. **Accents (Elementi decorativi):** Antiqued Silver-Tone Logo\n11. **Theme (Tema):** N/A\n12. **Occasion (Occasione):** N/A\n13. **Year Manufactured (Anno di fabbricazione):** N/A\n14. **Product Variants (Varianti di prodotto):** N/A\n15. **Payment Options and Offers (Regole di pagamento):** N/A\n16. **Shipping (Regola sulla spedizione):** Free 30-day returns (Note: This information is from Gucci's official website and may vary by retailer)\n17. **Object Warnings (Avvertenze per l'oggetto):** N/A\n18. **Country/Region of Manufacture (Paese di fabbricazione):** N/A\n19. **Lining Color (Colore della fodera):** N/A\n20. **Handle/Strap Color (Colore del manico, tracolla):** N/A\n21. **Trim Color (Colore delle rifiniture):** N/A\n22. **Fabric Type (Tessuto):** N/A\n23. **Personalized (Personalizzato):** No\n24. **Accessories (Accessori):** N/A\n25. **Bag Width (Larghezza della borsa):** N/A\n26. **Bag Height (Altezza della borsa):** N/A\n27. **Bag Depth (Profondit\u00e0 della borsa):** N/A\n28. **Bag Shape (Forma):** N/A\n29. **Decorative Elements (Elementi decorativi):** Antiqued Silver-Tone Logo\n30. **Finish (Finitura):** N/A\n31. **Country of Manufacture (Paese di fabbricazione):** N/A\n\n**Sources:**\n- ****: https://www.vipstation.com.hk/en/item/gucci-476433dtd5n9022-bags.html\n- ****: https://www.gucci.com/us/en/pr/women/handbags/crossbody-bags-for-women/gg-marmont-super-mini-bag-p-476433DTDCT9022\n- ****: https://www.gucci.com/pl/en_gb/pr/women/handbags/mini-bags-for-women/gg-marmont-super-mini-bag-p-476433DTDCT9022"
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

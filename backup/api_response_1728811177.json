@@ -1,0 +1,25 @@
+{
+  "id": "849d9ca1-777c-4a83-a6ce-449b473c906e",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728811177,
+  "usage": {
+    "prompt_tokens": 416,
+    "completion_tokens": 873,
+    "total_tokens": 1289
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Given the specific style number **691281 ZAFHJ 2286** and the requirement for detailed information, I must clarify that without direct access to Gucci's official product database or a specific product listing, it's challenging to provide accurate and comprehensive details for all the requested fields. However, I can guide you through the general process and provide information that is typically applicable to Gucci products, using 'N/A' for fields where specific information is not available.\n\n### Mandatory Fields\n1. **Object Category (Categoria Oggetto):** Clothing\n2. **Store Category (Categoria del Negozio):** Luxury Fashion\n3. **Brand (Marca):** Gucci\n4. **Cut (Taglia):** N/A (Specific size information is not provided)\n5. **Department (Reparto):** N/A (Could be Men's or Women's depending on the product)\n6. **Type (Tipo):** N/A (Could be Jacket, Shirt, etc., depending on the product)\n7. **Style (Stile):** N/A (Specific style information beyond the style number is not provided)\n8. **Condition of the Item (Condizione dell'oggetto):** N/A (Assuming new, but could be pre-owned or used)\n9. **Price (Prezzo):** N/A (Pricing varies by product and location)\n10. **Shipping Rule (Regola sulla spedizione):** N/A (Varies by retailer and location)\n\n### Optional Fields\n1. **MPN (MPN):** 691281 ZAFHJ 2286\n2. **Custom Label (Etichetta personalizzata - SKU):** N/A\n3. **EAN (EAN):** N/A\n4. **Material (Materiale):** N/A\n5. **Color (Colore):** N/A\n6. **Tissue (Tessuto):** N/A\n7. **Size Type (Tipo di taglia):** N/A\n8. **Fit (Vestibilit\u00e0):** N/A\n9. **Sleeve Length (Lunghezza della manica):** N/A\n10. **Unit of Measurement (Unit\u00e0 di misura):** N/A\n11. **Character (Personaggio):** N/A\n12. **Season (Stagione):** N/A\n13. **Vintage (Vintage):** N/A\n14. **Neckline (Scollatura):** N/A\n15. **Theme (Tema):** N/A\n16. **Activity (Attivit\u00e0):** N/A\n17. **Decorative Elements (Elementi decorativi):** N/A\n18. **Characteristics (Caratteristiche):** N/A\n19. **Occasion (Occasione):** N/A\n20. **Knitting Style (Stile lavorazione a maglia):** N/A\n21. **Graphic Printing (Stampa grafica):** N/A\n22. **Garment Care (Cura dell'indumento):** N/A\n23. **Country of Manufacture (Paese di fabbricazione):** N/A\n24. **Fabric Type (Tipo di tessuto):** N/A\n25. **Personalized (Personalizzato):** N/A\n26. **Year Manufactured (Anno di fabbricazione):** N/A\n27. **Handmade (Fatto a mano):** N/A\n28. **Pattern (Fantasia):** N/A\n29. **Closure Type (Tipo di chiusura):** N/A\n30. **Accents (Dettagli decorativi):** N/A\n31. **Product Line (Linea di prodotto):** N/A\n\nFor accurate and detailed information, it's best to consult Gucci's official website or contact their customer service directly. The provided style number should help in identifying the specific product and its characteristics. \n\n**Note:** The information provided is based on general knowledge and does not reflect specific details about the product with the style number **691281 ZAFHJ 2286**. For precise information, please refer to Gucci's official resources or product listings."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

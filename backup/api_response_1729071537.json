@@ -1,0 +1,25 @@
+{
+  "id": "b0e68a71-1b3a-478b-971d-f04f72880fb8",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729071537,
+  "usage": {
+    "prompt_tokens": 628,
+    "completion_tokens": 773,
+    "total_tokens": 1401
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci 20mm WMNs Belt with Double G Buckle\n**Subtitle (Sottotitolo):** Authentic Gucci Belt with Style Number 409417-FAA6B-8048\n**Short Description (Breve Descrizione):** This Gucci belt features a 20mm wide canvas strap with a double G buckle, perfect for adding a touch of luxury to any outfit.\n**Description (Descrizione):** This Gucci belt is a timeless accessory that exudes elegance and sophistication. Crafted from high-quality canvas, the 20mm wide strap is adorned with the iconic double G buckle, a signature Gucci design element. The buckle is made from ceramic and features a sleek, modern design that complements the canvas strap perfectly. The belt is adjustable and can be worn with a variety of outfits, from casual jeans to formal dresses. The style number 409417-FAA6B-8048 ensures authenticity and quality, making this belt a valuable addition to any fashion collection.\n\n**Object Category (Categoria Oggetto):** Accessories\n**Store Category (Categoria del Negozio):** Belts\n**Brand (Marca):** Gucci\n**Cut (Taglia):** 100\n**Department (Reparto):** Women's Accessories\n**Type (Tipo):** Belt\n**Style (Stile):** Double G Buckle\n**Condition of the Item (Condizione dell'oggetto):** New with tags\n**Price (Prezzo):** N/A\n**Shipping Rule (Regola sulla spedizione):** N/A\n**MPN (MPN):** 409417-FAA6B-8048\n**Custom Label (Etichetta personalizzata - SKU):** N/A\n**EAN (EAN):** N/A\n**Material (Materiale):** Canvas\n**Color (Colore):** Beige\n**Tissue (Tessuto):** Canvas\n**Size Type (Tipo di taglia):** Standard\n**Fit (Vestibilit\u00e0):** Adjustable\n**Sleeve Length (Lunghezza della manica):** N/A\n**Unit of Measurement (Unit\u00e0 di misura):** cm\n**Character (Personaggio):** N/A\n**Season (Stagione):** N/A\n**Vintage (Vintage):** No\n**Neckline (Scollatura):** N/A\n**Theme (Tema):** Luxury\n**Activity (Attivit\u00e0):** N/A\n**Decorative Elements (Elementi decorativi):** Double G Buckle\n**Characteristics (Caratteristiche):** Adjustable, High-quality canvas, Ceramic buckle\n**Occasion (Occasione):** Formal, Casual\n**Knitting Style (Stile lavorazione a maglia):** N/A\n**Graphic Printing (Stampa grafica):** N/A\n**Garment Care (Cura dell'indumento):** N/A\n**Country of Manufacture (Paese di fabbricazione):** N/A\n**Fabric Type (Tipo di tessuto):** Canvas\n**Personalized (Personalizzato):** No\n**Year Manufactured (Anno di fabbricazione):** N/A\n**Handmade (Fatto a mano):** No\n**Pattern (Fantasia):** N/A\n**Closure Type (Tipo di chiusura):** Buckle\n**Accents (Dettagli decorativi):** Double G Buckle\n**Product Line (Linea di prodotto):** Gucci Marmont Collection\n\nNote: Some fields may not be applicable to this product, so they have been marked as 'N/A'."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

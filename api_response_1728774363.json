@@ -1,0 +1,25 @@
+{
+  "id": "60cec9c1-4b83-4647-8e6a-b708f9fcb689",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728774363,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 469,
+    "total_tokens": 620
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low 'White Demetra Green'\n**Subtitle (Sottotitolo):** Elegant Sportswear with a Touch of Luxury\n**Short Description (Breve Descrizione):** The Gucci Basket Low 'White Demetra Green' combines classic sportswear with high-end fashion, featuring a sleek white and green design. Crafted in Italy, these shoes embody the essence of Gucci's luxury and style. Perfect for those who seek to elevate their casual wear with a touch of sophistication.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The Gucci Basket Low 'White Demetra Green' (style number 698785 2SHG0 9089) is a masterpiece of Italian craftsmanship, blending the comfort of sportswear with the elegance of luxury fashion.\n  - The upper is made from high-quality other textile materials, ensuring durability and a premium feel.\n  - The sole is constructed from EL (ethylene-vinyl acetate), providing excellent cushioning and support.\n\n- **Color and Style:**\n  - The shoes feature a striking white and demetra green color scheme, adding a vibrant touch to any outfit.\n  - The classic low-top design makes them versatile and suitable for various occasions, from casual daily wear to more formal events.\n\n- **Size Information:**\n  - Available in size 46, ensuring a comfortable fit for those who prefer a slightly larger size.\n\n- **Additional Details:**\n  - The shoes are made in Italy, reflecting Gucci's commitment to quality and craftsmanship.\n  - The product code 698785-2SHG0 9089 ensures authenticity and exclusivity.\n\n- **Retail Information:**\n  - The Gucci Basket Low 'White Demetra Green' is available at various retailers, including Kickscrew and StockX, with prices ranging from $289.00 to $568.00, depending on the retailer and availability.\n\n- **Luxury and Exclusivity:**\n  - These shoes are a testament to Gucci's legacy in luxury fashion, offering a unique blend of style, comfort, and exclusivity.\n  - Perfect for those who appreciate high-end fashion and seek to make a statement with their footwear."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "d2f41031-1de1-4b3d-8850-98067d44a40a",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728773455,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 417,
+    "total_tokens": 569
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton 25 - Luxurious Sneakers for Special Occasions\n**Subtitle (Sottotitolo):** Elevate Your Style with Gucci's Exclusive Rhyton 25 Design\n**Short Description (Breve Descrizione):** The Gucci Rhyton 25, with style number 663339 2SH00 9522, is a sophisticated and stylish sneaker designed to commemorate special occasions in high fashion. These luxurious shoes offer a unique design and luxurious feel, perfect for those who appreciate high-end fashion. Available in size 46.5, they are ideal for making a statement.\n\n**Description (Descrizione):**\n\n- **Unique Design:** The Gucci Rhyton 25 features a distinctive and elegant design that sets it apart from other sneakers. Its unique aesthetic makes it a standout choice for fashion enthusiasts.\n- **Luxurious Feel:** Crafted with high-quality materials, these shoes provide a luxurious feel that is synonymous with Gucci's brand excellence.\n- **Special Occasions:** Whether it's a milestone birthday, anniversary, or any other special occasion, the Gucci Rhyton 25 is the perfect way to celebrate in style.\n- **Size Information:** Available in size 46.5, ensuring a comfortable fit for those who appreciate precision in their footwear.\n- **Authenticity:** Each pair comes with the original retail box and is guaranteed to be 100% authentic, ensuring that you are purchasing a genuine Gucci product.\n- **High-End Fashion:** The Gucci Rhyton 25 is a testament to Gucci's commitment to high-end fashion, combining style, luxury, and craftsmanship in one exceptional shoe.\n- **Versatility:** These sneakers can be dressed up or down, making them versatile for various occasions, from casual outings to more formal events.\n- **Brand Heritage:** Gucci's rich heritage and reputation for excellence are reflected in every detail of the Rhyton 25, making it a valuable addition to any shoe collection."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

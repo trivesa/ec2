@@ -1,0 +1,25 @@
+{
+  "id": "a6db0ec5-8db2-4c59-aa25-48a712b535c8",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728782353,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 357,
+    "total_tokens": 509
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High-Top Sneaker\n**Subtitle (Sottotitolo):** White and Blue High-Top Sneaker with Eco-Friendly Demetra Material\n**Short Description (Breve Descrizione):** Inspired by 90s basketball sneakers, the Gucci Basket high-top sneaker combines classic style with modern eco-friendly materials. Crafted from Demetra, a pliable and resilient material, these shoes offer a supple finish and distinctive detailing. Perfect for making a statement, these sneakers are designed for both comfort and style.\n\n**Description (Descrizione):**\n\n- **Inspiration:** Drawing inspiration from the iconic basketball sneakers of the 90s, the Gucci Basket high-top sneaker is a modern interpretation of classic on-court aesthetics.\n- **Materials:** The shoe is primarily crafted from Demetra, an eco-friendly material that combines animal-free raw materials from sustainable, renewable, and bio-based sources. This material offers pliable and resilient performance with a supple finish.\n- **Design Features:**\n  - **Upper:** Synthetic upper with a round toe and perforated detail, featuring a lace-up closure.\n  - **Signature Details:** Gucci logo details at the vamp, tongue, and sole, along with a paneled design.\n  - **Sole:** Rubber sole for durability and comfort.\n  - **Additional Features:** Contrast padding at the ankle and a rubber Interlocking G patch at the side.\n- **Size Information:** Available in various sizes, including 42.5.\n- **Production:** Made in Italy, ensuring high-quality craftsmanship.\n- **Packaging:** Includes box and dust bag.\n- **Style Number:** 661301 2SHA0 9014."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

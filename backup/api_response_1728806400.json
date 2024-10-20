@@ -1,0 +1,25 @@
+{
+  "id": "9a7c98cb-ca0e-40fd-b7a8-9d128af9fcd4",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728806400,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 393,
+    "total_tokens": 540
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Off The Grid Series Bag Single-Shoulder Bag Men's Black 625850-H9HAN-1000\n\n**Subtitle (Sottotitolo):** Sustainable Luxury in ECONYL Nylon with Leather Trims\n\n**Short Description (Breve Descrizione):** This GUCCI Off The Grid Series Bag combines eco-friendly ECONYL nylon with luxurious leather trims, featuring an allover double G pattern and a logo patch to the front. Perfect for those who value both style and sustainability. Crafted with an adjustable and detachable shoulder strap for versatile wear.\n\n**Description (Descrizione):**\n\n- **Material:** Crafted from ECONYL nylon, a sustainable and eco-friendly material, complemented by luxurious leather trims.\n- **Design:** Features an allover double G pattern, emphasizing GUCCI's iconic branding, and a logo patch to the front for added authenticity.\n- **Functionality:** Equipped with an adjustable and detachable shoulder strap, allowing for versatile wear and easy handling.\n- **Style:** Designed as a single-shoulder bag, ideal for daily use and travel, with a sleek and modern aesthetic.\n- **Size Information:**\n  - **Style Number:** 625850 H9HAN 1000\n  - **Dimensions:** Please refer to the specific product page for detailed size measurements.\n- **Additional Features:**\n  - **Sustainability:** ECONYL nylon ensures a reduced environmental impact, aligning with GUCCI's commitment to eco-friendly fashion.\n  - **Quality:** High-quality construction and materials ensure durability and long-lasting use.\n  - **Versatility:** Suitable for various occasions, from casual outings to more formal events, thanks to its versatile design and adjustable strap.\n\nThis GUCCI Off The Grid Series Bag embodies the perfect blend of luxury, sustainability, and practicality, making it a must-have accessory for the modern man."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

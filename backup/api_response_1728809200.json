@@ -1,0 +1,25 @@
+{
+  "id": "067b3056-09b2-47d1-b271-a1e2749be0c0",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728809200,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 454,
+    "total_tokens": 601
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Marmont Super Mini Bag in White Chevron Leather\n**Subtitle (Sottotitolo):** Exquisite Luxury Handbag with Iconic GG Marmont Design\n**Short Description (Breve Descrizione):** The GUCCI GG Marmont Super Mini Bag in white chevron leather is a compact yet stylish accessory that embodies the brand's signature elegance and sophistication. Perfect for everyday use, this bag features the iconic GG Marmont buckle and a sleek, modern design. Its small size makes it ideal for carrying essentials while maintaining a chic, understated look.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - Crafted from high-quality white chevron leather, ensuring durability and a luxurious feel.\n  - The bag features the iconic GG Marmont buckle, a hallmark of GUCCI's timeless style.\n  - The sleek, modern design makes it a versatile accessory for various occasions.\n\n- **Size and Functionality:**\n  - The super mini size is perfect for carrying essentials such as a phone, wallet, and keys.\n  - The bag is designed to be compact and lightweight, making it easy to carry around.\n  - The crossbody strap allows for hands-free convenience and adds to the bag's practicality.\n\n- **Style and Versatility:**\n  - The white chevron leather gives the bag a clean and sophisticated look that complements a wide range of outfits.\n  - The GG Marmont Super Mini Bag can be dressed up or down, making it suitable for both casual and formal events.\n  - The bag's compact size and stylish design make it an ideal accessory for daily use, travel, or as a gift.\n\n- **Product Details:**\n  - Style Number: 476433 DTD5N 9022\n  - Material: White Chevron Leather\n  - Size: Super Mini\n  - Brand: GUCCI\n  - Type: Crossbody Bag\n  - Color: White\n  - Closure: GG Marmont Buckle\n\nThis GUCCI GG Marmont Super Mini Bag is a testament to the brand's commitment to luxury and style, offering a perfect blend of elegance and practicality."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

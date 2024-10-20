@@ -1,0 +1,25 @@
+{
+  "id": "984fe6a8-5d0a-45f6-9dee-e1e3f92e4d9d",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728799644,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 399,
+    "total_tokens": 546
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Pink Wool and Silk Scarf - 281942 3G704 6978\n**Subtitle (Sottotitolo):** Luxurious Pink Scarf with Iconic GUCCI Style\n**Short Description (Breve Descrizione):** This GUCCI scarf is a masterpiece of luxury fashion, blending wool and silk for a soft, elegant feel. The old pink hue adds a touch of sophistication, making it perfect for any occasion. Crafted with the finest materials, this scarf is a testament to GUCCI's commitment to quality and style.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury with the GUCCI Pink Wool and Silk Scarf, model 281942 3G704 6978. This exquisite accessory is designed to elevate your wardrobe with its timeless elegance and sophisticated charm.\n\n- **Material:** 80% Wool and 20% Silk, ensuring a soft, luxurious feel against the skin.\n- **Size:** 140 cm x 140 cm, providing ample coverage and versatility for styling.\n- **Color:** Old pink, a subtle yet sophisticated hue that complements a variety of outfits.\n- **Design:** Classic GUCCI design, featuring a simple yet elegant pattern that embodies the brand's iconic style.\n- **Quality:** Crafted with the finest materials and meticulous attention to detail, ensuring durability and long-lasting appeal.\n- **Versatility:** Perfect for adding a touch of luxury to any outfit, whether it's a casual day look or a more formal evening ensemble.\n- **Authenticity:** Guaranteed original GUCCI product, ensuring you receive a genuine piece of luxury fashion.\n\nThis scarf is not just an accessory; it's a statement piece that reflects your taste for the finer things in life. Whether you're looking to make a bold fashion statement or simply want to add a touch of elegance to your daily look, the GUCCI Pink Wool and Silk Scarf is the perfect choice."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

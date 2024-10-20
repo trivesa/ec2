@@ -1,0 +1,25 @@
+{
+  "id": "679e9993-46a3-4462-b84b-b76293e12fde",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728792807,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 373,
+    "total_tokens": 526
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High 'Black Demetra Red'\n**Subtitle (Sottotitolo):** Luxury Sneakers with Interlocking G Detail\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Basket High 'Black Demetra Red', featuring a sleek design and iconic interlocking G detail. Crafted with premium materials, these sneakers offer a perfect blend of comfort and luxury. Ideal for those who seek high-end fashion with a sporty twist.\n\n**Description (Descrizione):**\n\n- **Style Number:** 673077 2SHG0 1066\n- **Size:** 39.5\n- **Design Overview:**\n  - The Gucci Basket High 'Black Demetra Red' is a sophisticated take on the classic basketball shoe, combining Gucci's signature luxury with a sporty aesthetic.\n  - The shoe features a predominantly black upper with striking red accents, creating a bold and eye-catching look.\n  - The iconic interlocking G logo is prominently displayed, adding a touch of elegance and authenticity.\n\n- **Key Features:**\n  - **Premium Materials:** High-quality materials ensure durability and comfort.\n  - **Interlocking G Detail:** The iconic Gucci logo adds a luxurious touch.\n  - **Sporty Design:** Inspired by classic basketball shoes, with a modern twist.\n  - **Versatile Style:** Suitable for both casual and formal occasions.\n\n- **Additional Details:**\n  - **Original Box:** Includes the original Gucci box for authenticity and storage.\n  - **Shipping Options:** Available with standard shipping, with optional expedited shipping for an additional fee.\n\nExperience the epitome of luxury footwear with the Gucci Basket High 'Black Demetra Red', a perfect blend of style, comfort, and high-end craftsmanship."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

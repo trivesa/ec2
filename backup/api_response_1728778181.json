@@ -1,0 +1,25 @@
+{
+  "id": "a4b8a7be-ea5f-4ab6-bf0b-4b0720b83106",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728778181,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 355,
+    "total_tokens": 504
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton Pink Leather Trainers\n**Subtitle (Sottotitolo):** Elevate Your Style with Gucci's Iconic Rhyton Sneakers\n**Short Description (Breve Descrizione):** Experience the epitome of luxury footwear with Gucci's Rhyton Pink Leather Trainers. Crafted with premium leather and adorned with the iconic Gucci vintage logo, these sneakers are a statement piece for any fashion enthusiast. Available in size 44, they offer a perfect blend of style and comfort.\n\n**Description (Descrizione):**\n\n- **Luxurious Materials:** The Gucci Rhyton Pink Leather Trainers are made from high-quality, fuchsia/pink leather that exudes elegance and sophistication.\n- **Iconic Design:** The shoes feature the Gucci vintage logo, adding a touch of classic luxury to their modern design.\n- **Comfortable Fit:** With a 10mm height and rubber sole, these trainers provide a comfortable fit for daily wear.\n- **Craftsmanship:** Made in Italy, these shoes showcase Gucci's commitment to exceptional craftsmanship and attention to detail.\n- **Style Number:** 536900 DRW00 5752\n- **Size:** 44\n- **Versatility:** Perfect for casual outings or dressing up, these trainers are versatile and can be paired with a variety of outfits.\n- **Original Packaging:** Includes original box and packaging for authenticity and protection.\n- **Quality Assurance:** Ensured with double packing and assurance for safe shipping.\n- **Condition:** New, ensuring a pristine and untouched product.\n- **Brand Heritage:** Gucci's legacy in luxury fashion is reflected in these trainers, making them a valuable addition to any shoe collection."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "2ae43411-ee1c-40c8-bf0a-cae428726482",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728815543,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 359,
+    "total_tokens": 511
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Basket Sneakers Green White Black 700291 2SH90 3760\n**Subtitle (Sottotitolo):** Elevate Your Style with GUCCI's Iconic Basket Sneakers\n**Short Description (Breve Descrizione):** Experience the epitome of luxury footwear with GUCCI's Basket Sneakers, featuring a striking green, white, and black color scheme. Crafted with high-quality leather, these sneakers embody the brand's commitment to excellence and style. Perfect for those who seek to make a statement with their footwear.\n\n**Description (Descrizione):**\n\nElevate your wardrobe with the GUCCI Basket Sneakers, a masterpiece of Italian craftsmanship and design. Here are some key features that make these sneakers a must-have:\n\n- **Style Number:** 700291 2SH90 3760\n- **Size:** 39.5\n- **Material:** High-quality leather, ensuring durability and a luxurious feel.\n- **Color Scheme:** A vibrant green, white, and black palette that adds a touch of sophistication to any outfit.\n- **Design:** Classic basket silhouette with a modern twist, featuring GUCCI's iconic logo for a touch of elegance.\n- **Comfort:** Designed for both style and comfort, these sneakers are perfect for daily wear.\n- **Authenticity:** Guaranteed authentic GUCCI product, ensuring the highest standards of quality and craftsmanship.\n- **Packaging:** Includes original dust bag and shoe box for a complete luxury experience.\n- **Versatility:** Suitable for both casual and formal occasions, making these sneakers a versatile addition to your shoe collection.\n\nExperience the luxury and sophistication of GUCCI with these stunning Basket Sneakers. Perfect for those who appreciate high-quality craftsmanship and timeless design."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

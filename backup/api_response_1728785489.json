@@ -1,0 +1,25 @@
+{
+  "id": "4fd4458e-8b05-4071-ba21-56869a4affe9",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728785489,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 460,
+    "total_tokens": 612
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci GG Rhyton 'Beige White Yellow' 619891 99WF0 4370\n**Subtitle (Sottotitolo):** High-End Fashion Sneaker with Iconic GG Monogram\n**Short Description (Breve Descrizione):** The Gucci GG Rhyton 'Beige White Yellow' is a stylish and luxurious sneaker featuring a mix of fabrics with the iconic GG monogram. This fashion-forward shoe combines elegance and comfort, perfect for making a statement. Crafted with high-quality materials, it embodies Gucci's signature aesthetic.\n\n**Description (Descrizione):**\n\n- **Unique Design**: The Gucci GG Rhyton 'Beige White Yellow' boasts a distinctive design that blends various fabrics, including white and navy mini GG jacquard fabric, Beige/Ebony Original GG canvas, and Beige/Blue GG Supreme canvas. This eclectic mix creates a visually striking appearance that is quintessentially Gucci.\n\n- **Signature Branding**: The shoe features prominent \"GUCCI\" branding on the tongue and insole, reinforcing its luxury status. The beige laces add a touch of sophistication, while the yellow leather trims and reflective fabric enhance the shoe's visual appeal.\n\n- **Chunky Sole Unit**: The sneaker is completed with a chunky sole unit, comprising a Sail midsole with \"GUCCI\" christened at the heel and a red rubber outsole. This design element not only adds to the shoe's comfort but also contributes to its bold and recognizable silhouette.\n\n- **Size Information**: This shoe is available in size 41.5, ensuring a comfortable fit for those who appreciate the finer details of high-end fashion.\n\n- **Release Details**: The Gucci GG Rhyton 'Beige White Yellow' was part of the Spring/Summer 2020 (SS20) collection, originally retailing at $750. This limited-edition release makes it a sought-after item for fashion enthusiasts and collectors alike.\n\n- **Quality and Authenticity**: As a genuine Gucci product, this shoe is crafted with the highest quality materials and attention to detail, ensuring durability and authenticity. It is a testament to Gucci's commitment to excellence in luxury fashion."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

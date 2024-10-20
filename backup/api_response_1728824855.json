@@ -1,0 +1,25 @@
+{
+  "id": "5d013eb8-74e1-4f75-a4ae-fa916aa166e5",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728824855,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 350,
+    "total_tokens": 500
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton 'Mouth Print' Sneakers\n**Subtitle (Sottotitolo):** Classic Elegance with a Bold Twist\n**Short Description (Breve Descrizione):** The Gucci Rhyton 'Mouth Print' sneakers, style number 552093 A9L00 9522, are a striking fusion of classic design and bold, contemporary flair. Crafted in Italy, these shoes feature a clean silhouette and high-quality leather. Perfect for those who seek to make a statement with their footwear.\n\n**Description (Descrizione):**\n\n- **Design Inspiration:** The Gucci Rhyton 'Mouth Print' sneakers draw inspiration from the '90s hip-hop scene, blending vintage vibes with modern style.\n- **Quality and Craftsmanship:** These shoes are handcrafted in Italy, ensuring exceptional quality and attention to detail. The classic off-white leather construction provides a sporty yet sophisticated look.\n- **Unique Feature:** The bold 'Mouth Print' design adds a playful and eye-catching element, making these sneakers stand out from the crowd.\n- **Size Information:** Available in size 35, ensuring a comfortable fit for those with smaller foot sizes.\n- **Versatility:** Whether you're dressing up or dressing down, the Gucci Rhyton 'Mouth Print' sneakers are versatile enough to complement a variety of outfits.\n- **Authenticity:** Guaranteed authenticity with the style number 552093 A9L00 9522, ensuring you're purchasing a genuine Gucci product.\n- **Additional Details:** The shoes come with a clean and minimalist design, perfect for those who appreciate understated luxury with a touch of boldness."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "f935d3e3-c28c-4867-b5b1-683504a984eb",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728784463,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 336,
+    "total_tokens": 488
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Micro Sima Driving Shoes\n**Subtitle (Sottotitolo):** Luxurious Comfort in Black Leather\n**Short Description (Breve Descrizione):** Elevate your style with the GUCCI Micro Sima Driving Shoes, featuring sleek black leather and a comfortable design perfect for everyday wear. Crafted with Italian precision, these shoes embody the essence of luxury footwear. Available in size 41.5.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury with the GUCCI Micro Sima Driving Shoes, designed to provide unparalleled comfort and style. Here are the key features:\n\n- **Style Number:** 466904 A9LF0 1000\n- **Material:** High-quality black leather, ensuring durability and a sophisticated look.\n- **Design:** Sleek and minimalist, perfect for casual and formal occasions.\n- **Comfort:** Soft leather lining and cushioned insoles for enhanced comfort.\n- **Craftsmanship:** Made in Italy, reflecting GUCCI's commitment to exceptional craftsmanship.\n- **Size:** Available in size 41.5, ensuring a precise fit.\n- **Versatility:** Suitable for driving, walking, or as a stylish accessory for any outfit.\n- **Brand Heritage:** Part of GUCCI's legacy of creating iconic and luxurious footwear.\n- **Quality Assurance:** Guaranteed authenticity and quality, ensuring a long-lasting product.\n\nThese driving shoes are not just a fashion statement but a testament to GUCCI's dedication to creating high-quality, comfortable footwear. Whether you're driving, walking, or simply looking to elevate your style, the Micro Sima Driving Shoes are the perfect choice."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

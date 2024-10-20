@@ -1,0 +1,25 @@
+{
+  "id": "749cd509-6620-441a-969b-da5493547c5a",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729076790,
+  "usage": {
+    "prompt_tokens": 552,
+    "completion_tokens": 952,
+    "total_tokens": 1504
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Given the specific style number and size information provided, detailed product information cannot be directly retrieved from the search results provided. However, general information about Alexander McQueen shoes can be inferred from the sources:\n\n1. **Object Category (Categoria Oggetto):** Shoes\n2. **Store Category (Categoria del Negozio):** Men's Shoes\n3. **Brand (Marca):** Alexander McQueen\n4. **Size (Numero di scarpa EU):** 41\n5. **Department (Reparto):** Men\n6. **Color (Colore):** N/A (Specific color not provided)\n7. **Type (Tipo):** N/A (Specific type not provided, but Alexander McQueen is known for oversized sneakers and other styles)\n8. **Style (Stile):** N/A (Specific style not provided, but Alexander McQueen is known for avant-garde and sculptural designs)\n9. **Condition of the Item (Condizione dell'oggetto):** N/A (Assumed new, but not explicitly stated)\n10. **Price (Prezzo):** N/A (Specific price not provided)\n11. **Shipping Rule (Regola sulla spedizione):** N/A (Specific shipping rules not provided, but Alexander McQueen offers complimentary express shipping and returns)\n\n**Optional Fields:**\n- **MPN (MPN):** N/A\n- **Custom Label (Etichetta personalizzata - SKU):** N/A\n- **EAN (EAN):** N/A\n- **Material (Materiale della tomaia):** N/A (But Alexander McQueen shoes are often made from leather)\n- **Sole Material (Materiale della suola):** N/A\n- **Lining Material (Materiale della fodera):** N/A\n- **Closure Type (Chiusura):** N/A\n- **Fit (Vestibilit\u00e0):** N/A\n- **Product Line (Linea prodotto):** N/A\n- **Insole Material (Materiale della soletta):** N/A\n- **Outer Material (Materiale tomaia):** N/A\n- **Pattern (Fantasia):** N/A\n- **Season (Stagione):** N/A\n- **Theme (Tema):** N/A\n- **Product Variants (Varianti di prodotto):** N/A\n- **Payment and Offers (Regole di pagamento):** N/A\n- **Object Warnings (Avvertenze per l'oggetto):** N/A\n- **Width (Larghezza della scarpa):** N/A\n- **Year Manufactured (Anno di fabbricazione):** N/A\n- **Activity (Attivit\u00e0):** N/A\n- **Vintage (Vintage):** N/A\n- **Customized (Personalizzato):** N/A\n- **Model (Modello):** N/A\n- **Decorative Elements (Elementi decorativi):** N/A\n- **Occasion (Occasione):** N/A\n- **Toe Shape (Forma della punta):** N/A\n- **Toe Cap Material (Materiale del puntale):** N/A\n- **Pronation (Pronazione):** N/A\n- **Calf Circumference (Circonferenza del polpaccio):** N/A\n- **Shaft Height (Altezza del gambale):** N/A\n- **Heel Height (Altezza del tacco):** N/A\n- **Heel Style (Stile del tacco):** N/A\n- **Shoe Shaft Style (Stile del gambale):** N/A\n- **Signed (Firmato):** N/A\n- **Handmade (Fatto a mano):** N/A\n- **Country of Manufacture (Paese di fabbricazione):** N/A\n- **Manufacturing Process (Processo di fabbricazione):** N/A\n- **Sustainability Features (Caratteristiche di sostenibilit\u00e0):** N/A\n- **Care Instructions (Istruzioni per la cura):** N/A\n- **Packaging (Imballaggio):** N/A\n- **Warranty Information (Informazioni sulla garanzia):** N/A\n\n**Note:** The specific details for the style number 202401 MCQUE AL09 cannot be found in the provided search results. For accurate information, it is recommended to consult the official Alexander McQueen website or contact their customer service."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

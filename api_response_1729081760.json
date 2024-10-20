@@ -1,0 +1,25 @@
+{
+  "id": "1198576a-2763-4ca3-a8c2-cb772145310e",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729081760,
+  "usage": {
+    "prompt_tokens": 145,
+    "completion_tokens": 400,
+    "total_tokens": 545
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** PRADA America's Cup T-Shirt 12Y\n**Subtitle (Sottotitolo):** Exclusive Sailing-Inspired Apparel\n**Short Description (Breve Descrizione):** Embrace the spirit of competitive sailing with the PRADA America's Cup T-Shirt 12Y, a testament to refined craftsmanship and timeless style. This exclusive piece is designed for those who appreciate the fusion of high-end fashion and the thrill of the sea. Perfect for casual wear, it embodies the essence of the America's Cup.\n\n**Description (Descrizione):**\n\nThe PRADA America's Cup T-Shirt 12Y is a sophisticated addition to any wardrobe, inspired by the prestigious sailing event. Here are some key features:\n\n- **Material:** Crafted from high-quality materials, ensuring comfort and durability.\n- **Design:** The T-shirt features a classic silhouette with a crew neck and short sleeves, adorned with subtle branding that reflects the elegance of PRADA.\n- **Inspiration:** Inspired by the 37th America's Cup, this T-shirt captures the essence of competitive sailing and the luxury of PRADA's design.\n- **Size Information:**\n  - Available in various sizes to fit different body types.\n  - Please refer to the size chart for precise measurements.\n- **Care Instructions:**\n  - Machine washable at 30\u00b0C.\n  - Do not bleach or tumble dry.\n  - Cool iron if necessary.\n  - Do not dry clean.\n- **Additional Details:**\n  - Part of the exclusive PRADA America's Cup collection.\n  - Ideal for casual wear and for those who appreciate the fusion of high-end fashion and sailing culture.\n  - Each piece is designed to reflect the refined craftsmanship and timeless style synonymous with PRADA.\n\nThis T-shirt is a perfect blend of sporty elegance and luxury fashion, making it a must-have for anyone who values the unique spirit of the America's Cup and the sophistication of PRADA."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

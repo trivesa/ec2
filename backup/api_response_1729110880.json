@@ -1,0 +1,25 @@
+{
+  "id": "fdaecf24-a2cc-4bdb-8e7a-574f1ea85092",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729110880,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 447,
+    "total_tokens": 599
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Alexander McQueen Oversized Sneaker - Style 202401 MCQUE AL09\n**Subtitle (Sottotitolo):** Luxurious Oversized Sneaker in White\n**Short Description (Breve Descrizione):** Experience the epitome of luxury footwear with the Alexander McQueen Oversized Sneaker, style 202401 MCQUE AL09. Crafted with precision and elegance, this shoe features a sleek white design that embodies the brand's avant-garde spirit. Perfect for those who seek to elevate their fashion statement.\n\n**Description (Descrizione):**\n\n- **Design and Craftsmanship:** The Alexander McQueen Oversized Sneaker is a masterpiece of contemporary design, blending bold proportions with meticulous craftsmanship. The white leather upper is adorned with subtle branding elements, including the iconic Alexander McQueen logo on the tongue and heel counter.\n- **Comfort and Fit:** While these sneakers are known for their oversized silhouette, they are designed to fit true to size. The leather upper provides a snug fit that molds to the foot over time, ensuring a comfortable wear despite the initial stiffness.\n- **Key Features:**\n  - **Oversized Design:** The shoe features an exaggerated sole and upper, making it a statement piece in any outfit.\n  - **Luxurious Materials:** High-quality white leather ensures durability and a premium feel.\n  - **Branding Elements:** Subtle yet distinctive branding on the tongue and heel counter adds a touch of sophistication.\n  - **Versatility:** Suitable for both casual and formal occasions, these sneakers can elevate any ensemble.\n- **Size Information:** This shoe is available in size 41, ensuring a precise fit for those who seek comfort and style.\n- **Additional Information:** The Alexander McQueen Oversized Sneaker is part of the brand's ongoing commitment to pushing the boundaries of fashion and luxury. With its unique design and exceptional craftsmanship, it is a must-have for fashion enthusiasts and collectors alike.\n\n**Note:** The specific details and pricing for this style may vary based on the source and availability. For the most accurate and up-to-date information, please refer to the official Alexander McQueen website or authorized retailers."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

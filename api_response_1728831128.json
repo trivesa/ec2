@@ -1,0 +1,25 @@
+{
+  "id": "ec44e160-a228-4d82-83da-9a12a5c75d38",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728831127,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 359,
+    "total_tokens": 508
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Women's Padded Web Slide Sandal\n**Subtitle (Sottotitolo):** Green and Red Nylon Slide Sandals with Iconic Web Detail\n**Short Description (Breve Descrizione):** Elevate your style with Gucci's Padded Web Slide Sandals, featuring a vibrant green and red nylon design adorned with the iconic Gucci web motif. Crafted for comfort and style, these sandals are perfect for casual yet sophisticated looks. Available in size 38.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with Gucci's Padded Web Slide Sandals. Here are the key features:\n\n- **Design:** The sandals feature a bold green and red nylon construction, showcasing the iconic Gucci web motif that adds a touch of sophistication to any outfit.\n- **Comfort:** The padded footbed ensures optimal comfort, making these sandals perfect for daily wear.\n- **Material:** Made from durable nylon and rubber, these sandals are built to last while maintaining their stylish appeal.\n- **Size:** Available in size 38, ensuring a precise fit for those seeking a comfortable and stylish footwear option.\n- **Brand Authenticity:** Authentic Gucci product, guaranteeing the highest quality and craftsmanship.\n- **Style Number:** 700320 UFR30 3060, ensuring you are purchasing the exact model you desire.\n- **Versatility:** Ideal for a variety of occasions, from casual outings to more formal events, these sandals are versatile and stylish.\n- **Return Policy:** Various return policies are available depending on the retailer, offering flexibility and peace of mind with your purchase.\n\nEmbrace the luxury and elegance of Gucci with these stunning Padded Web Slide Sandals."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

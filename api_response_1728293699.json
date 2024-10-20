@@ -1,0 +1,25 @@
+{
+  "id": "c337a440-34ee-431d-8b95-9aa57fd576a3",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728293698,
+  "usage": {
+    "prompt_tokens": 329,
+    "completion_tokens": 532,
+    "total_tokens": 861
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Here is the information for the GUCCI scarf with style number 644365 4G718 6468:\n\n**Mandatory Fields:**\n1. **Object Category (Categoria Oggetto):** Scarf\n2. **Store Category (Categoria del Negozio):** Men's Accessories\n3. **Brand (Marca):** Gucci\n4. **Color (Colore):** Navy and Red\n5. **Type (Tipo):** Scarf\n6. **Department (Reparto):** Men's Accessories\n7. **Material (Materiale):** Wool\n8. **Pattern (Fantasia):** Check\n9. **Country of Manufacture (Paese di fabbricazione):** N/A\n10. **Condition of the Item (Condizione dell'oggetto):** New with tags\n11. **Price (Prezzo):** $335.70\n12. **Shipping Rule (Regola sulla spedizione):** N/A\n\n**Optional Fields:**\n1. **Custom Label (Etichetta personalizzata - SKU):** N/A\n2. **EAN (EAN):** N/A\n3. **Style (Stile):** GG Jacquard\n4. **Theme (Tema):** N/A\n5. **Tissue (Tessuto):** Wool\n6. **Season (Stagione):** N/A\n7. **Features (Caratteristiche):** Logo detail, fringe\n8. **Decorative Elements (Elementi decorativi):** Logo, fringe\n9. **Width (Larghezza):** 14 inches (35 cm)\n10. **Garment Care (Cura dell'indumento):** N/A\n11. **Handmade (Fatto a mano):** N/A\n12. **MPN (MPN):** N/A\n13. **Quantity (Quantit\u00e0):** N/A\n14. **Unit of Measurement (Unit\u00e0 di misura):** N/A\n15. **Accessories (Accessori):** N/A\n16. **Length (Lunghezza):** 94 inches (240 cm)\n17. **Trim Material (Materiale delle finiture):** N/A\n18. **Personalized (Personalizzato):** N/A\n\n**Note:** The size provided in the query (140x60cm) does not match the size information found in the sources (14\" x 94\" or 240 x 35cm). The information provided here is based on the sources available."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

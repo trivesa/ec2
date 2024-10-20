@@ -1,0 +1,25 @@
+{
+  "id": "1bd78fbe-ef7a-4f61-ba8c-79d44a858017",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728819309,
+  "usage": {
+    "prompt_tokens": 148,
+    "completion_tokens": 363,
+    "total_tokens": 511
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Tennis 1977 GG Logo 'Black Multi' Sneaker\n**Subtitle (Sottotitolo):** Women\u2019s Luxury Sneaker with Retro-Inspired Details\n**Short Description (Breve Descrizione):** The Gucci Tennis 1977 GG Logo 'Black Multi' sneaker combines vintage flair with modern design, featuring a black and ivory GG denim jacquard and distinctive logo elements. This low-top sneaker is crafted with a focus on brand heritage and contemporary style. Available in size 37.\n\n**Description (Descrizione):**\n\n- **Design Inspiration:** The Gucci Tennis 1977 draws inspiration from different decades, blending curated retro-inspired details to create a contemporary design.\n- **Key Features:**\n  - **Material:** Black and ivory GG denim jacquard\n  - **Logo Details:** Raised GG motif at the sole, green and red Web, and the 'Gucci Tennis 1977' logo\n  - **Sole:** Rubber sole\n  - **Height:** 0.6\u2033 flat design\n  - **Manufacturing:** Made in Italy\n- **Style Elements:**\n  - The low-top sneaker features a distinctive green and red Web, a nod to Gucci's iconic branding.\n  - The 'Gucci Tennis 1977' label adds a touch of authenticity and heritage.\n  - The raised GG motif at the sole provides a subtle yet impactful brand statement.\n- **Size Information:** This sneaker is available in size 37, ensuring a comfortable fit for those who appreciate both style and comfort.\n- **Return Policy:** Please note that return policies may vary depending on the retailer, with options ranging from 3 to 90 days."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "cb64ed35-9e24-42bf-8286-b10e48ddaf9d",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728802431,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 393,
+    "total_tokens": 540
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Square Muffler Scarf\n**Subtitle (Sottotitolo):** Authentic Luxury Scarf in Anthracite Grey\n**Short Description (Breve Descrizione):** This GUCCI GG Jacquard Square Muffler Scarf is a timeless accessory that combines elegance with the iconic GG pattern. Crafted from a luxurious blend of 80% wool and 20% silk, it offers warmth and sophistication. Perfect for adding a touch of luxury to any outfit.\n\n**Description (Descrizione):**\n\n- **Material:** 80% wool and 20% silk, ensuring a soft, warm, and durable wear.\n- **Color:** Anthracite grey, providing a versatile and sophisticated hue that complements a variety of outfits.\n- **Pattern:** The iconic GG Jacquard pattern, a hallmark of GUCCI's luxury and style.\n- **Size:** 140 cm x 140 cm, ideal for wrapping around the neck or using as a stylish shawl.\n- **Condition:** New with tags, ensuring the scarf is in pristine condition.\n- **Authenticity:** 100% authentic GUCCI product, guaranteed to meet the brand's high standards of quality and craftsmanship.\n- **Origin:** Made in Italy, reflecting the country's renowned expertise in luxury fashion.\n- **Style Number:** 281942 3G704 1062, a specific model that guarantees authenticity and exclusivity.\n- **Packaging:** Includes the original GUCCI tag and paper bag, adding to the luxury experience.\n- **Versatility:** Perfect for both casual and formal occasions, this scarf is a versatile accessory that can elevate any look.\n- **Care Instructions:** To maintain the scarf's quality, it is recommended to follow the care instructions provided by GUCCI.\n- **Luxury Consignment:** Available through reputable luxury consignment platforms, ensuring the authenticity and quality of the product."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

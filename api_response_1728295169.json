@@ -1,0 +1,25 @@
+{
+  "id": "2f1ffc83-8f97-472c-8cb3-5ad2b796df11",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728295169,
+  "usage": {
+    "prompt_tokens": 154,
+    "completion_tokens": 508,
+    "total_tokens": 662
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Cognac Arcadie Leather Bag\n**Subtitle (Sottotitolo):** Elegant and Timeless Design\n**Short Description (Breve Descrizione):** The Cognac Arcadie Leather Bag by Miu Miu is a masterpiece of modern luxury, blending cosmopolitan style with timeless elegance. Its light padding and gold-tone hardware create a voluminous look, while the varnished metal lettering logo adds a touch of sophistication. Perfect for everyday use, this bag comfortably holds an iPhone 15 Pro Max, a Miu Miu card holder, a large Miu Miu wallet, and other small items.\n\n**Description (Descrizione):**\n\n- **Elegant Design**: The Arcadie leather bag is designed to translate current fashion trends into a material form, offering a cosmopolitan style that is both modern and timeless.\n- **Quality Materials**:\n  - **Leather**: Crafted from high-quality leather, ensuring durability and a luxurious feel.\n  - **Gold-Tone Hardware**: Adds a touch of sophistication and elegance to the bag's overall design.\n  - **Varnished Metal Lettering Logo**: Echoes the finishes of the metal hardware, crossing the boundaries between function and decoration.\n- **Practical Features**:\n  - **Light Padding**: Gives the bag a voluminous look and adds to its overall style.\n  - **Leather Handles**: Durable and stylish, perfect for carrying the bag by hand.\n  - **Detachable, Adjustable 105 cm Leather Shoulder Strap**: Offers versatility and convenience for different carrying styles.\n  - **Zipper Closure**: Secure and easy to use, ensuring your belongings are safe.\n  - **Cotton Satin Lining with Zipper Pocket**: Provides additional storage and organization inside the bag.\n  - **Purse Feet**: Protects the bag from scratches and wear, ensuring it remains in pristine condition.\n- **Size Information**: Size M, perfect for everyday use.\n- **Additional Information**:\n  - **Product Code**: 5BB142_2CR3_F0046_V_OON\n  - **Imported**: Ensures the bag meets international quality standards.\n  - **Free Shipping and Returns**: Enjoy hassle-free shopping with Miu Miu.\n  - **Secure Payment**: Miu Miu offers secure payment options for a safe shopping experience.\n  - **Sustainable Packaging**: Each Miu Miu order is delivered in sustainably designed and produced packaging."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

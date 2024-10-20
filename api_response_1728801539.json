@@ -1,0 +1,25 @@
+{
+  "id": "a84a4009-b094-420e-a317-072638da034f",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728801539,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 443,
+    "total_tokens": 590
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Wool Silk Scarf\n**Subtitle (Sottotitolo):** Elegant Grey Scarf with Iconic GG Pattern\n**Short Description (Breve Descrizione):** This luxurious GUCCI scarf, style number 281942 3G704 1962, is crafted from a blend of 80% wool and 20% silk, featuring the iconic GG pattern in a sophisticated light grey hue. Perfect for adding a touch of elegance to any outfit, this scarf is both stylish and versatile. Made in Italy, it ensures the highest quality and craftsmanship.\n\n**Description (Descrizione):**\n\n- **Material and Composition:** This scarf is made from a luxurious blend of 80% wool and 20% silk, ensuring a soft, warm, and durable wear.\n- **Design and Pattern:** The scarf features the iconic GG pattern, a hallmark of GUCCI's timeless style and sophistication. The light grey color adds a versatile and elegant touch to any outfit.\n- **Size Information:** The scarf measures 140 cm x 140 cm, providing ample coverage and versatility in styling.\n- **Origin and Quality:** Made in Italy, this scarf embodies the high-quality craftsmanship and attention to detail that GUCCI is renowned for.\n- **Authenticity:** This scarf is 100% original, ensuring that you are purchasing a genuine GUCCI product.\n- **Additional Features:** The scarf comes with its original tag, confirming its authenticity and new condition.\n- **Styling Options:** Whether you choose to wear it as a shawl, a scarf, or even as a stylish accessory for your handbag, this GUCCI scarf offers endless possibilities to elevate your style.\n- **Care Instructions:** To maintain the quality and longevity of your scarf, it is recommended to follow the care instructions provided by GUCCI, which typically include dry cleaning or hand washing in cold water.\n- **Packaging and Delivery:** The scarf is carefully packaged to ensure it arrives in perfect condition. Delivery times may vary depending on the shipping location.\n- **Return Policy:** Please note that returns are accepted within 14 days, as per the return policy of the retailer."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

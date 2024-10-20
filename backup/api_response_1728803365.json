@@ -1,0 +1,25 @@
+{
+  "id": "fcd89302-6b86-47c3-a855-ef59f21a07e2",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728803365,
+  "usage": {
+    "prompt_tokens": 323,
+    "completion_tokens": 550,
+    "total_tokens": 873
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Here is the information for the GUCCI scarf with style number 281942 3G704 1062:\n\n**Mandatory Fields:**\n\n1. **Object Category (Categoria Oggetto):** Scarf\n2. **Store Category (Categoria del Negozio):** Women's Accessories\n3. **Brand (Marca):** Gucci\n4. **Color (Colore):** Gray and Anthracite\n5. **Type (Tipo):** Unisex Shawl\n6. **Department (Reparto):** Women's Accessories\n7. **Material (Materiale):** Wool and Silk\n8. **Pattern (Fantasia):** GG Jacquard\n9. **Country of Manufacture (Paese di fabbricazione):** Italy\n10. **Condition of the Item (Condizione dell'oggetto):** New with tags\n11. **Price (Prezzo):** \u20ac690.00\n12. **Shipping Rule (Regola sulla spedizione):** Free shipping to Italy with express courier in 24/48 hours. International shipping via FedEx.\n\n**Optional Fields:**\n\n1. **Custom Label (Etichetta personalizzata - SKU):** 281942 3G704 1062\n2. **EAN (EAN):** N/A\n3. **Style (Stile):** GG Jacquard Square Muffler\n4. **Theme (Tema):** N/A\n5. **Tissue (Tessuto):** Wool and Silk\n6. **Season (Stagione):** N/A\n7. **Features (Caratteristiche):** N/A\n8. **Decorative Elements (Elementi decorativi):** GG Logo\n9. **Width (Larghezza):** N/A\n10. **Garment Care (Cura dell'indumento):** N/A\n11. **Handmade (Fatto a mano):** N/A\n12. **MPN (MPN):** N/A\n13. **Quantity (Quantit\u00e0):** N/A\n14. **Unit of Measurement (Unit\u00e0 di misura):** N/A\n15. **Accessories (Accessori):** N/A\n16. **Length (Lunghezza):** 140 cm x 140 cm (as per)\n17. **Trim Material (Materiale delle finiture):** N/A\n18. **Personalized (Personalizzato):** N/A\n\n**Note:** Some information may not be available or applicable, and thus marked as \"N/A\". The length information is taken from as it provides specific dimensions."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

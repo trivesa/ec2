@@ -1,0 +1,27 @@
+from google.cloud import vision
+import os
+
+# Ensure the correct credentials are used
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/ec2-user/google-credentials/photo-to-listing-e89218601911.json"
+
+# Initialize the Vision API client
+client = vision.ImageAnnotatorClient()
+
+# Path to the image file on your EC2 instance
+image_file_path = '/home/ec2-user/DSC02674.jpg'
+
+# Load the image
+with open(image_file_path, 'rb') as image_file:
+    content = image_file.read()
+image = vision.Image(content=content)
+
+# Call the Vision API
+response = client.text_detection(image=image)
+texts = response.text_annotations
+
+# Print extracted texts
+if texts:
+    for text in texts:
+        print(f"Detected text: {text.description}")
+else:
+    print("No text detected.")

@@ -1,0 +1,25 @@
+{
+  "id": "0a630bc3-7977-42c8-8249-407992a31349",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728295253,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 416,
+    "total_tokens": 569
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Leather Belt with Torchon Double G Buckle\n**Subtitle (Sottotitolo):** Classic Elegance with a Twist\n**Short Description (Breve Descrizione):** Elevate your style with the GUCCI Leather Belt featuring a torchon Double G buckle, a timeless piece that combines classic elegance with a modern twist. Crafted from high-quality leather, this belt is perfect for adding a touch of sophistication to any outfit. Its versatile design allows it to be worn both at the waist and on the hips.\n\n**Description (Descrizione):**\n\nThe GUCCI Leather Belt with style number 524103-AP00G-1000 is a masterpiece of luxury fashion, blending the iconic Double G emblem with a unique torchon design. Here are some key features:\n\n- **Design:** The belt features a textured torchon Double G metal buckle and a matching metal loop, adding a dimensional effect to its sleek design.\n- **Material:** Made from high-quality black leather, ensuring durability and a luxurious feel.\n- **Hardware:** Gold-toned hardware complements the black leather, creating a sophisticated and elegant look.\n- **Versatility:** This belt can be worn both at the waist and on the hips, offering versatility in styling.\n- **Size:** Available in various sizes, including 75 cm, to fit different waist measurements. Please note that the size mentioned in the query (120x80cm) seems to be incorrect for a belt and may refer to a different product or packaging dimensions.\n- **Origin:** Made in Italy, reflecting GUCCI\u2019s commitment to craftsmanship and quality.\n- **Style:** The torchon design and Double G buckle make this belt a standout piece, perfect for those who appreciate classic luxury with a modern twist.\n- **Care:** To maintain its quality, it is recommended to handle the belt with care and avoid exposure to harsh chemicals or excessive moisture.\n\nThis GUCCI Leather Belt is a timeless accessory that will elevate any outfit, making it a valuable addition to any fashion collection."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

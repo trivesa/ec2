@@ -1,0 +1,25 @@
+{
+  "id": "0bdb3f9a-2555-4d6a-a2bc-827d0e0c0d15",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729082051,
+  "usage": {
+    "prompt_tokens": 160,
+    "completion_tokens": 401,
+    "total_tokens": 561
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Buckle Leather Belt 409417-FAA6B-8048\n**Subtitle (Sottotitolo):** Luxurious Leather Belt with Iconic GG Buckle\n**Short Description (Breve Descrizione):** Elevate your style with this exquisite GUCCI GG Buckle leather belt, featuring a classic design and versatile appeal. Crafted from high-quality leather, this belt is adorned with the iconic GG buckle, making it a timeless accessory for any occasion. Perfect for adding a touch of luxury to your wardrobe.\n\n**Description (Descrizione):**\n\n- **Design and Craftsmanship:** This GUCCI belt is meticulously crafted from premium leather, ensuring durability and a luxurious feel. The iconic GG buckle, a hallmark of GUCCI's design excellence, adds a sophisticated touch to any outfit.\n- **Size Information:** This belt is available in a size that fits a wide range of waist sizes, with a width of 20cm and a maximum length of 200cm, providing a comfortable and adjustable fit.\n- **Versatility:** Whether you're dressing up for a formal event or adding a touch of elegance to a casual outfit, this belt is versatile enough to complement any style. Its classic design ensures it remains in style season after season.\n- **Quality and Authenticity:** This belt is a genuine GUCCI product, model 409417-FAA6B-8048, ensuring the highest quality and authenticity. It comes with a dust bag, reflecting the brand's commitment to luxury and detail.\n- **Style Tips:** Pair this belt with a variety of outfits, from dresses to trousers, to add a sophisticated and luxurious touch. The GG buckle is a statement piece that can elevate even the simplest of outfits.\n- **Care Instructions:** To maintain the belt's luxurious appearance, avoid exposing it to harsh chemicals or excessive moisture. Regular cleaning with a soft cloth and mild soap can help preserve its quality and longevity."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

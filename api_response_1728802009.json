@@ -1,0 +1,25 @@
+{
+  "id": "c15467eb-ea2d-40f4-8d3b-2c6bde09e24c",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728802009,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 389,
+    "total_tokens": 536
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Square Muffler Scarf\n**Subtitle (Sottotitolo):** Luxurious Anthracite Gray Silk and Wool Scarf\n**Short Description (Breve Descrizione):** Elevate your style with this authentic GUCCI GG Jacquard Square Muffler Scarf, crafted from a luxurious blend of 80% wool and 20% silk. This elegant accessory features the iconic GG pattern in a sophisticated anthracite gray hue. Perfect for adding a touch of luxury to any outfit.\n\n**Description (Descrizione):**\n\n- **Material and Composition:**\n  - Made from a high-quality blend of 80% wool and 20% silk, ensuring warmth and durability.\n  - The silk adds a touch of elegance and smoothness to the scarf.\n\n- **Design and Pattern:**\n  - Features the iconic GG pattern, a signature motif of the GUCCI brand.\n  - The anthracite gray color provides a versatile and sophisticated look that can be easily paired with various outfits.\n\n- **Size Information:**\n  - Measures 140 cm x 140 cm, making it a generous square scarf that can be styled in multiple ways.\n\n- **Authenticity and Origin:**\n  - 100% authentic GUCCI product, guaranteed to be original.\n  - Made in Italy, reflecting the brand's commitment to quality and craftsmanship.\n\n- **Additional Details:**\n  - Comes with tags and a paper bag, ensuring it is new and unused.\n  - Perfect for those seeking a luxurious accessory to elevate their wardrobe.\n\n- **Style Number:**\n  - 281942 3G704 1062, ensuring you are purchasing the exact model you desire.\n\nThis GUCCI GG Jacquard Square Muffler Scarf is a timeless piece that combines luxury with versatility, making it an ideal addition to any fashion-conscious individual's collection."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

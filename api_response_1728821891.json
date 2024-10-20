@@ -1,0 +1,25 @@
+{
+  "id": "c58121ff-4135-4003-8d17-836876b1e3e6",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728821891,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 355,
+    "total_tokens": 505
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High Top Basketball Shoes - White Blue\n**Subtitle (Sottotitolo):** Retro-Inspired Luxury Sneakers for Women\n**Short Description (Breve Descrizione):** Embrace the fusion of 90s basketball style and Gucci's luxury craftsmanship with these high-top sneakers. Crafted from white Demetra, these shoes offer a pliable and resilient performance with a supple finish. Perfect for making a statement, these sneakers are designed to turn heads.\n\n**Description (Descrizione):**\n\n- **Inspiration:** Inspired by 90s basketball sneakers, these Gucci Basket shoes combine vintage style with modern luxury.\n- **Material:** Crafted from white Demetra, a material that mimics the look and feel of leather but offers enhanced durability and flexibility.\n- **Design:**\n  - **Upper:** Synthetic upper with paneled design and perforated details.\n  - **Lacing:** Lace-up closure for a secure fit.\n  - **Signature Elements:** Gucci signature details at the vamp, tongue, and sole.\n  - **Sole:** Rubber sole for durability and traction.\n- **Size Information:** This product is available in size 36.\n- **Additional Features:**\n  - **Round Toe:** Classic round toe with perforated detail.\n  - **Synthetic Lining:** Synthetic lining for comfort and durability.\n  - **Made in Italy:** Crafted with Italian craftsmanship, ensuring high-quality and attention to detail.\n- **Style Number:** 661310 2SHA0 9014\n- **Perfect for:** These statement sneakers are ideal for those who want to make a fashion statement, whether it's on the court or on the street."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

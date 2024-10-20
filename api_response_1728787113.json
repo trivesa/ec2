@@ -1,0 +1,25 @@
+{
+  "id": "62bdf9d8-0103-42bb-9d24-6752013d3e38",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728787113,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 445,
+    "total_tokens": 595
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci GG Rhyton 'Beige White Yellow' Sneakers\n**Subtitle (Sottotitolo):** Iconic Luxury Sneakers with Unique Fabric Mix\n**Short Description (Breve Descrizione):** The Gucci GG Rhyton 'Beige White Yellow' sneakers, style number 619891 99WF0 4370, are a standout piece from Gucci's Spring/Summer 2020 collection. These shoes feature a distinctive mix of fabrics and bold design elements, making them a must-have for fashion enthusiasts. Crafted in size 41, they offer a perfect blend of style and comfort.\n\n**Description (Descrizione):**\n\nThe Gucci GG Rhyton 'Beige White Yellow' sneakers are a testament to Gucci's commitment to innovative design and luxury craftsmanship. Here are some key features that make these shoes truly unique:\n\n- **Fabric Mix:** The upper is constructed with a variety of fabrics, including white and navy mini GG jacquard fabric, Beige/Ebony Original GG canvas, and Beige/Blue GG Supreme canvas. This mix of textures and patterns adds depth and visual interest to the shoe.\n- **Signature Branding:** The shoes feature \"GUCCI\" branding on the tongue and insole, reinforcing the brand's iconic status.\n- **Color Accents:** Yellow leather trims and reflective fabric add vibrant touches to the design, while beige laces provide a subtle contrast.\n- **Chunky Sole:** The shoe is completed with a chunky sole unit, comprising a Sail midsole with \"GUCCI\" christened at the heel and a red rubber outsole. This bold construction adds to the shoe's overall statement-making appeal.\n- **Size:** Available in size 41, ensuring a comfortable fit for those who appreciate both style and comfort.\n- **Release Details:** Part of Gucci's Spring/Summer 2020 collection, these shoes were originally released on April 1st, 2020, with a retail price of $750.\n- **Authenticity:** Each pair is meticulously inspected to ensure authenticity and quality, making them a valuable addition to any luxury shoe collection."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

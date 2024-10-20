@@ -1,0 +1,25 @@
+{
+  "id": "78a39ae6-8c2f-4b2e-911b-3fe19cad1275",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728789583,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 381,
+    "total_tokens": 532
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton 'Hawaii' Sneaker\n**Subtitle (Sottotitolo):** Ivory Leather Vintage Gucci Logo Sneaker\n**Short Description (Breve Descrizione):** The Gucci Rhyton 'Hawaii' sneaker is a stylish and luxurious footwear option, featuring an ivory leather construction with a vintage Gucci logo. This shoe combines classic design elements with modern flair, perfect for those who appreciate high-end fashion. Available in size 40.5.\n\n**Description (Descrizione):**\n\n- **Material and Construction:** The Gucci Rhyton 'Hawaii' sneaker is crafted from high-quality ivory leather, ensuring durability and a luxurious feel.\n- **Design Elements:** The shoe features an almond-shaped nose, lacing at the front, and an insole with the Gucci logo, adding to its sophisticated aesthetic.\n- **Logo and Branding:** The vintage Gucci logo on the shoe provides a distinctive touch, making it a standout piece in any wardrobe.\n- **Size Information:** This shoe is available in size 40.5, ensuring a comfortable fit for those who prefer a precise size.\n- **Style Number:** The style number for this shoe is 630652 DRW00 9522, making it easy to identify and purchase.\n- **Additional Features:** The shoe's design is inspired by Gucci's iconic 'Hawaii' theme, adding a unique and exotic flair to its overall look.\n- **Quality and Craftsmanship:** As with all Gucci products, this sneaker is crafted with exceptional attention to detail and quality, ensuring a long-lasting and stylish footwear option.\n- **Versatility:** The Gucci Rhyton 'Hawaii' sneaker can be paired with a variety of outfits, from casual to formal, making it a versatile addition to any wardrobe."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

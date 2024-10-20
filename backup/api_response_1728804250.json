@@ -1,0 +1,25 @@
+{
+  "id": "dc08b1c0-f407-47f6-b7d5-78cfbdd4c58a",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728804250,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 401,
+    "total_tokens": 548
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Off The Grid Mini Shoulder Bag\n**Subtitle (Sottotitolo):** Eco-Friendly Luxury with ECONYL\u00ae Material\n**Short Description (Breve Descrizione):** Embrace sustainable luxury with the GUCCI Off The Grid Mini Shoulder Bag, crafted from ECONYL\u00ae material. This stylish and eco-friendly accessory is perfect for those who value both fashion and the environment. Its compact size and versatile design make it ideal for daily use.\n\n**Description (Descrizione):**\n\n- **Sustainable Material**: The GUCCI Off The Grid Mini Shoulder Bag is made from ECONYL\u00ae, a 100% regenerated nylon yarn that is produced from post-consumer plastic waste, such as fishing nets and industrial plastic waste. This eco-friendly material reduces waste and supports a more sustainable fashion industry.\n\n- **Compact Design**: With dimensions of 11.4 x 18 x 3.5 cm (4.5 x 7 x 1.4 inches), this mini shoulder bag is perfect for carrying essentials while maintaining a stylish and minimalist look.\n\n- **Versatile Style**: The bag features the iconic GUCCI logo, adding a touch of luxury to any outfit. Its versatile design makes it suitable for both casual and formal occasions.\n\n- **Practicality**: The bag is designed for everyday use, offering enough space for small items like a phone, wallet, and keys.\n\n- **Quality and Durability**: GUCCI ensures high-quality craftsmanship and durable materials, making this bag a long-lasting investment in sustainable fashion.\n\n- **Style Number**: 625599 H9HAN 1000\n\n- **Additional Features**:\n  - **Eco-Friendly**: Made from ECONYL\u00ae, supporting sustainable fashion practices.\n  - **Compact Size**: Ideal for daily essentials.\n  - **Luxury Brand**: Authentic GUCCI product with iconic logo.\n  - **Durable**: High-quality materials and craftsmanship for long-lasting use."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

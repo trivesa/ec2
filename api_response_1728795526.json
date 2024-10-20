@@ -1,0 +1,25 @@
+{
+  "id": "28a1ae45-1c14-48cb-b688-4e306cb22bc9",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728795525,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 382,
+    "total_tokens": 533
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low 'White Demetra Red' Sneakers\n**Subtitle (Sottotitolo):** Sustainable Luxury Footwear for the Modern Athleisure Enthusiast\n**Short Description (Breve Descrizione):** Embrace the fusion of sporty elegance and eco-friendly innovation with the Gucci Basket Low 'White Demetra Red' sneakers. Crafted from sustainable Demetra material, these shoes blend vintage basketball inspiration with modern luxury. Perfect for those who value both style and sustainability.\n\n**Description (Descrizione):**\n\n- **Inspiration:** The Gucci Basket Low 'White Demetra Red' sneakers draw inspiration from the classic basketball shoes of the 90s, reimagined with a contemporary twist.\n- **Sustainable Material:** Made primarily from Demetra, a sustainable, renewable, and bio-based material that is free of animal components. This eco-friendly material undergoes a process similar to tanning techniques, making it soft and malleable.\n- **Design Elements:**\n  - **Color Scheme:** A striking combination of white and red, with a slightly worn effect that adds to the shoe's vintage appeal.\n  - **Rubber Sole:** Durable and long-lasting, providing excellent grip and comfort.\n  - **Rubber Interlocking Double G:** A distinctive feature on the sides, showcasing Gucci's iconic logo.\n- **Additional Details:**\n  - **Size:** Available in size 44.\n  - **Packaging:** Includes a box and dust bag for added luxury and protection.\n- **Quality Assurance:** This product is of the highest quality, ensuring a premium experience for the wearer.\n- **Production Time:** 3-5 working days, ensuring prompt delivery without compromising on quality.\n- **Origin:** Made in Italy, reflecting the brand's commitment to craftsmanship and excellence."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "3e3f760f-4eca-42a8-aaa5-f49586770a43",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728772976,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 423,
+    "total_tokens": 573
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton '25' Sneaker\n**Subtitle (Sottotitolo):** Luxurious Cream-Colored Sneaker with Iconic Gucci Design\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Rhyton '25' sneaker, featuring a sleek cream-colored design and Gucci's signature logo. This luxurious sneaker combines comfort and fashion, perfect for making a statement. Crafted with high-quality materials, it ensures durability and long-lasting style.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The Gucci Rhyton '25' sneaker is crafted with premium materials, ensuring a luxurious feel and look.\n  - The cream-colored design adds a touch of elegance, making it versatile for various occasions.\n  - The iconic Gucci logo is prominently displayed, adding a touch of sophistication.\n\n- **Comfort and Fit:**\n  - Designed for comfort, the Rhyton '25' features a cushioned insole and a supportive outsole.\n  - Available in a range of sizes, including size 47, to ensure a perfect fit for every wearer.\n\n- **Details and Specifications:**\n  - Style Number: 663339 2SH00 9522\n  - Weight: 2 kg\n  - Size Range: 35 to 44 (EU sizes), with size 47 available for this specific listing\n  - Perfect for both casual and formal events, thanks to its versatile design.\n\n- **Authenticity and Quality:**\n  - Genuine Gucci product, ensuring the highest quality and authenticity.\n  - Durable construction to withstand daily wear and tear, maintaining its luxurious appearance over time.\n\n- **Additional Information:**\n  - This product is available on various platforms, including Best Wonder Closet, GOAT, KICKS CREW, and StockX, ensuring easy access for global customers.\n  - Price ranges from $440.00 to $1,417.00, depending on the retailer and availability."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

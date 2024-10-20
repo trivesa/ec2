@@ -1,0 +1,25 @@
+{
+  "id": "e6f45cff-c181-4127-8177-8f87183d9a8f",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728802668,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 401,
+    "total_tokens": 548
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Square Muffler Scarf\n**Subtitle (Sottotitolo):** Luxurious Gray Silk and Wool Scarf with Iconic GG Pattern\n**Short Description (Breve Descrizione):** Elevate your style with this authentic GUCCI GG Jacquard Square Muffler Scarf, featuring a sophisticated gray hue and the iconic GG pattern. Made from a luxurious blend of 80% wool and 20% silk, this scarf is both stylish and comfortable. Perfect for adding a touch of luxury to any outfit.\n\n**Description (Descrizione):**\n\n- **Style Number:** 281942 3G704 1062\n- **Material:** 80% Wool, 20% Silk\n- **Size:** 140 cm x 140 cm\n- **Color:** Dark Gray (Anthracite)\n- **Pattern:** Iconic GG Jacquard\n- **Authenticity:** 100% Authentic GUCCI product\n- **Origin:** Made in Italy\n- **Condition:** New with tags\n- **Packaging:** Includes original GUCCI tag and paper bag\n\nThis GUCCI GG Jacquard Square Muffler Scarf is a timeless accessory that combines elegance with the brand's signature style. The dark gray color and iconic GG pattern make it versatile and suitable for various occasions. Whether you're looking to add a sophisticated touch to a casual outfit or a luxurious accent to a formal ensemble, this scarf is the perfect choice.\n\n- **Key Features:**\n  - Luxurious blend of wool and silk for comfort and durability\n  - Iconic GG pattern adds a touch of sophistication\n  - Versatile size suitable for wrapping around the neck or using as a shawl\n  - Authentic GUCCI product with original packaging\n  - Made in Italy, ensuring high-quality craftsmanship\n\nThis scarf is a must-have for anyone who appreciates luxury fashion and the timeless appeal of GUCCI's iconic designs."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

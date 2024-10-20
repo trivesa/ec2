@@ -1,0 +1,25 @@
+{
+  "id": "c7c3429b-1bd9-49e3-8e49-eaabee1b38b4",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728778114,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 360,
+    "total_tokens": 510
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Micro Sima Driving Shoes\n**Subtitle (Sottotitolo):** Elegant Black Leather Driving Shoes with Classic Design\n**Short Description (Breve Descrizione):** Experience the epitome of luxury with the GUCCI Micro Sima Driving Shoes, crafted in high-quality black leather. These sleek and sophisticated shoes are designed to make a statement, perfect for both casual and formal occasions. With a focus on comfort and style, they embody the essence of GUCCI's timeless elegance.\n\n**Description (Descrizione):**\n\n- **Style Number:** 466904 A9LF0 1000\n- **Size:** 44\n- **Material:** High-quality black leather, ensuring durability and a luxurious feel.\n- **Design:** Classic driving shoe design with a sleek and streamlined silhouette, perfect for everyday wear.\n- **Features:**\n  - **Comfortable Fit:** Designed to provide a comfortable fit, ideal for long drives or casual outings.\n  - **Elegant Aesthetic:** The black leather finish adds a touch of sophistication, making these shoes versatile for both formal and informal events.\n  - **Quality Craftsmanship:** Each pair is meticulously crafted to meet GUCCI's high standards of quality and style.\n  - **Versatility:** Suitable for a variety of occasions, from casual gatherings to more formal events, these shoes are a versatile addition to any wardrobe.\n- **Additional Details:**\n  - **Brand:** GUCCI\n  - **Product Type:** Driving Shoes\n  - **Color:** Black\n  - **Leather Quality:** High-quality leather for long-lasting durability and style.\n\nExperience the luxury and elegance of GUCCI with the Micro Sima Driving Shoes, a perfect blend of comfort, style, and sophistication."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

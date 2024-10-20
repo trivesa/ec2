@@ -1,0 +1,25 @@
+{
+  "id": "dce25539-8595-44a2-b124-89dcd8f77966",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728798096,
+  "usage": {
+    "prompt_tokens": 314,
+    "completion_tokens": 535,
+    "total_tokens": 849
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Here is the information for the GUCCI belt with style number 434520 K5O1T 8692:\n\n**Mandatory Fields:**\n1. **Object Category (Categoria Oggetto):** Belt\n2. **Store Category (Categoria del Negozio):** Accessories\n3. **Brand (Marca):** Gucci\n4. **Type (Tipo):** Belt\n5. **Department (Reparto):** Women's Accessories\n6. **Color (Colore):** Beige/Ebony with Brown Leather Trim\n7. **Size (Taglia):** Various sizes available, including 75 cm\n8. **Condition of the Item (Condizione dell'oggetto):** New\n9. **Price (Prezzo):** $185.00, \u20ac149.00, $336.00 to $580.00\n10. **Shipping Rule (Regola sulla spedizione):** N/A\n\n**Optional Fields:**\n1. **EAN (EAN):** N/A\n2. **Material (Materiale):** GG Supreme canvas with brown leather trim\n3. **Style (Stile):** Supreme Kingsnake\n4. **Pattern (Fantasia):** Kingsnake print\n5. **Size Type (Tipo di taglia):** Standard belt sizes\n6. **Belt Width (Larghezza della cintura):** 3.5 cm\n7. **Decorative Elements (Elementi decorativi):** Antique brass hardware, square buckle\n8. **Theme (Tema):** Kingsnake, symbolizing wisdom and power\n9. **Features (Caratteristiche):** Can be worn as a hip or waist belt\n10. **Character (Personaggio):** N/A\n11. **Trim Material (Materiale delle finiture):** Brown leather\n12. **Country of Manufacture (Paese di fabbricazione):** Italy\n13. **Handmade (Fatto a mano):** N/A\n14. **Vintage (Vintage):** No\n15. **MPN (MPN):** 434520 K5O1T 8692\n16. **Quantity (Quantit\u00e0):** N/A\n17. **Unit of Measurement (Unit\u00e0 di misura):** Centimeters\n18. **Custom Label (Etichetta personalizzata - SKU):** N/A\n19. **Personalized (Personalizzato):** No\n\n**Note:** Prices may vary depending on the source and availability."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

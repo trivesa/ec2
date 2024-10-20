@@ -1,0 +1,25 @@
+{
+  "id": "945b17c3-9f05-4de9-8bda-70433d7471c2",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728779330,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 404,
+    "total_tokens": 555
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low 'White Demetra Green'\n**Subtitle (Sottotitolo):** Elegant Streetwear with a Touch of Luxury\n**Short Description (Breve Descrizione):** The Gucci Basket Low 'White Demetra Green' (698785 2SHG0 9089) is a stylish and versatile sneaker that combines the elegance of Gucci with the comfort of a low-profile shoe. Crafted in Italy, this shoe features a white and green color scheme, perfect for making a statement. Available in size 44.\n\n**Description (Descrizione):**\n\n- **Design and Craftsmanship:**\n  - The Gucci Basket Low 'White Demetra Green' is meticulously crafted in Italy, ensuring the highest quality and attention to detail.\n  - The shoe features a white and green color scheme, with the Demetra green accents adding a touch of sophistication.\n  - The upper is made from other textile materials, providing a lightweight and breathable fit.\n\n- **Comfort and Performance:**\n  - The low-profile design offers excellent comfort and flexibility, making it suitable for daily wear.\n  - The EL sole provides durability and traction, ensuring a smooth walking experience.\n\n- **Style and Versatility:**\n  - The Gucci Basket Low 'White Demetra Green' is perfect for those who want to add a touch of luxury to their casual outfits.\n  - The shoe can be easily paired with a variety of clothing styles, from casual jeans to more formal trousers.\n\n- **Product Details:**\n  - Style Number: 698785 2SHG0 9089\n  - Size: 44\n  - Color: White Demetra Green\n  - Made in: Italy\n  - Composition: Upper - Other Textile, Sole - EL\n\nThis shoe is a testament to Gucci's commitment to blending high fashion with everyday comfort, making it a must-have for any fashion enthusiast."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

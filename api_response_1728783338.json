@@ -1,0 +1,25 @@
+{
+  "id": "73b83609-44b2-4f88-99df-afbde141a8f6",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728783338,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 395,
+    "total_tokens": 544
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton Pink Sneakers\n**Subtitle (Sottotitolo):** Luxurious Fuchsia/Pink Leather Trainers\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Rhyton Pink Sneakers, featuring a vibrant fuchsia/pink leather design and the iconic Gucci vintage logo. Crafted in Italy, these sneakers offer a blend of luxury and comfort. Perfect for making a statement, they are available in size 42.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The Gucci Rhyton Pink Sneakers are made from high-quality ivory leather with a striking fuchsia/pink hue.\n  - The shoes feature the Gucci vintage logo, adding a touch of classic elegance.\n  - The rubber sole provides durability and comfort.\n\n- **Key Features:**\n  - Style Number: 536900 DRW00 5752\n  - Size: 42\n  - Color: Fuchsia/Pink\n  - Material: Ivory Leather\n  - Sole: Rubber\n  - Height: 10mm\n  - Made in Italy\n\n- **Additional Details:**\n  - The sneakers come with a Gucci logo tag, emphasizing the brand's attention to detail.\n  - The fuchsia/pink colorway makes these shoes a standout piece in any wardrobe.\n  - Perfect for those who appreciate luxury and fashion, these sneakers are ideal for casual yet stylish occasions.\n\n- **Authenticity and Quality:**\n  - The Gucci Rhyton Pink Sneakers are authentic Gucci products, ensuring the highest quality and craftsmanship.\n  - The use of premium materials and meticulous manufacturing processes in Italy guarantees a long-lasting and comfortable wear.\n\nExperience the epitome of luxury footwear with the Gucci Rhyton Pink Sneakers. Their unique design and exceptional quality make them a must-have for fashion enthusiasts."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

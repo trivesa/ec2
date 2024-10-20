@@ -1,0 +1,25 @@
+{
+  "id": "6d5d850e-9012-409e-a665-eac4a78a22a0",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728772828,
+  "usage": {
+    "prompt_tokens": 146,
+    "completion_tokens": 384,
+    "total_tokens": 530
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Men's Shorts 599576 XHAED 6381\n**Subtitle (Sottotitolo):** Exclusive Luxury Italian Fashion\n**Short Description (Breve Descrizione):** Experience the epitome of luxury with GUCCI's 599576 XHAED 6381 men's shorts, crafted with precision and style. These shorts are designed to make a statement with their vibrant red color and high-quality materials. Perfect for those who seek to elevate their wardrobe with a touch of Italian elegance.\n\n**Description (Descrizione):**\n\n- **Style Number:** 599576 XHAED 6381\n- **Color:** Red\n- **Size:** 48 (Italian sizing)\n- **Material:** High-quality fabric ensuring comfort and durability\n- **Design:** Classic shorts with a modern twist, featuring GUCCI's iconic style\n- **Features:**\n  - **Brand New:** Unworn and with original tags\n  - **Exclusive Luxury:** Part of GUCCI's limited stock, offering a unique fashion experience\n  - **Italian Fashion:** Crafted with the finest Italian craftsmanship, reflecting GUCCI's commitment to excellence\n  - **Versatility:** Suitable for casual and semi-formal occasions, adding a touch of luxury to any outfit\n- **Additional Information:**\n  - **Shipping:** Standard international shipping available\n  - **Returns:** Returns accepted within 30 days, with shipping costs covered by the seller\n  - **Authenticity:** Guaranteed authentic GUCCI product, ensuring the highest quality and style\n\nThese shorts are a testament to GUCCI's dedication to creating clothing that is both stylish and luxurious. With their bold red color and impeccable craftsmanship, they are sure to make a lasting impression. Whether you're looking to enhance your everyday look or make a statement at a special event, these shorts are the perfect choice."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "f42a13d7-ccca-4479-ba59-e0c554f68077",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728820305,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 346,
+    "total_tokens": 495
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Princetown Leather Sandals\n**Subtitle (Sottotitolo):** Luxurious Black Leather Sandals with Timeless Elegance\n**Short Description (Breve Descrizione):** Elevate your style with these Gucci Princetown leather sandals, featuring a sleek black design and premium leather construction. Perfect for adding a touch of luxury to any outfit. Crafted with meticulous attention to detail, these sandals embody the essence of Gucci's high-end fashion.\n\n**Description (Descrizione):**\n\n- **Style Number:** 448562 DKHHO 1063\n- **Size:** 37\n- **Material:** High-quality black leather\n- **Design:** Classic Princetown design with a sophisticated aesthetic\n- **Features:**\n  - **Premium Leather:** Made from luxurious black leather that exudes elegance and sophistication.\n  - **Timeless Design:** The Princetown style is a classic choice that complements a variety of outfits, from casual to formal.\n  - **Comfort:** Designed for comfort, these sandals feature a well-crafted insole that provides support and stability.\n  - **Versatility:** Perfect for dressing up or down, these sandals are versatile and can be paired with a range of clothing styles.\n  - **Gucci Branding:** Embodies the Gucci brand's commitment to quality and style, making it a valuable addition to any shoe collection.\n- **Additional Details:**\n  - **Original Packaging:** Includes original box and dust bag for authenticity and storage.\n  - **Quality Assurance:** Each pair is carefully inspected to ensure it meets Gucci's high standards of craftsmanship and quality."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

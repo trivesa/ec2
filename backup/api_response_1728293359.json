@@ -1,0 +1,25 @@
+{
+  "id": "faeeb11a-7894-40d5-868e-d3ff65d3b43a",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728293359,
+  "usage": {
+    "prompt_tokens": 155,
+    "completion_tokens": 363,
+    "total_tokens": 518
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** BALENCIAGA Zen Logo-Print Faux Leather Sneakers for Women\n**Subtitle (Sottotitolo):** Elegant and Sporty Footwear with Classic Inspiration\n**Short Description (Breve Descrizione):** Embrace the fusion of elegance and sportiness with BALENCIAGA's Zen sneakers, designed with a classic sports shoe aesthetic and featuring lightweight faux leather uppers. Perfect for casual yet stylish outfits, these sneakers offer comfort and versatility. Available in size 8.\n\n**Description (Descrizione):**\n\n- **Inspiration:** The BALENCIAGA Zen sneakers draw inspiration from classic sports shoes, such as those used in football and martial arts, blending athletic flair with high-fashion sensibilities.\n- **Design:** These sneakers feature:\n  - **Lightweight Faux Leather Uppers:** Ensuring a comfortable and durable wear.\n  - **Elasticated Tongues:** For easy slip-on and off.\n  - **Cushioned Foam Insoles:** Providing additional support and comfort.\n  - **Topstitching:** Adding a touch of craftsmanship and detail.\n  - **Lace-Up Closure:** For a secure and adjustable fit.\n- **Color:** Black and white, offering a versatile and timeless look.\n- **Size Information:** Size 8, fits true to size. European sizing.\n- **Style Number:** 617540 W2CG1 1090\n- **Care Instructions:** To maintain the quality and longevity of your BALENCIAGA Zen sneakers, follow standard care procedures for faux leather products.\n- **Wear Suggestions:** Pair these sneakers with casual yet stylish outfits, such as BALENCIAGA sweatpants and shirts, for a cohesive and fashionable look."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

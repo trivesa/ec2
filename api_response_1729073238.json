@@ -1,0 +1,25 @@
+{
+  "id": "807503e3-ec02-4e7b-bc14-f175d2114fc0",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729073238,
+  "usage": {
+    "prompt_tokens": 614,
+    "completion_tokens": 848,
+    "total_tokens": 1462
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Bottega Veneta Lido Sandals EU Size 36.5\n**Subtitle (Sottotitolo):** Luxurious Intrecciato Woven Sandals for Women\n**Short Description (Breve Descrizione):** Elevate your style with these iconic Bottega Veneta Lido Sandals, featuring the brand's signature Intrecciato woven design in a sleek and comfortable EU size 36.5.\n**Description (Descrizione):** The Bottega Veneta Lido Sandals are a testament to the brand's commitment to luxury and craftsmanship. Crafted from high-quality Nappa leather, these sandals showcase the iconic Intrecciato woven design that has become synonymous with Bottega Veneta's elegance and sophistication. The EU size 36.5 ensures a comfortable fit, while the sleek design makes them versatile enough to be dressed up or down. Perfect for any occasion, these sandals are a must-have for anyone looking to add a touch of luxury to their wardrobe.\n\n**Object Category (Categoria Oggetto):** Shoes\n**Store Category (Categoria del Negozio):** Women's Shoes\n**Brand (Marca):** Bottega Veneta\n**Cut (Taglia):** EU 36.5\n**Department (Reparto):** Women's\n**Type (Tipo):** Sandals\n**Style (Stile):** Lido\n**Condition of the Item (Condizione dell'oggetto):** New\n**Price (Prezzo):** N/A (Please refer to the official Bottega Veneta website or authorized retailers for pricing)\n**Shipping Rule (Regola sulla spedizione):** Free delivery (Please refer to the official Bottega Veneta website or authorized retailers for shipping details)\n**MPN (MPN):** 639943VBP302019\n**Custom Label (Etichetta personalizzata - SKU):** 639943VBP302019\n**EAN (EAN):** N/A\n**Material (Materiale):** Nappa Leather\n**Color (Colore):** N/A (Please refer to the official Bottega Veneta website or authorized retailers for color options)\n**Tissue (Tessuto):** N/A\n**Size Type (Tipo di taglia):** EU\n**Fit (Vestibilit\u00e0):** True to size\n**Sleeve Length (Lunghezza della manica):** N/A\n**Unit of Measurement (Unit\u00e0 di misura):** EU sizes\n**Character (Personaggio):** N/A\n**Season (Stagione):** N/A\n**Vintage (Vintage):** No\n**Neckline (Scollatura):** N/A\n**Theme (Tema):** N/A\n**Activity (Attivit\u00e0):** N/A\n**Decorative Elements (Elementi decorativi):** Intrecciato woven design\n**Characteristics (Caratteristiche):** Luxurious, comfortable, versatile\n**Occasion (Occasione):** Any occasion\n**Knitting Style (Stile lavorazione a maglia):** N/A\n**Graphic Printing (Stampa grafica):** N/A\n**Garment Care (Cura dell'indumento):** N/A\n**Country of Manufacture (Paese di fabbricazione):** Italy\n**Fabric Type (Tipo di tessuto):** N/A\n**Personalized (Personalizzato):** No\n**Year Manufactured (Anno di fabbricazione):** N/A\n**Handmade (Fatto a mano):** No\n**Pattern (Fantasia):** N/A\n**Closure Type (Tipo di chiusura):** N/A\n**Accents (Dettagli decorativi):** N/A\n**Product Line (Linea di prodotto):** Lido Sandals\n\nNote: Some fields may not be applicable to shoes, and thus are marked as 'N/A'. For specific details such as price, color, and shipping, please refer to the official Bottega Veneta website or authorized retailers."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

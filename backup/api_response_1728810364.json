@@ -1,0 +1,25 @@
+{
+  "id": "97b691e0-7714-45cf-a539-42d4d0aa1686",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728810364,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 417,
+    "total_tokens": 564
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Off The Grid Shoulder Bag\n**Subtitle (Sottotitolo):** Versatile Elegance for the Modern Man\n**Short Description (Breve Descrizione):** The GUCCI Off The Grid Shoulder Bag, style number 625850 H9HAN 1000, is a sleek and versatile accessory crafted from ECONYL nylon and adorned with leather trims. Its allover double G pattern and logo patch add a touch of sophistication, making it perfect for daily use. This bag is designed to hold essentials with ease, featuring a zip pocket and a phone case.\n\n**Description (Descrizione):**\n\n- **Material:** Crafted from durable ECONYL nylon, ensuring a long-lasting and eco-friendly design.\n- **Design Elements:**\n  - **Allover Double G Pattern:** A classic GUCCI motif that adds a touch of elegance.\n  - **Logo Patch:** A subtle yet distinctive logo patch on the front.\n  - **Leather Trims:** Black leather trims for added sophistication.\n  - **Palladium-Toned Metal Hardware:** Adds a luxurious finish to the bag.\n- **Functionality:**\n  - **Exterior:** 1 zip pocket for secure storage.\n  - **Interior:** 1 phone case to keep your device protected.\n  - **Handles:** Leather top handles with a 2\u201d drop, and a detachable and adjustable shoulder strap with a 19.7\u201d drop.\n  - **Closure:** Zipper closure for secure closure.\n- **Dimensions:**\n  - **Width:** 6.3 inches\n  - **Height:** 8.7 inches\n  - **Depth:** 3.4 inches\n  - **Weight:** 1.3 pounds\n- **Capacity:** Can fit a cell phone up to 3.1\u201dW x 6.6\u201dH x 0.4\u201dD.\n- **Versatility:** Perfect for daily use, travel, or as a stylish accessory for any occasion."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

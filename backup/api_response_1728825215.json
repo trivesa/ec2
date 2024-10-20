@@ -1,0 +1,25 @@
+{
+  "id": "39b3be84-46f2-498c-acc4-0a450588d617",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728825215,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 432,
+    "total_tokens": 582
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI G74 Web Small Bee Casual Shoes/Sneakers\n**Subtitle (Sottotitolo):** Yellow Green Red Edition, Style Number 624484 0PV20 9560\n**Short Description (Breve Descrizione):** Elevate your style with the GUCCI G74 Web Small Bee Casual Shoes/Sneakers, featuring a vibrant yellow green and red color scheme. Crafted with meticulous attention to detail, these shoes embody the luxury and sophistication that GUCCI is renowned for. Perfect for making a statement in any casual setting.\n\n**Description (Descrizione):**\n\n- **Design and Style:**\n  - The GUCCI G74 Web Small Bee Casual Shoes/Sneakers are designed with a bold and eye-catching aesthetic, combining yellow green and red hues.\n  - The iconic Web motif, a signature element of GUCCI's design language, adds a touch of elegance and sophistication.\n  - The small bee detail, a nod to GUCCI's heritage, adds a whimsical and playful touch.\n\n- **Materials and Craftsmanship:**\n  - These shoes are crafted from high-quality materials, ensuring durability and comfort.\n  - The meticulous attention to detail in the construction and finishing of the shoes reflects GUCCI's commitment to excellence.\n\n- **Size Information:**\n  - Available in size 35, ensuring a comfortable fit for those who prefer a more precise sizing.\n\n- **Additional Features:**\n  - The shoes feature a low-top design, making them versatile for various occasions.\n  - The striped pattern adds a dynamic and modern touch to the overall design.\n\n- **Product Details:**\n  - Style Number: 624484 0PV20 9560\n  - Color: Yellow Green Red\n  - Gender: Men\n  - Size: 35\n  - Estimated Delivery: Varies by retailer, with some offering delivery as early as October 19, 2024.\n\nExperience the epitome of luxury footwear with the GUCCI G74 Web Small Bee Casual Shoes/Sneakers, a perfect blend of style, comfort, and craftsmanship."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

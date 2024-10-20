@@ -1,0 +1,25 @@
+{
+  "id": "784c0bcb-5fac-4639-bd78-ea80f1810ebf",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728822452,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 463,
+    "total_tokens": 613
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Sneakers in Green, White, and Black\n**Subtitle (Sottotitolo):** Luxurious and Versatile Footwear for the Fashion-Conscious\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Basket Sneakers, featuring a striking green, white, and black color scheme. Crafted with high-quality materials, these shoes offer both comfort and sophistication. Perfect for making a statement in any setting.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the Gucci Basket Sneakers, style number 700291 2SH90 3760. These shoes are designed to make a bold statement, combining green, white, and black hues in a unique and eye-catching way.\n\n- **Key Features:**\n  - **Color Scheme:** Green, white, and black, creating a versatile and stylish look.\n  - **Material:** High-quality materials ensure durability and comfort.\n  - **Design:** Classic basket silhouette with a modern twist, featuring the iconic Gucci logo.\n  - **Size:** Available in size 36, ensuring a perfect fit for smaller feet.\n  - **Brand Authenticity:** Genuine Gucci product, guaranteeing exceptional craftsmanship and quality.\n\n- **Additional Details:**\n  - **Product Code:** 700291 2SH90 3760\n  - **Condition:** New, ensuring that you receive a pristine pair of shoes.\n  - **Packaging:** Includes original Gucci box and dust bag for added luxury and protection.\n\n- **Why Choose This Product:**\n  - **Luxury Brand:** Gucci is renowned for its high-end fashion and exceptional quality.\n  - **Versatility:** Suitable for both casual and formal occasions, making it a versatile addition to your wardrobe.\n  - **Comfort:** Designed to provide comfort without compromising on style, ensuring you can wear them all day long.\n\n- **Care Instructions:**\n  - **Cleaning:** Gently wipe with a soft cloth to maintain the material's integrity.\n  - **Storage:** Store in the original box to protect from dust and damage.\n\nExperience the luxury and sophistication of Gucci with these stunning Basket Sneakers. Perfect for those who appreciate high-end fashion and comfort."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

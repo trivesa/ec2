@@ -1,0 +1,25 @@
+{
+  "id": "a0aaf843-3323-46c2-9658-040a5a33784a",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728785305,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 489,
+    "total_tokens": 641
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Tennis 1977 Mini GG White 606111 99W90 9085\n**Subtitle (Sottotitolo):** Elevate Your Style with Classic Elegance\n**Short Description (Breve Descrizione):** The Gucci Tennis 1977 Mini GG White is a sophisticated and versatile shoe that combines timeless design with luxurious detailing. Perfect for any occasion, this shoe features a clean white canvas with mini GG motifs, adding a touch of high-end fashion to your outfit. Crafted with precision and attention to detail, it embodies the essence of Gucci's iconic style.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The Gucci Tennis 1977 Mini GG White is crafted from high-quality white canvas, adorned with mini GG motifs that add a luxurious touch to the overall design.\n  - The shoe's minimalist aesthetic makes it versatile and suitable for a variety of occasions, from casual outings to more formal events.\n\n- **Key Features:**\n  - **Style Number:** 606111 99W90 9085\n  - **Size:** 41.5\n  - **Color:** White with mini GG detailing\n  - **Material:** High-quality canvas\n  - **Design Elements:** Mini GG motifs, clean white design\n\n- **Comfort and Durability:**\n  - The shoe is designed to provide comfort and durability, ensuring that it remains a staple in your wardrobe for years to come.\n  - The canvas material is lightweight and breathable, making it perfect for daily wear.\n\n- **Brand Heritage:**\n  - Gucci is renowned for its commitment to quality and style, and the Tennis 1977 Mini GG White is a testament to this legacy.\n  - The shoe's classic design is inspired by Gucci's rich history in fashion, blending traditional elements with modern flair.\n\n- **Versatility:**\n  - Whether you're looking for a stylish addition to your casual wardrobe or a sophisticated choice for more formal occasions, the Gucci Tennis 1977 Mini GG White is an excellent choice.\n  - Its versatile design makes it easy to pair with a variety of outfits, from jeans and t-shirts to dresses and skirts.\n\nExperience the epitome of luxury and style with the Gucci Tennis 1977 Mini GG White, a shoe that embodies the essence of high-end fashion and timeless elegance."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

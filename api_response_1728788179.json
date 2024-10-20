@@ -1,0 +1,25 @@
+{
+  "id": "adc53ea2-b0c4-4091-9374-a08681aa6fef",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728788179,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 369,
+    "total_tokens": 518
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Thong Sandal 659229 J8710 1000\n**Subtitle (Sottotitolo):** Elegant Black Rubber Sandals with Iconic GG Logo\n**Short Description (Breve Descrizione):** Elevate your style with these sleek Gucci Thong Sandals, featuring a black rubber design adorned with the iconic GG logo. Perfect for casual yet sophisticated looks, these sandals are versatile and comfortable. Available in size 41.\n\n**Description (Descrizione):**\n\n- **Design and Material:**\n  - Crafted from high-quality rubber, these sandals offer durability and comfort.\n  - The black color provides a versatile and timeless look that can be paired with any outfit.\n  - The iconic GG logo on the strap adds a touch of luxury and sophistication.\n\n- **Key Features:**\n  - Chevron patterned rubber insole for added comfort and style.\n  - Tonal GG logo on the strap for a subtle yet distinctive touch.\n  - Rubber outsole for durability and traction.\n\n- **Size and Fit:**\n  - Available in size 41, ensuring a precise fit for comfort and style.\n  - Designed to fit true to size, ensuring a comfortable and secure wear.\n\n- **Style and Versatility:**\n  - Perfect for casual outings, poolside lounging, or as a stylish addition to your everyday look.\n  - The sleek design and versatile black color make these sandals suitable for a variety of occasions.\n\n- **Brand Authenticity:**\n  - Genuine Gucci product, ensuring the highest quality and craftsmanship.\n  - Part of Gucci's collection, reflecting the brand's commitment to luxury and style.\n\nExperience the luxury and comfort of Gucci with these Thong Sandals, designed to elevate your style and provide long-lasting comfort."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

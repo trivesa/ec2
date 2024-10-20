@@ -1,0 +1,25 @@
+{
+  "id": "711c6b6f-a428-4199-94ef-d8a7a20d4014",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728812113,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 386,
+    "total_tokens": 537
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low Top Sneakers - 700291 2SHW0 4870\n**Subtitle (Sottotitolo):** Luxurious Multicolor Sneakers with Italian Craftsmanship\n**Short Description (Breve Descrizione):** Elevate your style with these stunning Gucci Basket Low Top Sneakers, featuring a vibrant multicolor design and exceptional Italian craftsmanship. Perfect for making a statement, these shoes combine comfort and luxury. Crafted with a mix of leather and other textiles, they embody the essence of Gucci's high-end fashion.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the Gucci Basket Low Top Sneakers, style number 700291 2SHW0 4870. These shoes are a testament to Gucci's commitment to excellence and style.\n\n- **Craftsmanship:** Made in Italy, these sneakers showcase the finest craftsmanship, ensuring durability and comfort.\n- **Design:** The multicolor design, denoted by color code 4870, adds a playful and sophisticated touch to any outfit.\n- **Materials:** The upper is composed of a combination of leather (EL) and other textiles, while the sole is made of leather, providing a perfect blend of style and durability.\n- **Size:** Available in size 41, ensuring a comfortable fit for those seeking a stylish and luxurious footwear option.\n- **Style:** The low-top design makes these sneakers versatile and suitable for various occasions, from casual outings to more formal events.\n- **Brand:** Gucci, a renowned luxury fashion brand, guarantees a product that is both fashionable and of the highest quality.\n\nWhether you're looking to make a statement or simply want to indulge in the luxury of Gucci, these Basket Low Top Sneakers are the perfect choice. Their unique design and exceptional craftsmanship make them a standout piece in any shoe collection."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

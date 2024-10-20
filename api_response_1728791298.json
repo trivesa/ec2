@@ -1,0 +1,25 @@
+{
+  "id": "fd78ae42-746d-4e87-8911-5ce8237acf9a",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728791298,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 350,
+    "total_tokens": 500
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High 'Demetra' Multicolor Sneakers\n**Subtitle (Sottotitolo):** Inspired by 90's Basketball Shoes, Style Number 661303 2SH90 1072\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Basket High 'Demetra' sneakers, featuring a vibrant multicolor design inspired by 90's basketball shoes. Crafted with high-quality materials, these shoes offer a unique blend of sporty and luxurious elements. Perfect for those who seek to make a statement with their footwear.\n\n**Description (Descrizione):**\n\n- **Inspiration:** The Gucci Basket High 'Demetra' sneakers draw inspiration from the iconic basketball shoes of the 90's, reimagined with a modern twist.\n- **Design:** The shoes feature a multicolor and fabric upper, combining bold colors and textures to create a visually striking effect.\n- **Materials:** Crafted with high-quality leather and fabric, ensuring durability and comfort.\n- **Details:**\n  - **Style Number:** 661303 2SH90 1072\n  - **Size:** 40\n  - **Condition:** New, with original packaging and accessories\n  - **Additional Features:** Non-slip and wear-resistant, making them perfect for both casual and active wear.\n- **Authenticity:** Guaranteed authentic Gucci product, ensuring the highest standards of quality and craftsmanship.\n- **Packaging:** Includes dust bag and shoe box, adding to the luxury experience.\n- **Perfect For:** Those who appreciate the fusion of sporty and luxurious elements, and are looking for a statement piece to elevate their wardrobe."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

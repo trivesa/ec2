@@ -1,0 +1,25 @@
+{
+  "id": "801caa63-f205-49fa-a2fd-42276e1e1e19",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728798341,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 385,
+    "total_tokens": 532
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Pink Wool and Silk Scarf 281942 3G704 6978\n**Subtitle (Sottotitolo):** Luxurious Wool and Silk Blend Scarf in Old Pink\n**Short Description (Breve Descrizione):** This GUCCI scarf, model 281942 3G704 6978, is a stunning accessory made from a luxurious blend of wool and silk. Its old pink color adds a touch of elegance to any outfit. Perfect for adding a sophisticated layer to your wardrobe.\n\n**Description (Descrizione):**\n\n- **Material:** This scarf is crafted from a high-quality blend of 80% wool and 20% silk, ensuring warmth and comfort while maintaining a luxurious feel.\n- **Size:** The scarf measures 140 cm x 140 cm, providing ample coverage and versatility in styling.\n- **Color:** The old pink hue is both timeless and sophisticated, making it suitable for a variety of occasions.\n- **Style Number:** 281942 3G704 6978, ensuring authenticity and exclusivity.\n- **Brand:** GUCCI, renowned for its exceptional craftsmanship and attention to detail.\n- **Care Instructions:** To maintain the scarf's quality, it is recommended to follow specific care instructions, which can be found on the product label.\n- **Versatility:** This scarf can be styled in multiple ways, from a chic wrap-around to a stylish drape over the shoulder, making it a versatile accessory for any wardrobe.\n- **Authenticity:** Guaranteed original GUCCI product, ensuring the highest standards of quality and design.\n- **Packaging:** The scarf comes with its original tags and packaging, adding to its authenticity and luxury appeal.\n- **Return Policy:** Returns are accepted within a specified timeframe, with the buyer responsible for return shipping costs. Please refer to the seller's return policy for more details."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

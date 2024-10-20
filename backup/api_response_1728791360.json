@@ -1,0 +1,25 @@
+{
+  "id": "b87399fa-c1d3-4907-93ed-7c643c521edf",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728791360,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 458,
+    "total_tokens": 608
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High 'Black Demetra' - 661303 2SH90 1072\n**Subtitle (Sottotitolo):** Elevate Your Style with Gucci's Iconic Basket Sneakers\n**Short Description (Breve Descrizione):** Experience the fusion of luxury and sportswear with Gucci's Basket High 'Black Demetra' sneakers. Crafted with a bold multicolor design, these shoes blend retro flair with modern comfort. Perfect for those who seek to make a statement with their footwear.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The Gucci Basket High 'Black Demetra' features a striking multicolor design, combining black, red, and white hues for a visually striking effect.\n  - Constructed with high-quality materials, these sneakers ensure durability and wear resistance.\n  - The non-slip sole provides excellent grip, making them suitable for both casual and active wear.\n\n- **Comfort and Fit:**\n  - Designed for comfort, these sneakers feature a cushioned insole and a supportive upper.\n  - The size 40 ensures a snug fit, ideal for those who prefer a comfortable yet stylish shoe.\n\n- **Brand Heritage:**\n  - Gucci, a renowned luxury fashion brand, brings its signature style and craftsmanship to these sneakers.\n  - The Basket High 'Black Demetra' is a testament to Gucci's ability to blend traditional elegance with modern sportswear elements.\n\n- **Style Versatility:**\n  - These sneakers can be easily paired with a variety of outfits, from casual jeans and t-shirts to more formal attire.\n  - The bold color scheme makes them a perfect choice for those who want to add a pop of color to their wardrobe.\n\n- **Key Details:**\n  - Product Code: 661303-2SH90-1072\n  - Colorway: Black/Red\n  - Main Color: Multicolor\n  - Release Date: November 8, 2021\n\nExperience the luxury and style of Gucci with the Basket High 'Black Demetra' sneakers. Perfect for those who value both comfort and fashion, these shoes are sure to make a statement."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

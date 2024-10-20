@@ -1,0 +1,25 @@
+{
+  "id": "26e7a44d-a2ce-4143-a04c-78fd5202bdc6",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729076958,
+  "usage": {
+    "prompt_tokens": 145,
+    "completion_tokens": 436,
+    "total_tokens": 581
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Medium Dior Book Tote\n**Subtitle (Sottotitolo):** Ecru and Blue Dior Oblique Embroidery\n**Short Description (Breve Descrizione):** The Medium Dior Book Tote, designed by Maria Grazia Chiuri, is a versatile and stylish bag featuring ecru and blue Dior Oblique embroidery. Perfect for daily essentials, it combines elegance with practicality. Crafted in Italy, it embodies Dior's signature savoir-faire.\n\n**Description (Descrizione):**\n\n- **Design and Craftsmanship:** The Medium Dior Book Tote is a testament to Dior's exceptional craftsmanship. Fully embroidered with the iconic ecru and blue Dior Oblique motif, it showcases the House's attention to detail and commitment to luxury.\n\n- **Practicality and Versatility:** Designed to hold all your daily essentials, the bag features a spacious interior that can accommodate a 15-inch laptop, a pouch, a wallet, a phone, sunglasses, and lipstick. It can be carried by hand or worn over the shoulder, making it perfect for both casual and formal occasions.\n\n- **Key Features:**\n  - **Christian Dior Paris Signature:** The front of the bag is adorned with the Christian Dior Paris signature, adding a touch of elegance and authenticity.\n  - **Dust Bag Included:** The bag comes with a dust bag to protect it when not in use.\n  - **Exclusive Customization Service:** Available in select stores, this service allows for personalized touches to make your bag truly unique.\n  - **Dimensions:** 36 x 27.5 x 16.5 cm / 14 x 11 x 6.5 inches (Length x Height x Width)\n  - **Handle Drop Length:** 16 cm / 6.5 inches\n\n- **Additional Information:**\n  - **Made in Italy:** Ensuring the highest quality and craftsmanship.\n  - **Available Sizes:** The Dior Book Tote comes in four unique sizes: mini, small, medium, and large, allowing you to choose the perfect fit for your needs."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

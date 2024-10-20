@@ -1,0 +1,25 @@
+{
+  "id": "58dce44c-004a-4e11-9f8f-36ff7f651000",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728802385,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 320,
+    "total_tokens": 467
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Square Scarf\n**Subtitle (Sottotitolo):** Authentic Italian Luxury in Dark Grey\n**Short Description (Breve Descrizione):** Embrace the essence of Italian luxury with this authentic GUCCI GG Jacquard Square Scarf. Crafted from a blend of 80% wool and 20% silk, this dark grey accessory exudes sophistication and elegance. Perfect for adding a touch of high-end fashion to any outfit.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury with this GUCCI GG Jacquard Square Scarf, designed to elevate your style with its timeless appeal.\n\n- **Style Number:** 281942 3G704 1062\n- **Material:** 80% wool, 20% silk\n- **Size:** 140 cm x 140 cm\n- **Color:** Dark grey (anthracite)\n- **Pattern:** Iconic GG Jacquard design\n- **Origin:** Made in Italy\n- **Condition:** New with tags\n- **Authenticity:** 100% authentic GUCCI product\n- **Packaging:** Includes original GUCCI tag and paper bag\n\nThis scarf is not only a statement piece but also a testament to GUCCI's commitment to quality and craftsmanship. Whether you're looking to add a touch of luxury to your everyday look or seeking a special accessory for a formal event, this scarf is sure to impress. Its versatile design makes it suitable for both men and women, ensuring it's a valuable addition to any wardrobe."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

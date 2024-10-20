@@ -1,0 +1,25 @@
+{
+  "id": "87be9b0f-3441-493b-9171-d311410a01f3",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728789236,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 461,
+    "total_tokens": 612
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton 'Disk Print' Sneakers\n**Subtitle (Sottotitolo):** Exclusive Interlocking Disk Design in Ivory and Red\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Rhyton 'Disk Print' sneakers, featuring an iconic interlocking disk design in ivory and red. Crafted with high-quality materials, these shoes embody Gucci's signature luxury and sophistication. Perfect for making a statement, these sneakers are a must-have for fashion enthusiasts.\n\n**Description (Descrizione):**\n\n- **Design and Style:**\n  - The Gucci Rhyton 'Disk Print' sneakers showcase an eye-catching interlocking disk design, blending classic elegance with modern flair.\n  - The ivory and red colorway adds a touch of sophistication and boldness, making these shoes stand out in any setting.\n\n- **Materials and Construction:**\n  - Crafted with premium materials, these sneakers ensure durability and comfort.\n  - The meticulous attention to detail in the construction reflects Gucci's commitment to excellence.\n\n- **Key Features:**\n  - Style Number: 630607 DRW00 9522\n  - Size: 40.5\n  - Colorway: Ivory/Red\n  - Retail Price: $890\n  - Release Date: May 20, 2020\n\n- **Additional Information:**\n  - These sneakers are perfect for those who appreciate high-end fashion and are looking to add a unique piece to their collection.\n  - The Gucci Rhyton 'Disk Print' sneakers are a testament to Gucci's legacy of creating timeless and stylish footwear.\n\n- **Authenticity and Quality:**\n  - Ensure authenticity by purchasing from reputable sources such as StockX, KICKS CREW, or Vestiaire Collective.\n  - Each pair is inspected for quality and authenticity, guaranteeing a genuine Gucci product.\n\n- **Return Policies:**\n  - Various return policies are available depending on the retailer, ranging from 3 to 90 days, providing flexibility and peace of mind for your purchase.\n\nExperience the epitome of luxury footwear with the Gucci Rhyton 'Disk Print' sneakers, a true masterpiece of fashion and craftsmanship."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

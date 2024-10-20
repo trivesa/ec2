@@ -1,0 +1,25 @@
+{
+  "id": "ceeec812-1d87-4631-a130-e014ca1a7d95",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728801785,
+  "usage": {
+    "prompt_tokens": 323,
+    "completion_tokens": 582,
+    "total_tokens": 905
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Here is the information for the GUCCI scarf with style number 281942 3G704 6978 in a structured format:\n\n**Mandatory Fields:**\n1. **Object Category (Categoria Oggetto):** Scarf\n2. **Store Category (Categoria del Negozio):** Women's Accessories\n3. **Brand (Marca):** Gucci\n4. **Color (Colore):** Pink\n5. **Type (Tipo):** Scarf\n6. **Department (Reparto):** Women's Accessories\n7. **Material (Materiale):** Wool and Silk\n8. **Pattern (Fantasia):** N/A\n9. **Country of Manufacture (Paese di fabbricazione):** N/A\n10. **Condition of the Item (Condizione dell'oggetto):** New with tags\n11. **Price (Prezzo):** Varies by source (e.g., $492 USD on Miinto, $379 USD on Best Deal Outlet)\n12. **Shipping Rule (Regola sulla spedizione):** Free shipping on orders over $150 (Miinto), Free Express Delivery on orders over $109 (Best Deal Outlet)\n\n**Optional Fields:**\n1. **Custom Label (Etichetta personalizzata - SKU):** 281942 3G704 6978\n2. **EAN (EAN):** N/A\n3. **Style (Stile):** N/A\n4. **Theme (Tema):** N/A\n5. **Tissue (Tessuto):** Wool and Silk\n6. **Season (Stagione):** N/A\n7. **Features (Caratteristiche):** N/A\n8. **Decorative Elements (Elementi decorativi):** N/A\n9. **Width (Larghezza):** 140 cm\n10. **Garment Care (Cura dell'indumento):** N/A\n11. **Handmade (Fatto a mano):** N/A\n12. **MPN (MPN):** N/A\n13. **Quantity (Quantit\u00e0):** Varies by source (e.g., 2 available on eBay)\n14. **Unit of Measurement (Unit\u00e0 di misura):** cm\n15. **Accessories (Accessori):** N/A\n16. **Length (Lunghezza):** 140 cm\n17. **Trim Material (Materiale delle finiture):** N/A\n18. **Personalized (Personalizzato):** N/A\n\n**Sources:**\n- **Miinto:**\n- **Luna-Time:**\n- **eBay:**\n- **Best Deal Outlet:**\n- **Vestiaire Collective:**"
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

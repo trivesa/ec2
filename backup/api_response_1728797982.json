@@ -1,0 +1,25 @@
+{
+  "id": "28eaca66-5c26-4ab0-b458-4d01c64b7bd8",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728797982,
+  "usage": {
+    "prompt_tokens": 148,
+    "completion_tokens": 385,
+    "total_tokens": 533
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Marmont Thin Belt in Grey Leather\n**Subtitle (Sottotitolo):** Elegant and Sophisticated Accessory for Men\n**Short Description (Breve Descrizione):** The GUCCI GG Marmont Thin Belt in Grey Leather is a stylish and versatile accessory that adds a touch of sophistication to any outfit. Crafted from high-quality leather, it features a sleek double G buckle and subtle hardware details. Perfect for everyday wear, this belt is a testament to GUCCI's commitment to luxury and craftsmanship.\n\n**Description (Descrizione):**\n\n- **Style Number:** 414516 18YXV 1711\n- **Material:** High-quality grey leather\n- **Buckle:** Double G buckle in grey, showcasing the iconic GUCCI logo\n- **Hardware Details:** Grey hardware details that complement the leather and buckle\n- **Width:** 3 cm, providing a slim and elegant silhouette\n- **Size Information:** Available in various sizes, including 95 cm / 38 inches\n- **Design:** Smooth grey leather with a minimalist aesthetic, perfect for casual and formal occasions\n- **Authenticity:** 100% Authentic GUCCI product, ensuring the highest standards of quality and craftsmanship\n- **Versatility:** Suitable for a wide range of outfits, from casual jeans to formal trousers\n- **Brand Heritage:** Part of the GG Marmont collection, known for its sophisticated and modern designs\n- **Quality Assurance:** Crafted with attention to detail and a focus on durability, ensuring long-lasting wear\n- **Packaging:** Brand new with tags, ensuring the product arrives in pristine condition\n\nThis GUCCI GG Marmont Thin Belt in Grey Leather is a must-have accessory for those who appreciate luxury and style. Its sleek design and high-quality materials make it a versatile and durable addition to any wardrobe."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "c02eba68-cd91-4d16-98ee-29520d08528d",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728792686,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 423,
+    "total_tokens": 576
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Tennis 1977 Slip-On 'Denim' 643489 2KQ20 4465\n**Subtitle (Sottotitolo):** Elegant Blue & Ivory Jacquard Denim Sneakers\n**Short Description (Breve Descrizione):** Embodying the essence of Gucci's timeless style, these Tennis 1977 Slip-On 'Denim' sneakers feature a striking blue and ivory jacquard denim design. Crafted with meticulous attention to detail, these shoes are a perfect blend of comfort and luxury. Made in Italy, they showcase Gucci's commitment to quality and craftsmanship.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with Gucci's Tennis 1977 Slip-On 'Denim' 643489 2KQ20 4465. Here are some key features that make these shoes stand out:\n\n- **Signature Design:** The shoes feature Gucci's iconic GG jacquard denim, a testament to the brand's rich heritage and style.\n- **Elegant Color Scheme:** The blue and ivory color combination adds a touch of sophistication and elegance, making these shoes versatile for various occasions.\n- **Comfortable Fit:** The elastic insert ensures a snug and comfortable fit, while the fabric/calf-skin lining insole provides additional comfort.\n- **Durable Construction:** The rubber sole ensures durability and longevity, making these shoes a long-term investment in your wardrobe.\n- **Authenticity:** Each pair comes in the original box, ensuring authenticity and the high-quality standards expected from Gucci.\n- **Size Information:** This particular pair is available in size 39.5, ensuring a precise fit for those who demand the best.\n- **Brand Heritage:** Made in Italy, these shoes reflect Gucci's dedication to craftsmanship and luxury, embodying the brand's legacy in every stitch.\n\nWhether you're looking for a stylish addition to your casual wardrobe or a statement piece for special occasions, these Gucci Tennis 1977 Slip-On 'Denim' sneakers are the perfect choice."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

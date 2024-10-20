@@ -1,0 +1,25 @@
+{
+  "id": "d3891d80-f378-497b-ba37-b598ff84c98e",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729109497,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 545,
+    "total_tokens": 697
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Alexander McQueen Oversized Sneaker AL09\n**Subtitle (Sottotitolo):** Luxury Oversized Sneaker in White/Black\n**Short Description (Breve Descrizione):** The Alexander McQueen Oversized Sneaker AL09 is a statement piece that combines avant-garde design with high-quality craftsmanship. This luxury sneaker features a bold, oversized silhouette and a striking white and black color scheme. Perfect for those who seek to make a fashion statement.\n\n**Description (Descrizione):**\n\n- **Design and Craftsmanship:**\n  - The Alexander McQueen Oversized Sneaker AL09 is a testament to the brand's commitment to avant-garde design and exceptional craftsmanship.\n  - Made in Italy, this sneaker showcases the brand's attention to detail and dedication to quality.\n  - The oversized silhouette is a hallmark of Alexander McQueen's design philosophy, offering a bold and distinctive look.\n\n- **Materials and Construction:**\n  - Crafted from high-quality leather, the AL09 sneaker ensures durability and a luxurious feel.\n  - The chunky sole provides a sturdy base, while the leather upper offers a comfortable and stylish fit.\n  - The white and black color scheme adds a versatile touch, making it easy to pair with a variety of outfits.\n\n- **Key Features:**\n  - **Style Number:** 202401 MCQUE AL09\n  - **Size:** 41\n  - **Color:** White/Black\n  - **Material:** Leather\n  - **Sole Type:** Chunky\n  - **Closure:** Lace-up\n  - **Brand:** Alexander McQueen\n\n- **Additional Information:**\n  - This sneaker is part of Alexander McQueen's collection of luxury footwear, known for its bold and innovative designs.\n  - The brand's commitment to quality and craftsmanship ensures that each pair is a long-lasting investment in your wardrobe.\n  - Perfect for those who appreciate high-end fashion and are looking to make a statement with their footwear.\n\n- **Care Instructions:**\n  - To maintain the quality and longevity of your Alexander McQueen sneakers, avoid exposing them to harsh chemicals or excessive moisture.\n  - Regular cleaning with a soft cloth and mild soap can help preserve the leather.\n  - Store your sneakers in a cool, dry place when not in use to prevent damage.\n\n- **Warranty and Returns:**\n  - Alexander McQueen offers a warranty on all products, ensuring that any defects in materials or workmanship are covered.\n  - Returns are accepted within a specified timeframe, provided the item is in its original condition and packaging. Please refer to the brand's return policy for more details."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

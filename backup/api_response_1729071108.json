@@ -1,0 +1,25 @@
+{
+  "id": "a689ac87-253d-45ea-b1de-25e1f3ed779e",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729071107,
+  "usage": {
+    "prompt_tokens": 531,
+    "completion_tokens": 966,
+    "total_tokens": 1497
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Here is the information for the DIOR bag with style number M1296ZTDT_M932:\n\n**Mandatory Fields:**\n\n1. **Object Category (Categoria Oggetto):** Handbag\n2. **Store Category (Categoria del Negozio):** Luxury Handbags\n3. **Department (Reparto):** Women's Accessories\n4. **Brand (Marca):** Christian Dior\n5. **Color (Colore esterno):** Grey\n6. **Style (Stile):** Dior Book Tote\n7. **Material (Materiale esterno):** Embroidered Toile de Jouy fabric\n8. **Closure Type (Chiusura):** N/A (Open-top tote)\n9. **Lining Material (Materiale della fodera):** N/A (Information not available)\n10. **Hardware Material (Materiale delle finiture):** N/A (Information not available)\n11. **Product Line (Linea prodotto):** Dior Book Tote\n12. **Pattern (Fantasia):** Toile de Jouy\n13. **Condition of the Item (Condizione dell'oggetto):** Pre-owned, used 1-2 times\n14. **Price (Prezzo):** N/A (Information not available)\n15. **Shipping Rule (Regola sulla spedizione):** N/A (Information not available)\n\n**Optional Fields:**\n\n1. **Custom Label (Etichetta personalizzata - SKU):** M1296ZTDT_M932\n2. **EAN (EAN):** N/A (Information not available)\n3. **MPN (MPN):** N/A (Information not available)\n4. **Handle Drop (Altezza del manico):** 16 cm / 6.5 inches\n5. **Handle/Strap Drop (Lunghezza della tracolla):** 42 cm / 16.5 inches\n6. **Size (Dimensioni):** 36 x 27.5 x 16.5 cm / 14 x 11 x 6.5 inches\n7. **Features (Caratteristiche):** Embroidered Toile de Jouy motif, Christian Dior Paris signature on the front, dust bag included\n8. **Vintage (Vintage):** No\n9. **Unit of Measurement (Unit\u00e0 di misura):** Centimeters/Inches\n10. **Accents (Elementi decorativi):** Embroidered Toile de Jouy motif\n11. **Theme (Tema):** Luxury\n12. **Occasion (Occasione):** Everyday\n13. **Year Manufactured (Anno di fabbricazione):** N/A (Information not available)\n14. **Product Variants (Varianti di prodotto):** Available in different colors and sizes\n15. **Payment Options and Offers (Regole di pagamento):** N/A (Information not available)\n16. **Shipping (Regola sulla spedizione):** N/A (Information not available)\n17. **Object Warnings (Avvertenze per l'oggetto):** N/A (Information not available)\n18. **Country/Region of Manufacture (Paese di fabbricazione):** Italy\n19. **Lining Color (Colore della fodera):** N/A (Information not available)\n20. **Handle/Strap Color (Colore del manico, tracolla):** N/A (Information not available)\n21. **Trim Color (Colore delle rifiniture):** N/A (Information not available)\n22. **Fabric Type (Tessuto):** Toile de Jouy fabric\n23. **Personalized (Personalizzato):** No\n24. **Accessories (Accessori):** Dust bag\n25. **Bag Width (Larghezza della borsa):** 36 cm / 14 inches\n26. **Bag Height (Altezza della borsa):** 27.5 cm / 11 inches\n27. **Bag Depth (Profondit\u00e0 della borsa):** 16.5 cm / 6.5 inches\n28. **Bag Shape (Forma):** Tote\n29. **Decorative Elements (Elementi decorativi):** Embroidered Toile de Jouy motif\n30. **Finish (Finitura):** N/A (Information not available)\n31. **Country of Manufacture (Paese di fabbricazione):** Italy\n\n**Note:** Some fields may not have specific information available, so \"N/A\" is used to indicate this."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

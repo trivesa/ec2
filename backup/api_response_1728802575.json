@@ -1,0 +1,25 @@
+{
+  "id": "60937a40-dbd2-481d-b70b-70c348660567",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728802575,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 384,
+    "total_tokens": 531
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Square Muffler Scarf\n**Subtitle (Sottotitolo):** Luxurious Wool and Silk Blend Scarf with Iconic GG Pattern\n**Short Description (Breve Descrizione):** This GUCCI GG Jacquard Square Muffler Scarf is a statement piece of luxury fashion, featuring a classic GG pattern on a blend of wool and silk. Perfect for adding a touch of elegance to any outfit, this scarf is both stylish and versatile. Made in Italy, it ensures the highest quality and craftsmanship.\n\n**Description (Descrizione):**\n\n- **Model Number:** 281942 3G704 1062\n- **Material:** 80% wool and 20% silk, providing a soft and luxurious texture.\n- **Size:** 140 cm x 140 cm, ideal for wrapping around the neck or using as a stylish shawl.\n- **Color:** Dark grey (anthracite), offering a sophisticated and versatile hue that complements a variety of outfits.\n- **Pattern:** The iconic GG pattern, a hallmark of GUCCI's timeless style and sophistication.\n- **Authenticity:** 100% authentic GUCCI product, ensuring the highest quality and craftsmanship.\n- **Origin:** Made in Italy, reflecting GUCCI's commitment to excellence and luxury.\n- **Condition:** New with tags, ensuring the scarf is in pristine condition.\n- **Packaging:** Includes a GUCCI paper bag and tag, adding to the luxury experience.\n- **Versatility:** Perfect for both casual and formal occasions, this scarf can be styled in multiple ways to suit your personal style.\n- **Care Instructions:** To maintain the quality and longevity of the scarf, it is recommended to follow the care instructions provided by GUCCI.\n- **Luxury Consignment:** Available through reputable luxury consignment platforms, ensuring authenticity and quality."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "a7426780-ca14-4da1-9068-1f17d0a5abc4",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728794013,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 438,
+    "total_tokens": 589
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High Sneaker\n**Subtitle (Sottotitolo):** White Demetra Red - 673077 2SHG0 9076\n**Short Description (Breve Descrizione):** Inspired by '90s basketball silhouettes, the Gucci Basket High Sneaker combines high-fashion aesthetics with eco-friendly materials. Crafted from interlocking 'G' canvas and smooth white Demetra, this high-top sneaker features a bold red rubber outsole and distinctive Gucci branding. Perfect for those who appreciate both style and sustainability.\n\n**Description (Descrizione):**\n\n- **Style Number:** 673077 2SHG0 9076\n- **Size:** 39\n- **Materials:**\n  - **Uppers:** Interlocking 'G' canvas and smooth white Demetra, an eco-friendly material made from animal-free raw materials primarily from sustainable, renewable, and bio-based sources.\n  - **Outsole:** Bold red rubber for durability and modern flair.\n- **Design Features:**\n  - **High-Top Style:** Emulates the self-expression of on-court aesthetic with distinctive features and detailing.\n  - **Lace-Up Closure:** Ensures a secure and adjustable fit.\n  - **Rubber Interlocking G Patch:** Adds a touch of Gucci's iconic branding.\n  - **Contrast Padding at the Ankle:** Provides comfort and visual appeal.\n  - **Gucci Logo Detail:** Embellishes the shoe with the brand's signature style.\n  - **Additional Pair of Laces Included:** For versatility and personalization.\n- **Sustainability:** The use of Demetra, an eco-friendly material, aligns with Gucci's commitment to environmental responsibility.\n- **Production:** Made in Italy, ensuring high-quality craftsmanship and attention to detail.\n- **Release Date:** January 1, 2024\n- **Retail Price:** $950\n\nThis Gucci Basket High Sneaker is a testament to the brand's ability to merge high fashion with sustainable practices, making it a must-have for those who value both style and eco-consciousness."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "a0de4136-2269-4b46-a71d-27e7f116d668",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728801385,
+  "usage": {
+    "prompt_tokens": 313,
+    "completion_tokens": 564,
+    "total_tokens": 877
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Based on the available information from the search results, here is the structured data for the GUCCI belt with style number 409417 92TLC 8592:\n\n**Mandatory Fields:**\n1. **Object Category (Categoria Oggetto):** Belt\n2. **Store Category (Categoria del Negozio):** Accessories\n3. **Brand (Marca):** Gucci\n4. **Type (Tipo):** Thin Belt\n5. **Department (Reparto):** Women\n6. **Color (Colore):** Dusty Pink\n7. **Size (Taglia):** N/A (Specific sizes not provided in the search results)\n8. **Condition of the Item (Condizione dell'oggetto):** N/A (Assumed new, but not explicitly stated)\n9. **Price (Prezzo):** N/A (Prices not provided in the accessible search results)\n10. **Shipping Rule (Regola sulla spedizione):** N/A (Shipping details not provided in the accessible search results)\n\n**Optional Fields:**\n1. **EAN (EAN):** N/A\n2. **Material (Materiale):** Leather (Inferred from similar products, but not explicitly stated for this specific item)\n3. **Style (Stile):** GG Marmont\n4. **Pattern (Fantasia):** N/A\n5. **Size Type (Tipo di taglia):** N/A\n6. **Belt Width (Larghezza della cintura):** Thin (Exact width not provided)\n7. **Decorative Elements (Elementi decorativi):** N/A\n8. **Theme (Tema):** N/A\n9. **Features (Caratteristiche):** N/A\n10. **Character (Personaggio):** N/A\n11. **Trim Material (Materiale delle finiture):** N/A\n12. **Country of Manufacture (Paese di fabbricazione):** N/A\n13. **Handmade (Fatto a mano):** N/A\n14. **Vintage (Vintage):** N/A\n15. **MPN (MPN):** 409417 92TLC 8592\n16. **Quantity (Quantit\u00e0):** N/A\n17. **Unit of Measurement (Unit\u00e0 di misura):** N/A\n18. **Custom Label (Etichetta personalizzata - SKU):** N/A\n19. **Personalized (Personalizzato):** N/A\n\n**Note:** Some information, such as specific sizes, prices, and shipping details, could not be retrieved due to access restrictions on certain websites. The provided data is based on the accessible information from the search results."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

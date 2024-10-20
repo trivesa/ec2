@@ -1,0 +1,25 @@
+{
+  "id": "d8a2bcc3-ec91-410d-a733-1373a57510ab",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728824244,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 378,
+    "total_tokens": 531
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Women's Basket Low Top Sneakers\n**Subtitle (Sottotitolo):** Elegant White and Green Design\n**Short Description (Breve Descrizione):** Experience the epitome of luxury with Gucci's Basket Low Top Sneakers, featuring a striking white and green color scheme. Crafted in Italy, these shoes embody the brand's commitment to quality and style. Perfect for those who seek to elevate their footwear collection.\n\n**Description (Descrizione):**\n\n- **Craftsmanship and Materials:**\n  - Made in Italy, ensuring the highest standards of craftsmanship.\n  - Upper material: A blend of leather (EL) and other textiles, providing durability and comfort.\n  - Sole material: Leather (EL), offering a luxurious feel and long-lasting performance.\n\n- **Design and Style:**\n  - The white and green color scheme (Color code: 9089) adds a touch of sophistication and elegance.\n  - The low-top design makes these sneakers versatile and suitable for various occasions.\n  - The Gucci logo subtly integrated into the design, emphasizing the brand's heritage and luxury appeal.\n\n- **Size Information:**\n  - Available in size 35.5, ensuring a comfortable fit for those who prefer a precise size.\n\n- **Product Details:**\n  - Product code: 700290-2SHG0\n  - Color: White Green\n  - Composition: Upper - EL+Other Textile, Sole - EL\n  - Made in Italy, guaranteeing the quality and authenticity of Gucci's craftsmanship.\n\nThese Gucci Women's Basket Low Top Sneakers are a testament to the brand's dedication to creating high-quality, stylish footwear that stands out in any setting. Whether you're looking for a statement piece or a versatile addition to your wardrobe, these sneakers are sure to impress."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

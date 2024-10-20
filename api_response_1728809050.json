@@ -1,0 +1,25 @@
+{
+  "id": "9ecf7d14-f343-4cc8-b246-2b85a9491d9d",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728809050,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 489,
+    "total_tokens": 636
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Kids GG Supreme Tote Bag\n**Subtitle (Sottotitolo):** Iconic Banana Print Canvas with Leather Accents\n**Short Description (Breve Descrizione):** Embrace the playful spirit of GUCCI with the GG Supreme Tote Bag, featuring a vibrant banana print canvas and luxurious leather accents. Perfect for young fashionistas, this bag combines style and functionality. Crafted with meticulous attention to detail, it embodies the brand's commitment to quality and design.\n\n**Description (Descrizione):**\n\n- **Style Number:** 605614 22DAN 8303\n- **Material:** Durable banana print canvas with high-quality leather accents\n- **Design:** The iconic GG Supreme pattern is woven into the canvas, ensuring a consistent and evenly spaced arrangement of the double GG logo. The bag features sturdy leather straps and a robust metal zipper with a clean, legible \"GUCCI\" engraving.\n- **Interior:** The interior includes a high-quality leather tag with the brand's trademark, logo, and \"made in Italy\" in lowercase letters, all centered and in precise font with correct spelling. The serial number tag is subtly embossed into the leather with a typewriter-style font featuring serifs and is arranged without letters.\n- **Size Information:** Available in various sizes to suit different needs. Please refer to the size chart for specific dimensions.\n- **Craftsmanship:** The bag showcases exceptional craftsmanship with meticulous stitching and attention to detail, reflecting GUCCI's commitment to quality and luxury.\n- **Authenticity:** This bag is an authentic GUCCI product, featuring a serial number tag with the same supplier code used by GUCCI, confirming its authenticity.\n- **Additional Features:**\n  - **Hardware:** Sturdy and heavy metal components with a subtle color finish.\n  - **Interior Tag:** Rectangular leather tag with the brand's trademark, logo, and \"made in Italy\" in lowercase letters.\n  - **Serial Number:** 10 to 13 digits, with the first set indicating the style number and the second the supplier code.\n  - **Packaging:** Includes a high-quality dust bag with the GUCCI logo, ensuring the bag remains protected when not in use.\n\nThis GUCCI Kids GG Supreme Tote Bag is a testament to the brand's dedication to luxury and style, making it a perfect accessory for young fashion enthusiasts."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

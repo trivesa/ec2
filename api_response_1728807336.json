@@ -1,0 +1,25 @@
+{
+  "id": "3c607977-8047-46ef-908d-d8e64965f9b0",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728807336,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 370,
+    "total_tokens": 517
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Marmont Super Mini Bag\n**Subtitle (Sottotitolo):** Exquisite White Chevron Leather Handbag\n**Short Description (Breve Descrizione):** The GUCCI GG Marmont Super Mini Bag is a stylish and compact accessory, crafted from luxurious white chevron leather. Its sleek design and iconic GG logo make it a perfect addition to any fashion-forward ensemble. Ideal for everyday use, this bag offers a blend of elegance and practicality.\n\n**Description (Descrizione):**\n\n- **Craftsmanship and Materials:**\n  - Made from high-quality white chevron leather, ensuring durability and a luxurious feel.\n  - The bag's exterior features the iconic GG Marmont logo, adding a touch of sophistication.\n\n- **Design and Style:**\n  - The super mini size is perfect for carrying essentials while maintaining a minimalist look.\n  - The bag's sleek silhouette and clean lines make it versatile for various occasions, from casual outings to formal events.\n\n- **Functionality:**\n  - The bag includes a secure closure to protect your belongings.\n  - The interior is designed to organize your items efficiently, making it easy to find what you need.\n\n- **Size Information:**\n  - The bag is designed to be compact and lightweight, making it easy to carry.\n  - Specific dimensions may vary, but it is generally suitable for small personal items.\n\n- **Additional Details:**\n  - Style Number: 476433 DTD5N 9022\n  - Available on various platforms including GUCCI official websites and authorized retailers.\n  - Price may vary by region, such as HK$9,390.00 in Hong Kong and \u20ba 42.250,00 in Turkey."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

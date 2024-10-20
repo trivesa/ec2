@@ -1,0 +1,25 @@
+{
+  "id": "2e2f69c9-09cc-461a-b503-1e1980e90f27",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728252729,
+  "usage": {
+    "prompt_tokens": 142,
+    "completion_tokens": 494,
+    "total_tokens": 636
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI G-Timeless 38MM Brown Dial Stripe Motif Leather Unisex Watch YA1264077\n\n**Subtitle (Sottotitolo):** Elegant Unisex Timepiece with Distinctive Stripe Motif\n\n**Short Description (Breve Descrizione):**\nExperience the essence of luxury with the GUCCI G-Timeless 38MM Brown Dial Stripe Motif Leather Unisex Watch YA1264077. This elegant timepiece features a distinctive stripe motif on its brown dial and leather strap, encapsulating GUCCI's signature style. Perfect for both men and women, it combines sophistication with versatility.\n\n**Description (Descrizione):**\n\n- **Brand:** GUCCI\n- **Series:** G-Timeless\n- **Gender:** Unisex, suitable for women\n- **Movement:** Quartz, ensuring precise timekeeping\n- **Case Size:** 38 mm, ideal for a variety of wrist sizes\n- **Case Material:** Stainless Steel, providing durability and strength\n- **Case Back:** Solid, adding to the watch's robustness\n- **Case Thickness / Shape:** 9 mm / Round, offering a sleek and classic design\n- **Dial Color:** Brown with a distinctive stripe motif, adding a touch of elegance\n- **Dial Type / Hands:** Analog / Yellow Gold-tone, enhancing the watch's luxurious appeal\n- **Second Markers:** Pyramid markers at the 3, 6, and 9 o'clock positions, adding a unique touch\n- **Crystal:** Scratch Resistant Sapphire, ensuring clarity and durability\n- **Bezel:** Fixed Yellow Gold PVD, adding a touch of sophistication\n- **Crown:** Pull / Push, for easy time setting\n- **Band Material:** Leather, providing comfort and style\n- **Band Type / Color / Width:** Strap / Brown (Striped) / 19 mm, matching the dial's motif\n- **Clasp:** Tang, for secure fastening\n- **Water Resistance:** 50 meters / 165 feet, suitable for everyday wear\n- **Origin:** Swiss Made, guaranteeing high-quality craftsmanship\n- **Functions:** Hour, Minute, providing essential timekeeping\n- **Warranty:** 2-Year WatchWarehouse Warranty, ensuring peace of mind\n\nThis GUCCI G-Timeless watch is a testament to the brand's commitment to elegance and precision, making it a perfect accessory for any occasion."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

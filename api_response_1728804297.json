@@ -1,0 +1,25 @@
+{
+  "id": "705e89ee-7913-48b6-b300-725d3cea1923",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728804297,
+  "usage": {
+    "prompt_tokens": 504,
+    "completion_tokens": 878,
+    "total_tokens": 1382
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Here is the information for the GUCCI bag with style number 625599 H9HAN 1000:\n\n**Mandatory Fields:**\n\n1. **Object Category (Categoria Oggetto):** Handbag\n2. **Store Category (Categoria del Negozio):** Luxury Fashion\n3. **Department (Reparto):** Men's Accessories\n4. **Brand (Marca):** Gucci\n5. **Color (Colore esterno):** Black\n6. **Style (Stile):** Off The Grid\n7. **Material (Materiale esterno):** ECONYL (Eco Nylon)\n8. **Closure Type (Chiusura):** N/A\n9. **Lining Material (Materiale della fodera):** N/A\n10. **Hardware Material (Materiale delle finiture):** N/A\n11. **Product Line (Linea prodotto):** Off The Grid\n12. **Pattern (Fantasia):** GG Logo\n13. **Condition of the Item (Condizione dell'oggetto):** New\n14. **Price (Prezzo):** $170.00 (Current price, original price was $360.00)\n15. **Shipping Rule (Regola sulla spedizione):** Fast delivery in 7-12 working days\n\n**Optional Fields:**\n\n1. **Custom Label (Etichetta personalizzata - SKU):** 625599 H9HAN 1000\n2. **EAN (EAN):** N/A\n3. **MPN (MPN):** N/A\n4. **Handle Drop (Altezza del manico):** N/A\n5. **Handle/Strap Drop (Lunghezza della tracolla):** N/A\n6. **Size (Dimensioni):** 11.4 x 18 x 3.5 / 4.5 x 7 x 1.4 inches (Length x height x width)\n7. **Features (Caratteristiche):** Eco-friendly, made from ECONYL\n8. **Vintage (Vintage):** No\n9. **Unit of Measurement (Unit\u00e0 di misura):** Inches\n10. **Accents (Elementi decorativi):** GG Logo\n11. **Theme (Tema):** Luxury, Eco-friendly\n12. **Occasion (Occasione):** Everyday\n13. **Year Manufactured (Anno di fabbricazione):** N/A\n14. **Product Variants (Varianti di prodotto):** N/A\n15. **Payment Options and Offers (Regole di pagamento):** Secure checkout, money back guarantee, 3-month warranty\n16. **Shipping (Regola sulla spedizione):** Fast delivery in 7-12 working days\n17. **Object Warnings (Avvertenze per l'oggetto):** N/A\n18. **Country/Region of Manufacture (Paese di fabbricazione):** N/A\n19. **Lining Color (Colore della fodera):** N/A\n20. **Handle/Strap Color (Colore del manico, tracolla):** N/A\n21. **Trim Color (Colore delle rifiniture):** N/A\n22. **Fabric Type (Tessuto):** ECONYL (Eco Nylon)\n23. **Personalized (Personalizzato):** No\n24. **Accessories (Accessori):** N/A\n25. **Bag Width (Larghezza della borsa):** 11.4 inches\n26. **Bag Height (Altezza della borsa):** 18 inches\n27. **Bag Depth (Profondit\u00e0 della borsa):** 3.5 inches\n28. **Bag Shape (Forma):** Mini bag\n29. **Decorative Elements (Elementi decorativi):** GG Logo\n30. **Finish (Finitura):** N/A\n31. **Country of Manufacture (Paese di fabbricazione):** N/A\n\n**Note:** Some fields are marked as N/A because the information is not available or not applicable based on the provided sources."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

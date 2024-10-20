@@ -1,0 +1,25 @@
+{
+  "id": "b6e315b2-4397-40b3-bb7f-0ad096b941fa",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728780375,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 429,
+    "total_tokens": 582
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High 'Black Demetra Red'\n**Subtitle (Sottotitolo):** High-Top Sneakers with Iconic G Logo\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Basket High 'Black Demetra Red', featuring a high-top design, iconic G logo, and a striking color combination. Crafted with premium materials, these sneakers offer both comfort and luxury. Perfect for making a statement in any setting.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The Gucci Basket High 'Black Demetra Red' (673077-2SHG0-1066) showcases a high-top silhouette, blending sporty elegance with luxury fashion.\n  - The shoes are made from high-quality canvas, ensuring durability and a lightweight feel.\n  - The iconic G logo on the side panels adds a touch of sophistication and authenticity.\n\n- **Color Scheme:**\n  - The sneakers feature a bold black and red color scheme, with the Demetra red accents adding a vibrant pop of color.\n  - The black canvas provides a sleek and versatile base that complements the red accents perfectly.\n\n- **Size Information:**\n  - Available in size 43.5, ensuring a comfortable fit for those looking for a precise size match.\n\n- **Additional Features:**\n  - High-top design for added ankle support and a stylish look.\n  - Rubber outsole for traction and durability.\n  - Lace-up closure for a secure and adjustable fit.\n\n- **Brand Authenticity:**\n  - Genuine Gucci product, ensuring the highest quality and craftsmanship.\n  - Part of Gucci's renowned Basket High collection, known for its blend of sportswear and luxury fashion.\n\n- **Purchase Information:**\n  - Available in stock at various retailers, including Solesense and Kickscrew.\n  - Returns policies vary by retailer, with options for 3-day returns at Goat (though currently inaccessible) and 7-day returns at Kickscrew."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

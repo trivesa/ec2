@@ -1,0 +1,25 @@
+{
+  "id": "64bb878c-e170-4d37-8f1b-62ef020c0a8c",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728780219,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 446,
+    "total_tokens": 598
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High-Top Sneaker\n**Subtitle (Sottotitolo):** White Blue Edition - 661301 2SHA0 9014\n**Short Description (Breve Descrizione):** Inspired by 90s basketball sneakers, the Gucci Basket High-Top Sneaker combines classic style with modern eco-friendly materials. Crafted from Demetra, a pliable and resilient material with a supple finish, these shoes are both stylish and sustainable. Perfect for making a statement, they feature distinctive Gucci details and a bold, eye-catching design.\n\n**Description (Descrizione):**\n- **Inspiration:** Drawing inspiration from the iconic basketball sneakers of the 90s, the Gucci Basket High-Top Sneaker is a modern interpretation of a classic style.\n- **Materials:**\n  - **Upper:** Crafted from Demetra, a material created with the same processes used for tanning, offering pliable and resilient performance with a supple finish.\n  - **Lining:** Synthetic lining for added comfort and durability.\n  - **Sole:** Rubber sole for grip and longevity.\n- **Design Features:**\n  - **Round Toe:** Perforated detail for added ventilation and style.\n  - **Lace-Up:** Secure and adjustable lace-up closure.\n  - **Signature Details:** Gucci logo and branding at the vamp, tongue, and sole.\n  - **Paneled Design:** A mix of brightly colored fabrics with a lightly distressed effect.\n- **Additional Details:**\n  - **Size:** 43.5\n  - **Made in Italy:** Ensuring high-quality craftsmanship and attention to detail.\n  - **Eco-Friendly:** Demetra material combines animal-free raw materials primarily from sustainable, renewable, and bio-based sources.\n  - **Contrast Padding:** At the ankle for added comfort and visual appeal.\n  - **Rubber Interlocking G Patch:** At the side for a distinctive Gucci touch.\n  - **Treated for a Distressed Effect:** Adding a unique, vintage-inspired look to the shoes.\n  - **Includes:** Box and dust bag for storage and protection."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

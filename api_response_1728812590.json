@@ -1,0 +1,25 @@
+{
+  "id": "a096a021-741b-4102-8d7b-bbd6c9edb8c4",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728812590,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 419,
+    "total_tokens": 569
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Rhyton '25 - Ivory and Navy Sneakers\n**Subtitle (Sottotitolo):** Luxurious and Sustainable Footwear with Eschatology 1921 Prints\n**Short Description (Breve Descrizione):** Elevate your style with the GUCCI Rhyton '25, featuring a unique blend of ivory and navy hues, adorned with '25' and 'Gucci Eschatology 1921' prints. Crafted from sustainable, renewable, and bio-based materials, these shoes embody luxury and eco-friendliness. Perfect for those who seek high-end fashion with a conscious approach.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the GUCCI Rhyton '25, designed to make a statement. Here are the key features that make these shoes stand out:\n\n- **Sustainable Materials:** The Rhyton '25 is crafted from animal-free raw materials that are primarily from sustainable, renewable, and bio-based sources, aligning with GUCCI's commitment to eco-friendly fashion.\n- **Unique Design:** The shoes feature a striking ivory and navy colorway, complemented by '25' and 'Gucci Eschatology 1921' prints, adding a touch of sophistication and historical allure.\n- **Quality Construction:** The rubber sole provides durability and comfort, while the lace-up closure ensures a secure fit.\n- **Authenticity:** The GUCCI logo tag is a testament to the brand's high standards and authenticity.\n- **Size Information:** Available in size 41, ensuring a perfect fit for those who seek comfort and style.\n- **Brand Heritage:** As part of GUCCI's esteemed collection, these shoes embody the brand's legacy of luxury and innovation.\n- **Versatility:** Perfect for casual outings or more formal events, the Rhyton '25 is versatile and adaptable to any occasion.\n\nWith the GUCCI Rhyton '25, you're not just wearing shoes; you're embracing a statement of luxury, sustainability, and timeless fashion."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

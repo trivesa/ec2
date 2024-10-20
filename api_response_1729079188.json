@@ -1,0 +1,25 @@
+{
+  "id": "b9ed6259-0b54-4022-9e75-518a36b7d611",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729079188,
+  "usage": {
+    "prompt_tokens": 160,
+    "completion_tokens": 433,
+    "total_tokens": 593
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Marmont Thin Belt\n**Subtitle (Sottotitolo):** Elegant Accessory with Iconic Double G Buckle\n**Short Description (Breve Descrizione):** Elevate your style with the GUCCI GG Marmont Thin Belt, featuring a sleek 20mm wide canvas strap adorned with the iconic Double G buckle in a ceramic finish. Perfect for adding a touch of luxury to any outfit. Available in various sizes to fit your unique style.\n\n**Description (Descrizione):**\n\n- **Style Number:** 409417-FAA6B-8048\n- **Size Information:**\n  - **Width:** 20cm\n  - **Length:** 200cm Max\n- **Key Features:**\n  - **Iconic Design:** The belt features the iconic Double G buckle, a hallmark of GUCCI's luxurious and timeless design.\n  - **Ceramic Finish:** The buckle is crafted with a ceramic finish, adding a touch of sophistication and durability.\n  - **Canvas Strap:** The 20mm wide canvas strap is made from high-quality GG Supreme canvas, ensuring a comfortable and stylish fit.\n  - **Versatility:** Perfect for dressing up or down, this belt is versatile enough to complement a variety of outfits, from casual to formal.\n  - **Authenticity:** Guaranteed 100% authentic GUCCI product, ensuring the highest quality and craftsmanship.\n- **Additional Details:**\n  - **Packaging:** Includes a dust bag for storage and protection.\n  - **Care Instructions:** To maintain the belt's quality, avoid exposure to harsh chemicals and extreme temperatures.\n  - **Warranty:** Covered by GUCCI's standard warranty for defects in materials and workmanship.\n- **Why Choose This Belt:**\n  - **Luxury Brand:** GUCCI is renowned for its high-end fashion and exceptional craftsmanship.\n  - **Timeless Style:** The GG Marmont Thin Belt is a classic accessory that will remain stylish for years to come.\n  - **Quality Materials:** Made from high-quality materials, ensuring durability and long-lasting wear."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

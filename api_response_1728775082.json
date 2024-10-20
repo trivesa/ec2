@@ -1,0 +1,25 @@
+{
+  "id": "eab809cf-9eb7-4dd5-af83-0b1103c3adf9",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728775082,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 365,
+    "total_tokens": 516
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Run Sneakers in Black Yellow Beige\n**Subtitle (Sottotitolo):** High-End Fashion with a Sporting Twist\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Run sneakers, featuring a unique blend of sporty and luxurious elements. Crafted from GG technical knit fabric, these shoes are defined by the iconic Interlocking G and a bi-color sole. Perfect for making a fashion statement.\n\n**Description (Descrizione):**\n\nExperience the fusion of high-end fashion and sporting elegance with the Gucci Run sneakers. Here are the key features of this stylish pair:\n\n- **Design Inspiration:** Inspired by the sporting world, these sneakers are reinterpreted through the Gucci lens, showcasing standout logo details.\n- **Material:** Crafted from GG technical knit fabric, ensuring a lightweight and comfortable fit.\n- **Iconic Detailing:** The Interlocking G logo adds a touch of luxury and authenticity.\n- **Sole Design:** A bi-color sole provides a playful note of chromatic contrast, adding to the overall aesthetic appeal.\n- **Size Information:** Available in size 45.5, ensuring a precise fit for those who demand comfort and style.\n- **Authenticity:** Guaranteed 100% authentic, ensuring that every detail meets Gucci's high standards.\n- **Quality Construction:** Made in Italy, reflecting the brand's commitment to craftsmanship and quality.\n- **Composition:** Upper made from textile and sole from elastic materials, ensuring durability and flexibility.\n- **Product Code:** 680938-USM10 8480, ensuring easy identification and authenticity verification.\n\nThese Gucci Run sneakers are perfect for those who seek to make a statement with their footwear, combining the best of sporty and luxurious elements."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

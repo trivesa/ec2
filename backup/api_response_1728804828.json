@@ -1,0 +1,25 @@
+{
+  "id": "243a18d8-4fa1-4df4-8498-659433a6f482",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728804828,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 413,
+    "total_tokens": 560
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Marmont Small Shoulder Bag\n**Subtitle (Sottotitolo):** Luxurious Black Leather Matelass\u00e9 Design\n**Short Description (Breve Descrizione):** This GUCCI GG Marmont Small Shoulder Bag, style number 625693 DTD1T 1000, is a masterpiece of luxury fashion, featuring a sleek black leather exterior adorned with the iconic GG Marmont logo. Its compact size and versatile design make it perfect for daily use. Crafted with meticulous attention to detail, this bag embodies the essence of GUCCI's high-end craftsmanship.\n\n**Description (Descrizione):**\n\n- **Exterior:** The bag is crafted from high-quality black leather, showcasing a sophisticated matelass\u00e9 design that adds a touch of elegance to any outfit.\n- **Logo:** The iconic GG Marmont logo is prominently displayed on the front, adding a distinctive touch of luxury.\n- **Closure:** The bag features a secure zip top closure, ensuring that your belongings are safely stored.\n- **Interior:** The interior is lined with a durable fabric, providing a clean and organized space for your essentials.\n- **Size:** The compact size makes it ideal for carrying the essentials without bulk, perfect for daily use or special occasions.\n- **Versatility:** The bag can be worn as a shoulder bag or a crossbody bag, thanks to its adjustable strap, offering flexibility and convenience.\n- **Craftsmanship:** Each detail, from the stitching to the hardware, reflects GUCCI's commitment to exceptional craftsmanship and quality.\n- **Style Number:** 625693 DTD1T 1000, ensuring authenticity and exclusivity.\n- **Brand Heritage:** This bag is a testament to GUCCI's rich history of creating timeless, luxurious accessories that stand out in the world of high fashion.\n\nThis GUCCI GG Marmont Small Shoulder Bag is a testament to the brand's dedication to luxury and style, making it a must-have accessory for those who appreciate high-end fashion."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

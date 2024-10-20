@@ -1,0 +1,25 @@
+{
+  "id": "fe841fed-a042-4058-8aa5-c1695b944ea9",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728791430,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 440,
+    "total_tokens": 590
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High 'Black Demetra Yellow' Sneakers\n**Subtitle (Sottotitolo):** High-Top Basketball Sneakers in Sustainable Demetra Material\n**Short Description (Breve Descrizione):** Embodying the essence of 90s basketball sneakers, the Gucci Basket High 'Black Demetra Yellow' combines vibrant colors and distinctive detailing. Crafted primarily from sustainable Demetra material, these high-top sneakers offer a unique blend of style and eco-friendliness. Perfect for those seeking a bold, high-fashion statement.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The Gucci Basket High 'Black Demetra Yellow' is a high-top sneaker that pays homage to the basketball aesthetics of the 90s.\n  - Crafted primarily from Demetra, a sustainable, animal-free material that is both renewable and bio-based.\n  - The shoe features a mix of brightly colored fabrics with a lightly distressed effect, adding a touch of vintage charm.\n\n- **Key Features:**\n  - Rubber Interlocking G patch at the side for a classic Gucci touch.\n  - Contrast padding at the ankle for added comfort and visual appeal.\n  - GG logo detail on the shoe for brand authenticity.\n  - Rubber sole for durability and traction.\n  - Low heel design for a comfortable fit.\n\n- **Additional Details:**\n  - Includes box and dust bag for storage and protection.\n  - Available in size 40, ensuring a precise fit.\n  - Treated for a distressed effect, giving the shoe a unique, worn look.\n\n- **Sustainability:**\n  - The use of Demetra material aligns with Gucci's commitment to sustainability and eco-friendliness.\n  - The shoe's design and production process reflect Gucci's efforts to reduce environmental impact.\n\n- **Style and Versatility:**\n  - Perfect for those who appreciate high-fashion and sustainable fashion.\n  - Suitable for casual wear, adding a stylish touch to any outfit.\n  - The bold color scheme and distinctive detailing make these sneakers a standout piece in any wardrobe."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

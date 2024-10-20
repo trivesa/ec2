@@ -1,0 +1,25 @@
+{
+  "id": "8e504367-eaf5-442d-b470-1155b8953e16",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728783718,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 394,
+    "total_tokens": 545
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low 'White Demetra Red'\n**Subtitle (Sottotitolo):** Elegant Casual Wear with a Touch of Luxury\n**Short Description (Breve Descrizione):** Elevate your casual style with the Gucci Basket Low 'White Demetra Red' sneakers, featuring a striking combination of white and red. Crafted in Italy, these shoes embody the essence of luxury and sophistication. Perfect for those who seek to add a touch of elegance to their everyday look.\n\n**Description (Descrizione):**\n\n- **Design and Color:** The Gucci Basket Low 'White Demetra Red' sneakers boast a captivating design that seamlessly blends white and red hues, creating a visually appealing contrast that is sure to turn heads.\n- **Craftsmanship:** Made in Italy, these shoes are a testament to Gucci's commitment to exceptional craftsmanship and attention to detail, ensuring a high-quality product that stands the test of time.\n- **Materials:** The upper is constructed from other textile materials, while the sole is made from elastic, providing both comfort and durability.\n- **Size Information:** Available in size 42, ensuring a perfect fit for those who value both style and comfort.\n- **Product Code:** 697882-2SHJ0-9090, a unique identifier that guarantees authenticity and exclusivity.\n- **Elegance and Versatility:** Whether you're dressing up or dressing down, these sneakers are versatile enough to complement a wide range of outfits, making them an essential addition to any wardrobe.\n- **Luxury Branding:** As a product of Gucci, one of the world's leading luxury fashion brands, these sneakers embody the brand's legacy of style, sophistication, and excellence.\n- **Return Policies:** Various retailers offer return policies ranging from 3 to 90 days, providing peace of mind for those who value flexibility and customer satisfaction."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

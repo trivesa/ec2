@@ -1,0 +1,71 @@
+import openai
+import os
+
+# Set your OpenAI API key
+openai.api_key = os.getenv('OPENAI_API_KEY')
+
+def generate_listing(prompt):
+    try:
+        response = openai.ChatCompletion.create(
+            model="gpt-4o",
+            messages=[
+                {"role": "system", "content": "You are an eBay fashion product listing expert."},
+                {"role": "user", "content": prompt}
+            ],
+            max_tokens=1000,
+            temperature=0.7
+        )
+        return response['choices'][0]['message']['content']
+    except Exception as e:
+        print(f"Error: {str(e)}")
+        return None
+
+# Your prompt generation code here
+prompt = """
+Use the following details for the listing:
+Brand: "GUCCI"
+Product Category: "Women's Shoes"
+Product Type: "shoes"
+Style Number: "702398 UU010 6560"
+
+Information Retrieval
+Please search for the product's information based on the above brand, product type, product category, product style number, and looking for the following mandatory and optional fields, add the finding next to the field name after a ":". if any fields have no information available on internet, or you cannot find it, leave it to be N/A.
+
+Fashion Product Listing Part 1: Mandatory and Optional Fields
+
+Mandatory Fields
+1. Object Category (Categoria Oggetto) 
+2. Store Category (Categoria del Negozio)
+3. Brand (Marca) 
+4. Size (Numero di scarpa EU) 
+5. Department (Reparto) 
+6. Color (Colore) 
+7. Type (Tipo) 
+8. Style (Stile) 
+9. Condition of the Item (Condizione dell'oggetto) 
+10. Price (Prezzo) 
+11. Shipping Rule (Regola sulla spedizione) 
+
+Optional Fields
+1. MPN (MPN) 
+2. Custom Label (Etichetta personalizzata - SKU) 
+3. EAN (EAN) 
+4. Material (Materiale della tomaia) 
+
+After gathering the product specifications, analyze the key product information, and search for the product's features and unique selling points. Combine this information to create a compelling product title and description.
+
+Title: Generate a concise eBay title for [Brand] [Product Type] within 80 characters, including key features.
+Description: Write a detailed eBay description using short paragraphs and bullet points. Highlight key features, benefits, item condition, shipping, and return policies (use placeholders for shipping and return policies).
+
+Fields:
+• Title (Titolo)
+• Subtitle (Sottotitolo)
+• Description (Descrizione)
+"""
+
+# Generate the listing
+listing = generate_listing(prompt)
+if listing:
+    print(listing)
+else:
+    print("Failed to generate listing.")

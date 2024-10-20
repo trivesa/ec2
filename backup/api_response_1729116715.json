@@ -1,0 +1,25 @@
+{
+  "id": "92494693-be00-40aa-b58d-0123b050cabf",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729116714,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 437,
+    "total_tokens": 589
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Alexander McQueen Oversized Sneaker 202401 MCQUE AL09\n**Subtitle (Sottotitolo):** Luxury Men's Sneaker with Contemporary Flair\n**Short Description (Breve Descrizione):** Elevate your style with the Alexander McQueen Oversized Sneaker, featuring a bold, modern design that combines comfort and luxury. Crafted with high-quality materials, this sneaker is perfect for those who seek a statement piece. Available in size 41.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the Alexander McQueen Oversized Sneaker, style number 202401 MCQUE AL09. This sleek and sophisticated shoe is designed to make a statement, blending avant-garde aesthetics with exceptional craftsmanship.\n\n- **Craftsmanship:** Made in Italy, ensuring the highest quality and attention to detail.\n- **Design:** Oversized silhouette with chunky soles and colorful heel counters, embodying the brand's avant-garde legacy.\n- **Materials:** High-quality leather construction for durability and style.\n- **Comfort:** Designed for comfort and wearability, perfect for daily use.\n- **Style:** Versatile and modern, suitable for a variety of occasions, from casual to more formal events.\n- **Size:** Available in size 41, ensuring a precise fit.\n- **Brand Heritage:** Part of Alexander McQueen's renowned collection, known for its bold and innovative designs.\n- **Additional Features:**\n  - **Sculptural Sensibilities:** The shoe's design is steeped in sculptural sensibilities, reflecting the brand's commitment to artistic expression.\n  - **Contemporary Flair:** The oversized silhouette and chunky soles give the shoe a contemporary edge, perfect for those who seek to stand out.\n  - **Luxury Appeal:** The use of high-quality materials and meticulous craftsmanship ensures a luxurious feel and appearance.\n\nWhether you're looking to elevate your casual wardrobe or make a statement at a more formal event, the Alexander McQueen Oversized Sneaker is the perfect choice. Its unique design and exceptional quality make it a standout piece in any shoe collection."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

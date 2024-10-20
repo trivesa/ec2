@@ -1,0 +1,25 @@
+{
+  "id": "7bafe005-e6c9-48ad-b866-4f7fe44f2e9a",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728829190,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 438,
+    "total_tokens": 588
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton '25 - Ivory/Navy\n**Subtitle (Sottotitolo):** Women's Luxury Sneakers with Sustainable Materials\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Rhyton '25, featuring a sleek ivory and navy design crafted from sustainable, renewable, and bio-based materials. This luxury sneaker combines elegance and eco-friendliness, perfect for the modern woman. With its distinctive '25' and 'Gucci Eschatology 1921' prints, it's a statement piece for any wardrobe.\n\n**Description (Descrizione):**\n\n- **Sustainable Materials**: The Gucci Rhyton '25 is made from animal-free raw materials that are primarily from sustainable, renewable, and bio-based sources, reflecting Gucci's commitment to eco-friendly fashion.\n- **Design**: The shoe features a striking ivory and navy colorway with the iconic '25' and 'Gucci Eschatology 1921' prints, adding a touch of sophistication and historical significance.\n- **Comfort and Durability**: Equipped with a rubber sole and lace-up closure, these sneakers offer both comfort and durability, making them perfect for daily wear.\n- **Authenticity**: The Gucci logo tag ensures the authenticity of the product, guaranteeing that you are purchasing a genuine Gucci item.\n- **Size Information**: Available in size 34, ensuring a precise fit for the discerning fashionista.\n- **Product Details**:\n  - **Style Number**: 663340 2SH00 9522\n  - **Category**: Women's Rhyton Sneaker\n  - **Colorway**: Ivory/Navy\n  - **Retail Price**: $890\n  - **Release Date**: 05/25/2021\n- **Additional Features**:\n  - **GG Supreme Canvas**: The shoe's canvas is adorned with the iconic GG Supreme pattern, adding a luxurious touch.\n  - **Original Box**: The sneakers come with an original Gucci box, ensuring the product's authenticity and making it a valuable addition to any shoe collection."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "fe4eabab-47eb-47f7-90af-781eba09519c",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728833183,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 394,
+    "total_tokens": 545
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Herm\u00e8s Exquisite Silk Scarf - H082060CC89\n**Subtitle (Sottotitolo):** A Masterpiece of Elegance and Craftsmanship\n**Short Description (Breve Descrizione):** This Herm\u00e8s silk scarf, style number H082060CC89, is a testament to the brand's unparalleled craftsmanship and style. Measuring 180*40cm, it offers a versatile accessory that can elevate any outfit. Its luxurious silk fabric and intricate design make it a must-have for any fashion connoisseur.\n\n**Description (Descrizione):**\n\n- **Craftsmanship and Materials:**\n  - Made from the finest silk, ensuring a soft, luxurious feel.\n  - Crafted with meticulous attention to detail, reflecting Herm\u00e8s' commitment to excellence.\n\n- **Design and Versatility:**\n  - The scarf features a stunning design that can add a touch of sophistication to any ensemble.\n  - Its generous size (180*40cm) allows for multiple styling options, from a chic neck scarf to a stylish belt or even a decorative accent for a handbag.\n\n- **Brand Heritage:**\n  - Herm\u00e8s is renowned for its high-quality accessories, and this scarf is no exception.\n  - It embodies the brand's rich history and tradition of creating timeless, elegant pieces.\n\n- **Style and Elegance:**\n  - Perfect for both casual and formal occasions, this scarf is a versatile accessory that can be dressed up or down.\n  - Its elegant design makes it a perfect gift for those who appreciate luxury and sophistication.\n\n- **Care and Maintenance:**\n  - To preserve its beauty, it is recommended to dry clean the scarf.\n  - Avoid exposing it to direct sunlight or extreme temperatures to maintain its vibrant colors and texture.\n\nThis Herm\u00e8s silk scarf is a true masterpiece that combines elegance, craftsmanship, and versatility, making it a valuable addition to any wardrobe."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

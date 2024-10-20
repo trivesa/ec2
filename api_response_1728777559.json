@@ -1,0 +1,25 @@
+{
+  "id": "3c0b1c4b-b5eb-43d3-8d16-bd577eead5be",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728777559,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 370,
+    "total_tokens": 522
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton 25 - Luxurious Sneakers for Special Occasions\n**Subtitle (Sottotitolo):** Celebrate in High Fashion with the Gucci Rhyton 25\n**Short Description (Breve Descrizione):** The Gucci Rhyton 25 is a stylish and luxurious sneaker designed to commemorate special occasions in high fashion. With its unique design and luxurious feel, it's perfect for those who appreciate the finer details in footwear. Available in size 44.5.\n\n**Description (Descrizione):**\n\n- **Unique Design**: The Gucci Rhyton 25 features a distinctive and elegant design that sets it apart from other sneakers. Its sleek silhouette and luxurious materials make it a standout piece in any shoe collection.\n- **Luxurious Feel**: Crafted with high-quality materials, these sneakers offer a luxurious feel that is synonymous with Gucci's brand reputation. The attention to detail and craftsmanship ensure a comfortable and stylish fit.\n- **Special Occasions**: Whether it's a milestone birthday, anniversary, or any other special occasion, the Gucci Rhyton 25 is the perfect choice to celebrate in high fashion.\n- **Authenticity**: Each pair comes with the original retail box and is guaranteed to be 100% authentic, ensuring that you are purchasing a genuine Gucci product.\n- **Size Information**: Available in size 44.5, ensuring a precise fit for those who value comfort and style.\n- **Product Details**:\n  - **Style Number**: 663339 2SH00 9522\n  - **Condition**: Brand New; Never Worn\n  - **Inclusions**: Original retail box\n  - **Perfect for**: Special occasions, high fashion enthusiasts, and those who appreciate luxurious footwear."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "e503aaf9-b87a-4d54-bbed-8d032db8f5ce",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728800853,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 346,
+    "total_tokens": 493
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Pink Wool and Silk Scarf 281942 3G704 6978\n**Subtitle (Sottotitolo):** Luxurious Pink Scarf with Exquisite Wool and Silk Blend\n**Short Description (Breve Descrizione):** This GUCCI scarf, style number 281942 3G704 6978, is a stunning accessory made from a luxurious blend of wool and silk. Its vibrant pink hue and square shape make it a versatile and stylish addition to any outfit. Perfect for adding a touch of elegance to your wardrobe.\n\n**Description (Descrizione):**\n\n- **Material:** Crafted from a high-quality blend of 80% wool and 20% silk, ensuring warmth, durability, and a soft, luxurious feel.\n- **Size:** The scarf measures 140 cm x 140 cm, providing ample coverage and versatility in styling.\n- **Color:** The scarf features a beautiful old pink color, adding a subtle yet sophisticated touch to any outfit.\n- **Style:** The square shape and generous size make it perfect for wrapping around the neck, draping over the shoulders, or even using as a stylish shawl.\n- **Brand Authenticity:** Guaranteed original GUCCI product, ensuring the highest standards of quality and craftsmanship.\n- **Care Instructions:** To maintain the scarf's luxurious texture and color, it is recommended to dry clean only.\n- **Packaging:** The scarf comes with its original tags, ensuring authenticity and making it a perfect gift for those who appreciate luxury fashion.\n- **Versatility:** Suitable for various occasions, from casual daily wear to more formal events, this scarf is a versatile accessory that can elevate any outfit."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

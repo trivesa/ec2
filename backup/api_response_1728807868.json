@@ -1,0 +1,25 @@
+{
+  "id": "fc7c87da-f125-441e-8fb5-47428dc66b63",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728807868,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 380,
+    "total_tokens": 527
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Marmont Super Mini Bag\n**Subtitle (Sottotitolo):** Elegant White Chevron Leather Handbag\n**Short Description (Breve Descrizione):** The GUCCI GG Marmont Super Mini Bag is a sophisticated and stylish accessory, crafted from white chevron leather. Its compact size and iconic design make it perfect for everyday use. This bag embodies the essence of GUCCI's luxury and elegance.\n\n**Description (Descrizione):**\n\n- **Material:** The bag is made from high-quality white chevron leather, showcasing GUCCI's commitment to excellence in craftsmanship.\n- **Design:** The GG Marmont Super Mini Bag features the iconic GG logo on the front, adding a touch of sophistication and brand recognition.\n- **Size:** The super mini size is ideal for carrying essentials such as a phone, wallet, and keys, making it perfect for daily outings.\n- **Closure:** The bag is secured with a magnetic snap closure, ensuring easy access and secure closure.\n- **Strap:** The bag comes with a chain-link strap, allowing for versatile wear as a crossbody or shoulder bag.\n- **Interior:** The interior is lined with a contrasting fabric, adding a pop of color and enhancing the overall aesthetic.\n- **Dimensions:** The compact dimensions make it easy to carry, while still providing ample space for essentials.\n- **Brand Authenticity:** This bag is an authentic GUCCI product, ensuring the highest quality and craftsmanship.\n- **Return Policy:** The bag comes with a 30-day return policy, offering peace of mind for customers.\n- **Product Code:** 476433 DTD5N 9022, ensuring authenticity and easy identification.\n- **Additional Information:** For detailed size information and additional product details, please refer to the official GUCCI website or authorized retailers."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

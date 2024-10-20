@@ -1,0 +1,25 @@
+{
+  "id": "ee39bb3e-ad4a-4a78-a471-c9055256b3da",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728806377,
+  "usage": {
+    "prompt_tokens": 504,
+    "completion_tokens": 835,
+    "total_tokens": 1339
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Based on the provided information from Vestiaire Collective, here is the structured data for the GUCCI bag with style number 644992 H9HON 4267:\n\n**Mandatory Fields:**\n\n1. **Object Category (Categoria Oggetto):** Backpack\n2. **Store Category (Categoria del Negozio):** Women's Bags\n3. **Department (Reparto):** Women's Accessories\n4. **Brand (Marca):** Gucci\n5. **Color (Colore esterno):** Blue\n6. **Style (Stile):** Backpack\n7. **Material (Materiale esterno):** Nylon with leather trim\n8. **Closure Type (Chiusura):** N/A\n9. **Lining Material (Materiale della fodera):** N/A\n10. **Hardware Material (Materiale delle finiture):** N/A\n11. **Product Line (Linea prodotto):** N/A\n12. **Pattern (Fantasia):** N/A\n13. **Condition of the Item (Condizione dell'oggetto):** Pre-owned (as it is listed on Vestiaire Collective)\n14. **Price (Prezzo):** N/A (price not provided in the source)\n15. **Shipping Rule (Regola sulla spedizione):** N/A\n\n**Optional Fields:**\n\n1. **Custom Label (Etichetta personalizzata - SKU):** 644992 H9HON 4267\n2. **EAN (EAN):** N/A\n3. **MPN (MPN):** N/A\n4. **Handle Drop (Altezza del manico):** N/A\n5. **Handle/Strap Drop (Lunghezza della tracolla):** N/A\n6. **Size (Dimensioni):** N/A (though measurements are mentioned, they are not provided in the query)\n7. **Features (Caratteristiche):** N/A\n8. **Vintage (Vintage):** N/A\n9. **Unit of Measurement (Unit\u00e0 di misura):** N/A\n10. **Accents (Elementi decorativi):** N/A\n11. **Theme (Tema):** N/A\n12. **Occasion (Occasione):** N/A\n13. **Year Manufactured (Anno di fabbricazione):** N/A\n14. **Product Variants (Varianti di prodotto):** N/A\n15. **Payment Options and Offers (Regole di pagamento):** N/A\n16. **Shipping (Regola sulla spedizione):** N/A\n17. **Object Warnings (Avvertenze per l'oggetto):** N/A\n18. **Country/Region of Manufacture (Paese di fabbricazione):** Italy\n19. **Lining Color (Colore della fodera):** N/A\n20. **Handle/Strap Color (Colore del manico, tracolla):** N/A\n21. **Trim Color (Colore delle rifiniture):** N/A\n22. **Fabric Type (Tessuto):** N/A\n23. **Personalized (Personalizzato):** N/A\n24. **Accessories (Accessori):** N/A\n25. **Bag Width (Larghezza della borsa):** N/A\n26. **Bag Height (Altezza della borsa):** N/A\n27. **Bag Depth (Profondit\u00e0 della borsa):** N/A\n28. **Bag Shape (Forma):** N/A\n29. **Decorative Elements (Elementi decorativi):** N/A\n30. **Finish (Finitura):** N/A\n31. **Country of Manufacture (Paese di fabbricazione):** Italy\n\nNote: Many fields are marked as N/A because the specific information is not provided in the source or is not applicable based on the given details."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

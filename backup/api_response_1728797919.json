@@ -1,0 +1,25 @@
+{
+  "id": "68e684eb-c471-436d-8426-dd5c4369c3b4",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728797919,
+  "usage": {
+    "prompt_tokens": 312,
+    "completion_tokens": 499,
+    "total_tokens": 811
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Here is the information for the GUCCI belt with style number 409417 FAA6B 8048:\n\n**Mandatory Fields:**\n1. **Object Category (Categoria Oggetto):** Belt\n2. **Store Category (Categoria del Negozio):** Women's Accessories\n3. **Brand (Marca):** Gucci\n4. **Type (Tipo):** Leather Belt\n5. **Department (Reparto):** Women's\n6. **Color (Colore):** Multicolour\n7. **Size (Taglia):** 80\n8. **Condition of the Item (Condizione dell'oggetto):** New\n9. **Price (Prezzo):** N/A (Price not provided in the sources)\n10. **Shipping Rule (Regola sulla spedizione):** N/A (Specific shipping rules not provided in the sources)\n\n**Optional Fields:**\n1. **EAN (EAN):** N/A\n2. **Material (Materiale):** Leather\n3. **Style (Stile):** GG Marmont\n4. **Pattern (Fantasia):** N/A\n5. **Size Type (Tipo di taglia):** Standard\n6. **Belt Width (Larghezza della cintura):** N/A\n7. **Decorative Elements (Elementi decorativi):** GG Buckle\n8. **Theme (Tema):** N/A\n9. **Features (Caratteristiche):** N/A\n10. **Character (Personaggio):** N/A\n11. **Trim Material (Materiale delle finiture):** N/A\n12. **Country of Manufacture (Paese di fabbricazione):** N/A\n13. **Handmade (Fatto a mano):** N/A\n14. **Vintage (Vintage):** No\n15. **MPN (MPN):** 409417 FAA6B 8048\n16. **Quantity (Quantit\u00e0):** 1\n17. **Unit of Measurement (Unit\u00e0 di misura):** N/A\n18. **Custom Label (Etichetta personalizzata - SKU):** N/A\n19. **Personalized (Personalizzato):** No\n\n**Sources:**\n- **General Information:**\n- **Size Information:**\n- **Product Details:**,"
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

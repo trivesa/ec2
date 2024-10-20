@@ -1,0 +1,25 @@
+{
+  "id": "218dba1a-902c-4de5-8bdb-fd7998047e2d",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728773769,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 416,
+    "total_tokens": 566
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Rhyton Leather Sneaker\n**Subtitle (Sottotitolo):** Ivory Luxury Sneaker with Distressed Details\n**Short Description (Breve Descrizione):** Elevate your style with the GUCCI Rhyton Leather Sneaker, featuring a luxurious ivory leather design with distressed details. This high-end sneaker combines comfort and sophistication, perfect for making a statement. Crafted with meticulous attention to detail, it embodies the essence of GUCCI's luxury fashion.\n\n**Description (Descrizione):**\n\n- **Luxurious Materials:** The GUCCI Rhyton Leather Sneaker is crafted from high-quality ivory leather, ensuring a premium feel and look.\n- **Distressed Details:** The sneaker features distressed details that add a unique touch of rugged elegance, making it stand out in any setting.\n- **Comfort and Style:** Designed for both comfort and style, this sneaker is perfect for everyday wear while still making a fashion statement.\n- **Size Information:** Available in size 46, ensuring a comfortable fit for those who appreciate the finer details in footwear.\n- **Authenticity:** This GUCCI Rhyton Leather Sneaker is an authentic product, reflecting the brand's commitment to excellence and craftsmanship.\n- **Versatility:** Whether you're dressing up or dressing down, this sneaker is versatile enough to complement any outfit, from casual to formal.\n- **Brand Heritage:** As a product of GUCCI, this sneaker embodies the brand's rich history and tradition of luxury fashion, making it a valuable addition to any wardrobe.\n- **Quality Assurance:** Each pair is carefully inspected to ensure it meets the high standards of GUCCI, guaranteeing a long-lasting and durable product.\n- **Style Number:** 498916 A9L00 9522, ensuring you are purchasing the exact model you desire.\n- **Availability:** Available from various reputable retailers, including FLEXDOG, KicksCrew, GOAT, Rainy Clouds OG, and StockX, ensuring authenticity and reliability."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

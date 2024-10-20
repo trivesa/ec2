@@ -1,0 +1,25 @@
+{
+  "id": "64fdb686-6f97-4424-8743-5878aa5f1cec",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728785399,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 394,
+    "total_tokens": 546
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci GG Rhyton 'Beige White Yellow' Sneakers\n**Subtitle (Sottotitolo):** Iconic Luxury Footwear with Distinctive Design\n**Short Description (Breve Descrizione):** The Gucci GG Rhyton 'Beige White Yellow' sneakers are a stylish and trendy choice, featuring a striking color scheme and iconic \"GG\" monogram. Crafted with a mix of fabrics and detailed with yellow leather trims and reflective fabric, these shoes embody the unique Gucci aesthetic. Available in size 41.5.\n\n**Description (Descrizione):**\n\n- **Unique Design**: The Gucci GG Rhyton 'Beige White Yellow' sneakers showcase a distinctive design that combines various fabrics, including white and navy mini GG jacquard fabric, Beige/Ebony Original GG canvas, and Beige/Blue GG Supreme canvas.\n- **Iconic Branding**: The shoes feature \"GUCCI\" branding on the tongue and insole, emphasizing the brand's luxury heritage.\n- **Detailed Construction**: Yellow leather trims and reflective fabric add a touch of sophistication, while beige laces complement the overall design.\n- **Chunky Sole Unit**: The sneakers feature a chunky sole unit comprising a Sail midsole with \"GUCCI\" christened at the heel and a red rubber outsole, providing both style and durability.\n- **Size Information**: Available in size 41.5, ensuring a comfortable fit for those who appreciate the finer details of luxury footwear.\n- **Release Details**: Part of the Spring/Summer 2020 (SS20) collection, these sneakers were originally released on April 1st, 2020, and have since become a sought-after fashion item.\n- **Authenticity**: Each pair is meticulously crafted to uphold Gucci's high standards of quality and authenticity, making them a valuable addition to any luxury footwear collection."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

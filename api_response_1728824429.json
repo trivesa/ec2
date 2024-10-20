@@ -1,0 +1,25 @@
+{
+  "id": "d149b496-d950-416c-bf19-d80af7e1f621",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728824429,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 369,
+    "total_tokens": 521
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Sneakers in Pink Demetra Purple\n**Subtitle (Sottotitolo):** Elegant Low-Top Sneakers for Women\n**Short Description (Breve Descrizione):** Elevate your style with these Gucci Basket sneakers, featuring a vibrant pink and demetra purple color scheme. Crafted with high-quality materials, these shoes offer both comfort and sophistication. Perfect for casual yet stylish outfits.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the Gucci Basket sneakers, style number 700291 2SH90 5870. These shoes are designed to make a statement with their striking pink and demetra purple hues.\n\n- **Design and Materials:**\n  - The sneakers feature a low-top design, making them versatile and easy to pair with various outfits.\n  - Crafted from premium materials, ensuring durability and a luxurious feel.\n  - The pink and demetra purple color scheme adds a touch of elegance and sophistication.\n\n- **Comfort and Fit:**\n  - Designed for comfort, these sneakers are perfect for daily wear.\n  - Available in size 35.5, ensuring a snug and comfortable fit.\n\n- **Brand Authenticity:**\n  - Authentic Gucci product, guaranteeing high-quality craftsmanship and attention to detail.\n  - Style number 700291 2SH90 5870 ensures authenticity and exclusivity.\n\n- **Style Versatility:**\n  - Ideal for casual yet stylish outfits, these sneakers can elevate any look.\n  - Perfect for those who appreciate luxury and want to make a fashion statement.\n\n- **Additional Information:**\n  - For more information on availability and pricing, please refer to authorized retailers such as BALAAN or KicksCrew."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

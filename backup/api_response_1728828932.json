@@ -1,0 +1,25 @@
+{
+  "id": "df9f4322-e424-4ceb-bbd6-ce42a94427a7",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728828932,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 423,
+    "total_tokens": 573
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Rhyton 25 Sneakers\n**Subtitle (Sottotitolo):** Ivory and Navy Luxury Sneakers for Women\n**Short Description (Breve Descrizione):** Elevate your style with the GUCCI Rhyton 25 sneakers, featuring a striking ivory and navy colorway. Crafted with high-quality materials, these shoes embody the essence of luxury footwear. Perfect for making a statement, these sneakers are designed to turn heads.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the GUCCI Rhyton 25 sneakers, style number 663340 2SH00 9522. Here are some key features that make these shoes stand out:\n\n- **Luxurious Design:** The Rhyton 25 sneakers showcase a sophisticated blend of ivory and navy hues, creating a visually stunning effect that is quintessentially GUCCI.\n- **High-Quality Materials:** These shoes are crafted with premium materials, ensuring durability and comfort. The ivory Demetra is made from animal-free raw materials that are primarily from sustainable, renewable, and bio-based sources.\n- **Distinctive Details:** The sneakers feature the iconic GUCCI logo tag and are adorned with '25' and 'Gucci Eschatology 1921' prints, adding a touch of elegance and historical significance.\n- **Practical Features:** The lace-up closure provides a secure fit, while the rubber sole ensures excellent grip and durability.\n- **Size Information:** Available in size 34, ensuring a precise fit for those who demand the best.\n- **Authenticity:** This product is a genuine GUCCI item, guaranteeing the highest standards of craftsmanship and quality.\n- **Original Packaging:** The shoes come with their original box, preserving their luxury appeal.\n- **Style Number:** 663340 2SH00 9522, ensuring authenticity and exclusivity.\n\nThese GUCCI Rhyton 25 sneakers are a testament to the brand's commitment to excellence and style, making them a must-have for any fashion connoisseur."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

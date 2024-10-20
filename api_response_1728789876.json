@@ -1,0 +1,25 @@
+{
+  "id": "00e6d548-122b-4a34-baef-48d8ca473a9d",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728789875,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 378,
+    "total_tokens": 530
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High 'Black Demetra Yellow' Sneaker\n**Subtitle (Sottotitolo):** Classic Basketball Inspiration with Sustainable Materials\n**Short Description (Breve Descrizione):** The Gucci Basket High 'Black Demetra Yellow' sneaker combines classic basketball aesthetics with modern sustainable materials. Crafted primarily from Demetra, an innovative eco-friendly material, this high-top sneaker features distinctive detailing and a lightly distressed effect. Perfect for those who appreciate both style and sustainability.\n\n**Description (Descrizione):**\n\n- **Design Inspiration:** Inspired by the iconic basketball sneakers of the 90s, the Gucci Basket High 'Black Demetra Yellow' offers a contemporary take on a classic design.\n- **Materials:** The shoe is primarily made from Demetra, a sustainable, renewable, and bio-based material that aligns with Gucci's commitment to eco-friendliness.\n- **Key Features:**\n  - **High-Top Style:** Emulates the self-expression of on-court aesthetics with its high-top design.\n  - **Distinctive Details:** Includes a rubber Interlocking G patch, contrast padding at the ankle, and a GG logo detail.\n  - **Rubber Sole:** Provides durability and comfort.\n  - **Distressed Effect:** Treated for a lightly distressed look, adding a unique touch to the overall design.\n- **Additional Details:**\n  - **Size:** Available in size 40.5.\n  - **Packaging:** Includes a box and dust bag.\n  - **Quality:** Ensures the best quality craftsmanship.\n  - **Production Time:** 3-5 working days for production.\n- **Sustainability:** Crafted from animal-free raw materials that are primarily from sustainable, renewable, and bio-based sources, reflecting Gucci's commitment to environmental responsibility."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

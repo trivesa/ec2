@@ -1,0 +1,25 @@
+{
+  "id": "28cde519-40df-4a37-961f-5ee50e020863",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728775233,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 383,
+    "total_tokens": 534
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Run Sneaker - Black Yellow Beige\n**Subtitle (Sottotitolo):** High-End Fashion with a Sporting Twist\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Run Sneaker, featuring a unique blend of sporty and luxurious elements. Crafted from GG technical knit fabric, these sneakers showcase standout logo details and a bi-color sole for a playful touch. Perfect for making a fashion statement.\n\n**Description (Descrizione):**\n\n- **Design Inspiration:** Inspired by the sporting world, the Gucci Run Sneaker interprets athletic styles through the iconic Gucci lens, combining high-end fashion with sporty elements.\n- **Material and Construction:** The upper is made from GG technical knit fabric, ensuring both comfort and durability. The sole is crafted from high-quality materials, providing a sturdy base for the shoe.\n- **Key Features:**\n  - **Logo Details:** Standout logo details, including the Interlocking G, add a touch of luxury and authenticity.\n  - **Bi-Color Sole:** A bi-color sole adds a playful note of chromatic contrast, enhancing the overall aesthetic.\n  - **Size Information:** Available in size 45.5, ensuring a comfortable fit for those who prefer a precise size.\n- **Additional Details:**\n  - **Product Code:** 680938-USM10 8480\n  - **Color Code:** 8480\n  - **Color:** Black Yellow\n  - **Made in:** Italy\n  - **Composition:** Upper: Textile - Sole: EL\n- **Authenticity and Quality:** Each pair is carefully crafted to meet Gucci's high standards, ensuring authenticity and quality in every detail.\n- **Perfect for:** Fashion enthusiasts looking to make a statement with a unique blend of sporty and luxurious elements."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "448c5245-0cd6-4c85-8ee8-dcd3e0806cd0",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728825292,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 502,
+    "total_tokens": 652
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci G74 Web Small Bee Casual Shoes/Sneakers\n**Subtitle (Sottotitolo):** Vibrant Yellow Green Red Sneakers with Iconic Web Detailing\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci G74 Web Small Bee Casual Shoes/Sneakers, featuring a bold yellow, green, and red color scheme and the iconic Gucci web pattern. Crafted with high-quality materials, these sneakers offer both comfort and fashion. Perfect for making a statement, they are available in size 35.\n\n**Description (Descrizione):**\n\n- **Iconic Design**: The Gucci G74 Web Small Bee Casual Shoes/Sneakers are a testament to Gucci's commitment to innovative and stylish footwear. The shoes feature the iconic Gucci web pattern, a signature element that adds a touch of luxury to any outfit.\n- **Vibrant Color Scheme**: The bold yellow, green, and red color scheme makes these sneakers stand out. The vibrant colors are carefully selected to create a visually striking effect that is sure to turn heads.\n- **High-Quality Materials**: Crafted with high-quality materials, these sneakers are not only stylish but also durable and comfortable. The attention to detail ensures that every aspect of the shoe, from the stitching to the finish, is of the highest standard.\n- **Comfort and Versatility**: Designed for everyday wear, these sneakers are perfect for casual outings, sports activities, or even dressing up a more formal look. The comfortable design ensures that you can wear them for extended periods without discomfort.\n- **Size Information**: Available in size 35, these sneakers are designed to fit comfortably and provide a snug, supportive fit.\n- **Brand Authenticity**: With the style number 624484-0PV20-9560, these sneakers are authentic Gucci products, ensuring that you are purchasing a genuine luxury item.\n- **Additional Details**:\n  - **Style Number**: 624484-0PV20-9560\n  - **Color**: Yellow Green Red\n  - **Gender**: Men\n  - **Type**: Casual Shoes/Sneakers\n  - **Brand**: Gucci\n\nExperience the luxury and style of Gucci with these exceptional sneakers. Whether you're looking to make a statement or simply want to add a touch of elegance to your wardrobe, the Gucci G74 Web Small Bee Casual Shoes/Sneakers are an excellent choice."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

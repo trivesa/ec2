@@ -1,0 +1,25 @@
+{
+  "id": "413ccd98-a0df-44e5-88fa-7530512a77eb",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728797025,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 342,
+    "total_tokens": 489
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Wool Silk Scarf\n**Subtitle (Sottotitolo):** Elegant Grey Scarf with Iconic GG Pattern\n**Short Description (Breve Descrizione):** This luxurious GUCCI scarf, style number 281942 3G704 1962, combines the finest wool and silk to create a sophisticated accessory. Featuring the iconic GG pattern, this scarf adds a touch of elegance to any outfit. Perfect for adding a stylish layer to your ensemble.\n\n**Description (Descrizione):**\n\n- **Material:** Crafted from a luxurious blend of 80% wool and 20% silk, ensuring warmth and a soft, luxurious feel.\n- **Design:** The scarf features the iconic GG pattern, a hallmark of GUCCI's timeless style and sophistication.\n- **Size:** The scarf measures 140 cm x 140 cm, providing ample coverage and versatility for various styling options.\n- **Color:** The scarf is available in a sophisticated grey hue (1962), which complements a wide range of outfits and occasions.\n- **Authenticity:** Guaranteed 100% authentic and original GUCCI product, ensuring the highest quality and craftsmanship.\n- **Versatility:** Perfect for adding a stylish layer to your ensemble, whether it's a casual day out or a more formal evening event.\n- **Care Instructions:** To maintain the scarf's quality, it is recommended to follow the care instructions provided by GUCCI, which typically include dry cleaning or hand washing in cold water.\n- **Style Number:** 281942 3G704 1962, ensuring you are purchasing a genuine GUCCI product with specific design and material specifications."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

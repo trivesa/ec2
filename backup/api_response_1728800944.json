@@ -1,0 +1,25 @@
+{
+  "id": "3116bf16-b027-4337-90d8-1d1ed7ca439c",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728800944,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 376,
+    "total_tokens": 523
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Microssima Two-Tone Wool Muffler Beige 344994 4G200 9279\n\n**Subtitle (Sottotitolo):** Luxurious Wool Scarf with Iconic GG Pattern\n\n**Short Description (Breve Descrizione):**\nExperience the epitome of luxury with the GUCCI GG Microssima Two-Tone Wool Muffler Beige 344994 4G200 9279. Crafted from 100% wool, this scarf embodies the brand's commitment to quality and style. The iconic GG pattern in a two-tone beige design adds a touch of sophistication to any outfit.\n\n**Description (Descrizione):**\n\n- **Material**: 100% wool for unparalleled warmth and comfort.\n- **Design**: The scarf features the iconic GG pattern in a two-tone beige design, creating a sophisticated and timeless look.\n- **Size**: 180x40 cm, providing ample coverage and versatility in styling.\n- **Authenticity**: 100% authentic GUCCI product, made in Italy with the highest standards of craftsmanship.\n- **Packaging**: Includes original GUCCI packaging and tags, ensuring the product's authenticity and luxury feel.\n- **Versatility**: Suitable for both men and women, this scarf can be styled in various ways to add a touch of luxury to any outfit.\n- **Care Instructions**: To maintain the scarf's quality, it is recommended to dry clean only.\n- **Brand Heritage**: GUCCI is renowned for its luxurious and stylish designs, making this scarf a valuable addition to any fashion collection.\n\nThis scarf is a testament to GUCCI's dedication to creating high-quality, stylish accessories that elevate any outfit. With its iconic GG pattern and luxurious wool material, it is a must-have for anyone seeking to add a touch of sophistication to their wardrobe."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "f9e0a6d1-9758-44eb-9af7-916b76117aa2",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728801713,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 330,
+    "total_tokens": 477
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Wool Scarf\n**Subtitle (Sottotitolo):** Elegant and Sophisticated Men's Accessory\n**Short Description (Breve Descrizione):** Elevate your style with the GUCCI GG Jacquard Wool Scarf, featuring a classic GG diamond check logo pattern in navy and red. Made from high-quality wool, this scarf is both stylish and comfortable. Perfect for adding a touch of luxury to any outfit.\n\n**Description (Descrizione):**\n\n- **Style Number:** 644365 4G718 6468\n- **Material:** 100% Wool\n- **Dimensions:** 14\" x 94\" (35 cm x 240 cm)\n- **Design:** Classic GG diamond check logo pattern in navy and red\n- **Quality:** High-quality wool for durability and comfort\n- **Authenticity:** 100% Authentic GUCCI product\n- **Versatility:** Suitable for various occasions, from casual to formal events\n- **Care Instructions:** Dry clean only to maintain the quality and longevity of the scarf\n- **Packaging:** Comes with original tags and packaging for authenticity\n- **Perfect for:** Men looking to add a touch of luxury and sophistication to their wardrobe\n- **Seasonal Use:** Ideal for colder seasons, providing warmth and style\n- **Brand Heritage:** GUCCI, a renowned luxury fashion brand, known for its high-quality and stylish products\n\nThis GUCCI GG Jacquard Wool Scarf is a timeless accessory that combines elegance with practicality, making it a must-have for any fashion-conscious individual."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

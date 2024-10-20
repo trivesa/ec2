@@ -1,0 +1,25 @@
+{
+  "id": "96983899-cad3-4aeb-92db-2504a486e6da",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728772540,
+  "usage": {
+    "prompt_tokens": 145,
+    "completion_tokens": 395,
+    "total_tokens": 540
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Authentic Gucci Children's Strawberry Print Nylon Belt Bag Waist Bag\n**Subtitle (Sottotitolo):** Unique Nautical Theme with Boats and Sea Horses\n**Short Description (Breve Descrizione):** This authentic Gucci children's belt bag features a vibrant strawberry print on nylon, adorned with a nautical theme that includes boats and sea horses. Perfect for adding a playful touch to any outfit, it offers practicality with its adjustable waist strap and zip closure. Ideal for both kids and adults who love whimsical fashion.\n\n**Description (Descrizione):**\n\n- **Style Number:** 502095 URIAN 4352\n- **Material:** Water-resistant nylon with Gucci Merveilleux print\n- **Design:** Nautical theme featuring boats and sea horses, adding a unique and playful touch\n- **Closure:** Zip closure at the main compartment for secure storage\n- **Adjustability:** Adjustable waist strap for a comfortable and customizable fit\n- **Size Information:** Please refer to the Gucci official size chart for precise measurements\n- **Additional Features:**\n  - **Practicality:** Designed with both functionality and style in mind, making it perfect for daily use\n  - **Authenticity:** Guaranteed authentic Gucci product, ensuring high-quality craftsmanship and materials\n  - **Versatility:** Suitable for both children and adults who appreciate whimsical and stylish accessories\n  - **Care Instructions:** To maintain its quality, follow the care instructions provided with the product\n  - **Packaging:** Includes original Gucci packaging and accessories, such as dust bag and care booklet\n  - **Warranty:** Covered by Gucci's warranty and after-sales service for peace of mind\n\nThis Gucci belt bag is a delightful addition to any wardrobe, combining playful design with practical functionality. Its adjustable waist strap and zip closure make it perfect for both kids and adults who value style and convenience."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

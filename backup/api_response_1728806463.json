@@ -1,0 +1,25 @@
+{
+  "id": "d5dac2b4-06d3-46a3-bb6c-4dd14d2b7ed1",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728806463,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 380,
+    "total_tokens": 527
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Off The Grid Shoulder Bag 625850 H9HAN 1000\n**Subtitle (Sottotitolo):** Elegant and Versatile Men's Shoulder Tote\n**Short Description (Breve Descrizione):** The GUCCI Off The Grid Shoulder Bag 625850 H9HAN 1000 is a sleek and versatile accessory designed for the modern man. Crafted from durable nylon, this bag combines style and functionality, perfect for daily use. Its compact size and classic design make it an ideal choice for both casual and formal occasions.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury with the GUCCI Off The Grid Shoulder Bag 625850 H9HAN 1000. This stylish tote is designed to meet the needs of the contemporary gentleman, offering a blend of sophistication and practicality.\n\n- **Material:** Made from high-quality nylon, ensuring durability and resistance to wear and tear.\n- **Design:** The bag features a classic and minimalist design, adorned with subtle GUCCI branding, making it a versatile accessory for various occasions.\n- **Size:** Compact and lightweight, perfect for carrying essentials without bulk.\n- **Functionality:** Equipped with a single shoulder strap, allowing for comfortable and easy carrying.\n- **Color:** Available in black, a timeless and versatile color that complements any outfit.\n- **Style Number:** 625850 H9HAN 1000, ensuring authenticity and exclusivity.\n- **Brand:** GUCCI, a renowned luxury brand synonymous with elegance and sophistication.\n- **Ideal Use:** Suitable for daily use, travel, and formal events, making it a versatile addition to any wardrobe.\n\nThis GUCCI Off The Grid Shoulder Bag is a testament to the brand's commitment to quality and style, making it a must-have accessory for those who appreciate luxury and versatility."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

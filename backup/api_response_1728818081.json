@@ -1,0 +1,25 @@
+{
+  "id": "6eb8b7c4-90e2-4628-9256-81e64226f613",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728818081,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 391,
+    "total_tokens": 542
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Women's Basket Low Top Sneakers\n**Subtitle (Sottotitolo):** White Green Edition - Style 700290 2SHG0 9089\n**Short Description (Breve Descrizione):** Elevate your style with Gucci's iconic Basket sneakers, featuring a sleek white and green design. Crafted in Italy, these shoes embody the brand's commitment to luxury and quality. Perfect for making a statement in any setting.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with Gucci's Women's Basket Low Top Sneakers, style number 700290 2SHG0 9089. Here are the key features that make these shoes stand out:\n\n- **Luxurious Materials**: The upper is made from a combination of high-quality leather (EL) and other textiles, ensuring durability and comfort.\n- **Sleek Design**: The white and green color scheme adds a touch of sophistication and elegance, making these sneakers versatile for both casual and formal occasions.\n- **Italian Craftsmanship**: Each pair is meticulously crafted in Italy, reflecting Gucci's dedication to exceptional quality and craftsmanship.\n- **Comfortable Wear**: The sole is made from 100% leather (EL), providing a comfortable and supportive base for your feet.\n- **Size Information**: Available in size 38, ensuring a perfect fit for those seeking a stylish and comfortable shoe.\n- **Authenticity**: This product is a genuine Gucci item, ensuring that you are purchasing a high-quality, authentic luxury product.\n- **Versatility**: Whether you're dressing up or dressing down, these sneakers are designed to complement any outfit, making them a must-have addition to your wardrobe.\n\nWith Gucci's Women's Basket Low Top Sneakers, you're not just buying a shoe; you're investing in a piece of luxury fashion that will elevate your style and comfort."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

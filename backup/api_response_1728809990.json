@@ -1,0 +1,25 @@
+{
+  "id": "481292ba-75b9-4ee5-af58-101cfa525502",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728809990,
+  "usage": {
+    "prompt_tokens": 504,
+    "completion_tokens": 869,
+    "total_tokens": 1373
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Here is the information for the GUCCI bag with style number 658556 K9GOT 8861:\n\n**Mandatory Fields:**\n\n1. **Object Category (Categoria Oggetto):** Handbag\n2. **Store Category (Categoria del Negozio):** Women's Bags\n3. **Department (Reparto):** Women's Accessories\n4. **Brand (Marca):** Gucci\n5. **Color (Colore esterno):** Beige and Ebony\n6. **Style (Stile):** Neo Vintage\n7. **Material (Materiale esterno):** GG Supreme canvas with low environmental impact\n8. **Closure Type (Chiusura):** Zipper\n9. **Lining Material (Materiale della fodera):** Moir\u00e9 and microfibre with a suede-like finish\n10. **Hardware Material (Materiale delle finiture):** N/A\n11. **Product Line (Linea prodotto):** Ouverture collection\n12. **Pattern (Fantasia):** N/A\n13. **Condition of the Item (Condizione dell'oggetto):** New\n14. **Price (Prezzo):** \u20ac850 (varies by source)\n15. **Shipping Rule (Regola sulla spedizione):** Varies by retailer\n\n**Optional Fields:**\n\n1. **Custom Label (Etichetta personalizzata - SKU):** 658556 K9GOT 8861\n2. **EAN (EAN):** N/A\n3. **MPN (MPN):** N/A\n4. **Handle Drop (Altezza del manico):** N/A\n5. **Handle/Strap Drop (Lunghezza della tracolla):** 50cm\n6. **Size (Dimensioni):** W12cm x H16cm x D7cm\n7. **Features (Caratteristiche):** Oval Gucci leather tag with feline head, 1 external pocket, 2 internal flap pockets with button closure\n8. **Vintage (Vintage):** Neo Vintage (not actual vintage)\n9. **Unit of Measurement (Unit\u00e0 di misura):** Centimeters\n10. **Accents (Elementi decorativi):** Feline head on oval leather tag\n11. **Theme (Tema):** Contemporary with vintage inspiration\n12. **Occasion (Occasione):** Everyday\n13. **Year Manufactured (Anno di fabbricazione):** N/A\n14. **Product Variants (Varianti di prodotto):** N/A\n15. **Payment Options and Offers (Regole di pagamento):** Varies by retailer\n16. **Shipping (Regola sulla spedizione):** Varies by retailer\n17. **Object Warnings (Avvertenze per l'oggetto):** N/A\n18. **Country/Region of Manufacture (Paese di fabbricazione):** Italy\n19. **Lining Color (Colore della fodera):** N/A\n20. **Handle/Strap Color (Colore del manico, tracolla):** Brown\n21. **Trim Color (Colore delle rifiniture):** N/A\n22. **Fabric Type (Tessuto):** Canvas\n23. **Personalized (Personalizzato):** N/A\n24. **Accessories (Accessori):** N/A\n25. **Bag Width (Larghezza della borsa):** 12cm\n26. **Bag Height (Altezza della borsa):** 16cm\n27. **Bag Depth (Profondit\u00e0 della borsa):** 7cm\n28. **Bag Shape (Forma):** Oval\n29. **Decorative Elements (Elementi decorativi):** Oval Gucci leather tag with feline head\n30. **Finish (Finitura):** N/A\n31. **Country of Manufacture (Paese di fabbricazione):** Italy\n\n**Note:** Some fields may have varying information depending on the source. The provided information is based on the most consistent and reliable sources available."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

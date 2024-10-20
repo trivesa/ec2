@@ -1,0 +1,25 @@
+{
+  "id": "0d532ec7-ec03-4fdc-8704-c82d729f5b1d",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728793681,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 421,
+    "total_tokens": 571
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton Sneaker with Vintage Logo\n**Subtitle (Sottotitolo):** Eco-Friendly Luxury in White Ivory\n**Short Description (Breve Descrizione):** The Gucci Rhyton Sneaker with style number 663339 2SH00 9522 is a testament to Gucci's commitment to sustainability and luxury. Crafted from Demetra, an eco-friendly material derived from sustainable sources, this shoe combines style with environmental responsibility. Its vintage Gucci logo adds a touch of classic elegance.\n\n**Description (Descrizione):**\n\nThe Gucci Rhyton Sneaker with style number 663339 2SH00 9522 is a masterpiece of eco-friendly luxury. Here are some key features that make this shoe stand out:\n\n- **Material:** The shoe is primarily made from Demetra, a material that mimics the look and feel of leather but is crafted from sustainable, renewable, and bio-based sources. This ensures a pliable and resilient performance with a supple finish.\n- **Design:** The shoe features a vintage Gucci logo, adding a touch of classic sophistication to its modern design.\n- **Color:** The shoe is available in White Ivory, a timeless and versatile color that complements any outfit.\n- **Size:** This particular model is available in size 39, ensuring a comfortable fit for those who prefer a snug yet stylish shoe.\n- **Additional Features:**\n  - **Rubber Sole:** Durable and long-lasting, providing excellent grip and traction.\n  - **Low Heel:** Adds a subtle touch of elegance without compromising comfort.\n  - **Gucci Logo Tag:** Authenticates the shoe and adds a touch of luxury.\n  - **Box and Dust Bag Included:** Ensures the shoe is protected and preserved when not in use.\n- **Production Time:** 3-5 working days, ensuring quick delivery without compromising on quality.\n- **Quality Assurance:** This product is of the best quality, reflecting Gucci's commitment to excellence in craftsmanship and materials."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

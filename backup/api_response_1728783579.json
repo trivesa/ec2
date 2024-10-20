@@ -1,0 +1,25 @@
+{
+  "id": "777f8f0f-7dd2-439e-9ac2-e339334d98ac",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728783579,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 401,
+    "total_tokens": 551
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton 25 Sneakers\n**Subtitle (Sottotitolo):** Luxurious and Sustainable Footwear for the Modern Woman\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Rhyton 25 sneakers, crafted from eco-friendly Demetra material. These luxurious shoes offer a perfect blend of comfort and fashion. Available in size 42.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury and sustainability with the Gucci Rhyton 25 sneakers. Here are some key features that make these shoes stand out:\n\n- **Eco-Friendly Material:** The Rhyton 25 sneakers are primarily made from Demetra, a cutting-edge material that combines animal-free raw materials from sustainable, renewable, and bio-based sources. This innovative material is processed using the same techniques as traditional tanning, resulting in a pliable, resilient, and supple finish.\n\n- **Design Elements:**\n  - **Gucci Logo Tag:** A subtle yet distinctive Gucci logo tag adds a touch of authenticity and luxury.\n  - **Rubber Sole:** Durable and comfortable, the rubber sole ensures long-lasting wear.\n  - **Low Heel:** A stylish low heel provides a sleek and modern silhouette.\n\n- **Additional Features:**\n  - **Original Packaging:** Includes a box and dust bag for safe storage and transport.\n  - **Quality Assurance:** This product is of the highest quality, ensuring a premium experience.\n  - **Production Time:** The production time is 3-5 working days, ensuring timely delivery.\n\n- **Size Information:** Available in size 42. Please ensure to choose the correct size in centimeters or inches for a perfect fit.\n\n- **Color:** White Ivory, offering a versatile and timeless look that complements any outfit.\n\nExperience the perfect blend of luxury, sustainability, and style with the Gucci Rhyton 25 sneakers."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "b476ab2d-66a7-4cb4-a812-1954492da1ea",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728776193,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 434,
+    "total_tokens": 583
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Run Sneaker 'Black Yellow' 680938-USM10-8480\n**Subtitle (Sottotitolo):** High-End Fashion Sneakers for the Discerning Individual\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Run Sneaker 'Black Yellow' 680938-USM10-8480, a masterpiece of Italian craftsmanship and high-end fashion. This sleek and versatile sneaker is designed to make a statement. Crafted with premium textile materials and a durable EL sole, it embodies the essence of Gucci's luxury aesthetic.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the Gucci Run Sneaker 'Black Yellow' 680938-USM10-8480. Here are some key features that make this sneaker stand out:\n\n- **Craftsmanship:** Made in Italy, this sneaker showcases the finest Italian craftsmanship, ensuring a product of exceptional quality and durability.\n- **Materials:** The upper is made from high-quality textile materials, while the sole is crafted from durable EL, providing both comfort and longevity.\n- **Design:** The black and yellow color scheme adds a touch of sophistication and elegance, making it perfect for both casual and formal occasions.\n- **Size Information:** Available in size 45, ensuring a comfortable fit for those who demand precision in their footwear.\n- **Brand Authenticity:** This product is an authentic Gucci item, guaranteeing the highest standards of quality and style.\n- **Versatility:** Whether you're looking to elevate your everyday look or make a statement at a special event, these sneakers are designed to complement any outfit.\n- **Luxury Aesthetic:** The Gucci Run Sneaker 'Black Yellow' 680938-USM10-8480 embodies the luxury and sophistication that Gucci is renowned for, making it a must-have for any fashion enthusiast.\n\nThis sneaker is not just a piece of footwear; it's a statement of style and sophistication. With its impeccable craftsmanship and luxurious materials, it's the perfect addition to any high-end fashion collection."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

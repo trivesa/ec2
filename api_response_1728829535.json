@@ -1,0 +1,25 @@
+{
+  "id": "4983209c-191f-40de-a196-653b473a1028",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728829535,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 511,
+    "total_tokens": 661
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton 'Mouth Print' Sneakers\n**Subtitle (Sottotitolo):** Iconic Luxury Footwear with a Bold Statement\n**Short Description (Breve Descrizione):** The Gucci Rhyton 'Mouth Print' sneakers, style number 552093 A9L00 9522, are a striking embodiment of Gucci's commitment to bold design and high-quality craftsmanship. These shoes feature a classic silhouette with a unique mouth print motif, blending '90s vibes with contemporary flair. Handcrafted in Italy, they offer a sporty yet luxurious look.\n\n**Description (Descrizione):**\n\n- **Design and Craftsmanship:**\n  - The Gucci Rhyton 'Mouth Print' sneakers are meticulously handcrafted in Italy, ensuring exceptional quality and attention to detail.\n  - The classic off-white leather construction provides a clean and sporty aesthetic, while the mouth print motif adds a bold and playful touch.\n\n- **Style and Versatility:**\n  - Inspired by the '90s hip-hop scene, these sneakers offer a timeless appeal that can easily complement a variety of outfits, from casual streetwear to more refined ensembles.\n  - The versatile design makes them suitable for both everyday wear and special occasions.\n\n- **Size Information:**\n  - Available in size 35, ensuring a comfortable fit for those seeking a stylish and comfortable footwear option.\n\n- **Brand Authenticity:**\n  - Authentic Gucci product, guaranteed to meet the brand's high standards of quality and design.\n  - Style number 552093 A9L00 9522 ensures authenticity and helps in verifying the product's legitimacy.\n\n- **Additional Features:**\n  - The shoes come with a unique mouth print design that sets them apart from other sneakers in the Gucci line.\n  - The use of Italian handcrafted leather ensures durability and a luxurious feel.\n\n- **Market Availability:**\n  - Available on various platforms, including Rainy Clouds OG, ETEFT, Kicks Crew, and StockX, offering a range of pricing options to suit different budgets.\n\n- **Pricing:**\n  - Prices vary across platforms, ranging from $540.00 to $1,802.00, depending on the retailer and availability.\n\nThese Gucci Rhyton 'Mouth Print' sneakers are a testament to Gucci's ability to blend bold design with high-quality craftsmanship, making them a must-have for anyone looking to elevate their footwear collection."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

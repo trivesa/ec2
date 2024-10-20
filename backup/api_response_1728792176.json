@@ -1,0 +1,25 @@
+{
+  "id": "c3734a5a-f919-4985-9616-61ce4877245c",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728792176,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 436,
+    "total_tokens": 587
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Leather Low 'Black' 426184 AYO10 1063\n**Subtitle (Sottotitolo):** Sophisticated Elegance in Genuine Leather\n**Short Description (Breve Descrizione):** Experience the epitome of luxury footwear with the Gucci Leather Low 'Black' 426184 AYO10 1063. Crafted from genuine leather, these sneakers embody sophistication and durability, perfect for those who demand high-quality fashion. The iconic black hue adds timeless elegance, making them versatile for any occasion.\n\n**Description (Descrizione):**\n\n- **Craftsmanship and Materials:**\n  - The Gucci Leather Low 'Black' 426184 AYO10 1063 is meticulously crafted from genuine leather, ensuring a luxurious feel and exceptional durability.\n  - The use of high-quality materials reflects Gucci's commitment to excellence and attention to detail.\n\n- **Design and Style:**\n  - The sleek black colorway exudes timeless elegance, making these sneakers versatile for both casual and formal occasions.\n  - The contrast sole adds a subtle yet stylish touch, enhancing the overall aesthetic appeal.\n  - The minimalist design allows the natural beauty of the leather to shine, creating a sophisticated look that is quintessentially Gucci.\n\n- **Size Information:**\n  - Available in size 39.5, ensuring a comfortable fit for those who appreciate precision in their footwear.\n\n- **Additional Features:**\n  - The iconic Gucci logo subtly integrated into the design, adding a touch of luxury and authenticity.\n  - The shoes are designed to provide comfort and support, making them suitable for daily wear without compromising on style.\n\n- **Product Details:**\n  - Brand: Gucci\n  - Product Code: 426184-AYO10-1063\n  - Colorway: Black\n  - Main Color: Black\n  - Release Date: October 6, 2021\n\nExperience the luxury and sophistication of Gucci with the Leather Low 'Black' 426184 AYO10 1063, a testament to the brand's commitment to quality and style."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

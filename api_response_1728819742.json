@@ -1,0 +1,25 @@
+{
+  "id": "92b1a939-c681-45ff-bf92-f18b90a0fe4a",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728819742,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 510,
+    "total_tokens": 660
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Basket Sneakers in Pink - 700291 2SH90 5870\n**Subtitle (Sottotitolo):** Elegant Low-Top Sneakers for Women\n**Short Description (Breve Descrizione):** Elevate your style with these stunning GUCCI Basket Sneakers in pink, featuring a sleek low-top design and sophisticated details. Perfect for casual yet stylish outings, these shoes are a testament to GUCCI's commitment to luxury and craftsmanship. Available in size 37.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the GUCCI Basket Sneakers in pink, style number 700291 2SH90 5870. These exquisite shoes are designed to make a statement, blending comfort and elegance in a unique way.\n\n- **Design and Materials:**\n  - Crafted with high-quality materials, these sneakers showcase GUCCI's attention to detail and commitment to excellence.\n  - The pink colorway adds a touch of sophistication and femininity, making them perfect for a variety of occasions.\n\n- **Key Features:**\n  - Low-top design for a sleek and modern look.\n  - Demetra purple accents add a subtle pop of color, enhancing the overall aesthetic.\n  - The GUCCI logo is discreetly placed, ensuring a subtle yet recognizable brand statement.\n\n- **Comfort and Versatility:**\n  - Designed for comfort, these sneakers are perfect for daily wear, whether you're running errands or attending casual events.\n  - The versatile design allows them to be paired with a range of outfits, from casual jeans to more formal dresses.\n\n- **Size and Fit:**\n  - Available in size 37, ensuring a precise fit for those who value comfort and style.\n  - The low-top design provides a snug fit without compromising on style.\n\n- **Brand Authenticity:**\n  - Authentic GUCCI product, ensuring the highest quality and craftsmanship.\n  - The style number 700291 2SH90 5870 guarantees the authenticity and exclusivity of these sneakers.\n\n- **Additional Information:**\n  - For those seeking to make a statement with their footwear, these GUCCI Basket Sneakers are an excellent choice.\n  - Perfect for fashion enthusiasts who appreciate luxury and elegance in every detail.\n\nEmbrace the luxury and sophistication of GUCCI with these stunning Basket Sneakers in pink. Whether you're looking to elevate your casual style or add a touch of elegance to your outfit, these shoes are sure to impress."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "e80779af-4d5c-48c5-9678-3b1987450b01",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728772335,
+  "usage": {
+    "prompt_tokens": 145,
+    "completion_tokens": 483,
+    "total_tokens": 628
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI URIAN 4352 Handbag\n**Subtitle (Sottotitolo):** Elegant Sophistication in Every Detail\n**Short Description (Breve Descrizione):** The GUCCI URIAN 4352 handbag embodies the essence of luxury with its sophisticated design and meticulous craftsmanship. This stylish accessory features a soft construction and a distinctive G-shaped clasp, making it a standout piece in any collection. Perfect for those who appreciate the finer details of high-end fashion.\n\n**Description (Descrizione):**\n\nThe GUCCI URIAN 4352 handbag is a masterpiece of luxury design, combining elegance with practicality. Here are some key features that make this handbag truly exceptional:\n\n- **Material:** Crafted from high-quality materials, ensuring durability and a luxurious feel.\n- **Design:** The bag features a soft construction that provides a sophisticated silhouette, complemented by a distinctive G-shaped clasp that adds a touch of elegance.\n- **Hardware:** The hardware is made from solid metal, engraved with the GUCCI logo, ensuring a premium look and feel. The zippers are heavy and smooth, providing effortless functionality.\n- **Serial Number:** The bag includes a leather tag with a 12-digit serial number, divided into two lines, with the style number on the top and the batch code on the bottom. This ensures authenticity and traceability.\n- **Interior:** The interior is meticulously crafted with attention to detail, featuring a zippered back pocket and a leather tab with the GUCCI logo.\n- **Accessories:** The bag comes with a dust bag made from high-quality, satiny material, and a care book in multiple languages, along with a post-manufacturing verification card.\n- **Size Information:** Please refer to the official GUCCI website for detailed size information and to ensure the perfect fit.\n- **Authenticity:** To verify authenticity, look for the GUCCI logo on the zipper, the serial number tag, and the quality of the stitching and hardware. Genuine GUCCI bags are packaged in a dust bag and include a care book and verification card.\n- **Quality Guarantee:** This handbag is backed by a lifetime authenticity guarantee, ensuring that it meets the highest standards of luxury fashion.\n\nExperience the epitome of luxury with the GUCCI URIAN 4352 handbag, a true masterpiece of high-end fashion."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

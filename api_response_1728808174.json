@@ -1,0 +1,25 @@
+{
+  "id": "60bad464-28e5-4d6f-b097-08ed8cce4c62",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728808174,
+  "usage": {
+    "prompt_tokens": 503,
+    "completion_tokens": 826,
+    "total_tokens": 1329
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Based on the available information from the provided sources, here is the structured data for the GUCCI bag with style number 476433 DTDCP 4928:\n\n**Mandatory Fields:**\n\n1. **Object Category (Categoria Oggetto):** Handbag\n2. **Store Category (Categoria del Negozio):** Luxury Handbags\n3. **Department (Reparto):** Women's Accessories\n4. **Brand (Marca):** Gucci\n5. **Color (Colore esterno):** Pastel Blue\n6. **Style (Stile):** GG Marmont Super Mini Bag\n7. **Material (Materiale esterno):** Matelass\u00e9 Leather\n8. **Closure Type (Chiusura):** N/A\n9. **Lining Material (Materiale della fodera):** N/A\n10. **Hardware Material (Materiale delle finiture):** N/A\n11. **Product Line (Linea prodotto):** GG Marmont\n12. **Pattern (Fantasia):** N/A\n13. **Condition of the Item (Condizione dell'oggetto):** New\n14. **Price (Prezzo):** $297.00 (Sale price), $1,579.00 (Regular price)\n15. **Shipping Rule (Regola sulla spedizione):** N/A\n\n**Optional Fields:**\n\n1. **Custom Label (Etichetta personalizzata - SKU):** 476433-DTDCP-4928\n2. **EAN (EAN):** N/A\n3. **MPN (MPN):** N/A\n4. **Handle Drop (Altezza del manico):** N/A\n5. **Handle/Strap Drop (Lunghezza della tracolla):** N/A\n6. **Size (Dimensioni):** Super Mini\n7. **Features (Caratteristiche):** N/A\n8. **Vintage (Vintage):** No\n9. **Unit of Measurement (Unit\u00e0 di misura):** N/A\n10. **Accents (Elementi decorativi):** N/A\n11. **Theme (Tema):** N/A\n12. **Occasion (Occasione):** N/A\n13. **Year Manufactured (Anno di fabbricazione):** N/A\n14. **Product Variants (Varianti di prodotto):** N/A\n15. **Payment Options and Offers (Regole di pagamento):** N/A\n16. **Shipping (Regola sulla spedizione):** N/A\n17. **Object Warnings (Avvertenze per l'oggetto):** N/A\n18. **Country/Region of Manufacture (Paese di fabbricazione):** N/A\n19. **Lining Color (Colore della fodera):** N/A\n20. **Handle/Strap Color (Colore del manico, tracolla):** N/A\n21. **Trim Color (Colore delle rifiniture):** N/A\n22. **Fabric Type (Tessuto):** N/A\n23. **Personalized (Personalizzato):** No\n24. **Accessories (Accessori):** N/A\n25. **Bag Width (Larghezza della borsa):** N/A\n26. **Bag Height (Altezza della borsa):** N/A\n27. **Bag Depth (Profondit\u00e0 della borsa):** N/A\n28. **Bag Shape (Forma):** N/A\n29. **Decorative Elements (Elementi decorativi):** N/A\n30. **Finish (Finitura):** N/A\n31. **Country of Manufacture (Paese di fabbricazione):** N/A\n\n**Note:** The information provided is based on the available data from the sources and may not be comprehensive or accurate for all fields."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

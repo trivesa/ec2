@@ -1,0 +1,25 @@
+{
+  "id": "27a08607-d8bf-4562-9e63-ca02d76f547a",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728798275,
+  "usage": {
+    "prompt_tokens": 323,
+    "completion_tokens": 562,
+    "total_tokens": 885
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Here is the information for the GUCCI scarf with style number 281942 3G704 6978:\n\n**Mandatory Fields:**\n\n1. **Object Category (Categoria Oggetto):** Scarf\n2. **Store Category (Categoria del Negozio):** Women's Accessories\n3. **Brand (Marca):** Gucci\n4. **Color (Colore):** Pink\n5. **Type (Tipo):** Scarf\n6. **Department (Reparto):** Women\n7. **Material (Materiale):** Wool/Silk\n8. **Pattern (Fantasia):** N/A\n9. **Country of Manufacture (Paese di fabbricazione):** N/A\n10. **Condition of the Item (Condizione dell'oggetto):** New\n11. **Price (Prezzo):** Varies by source (e.g., $379.00, $492, $574)\n12. **Shipping Rule (Regola sulla spedizione):** Varies by source (e.g., Free Express Delivery over $109.00, DHL Express 3-4 business days)\n\n**Optional Fields:**\n\n1. **Custom Label (Etichetta personalizzata - SKU):** 281942 3G704 6978\n2. **EAN (EAN):** N/A\n3. **Style (Stile):** N/A\n4. **Theme (Tema):** N/A\n5. **Tissue (Tessuto):** Wool/Silk\n6. **Season (Stagione):** N/A\n7. **Features (Caratteristiche):** N/A\n8. **Decorative Elements (Elementi decorativi):** N/A\n9. **Width (Larghezza):** 140 cm\n10. **Garment Care (Cura dell'indumento):** N/A\n11. **Handmade (Fatto a mano):** N/A\n12. **MPN (MPN):** N/A\n13. **Quantity (Quantit\u00e0):** Varies by source (e.g., 2 available)\n14. **Unit of Measurement (Unit\u00e0 di misura):** cm\n15. **Accessories (Accessori):** N/A\n16. **Length (Lunghezza):** 140 cm\n17. **Trim Material (Materiale delle finiture):** N/A\n18. **Personalized (Personalizzato):** N/A\n\n**Note:** Information may vary slightly depending on the source. The provided information is based on the most consistent and reliable data across the sources."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

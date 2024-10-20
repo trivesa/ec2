@@ -1,0 +1,25 @@
+{
+  "id": "d5cfdfd8-5086-48c5-a200-ff4e97d425e4",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728801940,
+  "usage": {
+    "prompt_tokens": 323,
+    "completion_tokens": 561,
+    "total_tokens": 884
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Here is the information for the GUCCI scarf with style number 281942 3G704 1062:\n\n**Mandatory Fields:**\n\n1. **Object Category (Categoria Oggetto):** Scarf\n2. **Store Category (Categoria del Negozio):** Women's Accessories\n3. **Brand (Marca):** Gucci\n4. **Color (Colore):** Gray and Anthracite\n5. **Type (Tipo):** Unisex Shawl\n6. **Department (Reparto):** Women's Accessories\n7. **Material (Materiale):** Wool and Silk\n8. **Pattern (Fantasia):** Logo\n9. **Country of Manufacture (Paese di fabbricazione):** Italy\n10. **Condition of the Item (Condizione dell'oggetto):** New\n11. **Price (Prezzo):** \u20ac690.00\n12. **Shipping Rule (Regola sulla spedizione):** Free shipping to Italy with express courier in 24/48 hours. International shipping via FedEx.\n\n**Optional Fields:**\n\n1. **Custom Label (Etichetta personalizzata - SKU):** 281942 3G704 1062\n2. **EAN (EAN):** N/A\n3. **Style (Stile):** Unisex Shawl\n4. **Theme (Tema):** N/A\n5. **Tissue (Tessuto):** Wool and Silk\n6. **Season (Stagione):** N/A\n7. **Features (Caratteristiche):** Logo, Unisex\n8. **Decorative Elements (Elementi decorativi):** Logo\n9. **Width (Larghezza):** 140 cm\n10. **Garment Care (Cura dell'indumento):** N/A\n11. **Handmade (Fatto a mano):** N/A\n12. **MPN (MPN):** N/A\n13. **Quantity (Quantit\u00e0):** 1\n14. **Unit of Measurement (Unit\u00e0 di misura):** N/A\n15. **Accessories (Accessori):** N/A\n16. **Length (Lunghezza):** 140 cm\n17. **Trim Material (Materiale delle finiture):** N/A\n18. **Personalized (Personalizzato):** N/A\n\n**Sources:**\n- **Color, Material, Pattern, and Size:**\n- **Price and Shipping Rule:**\n- **Brand and Country of Manufacture:**\n- **Condition of the Item:**"
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

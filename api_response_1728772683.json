@@ -1,0 +1,25 @@
+{
+  "id": "df713e96-643f-45ef-947a-553f94117b74",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728772683,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 362,
+    "total_tokens": 509
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Off The Grid Messenger Shoulder Bag\n**Subtitle (Sottotitolo):** Iconic Interlocking GG Design in Vibrant Orange\n**Short Description (Breve Descrizione):** Embodying Gucci's signature style, this Off The Grid messenger shoulder bag features the iconic interlocking GG motif in a striking orange hue. Perfect for casual travel and everyday use, this bag combines functionality with high-end fashion. Crafted with meticulous attention to detail, it showcases Gucci's commitment to luxury and craftsmanship.\n\n**Description (Descrizione):**\n\n- **Model and Style Number:** 625850 H9HAN 7560\n- **Color:** Vibrant Orange\n- **Size:** Medium\n- **Dimensions:**\n  - **Bag Width:** 7 inches\n  - **Bag Depth:** 8 inches\n- **Closure:** Secure Zip Closure\n- **Occasion:** Ideal for Casual Travel and Everyday Use\n- **Key Features:**\n  - **Interlocking GG Motif:** The bag features Gucci's iconic interlocking GG design, adding a touch of luxury and sophistication.\n  - **Durable Construction:** Crafted with high-quality materials to ensure durability and long-lasting use.\n  - **Versatile Design:** Suitable for both casual and formal occasions, making it a versatile addition to any wardrobe.\n  - **Practical Size:** The medium size offers ample space for essentials without being too bulky, perfect for daily use.\n- **Additional Details:**\n  - **Shoulder Strap:** Adjustable shoulder strap for comfortable wear.\n  - **Interior:** Spacious interior with a zip closure to keep belongings secure.\n  - **Brand Authenticity:** Genuine Gucci product, ensuring the highest standards of quality and craftsmanship."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

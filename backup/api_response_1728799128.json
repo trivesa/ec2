@@ -1,0 +1,25 @@
+{
+  "id": "49be0ae2-0b74-477b-8ee5-9b2b0a9edd9f",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728799128,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 411,
+    "total_tokens": 558
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Microssima Two-Tone Wool Scarf\n**Subtitle (Sottotitolo):** Luxurious Unisex Scarf in Beige and White\n**Short Description (Breve Descrizione):** Elevate your style with the GUCCI GG Microssima Two-Tone Wool Scarf, a sophisticated unisex accessory featuring a classic beige and white color combination. Crafted from 100% wool, this scarf embodies the brand's commitment to quality and luxury. Perfect for adding a touch of elegance to any outfit.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury with the GUCCI GG Microssima Two-Tone Wool Scarf, designed to make a statement. Here are the key features that make this scarf a must-have:\n\n- **Style Number:** 344994 4G200 9279\n- **Material:** 100% Wool, ensuring warmth and durability.\n- **Color:** Beige and White, a timeless and versatile combination that complements any wardrobe.\n- **Design:** The scarf features the iconic GG logo, subtly integrated into the two-tone design, adding a touch of sophistication.\n- **Size Information:** This scarf is designed to be versatile, suitable for both men and women, and can be styled in various ways to suit your personal preference.\n- **Craftsmanship:** Made in Italy, this scarf reflects GUCCI's dedication to exceptional craftsmanship and attention to detail.\n- **Versatility:** Perfect for dressing up or adding a casual touch to your outfit, this scarf is ideal for any occasion.\n- **Brand Heritage:** As a product of GUCCI, this scarf embodies the brand's rich history and commitment to luxury fashion.\n\nThis scarf is not just an accessory; it's a statement piece that reflects your taste for the finer things in life. Whether you're looking to elevate your everyday look or make a statement at a special event, the GUCCI GG Microssima Two-Tone Wool Scarf is the perfect choice."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

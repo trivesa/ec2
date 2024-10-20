@@ -1,0 +1,25 @@
+{
+  "id": "491fc46c-8e7a-4345-87f5-2d7270a9b8ab",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728788437,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 362,
+    "total_tokens": 513
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton Pink Leather Trainers\n**Subtitle (Sottotitolo):** Exquisite Fuchsia/Pink Luxury Footwear\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Rhyton Pink trainers, featuring a vibrant fuchsia/pink colorway and premium leather construction. Crafted with meticulous attention to detail, these shoes embody the essence of Gucci's luxury fashion. Perfect for making a statement, these trainers are designed to stand out.\n\n**Description (Descrizione):**\n- **Model:** Gucci Rhyton\n- **Style Number:** 536900 DRW00 5752\n- **Colorway:** Fuchsia/Pink\n- **Material:** Premium leather\n- **Size:** 40.5\n- **Key Features:**\n  - **Luxury Leather:** Crafted from high-quality leather, ensuring durability and a luxurious feel.\n  - **Gucci Vintage Logo:** Embellished with the iconic Gucci vintage logo, adding a touch of classic elegance.\n  - **Rubber Sole:** Equipped with a durable rubber sole for excellent grip and comfort.\n  - **Height:** 10mm height provides a sleek and stylish silhouette.\n  - **Made in Italy:** A testament to Gucci's commitment to craftsmanship and quality.\n- **Additional Details:**\n  - **Original Box:** Includes the original box for authenticity and storage.\n  - **Double Packing:** Shipped with double packing for extra protection during transit.\n  - **Assurance:** Guaranteed authenticity and quality assurance.\n- **Release Date:** January 1, 2019\n- **Price:** Originally priced at $890, these trainers are a valuable addition to any luxury footwear collection."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

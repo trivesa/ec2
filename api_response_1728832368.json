@@ -1,0 +1,25 @@
+{
+  "id": "87fd294b-87e5-47ed-bc61-ad5c9bb9b7d6",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728832368,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 407,
+    "total_tokens": 558
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Donna Light Blue Demetra Sneakers\n**Subtitle (Sottotitolo):** Elegant and Sustainable Basketball-Inspired Sneakers\n**Short Description (Breve Descrizione):** Embrace the fusion of 90s basketball style and eco-friendly innovation with Gucci's Basket Donna Light Blue Demetra sneakers. Crafted from Demetra, a sustainable and pliable material, these shoes offer a unique blend of fashion and sustainability. Perfect for those who value both style and environmental responsibility.\n\n**Description (Descrizione):**\n\nExperience the ultimate in luxury footwear with Gucci's Basket Donna Light Blue Demetra sneakers, style number 700291 2SHW0 4870. Here are the key features:\n\n- **Sustainable Material:** Demetra, a revolutionary eco-friendly material, is used to craft these sneakers. It combines animal-free raw materials primarily from sustainable, renewable, and bio-based sources, ensuring a pliable and resilient performance with a supple finish.\n- **90s Basketball Inspiration:** Inspired by the iconic basketball sneakers of the 90s, these shoes embody the self-expression of on-court aesthetics with distinctive features and detailing.\n- **Light Blue Color:** The light blue color adds a touch of elegance and sophistication, making these sneakers perfect for both casual and stylish outfits.\n- **Rubber Interlocking G Patch:** The rubber interlocking G patch and Gucci logo detail add a luxurious touch, emphasizing the brand's commitment to quality and design.\n- **Rubber Sole:** The rubber sole provides durability and comfort, ensuring these sneakers are not only stylish but also practical for daily wear.\n- **Size Information:** Available in size 36, ensuring a precise fit for comfort and style.\n- **Inclusions:** Each pair comes with a box and dust bag, adding to the overall luxury experience.\n- **Production Time:** The production time is 3-5 working days, ensuring quick delivery of these high-quality sneakers."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

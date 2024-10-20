@@ -1,0 +1,25 @@
+{
+  "id": "e53ec873-81ab-4b74-9032-6738dfb629eb",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729036719,
+  "usage": {
+    "prompt_tokens": 339,
+    "completion_tokens": 583,
+    "total_tokens": 922
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Based on the provided information and the nature of the query, here is the structured information for the FENDI earrings with style number 202406 FENDI CA06:\n\n### Mandatory Fields\n1. **Object Category (Categoria Oggetto):** Earrings\n2. **Store Category (Categoria del Negozio):** Accessories\n3. **Brand (Marca):** FENDI\n4. **Type (Tipo):** Earrings\n5. **Department (Reparto):** Women's Accessories\n6. **Color (Colore):** N/A (Not specified in the query)\n7. **Condition of the Item (Condizione dell'oggetto):** New with box\n8. **Price (Prezzo):** N/A (Not specified in the query)\n9. **Shipping Rule (Regola sulla spedizione):** Free 14-day returns (as per FENDI's general shipping policy)\n\n### Optional Fields\n1. **Custom Label (Etichetta personalizzata - SKU):** 202406 FENDI CA06\n2. **EAN (EAN):** N/A\n3. **Style (Stile):** N/A\n4. **Material (Materiale):** N/A\n5. **Character (Personaggio):** N/A\n6. **Theme (Tema):** N/A\n7. **Features (Caratteristiche):** N/A\n8. **Country of Manufacture (Paese di fabbricazione):** N/A\n9. **Pattern (Fantasia):** N/A\n10. **Decorative Elements (Elementi decorativi):** N/A\n11. **Vintage (Vintage):** No\n12. **Fabric Type (Tessuto):** N/A\n13. **Handmade (Fatto a mano):** N/A\n14. **Year Manufactured (Anno di fabbricazione):** N/A\n15. **MPN (MPN):** N/A\n16. **Quantity (Quantit\u00e0):** N/A\n17. **Unit of Measurement (Unit\u00e0 di misura):** N/A\n18. **Personalized (Personalizzato):** N/A\n19. **Width (Larghezza):** N/A\n20. **Garment Care (Cura dell'indumento):** N/A\n21. **Product Line (Linea di prodotto):** N/A\n\n### Notes:\n- The color, price, and specific details about the material, style, and other optional fields are not provided in the query and thus marked as N/A.\n- The shipping rule is inferred from FENDI's general shipping policy as mentioned on their official website. However, specific shipping details for this item are not provided in the query."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

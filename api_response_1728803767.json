@@ -1,0 +1,25 @@
+{
+  "id": "c9e00e80-7e36-48e4-99c1-b885e8bc73c7",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728803767,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 429,
+    "total_tokens": 576
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Silk and Wool Scarf 281942 3G704 6978\n**Subtitle (Sottotitolo):** Luxurious Pink Scarf with Elegance and Sophistication\n**Short Description (Breve Descrizione):** This GUCCI scarf, style number 281942 3G704 6978, is a stunning blend of silk and wool, offering a luxurious touch to any outfit. Its vibrant pink hue adds a pop of color, perfect for making a statement. Crafted with the finest materials, this scarf embodies the essence of GUCCI's high-end fashion.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury with the GUCCI scarf, style number 281942 3G704 6978. This exquisite accessory is designed to elevate your wardrobe with its sophisticated charm.\n\n- **Material:** Made from a luxurious blend of silk and wool, ensuring a soft, comfortable feel against the skin.\n- **Size:** 140x140 cm, providing ample coverage and versatility for styling.\n- **Color:** Vibrant pink, adding a bold and eye-catching touch to any outfit.\n- **Style:** Perfect for adding a touch of elegance to casual or formal attire, making it a versatile accessory for any occasion.\n- **Quality:** Crafted with the highest quality materials and attention to detail, reflecting GUCCI's commitment to excellence.\n- **Brand Authenticity:** Guaranteed original GUCCI product, ensuring authenticity and value.\n- **Care Instructions:** To maintain its luxurious feel and appearance, it is recommended to follow the care instructions provided by the manufacturer.\n- **Packaging:** Delivered in its original packaging, complete with tags, ensuring a genuine and untouched product.\n- **Return Policy:** Returns are accepted within a specified timeframe, providing peace of mind with your purchase.\n\nThis GUCCI scarf is not just an accessory; it's a statement piece that embodies the brand's legacy of luxury and sophistication. Whether you're looking to add a touch of elegance to your daily look or seeking a special gift, this scarf is sure to impress."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

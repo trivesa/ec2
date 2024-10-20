@@ -1,0 +1,25 @@
+{
+  "id": "ebcd0c98-299a-4430-905c-81986f5eb3b8",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728779702,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 409,
+    "total_tokens": 558
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Thong Sandal 659229 J8710 1000\n**Subtitle (Sottotitolo):** Luxurious Black Rubber Flip Flops with Iconic Logo Embellishment\n**Short Description (Breve Descrizione):** Elevate your casual style with these sleek GUCCI Thong Sandals, featuring the iconic GUCCI logo on the strap. Crafted in versatile black rubber, these sandals are perfect for pairing with any outfit. Available in size 44.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury casual wear with the GUCCI Thong Sandal 659229 J8710 1000. Here are the key features that make these sandals a must-have:\n\n- **Iconic Design:** The sandals feature the iconic GUCCI logo embellishment on the strap, adding a touch of luxury to any outfit.\n- **Versatile Color:** The sleek black rubber design ensures these sandals can be paired with a wide range of outfits, from casual to more formal occasions.\n- **Comfortable Wear:** The rubber material provides comfort and durability, making these sandals perfect for daily wear.\n- **Size Information:** Available in size 44, ensuring a comfortable fit for those who prefer a more relaxed style.\n- **Style Code:** 659229 J8710 1000, a unique identifier for this specific model.\n- **Brand Authenticity:** Genuine GUCCI product, ensuring the highest quality and craftsmanship.\n- **Gender:** Suitable for both men and women, offering a unisex appeal.\n- **Additional Details:** The sandals are designed to be versatile and can be easily paired with shorts, jeans, or even more formal attire, making them a versatile addition to any wardrobe.\n\nThese GUCCI Thong Sandals are not just a fashion statement but also a testament to the brand's commitment to quality and style. Whether you're looking to elevate your casual wear or add a touch of luxury to your daily outfits, these sandals are the perfect choice."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

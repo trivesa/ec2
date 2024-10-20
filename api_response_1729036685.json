@@ -1,0 +1,25 @@
+{
+  "id": "e21b627d-6339-4314-8592-1ac3817ae5b0",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729036685,
+  "usage": {
+    "prompt_tokens": 606,
+    "completion_tokens": 734,
+    "total_tokens": 1340
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** FENDI CA06 Earrings FF\n**Subtitle (Sottotitolo):** Luxurious FENDI Earrings with FF Motif\n**Short Description (Breve Descrizione):** New with box, FENDI CA06 earrings featuring the iconic FF motif, perfect for adding a touch of luxury to any outfit.\n**Description (Descrizione):** Elevate your style with these exquisite FENDI CA06 earrings, adorned with the signature FF motif. Crafted with precision and attention to detail, these earrings are a testament to FENDI's commitment to luxury and elegance. The FF motif, a hallmark of FENDI's design, adds a sophisticated touch to any outfit, making these earrings a versatile accessory for both casual and formal occasions. New with box, these earrings are ready to be cherished and worn.\n\n**Object Category (Categoria Oggetto):** Jewelry\n**Store Category (Categoria del Negozio):** Accessories\n**Brand (Marca):** FENDI\n**Cut (Taglia):** N/A\n**Department (Reparto):** Women's Accessories\n**Type (Tipo):** Earrings\n**Style (Stile):** FF Motif\n**Condition of the Item (Condizione dell'oggetto):** New with box\n**Price (Prezzo):** N/A\n**Shipping Rule (Regola sulla spedizione):** N/A\n**MPN (MPN):** N/A\n**Custom Label (Etichetta personalizzata - SKU):** 202406 FENDI CA06\n**EAN (EAN):** N/A\n**Material (Materiale):** N/A\n**Color (Colore):** N/A\n**Tissue (Tessuto):** N/A\n**Size Type (Tipo di taglia):** N/A\n**Fit (Vestibilit\u00e0):** N/A\n**Sleeve Length (Lunghezza della manica):** N/A\n**Unit of Measurement (Unit\u00e0 di misura):** N/A\n**Character (Personaggio):** N/A\n**Season (Stagione):** N/A\n**Vintage (Vintage):** No\n**Neckline (Scollatura):** N/A\n**Theme (Tema):** Luxury\n**Activity (Attivit\u00e0):** N/A\n**Decorative Elements (Elementi decorativi):** FF Motif\n**Characteristics (Caratteristiche):** Luxurious, Elegant\n**Occasion (Occasione):** Formal, Casual\n**Knitting Style (Stile lavorazione a maglia):** N/A\n**Graphic Printing (Stampa grafica):** N/A\n**Garment Care (Cura dell'indumento):** N/A\n**Country of Manufacture (Paese di fabbricazione):** N/A\n**Fabric Type (Tipo di tessuto):** N/A\n**Personalized (Personalizzato):** No\n**Year Manufactured (Anno di fabbricazione):** N/A\n**Handmade (Fatto a mano):** N/A\n**Pattern (Fantasia):** N/A\n**Closure Type (Tipo di chiusura):** N/A\n**Accents (Dettagli decorativi):** FF Motif\n**Product Line (Linea di prodotto):** FENDI Accessories\n\nNote: Since specific details like material, color, and price are not provided, they are marked as N/A."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "60b2e61e-84d6-437c-aef7-6640213b1483",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728786455,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 423,
+    "total_tokens": 575
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton '25' Sneakers\n**Subtitle (Sottotitolo):** Ivory Leather Sneakers with Vintage Gucci Logo\n\n**Short Description (Breve Descrizione):**\nExperience the epitome of luxury with Gucci's Rhyton '25' sneakers, crafted from eco-friendly Demetra material that combines sustainable, renewable, and bio-based sources. These sneakers feature a vintage Gucci logo and a sleek, low-heeled design. Perfect for those who value both style and sustainability.\n\n**Description (Descrizione):**\n\n- **Material:** The Rhyton '25' sneakers are primarily made from Demetra, an eco-friendly material that offers pliable and resilient performance with a supple finish. This innovative material is created using the same processes as traditional tanning but uses animal-free raw materials from sustainable, renewable, and bio-based sources.\n- **Design:** The sneakers feature a vintage Gucci logo, adding a touch of classic elegance to their modern design. The low heel and rubber sole provide comfort and durability, making them perfect for daily wear.\n- **Color:** The sneakers are available in a sophisticated White Ivory color, which complements a variety of outfits and styles.\n- **Size Information:** This pair is available in size 41.5, ensuring a comfortable fit for those who prefer a slightly larger size.\n- **Additional Features:**\n  - **Gucci Logo Tag:** A subtle yet distinctive Gucci logo tag adds a touch of luxury to the sneakers.\n  - **Rubber Sole:** The rubber sole provides excellent grip and durability.\n  - **Low Heel:** The low heel design offers comfort and style.\n  - **Box and Dust Bag Included:** The sneakers come with a box and dust bag, perfect for storage and travel.\n- **Quality Assurance:** This product is of the best quality, ensuring a long-lasting and stylish addition to your wardrobe.\n- **Production Time:** The production time for these sneakers is 3-5 working days, ensuring quick delivery to meet your fashion needs."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "2307d0d2-e88f-43c7-b03d-13f34f7a3d9a",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728825800,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 390,
+    "total_tokens": 540
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Bananya x Ace Sneakers\n**Subtitle (Sottotitolo):** Exclusive Women's Shoes with Unique Design\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Bananya x Ace Sneakers, featuring a distinctive design that combines elegance and playfulness. Crafted with a blend of premium materials, these shoes are perfect for making a statement. Available in size 35.\n\n**Description (Descrizione):**\n\nExperience the fusion of luxury and whimsy with the Gucci Bananya x Ace Sneakers, style number 661663 0FI60 9112. Here are some key features that make these shoes stand out:\n\n- **Unique Design**: The Bananya x Ace Sneakers feature a bold and playful design, blending the iconic Gucci Ace silhouette with the whimsical Bananya character.\n- **Premium Materials**: Crafted from a combination of leather, rubber, nylon, polyester, suede, satin, and cotton blend, ensuring durability and comfort.\n- **Versatile Style**: Perfect for casual outings or adding a touch of luxury to your everyday look.\n- **Size**: Available in size 35, ensuring a snug and comfortable fit.\n- **Color**: The shoes feature a striking white and green colorway, adding a pop of color to any outfit.\n- **Brand Authenticity**: Authentic Gucci product, guaranteeing the highest quality and craftsmanship.\n- **Style Code**: 661663 0FI60 9112, ensuring you're purchasing a genuine Gucci item.\n- **Gender**: Designed specifically for women, offering a stylish and feminine touch.\n- **Delivery**: Available for international delivery, with various shipping options to suit your needs.\n\nWhether you're looking to make a fashion statement or simply want to add a unique piece to your shoe collection, the Gucci Bananya x Ace Sneakers are an excellent choice."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "602ee2a4-0432-43fb-b313-956fc3f89f6e",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728788569,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 370,
+    "total_tokens": 521
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton Leather 'Tiger Print' Sneakers\n**Subtitle (Sottotitolo):** High-End Fashion with Exotic Flair\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Rhyton Leather 'Tiger Print' Sneakers, featuring a bold tiger print design on premium leather. This chunky sneaker combines luxury and comfort, perfect for making a statement. Crafted with meticulous attention to detail, it embodies Gucci's commitment to high-end fashion.\n\n**Description (Descrizione):**\n- **Style Number:** 548635 DRW00 1000\n- **Material:** Leather/Rubber/Nylon/Polyester/Suede/Satin/Cotton Blend\n- **Size:** 40.5\n- **Key Features:**\n  - **Tiger Print Design:** The bold tiger print on premium leather adds an exotic touch to your wardrobe.\n  - **Chunky Sole:** The thick, rubber sole provides comfort and stability while making a fashion statement.\n  - **Gucci Logo:** The iconic Gucci logo is subtly integrated into the design, ensuring authenticity and luxury.\n  - **Versatility:** Perfect for casual outings or dressing up for special occasions, these sneakers offer versatility and style.\n  - **Quality Craftsmanship:** Each pair is meticulously crafted to ensure durability and long-lasting comfort.\n  - **Luxury Feel:** The combination of high-quality materials and precise craftsmanship delivers a luxurious feel and look.\n- **Additional Details:**\n  - **Brand:** Gucci\n  - **Gender:** Men\n  - **Color:** Tiger Print\n  - **Product Type:** Sneakers/Shoes\n  - **Ideal For:** Fashion-conscious individuals looking for a unique and luxurious footwear option."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

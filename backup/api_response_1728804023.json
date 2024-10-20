@@ -1,0 +1,25 @@
+{
+  "id": "bfe2bbbf-5d98-4f13-9a65-e7405e85af8e",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728804023,
+  "usage": {
+    "prompt_tokens": 503,
+    "completion_tokens": 876,
+    "total_tokens": 1379
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Here is the information for the GUCCI bag with style number 401231 UKMBN 2572:\n\n**Mandatory Fields:**\n\n1. **Object Category (Categoria Oggetto):** Handbag\n2. **Store Category (Categoria del Negozio):** Luxury Goods\n3. **Department (Reparto):** Women's Accessories\n4. **Brand (Marca):** Gucci\n5. **Color (Colore esterno):** Camel + Ebony\n6. **Style (Stile):** Dionysus\n7. **Material (Materiale esterno):** Jumbo GG Canvas\n8. **Closure Type (Chiusura):** N/A\n9. **Lining Material (Materiale della fodera):** N/A\n10. **Hardware Material (Materiale delle finiture):** Silver Metal Fittings\n11. **Product Line (Linea prodotto):** Dionysus\n12. **Pattern (Fantasia):** GG Canvas\n13. **Condition of the Item (Condizione dell'oggetto):** Used Grade A (Beautiful used item with little signs of use)\n14. **Price (Prezzo):** \u00a5170,000 (approximately $1,500 USD, but prices may vary by source)\n15. **Shipping Rule (Regola sulla spedizione):** Varies by seller\n\n**Optional Fields:**\n\n1. **Custom Label (Etichetta personalizzata - SKU):** 401231 UKMBN 2572\n2. **EAN (EAN):** N/A\n3. **MPN (MPN):** 401231 UKMBN 2572\n4. **Handle Drop (Altezza del manico):** N/A\n5. **Handle/Strap Drop (Lunghezza della tracolla):** 123cm (strap length)\n6. **Size (Dimensioni):** 20cm x 14cm x 4cm (bag dimensions)\n7. **Features (Caratteristiche):** Bill compartment, 3 Coin purse, 1 Card compartment, 16 Pocket, 2\n8. **Vintage (Vintage):** N/A\n9. **Unit of Measurement (Unit\u00e0 di misura):** Centimeters\n10. **Accents (Elementi decorativi):** Silver Metal Fittings\n11. **Theme (Tema):** Luxury\n12. **Occasion (Occasione):** Everyday\n13. **Year Manufactured (Anno di fabbricazione):** N/A\n14. **Product Variants (Varianti di prodotto):** N/A\n15. **Payment Options and Offers (Regole di pagamento):** Varies by seller\n16. **Shipping (Regola sulla spedizione):** Varies by seller\n17. **Object Warnings (Avvertenze per l'oggetto):** N/A\n18. **Country/Region of Manufacture (Paese di fabbricazione):** N/A\n19. **Lining Color (Colore della fodera):** N/A\n20. **Handle/Strap Color (Colore del manico, tracolla):** N/A\n21. **Trim Color (Colore delle rifiniture):** Silver\n22. **Fabric Type (Tessuto):** Canvas\n23. **Personalized (Personalizzato):** N/A\n24. **Accessories (Accessori):** Dust bag and box\n25. **Bag Width (Larghezza della borsa):** 20cm\n26. **Bag Height (Altezza della borsa):** 14cm\n27. **Bag Depth (Profondit\u00e0 della borsa):** 4cm\n28. **Bag Shape (Forma):** N/A\n29. **Decorative Elements (Elementi decorativi):** Silver Metal Fittings\n30. **Finish (Finitura):** N/A\n31. **Country of Manufacture (Paese di fabbricazione):** N/A\n\n**Note:** Information is based on the provided sources and may not be comprehensive or up-to-date. Prices and availability may vary by seller."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

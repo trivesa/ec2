@@ -1,0 +1,25 @@
+{
+  "id": "6cfb8ec0-73b7-44d4-b6db-7cbaa7782292",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728820515,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 395,
+    "total_tokens": 547
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Basket High-Top Sneakers 661310 2SH80 9062\n**Subtitle (Sottotitolo):** Luxurious High-Top Basketball Shoes in White with Demetra Accents\n**Short Description (Breve Descrizione):** Elevate your style with these GUCCI Basket High-Top Sneakers, featuring a striking white base accented with vibrant Demetra green, purple, orange, and blue details. Crafted with premium materials and designed for both comfort and fashion, these shoes are perfect for making a statement. Available in size 36.5.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - High-top design with a white leather upper\n  - Demetra green, purple, orange, and blue accents add a pop of color\n  - Premium materials ensure durability and comfort\n  - Rubber outsole for grip and stability\n\n- **Comfort and Fit:**\n  - Cushioned insole for added comfort\n  - Adjustable lacing system for a secure fit\n  - Size 36.5 ensures a snug and comfortable wear\n\n- **Style and Versatility:**\n  - Versatile design suitable for casual and sporty occasions\n  - Iconic GUCCI logo on the side for brand recognition\n  - High-top silhouette adds a trendy touch to any outfit\n\n- **Brand and Quality:**\n  - Authentic GUCCI product with style number 661310 2SH80 9062\n  - High-quality craftsmanship and attention to detail\n  - Part of GUCCI's luxury footwear collection, known for its elegance and sophistication\n\n- **Additional Information:**\n  - Available in various sizes, but this listing is specifically for size 36.5\n  - Perfect for those who appreciate luxury fashion and high-quality materials\n  - Ideal for making a stylish statement in both casual and sporty settings."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

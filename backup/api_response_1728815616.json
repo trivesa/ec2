@@ -1,0 +1,25 @@
+{
+  "id": "b746c58f-2459-4a97-98ed-824f166c2e93",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728815616,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 394,
+    "total_tokens": 546
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Basket Sneakers - Green White Black\n**Subtitle (Sottotitolo):** Luxurious Leather Trainers with Multicolour Accents\n**Short Description (Breve Descrizione):** Elevate your style with these GUCCI Basket Sneakers, featuring a vibrant green, white, and black colorway. Crafted from high-quality leather, these trainers offer a perfect blend of comfort and luxury. Ideal for both men and women, they are a versatile addition to any wardrobe.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the GUCCI Basket Sneakers, style number 700291 2SH90 3760. These stunning trainers are designed to make a statement with their striking green, white, and black color scheme.\n\n- **Luxurious Materials:** Made from premium leather, these sneakers ensure durability and a sophisticated look.\n- **Versatile Design:** Suitable for both men and women, these trainers are perfect for casual outings or dressing up for special occasions.\n- **Comfortable Fit:** With a size 39.5, these sneakers are designed to provide a comfortable and snug fit.\n- **Authenticity:** Guaranteed authenticity with the GUCCI brand, ensuring the highest quality and craftsmanship.\n- **Detailed Features:**\n  - **Colorway:** Green, white, and black, offering a unique and stylish appearance.\n  - **Product Code:** 700291-2SH90-3760, ensuring authenticity and easy identification.\n  - **Composition:** Upper made from leather, with a durable sole for long-lasting wear.\n  - **Origin:** Made in Italy, reflecting the brand's commitment to high-quality manufacturing.\n\nWhether you're looking to add a touch of luxury to your everyday look or seeking a stylish statement piece, the GUCCI Basket Sneakers are an excellent choice. Their timeless design and exceptional quality make them a valuable addition to any shoe collection."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

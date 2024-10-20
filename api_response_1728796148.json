@@ -1,0 +1,25 @@
+{
+  "id": "b8e83aab-5cf3-4f35-9f49-852529dbd9e1",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728796148,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 410,
+    "total_tokens": 561
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low 'White Demetra Red'\n**Subtitle (Sottotitolo):** Elegant Casual Wear with a Touch of Luxury\n**Short Description (Breve Descrizione):** The Gucci Basket Low 'White Demetra Red' sneakers bring a sophisticated blend of elegance and casual style, perfect for those who seek luxury in everyday wear. Featuring a striking white and red color combination, these shoes are made in Italy and crafted with high-quality materials. Ideal for size 42, they offer a comfortable and stylish fit.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The Gucci Basket Low 'White Demetra Red' features a striking combination of white and red, adding a touch of elegance to casual wear.\n  - Crafted with high-quality materials, the upper is made from other textiles, while the sole is made from elastic materials, ensuring durability and comfort.\n  - Made in Italy, these shoes embody the craftsmanship and luxury that Gucci is known for.\n\n- **Style and Versatility:**\n  - Perfect for those who seek to elevate their casual style with a touch of luxury.\n  - The white and red color scheme makes these shoes versatile and suitable for a variety of occasions, from casual outings to more formal events.\n  - The low-profile design ensures a comfortable fit and a sleek appearance.\n\n- **Product Details:**\n  - **Product Code:** 697882-2SHJ0\n  - **Color Code:** 9090\n  - **Color:** White and Red\n  - **Size:** 42\n  - **Composition:** Upper: Other Textile, Sole: Elastic Materials\n  - **Made in:** Italy\n\n- **Additional Information:**\n  - These shoes are available in various stores and can be found in stock at select retailers.\n  - The price range for these shoes can vary, with listings found between $275.00 to $619.00."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

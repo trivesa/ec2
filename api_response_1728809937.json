@@ -1,0 +1,25 @@
+{
+  "id": "8f4126c2-fb86-49fd-affe-1bb45552574a",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728809937,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 451,
+    "total_tokens": 598
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Neo Vintage Mini Bag\n**Subtitle (Sottotitolo):** Timeless Elegance in Beige Ebony\n**Short Description (Breve Descrizione):** Embodying the essence of vintage luxury with a modern twist, the GUCCI Neo Vintage Mini Bag is a compact yet stylish accessory perfect for everyday use. Crafted from high-quality beige ebony leather, this bag features the iconic GG Supreme pattern, adding a touch of sophistication to any outfit. Its compact size makes it ideal for carrying essentials without compromising on style.\n\n**Description (Descrizione):**\n\n- **Design and Craftsmanship:** The GUCCI Neo Vintage Mini Bag is meticulously crafted from beige ebony leather, showcasing the brand's commitment to quality and craftsmanship. The bag's exterior is adorned with the iconic GG Supreme pattern, a testament to GUCCI's rich heritage and timeless style.\n\n- **Size and Versatility:** With a compact design, this mini bag is perfect for daily use, offering ample space for essentials such as a phone, wallet, and keys. Its versatile size makes it suitable for both casual and formal occasions.\n\n- **Key Features:**\n  - **Style Number:** 658556 K9GOT 8861\n  - **Material:** Beige Ebony Leather\n  - **Pattern:** GG Supreme\n  - **Size:** Mini\n  - **Closure:** Secure and easy-to-use closure mechanism\n  - **Strap:** Adjustable shoulder strap for comfortable wear\n  - **Interior:** Lined interior with a small pocket for organization\n\n- **Luxury and Authenticity:** This bag is a genuine GUCCI product, ensuring the highest standards of quality and authenticity. It is a valuable addition to any luxury handbag collection, reflecting the brand's dedication to excellence and style.\n\n- **Care Instructions:** To maintain the bag's luxurious appearance, it is recommended to handle it with care and avoid exposure to harsh chemicals or extreme temperatures. Regular cleaning with a soft cloth and mild soap can help preserve its condition.\n\nThis GUCCI Neo Vintage Mini Bag is a testament to the brand's ability to blend vintage charm with modern elegance, making it a must-have accessory for those who appreciate timeless luxury."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

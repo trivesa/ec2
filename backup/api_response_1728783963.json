@@ -1,0 +1,25 @@
+{
+  "id": "8654a94b-dc46-4c28-8776-3e97434c17bb",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728783963,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 503,
+    "total_tokens": 654
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low 'White Demetra Green' 698785 2SHG0 9089\n**Subtitle (Sottotitolo):** Elevate Your Style with Gucci's Iconic Basket Low Sneakers\n**Short Description (Breve Descrizione):** Experience the fusion of luxury and sportswear with the Gucci Basket Low 'White Demetra Green'. Crafted in Italy, these sneakers feature a striking white and green color palette, perfect for making a statement. Available in size 42.\n\n**Description (Descrizione):**\n\n- **Craftsmanship and Materials:**\n  - Made in Italy, ensuring the highest quality and craftsmanship.\n  - Upper material: Other textile, providing comfort and durability.\n  - Sole material: EL (Ethylene-Vinyl Acetate), offering lightweight and shock-absorbing properties.\n\n- **Design and Style:**\n  - The Gucci Basket Low 'White Demetra Green' features a bold and eye-catching design, blending white and green hues.\n  - The iconic Gucci logo is prominently displayed, adding a touch of luxury and authenticity.\n  - The low-top silhouette offers versatility and can be paired with a variety of outfits.\n\n- **Product Details:**\n  - Style number: 698785 2SHG0 9089\n  - Color code: 9089\n  - Color: White Green\n  - Size: 42\n  - Composition: Upper - Other textile, Sole - EL\n  - Made in Italy\n\n- **Additional Information:**\n  - Perfect for those who appreciate high-end fashion and are looking to elevate their sneaker collection.\n  - Ideal for casual wear, adding a touch of luxury to everyday outfits.\n  - Available at various retailers, including FLEXDOG, GOAT, Designers Distribution, Kickscrew, and StockX.\n\n- **Pricing:**\n  - Retail price: \u20ac790.00 (as listed on Designers Distribution)\n  - Market price: $289.00 to $568.00 (as listed on StockX)\n  - Wholesale price: \u20ac3,950.00 (as listed on Designers Distribution for bulk orders)\n\nExperience the epitome of luxury footwear with the Gucci Basket Low 'White Demetra Green'. Whether you're looking to make a statement or simply want to own a piece of high-end fashion, these sneakers are sure to impress."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

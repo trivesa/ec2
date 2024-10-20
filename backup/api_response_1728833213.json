@@ -1,0 +1,25 @@
+{
+  "id": "cd97ac4d-c1f8-4aa4-9d34-6f3ae71f1db6",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728833213,
+  "usage": {
+    "prompt_tokens": 329,
+    "completion_tokens": 646,
+    "total_tokens": 975
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Given the information provided and the specific style number **H082060CC89** for HERM\u00c8S other accessories, here is the structured information for the requested fields. Note that some fields may not be directly available from the provided sources, so \"N/A\" is used where necessary.\n\n### Mandatory Fields\n1. **Object Category (Categoria Oggetto):** Scarf/Accessory\n2. **Store Category (Categoria del Negozio):** Luxury Accessories\n3. **Brand (Marca):** Herm\u00e8s\n4. **Type (Tipo):** Scarf\n5. **Department (Reparto):** Accessories\n6. **Color (Colore):** N/A (Specific color not provided)\n7. **Condition of the Item (Condizione dell'oggetto):** N/A (Assuming new, but not specified)\n8. **Price (Prezzo):** N/A (Not provided in the query)\n9. **Shipping Rule (Regola sulla spedizione):** N/A (Depends on the seller's policies)\n\n### Optional Fields\n1. **Custom Label (Etichetta personalizzata - SKU):** N/A\n2. **EAN (EAN):** N/A\n3. **Style (Stile):** N/A (Specific style not provided beyond the style number)\n4. **Material (Materiale):** Silk (Assuming, based on typical Herm\u00e8s scarf materials)\n5. **Character (Personaggio):** N/A\n6. **Theme (Tema):** N/A\n7. **Features (Caratteristiche):** N/A\n8. **Country of Manufacture (Paese di fabbricazione):** France (Typical for Herm\u00e8s products)\n9. **Pattern (Fantasia):** N/A\n10. **Decorative Elements (Elementi decorativi):** N/A\n11. **Vintage (Vintage):** N/A\n12. **Fabric Type (Tessuto):** Silk (Assuming, based on typical Herm\u00e8s scarf materials)\n13. **Handmade (Fatto a mano):** N/A\n14. **Year Manufactured (Anno di fabbricazione):** N/A\n15. **MPN (MPN):** N/A\n16. **Quantity (Quantit\u00e0):** N/A\n17. **Unit of Measurement (Unit\u00e0 di misura):** cm (Based on size information provided)\n18. **Personalized (Personalizzato):** N/A\n19. **Width (Larghezza):** 40cm (Based on size information provided)\n20. **Garment Care (Cura dell'indumento):** N/A\n21. **Product Line (Linea di prodotto):** N/A\n\n### Additional Notes\n- **Size Information:** 180*40cm\n- **Style Number:** H082060CC89\n\nPlease note that specific details such as color, price, and condition are not provided in the query and thus cannot be accurately filled. For more precise information, it would be necessary to consult the official Herm\u00e8s website or a specific product listing."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

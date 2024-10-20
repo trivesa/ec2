@@ -1,0 +1,25 @@
+{
+  "id": "77bea2a7-251a-4489-bdb0-406a6dd2b2a9",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728805055,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 430,
+    "total_tokens": 577
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Neo Vintage Mini Bag\n**Subtitle (Sottotitolo):** Timeless Elegance in Beige and Ebony\n**Short Description (Breve Descrizione):** Embodying the essence of vintage luxury with a modern twist, the GUCCI Neo Vintage Mini Bag is a masterpiece of timeless elegance. Crafted in beige and ebony, this bag is a testament to GUCCI's commitment to quality and style. Perfect for those who appreciate the fusion of classic and contemporary design.\n\n**Description (Descrizione):**\n\nThe GUCCI Neo Vintage Mini Bag, style number 658556 K9GOT 8861, is a stunning example of GUCCI's ability to blend vintage charm with modern sophistication. Here are some key features that make this bag a must-have:\n\n- **Design**: The bag features a classic design with a modern twist, incorporating GUCCI's iconic GG Supreme pattern in beige and ebony, creating a striking visual contrast.\n- **Materials**: Crafted from high-quality leather, ensuring durability and a luxurious feel.\n- **Size**: Compact and versatile, ideal for daily use, measuring approximately 7 inches in width, 5 inches in height, and 2 inches in depth.\n- **Functionality**: Equipped with a secure closure and an adjustable shoulder strap, offering practicality and comfort.\n- **Brand Heritage**: Part of GUCCI's Neo Vintage collection, which pays homage to the brand's rich history while embracing contemporary style.\n- **Versatility**: Suitable for both casual and formal occasions, making it a versatile addition to any wardrobe.\n- **Authenticity**: Guaranteed authenticity with the GUCCI logo and serial number, ensuring you are purchasing a genuine GUCCI product.\n- **Quality**: Built to last, with meticulous attention to detail and craftsmanship that reflects GUCCI's commitment to excellence.\n\nThis bag is not just a fashion accessory; it's a statement piece that embodies the essence of luxury and sophistication. Whether you're looking to elevate your everyday style or make a statement at a special event, the GUCCI Neo Vintage Mini Bag is the perfect choice."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

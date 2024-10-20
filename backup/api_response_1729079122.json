@@ -1,0 +1,25 @@
+{
+  "id": "d5dd66cf-fe0d-4a88-918d-3a499449a8e1",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729079121,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 349,
+    "total_tokens": 502
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Diamond Check Logo Scarf\n**Subtitle (Sottotitolo):** Authentic Luxury Scarf with Iconic Design\n**Short Description (Breve Descrizione):** Elevate your style with this authentic GUCCI GG Diamond Check Logo Scarf, featuring a striking navy and red check pattern. Crafted from high-quality wool, this scarf is both stylish and durable. Perfect for adding a touch of luxury to any outfit.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury with the GUCCI GG Diamond Check Logo Scarf, style number 644365 4G718 6468. This exquisite accessory is designed to make a statement with its iconic check pattern and bold logo detail.\n\n- **Material:** High-quality wool ensures warmth and durability.\n- **Design:** The scarf features a classic navy and red check pattern, enriched with the iconic GUCCI GG logo.\n- **Size:** 240 x 35cm, providing ample length to style as you wish.\n- **Authenticity:** 100% authentic GUCCI product, ensuring the highest quality and craftsmanship.\n- **Versatility:** Perfect for both casual and formal occasions, adding a touch of luxury to any outfit.\n- **Care Instructions:** To maintain its quality, it is recommended to dry clean or hand wash this scarf.\n- **Packaging:** Brand new with tags, ensuring it arrives in pristine condition.\n\nThis GUCCI GG Diamond Check Logo Scarf is a timeless piece that will elevate your wardrobe with its sophisticated design and exceptional quality. Whether you're looking to add a touch of luxury to your daily look or seeking a special accessory for a formal event, this scarf is sure to impress."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "2b65b704-6079-49f7-be9b-5a36ace14a0a",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728796473,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 444,
+    "total_tokens": 595
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Run Sneaker 'Black Yellow' 680938-USM10-8480\n**Subtitle (Sottotitolo):** High-End Fashion Sneakers with Iconic Gucci Design\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Run Sneaker 'Black Yellow', featuring a sleek design crafted from GG technical knit fabric and defined by the iconic Interlocking G. This pair combines high fashion with sporty elegance, perfect for making a statement.\n\n**Description (Descrizione):**\n\n- **Craftsmanship:** The Gucci Run Sneaker 'Black Yellow' 680938-USM10-8480 is meticulously crafted from GG technical knit fabric, showcasing Gucci's commitment to quality and style.\n- **Design Elements:**\n  - **Interlocking G:** The shoe is defined by the iconic Interlocking G, a symbol of Gucci's luxury and heritage.\n  - **Bi-Color Sole:** A bi-color sole adds a playful note of chromatic contrast, enhancing the shoe's sporty yet sophisticated look.\n- **Size Information:** This pair is available in size 39.5, ensuring a comfortable fit for those who value precision in their footwear.\n- **Manufacturing Details:**\n  - **Made in Italy:** The shoes are proudly made in Italy, reflecting Gucci's dedication to craftsmanship and excellence.\n  - **Composition:** The upper is made from textile, while the sole is crafted from elastic material (EL), ensuring durability and comfort.\n- **Style Statement:** Inspired by the sporting world and interpreted through the Gucci lens, these sneakers are perfect for those who seek to make a bold fashion statement.\n- **Additional Features:**\n  - **Streamlined Design:** The sleek design makes these sneakers versatile for both casual and formal occasions.\n  - **High-Quality Materials:** The use of GG technical knit fabric ensures a lightweight and breathable wear, ideal for daily use.\n\nExperience the epitome of luxury footwear with the Gucci Run Sneaker 'Black Yellow' 680938-USM10-8480, a perfect blend of style, comfort, and high-end craftsmanship."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

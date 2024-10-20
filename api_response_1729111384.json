@@ -1,0 +1,25 @@
+{
+  "id": "f24eda84-2945-4c01-a213-10f22d98ca85",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729111384,
+  "usage": {
+    "prompt_tokens": 140,
+    "completion_tokens": 489,
+    "total_tokens": 629
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci YA143503 Plexiglas Ladies Quartz Watch\n**Subtitle (Sottotitolo):** A Daringly Unique Design with Industrial Flair\n**Short Description (Breve Descrizione):** The Gucci YA143503 Plexiglas Ladies Quartz Watch is a striking timepiece that combines Italian craftsmanship with a bold, industrial design. Featuring a transparent Plexiglas case and a skeleton dial, this watch is perfect for those who seek to make a statement. Powered by a Swiss Made quartz movement, it ensures precise timekeeping.\n\n**Description (Descrizione):**\n\n- **Design and Craftsmanship:**\n  - The Gucci YA143503 Plexiglas Ladies Quartz Watch is a testament to Gucci's commitment to innovative design and exceptional craftsmanship.\n  - The watch features a 40mm transparent Plexiglas case, showcasing a circular gold-tone skeleton dial that reveals the inner workings of the watch, adding an edgy, industrial touch.\n  - The transparent Plexiglas bangle with green and red Web accents and a bangle closure on a spring bar adds a vibrant and playful element to the design.\n\n- **Technical Specifications:**\n  - **Case Size:** 24x40mm\n  - **Case Material:** Stainless Steel with a transparent Plexiglas overlay\n  - **Dial:** Skeleton dial with yellow gold-tone hands\n  - **Movement:** Quartz movement for precise timekeeping\n  - **Water Resistance:** 30 meters (3 ATM)\n  - **Glass Type:** Mineral glass with antireflective coating\n  - **Strap Material:** Transparent Plexiglas bangle with green and red Web accents\n\n- **Warranty and Authenticity:**\n  - **Warranty:** 2-year warranty provided by authorized retailers\n  - **Authenticity:** 100% authentic Gucci product, complete with manufacturer\u2019s packaging\n\n- **Additional Features:**\n  - **Bezel:** Fixed transparent Plexiglas bezel\n  - **Clasp Type:** Jewellery buckle\n  - **Function:** Skeleton dial with ticking seconds hand\n  - **Back Case Rear:** Solid\n\nThis Gucci YA143503 Plexiglas Ladies Quartz Watch is a bold and stylish accessory that will add a touch of luxury to any outfit. Its unique design and high-quality materials make it a standout piece in any watch collection."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

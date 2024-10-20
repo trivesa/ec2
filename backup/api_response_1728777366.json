@@ -1,0 +1,25 @@
+{
+  "id": "330014fe-2f29-4a68-96f7-7cdb648a0aab",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728777366,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 396,
+    "total_tokens": 549
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Tennis 1977 Slip-On Denim Sneakers\n**Subtitle (Sottotitolo):** Blue & Ivory Jacquard Denim Slip-On Sneakers - 643489 2KQ20 4465\n**Short Description (Breve Descrizione):** Elevate your style with these luxurious GUCCI Tennis 1977 Slip-On Denim Sneakers, featuring a unique blue and ivory jacquard denim design. Crafted with meticulous attention to detail, these sneakers embody the essence of high-end fashion. Perfect for those who seek to make a statement with their footwear.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the GUCCI Tennis 1977 Slip-On Denim Sneakers, style number 643489 2KQ20 4465. Here are some key features that make these sneakers stand out:\n\n- **Unique Design:** The blue and ivory jacquard denim design offers a distinctive and stylish look that is sure to turn heads.\n- **Comfortable Fit:** These slip-on sneakers are designed to provide a comfortable fit, making them perfect for daily wear.\n- **High-Quality Materials:** Crafted from high-quality denim, these sneakers are built to last and maintain their luxurious appeal over time.\n- **Versatility:** Whether you're dressing up or dressing down, these sneakers can complement a variety of outfits, adding a touch of sophistication to any look.\n- **Size Information:** Available in size 44.5, ensuring a precise fit for those who require it.\n- **Brand Authenticity:** Authentic GUCCI product, ensuring the highest standards of quality and craftsmanship.\n- **Return Policy:** Various return policies are available depending on the retailer, ranging from 7 to 90 days, providing flexibility and peace of mind for your purchase.\n\nEmbrace the luxury and elegance of GUCCI with these exceptional Tennis 1977 Slip-On Denim Sneakers."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "94dec91d-f72f-47c8-a2c7-71db6eea1d78",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728790474,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 352,
+    "total_tokens": 502
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Ace GG High Top Sneakers\n**Subtitle (Sottotitolo):** Beige Ebony Men's High-Top Shoes - 555144 92T20 9794\n\n**Short Description (Breve Descrizione):**\nExperience the epitome of luxury with Gucci's Ace GG High Top Sneakers. Crafted with a blend of beige and ebony tones, these shoes embody the brand's signature elegance and sophistication. Perfect for those who seek high-end fashion with a timeless appeal.\n\n**Description (Descrizione):**\n\n- **Style Number:** 555144 92T20 9794\n- **Size:** 40\n- **Material:** High-quality leather and GG Supreme canvas\n- **Color:** Beige and Ebony\n- **Design:**\n  - High-top silhouette for a stylish and comfortable fit\n  - Iconic GG Supreme pattern on the canvas, adding a touch of luxury\n  - Beige and ebony tones create a versatile and sophisticated look\n  - Gucci's signature Ace GG logo on the side for authenticity\n- **Features:**\n  - High-quality construction for durability and long-lasting wear\n  - Cushioned insoles for added comfort\n  - Rubber outsoles for traction and stability\n- **Perfect For:**\n  - Everyday wear with a touch of luxury\n  - Pairing with casual or formal outfits for a stylish statement\n  - Those who appreciate high-end fashion and timeless designs\n- **Additional Information:**\n  - Available in various sizes to fit different preferences\n  - Ideal for men who seek stylish and comfortable footwear\n  - Part of Gucci's renowned Ace GG collection, known for its elegance and sophistication."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

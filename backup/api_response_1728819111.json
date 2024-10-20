@@ -1,0 +1,25 @@
+{
+  "id": "a522315a-4cd1-45a8-971e-7d748585e5ad",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728819111,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 372,
+    "total_tokens": 524
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Sneakers in Green, White, and Black\n**Subtitle (Sottotitolo):** Luxurious Multicolored Trainers with Iconic Design\n**Short Description (Breve Descrizione):** Elevate your style with these Gucci Basket sneakers, featuring a vibrant green, white, and black color scheme. Crafted with high-quality materials, these shoes offer both comfort and sophistication. Perfect for making a statement in any setting.\n\n**Description (Descrizione):**\n\n- **Model Number:** 700291 2SH90 3760\n- **Size:** 37.5 EU\n- **Color Scheme:** Green, White, and Black\n- **Material:** Upper made from other textile materials, with an EL sole for durability and comfort.\n- **Design:** The Gucci Basket sneakers showcase a classic yet modern design, with a bold color combination that adds a touch of luxury to any outfit.\n- **Features:**\n  - **Iconic Gucci Logo:** Embellished with the signature Gucci logo, ensuring authenticity and style.\n  - **Versatile Wear:** Suitable for both casual and formal occasions, making them a versatile addition to your wardrobe.\n  - **Quality Craftsmanship:** Made in Italy, these shoes reflect Gucci\u2019s commitment to high-quality craftsmanship and attention to detail.\n  - **Comfortable Fit:** Designed to provide a comfortable fit, ensuring you can wear them all day long.\n- **Additional Details:**\n  - **Original Packaging:** Includes original shoe box and dust bag for storage and protection.\n  - **Authenticity:** Guaranteed authentic Gucci product, ensuring you receive a genuine luxury item.\n  - **Style Statement:** Perfect for those who want to make a bold fashion statement with a mix of classic and modern elements."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

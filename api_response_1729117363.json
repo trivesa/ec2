@@ -1,0 +1,25 @@
+{
+  "id": "03de7777-5f1a-4506-917e-37ee47fc53c6",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729117363,
+  "usage": {
+    "prompt_tokens": 160,
+    "completion_tokens": 435,
+    "total_tokens": 595
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Marmont Leather Belt\n**Subtitle (Sottotitolo):** Elegant and Timeless Accessory with Double G Buckle\n**Short Description (Breve Descrizione):** Elevate your style with the GUCCI GG Marmont leather belt, featuring a distinctive double G buckle and a sleek, high-quality leather strap. Perfect for adding a touch of luxury to any outfit. Crafted with precision and attention to detail, this belt is a testament to GUCCI's commitment to excellence.\n\n**Description (Descrizione):**\n\n- **Style Number:** 409417-FAA6B-8048\n- **Buckle Design:** The belt features a double G buckle, a signature element of the GG Marmont collection, crafted in a luxurious finish that adds a sophisticated touch to any ensemble.\n- **Leather Strap:** The strap is made from high-quality leather, ensuring durability and a luxurious feel. The leather is carefully selected and treated to maintain its natural beauty and longevity.\n- **Size Information:**\n  - **Width:** 20cm\n  - **Length:** 200cm (maximum length, adjustable to fit various waist sizes)\n- **Key Features:**\n  - **Elegant Design:** The GG Marmont belt is designed to complement a variety of outfits, from casual to formal, making it a versatile accessory for any wardrobe.\n  - **Quality Craftsmanship:** Each belt is meticulously crafted to meet GUCCI's high standards, ensuring a product that is both stylish and durable.\n  - **Luxury Branding:** The double G buckle is a hallmark of GUCCI's luxury branding, symbolizing the brand's commitment to excellence and style.\n- **Packaging:** The belt comes with a dust bag, adding a touch of luxury to the unboxing experience and providing a protective storage solution.\n- **Condition:** New, never worn, ensuring that the belt arrives in pristine condition, ready to be enjoyed.\n- **Authenticity:** This belt is an authentic GUCCI product, guaranteeing the highest quality and craftsmanship that the brand is known for."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "4181ccc5-30e9-4801-b1bb-a2ae03a4395f",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728808979,
+  "usage": {
+    "prompt_tokens": 145,
+    "completion_tokens": 465,
+    "total_tokens": 610
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI 502095 URIAN 4352 Children's GG Supreme Belt Bag\n**Subtitle (Sottotitolo):** Authentic Luxury for the Young Fashionista\n**Short Description (Breve Descrizione):** This GUCCI 502095 URIAN 4352 Children's GG Supreme Belt Bag is a vibrant and stylish accessory perfect for young fashion enthusiasts. Crafted with high-quality materials and adorned with the iconic GG logo, this bag is both functional and fashionable. Ideal for everyday use, it adds a touch of luxury to any outfit.\n\n**Description (Descrizione):**\n\n- **Material:** The bag is made from durable and stylish GG Supreme coated canvas, ensuring a long-lasting and stylish accessory.\n- **Design:** The iconic GG logo pattern in multicolor adds a playful and sophisticated touch, making it a standout piece in any collection.\n- **Size:** The compact size makes it perfect for children, providing ample space for essentials without being too bulky.\n- **Functionality:** The belt bag design allows for hands-free convenience, ideal for school, travel, or daily activities.\n- **Closure:** The bag features a secure and easy-to-use closure system, ensuring that belongings stay safe and secure.\n- **Interior:** The interior is lined with a high-quality material, adding an extra layer of protection and style.\n- **Authenticity:** This bag is an authentic GUCCI product, complete with a serial number tag and high-quality craftsmanship that distinguishes it from counterfeit items.\n- **Packaging:** The bag comes with a luxurious dust bag and care instructions, ensuring it remains in pristine condition.\n- **Warranty:** As an authentic GUCCI product, it is backed by a lifetime authenticity guarantee, providing peace of mind for the buyer.\n- **Additional Features:**\n  - **Strap:** Adjustable strap for a comfortable fit.\n  - **Hardware:** High-quality metal hardware with the GUCCI logo engraving.\n  - **Serial Number:** Located inside the bag, ensuring authenticity.\n  - **Care Instructions:** Included to help maintain the bag's condition.\n\nThis GUCCI 502095 URIAN 4352 Children's GG Supreme Belt Bag is a perfect blend of style, functionality, and luxury, making it an ideal accessory for young fashion enthusiasts."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

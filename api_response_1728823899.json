@@ -1,0 +1,25 @@
+{
+  "id": "e5f86b64-6d65-4c95-b9e1-6150395dd5c4",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728823899,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 364,
+    "total_tokens": 516
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Basket High Top Sneakers - White Demetra Green Purple Orange Blue\n**Subtitle (Sottotitolo):** Elevate Your Style with GUCCI's Vibrant Basket Sneakers\n**Short Description (Breve Descrizione):** Experience the fusion of high fashion and sporty elegance with GUCCI's Basket High Top Sneakers. Featuring a bold color palette and sleek design, these shoes are perfect for making a statement. Crafted with meticulous attention to detail, they embody the luxury and sophistication that GUCCI is renowned for.\n\n**Description (Descrizione):**\n\n- **Style Number:** 661310 2SH80 9062\n- **Size:** 35.5\n- **Colorway:** White Demetra Green Purple Orange Blue\n- **Design:** High-top basketball shoes with a vibrant, multi-color design that combines white, demetra green, purple, orange, and blue hues, creating a visually striking effect.\n- **Materials:** High-quality materials ensure durability and comfort, making these shoes suitable for both casual wear and athletic activities.\n- **Features:**\n  - High-top design for added ankle support and stability.\n  - Rubber outsole for excellent grip and traction.\n  - Cushioned insole for enhanced comfort.\n  - Iconic GUCCI logo for a touch of luxury and authenticity.\n- **Retail Price:** $990\n- **Condition:** New, with StockX Verified authenticity for guaranteed quality and authenticity.\n- **Perfect For:** Fashion enthusiasts looking to elevate their wardrobe with a statement piece, and athletes seeking high-performance shoes with a stylish twist.\n- **Additional Information:** These shoes are available on various platforms, including StockX and FLEXDOG, ensuring easy access to this exclusive GUCCI design."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

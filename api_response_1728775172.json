@@ -1,0 +1,25 @@
+{
+  "id": "3ddb24bb-c051-4221-989d-7523fe41b8e1",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728775172,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 346,
+    "total_tokens": 497
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Run Sneaker in Black Yellow Beige\n**Subtitle (Sottotitolo):** High-End Fashion with Sporting Elegance\n**Short Description (Breve Descrizione):** The Gucci Run Sneaker, style number 680938 USM10 8480, combines high-end fashion with sporting elegance, featuring a unique design and high-quality materials. Crafted from GG technical knit fabric, these sneakers are defined by the iconic Interlocking G and a bi-color sole. Perfect for making a stylish statement.\n\n**Description (Descrizione):**\n\n- **Design Inspiration:** Inspired by the sporting world, these sneakers are reinterpreted through the Gucci lens, showcasing standout logo details and a streamlined silhouette.\n- **Materials:** Crafted from GG technical knit fabric, ensuring durability and comfort.\n- **Key Features:**\n  - **Interlocking G:** The iconic Interlocking G motif adds a touch of luxury and sophistication.\n  - **Bi-Color Sole:** A playful note of chromatic contrast is achieved with the bi-color sole, adding a dynamic touch to the overall design.\n- **Size Information:** Available in size 45.5, ensuring a comfortable fit for those who prefer a precise size.\n- **Quality Assurance:** Each pair is meticulously crafted to ensure high-quality detailing and authenticity.\n- **Authenticity:** Guaranteed 100% authentic, ensuring that every item meets the highest standards of luxury and craftsmanship.\n- **Packaging:** Comes with the original retail box, maintaining the luxury experience from purchase to wear.\n- **Style Code:** 680938 USM10 8480, a unique identifier for this specific model and colorway."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

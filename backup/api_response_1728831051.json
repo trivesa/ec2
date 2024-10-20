@@ -1,0 +1,25 @@
+{
+  "id": "b865e424-bde8-4e33-b948-aa2ec4b38019",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728831051,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 437,
+    "total_tokens": 588
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Donna Light Blue Demetra Sneakers\n**Subtitle (Sottotitolo):** Eco-Friendly Luxury Sneakers with Distinctive Features\n**Short Description (Breve Descrizione):** Embrace the essence of 90s basketball style with Gucci's Basket Donna sneakers, featuring a light blue Demetra design that combines eco-friendly materials with a luxurious aesthetic. Crafted with a mix of brightly colored fabrics and a lightly distressed effect, these shoes offer a unique blend of style and sustainability. Perfect for those who value both fashion and the environment.\n\n**Description (Descrizione):**\n\n- **Eco-Friendly Material:** The Gucci Basket Donna sneakers are primarily made from Demetra, an eco-friendly material that combines animal-free raw materials from sustainable, renewable, and bio-based sources. This innovative material offers pliable and resilient performance with a supple finish.\n\n- **Design Inspiration:** Inspired by the self-expression of on-court aesthetics from the 90s, these low-top sneakers feature distinctive details and a lightly distressed effect, capturing the essence of vintage basketball style.\n\n- **Key Features:**\n  - **Light Blue Demetra Design:** The shoes feature a light blue Demetra design, offering a vibrant and stylish look.\n  - **Rubber Interlocking G Patch:** A rubber interlocking G patch adds a touch of luxury and authenticity.\n  - **Gucci Logo Detail:** The Gucci logo detail ensures the brand's signature style is prominently displayed.\n  - **Rubber Sole:** The rubber sole provides durability and comfort.\n  - **Inclusive Accessories:** Each pair comes with a box and dust bag, ensuring a complete luxury experience.\n\n- **Size Information:** Available in size 38, ensuring a perfect fit for those who value precision and comfort.\n\n- **Production Quality:** These sneakers are crafted with the highest quality materials and processes, ensuring a product that is both stylish and durable.\n\n- **Sustainability:** By using Demetra, Gucci emphasizes its commitment to sustainability and eco-friendliness, making these sneakers a choice for those who care about the environment."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

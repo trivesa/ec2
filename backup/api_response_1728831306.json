@@ -1,0 +1,25 @@
+{
+  "id": "25f5fe2b-224f-4984-850c-af6139a76430",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728831306,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 390,
+    "total_tokens": 539
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Padded Web Slide Sandal in Green and Red Nylon\n**Subtitle (Sottotitolo):** Elegant and Sporty Slide Sandals for Women\n**Short Description (Breve Descrizione):** The Gucci Padded Web Slide Sandal in green and red nylon is a stylish and comfortable choice for casual outings. Featuring the iconic Gucci web motif, these sandals are perfect for adding a touch of luxury to your everyday look. Available in size 38.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - Crafted from durable green and red nylon, ensuring a long-lasting and vibrant appearance.\n  - The iconic Gucci web motif is prominently displayed, adding a classic touch to the modern design.\n  - The padded footbed provides superior comfort, making these sandals ideal for daily wear.\n\n- **Key Features:**\n  - Slide sandal design for easy on and off.\n  - Rubber outsole for grip and durability.\n  - The Gucci logo is subtly integrated into the design, adding a touch of authenticity.\n\n- **Style and Versatility:**\n  - Perfect for casual outings, beach trips, or as a stylish addition to your athleisure wear.\n  - The bold green and red color scheme makes these sandals a statement piece that can elevate any outfit.\n  - Pair with dresses, shorts, or skirts for a versatile and fashionable look.\n\n- **Product Details:**\n  - Style Number: 700320 UFR30 3060\n  - Size: 38\n  - Material: Nylon and Rubber\n  - Color: Green and Red\n\n- **Additional Information:**\n  - For a more detailed fit guide, please refer to Gucci's official sizing chart.\n  - These sandals are available at various retailers, including Gucci's official website and other online marketplaces."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

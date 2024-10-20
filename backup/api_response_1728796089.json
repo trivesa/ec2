@@ -1,0 +1,25 @@
+{
+  "id": "08d14388-8536-4d70-bd55-53d84d4ef71b",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728796089,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 411,
+    "total_tokens": 562
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low 'White Demetra Red' Sneakers\n**Subtitle (Sottotitolo):** Elegant Casual Wear with a Touch of Luxury\n**Short Description (Breve Descrizione):** The Gucci Basket Low 'White Demetra Red' sneakers, style number 697882 2SHJ0 9090, offer a sophisticated blend of white and red hues, perfect for adding a touch of elegance to casual attire. Crafted in Italy, these shoes feature a unique textile upper and an elastic sole. Available in size 42, they are ideal for those seeking high-end fashion with comfort.\n\n**Description (Descrizione):**\n\n- **Design and Craftsmanship:** The Gucci Basket Low 'White Demetra Red' sneakers are meticulously crafted in Italy, ensuring a high-quality finish that reflects Gucci's commitment to excellence. The striking combination of white and red creates a visually appealing design that stands out in any setting.\n- **Materials:** The upper part of the shoe is made from other textile materials, providing a lightweight and breathable wear. The sole is constructed from elastic materials, offering flexibility and durability.\n- **Size Information:** This particular model is available in size 42, catering to a wide range of foot sizes and ensuring a comfortable fit.\n- **Style and Versatility:** These sneakers are designed to bring a touch of elegance to casual wear, making them versatile enough to be paired with a variety of outfits, from casual jeans to more formal trousers.\n- **Product Details:**\n  - **Product Code:** 697882-2SHJ0\n  - **Color Code:** 9090\n  - **Color:** White Red Blue\n  - **Made in:** Italy\n  - **Composition:** Upper: Other Textile - Sole: Elastic\n- **Luxury Branding:** As a product of Gucci, these sneakers embody the luxury and sophistication that the brand is renowned for, making them a statement piece in any wardrobe."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "ca7e15d1-15ef-478e-a569-be9e958e03bb",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728794722,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 409,
+    "total_tokens": 558
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Run Sneaker 'Black Yellow' - 680938 USM10 8480\n**Subtitle (Sottotitolo):** High-End Fashion Sneakers with Iconic Gucci Design\n**Short Description (Breve Descrizione):** Elevate your style with these sleek Gucci Run Sneakers, featuring a black and yellow color scheme and the iconic Interlocking G logo. Crafted from GG technical knit fabric, these shoes offer both comfort and style. Perfect for those who appreciate high-end fashion and sporty elegance.\n\n**Description (Descrizione):**\n\n- **Design Inspiration:** Inspired by the sporting world, these Gucci Run Sneakers are reinterpreted through the Gucci lens, blending sporty elegance with high-end fashion.\n- **Material:** The upper is made from GG technical knit fabric, providing a lightweight and comfortable fit.\n- **Iconic Detailing:** The shoes are defined by the Interlocking G logo, a hallmark of Gucci's luxury and craftsmanship.\n- **Sole Design:** A bi-color sole adds a playful note of chromatic contrast, enhancing the overall aesthetic appeal.\n- **Size Information:** Available in size 46, ensuring a precise fit for those who demand both style and comfort.\n- **Manufacturing:** Made in Italy, reflecting the brand's commitment to quality and craftsmanship.\n- **Composition:** The upper is textile, while the sole is made from EL (ethylene-vinyl acetate), ensuring durability and flexibility.\n- **Product Code:** 680938-USM10-8480, a unique identifier for this specific model.\n- **Retail Price:** Originally priced at \u20ac675.00, these shoes are a valuable addition to any luxury footwear collection.\n- **Additional Features:**\n  - Streamlined design for a sleek look.\n  - Enhanced fit and comfort compared to standard retail versions.\n  - High-definition accuracy in the remastered sole design.\n  - True to size fit, ensuring a comfortable and stylish wear."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

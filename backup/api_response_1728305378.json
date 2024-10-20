@@ -1,0 +1,25 @@
+{
+  "id": "84b3cced-8a47-4d00-850b-8789c98a59f4",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728305378,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 388,
+    "total_tokens": 539
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low 'White Demetra Green'\n**Subtitle (Sottotitolo):** Elegant and Versatile Sneakers for the Modern Gentleman\n**Short Description (Breve Descrizione):** The Gucci Basket Low 'White Demetra Green' is a sophisticated and stylish sneaker that combines classic design with modern flair. Crafted in Italy, these shoes feature a white and green color scheme that adds a touch of elegance to any outfit. Perfect for casual yet refined occasions.\n\n**Description (Descrizione):**\n\n- **Craftsmanship and Materials:**\n  - Made in Italy, ensuring high-quality craftsmanship and attention to detail.\n  - Upper material: Other textile, providing comfort and durability.\n  - Sole material: EL (Ethylene-Vinyl Acetate), offering flexibility and resilience.\n\n- **Design and Style:**\n  - The Gucci Basket Low 'White Demetra Green' features a sleek and minimalist design that exudes sophistication.\n  - The white and green color scheme (color code: 9089) adds a unique and stylish touch to the overall look.\n  - The low-profile design makes these shoes versatile and suitable for a variety of occasions.\n\n- **Size Information:**\n  - Available in size 42, ensuring a comfortable fit for those who prefer a precise size.\n\n- **Product Details:**\n  - Style number: 698785 2SHG0 9089\n  - Composition: Upper - Other textile, Sole - EL\n  - Made in Italy, guaranteeing the highest standards of quality and craftsmanship.\n\n- **Additional Information:**\n  - These shoes are perfect for those who appreciate high-end fashion and are looking for a stylish yet comfortable option.\n  - The Gucci Basket Low 'White Demetra Green' is a testament to Gucci's commitment to excellence in design and craftsmanship."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

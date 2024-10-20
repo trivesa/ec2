@@ -1,0 +1,25 @@
+{
+  "id": "3ecf6068-bbd3-41c8-afe2-6a6229f814d7",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728813506,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 415,
+    "total_tokens": 565
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Rhyton '25 Sneaker\n**Subtitle (Sottotitolo):** Ivory Demetra with 'Gucci Eschatology 1921' Prints\n**Short Description (Breve Descrizione):** Elevate your style with the GUCCI Rhyton '25 sneaker, featuring a unique blend of sustainable materials and iconic design. Crafted from Ivory Demetra, these shoes showcase 'Gucci Eschatology 1921' prints, adding a touch of luxury to any outfit. Perfect for those who value both fashion and eco-friendliness.\n\n**Description (Descrizione):**\n\n- **Sustainable Materials:** The GUCCI Rhyton '25 sneaker is made from Ivory Demetra, a material primarily sourced from sustainable, renewable, and bio-based sources, reflecting GUCCI's commitment to eco-friendly fashion.\n- **Unique Design:** The shoe features 'Gucci Eschatology 1921' prints, adding a distinctive and luxurious touch to the overall design.\n- **Comfort and Durability:** Equipped with a rubber sole and lace-up closure, these shoes offer both comfort and durability for everyday wear.\n- **Authenticity:** The GUCCI logo tag ensures the authenticity of the product, guaranteeing that you are purchasing a genuine GUCCI item.\n- **Size Information:** Available in size 40, ensuring a perfect fit for those looking for a stylish and comfortable sneaker.\n- **Product Details:**\n  - **Style Number:** 663340 2SH00 9522\n  - **Category:** Rhyton Sneaker\n  - **Gender:** Women\u2019s\n  - **Material:** Ivory Demetra\n  - **Sole:** Rubber\n  - **Closure:** Lace-up\n  - **Origin:** Made in China\n- **Additional Information:** This shoe is part of GUCCI's efforts to incorporate sustainable materials into their designs, making it a great choice for those who value eco-friendly fashion without compromising on style."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

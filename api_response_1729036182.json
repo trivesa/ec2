@@ -1,0 +1,25 @@
+{
+  "id": "6f3db295-0607-4097-a81c-0f4ed8405cd0",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729036182,
+  "usage": {
+    "prompt_tokens": 598,
+    "completion_tokens": 805,
+    "total_tokens": 1403
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Given the specific details requested and the information available from the search results, here is a detailed product description for the PRADA America's Cup T-Shirt 12Y:\n\n**Title (Titolo):** PRADA America's Cup T-Shirt 12Y\n**Subtitle (Sottotitolo):** Authentic PRADA Sailing-Inspired T-Shirt\n**Short Description (Breve Descrizione):** A high-quality, sailing-inspired t-shirt from PRADA's America's Cup collection, designed for those who appreciate refined craftsmanship and timeless style.\n**Description (Descrizione):** This PRADA America's Cup T-Shirt 12Y is part of the iconic collection that celebrates the spirit of competitive sailing. Originally designed to support the Luna Rossa crew, this t-shirt embodies the essence of PRADA's commitment to excellence and style. Made from high-quality materials, it features a classic design with a subtle nod to the sailing world, making it a versatile and stylish addition to any wardrobe.\n\n**Object Category (Categoria Oggetto):** Clothing\n**Store Category (Categoria del Negozio):** Men's Apparel\n**Brand (Marca):** PRADA\n**Cut (Taglia):** 12Y\n**Department (Reparto):** Men's\n**Type (Tipo):** T-Shirt\n**Style (Stile):** Casual/Sport\n**Condition of the Item (Condizione dell'oggetto):** New\n**Price (Prezzo):** N/A (Not provided in the search results)\n**Shipping Rule (Regola sulla spedizione):** N/A\n**MPN (MPN):** N/A\n**Custom Label (Etichetta personalizzata - SKU):** N/A\n**EAN (EAN):** N/A\n**Material (Materiale):** N/A (Though PRADA often uses high-quality materials like cotton, polyester, or blends)\n**Color (Colore):** N/A (Though black and navy are common colors in the America's Cup collection)\n**Tissue (Tessuto):** N/A\n**Size Type (Tipo di taglia):** Youth\n**Fit (Vestibilit\u00e0):** N/A\n**Sleeve Length (Lunghezza della manica):** Short\n**Unit of Measurement (Unit\u00e0 di misura):** N/A\n**Character (Personaggio):** N/A\n**Season (Stagione):** N/A\n**Vintage (Vintage):** No\n**Neckline (Scollatura):** Crew Neck\n**Theme (Tema):** Sailing/Sport\n**Activity (Attivit\u00e0):** Casual/Sport\n**Decorative Elements (Elementi decorativi):** Printed Branding\n**Characteristics (Caratteristiche):** High-quality materials, classic design\n**Occasion (Occasione):** Casual\n**Knitting Style (Stile lavorazione a maglia):** N/A\n**Graphic Printing (Stampa grafica):** Yes\n**Garment Care (Cura dell'indumento):** N/A (Though typically machine washable at 30\u00b0C, do not bleach, do not tumble dry)\n**Country of Manufacture (Paese di fabbricazione):** N/A\n**Fabric Type (Tipo di tessuto):** N/A\n**Personalized (Personalizzato):** No\n**Year Manufactured (Anno di fabbricazione):** N/A\n**Handmade (Fatto a mano):** No\n**Pattern (Fantasia):** N/A\n**Closure Type (Tipo di chiusura):** N/A\n**Accents (Dettagli decorativi):** N/A\n**Product Line (Linea di prodotto):** America's Cup Collection\n\nPlease note that some fields could not be filled accurately due to the lack of specific information in the provided search results."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

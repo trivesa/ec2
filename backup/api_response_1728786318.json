@@ -1,0 +1,25 @@
+{
+  "id": "3f6a8d01-c977-470b-a145-9f55698b0aac",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728786318,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 426,
+    "total_tokens": 578
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton 25 Sneakers\n**Subtitle (Sottotitolo):** Luxurious Eco-Friendly Sneakers with Demetra Material\n**Short Description (Breve Descrizione):** The Gucci Rhyton 25 sneakers, style number 663339 2SH00 9522, are a testament to Gucci's commitment to luxury and sustainability. Crafted from Demetra, an eco-friendly material that combines animal-free raw materials from sustainable, renewable, and bio-based sources, these sneakers offer a pliable and resilient performance with a supple finish. Perfect for those who value both style and environmental responsibility.\n\n**Description (Descrizione):**\n\n- **Material:** The Rhyton 25 sneakers are primarily made from Demetra, a cutting-edge eco-friendly material that mimics the look and feel of leather but is derived from sustainable sources.\n- **Design:** The sneakers feature a sleek and modern design with a low heel and rubber sole, ensuring both comfort and durability.\n- **Gucci Logo Tag:** The shoes are adorned with a Gucci logo tag, adding a touch of luxury and authenticity.\n- **Color:** The sneakers come in a stylish White Ivory color, perfect for pairing with a variety of outfits.\n- **Size:** Available in size 41.5, ensuring a comfortable fit for those who prefer a slightly larger size.\n- **Accessories:** The shoes include a box and dust bag, making them a complete and luxurious package.\n- **Quality:** The Rhyton 25 sneakers are crafted with the highest quality materials and manufacturing processes, ensuring a long-lasting and premium product.\n- **Sustainability:** By choosing Demetra, Gucci demonstrates its commitment to reducing environmental impact while maintaining the high standards of luxury fashion.\n- **Style:** The Rhyton 25 sneakers are versatile and can be dressed up or down, making them suitable for a wide range of occasions.\n- **Brand:** Gucci, a renowned luxury fashion brand, guarantees a product that is both stylish and of exceptional quality."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

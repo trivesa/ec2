@@ -1,0 +1,25 @@
+{
+  "id": "60e4753c-4061-4ce9-bf98-8132c0632b7e",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728780523,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 406,
+    "total_tokens": 559
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low 'White Demetra Green' 698785 2SHG0 9089\n**Subtitle (Sottotitolo):** Elevate Your Style with Gucci's Iconic Basket Low Sneakers\n**Short Description (Breve Descrizione):** Experience the epitome of luxury footwear with Gucci's Basket Low 'White Demetra Green' sneakers. Crafted in Italy, these shoes combine timeless elegance with modern flair, perfect for making a statement. Available in size 43.5.\n\n**Description (Descrizione):**\n\n- **Craftsmanship and Quality:**\n  - Made in Italy, ensuring the highest standards of craftsmanship and quality.\n  - Composition: Upper made from other textile materials, with an EL (ethylene-vinyl acetate) sole for durability and comfort.\n\n- **Design and Style:**\n  - The Gucci Basket Low 'White Demetra Green' features a striking white and green color scheme, adding a touch of sophistication to any outfit.\n  - The sleek, low-profile design makes these sneakers versatile for both casual and formal occasions.\n\n- **Key Features:**\n  - Style number: 698785 2SHG0 9089\n  - Size: 43.5\n  - Color code: 9089\n  - Color: White Green\n  - Upper material: Other textile\n  - Sole material: EL\n  - Made in Italy\n\n- **Luxury and Comfort:**\n  - Gucci's commitment to luxury is evident in every detail, from the stitching to the materials used.\n  - Designed to provide comfort and support, making these sneakers perfect for daily wear.\n\n- **Authenticity:**\n  - Ensure you are purchasing from authorized retailers to guarantee authenticity and quality.\n\nExperience the luxury and style of Gucci with these exceptional Basket Low 'White Demetra Green' sneakers. Perfect for those who appreciate high-quality craftsmanship and timeless design."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "6e066550-1afb-44b6-a71e-c132e168aa87",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728821628,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 444,
+    "total_tokens": 594
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High-Top Sneakers - 661310 2SH80 9062\n**Subtitle (Sottotitolo):** High-Top Basketball Shoes in White, Green, Purple, Orange, and Blue Demetra\n**Short Description (Breve Descrizione):** Embracing the essence of 90s basketball sneakers, the Gucci Basket high-top sneakers are crafted from eco-friendly Demetra material, offering a vibrant mix of colors and a lightly distressed finish. This style combines sustainable fashion with classic sportswear aesthetics. Perfect for those who seek both comfort and style.\n\n**Description (Descrizione):**\n\n- **Eco-Friendly Material:** The Gucci Basket high-top sneakers are primarily made from Demetra, an innovative material that combines animal-free raw materials from sustainable, renewable, and bio-based sources. This eco-friendly approach ensures a pliable and resilient performance with a supple finish.\n\n- **Vibrant Color Scheme:** The sneakers feature a bold and colorful design with a mix of white, green, purple, orange, and blue, creating a striking visual effect that captures the spirit of self-expression.\n\n- **Classic Details:** The shoes include distinctive features such as a rubber Interlocking G patch, contrast padding at the ankle, and a Gucci logo detail, adding a touch of luxury to the sporty design.\n\n- **Comfort and Durability:** The rubber sole provides excellent grip and durability, while the low heel ensures comfort and stability.\n\n- **Distressed Finish:** The shoes are treated for a lightly distressed effect, giving them a unique and worn-in look.\n\n- **Complete Package:** Each pair comes with a box and dust bag, ensuring a premium unboxing experience.\n\n- **Size Information:** Available in size 36, ensuring a precise fit for those who prefer a snug and comfortable wear.\n\n- **Sustainable Fashion:** By choosing Demetra, Gucci emphasizes its commitment to sustainable fashion, making these sneakers not only stylish but also environmentally conscious.\n\n- **Versatile Style:** Perfect for both casual and sporty occasions, the Gucci Basket high-top sneakers are a versatile addition to any wardrobe."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

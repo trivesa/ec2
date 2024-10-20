@@ -1,0 +1,25 @@
+{
+  "id": "d7c028dd-b9a6-44c0-bb01-52f3259b2e84",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728798602,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 392,
+    "total_tokens": 539
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Square Scarf\n**Subtitle (Sottotitolo):** Luxurious Wool and Silk Blend Scarf in Anthracite\n**Short Description (Breve Descrizione):** Elevate your style with this sophisticated GUCCI GG Jacquard Square Scarf, crafted from a luxurious blend of wool and silk. The anthracite color and iconic GG pattern make it a timeless accessory. Perfect for adding a touch of elegance to any outfit.\n\n**Description (Descrizione):**\n\n- **Material:** This scarf is made from a premium blend of 80% wool and 20% silk, ensuring warmth, durability, and a soft, luxurious feel.\n- **Design:** The scarf features the iconic GG pattern, a hallmark of GUCCI's timeless style and sophistication.\n- **Size:** The scarf measures 140 cm x 140 cm, providing ample coverage and versatility for styling.\n- **Color:** The anthracite color is a versatile and sophisticated choice that complements a wide range of outfits.\n- **Authenticity:** This scarf is 100% authentic GUCCI, guaranteed to be an original product.\n- **Origin:** Made in Italy, reflecting the high-quality craftsmanship and attention to detail that GUCCI is renowned for.\n- **Packaging:** The scarf comes with its original tags and is packaged in a GUCCI paper bag, adding to its luxury appeal.\n- **Versatility:** Perfect for wrapping around your neck, using as a shawl, or even as a stylish accessory for your handbag.\n- **Seasonal Use:** Suitable for year-round wear, providing warmth in colder months and a stylish touch in milder weather.\n- **Care Instructions:** To maintain its quality, it is recommended to dry clean this scarf.\n- **Product Code:** 281942 3G704 1062, ensuring you are purchasing the exact style and model you desire."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

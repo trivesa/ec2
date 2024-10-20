@@ -1,0 +1,25 @@
+{
+  "id": "c1f102d5-6407-4443-8523-a876efe9931b",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728831605,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 439,
+    "total_tokens": 592
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Donna Light Blue Demetra Sneaker\n**Subtitle (Sottotitolo):** Elegant and Sustainable Luxury Sneaker\n**Short Description (Breve Descrizione):** The Gucci Basket Donna Light Blue Demetra Sneaker, style number 700291 2SHW0 4870, is a stylish and eco-friendly addition to any wardrobe. Crafted primarily from Demetra, a sustainable and bio-based material, this shoe combines comfort and luxury. Its light blue and pink hues evoke a nostalgic 90s basketball aesthetic.\n\n**Description (Descrizione):**\n\n- **Sustainable Material:** The Gucci Basket Donna is made primarily from Demetra, an eco-friendly material that combines animal-free raw materials from sustainable, renewable, and bio-based sources. This innovative material offers pliable and resilient performance with a supple finish, crafted using the same processes as traditional tanning methods.\n\n- **Design Inspiration:** Inspired by 90s basketball sneakers, this low-top style emulates the self-expression of on-court aesthetics with distinctive features and detailing. The shoe features a mix of brightly colored fabrics and a lightly distressed effect, adding a touch of vintage charm.\n\n- **Key Features:**\n  - **Rubber Interlocking G Patch:** A classic Gucci logo detail that adds a touch of luxury.\n  - **Rubber Sole:** Durable and comfortable, perfect for everyday wear.\n  - **Light Blue and Pink Hues:** A vibrant color combination that captures the essence of 90s basketball style.\n  - **Size Information:** Available in size 37.5, ensuring a precise fit.\n  - **Packaging:** Includes a box and dust bag, maintaining the luxury experience.\n\n- **Production Details:**\n  - **Made in Italy:** Ensuring high-quality craftsmanship and attention to detail.\n  - **Composition:** Upper made from Demetra and other textiles, with an elastic sole for added comfort.\n\nThis Gucci Basket Donna Light Blue Demetra Sneaker is a testament to Gucci's commitment to sustainability and style, making it a must-have for any fashion-conscious individual."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

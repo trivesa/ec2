@@ -1,0 +1,25 @@
+{
+  "id": "04237f65-4435-445c-b5aa-ddd54beac36f",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728782030,
+  "usage": {
+    "prompt_tokens": 552,
+    "completion_tokens": 0,
+    "total_tokens": 552
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": ""
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

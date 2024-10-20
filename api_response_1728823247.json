@@ -1,0 +1,25 @@
+{
+  "id": "ea61665c-7fd0-4c0c-9aad-ab670978f4c8",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728823247,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 375,
+    "total_tokens": 524
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Padded Web Slide Sandals\n**Subtitle (Sottotitolo):** Iconic Green and Red Nylon Slides for Women\n**Short Description (Breve Descrizione):** Elevate your summer style with Gucci's Padded Web Slide Sandals, featuring a vibrant green and red nylon design. Crafted with comfort and luxury in mind, these slides are perfect for casual yet stylish outings. Available in size 36.\n\n**Description (Descrizione):**\n\n- **Luxurious Materials:** These sandals are made from high-quality green and red nylon, ensuring durability and a striking visual appeal.\n- **Padded Web Design:** The iconic Gucci web motif is prominently featured on the strap, adding a touch of sophistication and brand heritage.\n- **Comfortable Fit:** The padded design provides exceptional comfort, making these slides ideal for daily wear.\n- **Versatile Style:** Perfect for beach trips, casual outings, or as a stylish addition to your summer wardrobe.\n- **Size Information:** Available in size 36, ensuring a snug and comfortable fit.\n- **Authenticity:** Genuine Gucci product, guaranteeing the highest standards of craftsmanship and quality.\n- **Product Details:**\n  - Style Number: 700320 UFR30 3060\n  - Material: Green and Red Nylon\n  - Size: 36\n  - Type: Slide Sandals\n  - Brand: Gucci\n  - Gender: Women's\n- **Care Instructions:** To maintain the quality and longevity of your Gucci sandals, avoid exposure to harsh chemicals and extreme temperatures. Clean with a soft cloth and mild soap solution. Allow to air dry.\n\nExperience the epitome of luxury footwear with Gucci's Padded Web Slide Sandals, a perfect blend of style, comfort, and brand excellence."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

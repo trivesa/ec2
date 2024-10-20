@@ -1,0 +1,25 @@
+{
+  "id": "31faf891-7afb-4123-82d3-b47cf2d326f7",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728810968,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 378,
+    "total_tokens": 525
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Interlocking Bag Gray Women's Dollar Calf Leather\n**Subtitle (Sottotitolo):** Elegant and Versatile Shoulder Bag - Style 510314 CAO0G 1226\n**Short Description (Breve Descrizione):** The Gucci Interlocking Bag in gray dollar calf leather is a sophisticated and versatile accessory perfect for daily use. With its sleek design and high-quality materials, it embodies the essence of Gucci's luxury craftsmanship. This bag is ideal for those seeking a stylish and practical companion.\n\n**Description (Descrizione):**\n\n- **Material:** Crafted from high-quality dollar calf leather, ensuring durability and a luxurious feel.\n- **Design:** The bag features a classic interlocking design with a chain shoulder strap that includes a leather insert for added comfort and protection.\n- **Closure:** Secure clip button closure adorned with a metal GUCCI logo, adding a touch of elegance.\n- **Interior:** Lined interior with one spacious compartment, perfect for organizing your essentials.\n- **Dimensions:** Not specified in the provided sources, but it is designed to be a versatile and comfortable shoulder bag.\n- **Color:** Gray, offering a neutral and sophisticated look that complements any outfit.\n- **Style Number:** 510314 CAO0G 1226, ensuring authenticity and exclusivity.\n- **Additional Features:**\n  - Free shipping to Italy with express courier in 24/48 hours.\n  - Traceable shipments with insurance options for added security.\n  - 14-day return policy for customer satisfaction.\n  - Worldwide deliveries within 5 working days with SDA, FedEx, and DHL.\n- **Authenticity:** 100% original Gucci product, sourced from national boutiques to guarantee authenticity and quality."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

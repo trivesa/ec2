@@ -1,0 +1,25 @@
+{
+  "id": "a50f8d82-b4c4-47af-993f-ddc6c4f78c3b",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728305747,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 337,
+    "total_tokens": 490
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Wool Scarf\n**Subtitle (Sottotitolo):** Elegant Check Pattern with Iconic Logo Detail\n**Short Description (Breve Descrizione):** Elevate your style with this luxurious GUCCI GG Jacquard Wool Scarf, featuring a classic check pattern and iconic logo detail. Crafted from high-quality wool, this scarf is both stylish and durable. Perfect for adding a touch of sophistication to any outfit.\n\n**Description (Descrizione):**\n\n- **Style Number:** 644365 4G718 6468\n- **Material:** 100% Wool\n- **Size:** 140x60cm\n- **Design:**\n  - **Pattern:** Classic check pattern with iconic GG logo\n  - **Color:** Navy and red, creating a striking contrast\n  - **Fringe:** Elegant fringe detail adds a touch of sophistication\n- **Quality:**\n  - **Craftsmanship:** High-quality craftsmanship ensures durability and longevity\n  - **Authenticity:** 100% authentic GUCCI product\n- **Versatility:**\n  - **Styling:** Perfect for adding a stylish touch to coats, jackets, or as a pocket square\n  - **Occasion:** Suitable for both casual and formal events\n- **Care Instructions:**\n  - **Washing:** Dry clean only to preserve the quality and texture of the wool\n  - **Storage:** Store in a cool, dry place to prevent damage\n\nThis GUCCI GG Jacquard Wool Scarf is a timeless accessory that combines elegance with versatility, making it a must-have for any fashion-conscious individual."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

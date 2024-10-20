@@ -1,0 +1,25 @@
+{
+  "id": "22e09e96-9549-4aed-a5a4-7b51649e48b6",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728782028,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 397,
+    "total_tokens": 549
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Micro Sima Driving Shoes\n**Subtitle (Sottotitolo):** Luxurious Leather Driving Shoes for Men\n**Short Description (Breve Descrizione):** Experience the epitome of luxury with the GUCCI Micro Sima Driving Shoes, crafted from high-quality leather and designed for comfort and style. Perfect for both casual and formal occasions, these shoes embody the essence of Italian craftsmanship. Available in size 42.5, style number 466904 A9LF0 1000.\n\n**Description (Descrizione):**\n\n- **Craftsmanship:** The GUCCI Micro Sima Driving Shoes are meticulously crafted from premium leather, showcasing the brand's commitment to quality and craftsmanship.\n- **Design:** These driving shoes feature a sleek and sophisticated design, making them versatile for various occasions, from casual outings to more formal events.\n- **Comfort:** Designed for comfort, these shoes offer a soft and supple leather interior, ensuring a comfortable fit and feel.\n- **Details:**\n  - **Style Number:** 466904 A9LF0 1000\n  - **Size:** 42.5\n  - **Material:** High-quality leather\n  - **Color:** Black\n  - **Sole:** Leather sole for durability and style\n  - **Heel:** Flat, 0.4\" heel for a comfortable and stylish look\n  - **Made in:** Italy, reflecting the brand's heritage and commitment to Italian craftsmanship\n- **Additional Features:**\n  - **Packaging:** Includes luxurious GUCCI packaging, complete with a tote bag, shoe box, style code label, booklets, and dustbags.\n  - **Wearability:** These shoes are designed to be worn with ease, perfect for both driving and walking, offering a comfortable and stylish option for daily wear.\n  - **Authenticity:** Guaranteed authentic GUCCI product, ensuring the highest quality and craftsmanship."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

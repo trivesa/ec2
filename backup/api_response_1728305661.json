@@ -1,0 +1,25 @@
+{
+  "id": "3cdc5810-ca01-4dc7-9257-4ea7751e25c4",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728305661,
+  "usage": {
+    "prompt_tokens": 142,
+    "completion_tokens": 463,
+    "total_tokens": 605
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI G-Timeless YA1264077 Ladies' Watch\n**Subtitle (Sottotitolo):** Elegant Brown, Red and Green Striped Leather Strap Watch\n**Short Description (Breve Descrizione):** The GUCCI G-Timeless YA1264077 is a sophisticated ladies' watch featuring a brown, red and green striped leather strap and a stainless steel case. This elegant timepiece is designed with a brown dial adorned with a stripe motif and yellow gold-tone hands. It combines classic style with modern functionality.\n\n**Description (Descrizione):**\n\n- **Case and Dial:**\n  - **Case Material:** Stainless Steel\n  - **Case Size:** 38 mm\n  - **Case Thickness:** 9 mm\n  - **Case Shape:** Round\n  - **Dial Color:** Brown with a stripe motif\n  - **Dial Type:** Analog with yellow gold-tone hands\n  - **Second Markers:** Pyramid markers at the 3, 6 and 9 o'clock positions\n\n- **Movement:**\n  - **Movement Type:** Quartz\n  - **Functions:** Hour, Minute\n\n- **Band:**\n  - **Band Material:** Leather\n  - **Band Type:** Strap\n  - **Band Color:** Brown with red and green stripes\n  - **Band Width:** 19 mm\n  - **Clasp:** Tang\n\n- **Additional Features:**\n  - **Water Resistance:** 50 meters / 165 feet\n  - **Crystal:** Scratch-resistant sapphire\n  - **Bezel:** Fixed yellow gold PVD\n  - **Crown:** Pull / Push\n  - **Warranty:** 2-year international warranty\n  - **Origin:** Swiss Made\n\n- **Style and Versatility:**\n  - The GUCCI G-Timeless YA1264077 is a versatile watch that can be worn for both casual and formal occasions. Its unique striped leather strap and classic dial design make it a standout piece in any wardrobe.\n\n- **Authenticity and Quality:**\n  - This watch is 100% authentic GUCCI merchandise, ensuring the highest quality and craftsmanship. It comes with a 2-year warranty, providing peace of mind for its durability and performance."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

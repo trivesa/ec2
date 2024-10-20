@@ -1,0 +1,25 @@
+{
+  "id": "b1efe455-f0c6-4a9c-9116-39a47f9ccd24",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728798500,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 411,
+    "total_tokens": 558
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Scarf 282390 3G704 6978 - Luxurious Wool and Silk Shawl\n\n**Subtitle (Sottotitolo):** Elegant Light Pink Scarf with GG Guccissima Pattern\n\n**Short Description (Breve Descrizione):** This GUCCI scarf, style number 282390 3G704 6978, is a stunning blend of wool and silk, featuring the iconic GG Guccissima pattern in a light pink hue. Perfect for adding a touch of luxury to any outfit, this scarf is both stylish and versatile. Its high-quality materials ensure durability and comfort.\n\n**Description (Descrizione):**\n\n- **Material:** Crafted from a luxurious blend of wool and silk, ensuring a soft, warm, and lightweight feel.\n- **Size:** 70 x 195 cm, providing ample coverage and versatility for various styling options.\n- **Design:** The scarf features the iconic GG Guccissima pattern, a classic GUCCI motif that adds a touch of sophistication to any outfit.\n- **Color:** Light pink, a subtle yet elegant hue that complements a wide range of colors and styles.\n- **Style:** Unisex design, making it suitable for both men and women looking to add a luxurious accessory to their wardrobe.\n- **Season:** Ideal for fall and winter seasons, but its lightweight material makes it suitable for cooler spring and summer evenings as well.\n- **Care Instructions:** To maintain its quality, it is recommended to dry clean or hand wash the scarf in cold water.\n- **Authenticity:** Genuine GUCCI product, ensuring the highest standards of craftsmanship and quality.\n- **Versatility:** Can be styled in various ways, such as wrapped around the neck, draped over the shoulders, or even used as a belt.\n- **Packaging:** Comes in a luxurious GUCCI box, perfect for gifting or storing.\n- **Return Policy:** 28-day return policy available, with easy return options for your convenience."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

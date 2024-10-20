@@ -1,0 +1,25 @@
+{
+  "id": "b984c28b-4e90-4969-a2a4-c192433a52e9",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728773322,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 431,
+    "total_tokens": 583
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High 'Demetra' Multicolor Sneakers\n**Subtitle (Sottotitolo):** Inspired by 90's Basketball Shoes, Style Number 661303 2SH90 1072\n**Short Description (Breve Descrizione):** Embrace the vibrant spirit of Gucci with these multicolor Basket High 'Demetra' sneakers, inspired by 90's basketball shoes. Crafted with a mix of leather and fabric uppers, these shoes offer a unique blend of style and comfort. Perfect for those who seek to make a statement with their footwear.\n\n**Description (Descrizione):**\n\n- **Inspiration:** Drawing inspiration from the iconic basketball shoes of the 90's, Gucci's Basket High 'Demetra' sneakers bring a modern twist to a classic design.\n- **Materials:** The shoes feature a combination of leather and fabric uppers, ensuring durability and a luxurious feel.\n- **Color Scheme:** The multicolor design adds a playful and dynamic touch, making these sneakers a standout piece in any wardrobe.\n- **Size Information:** Available in size 46.5, ensuring a comfortable fit for those who prefer a slightly larger shoe.\n- **Additional Features:**\n  - **Non-Slip Sole:** The shoes are designed with a non-slip sole, providing excellent grip and stability.\n  - **Retro Aesthetic:** The retro black, red, and white color scheme pays homage to the classic basketball shoes of the 90's.\n  - **Quality Control:** Each pair comes with a dust bag and shoe box, ensuring the shoes are protected and preserved.\n  - **Authenticity:** Guaranteed authenticity and quality control, ensuring that you are purchasing a genuine Gucci product.\n- **Return Policy:** Various return policies are available depending on the retailer, ranging from 3 to 90 days, providing flexibility and peace of mind.\n- **Purchase Options:** Available for purchase on various platforms, including Vestiaire Collective, StockX, Kickscrew, and Ambrogio Shoes, offering multiple payment options and afterpay services."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

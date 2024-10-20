@@ -1,0 +1,40 @@
+{
+  "fields": [
+    "Title (Titolo)",
+    "Subtitle (Sottotitolo)",
+    "Description (Descrizione)"
+  ],
+  "mandatory_fields": [
+    "Object Category (Categoria Oggetto)",
+    "Store Category (Categoria del Negozio)",
+    "Brand (Marca)",
+    "Type (Tipo)",
+    "Department (Reparto)",
+    "Color (Colore)",
+    "Size (Taglia)",
+    "Condition of the Item (Condizione dell'oggetto)",
+    "Price (Prezzo)",
+    "Shipping Rule (Regola sulla spedizione)"
+  ],
+  "optional_fields": [
+    "EAN (EAN)",
+    "Material (Materiale)",
+    "Style (Stile)",
+    "Pattern (Fantasia)",
+    "Size Type (Tipo di taglia)",
+    "Belt Width (Larghezza della cintura)",
+    "Decorative Elements (Elementi decorativi)",
+    "Theme (Tema)",
+    "Features (Caratteristiche)",
+    "Character (Personaggio)",
+    "Trim Material (Materiale delle finiture)",
+    "Country of Manufacture (Paese di fabbricazione)",
+    "Handmade (Fatto a mano)",
+    "Vintage (Vintage)",
+    "MPN (MPN)",
+    "Quantity (Quantità)",
+    "Unit of Measurement (Unità di misura)",
+    "Custom Label (Etichetta personalizzata - SKU)",
+    "Personalized (Personalizzato)"
+  ]
+}

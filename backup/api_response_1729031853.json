@@ -1,0 +1,25 @@
+{
+  "id": "b369ee1b-e9c6-4854-8013-01a721e938be",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729031853,
+  "usage": {
+    "prompt_tokens": 161,
+    "completion_tokens": 376,
+    "total_tokens": 537
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** FENDI Earrings FF - 202406 FENDI CA06\n**Subtitle (Sottotitolo):** Exquisite Luxury Earrings with Iconic FF Motif\n**Short Description (Breve Descrizione):** Elevate your style with these stunning FENDI earrings, featuring the iconic FF motif. Crafted with precision and luxury, these earrings are a perfect accessory for any occasion. New with box, ensuring authenticity and quality.\n\n**Description (Descrizione):**\n\n- **Luxury Craftsmanship:** These FENDI earrings are meticulously crafted to embody the essence of luxury and sophistication. The FF motif, a hallmark of FENDI's design excellence, adds a touch of elegance to any outfit.\n- **Iconic Design:** The FF motif is a timeless symbol of FENDI's heritage and style. These earrings are designed to make a statement, whether you're attending a formal event or adding a touch of luxury to your everyday look.\n- **Quality and Authenticity:** This item is new with box, ensuring that it meets FENDI's high standards of quality and authenticity. The packaging includes all original accessories and documentation, providing peace of mind for the discerning luxury consumer.\n- **Versatility:** These earrings are versatile and can be paired with a variety of outfits, from casual to formal. Their classic design ensures they will remain a staple in your jewelry collection for years to come.\n- **Brand Heritage:** FENDI is renowned for its commitment to luxury and excellence. These earrings are a testament to the brand's dedication to creating high-quality, stylish accessories that stand the test of time.\n- **Style Number:** 202406 FENDI CA06\n- **Condition:** New with box\n- **Additional Information:** Includes original packaging and all necessary documentation to verify authenticity."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

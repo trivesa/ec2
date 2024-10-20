@@ -1,0 +1,25 @@
+{
+  "id": "fb6d8b45-f5a7-4aa7-bbb3-ef8d3ac614bd",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728833277,
+  "usage": {
+    "prompt_tokens": 416,
+    "completion_tokens": 738,
+    "total_tokens": 1154
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Given the provided style number **P222GH107NF0011** and the additional information, here is the structured information for the PRADA clothing item:\n\n### Mandatory Fields:\n1. **Object Category (Categoria Oggetto):** Clothing\n2. **Store Category (Categoria del Negozio):** Women's Ready-to-Wear\n3. **Brand (Marca):** Prada\n4. **Cut (Taglia):** 44\n5. **Department (Reparto):** Women\n6. **Type (Tipo):** N/A (Specific type not provided)\n7. **Style (Stile):** N/A (Specific style not provided)\n8. **Condition of the Item (Condizione dell'oggetto):** N/A (Assuming new, but not explicitly stated)\n9. **Price (Prezzo):** N/A (Not provided)\n10. **Shipping Rule (Regola sulla spedizione):** Free ground delivery in the US (as per)\n\n### Optional Fields:\n1. **MPN (MPN):** P222GH107NF0011\n2. **Custom Label (Etichetta personalizzata - SKU):** N/A\n3. **EAN (EAN):** N/A\n4. **Material (Materiale):** N/A\n5. **Color (Colore):** N/A\n6. **Tissue (Tessuto):** N/A\n7. **Size Type (Tipo di taglia):** N/A\n8. **Fit (Vestibilit\u00e0):** N/A\n9. **Sleeve Length (Lunghezza della manica):** N/A\n10. **Unit of Measurement (Unit\u00e0 di misura):** N/A\n11. **Character (Personaggio):** N/A\n12. **Season (Stagione):** N/A\n13. **Vintage (Vintage):** N/A\n14. **Neckline (Scollatura):** N/A\n15. **Theme (Tema):** N/A\n16. **Activity (Attivit\u00e0):** N/A\n17. **Decorative Elements (Elementi decorativi):** N/A\n18. **Characteristics (Caratteristiche):** N/A\n19. **Occasion (Occasione):** N/A\n20. **Knitting Style (Stile lavorazione a maglia):** N/A\n21. **Graphic Printing (Stampa grafica):** N/A\n22. **Garment Care (Cura dell'indumento):** N/A\n23. **Country of Manufacture (Paese di fabbricazione):** N/A\n24. **Fabric Type (Tipo di tessuto):** N/A\n25. **Personalized (Personalizzato):** N/A\n26. **Year Manufactured (Anno di fabbricazione):** N/A\n27. **Handmade (Fatto a mano):** N/A\n28. **Pattern (Fantasia):** N/A\n29. **Closure Type (Tipo di chiusura):** N/A\n30. **Accents (Dettagli decorativi):** N/A\n31. **Product Line (Linea di prodotto):** N/A\n\n**Note:** The specific details for the style number **P222GH107NF0011** are not available in the provided search results. Therefore, most fields are marked as N/A. For accurate information, it is recommended to consult the official Prada website or contact their customer service."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "e3cd24af-6093-4cfd-b3fc-5e54fb0a2bc2",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728793490,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 378,
+    "total_tokens": 528
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Ace GG High Top Sneakers\n**Subtitle (Sottotitolo):** Blue Beige Edition - 555144 92T20 9794\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Ace GG High Top Sneakers in Blue Beige. This iconic design combines the classic GG Supreme pattern with a modern high-top silhouette, perfect for making a statement. Crafted with high-quality materials, these sneakers offer both comfort and style.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the Gucci Ace GG High Top Sneakers in Blue Beige. Here are some key features:\n\n- **Style Number:** 555144 92T20 9794\n- **Size:** 39\n- **Design:** The sneakers feature the iconic GG Supreme pattern in a blue and beige colorway, creating a striking visual effect.\n- **Materials:** High-quality canvas and leather are used to ensure durability and comfort.\n- **Silhouette:** The high-top design provides additional ankle support and a sleek, modern look.\n- **Comfort:** The shoes are designed to provide excellent comfort, making them perfect for daily wear.\n- **Brand Authenticity:** Genuine Gucci product, ensuring the highest standards of craftsmanship and quality.\n- **Versatility:** These sneakers can be easily paired with a variety of outfits, from casual to more formal occasions.\n- **Luxury Appeal:** The Gucci Ace GG High Top Sneakers are a symbol of luxury and sophistication, perfect for those who appreciate high-end fashion.\n\nWhether you're looking to elevate your everyday style or make a statement at a special event, the Gucci Ace GG High Top Sneakers in Blue Beige are an excellent choice. Their unique design and exceptional quality make them a standout piece in any wardrobe."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

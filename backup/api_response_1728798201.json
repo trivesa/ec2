@@ -1,0 +1,25 @@
+{
+  "id": "1015a43b-0aa7-499d-b096-826a4df9562e",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728798201,
+  "usage": {
+    "prompt_tokens": 148,
+    "completion_tokens": 390,
+    "total_tokens": 538
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Marmont Thin Belt\n**Subtitle (Sottotitolo):** Elegant Grey Leather Belt with Iconic GG Buckle\n**Short Description (Breve Descrizione):** This GUCCI GG Marmont Thin Belt, style number 414516 18YXV 1711, is a sophisticated accessory featuring a sleek grey leather strap and a distinctive double G buckle. Perfect for adding a touch of luxury to any outfit, this belt is a testament to GUCCI's commitment to quality and style. Crafted from high-quality leather, it ensures durability and a timeless appeal.\n\n**Description (Descrizione):**\n\n- **Material:** The belt is made from smooth grey leather, ensuring a luxurious feel and long-lasting durability.\n- **Buckle:** The iconic double G buckle is a hallmark of GUCCI's GG Marmont collection, adding a touch of sophistication and elegance to the belt.\n- **Hardware:** The belt features grey hardware details that complement the leather strap and buckle, creating a cohesive and stylish look.\n- **Width:** The belt measures 3 cm in width, making it a versatile accessory that can be paired with a variety of outfits.\n- **Style Number:** 414516 18YXV 1711\n- **Size Information:** Available in size 95 cm (38 inches), ensuring a comfortable fit for most waist sizes.\n- **Authenticity:** This belt is 100% authentic GUCCI, guaranteeing the highest quality and craftsmanship.\n- **Collection:** Part of the GG Marmont collection, known for its sleek designs and iconic GG motif.\n- **Versatility:** Suitable for both casual and formal occasions, this belt is a versatile accessory that can elevate any outfit.\n- **Brand Heritage:** GUCCI is renowned for its luxurious and stylish designs, and this belt is a testament to the brand's commitment to excellence."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

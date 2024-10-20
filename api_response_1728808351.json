@@ -1,0 +1,25 @@
+{
+  "id": "8b521254-1adc-4785-9365-2fbc56408e2c",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728808351,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 433,
+    "total_tokens": 580
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Kids GG Supreme Tote Bag in Banana Print Canvas\n**Subtitle (Sottotitolo):** Authentic Luxury Handbag with Unique Design\n**Short Description (Breve Descrizione):** This GUCCI Kids GG Supreme Tote Bag in banana print canvas is a vibrant and stylish accessory perfect for young fashion enthusiasts. Featuring the iconic GG monogram pattern, it combines high-quality materials with exceptional craftsmanship. Ideal for everyday use, it adds a touch of luxury to any outfit.\n\n**Description (Descrizione):**\n\n- **Style Number:** 605614 22DAN 8303\n- **Material:** High-quality banana print canvas with leather details\n- **Design:** The bag features the iconic GG Supreme monogram pattern, with interlocking 'G's that are evenly spaced and have a fine point at the top, ensuring authenticity.\n- **Hardware:** Sturdy and heavy metal components with 'GUCCI' cleanly engraved, reflecting the brand's commitment to quality.\n- **Interior Tag:** A rectangular leather tag with the brand's trademark, logo, and 'made in Italy' in lowercase letters, all centered and with clear, precise font.\n- **Serial Number Tag:** A high-quality leather patch inside the bag with a 10 to 13-digit serial number, indicating the style number and supplier code.\n- **Craftsmanship:** Exceptional attention to detail, including precise stitching and a sturdy construction that ensures durability.\n- **Size Information:** Please refer to the specific size chart provided by the retailer for accurate measurements.\n- **Authenticity:** This bag is an authentic GUCCI product, ensuring the highest standards of quality and craftsmanship.\n- **Additional Features:**\n  - The bag includes a high-quality leather strap and metal zippers.\n  - The interior is lined with a durable material to protect belongings.\n  - The bag comes with a dust bag to store it when not in use.\n  - The GG monogram pattern is woven into the canvas, not printed, ensuring authenticity.\n  - The bag is designed to be both functional and stylish, making it perfect for daily use."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

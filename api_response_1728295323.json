@@ -1,0 +1,25 @@
+{
+  "id": "ae1388d3-7988-4a5e-9b3f-4e0017c0ad88",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728295323,
+  "usage": {
+    "prompt_tokens": 146,
+    "completion_tokens": 362,
+    "total_tokens": 508
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Dior Night Code Cuff\n**Subtitle (Sottotitolo):** Gold-Finish Metal with White Crystals and White Lacquer\n**Short Description (Breve Descrizione):** The Dior Night Code cuff offers a modern and refined aesthetic, featuring gold-finish metal adorned with a delicate pav\u00e9 of white faceted crystals and white lacquer. This elegant accessory is designed to complement a variety of outfits, adding a touch of sophistication to any look. Perfect for pairing with other Dior Night Code creations.\n\n**Description (Descrizione):**\n\n- **Elegant Design:** The Dior Night Code cuff is crafted from gold-finish metal, showcasing a delicate pav\u00e9 of white faceted crystals that add a touch of luxury to any outfit.\n- **Signature Detail:** The cuff features the Christian Dior Paris signature enhanced by white lacquer, adding a subtle yet distinctive touch.\n- **Versatility:** Designed to be worn alone or layered with other accessories, the Dior Night Code cuff is versatile and can be paired with a variety of outfits for different occasions.\n- **Quality Craftsmanship:** Made in Europe, this cuff is a testament to Dior's commitment to high-quality craftsmanship and attention to detail.\n- **Size Information:** For the perfect fit, please refer to the size guide available on the Dior website.\n- **Collection:** Part of the Dior Night Code collection, this cuff is designed to complement other pieces from the line, offering a cohesive and stylish look.\n- **Materials:**\n  - Gold-finish metal\n  - White crystals\n  - White lacquer\n- **Additional Information:** The cuff is sold individually and comes in a keepsake box, making it a thoughtful gift or a personal treat."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

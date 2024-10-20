@@ -1,0 +1,25 @@
+{
+  "id": "4cc0a194-c899-47cd-a249-29d01942690e",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728253018,
+  "usage": {
+    "prompt_tokens": 324,
+    "completion_tokens": 554,
+    "total_tokens": 878
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Given the information provided and the specific style number **E2099WOMRS_D301**, which does not appear in the search results, I will provide a structured format with the available information and use 'N/A' for fields that cannot be determined from the provided sources.\n\n### Mandatory Fields:\n1. **Object Category (Categoria Oggetto):** N/A\n2. **Store Category (Categoria del Negozio):** N/A\n3. **Brand (Marca):** DIOR\n4. **Type (Tipo):** N/A\n5. **Department (Reparto):** N/A\n6. **Color (Colore):** N/A\n7. **Condition of the Item (Condizione dell'oggetto):** N/A\n8. **Price (Prezzo):** N/A\n9. **Shipping Rule (Regola sulla spedizione):** N/A\n\n### Optional Fields:\n1. **Custom Label (Etichetta personalizzata - SKU):** N/A\n2. **EAN (EAN):** N/A\n3. **Style (Stile):** N/A\n4. **Material (Materiale):** N/A\n5. **Character (Personaggio):** N/A\n6. **Theme (Tema):** N/A\n7. **Features (Caratteristiche):** N/A\n8. **Country of Manufacture (Paese di fabbricazione):** N/A\n9. **Pattern (Fantasia):** N/A\n10. **Decorative Elements (Elementi decorativi):** N/A\n11. **Vintage (Vintage):** N/A\n12. **Fabric Type (Tessuto):** N/A\n13. **Handmade (Fatto a mano):** N/A\n14. **Year Manufactured (Anno di fabbricazione):** N/A\n15. **MPN (MPN):** N/A\n16. **Quantity (Quantit\u00e0):** N/A\n17. **Unit of Measurement (Unit\u00e0 di misura):** N/A\n18. **Personalized (Personalizzato):** N/A\n19. **Width (Larghezza):** N/A\n20. **Garment Care (Cura dell'indumento):** N/A\n21. **Product Line (Linea di prodotto):** N/A\n\n### Note:\n- The specific style number **E2099WOMRS_D301** does not appear in the provided search results, making it impossible to fill in the required fields accurately.\n- For accurate information, it is recommended to consult the official DIOR website or contact their customer service directly."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

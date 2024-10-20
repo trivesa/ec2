@@ -1,0 +1,25 @@
+{
+  "id": "ab941390-14c5-441c-a3b0-e588ef05eb91",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728774156,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 353,
+    "total_tokens": 502
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Run Sneaker in Black and Yellow\n**Subtitle (Sottotitolo):** High-End Fashion with Sporting Elegance\n**Short Description (Breve Descrizione):** The Gucci Run Sneaker, style number 680938 USM10 8480, combines the essence of high-end fashion with the dynamism of the sporting world. Crafted from GG technical knit fabric, these sleek sneakers feature standout logo details and a bi-color sole for a playful touch of chromatic contrast. Perfect for making a stylish statement.\n\n**Description (Descrizione):**\n- **Design Inspiration:** Inspired by the sporting world, these sneakers are reinterpreted through the Gucci lens, offering a unique blend of athletic and luxury fashion.\n- **Materials:** The upper is made from GG technical knit fabric, ensuring both comfort and durability.\n- **Key Features:**\n  - **Logo Details:** Standout logo details, including the iconic Interlocking G, add a touch of elegance and authenticity.\n  - **Bi-Color Sole:** A bi-color sole in black and yellow provides a playful note of chromatic contrast, enhancing the overall aesthetic appeal.\n  - **Size Information:** Available in size 46, ensuring a comfortable fit for those seeking a stylish and high-quality sneaker.\n- **Craftsmanship:** Made in Italy, these sneakers embody the high standards of Italian craftsmanship, combining quality materials with meticulous attention to detail.\n- **Style Statement:** Perfect for those who want to make a fashion statement, these sneakers are ideal for casual yet stylish occasions.\n- **Authenticity:** Guaranteed authenticity ensures that you are purchasing a genuine Gucci product, reflecting the brand's commitment to excellence and luxury."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

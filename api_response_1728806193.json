@@ -1,0 +1,25 @@
+{
+  "id": "e83ebea9-8519-44af-96d9-85aa556476c3",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728806193,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 511,
+    "total_tokens": 658
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Off The Grid Series Bag Single-Shoulder Bag Men's Black 625850-H9HAN-1000\n\n**Subtitle (Sottotitolo):** Elegant and Versatile Shoulder Bag for the Modern Man\n\n**Short Description (Breve Descrizione):** The GUCCI Off The Grid Series Bag Single-Shoulder Bag Men's Black 625850-H9HAN-1000 is a stylish and practical accessory designed for the contemporary gentleman. Crafted from durable black GG nylon made from ECONYL, this bag features sleek black leather trims and palladium-toned metal hardware. Its versatile design makes it perfect for daily use, travel, or as a sophisticated accessory for any occasion.\n\n**Description (Descrizione):**\n\n- **Material:** The bag is made from high-quality black GG nylon, which is crafted from ECONYL, a sustainable and eco-friendly material. This ensures durability and a stylish finish.\n- **Design Elements:** The bag features black leather trims that add a touch of sophistication, while the palladium-toned metal hardware provides a luxurious finish.\n- **Logo Detail:** A leather detail with the Gucci script logo adds a subtle yet distinctive touch to the bag's design.\n- **Exterior Features:**\n  - **Zip Pocket:** The exterior includes a convenient zip pocket for storing small essentials.\n  - **Handles and Strap:** The bag comes with leather top handles with a 2\u201d drop and a detachable and adjustable shoulder strap with a 19.7\u201d drop, offering versatility in how you choose to carry it.\n- **Interior Features:**\n  - **Phone Case:** The interior includes a phone case that can fit a cell phone up to 3.1\u201dW x 6.6\u201dH x .4\u201dD.\n  - **Zipper Closure:** The bag features a secure zipper closure to protect your belongings.\n- **Dimensions:** The bag measures 6.3\u201dW x 8.7\u201dH x 3.4\u201dD, making it the perfect size for daily essentials.\n- **Weight:** The bag weighs 1.3lbs, ensuring it is lightweight and easy to carry.\n- **Versatility:** This bag is designed to be versatile, making it suitable for a variety of occasions, from casual daily use to more formal events.\n- **Sustainability:** The use of ECONYL in the bag's construction reflects Gucci's commitment to sustainability and eco-friendly practices."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "63732ff9-eab4-4791-adff-23186385b6ef",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728800354,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 353,
+    "total_tokens": 500
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Wool Scarf 344994 4G200 9269\n**Subtitle (Sottotitolo):** Luxurious Blue Wool Scarf with Iconic GG Pattern\n**Short Description (Breve Descrizione):** Elevate your style with this authentic GUCCI wool scarf, featuring the iconic GG pattern in a vibrant blue hue. Crafted from high-quality wool, this scarf is both stylish and durable. Perfect for adding a touch of luxury to any outfit.\n\n**Description (Descrizione):**\n\n- **Material:** Made from 100% wool, ensuring warmth and durability.\n- **Dimensions:** Measures 40 cm x 180 cm, ideal for wrapping around your neck or using as a stylish accessory.\n- **Pattern:** Features the iconic GG pattern, a hallmark of GUCCI's timeless design.\n- **Color:** Available in a vibrant blue hue (color code 9269), adding a pop of color to any outfit.\n- **Origin:** Crafted in Italy, reflecting GUCCI's commitment to quality and craftsmanship.\n- **Style Number:** 344994 4G200 9269, ensuring authenticity and exclusivity.\n- **Versatility:** Perfect for both men and women, this scarf can be styled in various ways to suit your personal taste.\n- **Luxury Appeal:** A true luxury accessory, this scarf embodies the essence of GUCCI's high-end fashion.\n- **Care Instructions:** To maintain its quality, it is recommended to dry clean this scarf.\n\nThis GUCCI wool scarf is a must-have accessory for anyone looking to add a touch of luxury to their wardrobe. Its iconic design and high-quality material make it a timeless piece that will last for years to come."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

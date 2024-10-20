@@ -1,0 +1,25 @@
+{
+  "id": "40d2c312-6a0f-4fb1-9c6b-0c8689e8b2a5",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728798007,
+  "usage": {
+    "prompt_tokens": 314,
+    "completion_tokens": 538,
+    "total_tokens": 852
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Here is the information for the GUCCI belt with style number 414516 18YXV 1711:\n\n**Mandatory Fields:**\n1. **Object Category (Categoria Oggetto):** Belt\n2. **Store Category (Categoria del Negozio):** Men's Accessories\n3. **Brand (Marca):** Gucci\n4. **Type (Tipo):** Leather Belt\n5. **Department (Reparto):** Men's\n6. **Color (Colore):** Grey\n7. **Size (Taglia):** 95 cm / 38 inches\n8. **Condition of the Item (Condizione dell'oggetto):** Brand New with Tags\n9. **Price (Prezzo):** $199.99 (Note: Prices may vary by source. This price is from)\n10. **Shipping Rule (Regola sulla spedizione):** N/A (Varies by retailer)\n\n**Optional Fields:**\n1. **EAN (EAN):** N/A\n2. **Material (Materiale):** Leather\n3. **Style (Stile):** GG Marmont\n4. **Pattern (Fantasia):** N/A\n5. **Size Type (Tipo di taglia):** Length\n6. **Belt Width (Larghezza della cintura):** 3 cm\n7. **Decorative Elements (Elementi decorativi):** Double G Buckle\n8. **Theme (Tema):** N/A\n9. **Features (Caratteristiche):** Smooth Grey Leather, Grey Hardware Details\n10. **Character (Personaggio):** N/A\n11. **Trim Material (Materiale delle finiture):** N/A\n12. **Country of Manufacture (Paese di fabbricazione):** N/A\n13. **Handmade (Fatto a mano):** N/A\n14. **Vintage (Vintage):** No\n15. **MPN (MPN):** 414516 18YXV 1711\n16. **Quantity (Quantit\u00e0):** N/A\n17. **Unit of Measurement (Unit\u00e0 di misura):** Centimeters\n18. **Custom Label (Etichetta personalizzata - SKU):** N/A\n19. **Personalized (Personalizzato):** No\n\n**Sources:**\n- **Color, Size, Material, Style, Belt Width, Decorative Elements, Features:**\n- **Price:**\n- **General Information:**"
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

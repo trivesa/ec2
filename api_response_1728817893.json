@@ -1,0 +1,25 @@
+{
+  "id": "28e93c33-fa76-4943-ad03-6019f5e57000",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728817893,
+  "usage": {
+    "prompt_tokens": 148,
+    "completion_tokens": 339,
+    "total_tokens": 487
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Tennis 1977 GG Logo Black Multi\n**Subtitle (Sottotitolo):** Elegant and Contemporary Sneakers for Women\n**Short Description (Breve Descrizione):** The Gucci Tennis 1977 GG Logo Black Multi is a stylish and sophisticated sneaker that combines classic design elements with modern flair. Featuring the iconic GG pattern and signature green and red web stripe, this shoe is perfect for those who appreciate luxury and fashion. Available in size 38.\n\n**Description (Descrizione):**\n\n- **Iconic Design**: The Gucci Tennis 1977 GG Logo Black Multi features the iconic GG pattern on the entire body of the shoe, creating a bold and eye-catching look.\n- **Signature Details**: The raised double G letter interwoven pattern on the sole adds an extra layer of sophistication and authenticity.\n- **Material Mix**: The shoe combines denim and red canvas, offering a unique and contemporary aesthetic.\n- **Signature Stripes**: The green and red web stripe, a hallmark of Gucci's design, adds a touch of elegance and luxury.\n- **Versatility**: Perfect for casual outings or dressing up, these sneakers are versatile and can be paired with a variety of outfits.\n- **Size**: Available in size 38, ensuring a comfortable and precise fit.\n- **Quality and Craftsmanship**: As with all Gucci products, this shoe is crafted with high-quality materials and meticulous attention to detail, ensuring durability and long-lasting style.\n- **Luxury Appeal**: The Gucci Tennis 1977 GG Logo Black Multi is a statement piece that reflects the brand's commitment to luxury and fashion excellence."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

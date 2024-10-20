@@ -1,0 +1,25 @@
+{
+  "id": "a44b857b-cf51-4e18-973f-71fec11a6514",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728801238,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 383,
+    "total_tokens": 530
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Marmont Thin Belt\n**Subtitle (Sottotitolo):** Elegant and Versatile Accessory\n**Short Description (Breve Descrizione):** The GUCCI GG Marmont Thin Belt, style number 409417 92TLC 8592, is a sophisticated and versatile accessory designed to add a touch of luxury to any outfit. Crafted from high-quality leather, this belt features the iconic GG Marmont buckle and a sleek, thin design. Perfect for both casual and formal occasions.\n\n**Description (Descrizione):**\n\n- **Material:** High-quality leather ensures durability and a luxurious feel.\n- **Design:** The thin belt design makes it versatile and easy to pair with various outfits.\n- **Buckle:** The iconic GG Marmont buckle adds a touch of sophistication and elegance.\n- **Color:** Beige and Ebony, offering a classic and timeless look.\n- **Size:** Available in various sizes to fit different waist measurements. Please refer to the size chart for specific details.\n- **Style Number:** 409417 92TLC 8592, ensuring authenticity and exclusivity.\n- **Quality:** GUCCI\u2019s commitment to craftsmanship and quality is evident in every detail of this belt.\n- **Versatility:** Suitable for both casual and formal occasions, making it a versatile addition to any wardrobe.\n- **Authenticity:** Guaranteed 100% authentic GUCCI product, ensuring the highest standards of quality and design.\n- **Care Instructions:** To maintain the belt\u2019s quality, avoid exposure to harsh chemicals and extreme temperatures. Regular cleaning with a soft cloth is recommended.\n- **Warranty:** Please refer to the manufacturer\u2019s warranty policy for specific details on coverage and duration.\n- **Return Policy:** Returns are accepted within a specified timeframe. Please check the return policy for specific details on eligibility and procedures."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

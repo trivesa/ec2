@@ -1,0 +1,25 @@
+{
+  "id": "5a2f864d-7ff5-4f6d-8aa2-a8ee42628fbb",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728795795,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 411,
+    "total_tokens": 562
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low 'White Demetra Red' Sneakers\n**Subtitle (Sottotitolo):** Elegant Casual Wear with a Touch of Luxury\n**Short Description (Breve Descrizione):** The Gucci Basket Low 'White Demetra Red' sneakers, style number 697882 2SHJ0 9090, offer a sophisticated blend of white and red, perfect for adding a touch of elegance to casual wear. Crafted in Italy, these shoes feature a unique textile upper and an elastic sole. Available in size 43, they are ideal for those seeking a stylish yet comfortable footwear option.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The Gucci Basket Low 'White Demetra Red' sneakers are designed with a striking combination of white and red, creating a visually appealing contrast.\n  - The upper is made from other textile materials, ensuring durability and comfort.\n  - The sole is elastic, providing flexibility and support.\n\n- **Craftsmanship:**\n  - These sneakers are proudly made in Italy, reflecting Gucci's commitment to high-quality craftsmanship.\n  - The attention to detail in the design and construction ensures a premium product.\n\n- **Style and Versatility:**\n  - The 'White Demetra Red' color scheme adds a touch of elegance to casual wear, making these sneakers suitable for a variety of occasions.\n  - The low-profile design offers versatility, allowing the shoes to be paired with a range of outfits.\n\n- **Key Features:**\n  - Style Number: 697882 2SHJ0 9090\n  - Size: 43\n  - Color: White and Red\n  - Composition: Upper - Other Textile, Sole - Elastic\n  - Made in Italy\n\n- **Additional Information:**\n  - These sneakers are available in stock in various stores, ensuring quick delivery and satisfaction for customers looking for a stylish and comfortable footwear option."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "044d4bab-1905-4fd4-b168-212f90a5b1a7",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728792872,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 506,
+    "total_tokens": 659
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High Sneaker in White Demetra Red\n**Subtitle (Sottotitolo):** Style 673077 2SHG0 9076 - Size 39.5\n**Short Description (Breve Descrizione):** Embracing the essence of 90s basketball sneakers, the Gucci Basket High Sneaker combines style and sustainability with its unique blend of GG Supreme canvas and eco-friendly Demetra material. This high-top sneaker features distinctive detailing and a resilient performance. Crafted with a focus on self-expression and on-court aesthetic, it offers a modern take on classic basketball shoes.\n\n**Description (Descrizione):**\n- **Material and Construction:**\n  - The Gucci Basket High Sneaker is crafted from a mix of GG Supreme canvas and white Demetra, an eco-friendly material made from animal-free raw materials primarily sourced from sustainable, renewable, and bio-based sources.\n  - The Demetra material is created using processes similar to tanning, offering a pliable and resilient performance with a supple finish.\n\n- **Design Elements:**\n  - The high-top sneaker features a beige and ebony GG Supreme canvas with white rubber details.\n  - It includes a rubber Interlocking G patch and contrast padding at the ankle.\n  - The Gucci logo detail adds a touch of luxury, while the rubber Interlocking G at the side enhances the shoe's aesthetic.\n  - An additional pair of laces is included for versatility.\n\n- **Additional Features:**\n  - The sneaker has a lace-up closure and a low heel with a 1\u2033 (2.5 cm) height.\n  - The shoe is treated for a distressed effect, adding to its unique look.\n\n- **Sustainability:**\n  - The use of Demetra material underscores Gucci's commitment to sustainability and eco-friendly practices in fashion.\n\n- **Size Information:**\n  - This product is available in size 39.5, ensuring a comfortable fit for those who prefer a high-top sneaker with a blend of style and performance.\n\n- **Product Details:**\n  - Style Number: 673077 2SHG0 9076\n  - Colorway: White Demetra Red\n  - Size: 39.5\n  - Material: GG Supreme Canvas and White Demetra\n  - Closure: Lace-up\n  - Heel Height: 1\u2033 (2.5 cm)"
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "f691b114-7bc9-45ff-95ad-1a1bd0799730",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728787582,
+  "usage": {
+    "prompt_tokens": 149,
+    "completion_tokens": 393,
+    "total_tokens": 542
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton 'Hawaii' Sneaker\n**Subtitle (Sottotitolo):** Ivory Leather Vintage Gucci Logo Sneaker\n**Short Description (Breve Descrizione):** The Gucci Rhyton 'Hawaii' sneaker, style number 630652 DRW00 9522, is a luxurious and stylish footwear option featuring an ivory leather upper adorned with vintage Gucci logos. This chunky sneaker combines comfort and high-end fashion, perfect for making a statement. Available in size 41.\n\n**Description (Descrizione):**\n\n- **Luxurious Materials:** The Gucci Rhyton 'Hawaii' sneaker is crafted from high-quality ivory leather, ensuring durability and a premium feel.\n- **Vintage Gucci Logos:** The shoe features vintage Gucci logos, adding a touch of classic elegance and authenticity to its design.\n- **Chunky Sole:** The chunky sole provides a comfortable and stable base, making it suitable for daily wear.\n- **Almond-Shaped Nose:** The sneaker boasts an almond-shaped nose, adding a unique and stylish element to its overall design.\n- **Lacing at the Front:** The shoe includes lacing at the front for a secure and adjustable fit.\n- **Insole with Logo:** The insole is adorned with the Gucci logo, reinforcing the brand's attention to detail and commitment to luxury.\n- **Gucci Hawaii Logo:** The Gucci Hawaii logo on the shoe adds a distinctive and exclusive touch, making it a standout piece in any collection.\n- **Size 41:** This particular model is available in size 41, ensuring a comfortable fit for those who require this specific size.\n- **High-End Fashion:** The Gucci Rhyton 'Hawaii' sneaker is a testament to Gucci's expertise in high-end fashion, blending style and luxury in a single, exceptional piece."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

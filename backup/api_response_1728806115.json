@@ -1,0 +1,25 @@
+{
+  "id": "8ecfb4c9-536a-4dd4-b312-3427fd8ea3a5",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728806115,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 384,
+    "total_tokens": 531
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Off The Grid Shoulder Bag\n**Subtitle (Sottotitolo):** ECONYL Nylon and Leather Trimmed Luxury Bag\n**Short Description (Breve Descrizione):** The GUCCI Off The Grid Shoulder Bag, style number 625850 H9HAN 1000, is a sleek and versatile accessory crafted from ECONYL nylon and finished with luxurious leather trims. This bag features an allover double G pattern and a logo patch to the front, making it a stylish and recognizable piece. Perfect for daily use, it offers a blend of practicality and high-end fashion.\n\n**Description (Descrizione):**\n\n- **Material:** The bag is made from ECONYL nylon, a sustainable and durable material, complemented by leather trims for a luxurious finish.\n- **Design:** The allover double G pattern and the logo patch on the front add a distinctive touch, making it a true GUCCI statement piece.\n- **Functionality:** The bag features an adjustable and detachable shoulder strap, allowing for versatile wear and easy handling.\n- **Size Information:**\n  - **Dimensions:** Please refer to the specific retailer for detailed size measurements.\n  - **Capacity:** Designed to hold essentials such as a wallet, phone, and other personal items.\n- **Additional Features:**\n  - **Closure:** Secure and easy-to-use closure system.\n  - **Interior:** Lined interior for added protection and organization.\n  - **Color:** Available in black, offering a timeless and versatile choice.\n- **Brand Authenticity:** This bag is a genuine GUCCI product, ensuring high-quality craftsmanship and authenticity.\n- **Style Number:** 625850 H9HAN 1000, a unique identifier for this specific model.\n- **Care Instructions:** To maintain the bag's quality, follow the care instructions provided by GUCCI."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "a49aa302-6343-4c9f-9764-679a8ced43c7",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728799450,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 376,
+    "total_tokens": 523
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Microssima Two-Tone Wool Scarf\n**Subtitle (Sottotitolo):** Luxurious Men's Scarf in Beige\n**Short Description (Breve Descrizione):** Elevate your style with the GUCCI GG Microssima Two-Tone Wool Scarf, featuring a sophisticated beige color palette and the iconic GG pattern. Crafted from 100% wool, this scarf offers warmth and luxury. Perfect for adding a touch of elegance to any outfit.\n\n**Description (Descrizione):**\n\n- **Material:** 100% wool for unparalleled warmth and comfort.\n- **Design:** The scarf features the iconic GG Microssima pattern in a two-tone beige color scheme, adding a sophisticated touch to any outfit.\n- **Size:** 180x40 cm, ideal for wrapping around the neck or using as a stylish accessory.\n- **Style Number:** 344994 4G200 9279, ensuring authenticity and exclusivity.\n- **Brand:** GUCCI, renowned for its high-quality and luxurious fashion items.\n- **Care Instructions:** To maintain the scarf's quality, it is recommended to dry clean only.\n- **Versatility:** This scarf can be styled in various ways, from a casual wrap to a more formal knot, making it suitable for a range of occasions.\n- **Authenticity:** Guaranteed authentic GUCCI product, ensuring you receive a genuine luxury item.\n- **Packaging:** The scarf comes in a luxurious GUCCI packaging, perfect for gifting or personal use.\n- **Warranty:** Covered by GUCCI's warranty, providing peace of mind with your purchase.\n\nThis GUCCI GG Microssima Two-Tone Wool Scarf is a testament to the brand's commitment to luxury and style, making it a must-have accessory for any fashion-conscious individual."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

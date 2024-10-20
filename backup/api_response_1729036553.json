@@ -1,0 +1,25 @@
+{
+  "id": "2a2902e6-6fda-4a96-874d-c4842ad94282",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729036553,
+  "usage": {
+    "prompt_tokens": 619,
+    "completion_tokens": 813,
+    "total_tokens": 1432
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Christian Dior Medium Dior Book Tote Bag\n**Subtitle (Sottotitolo):** Elegant Grey Toile de Jouy Embroidery Design\n**Short Description (Breve Descrizione):** The Dior Book Tote, designed by Maria Grazia Chiuri, is a staple of the Dior aesthetic. This medium tote features a grey Toile de Jouy embroidery motif and is adorned with the 'CHRISTIAN DIOR PARIS' signature on the front.\n\n**Description (Descrizione):**\nThe Christian Dior Medium Dior Book Tote Bag, with style number M1296ZTDT_M932, is a masterpiece of luxury fashion. Designed by Maria Grazia Chiuri, this iconic tote is fully embroidered with a grey Toile de Jouy motif, showcasing the House's signature savoir-faire. The bag is adorned with the 'CHRISTIAN DIOR PARIS' signature on the front, adding a touch of elegance and sophistication. The medium size is perfect for carrying daily essentials such as a phone, card holder, and lipstick. The bag includes a dust bag and is made in Italy, reflecting the excellence of Dior's craftsmanship.\n\n**Object Category (Categoria Oggetto):** Handbags\n**Store Category (Categoria del Negozio):** Luxury Fashion\n**Brand (Marca):** Christian Dior\n**Cut (Taglia):** Medium\n**Department (Reparto):** Women's Fashion\n**Type (Tipo):** Tote Bag\n**Style (Stile):** Dior Book Tote\n**Condition of the Item (Condizione dell'oggetto):** Used 1-2 times\n**Price (Prezzo):** N/A\n**Shipping Rule (Regola sulla spedizione):** N/A\n**MPN (MPN):** M1296ZTDT_M932\n**Custom Label (Etichetta personalizzata - SKU):** N/A\n**EAN (EAN):** N/A\n**Material (Materiale):** Leather\n**Color (Colore):** Grey\n**Tissue (Tessuto):** N/A\n**Size Type (Tipo di taglia):** Standard\n**Fit (Vestibilit\u00e0):** N/A\n**Sleeve Length (Lunghezza della manica):** N/A\n**Unit of Measurement (Unit\u00e0 di misura):** cm\n**Character (Personaggio):** N/A\n**Season (Stagione):** N/A\n**Vintage (Vintage):** No\n**Neckline (Scollatura):** N/A\n**Theme (Tema):** N/A\n**Activity (Attivit\u00e0):** N/A\n**Decorative Elements (Elementi decorativi):** Toile de Jouy embroidery\n**Characteristics (Caratteristiche):** Adjustable shoulder strap, interior zip pocket, two interior slip pockets\n**Occasion (Occasione):** Everyday\n**Knitting Style (Stile lavorazione a maglia):** N/A\n**Graphic Printing (Stampa grafica):** N/A\n**Garment Care (Cura dell'indumento):** N/A\n**Country of Manufacture (Paese di fabbricazione):** Italy\n**Fabric Type (Tipo di tessuto):** N/A\n**Personalized (Personalizzato):** No\n**Year Manufactured (Anno di fabbricazione):** N/A\n**Handmade (Fatto a mano):** No\n**Pattern (Fantasia):** Toile de Jouy\n**Closure Type (Tipo di chiusura):** N/A\n**Accents (Dettagli decorativi):** 'CHRISTIAN DIOR PARIS' signature\n**Product Line (Linea di prodotto):** Dior Book Tote were used for reference."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

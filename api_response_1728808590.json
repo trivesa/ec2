@@ -1,0 +1,25 @@
+{
+  "id": "f5728933-6000-439c-b67b-52df42085ce8",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728808590,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 383,
+    "total_tokens": 530
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Marmont Super Mini Bag\n**Subtitle (Sottotitolo):** Exquisite White Chevron Leather Handbag\n**Short Description (Breve Descrizione):** The GUCCI GG Marmont Super Mini Bag in white chevron leather is a masterpiece of luxury fashion, blending timeless elegance with modern sophistication. This compact yet stylish handbag is perfect for everyday use, offering a touch of high-end flair to any outfit. Crafted with meticulous attention to detail, it embodies the essence of GUCCI's iconic design.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The GG Marmont Super Mini Bag is crafted from high-quality white chevron leather, showcasing GUCCI's commitment to exceptional craftsmanship.\n  - The bag features a sleek and compact design, ideal for carrying essentials while maintaining a stylish appearance.\n  - The iconic GG logo is subtly integrated into the design, adding a touch of sophistication and authenticity.\n\n- **Size Information:**\n  - The bag is designed to be super mini, making it perfect for crossbody wear or as a small shoulder bag.\n  - Dimensions: Please refer to the official GUCCI website for precise measurements.\n\n- **Key Features:**\n  - The bag includes a secure closure and an interior pocket for organized storage.\n  - The silver-tone hardware complements the white leather, creating a harmonious and luxurious aesthetic.\n  - The bag is versatile and can be styled for both casual and formal occasions.\n\n- **Additional Details:**\n  - Style Number: 476433 DTD5N 9022\n  - The bag is available in various regions, including the US and PL, and can be purchased from authorized retailers or the official GUCCI website.\n  - For pricing and availability, please visit the official GUCCI website or authorized retailers."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

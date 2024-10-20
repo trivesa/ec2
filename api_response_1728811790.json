@@ -1,0 +1,25 @@
+{
+  "id": "3347478c-3adf-40c0-8342-5ba21ae154fc",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728811790,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 500,
+    "total_tokens": 650
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton 'Mouth Print' Sneakers\n**Subtitle (Sottotitolo):** Classic Elegance with a Bold Twist\n**Short Description (Breve Descrizione):** The Gucci Rhyton 'Mouth Print' sneakers, style number 552093 A9L00 9522, are a striking fusion of classic elegance and bold design. Crafted from high-quality Italian leather, these shoes embody the '90s vibes and hip-hop scene with their clean construction and iconic silhouette. Available in size 41, they are perfect for those who seek to make a statement.\n\n**Description (Descrizione):**\n\n- **Design Inspiration:** The Gucci Rhyton 'Mouth Print' sneakers draw inspiration from the '90s hip-hop scene, blending classic sporty vibes with a bold, eye-catching design.\n- **Craftsmanship:** These shoes are meticulously handcrafted in Italy, ensuring a level of quality and attention to detail that is synonymous with Gucci's luxury brand.\n- **Materials:** The Rhyton 'Mouth Print' sneakers are made from high-quality Italian leather, which provides durability and a luxurious feel.\n- **Key Features:**\n  - **Style Number:** 552093 A9L00 9522\n  - **Size:** 41\n  - **Color:** Classic off-white with a bold mouth print design\n  - **Silhouette:** Classic sneaker silhouette with a clean construction\n- **Additional Details:**\n  - **Brand:** Gucci\n  - **Style:** Sneaker\n  - **Voucher:** Some retailers offer a complimentary lifetime cleaning voucher with purchase\n- **Market Availability:**\n  - **Retailers:** Available on various platforms such as StockX, Rainy Clouds OG, ETEFT, Kicks Crew, and GOAT\n  - **Price Range:** $540.00 to $1,802.00, depending on the retailer and availability\n- **Why Choose Gucci Rhyton 'Mouth Print' Sneakers?**\n  - **Unique Design:** The bold mouth print design sets these sneakers apart from more traditional designs.\n  - **Quality and Craftsmanship:** Gucci's commitment to quality and craftsmanship ensures a long-lasting and stylish addition to any wardrobe.\n  - **Versatility:** Perfect for casual wear, these sneakers can also be dressed up for a more formal look."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

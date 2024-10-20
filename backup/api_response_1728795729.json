@@ -1,0 +1,25 @@
+{
+  "id": "ffa8b93a-ccc6-42e0-9a48-61ccf9ad6c24",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728795729,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 406,
+    "total_tokens": 557
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low 'White Demetra Red'\n**Subtitle (Sottotitolo):** Elegant Casual Wear with a Touch of Luxury\n**Short Description (Breve Descrizione):** The Gucci Basket Low 'White Demetra Red' sneakers bring a sophisticated twist to casual attire, featuring a striking combination of white and red. Crafted in Italy, these shoes embody the essence of Gucci's luxury and style. Perfect for those who seek to elevate their everyday look with a touch of elegance.\n\n**Description (Descrizione):**\n\n- **Style Number:** 697882 2SHJ0 9090\n- **Size:** 43\n- **Color:** White, Red, and Blue\n- **Composition:**\n  - **Upper:** Other Textile\n  - **Sole:** Elastomer (EL)\n- **Made in:** Italy\n\n**Key Features:**\n- **Elegant Design:** The Gucci Basket Low 'White Demetra Red' sneakers are designed to add a luxurious touch to casual wear, making them perfect for both everyday use and special occasions.\n- **Quality Materials:** The shoes are crafted with high-quality materials, ensuring durability and comfort.\n- **Versatile Style:** The combination of white, red, and blue offers a versatile look that can be easily paired with a variety of outfits.\n- **Brand Authenticity:** These shoes are genuine Gucci products, reflecting the brand's commitment to luxury and style.\n- **Craftsmanship:** Made in Italy, these sneakers showcase the exceptional craftsmanship that Gucci is known for.\n\n**Additional Information:**\n- **Product Code:** 697882-2SHJ0\n- **Color Code:** 9090\n- **Composition Details:** The upper is made from other textile materials, while the sole is elastomer, ensuring both comfort and durability.\n- **Return Policy:** Please check the return policy of the retailer for specific details on returns and exchanges."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

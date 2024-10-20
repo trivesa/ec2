@@ -1,0 +1,25 @@
+{
+  "id": "1450b2da-fbb5-4efa-ac9f-c40a0847ecfc",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728817400,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 330,
+    "total_tokens": 483
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Women's Basket Low Top Sneakers\n**Subtitle (Sottotitolo):** Elegant White and Green Design\n**Short Description (Breve Descrizione):** Elevate your style with these Gucci Women's Basket Low Top Sneakers, featuring a striking white and green color scheme. Crafted in Italy, these shoes combine luxury and comfort. Perfect for making a statement with any outfit.\n\n**Description (Descrizione):**\n\n- **Luxury Craftsmanship:** These Gucci sneakers are meticulously crafted in Italy, ensuring the highest quality and attention to detail.\n- **Stylish Design:** The white and green color scheme (code 9089) adds a touch of elegance and sophistication to any outfit.\n- **Comfortable Wear:** The upper is made from a combination of leather and other textiles, while the sole is made from elastic materials, providing both durability and comfort.\n- **Versatile Style:** The low-top design makes these sneakers versatile and suitable for various occasions, from casual daily wear to more formal events.\n- **Size Information:** Available in size 38.5, ensuring a precise fit for your comfort.\n- **Product Details:**\n  - **Product Code:** 700290-2SHG0\n  - **Color Code:** 9089\n  - **Color:** White Green\n  - **Made in:** Italy\n  - **Composition:** Upper: Leather and other textiles - Sole: Elastic materials\n- **Perfect for:** Fashion-conscious individuals looking to add a luxurious touch to their wardrobe with a pair of high-quality, stylish sneakers."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

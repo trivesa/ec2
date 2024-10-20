@@ -1,0 +1,25 @@
+{
+  "id": "52f0d275-c4f1-4a1b-8310-20c5643e2631",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728777650,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 396,
+    "total_tokens": 549
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket High 'Black Demetra Red'\n**Subtitle (Sottotitolo):** Elevate Your Street Style with Luxury and Sport-Inspired Elements\n**Short Description (Breve Descrizione):** The Gucci Basket High 'Black Demetra Red' (673077-2SHG0-1066) combines luxury with sport-inspired elements, offering a striking design that elevates street style. This shoe features a bold color scheme and premium materials, making it a standout piece in any wardrobe. Available in size 44.5.\n\n**Description (Descrizione):**\n\n- **Design and Materials:** The Gucci Basket High 'Black Demetra Red' boasts a sleek and modern design, blending high-quality materials with a sporty aesthetic. The shoe features a predominantly black upper with vibrant red accents, creating a striking visual contrast.\n- **Comfort and Performance:** Designed for both style and comfort, this shoe includes a cushioned insole and a durable outsole, ensuring a comfortable fit and long-lasting wear.\n- **Brand Heritage:** Gucci, a renowned luxury fashion brand, brings its signature style and craftsmanship to the Basket High 'Black Demetra Red,' making it a must-have for fashion enthusiasts.\n- **Size Information:** This shoe is available in size 44.5, ensuring a precise fit for those seeking a stylish and comfortable addition to their footwear collection.\n- **Key Features:**\n  - **Style Number:** 673077-2SHG0-1066\n  - **Color Scheme:** Black and Demetra Red\n  - **Materials:** High-quality leather and synthetic materials\n  - **Design Elements:** Sport-inspired design with luxury touches\n  - **Comfort Features:** Cushioned insole and durable outsole\n- **Ideal For:** Fashion-conscious individuals looking to elevate their street style with a luxurious and sporty shoe that combines comfort and style."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

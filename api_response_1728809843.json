@@ -1,0 +1,25 @@
+{
+  "id": "750954ef-993c-47f3-8368-bf4d5e20408d",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728809843,
+  "usage": {
+    "prompt_tokens": 504,
+    "completion_tokens": 1000,
+    "total_tokens": 1504
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "length",
+      "message": {
+        "role": "assistant",
+        "content": "Given the style number 605614 22DAN 8303, which corresponds to a specific GUCCI product, I will provide the necessary information based on the typical characteristics of GUCCI bags and the specific details that can be inferred from the style number and general knowledge about GUCCI products. However, without direct access to the specific product details for this style number, some information may be based on general assumptions about GUCCI products.\n\n### Mandatory Fields\n1. **Object Category (Categoria Oggetto):** Handbag\n2. **Store Category (Categoria del Negozio):** Women's Handbags / Children's Bags (Specific category depends on the product line, which is not specified. However, based on the style number, it seems to match children's bag products like those in and.)\n3. **Department (Reparto):** Children's Department (Based on the style number matching children's products.)\n4. **Brand (Marca):** GUCCI\n5. **Color (Colore esterno):** Beige and Dark Brown (Assuming it follows the color scheme of similar products like and.)\n6. **Style (Stile):** Tote Bag (Based on similar products with the same style number prefix.)\n7. **Material (Materiale esterno):** Canvas (GUCCI often uses canvas for their bags, especially those with prints.)\n8. **Closure Type (Chiusura):** N/A (Specific closure type not available without direct product details.)\n9. **Lining Material (Materiale della fodera):** N/A (Specific lining material not available without direct product details.)\n10. **Hardware Material (Materiale delle finiture):** Metal (GUCCI typically uses metal hardware for their bags.)\n11. **Product Line (Linea prodotto):** Children's Bags (Based on the style number matching children's products.)\n12. **Pattern (Fantasia):** Flower Print (Assuming it follows the pattern of similar products like.)\n13. **Condition of the Item (Condizione dell'oggetto):** N/A (Condition cannot be determined without specific product details.)\n14. **Price (Prezzo):** N/A (Price not available without direct access to the product details.)\n15. **Shipping Rule (Regola sulla spedizione):** N/A (Shipping rules vary and are not specific to the product style number.)\n\n### Optional Fields\n1. **Custom Label (Etichetta personalizzata - SKU):** 605614 22DAN 8303\n2. **EAN (EAN):** N/A\n3. **MPN (MPN):** N/A\n4. **Handle Drop (Altezza del manico):** N/A\n5. **Handle/Strap Drop (Lunghezza della tracolla):** N/A\n6. **Size (Dimensioni):** N/A\n7. **Features (Caratteristiche):** N/A\n8. **Vintage (Vintage):** No\n9. **Unit of Measurement (Unit\u00e0 di misura):** N/A\n10. **Accents (Elementi decorativi):** N/A\n11. **Theme (Tema):** N/A\n12. **Occasion (Occasione):** N/A\n13. **Year Manufactured (Anno di fabbricazione):** N/A\n14. **Product Variants (Varianti di prodotto):** N/A\n15. **Payment Options and Offers (Regole di pagamento):** N/A\n16. **Shipping (Regola sulla spedizione):** N/A\n17. **Object Warnings (Avvertenze per l'oggetto):** N/A\n18. **Country/Region of Manufacture (Paese di fabbricazione):** N/A\n19. **Lining Color (Colore della fodera):** N/A\n20. **Handle/Strap Color (Colore del manico, tracolla):** N/A\n21. **Trim Color (Colore delle rifiniture):** N/A\n22. **Fabric Type (Tessuto):** Canvas (Assuming based on typical GUCCI materials.)\n23. **Personalized (Personalizzato):** No\n24. **Accessories (Accessori):** N/A\n25. **Bag Width (Larghezza della borsa):** N/A\n26. **Bag Height (Altezza della borsa):** N/A\n27. **Bag Depth (Profondit\u00e0 della borsa):** N/A\n28. **Bag Shape (Forma):** Tote\n29. **Decorative Elements (Elementi decorativi):** N/A\n30. **Finish (Finitura):**"
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

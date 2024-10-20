@@ -1,0 +1,25 @@
+{
+  "id": "926ea9fa-b7ad-4f4c-900a-055fd282e646",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728798161,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 413,
+    "total_tokens": 560
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI 282390 3G704 1962 Scarf\n**Subtitle (Sottotitolo):** Exquisite Two-Tone GG Pattern Wool Silk Scarf\n**Short Description (Breve Descrizione):** This GUCCI scarf, style number 282390 3G704 1962, is a masterpiece of luxury fashion, featuring a sophisticated two-tone GG pattern on a blend of wool and silk. Perfect for adding a touch of elegance to any outfit, this scarf is a testament to GUCCI's commitment to quality and style. Its versatile design makes it suitable for both men and women.\n\n**Description (Descrizione):**\n\n- **Material:** Crafted from a luxurious blend of wool and silk, ensuring a soft, comfortable feel and a durable construction.\n- **Design:** The scarf features a classic two-tone GG pattern, a signature motif of the GUCCI brand, adding a sophisticated touch to any ensemble.\n- **Style Number:** 282390 3G704 1962, a unique identifier for this specific model, ensuring authenticity and exclusivity.\n- **Versatility:** Suitable for both men and women, this scarf can be styled in various ways to complement different outfits, from casual to formal.\n- **Quality:** Reflecting GUCCI's high standards, this scarf is meticulously crafted to provide a luxurious accessory that stands the test of time.\n- **Size Information:** Please refer to the specific size details provided by the retailer or on the official GUCCI website to ensure the best fit.\n- **Care Instructions:** To maintain the scarf's quality, it is recommended to follow the care instructions provided by GUCCI, typically involving dry cleaning or hand washing in cold water.\n- **Authenticity:** Ensure that you purchase this scarf from authorized GUCCI retailers or the official GUCCI website to guarantee authenticity and quality.\n- **Warranty:** As with all GUCCI products, this scarf comes with a warranty that covers manufacturing defects, providing peace of mind for your luxury purchase."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

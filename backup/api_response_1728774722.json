@@ -1,0 +1,25 @@
+{
+  "id": "ea9c9085-06c6-4e7f-a379-1c599e3db4f2",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728774722,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 484,
+    "total_tokens": 637
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Tennis 1977 'Blue Ivory' Sneakers\n**Subtitle (Sottotitolo):** Classic Elegance with a Modern Twist\n**Short Description (Breve Descrizione):** Embodying the essence of Gucci's timeless style, the Tennis 1977 'Blue Ivory' sneakers blend classic elegance with modern flair. Crafted with high-quality materials and adorned with the iconic GG print, these shoes are a statement piece for any fashion enthusiast. Available in size 45.5.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The Gucci Tennis 1977 'Blue Ivory' sneakers are crafted with a unique blend of blue and ivory jacquard denim, showcasing the brand's commitment to quality and style.\n  - The iconic GG print is subtly integrated into the design, adding a touch of sophistication and authenticity.\n\n- **Comfort and Versatility:**\n  - Designed for both comfort and style, these low-top sneakers feature a cushioned insole and a durable outsole, ensuring a comfortable fit for daily wear.\n  - The versatile design makes them suitable for a variety of occasions, from casual outings to more formal events.\n\n- **Brand Heritage:**\n  - The Tennis 1977 collection pays homage to Gucci's rich history and its ability to reinvent classic designs with a modern twist.\n  - Each pair is a testament to Gucci's dedication to craftsmanship and its enduring influence on fashion.\n\n- **Size and Availability:**\n  - Available in size 45.5, ensuring a precise fit for those who value both comfort and style.\n  - Stocked by various retailers, including GOAT, Balaan, StockX, Kicks Crew, and Della Moda, offering a range of purchasing options.\n\n- **Pricing:**\n  - Prices vary depending on the retailer, ranging from $365.00 to $1,341.00, reflecting the value and exclusivity of these luxury sneakers.\n\n- **Additional Details:**\n  - Style number: 606111 2KQ10 4463\n  - The combination of blue and ivory colors creates a striking visual effect, making these sneakers a standout piece in any wardrobe.\n\nExperience the perfect blend of classic elegance and modern style with the Gucci Tennis 1977 'Blue Ivory' sneakers."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "d044d521-ac0a-405c-9a39-41d587507549",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728776490,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 420,
+    "total_tokens": 571
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low 'White Demetra Red'\n**Subtitle (Sottotitolo):** Elegance in Casual Wear\n**Short Description (Breve Descrizione):** The Gucci Basket Low 'White Demetra Red' sneakers, style number 697882 2SHJ0 9090, bring a touch of sophistication to everyday attire with their striking white and red color combination. Crafted in Italy, these shoes are designed to make a statement. Available in size 45.\n\n**Description (Descrizione):**\n\n- **Design and Craftsmanship:**\n  - The Gucci Basket Low 'White Demetra Red' features a bold and stylish design that combines white and red hues, creating a visually appealing contrast.\n  - Made in Italy, these sneakers showcase Gucci's commitment to high-quality craftsmanship and attention to detail.\n  - The upper is constructed from other textile materials, ensuring durability and comfort, while the sole is made from elastic materials for flexibility and resilience.\n\n- **Key Features:**\n  - **Color:** White and red, with a distinctive Demetra red accent.\n  - **Composition:** Upper made from other textile materials, and an elastic sole.\n  - **Manufacturing:** Crafted in Italy, reflecting Gucci's dedication to excellence.\n  - **Style Number:** 697882 2SHJ0 9090.\n  - **Size:** Available in size 45.\n\n- **Wearability:**\n  - These sneakers are designed to add a touch of elegance to casual wear, making them perfect for a variety of occasions.\n  - The low-profile design ensures comfort and versatility, suitable for both everyday activities and more formal events.\n\n- **Additional Information:**\n  - For those looking to purchase, these sneakers are available on various platforms such as GOAT, Kickscrew, and StockX, offering a range of pricing options.\n  - Wholesale inquiries can be directed to Designers Distribution, providing detailed product specifications."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

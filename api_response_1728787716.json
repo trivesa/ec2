@@ -1,0 +1,25 @@
+{
+  "id": "cf2f5e72-a991-4a75-ab2c-711df0173741",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728787716,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 385,
+    "total_tokens": 535
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton '25' Sneakers - 663339 2SH00 9522\n**Subtitle (Sottotitolo):** Luxurious Eco-Friendly Sneakers with Sustainable Materials\n**Short Description (Breve Descrizione):** Embrace the fusion of luxury and sustainability with the Gucci Rhyton '25' sneakers, crafted from eco-friendly Demetra material. This stylish pair combines high-quality design with a commitment to environmental responsibility. Perfect for those who value both fashion and the planet.\n\n**Description (Descrizione):**\n\nExperience the pinnacle of luxury and sustainability with the Gucci Rhyton '25' sneakers, style number 663339 2SH00 9522. Here are some key features that make these shoes stand out:\n\n- **Eco-Friendly Material:** The Rhyton sneaker is primarily made from Demetra, a cutting-edge material that mimics the processes used for tanning, offering a pliable and resilient performance with a supple finish. This eco-friendly material is derived from animal-free raw materials, primarily sourced from sustainable, renewable, and bio-based sources.\n- **Design Elements:** The shoe features a sleek design with a low heel and a rubber sole, ensuring both comfort and durability. The Gucci logo tag adds a touch of authenticity and luxury.\n- **Inclusions:** Each pair comes with a box and dust bag, ensuring that your shoes are protected and preserved.\n- **Size Information:** Available in various sizes, including size 41, to fit different foot shapes and preferences.\n- **Quality Assurance:** These shoes are crafted with the highest quality materials and manufacturing processes, ensuring a long-lasting and stylish addition to your wardrobe.\n- **Sustainable Fashion:** By choosing these eco-friendly sneakers, you are supporting sustainable fashion practices that prioritize environmental responsibility without compromising on style and luxury."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

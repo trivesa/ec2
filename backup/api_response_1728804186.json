@@ -1,0 +1,25 @@
+{
+  "id": "d98116e1-d336-43ec-83b2-d147051099c0",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728804186,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 409,
+    "total_tokens": 556
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Off The Grid Mini Shoulder Bag\n**Subtitle (Sottotitolo):** Sustainable Elegance with ECONYL\u00ae Fabric\n**Short Description (Breve Descrizione):** Embrace eco-friendly luxury with the GUCCI Off The Grid Mini Shoulder Bag, crafted from ECONYL\u00ae fabric. This stylish accessory combines sustainability with timeless GUCCI design. Perfect for those who value both fashion and the environment.\n\n**Description (Descrizione):**\n\n- **Eco-Friendly Material:** The GUCCI Off The Grid Mini Shoulder Bag is made from ECONYL\u00ae, a sustainable nylon fabric that is both durable and environmentally friendly. This choice reflects GUCCI's commitment to reducing its ecological footprint.\n\n- **Design and Style:** This mini shoulder bag features the iconic GUCCI logo and a sleek, modern design that is both versatile and stylish. The compact size makes it ideal for daily use, adding a touch of luxury to any outfit.\n\n- **Practicality:** With a size of 7 inches (18 cm), this bag is perfect for carrying essentials such as a phone, wallet, and keys. The shoulder strap ensures comfortable wear, making it suitable for both casual and formal occasions.\n\n- **Quality and Craftsmanship:** GUCCI is renowned for its exceptional craftsmanship, and this bag is no exception. The attention to detail and high-quality materials ensure that it will remain a cherished accessory for years to come.\n\n- **Product Details:**\n  - **Style Number:** 625599 H9HAN 1000\n  - **Material:** ECONYL\u00ae fabric\n  - **Size:** 7 inches (18 cm)\n  - **Color:** Black\n  - **Logo:** GUCCI logo prominently displayed\n  - **Strap:** Adjustable shoulder strap for comfortable wear\n\nThis GUCCI Off The Grid Mini Shoulder Bag is a testament to the brand's dedication to sustainability and style, making it a must-have for those who value both luxury and the environment."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

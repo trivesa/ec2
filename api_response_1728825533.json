@@ -1,0 +1,25 @@
+{
+  "id": "564f302f-9b93-4c1c-ae67-f7e5d496064e",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728825532,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 436,
+    "total_tokens": 586
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Basket High-Top Sneakers 661310 2SH80 9062\n**Subtitle (Sottotitolo):** Elevate Your Style with GUCCI's Iconic Basket High-Top Sneakers\n**Short Description (Breve Descrizione):** Experience the epitome of luxury footwear with GUCCI's Basket High-Top Sneakers. Crafted with meticulous attention to detail, these sneakers feature a vibrant multi-color design that embodies the brand's signature style. Perfect for making a statement, these shoes are a must-have for fashion enthusiasts.\n\n**Description (Descrizione):**\n\n- **Style Number:** 661310 2SH80 9062\n- **Size:** 35\n- **Design Overview:** The GUCCI Basket High-Top Sneakers are a masterpiece of high-end fashion, blending comfort and style in a unique way. The shoes feature a bold, multi-color design with Demetra green, purple, orange, and blue accents on a white base, creating a visually striking effect.\n- **Materials:** High-quality materials ensure durability and a luxurious feel, making these sneakers perfect for both casual and formal occasions.\n- **Comfort:** Designed with comfort in mind, these high-top sneakers provide excellent support and cushioning, ensuring a comfortable fit throughout the day.\n- **Brand Authenticity:** As a genuine GUCCI product, these sneakers are a testament to the brand's commitment to excellence and craftsmanship.\n- **Key Features:**\n  - High-top design for added support and style\n  - Multi-color Demetra green, purple, orange, and blue accents on a white base\n  - High-quality materials for durability and comfort\n  - Perfect for making a fashion statement\n  - Genuine GUCCI product, ensuring authenticity and quality\n- **Retail Price:** $990\n- **Return Policy:** Varies by retailer, with options ranging from 3 to 90 days depending on the source.\n- **Additional Information:** These sneakers are available from various retailers, including StockX, which offers a 90-day return policy and ensures authenticity through their StockX Verified process."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

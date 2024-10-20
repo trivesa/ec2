@@ -1,0 +1,25 @@
+{
+  "id": "7ecea345-9dda-404e-b730-8ce6b89facba",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728803384,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 367,
+    "total_tokens": 514
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Square Muffler Scarf\n**Subtitle (Sottotitolo):** Luxurious Wool and Silk Blend Scarf with Iconic GG Pattern\n**Short Description (Breve Descrizione):** This GUCCI GG Jacquard Square Muffler Scarf is a stunning accessory that combines luxury and style. Made from a blend of 80% wool and 20% silk, it features the iconic GG pattern in a sophisticated dark gray color. Perfect for adding a touch of elegance to any outfit.\n\n**Description (Descrizione):**\n\n- **Style Number:** 281942 3G704 1062\n- **Material:** 80% wool and 20% silk blend for a soft, luxurious feel\n- **Size:** 140 cm x 140 cm, ideal for wrapping around the neck or using as a stylish shawl\n- **Color:** Dark gray, providing a versatile and sophisticated look\n- **Pattern:** Iconic GG pattern, a hallmark of GUCCI's timeless design\n- **Authenticity:** 100% authentic GUCCI product, ensuring high-quality craftsmanship and materials\n- **Origin:** Made in Italy, reflecting the brand's commitment to excellence and tradition\n- **Condition:** New with tags, ensuring the scarf is in pristine condition\n- **Packaging:** Includes original GUCCI tag and paper bag, adding to the luxury experience\n- **Care Instructions:** To maintain the scarf's quality, it is recommended to follow the care instructions provided by GUCCI\n- **Perfect For:** Adding a touch of luxury to any outfit, whether for everyday wear or special occasions\n- **Brand Heritage:** GUCCI is renowned for its innovative designs and exceptional craftsmanship, making this scarf a valuable addition to any wardrobe."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

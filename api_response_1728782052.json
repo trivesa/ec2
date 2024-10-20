@@ -1,0 +1,25 @@
+{
+  "id": "34bfff80-8dc4-4965-9c91-a87eb88bbc77",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728782052,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 367,
+    "total_tokens": 519
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Micro Sima Driving Shoes\n**Subtitle (Sottotitolo):** Elegant and Versatile Driving Shoes for Men\n**Short Description (Breve Descrizione):** The GUCCI Micro Sima Driving Shoes, style number 466904 A9LF0 1000, are a testament to GUCCI's commitment to luxury and craftsmanship. These shoes are designed for comfort and style, perfect for both casual and formal occasions. Available in size 42.5, they offer a sleek and sophisticated look.\n\n**Description (Descrizione):**\n\nThe GUCCI Micro Sima Driving Shoes are a masterpiece of Italian craftsmanship, blending elegance with versatility. Here are some key features:\n\n- **Style Number:** 466904 A9LF0 1000\n- **Size:** 42.5\n- **Material:** High-quality leather, ensuring durability and a luxurious feel.\n- **Design:** Sleek and sophisticated, with a minimalist aesthetic that complements a variety of outfits.\n- **Comfort:** Designed for comfort, these shoes are perfect for driving and everyday wear.\n- **Versatility:** Suitable for both casual and formal occasions, making them a versatile addition to any wardrobe.\n- **Craftsmanship:** Made in Italy, reflecting GUCCI's commitment to exceptional craftsmanship and attention to detail.\n- **Additional Features:**\n  - **Leather Sole:** Provides a smooth and comfortable walking experience.\n  - **Flat Heel:** Adds to the overall comfort and practicality of the shoes.\n  - **Elegant Finish:** The black leather finish gives the shoes a timeless and sophisticated look.\n\nThese GUCCI Micro Sima Driving Shoes are a perfect blend of style, comfort, and craftsmanship, making them an ideal choice for those who value luxury and versatility in their footwear."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

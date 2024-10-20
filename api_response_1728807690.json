@@ -1,0 +1,25 @@
+{
+  "id": "b489d244-2554-4a86-bd30-4a7d54e4584e",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728807690,
+  "usage": {
+    "prompt_tokens": 504,
+    "completion_tokens": 865,
+    "total_tokens": 1369
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Here is the information for the GUCCI bag with style number 510314 CAO0G 1226:\n\n**Mandatory Fields:**\n\n1. **Object Category (Categoria Oggetto):** Handbags\n2. **Store Category (Categoria del Negozio):** Women's Bags\n3. **Department (Reparto):** Women's Accessories\n4. **Brand (Marca):** Gucci\n5. **Color (Colore esterno):** Gray\n6. **Style (Stile):** Shoulder Bag\n7. **Material (Materiale esterno):** Dollar Calf Leather\n8. **Closure Type (Chiusura):** Clip Button Closure\n9. **Lining Material (Materiale della fodera):** Lined Interior\n10. **Hardware Material (Materiale delle finiture):** Metal\n11. **Product Line (Linea prodotto):** Interlocking Bag\n12. **Pattern (Fantasia):** N/A\n13. **Condition of the Item (Condizione dell'oggetto):** New\n14. **Price (Prezzo):** \u20ac1,690.00 (as per)\n15. **Shipping Rule (Regola sulla spedizione):** Free shipping within 2-3 working days (as per)\n\n**Optional Fields:**\n\n1. **Custom Label (Etichetta personalizzata - SKU):** 510314 CAO0G 1226\n2. **EAN (EAN):** N/A\n3. **MPN (MPN):** N/A\n4. **Handle Drop (Altezza del manico):** N/A\n5. **Handle/Strap Drop (Lunghezza della tracolla):** Chain shoulder strap with leather insert\n6. **Size (Dimensioni):** Width 19cm, Height 11.5cm, Depth 4.5cm (as per)\n7. **Features (Caratteristiche):** One compartment, One inside pocket with zip closure, 18 card holder spaces\n8. **Vintage (Vintage):** N/A\n9. **Unit of Measurement (Unit\u00e0 di misura):** Centimeters\n10. **Accents (Elementi decorativi):** Metal GUCCI logo\n11. **Theme (Tema):** N/A\n12. **Occasion (Occasione):** N/A\n13. **Year Manufactured (Anno di fabbricazione):** N/A\n14. **Product Variants (Varianti di prodotto):** N/A\n15. **Payment Options and Offers (Regole di pagamento):** N/A\n16. **Shipping (Regola sulla spedizione):** Free shipping within 2-3 working days (as per)\n17. **Object Warnings (Avvertenze per l'oggetto):** N/A\n18. **Country/Region of Manufacture (Paese di fabbricazione):** Italy\n19. **Lining Color (Colore della fodera):** N/A\n20. **Handle/Strap Color (Colore del manico, tracolla):** N/A\n21. **Trim Color (Colore delle rifiniture):** N/A\n22. **Fabric Type (Tessuto):** N/A\n23. **Personalized (Personalizzato):** N/A\n24. **Accessories (Accessori):** N/A\n25. **Bag Width (Larghezza della borsa):** 19cm\n26. **Bag Height (Altezza della borsa):** 11.5cm\n27. **Bag Depth (Profondit\u00e0 della borsa):** 4.5cm\n28. **Bag Shape (Forma):** N/A\n29. **Decorative Elements (Elementi decorativi):** Metal GUCCI logo\n30. **Finish (Finitura):** N/A\n31. **Country of Manufacture (Paese di fabbricazione):** Italy\n\nPlease note that some fields may not be applicable or available for this specific product."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

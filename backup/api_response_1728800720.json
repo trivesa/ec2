@@ -1,0 +1,25 @@
+{
+  "id": "fc9049f9-f8a2-4c98-b77a-ede5fb425681",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728800720,
+  "usage": {
+    "prompt_tokens": 141,
+    "completion_tokens": 493,
+    "total_tokens": 634
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI G-Timeless 38MM Unisex Watch YA1264077\n**Subtitle (Sottotitolo):** Elegant Brown Stripe Motif with Yellow Gold Accents\n**Short Description (Breve Descrizione):** The GUCCI G-Timeless YA1264077 watch combines classic elegance with modern flair, featuring a 38mm stainless steel case, brown stripe motif dial, and a brown leather strap. This unisex watch is powered by a quartz movement and protected by scratch-resistant sapphire crystal. It is water-resistant up to 50 meters.\n\n**Description (Descrizione):**\n\n- **Elegant Design:** The GUCCI G-Timeless YA1264077 watch boasts a 38mm stainless steel case, perfectly suited for both men and women. The case is complemented by a fixed yellow gold PVD bezel, adding a touch of luxury to its overall design.\n\n- **Unique Dial:** The watch features a distinctive brown stripe motif dial, adorned with yellow gold-tone hands and pyramid markers at the 3, 6, and 9 o'clock positions. This unique design element adds a sophisticated touch to the watch's classic aesthetic.\n\n- **Leather Strap:** The watch is presented on a brown leather strap with a striped pattern, matching the dial's motif. The strap is secured with a tang clasp, ensuring a comfortable and secure fit on the wrist.\n\n- **Quartz Movement:** Powered by a reliable quartz movement, this watch provides precise and accurate timekeeping. The movement is protected by a solid case back, ensuring durability and longevity.\n\n- **Sapphire Crystal:** The watch face is protected by scratch-resistant sapphire crystal, providing clear visibility and protection against scratches and wear.\n\n- **Water Resistance:** The watch is water-resistant up to 50 meters (165 feet), making it suitable for everyday wear, including occasional exposure to water.\n\n- **Authenticity and Warranty:** This watch is 100% authentic and comes with a 2-year warranty, ensuring peace of mind for the owner.\n\n- **Swiss Made:** The watch is proudly Swiss-made, reflecting GUCCI's commitment to high-quality craftsmanship and precision engineering.\n\n- **G-Timeless Collection:** The YA1264077 is part of the G-Timeless collection, known for its timeless designs that blend classic elegance with modern style. This watch is a perfect addition to any wardrobe, offering versatility and sophistication."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

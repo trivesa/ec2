@@ -1,0 +1,25 @@
+{
+  "id": "b57cd637-cb80-4300-a1f7-cb481f87f43e",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728777078,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 455,
+    "total_tokens": 606
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Rhyton Leather Sneaker 'Vintage Logo'\n**Subtitle (Sottotitolo):** Timeless Elegance in Every Step\n**Short Description (Breve Descrizione):** Embrace the essence of vintage luxury with the Gucci Rhyton Leather Sneaker 'Vintage Logo', featuring a classic design that exudes timeless elegance. Crafted from high-quality leather, this sneaker is adorned with Gucci's iconic vintage logo, making it a statement piece for any fashion enthusiast. Available in size 44.5, it offers a perfect blend of comfort and style.\n\n**Description (Descrizione):**\n\n- **Craftsmanship and Material:**\n  - The Gucci Rhyton Leather Sneaker 'Vintage Logo' is meticulously crafted from premium leather, ensuring durability and a luxurious feel.\n  - The attention to detail in its construction reflects Gucci's commitment to excellence in craftsmanship.\n\n- **Design and Aesthetic:**\n  - This sneaker features a classic design with a bold, vintage Gucci logo that adds a touch of sophistication to any outfit.\n  - The ivory color scheme with green and yellow accents provides a versatile and stylish look that can be paired with a variety of ensembles.\n\n- **Comfort and Fit:**\n  - Designed for comfort, the Gucci Rhyton Leather Sneaker 'Vintage Logo' offers a snug fit with size 44.5, ensuring that you can wear it all day without compromise.\n  - The leather material provides breathability and flexibility, making it ideal for daily wear.\n\n- **Authenticity and Packaging:**\n  - This sneaker comes with an original dustbag and legit certificate, guaranteeing its authenticity and adding to its collectible value.\n  - The packaging reflects Gucci's attention to detail and commitment to luxury.\n\n- **Additional Information:**\n  - **Product Code:** 500878 DRW00 9522\n  - **Size:** 44.5\n  - **Material:** Leather\n  - **Color:** Ivory / Green / Yellow\n  - **Condition:** New (unless specified otherwise)\n  - **Shipping:** Standard shipping times apply. Please refer to our shipping policy for more details."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

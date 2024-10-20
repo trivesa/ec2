@@ -1,0 +1,25 @@
+{
+  "id": "0ec4f9f9-6ba4-4f2c-8300-595ec6bac3c1",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728786988,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 467,
+    "total_tokens": 617
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci GG Rhyton 'Beige White Yellow' Sneakers\n**Subtitle (Sottotitolo):** Iconic Luxury Sneakers with Distinctive GG Monogram\n**Short Description (Breve Descrizione):** The Gucci GG Rhyton 'Beige White Yellow' is a stylish and luxurious sneaker featuring a mix of fabrics with the iconic GG monogram, chunky construction, and signature branding. Part of the Spring/Summer 2020 collection, this shoe combines elegance and comfort. Available in size 41.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The Gucci GG Rhyton 'Beige White Yellow' features an upper constructed with a mix of fabrics, including white and navy mini GG jacquard fabric, Beige/Ebony Original GG canvas, and Beige/Blue GG Supreme canvas.\n  - Yellow leather trims and reflective fabric add a touch of sophistication and modernity.\n  - The shoe includes \"GUCCI\" branding on the tongue and insole, along with beige laces for a cohesive look.\n\n- **Construction:**\n  - A chunky sole unit comprising a Sail midsole with \"GUCCI\" christened at the heel and a red rubber outsole completes the design.\n  - The chunky construction provides both comfort and a bold fashion statement.\n\n- **Key Features:**\n  - Iconic GG monogram pattern on various fabrics.\n  - Signature \"GUCCI\" branding on the tongue and insole.\n  - Beige laces and yellow leather trims for added style.\n  - Chunky sole unit with Sail midsole and red rubber outsole.\n\n- **Product Details:**\n  - Style Number: 619891 99WF0 4370.\n  - Size: 41.\n  - Part of the Spring/Summer 2020 collection.\n  - Original retail price: $750.\n\n- **Additional Information:**\n  - This shoe is available on various online platforms, including Flight Club and StockX, ensuring authenticity and quality.\n  - The Gucci GG Rhyton 'Beige White Yellow' is a sought-after fashion sneaker that combines luxury and style, making it a must-have for fashion enthusiasts."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

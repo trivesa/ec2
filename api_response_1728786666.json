@@ -1,0 +1,25 @@
+{
+  "id": "8cb60cc5-82f4-47a9-afd9-5589c27ed16c",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728786666,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 396,
+    "total_tokens": 546
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Micro Sima Driving Shoes\n**Subtitle (Sottotitolo):** Luxurious Black Leather Driving Shoes for Men\n**Short Description (Breve Descrizione):** Elevate your style with the GUCCI Micro Sima Driving Shoes, crafted from premium black leather. These sleek and sophisticated shoes are perfect for casual yet elegant occasions. With a focus on comfort and luxury, they embody the essence of GUCCI's high-end fashion.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the GUCCI Micro Sima Driving Shoes, style number 466904 A9LF0 1000. Here are the key features that make these shoes stand out:\n\n- **Premium Material:** Made from high-quality black leather, ensuring durability and a luxurious feel.\n- **Sleek Design:** The Micro Sima Driving Shoes feature a slim and streamlined silhouette, perfect for adding a touch of sophistication to any outfit.\n- **Comfortable Fit:** Designed for comfort, these shoes are ideal for daily wear, whether you're driving or just looking for a stylish slip-on option.\n- **Size Information:** Available in size 41, ensuring a precise fit for those who demand the best.\n- **Brand Authenticity:** Genuine GUCCI product, guaranteeing the highest standards of craftsmanship and quality.\n- **Versatility:** Suitable for a variety of occasions, from casual gatherings to more formal events, these shoes are versatile and stylish.\n- **Luxury Branding:** The GUCCI logo and signature details, such as the iconic Horsebit, add a touch of luxury and authenticity to the design.\n- **Quality Construction:** Built to last, these shoes feature a durable leather sole and meticulous craftsmanship, ensuring they remain a staple in your wardrobe for years to come.\n\nEmbrace the luxury and sophistication of GUCCI with the Micro Sima Driving Shoes, a perfect blend of style, comfort, and high-quality craftsmanship."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

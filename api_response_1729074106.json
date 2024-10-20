@@ -1,0 +1,25 @@
+{
+  "id": "734254da-856b-4c17-b5bb-d3821902193d",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729074106,
+  "usage": {
+    "prompt_tokens": 628,
+    "completion_tokens": 740,
+    "total_tokens": 1368
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci GG Marmont Thin Belt 409417-FAA6B-8048\n**Subtitle (Sottotitolo):** Authentic Gucci Women's Belt with Double G Buckle\n**Short Description (Breve Descrizione):** New with tags, Gucci GG Marmont Thin Belt featuring a 20mm wide leather strap and iconic Double G buckle.\n**Description (Descrizione):** This Gucci GG Marmont Thin Belt is a stylish accessory that adds a touch of luxury to any outfit. Crafted from high-quality leather, the 20mm wide strap is adorned with the iconic Double G buckle, a hallmark of Gucci's sophisticated design. The belt is new with tags and comes in a size 100, perfect for women looking to elevate their wardrobe with a timeless piece. The dimensions are 20cm in width and 200cm in length, ensuring a comfortable and versatile fit.\n\n**Object Category (Categoria Oggetto):** Women's Accessories\n**Store Category (Categoria del Negozio):** Luxury Belts\n**Brand (Marca):** Gucci\n**Cut (Taglia):** 100\n**Department (Reparto):** Women's Accessories\n**Type (Tipo):** Belt\n**Style (Stile):** GG Marmont Thin Belt\n**Condition of the Item (Condizione dell'oggetto):** New with tags\n**Price (Prezzo):** N/A\n**Shipping Rule (Regola sulla spedizione):** N/A\n**MPN (MPN):** 409417-FAA6B-8048\n**Custom Label (Etichetta personalizzata - SKU):** N/A\n**EAN (EAN):** N/A\n**Material (Materiale):** Leather\n**Color (Colore):** N/A (Specific color not provided)\n**Tissue (Tessuto):** Leather\n**Size Type (Tipo di taglia):** Standard\n**Fit (Vestibilit\u00e0):** N/A\n**Sleeve Length (Lunghezza della manica):** N/A\n**Unit of Measurement (Unit\u00e0 di misura):** Centimeters\n**Character (Personaggio):** N/A\n**Season (Stagione):** N/A\n**Vintage (Vintage):** No\n**Neckline (Scollatura):** N/A\n**Theme (Tema):** Luxury\n**Activity (Attivit\u00e0):** N/A\n**Decorative Elements (Elementi decorativi):** Double G buckle\n**Characteristics (Caratteristiche):** High-quality leather, iconic design\n**Occasion (Occasione):** Everyday, formal\n**Knitting Style (Stile lavorazione a maglia):** N/A\n**Graphic Printing (Stampa grafica):** N/A\n**Garment Care (Cura dell'indumento):** N/A\n**Country of Manufacture (Paese di fabbricazione):** N/A\n**Fabric Type (Tipo di tessuto):** Leather\n**Personalized (Personalizzato):** No\n**Year Manufactured (Anno di fabbricazione):** N/A\n**Handmade (Fatto a mano):** N/A\n**Pattern (Fantasia):** N/A\n**Closure Type (Tipo di chiusura):** Buckle\n**Accents (Dettagli decorativi):** Double G buckle\n**Product Line (Linea di prodotto):** GG Marmont"
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "d2e22b13-624e-46d7-b3c4-ea6763705435",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728803483,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 357,
+    "total_tokens": 504
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Square Muffler Scarf\n**Subtitle (Sottotitolo):** Luxurious Wool and Silk Blend Scarf in Anthracite Grey\n**Short Description (Breve Descrizione):** This GUCCI GG Jacquard Square Muffler Scarf is a sophisticated accessory made from a luxurious blend of wool and silk. Featuring the iconic GG pattern in anthracite grey, it adds a touch of elegance to any outfit. Perfect for both casual and formal occasions.\n\n**Description (Descrizione):**\n\n- **Style Number:** 281942 3G704 1062\n- **Material:** 80% wool, 20% silk\n- **Size:** 140 cm x 140 cm\n- **Color:** Anthracite grey\n- **Pattern:** Iconic GG Jacquard pattern\n- **Origin:** Made in Italy\n- **Condition:** New with tags\n- **Additional Features:**\n  - **Luxurious Blend:** The combination of wool and silk provides warmth and a soft, luxurious feel.\n  - **Versatile Design:** Suitable for both casual and formal wear, making it a versatile addition to your wardrobe.\n  - **Authenticity:** 100% authentic GUCCI product, ensuring the highest quality and craftsmanship.\n  - **Packaging:** Includes original GUCCI tags and packaging for added authenticity and luxury.\n  - **Care Instructions:** To maintain the quality and longevity of the scarf, follow the care instructions provided by GUCCI.\n\nThis GUCCI GG Jacquard Square Muffler Scarf is a timeless piece that embodies the brand's commitment to luxury and style. Its classic design and high-quality materials make it a valuable addition to any fashion collection."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

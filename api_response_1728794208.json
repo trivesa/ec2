@@ -1,0 +1,25 @@
+{
+  "id": "fd90b5e0-2cac-465f-bd8b-043169c29f20",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728794208,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 441,
+    "total_tokens": 592
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI x ADIDAS ZX 8000 Low-Top Sneakers\n**Subtitle (Sottotitolo):** Exclusive Pink Edition - 722212 AAA9E 3942\n**Short Description (Breve Descrizione):** Elevate your style with the GUCCI x ADIDAS ZX 8000, a unique fusion of luxury and sportswear. This low-top sneaker features a striking pink and green color scheme, perfect for making a statement. Crafted with high-quality materials and meticulous attention to detail, these shoes are a true masterpiece of fashion.\n\n**Description (Descrizione):**\n\nExperience the ultimate in luxury footwear with the GUCCI x ADIDAS ZX 8000, a collaborative masterpiece that combines the best of both worlds. Here are some key features:\n\n- **Unique Design:** The ZX 8000 boasts a bold pink and green color palette, creating a visually stunning effect that is sure to turn heads.\n- **High-Quality Materials:** Crafted with premium materials, these shoes offer durability and comfort, ensuring they remain a staple in your wardrobe for years to come.\n- **Luxury Branding:** The GUCCI x ADIDAS collaboration is a testament to the fusion of high-end fashion and sportswear, making these shoes a must-have for fashion enthusiasts.\n- **Size Information:** Available in size 36.5, ensuring a perfect fit for those seeking a stylish and comfortable shoe.\n- **Style Number:** 722212 AAA9E 3942, a unique identifier for this exclusive edition.\n- **Brand Heritage:** GUCCI and ADIDAS, two iconic brands, come together to create a shoe that embodies the essence of luxury and performance.\n- **Versatility:** Perfect for casual outings, fashion events, or as a statement piece in your everyday look.\n- **Quality Assurance:** Each pair is carefully crafted to meet the high standards of both GUCCI and ADIDAS, ensuring a product that is both stylish and durable.\n\nEmbrace the fusion of luxury and sportswear with the GUCCI x ADIDAS ZX 8000, a true masterpiece in footwear design."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

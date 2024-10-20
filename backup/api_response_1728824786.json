@@ -1,0 +1,25 @@
+{
+  "id": "298da723-f34a-4d0b-8b92-49fcf3025694",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728824786,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 327,
+    "total_tokens": 477
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI RHYTON SNEAKERS 03\n**Subtitle (Sottotitolo):** Classic Off-White Leather Sneakers with '90s Vibes\n**Short Description (Breve Descrizione):** Embodying the essence of '90s hip-hop culture, the GUCCI RHYTON SNEAKERS 03 are a timeless addition to any wardrobe. Crafted from Italian handcrafted leather in classic off-white, these sneakers offer a sporty yet sophisticated look. Perfect for those who appreciate vintage style with a modern twist.\n\n**Description (Descrizione):**\n\n- **Style Number:** 552093 A9L00 9522\n- **Size:** 35\n- **Material:** Italian handcrafted leather in classic off-white\n- **Design:** Classic silhouette with clean construction, embodying '90s vibes and hip-hop scene\n- **Features:**\n  - Sporty yet sophisticated look\n  - Iconic 'Mouth Print' design\n  - High-quality leather for durability and comfort\n  - Perfect for casual and stylish outfits\n- **Additional Information:**\n  - Part of Gucci's line of sneakers that capture the essence of '90s fashion\n  - Ideal for those who appreciate vintage style with a modern twist\n  - A versatile choice for everyday wear\n\nThese GUCCI RHYTON SNEAKERS 03 are a must-have for anyone looking to add a touch of luxury and nostalgia to their footwear collection. With their classic design and high-quality materials, they are sure to make a statement."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

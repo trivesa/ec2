@@ -1,0 +1,25 @@
+{
+  "id": "8982e513-a081-407c-97bb-ad1d6cb26699",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728795305,
+  "usage": {
+    "prompt_tokens": 151,
+    "completion_tokens": 361,
+    "total_tokens": 512
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Basket Low 'White Demetra Green' Sneakers\n**Subtitle (Sottotitolo):** Luxurious Italian Craftsmanship in a Timeless Design\n**Short Description (Breve Descrizione):** Elevate your style with the Gucci Basket Low 'White Demetra Green' sneakers, featuring a classic design with a modern twist. Crafted in Italy, these shoes showcase Gucci's commitment to luxury and quality. Perfect for those who appreciate timeless fashion.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury footwear with the Gucci Basket Low 'White Demetra Green' sneakers. Here are some key features that make these shoes stand out:\n\n- **Product Code:** 698785 2SHG0 9089\n- **Size:** 45\n- **Color:** White Demetra Green\n- **Made in:** Italy\n- **Composition:** Upper made from other textile materials, with an EL sole\n- **Design:** Classic low-top design with a modern twist, featuring Gucci's iconic branding\n- **Quality:** High-quality materials and craftsmanship ensure durability and comfort\n- **Style:** Versatile and stylish, perfect for casual and formal occasions\n- **Brand Heritage:** Gucci's rich history and commitment to luxury are evident in every detail\n- **Return Policy:** Available with various return policies depending on the retailer, such as 90-day returns and 7-day returns\n\nThese sneakers are not just a fashion statement but a testament to Gucci's dedication to excellence. Whether you're looking for a stylish addition to your wardrobe or a luxurious gift, the Gucci Basket Low 'White Demetra Green' sneakers are an ideal choice."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

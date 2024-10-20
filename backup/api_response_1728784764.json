@@ -1,0 +1,25 @@
+{
+  "id": "e4e4c964-4249-41a4-adb0-adf16252a651",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728784764,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 436,
+    "total_tokens": 589
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci Tennis 1977 Low Top Sneakers in Blue Ivory\n**Subtitle (Sottotitolo):** Classic Elegance Meets Contemporary Style\n**Short Description (Breve Descrizione):** Embrace the timeless charm of Gucci's Tennis 1977 sneakers, crafted in a striking blue ivory colorway. This low-top design combines classic elegance with modern flair, perfect for those who appreciate both style and comfort. Available in size 41.5.\n\n**Description (Descrizione):**\n\n- **Design and Materials:**\n  - The Gucci Tennis 1977 sneakers are made from high-quality jacquard denim, featuring the iconic GG print in a blue ivory color scheme.\n  - The low-top design ensures a versatile and comfortable fit, suitable for both casual and more formal occasions.\n\n- **Key Features:**\n  - **Style Number:** 606111 2KQ10 4463\n  - **Size:** 41.5\n  - **Colorway:** Blue Ivory\n  - **Material:** Jacquard Denim with GG Print\n  - **Design:** Low Top Sneakers\n\n- **Additional Details:**\n  - The sneakers are adorned with the signature Gucci logo, adding a touch of luxury and authenticity.\n  - The blue ivory colorway offers a unique blend of classic and contemporary style, making these sneakers a standout piece in any wardrobe.\n\n- **Wearability:**\n  - Perfect for casual outings, these sneakers can also be dressed up for more formal events, showcasing their versatility.\n  - The comfortable design ensures that you can wear them for extended periods without compromising on style.\n\n- **Authenticity:**\n  - These sneakers are genuine Gucci products, ensuring the highest quality and craftsmanship.\n  - The style number 606111 2KQ10 4463 guarantees authenticity and can be verified through official Gucci channels.\n\nExperience the perfect blend of style and comfort with Gucci's Tennis 1977 sneakers in blue ivory. Whether you're looking for a casual or more formal look, these sneakers are sure to make a statement."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

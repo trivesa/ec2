@@ -1,0 +1,25 @@
+{
+  "id": "f11fd9a7-13c2-4df4-96cd-303c3c276476",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728295016,
+  "usage": {
+    "prompt_tokens": 142,
+    "completion_tokens": 423,
+    "total_tokens": 565
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI G-Timeless 38mm Brown Dial Stripe Motif Leather Unisex Watch YA1264077\n\n**Subtitle (Sottotitolo):** Elegant Unisex Timepiece with Striped Leather Strap\n\n**Short Description (Breve Descrizione):** The GUCCI G-Timeless YA1264077 is a sophisticated unisex watch that combines elegance with a playful touch. Featuring a 38mm stainless steel case with a brown dial adorned with a stripe motif, this watch is perfect for both men and women. The multi-colored leather strap adds a vibrant touch to this stylish timepiece.\n\n**Description (Descrizione):**\n\n- **Case and Dial:**\n  - **Case Material:** Brushed/polished yellow gold-toned stainless steel\n  - **Case Size:** 38mm diameter, 8mm thickness\n  - **Dial:** Brown with a stripe motif, featuring index markings and yellow gold-tone hands\n  - **Crystal:** Scratch-resistant sapphire crystal\n\n- **Strap and Buckle:**\n  - **Strap Material:** Multi-colored leather with a striped pattern\n  - **Strap Width:** 19mm\n  - **Buckle Type:** Tang type buckle made of yellow gold-toned steel\n\n- **Movement and Functionality:**\n  - **Movement Type:** Quartz (battery-powered)\n  - **Functions:** Hour and minute display\n  - **Water Resistance:** 50 meters (5 ATM)\n\n- **Additional Features:**\n  - **Bezel:** Fixed yellow gold PVD\n  - **Crown:** Pull/push with screw-down mechanism\n  - **Case Back:** Solid\n  - **Origin:** Swiss Made\n\n- **Warranty and Authenticity:**\n  - **Warranty:** 2-year manufacturer\u2019s warranty\n  - **Authenticity:** 100% authentic GUCCI product\n\nThis GUCCI G-Timeless watch is a versatile accessory that can be worn on various occasions, making it a perfect choice for those who appreciate timeless elegance with a modern twist."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

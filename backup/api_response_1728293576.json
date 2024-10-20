@@ -1,0 +1,25 @@
+{
+  "id": "3c861053-3b68-466c-99fb-4cdf0713fea9",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728293576,
+  "usage": {
+    "prompt_tokens": 142,
+    "completion_tokens": 471,
+    "total_tokens": 613
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci G-Timeless YA1264077 - Elegant Unisex Watch with Brown Stripe Motif\n\n**Subtitle (Sottotitolo):** A Timeless Piece of Luxury with a Unique Brown Stripe Design\n\n**Short Description (Breve Descrizione):** The Gucci G-Timeless YA1264077 is a sophisticated unisex watch that combines elegance with a unique brown stripe motif on its dial and leather strap. Crafted from stainless steel and adorned with yellow gold-tone accents, this watch is a testament to Gucci's commitment to luxury and style. Perfect for both men and women, it offers a versatile and timeless design.\n\n**Description (Descrizione):**\n\n- **Case and Movement:**\n  - **Case Material:** Stainless Steel\n  - **Case Size:** 38 mm\n  - **Case Thickness:** 9 mm\n  - **Case Shape:** Round\n  - **Movement:** Quartz\n  - **Case Back:** Solid\n\n- **Dial and Hands:**\n  - **Dial Color:** Brown with a distinctive stripe motif\n  - **Dial Type:** Analog\n  - **Hands:** Yellow gold-tone\n  - **Second Markers:** Pyramid markers at the 3, 6, and 9 o'clock positions\n\n- **Crystal and Bezel:**\n  - **Crystal:** Scratch-resistant sapphire\n  - **Bezel:** Fixed yellow gold PVD\n\n- **Band and Clasp:**\n  - **Band Material:** Leather\n  - **Band Type:** Strap\n  - **Band Color:** Brown with stripe motif\n  - **Band Width:** 19 mm\n  - **Clasp:** Tang\n\n- **Water Resistance and Warranty:**\n  - **Water Resistance:** 50 meters / 165 feet\n  - **Warranty:** 2-year international warranty\n\n- **Additional Features:**\n  - **Functions:** Hour, Minute\n  - **Origin:** Swiss Made\n  - **Gender:** Unisex, suitable for both men and women\n\nThis Gucci G-Timeless YA1264077 watch is a perfect blend of luxury and style, making it an ideal accessory for any occasion. Its unique design and high-quality materials ensure that it stands out as a statement piece in any collection."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

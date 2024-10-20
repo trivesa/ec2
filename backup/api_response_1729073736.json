@@ -1,0 +1,25 @@
+{
+  "id": "75f0c847-24ff-43e8-b164-c18236903c98",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1729073736,
+  "usage": {
+    "prompt_tokens": 616,
+    "completion_tokens": 753,
+    "total_tokens": 1369
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** Gucci GG Diamond Check Logo Scarf\n**Subtitle (Sottotitolo):** Authentic Gucci Scarf in Red and Black\n**Short Description (Breve Descrizione):** This luxurious Gucci scarf features a striking red and black GG diamond check logo pattern, crafted from high-quality wool. Perfect for adding a touch of elegance to any outfit.\n**Description (Descrizione):** This authentic Gucci scarf is a stunning accessory that embodies the brand's signature style and sophistication. Made from 100% wool, it boasts a vibrant red and black GG diamond check logo pattern that adds a pop of color to any ensemble. The scarf measures 240x35cm, making it versatile enough to be worn as a stylish accent or a cozy layering piece. With its classic design and luxurious material, this Gucci scarf is a timeless addition to any wardrobe.\n\n**Object Category (Categoria Oggetto):** Scarf\n**Store Category (Categoria del Negozio):** Men's Accessories\n**Brand (Marca):** Gucci\n**Cut (Taglia):** One Size\n**Department (Reparto):** Men's\n**Type (Tipo):** Scarf\n**Style (Stile):** GG Diamond Check Logo\n**Condition of the Item (Condizione dell'oggetto):** New with tags\n**Price (Prezzo):** $335.70 (as per frmoda.com)\n**Shipping Rule (Regola sulla spedizione):** N/A\n**MPN (MPN):** 644365 4G718 6468\n**Custom Label (Etichetta personalizzata - SKU):** N/A\n**EAN (EAN):** N/A\n**Material (Materiale):** Wool\n**Color (Colore):** Red and Black\n**Tissue (Tessuto):** Wool\n**Size Type (Tipo di taglia):** One Size\n**Fit (Vestibilit\u00e0):** N/A\n**Sleeve Length (Lunghezza della manica):** N/A\n**Unit of Measurement (Unit\u00e0 di misura):** cm\n**Character (Personaggio):** N/A\n**Season (Stagione):** N/A\n**Vintage (Vintage):** No\n**Neckline (Scollatura):** N/A\n**Theme (Tema):** Luxury\n**Activity (Attivit\u00e0):** N/A\n**Decorative Elements (Elementi decorativi):** GG Diamond Check Logo\n**Characteristics (Caratteristiche):** Luxurious, high-quality wool, classic design\n**Occasion (Occasione):** Formal, Casual\n**Knitting Style (Stile lavorazione a maglia):** N/A\n**Graphic Printing (Stampa grafica):** N/A\n**Garment Care (Cura dell'indumento):** N/A\n**Country of Manufacture (Paese di fabbricazione):** N/A\n**Fabric Type (Tipo di tessuto):** Wool\n**Personalized (Personalizzato):** No\n**Year Manufactured (Anno di fabbricazione):** N/A\n**Handmade (Fatto a mano):** No\n**Pattern (Fantasia):** GG Diamond Check Logo\n**Closure Type (Tipo di chiusura):** N/A\n**Accents (Dettagli decorativi):** Fringe\n**Product Line (Linea di prodotto):** Gucci Accessories\n\nNote: Some fields may not be applicable or have specific information available, hence marked as 'N/A'."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

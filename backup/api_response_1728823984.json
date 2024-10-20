@@ -1,0 +1,25 @@
+{
+  "id": "85b38b13-0a39-4532-9ddf-98a55229c2e0",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728823984,
+  "usage": {
+    "prompt_tokens": 152,
+    "completion_tokens": 410,
+    "total_tokens": 562
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Ace Bananya Sneakers\n**Subtitle (Sottotitolo):** Luxurious and Playful Design for Women\n**Short Description (Breve Descrizione):** The GUCCI Ace Bananya sneakers are a vibrant and stylish addition to any wardrobe, featuring a unique collaboration with the beloved character Bananya. Crafted with high-quality materials and meticulous attention to detail, these shoes are perfect for those who appreciate luxury and whimsy. Available in size 35.5.\n\n**Description (Descrizione):**\n\n- **Design Inspiration:** The GUCCI Ace Bananya sneakers are inspired by the playful and adventurous spirit of Bananya, a popular character known for its banana peel costume. This collaboration brings a fresh and playful twist to the classic GUCCI Ace design.\n- **Materials and Craftsmanship:** These sneakers are made with premium materials, ensuring durability and comfort. The meticulous craftsmanship reflects GUCCI\u2019s commitment to excellence and attention to detail.\n- **Key Features:**\n  - **Style Number:** 661663 0FI60 9112\n  - **Size:** 35.5\n  - **Color Scheme:** Vibrant and playful colors that capture the essence of Bananya\n  - **Comfort:** Designed for comfort and wearability, making them perfect for daily use\n  - **Brand Logo:** The iconic GUCCI logo is prominently displayed, adding a touch of luxury and authenticity\n- **Versatility:** The GUCCI Ace Bananya sneakers are versatile and can be paired with a variety of outfits, from casual to more formal occasions. Their unique design makes them a standout piece in any wardrobe.\n- **Luxury Branding:** As a product of GUCCI, these sneakers embody the brand\u2019s legacy of luxury and high fashion, making them a valuable addition to any shoe collection.\n- **Availability:** Available at various online retailers, including StockX, FLEXDOG, KICKS CREW, and GOAT, ensuring easy access to this exclusive design."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

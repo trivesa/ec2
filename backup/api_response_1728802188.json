@@ -1,0 +1,25 @@
+{
+  "id": "4316f0be-93ed-4a40-ac47-8c94caef570f",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728802188,
+  "usage": {
+    "prompt_tokens": 147,
+    "completion_tokens": 439,
+    "total_tokens": 586
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI GG Jacquard Square Muffler Scarf\n**Subtitle (Sottotitolo):** Luxurious Grey Wool and Silk Scarf with Iconic GG Pattern\n**Short Description (Breve Descrizione):** Elevate your style with this authentic GUCCI GG Jacquard Square Muffler Scarf, featuring a sophisticated grey hue and the iconic GG pattern. Made from a luxurious blend of wool and silk, this scarf is perfect for adding a touch of elegance to any outfit. Its square design and generous size make it versatile and easy to style.\n\n**Description (Descrizione):**\n\nExperience the epitome of luxury with the GUCCI GG Jacquard Square Muffler Scarf, style number 281942 3G704 1062. This exquisite accessory is crafted from a high-quality blend of 80% wool and 20% silk, ensuring a soft, warm, and durable wear.\n\n- **Iconic Design:** The scarf features the iconic GG pattern, a timeless and sophisticated motif that embodies the essence of GUCCI's luxury and style.\n- **Versatile Size:** Measuring 140 cm x 140 cm, this square scarf is perfect for wrapping around your neck, draping over your shoulders, or even using as a stylish shawl.\n- **Luxurious Materials:** The combination of wool and silk provides a luxurious feel and a subtle sheen, making this scarf a standout accessory in any wardrobe.\n- **Authenticity:** This scarf is 100% authentic and comes with its original tags and packaging, ensuring its genuineness and value.\n- **Made in Italy:** Crafted in Italy, this scarf reflects the high standards of Italian craftsmanship and the attention to detail that GUCCI is renowned for.\n- **Color:** The scarf is available in a sophisticated grey hue, perfect for complementing a variety of outfits and adding a touch of elegance to your look.\n\nWhether you're looking to elevate your everyday style or make a statement at a special occasion, the GUCCI GG Jacquard Square Muffler Scarf is the perfect accessory to add a touch of luxury and sophistication to your wardrobe."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}

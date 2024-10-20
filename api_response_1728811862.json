@@ -1,0 +1,25 @@
+{
+  "id": "2df61aa0-4f12-4c84-9d2c-a254f4be63c8",
+  "model": "llama-3.1-sonar-huge-128k-online",
+  "created": 1728811862,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 368,
+    "total_tokens": 518
+  },
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "**Title (Titolo):** GUCCI Rhyton 'Mouth Print' Sneakers\n**Subtitle (Sottotitolo):** Classic Elegance with a Bold Twist\n**Short Description (Breve Descrizione):** Embodying the essence of '90s hip-hop culture, the GUCCI Rhyton 'Mouth Print' sneakers offer a unique blend of classic elegance and bold design. Crafted with Italian handcrafted leather, these shoes feature a striking off-white color with a distinctive mouth print motif. Perfect for those who seek to make a statement with their footwear.\n\n**Description (Descrizione):**\n\n- **Style Number:** 552093 A9L00 9522\n- **Size:** 41\n- **Material:** Italian handcrafted leather\n- **Color:** Off-white with mouth print motif\n- **Design Inspiration:** Inspired by the '90s hip-hop scene, these sneakers capture the era's vibrant spirit with their clean construction and classic silhouette.\n- **Key Features:**\n  - **Mouth Print Design:** A bold and eye-catching mouth print motif adds a playful touch to the classic off-white leather.\n  - **Quality Craftsmanship:** Italian handcrafted leather ensures durability and a luxurious feel.\n  - **Versatile Style:** Suitable for casual wear or making a statement at fashion-forward events.\n  - **Brand Authenticity:** Genuine GUCCI product, ensuring high-quality materials and craftsmanship.\n- **Additional Information:**\n  - **Care Instructions:** To maintain the quality of the leather, avoid exposure to harsh chemicals and extreme temperatures. Regular cleaning with a soft cloth is recommended.\n  - **Packaging:** Includes original GUCCI packaging and accessories.\n  - **Warranty:** Covered by GUCCI's standard warranty for defects in materials and workmanship."
+      },
+      "delta": {
+        "role": "assistant",
+        "content": ""
+      }
+    }
+  ]
+}
