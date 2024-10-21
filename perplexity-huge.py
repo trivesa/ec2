@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 
 # 设置Google Sheets API
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-SERVICE_ACCOUNT_FILE = '/home/ec2-user/google-credentials/photo-to-listing-e89218601911.json'
+SERVICE_ACCOUNT_FILE = '/Users/yinxianzhi/Projects/ec2/google-credentials/photo-to-listing-e89218601911.json'
 credentials = service_account.Credentials.from_service_account_file(
     SERVICE_ACCOUNT_FILE, scopes=SCOPES)
 sheets_service = build('sheets', 'v4', credentials=credentials)
@@ -450,3 +450,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
