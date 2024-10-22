@@ -371,6 +371,13 @@ def get_sheet_id(sheet_name):
             return sheet['properties']['sheetId']
     return None
 
+def validate_fields(data):
+    if '**Subtitle' in data['Title (Titolo)']:
+        logging.warning("Title contains Subtitle content")
+    if '**Short Description' in data['Subtitle (Sottotitolo)']:
+        logging.warning("Subtitle contains Short Description content")
+    # 可以添加更多的验证...
+
 def main():
     logging.info(f"Current working directory: {os.getcwd()}")
     
