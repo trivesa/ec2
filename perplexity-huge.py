@@ -202,6 +202,9 @@ def call_perplexity_api(prompt, temperature):
         response_json = response.json()
         content = response_json['choices'][0]['message']['content']
         
+        # 记录完整的API响应
+        logging.info(f"Full API response: {json.dumps(response_json, indent=2)}")
+        
         # 保存API响应到文件
         with open(f'api_response_{int(time.time())}.json', 'w') as f:
             json.dump(response_json, f, indent=2)
@@ -251,7 +254,7 @@ def extract_fields_from_response(raw_response, template):
     fields_to_extract = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
     
     for field in fields_to_extract:
-        pattern = rf'\*\*{re.escape(field)}:\*\*\s*([\s\S]+?)(?=\n\n\*\*|$)'
+        pattern = rf'\*\*{re.escape(field)}:\*\*\s*(.*?)(?=\n\n\*\*|$)'
         match = re.search(pattern, raw_response, re.DOTALL)
         if match:
             extracted_data[field] = match.group(1).strip()
@@ -289,12 +292,11 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
     for attempt in range(max_retries):
         # 第一次API调用：生成产品描述
         description_prompt = f"""
-        Generate a detailed product description for {brand} {product_type} with style number {style_number}.
+        Generate a detailed product description for {brand} {product_type}.
         Additional Information: {additional_info}
-        Size Information: {size_info}
         Please format your response exactly as follows:
 
-        **Title (Titolo):** [Your title here]
+        **Title (Titolo):** [Your title here, do not include style number]
         **Subtitle (Sottotitolo):** [Your subtitle here]
         **Short Description (Breve Descrizione):** [Your brief summary here, about 2-3 sentences]
         **Description (Descrizione):**
@@ -334,7 +336,7 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
         fields_data = extract_fields_from_response(fields_response, template)
         extracted_data = {**description_data, **fields_data}
         
-        # 添加尺寸信息到标题
+        # 添加尺寸信息到标题（如果可用）
         if 'Title (Titolo)' in extracted_data and size_info:
             extracted_data['Title (Titolo)'] += f" {size_info}"
         
@@ -386,10 +388,27 @@ def get_sheet_id(sheet_name):
     return None
 
 def validate_fields(data):
-    if '**Subtitle' in data['Title (Titolo)']:
+    if '**Subtitle' in data.get('Title (Titolo)', ''):
         logging.warning("Title contains Subtitle content")
-    if '**Short Description' in data['Subtitle (Sottotitolo)']:
+        # 尝试修复问题
+        data['Title (Titolo)'] = data['Title (Titolo)'].split('**Subtitle')[0].strip()
+    
+    if '**Short Description' in data.get('Title (Titolo)', ''):
+        logging.warning("Title contains Short Description content")
+        # 尝试修复问题
+        data['Title (Titolo)'] = data['Title (Titolo)'].split('**Short Description')[0].strip()
+    
+    if '**Short Description' in data.get('Subtitle (Sottotitolo)', ''):
         logging.warning("Subtitle contains Short Description content")
+        # 尝试修复问题
+        data['Subtitle (Sottotitolo)'] = data['Subtitle (Sottotitolo)'].split('**Short Description')[0].strip()
+    
+    # 检查字段长度
+    if len(data.get('Title (Titolo)', '')) > 80:
+        logging.warning(f"Title is too long: {len(data['Title (Titolo)'])} characters")
+    if len(data.get('Subtitle (Sottotitolo)', '')) > 55:
+        logging.warning(f"Subtitle is too long: {len(data['Subtitle (Sottotitolo)'])} characters")
+    
     # 可以添加更多的验证...
 
 def main():
