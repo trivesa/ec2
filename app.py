@@ -85,10 +85,12 @@ def run_photo_processing():
             return jsonify({"error": "脚本执行失败", "详情": result.stderr}), 500
     except subprocess.TimeoutExpired:
         logging.error("脚本执行超时")
-        return jsonify({"error": "脚本执行超时"}), 500
+        return jsonify({"error": "脚本执���超时"}), 500
     except Exception as e:
         logging.error(f"脚本执行过程中出错: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    print("Starting Flask application...")
+    app.run(host='0.0.0.0', port=5000, debug=True)
+    print("Flask application has stopped.")
