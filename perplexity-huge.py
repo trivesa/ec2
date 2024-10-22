@@ -378,7 +378,7 @@ def main():
     product_types = read_spreadsheet('Sheet1!E2:E')
     brands = read_spreadsheet('Sheet1!F2:F')
     style_numbers = read_spreadsheet('Sheet1!I2:I')
-    additional_info = read_spreadsheet('Sheet1!J2:J')
+    additional_info = read_spreadsheet('Sheet1!G2:G')
     size_info = read_spreadsheet('Sheet1!K2:X')
     
     logging.info(f"Read {len(product_types)} product types, {len(brands)} brands, {len(style_numbers)} style numbers, {len(additional_info)} additional info entries, and {len(size_info)} size info entries")
@@ -468,3 +468,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
