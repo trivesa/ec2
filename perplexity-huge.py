@@ -7,6 +7,8 @@ from google.oauth2 import service_account
 import requests
 import logging
 import re
+import asyncio
+from concurrent.futures import ThreadPoolExecutor
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -88,14 +90,21 @@ Combine all these elements into a cohesive, flowing description using bullet poi
 
 """
 
+# ThreadPoolExecutor for running async operations
+thread_pool = ThreadPoolExecutor(max_workers=10)
+
 def read_spreadsheet(range_name):
-    sheet = sheets_service.spreadsheets()
-    result = sheet.values().get(spreadsheetId=SPREADSHEET_ID, range=range_name).execute()
-    values = result.get('values', [])
-    logging.info(f"Read {len(values)} rows from spreadsheet")
-    if not values:
-        logging.warning("No data found in spreadsheet")
-    return values
+    try:
+        sheet = sheets_service.spreadsheets()
+        result = sheet.values().get(spreadsheetId=SPREADSHEET_ID, range=range_name).execute()
+        values = result.get('values', [])
+        logging.info(f"Read {len(values)} rows from spreadsheet")
+        if not values:
+            logging.warning("No data found in spreadsheet")
+        return values
+    except Exception as e:
+        logging.error(f"Error reading from spreadsheet: {str(e)}")
+        return []
 
 def write_to_spreadsheet(range_name, values):
     body = {
@@ -114,13 +123,16 @@ def write_to_spreadsheet(range_name, values):
 
 def verify_written_data(sheet_name, start_row, num_rows):
     range_name = f"'{sheet_name}'!A{start_row}:ZZ{start_row + num_rows - 1}"
-    result = sheets_service.spreadsheets().values().get(spreadsheetId=SPREADSHEET_ID, range=range_name).execute()
-    values = result.get('values', [])
-    logging.info(f"Verifying written data in {sheet_name} from row {start_row} to {start_row + num_rows - 1}")
-    for row_index, row in enumerate(values):
-        logging.info(f"Row {start_row + row_index}:")
-        for col_index, value in enumerate(row):
-            logging.info(f"  Column {col_index + 1}: {value[:100]}...")  # Log first 100 characters
+    try:
+        result = sheets_service.spreadsheets().values().get(spreadsheetId=SPREADSHEET_ID, range=range_name).execute()
+        values = result.get('values', [])
+        logging.info(f"Verifying written data in {sheet_name} from row {start_row} to {start_row + num_rows - 1}")
+        for row_index, row in enumerate(values):
+            logging.info(f"Row {start_row + row_index}:")
+            for col_index, value in enumerate(row):
+                logging.info(f"  Column {col_index + 1}: {value[:100]}...")  # Log first 100 characters
+    except Exception as e:
+        logging.error(f"Error verifying written data: {str(e)}")
 
 def ensure_sheet_exists(sheet_name):
     try:
@@ -166,14 +178,20 @@ def clear_range_format(sheet_name, start_row, end_row):
             }
         ]
     }
-    sheets_service.spreadsheets().batchUpdate(spreadsheetId=SPREADSHEET_ID, body=clear_request).execute()
-    logging.info(f"Cleared format for range: {range_name}")
+    try:
+        sheets_service.spreadsheets().batchUpdate(spreadsheetId=SPREADSHEET_ID, body=clear_request).execute()
+        logging.info(f"Cleared format for range: {range_name}")
+    except Exception as e:
+        logging.error(f"Error clearing range format: {str(e)}")
 
 def get_sheet_id(sheet_name):
-    sheet_metadata = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID).execute()
-    for sheet in sheet_metadata.get('sheets', ''):
-        if sheet['properties']['title'] == sheet_name:
-            return sheet['properties']['sheetId']
+    try:
+        sheet_metadata = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID).execute()
+        for sheet in sheet_metadata.get('sheets', ''):
+            if sheet['properties']['title'] == sheet_name:
+                return sheet['properties']['sheetId']
+    except Exception as e:
+        logging.error(f"Error getting sheet ID for '{sheet_name}': {str(e)}")
     return None
 
 def get_template(product_type):
@@ -349,30 +367,76 @@ def write_product_data_to_sheets(sheet_name, data):
             logging.info(f"Sheet field names: {field_names}")
             logging.info(f"Extracted data keys: {list(data.keys())}")
 
-            # Ensure all required fields are present
-            required_fields = ['Internal Reference', 'Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
-            for field in required_fields:
-                if field not in field_names:
-                    field_names.append(field)  # Add missing fields to the sheet field names list
-                    logging.info(f"Added missing field to sheet: {field}")
-
-            # Prepare data to write
-            row = [data.get(field, 'N/A') for field in field_names]
-            rows_to_write = [row]
-            logging.info(f"Prepared row to write: {row}")
-
-            # Get the next available row
-            sheet_info = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID, ranges=[f"'{sheet_name}'"], includeGridData=True).execute()
-            current_row_count = len(sheet_info['sheets'][0]['data'][0]['rowData'])
-            next_row = current_row_count + 1
-
-            # Write data
-            range_name = f"'{sheet_name}'!A{next_row}"
-            write_to_spreadsheet(range_name, rows_to_write)
+            # Prepare row data based on field names
+            row_data = []
+            for field in field_names:
+                row_data.append(data.get(field, 'N/A'))
             
-            # Verify written data
-            verify_written_data(sheet_name, next_row, len(rows_to_write))
-            logging.info(f"Successfully wrote and verified data to sheet '{sheet_name}'")
+            # Find the next empty row
+            result = sheets_service.spreadsheets().values().get(
+                spreadsheetId=SPREADSHEET_ID, range=f"'{sheet_name}'!A:A").execute()
+            current_values = result.get('values', [])
+            next_row = len(current_values) + 1
+
+            # Write data to the next empty row
+            range_name = f"'{sheet_name}'!A{next_row}"
+            write_to_spreadsheet(range_name, [row_data])
+            verify_written_data(sheet_name, next_row, 1)
+            logging.info(f"Successfully wrote product data to sheet '{sheet_name}' at row {next_row}")
         else:
             logging.error(f"Unable to ensure '{sheet_name}' sheet exists. Skipping write operation.")
+    except Exception as e:
+        logging.error(f"Error writing product data to sheet '{sheet_name}': {str(e)}")
 
+def main():
+    logging.info(f"Current working directory: {os.getcwd()}")
+    
+    # Read product information
+    product_types = read_spreadsheet('Sheet1!E2:E')
+    brands = read_spreadsheet('Sheet1!F2:F')
+    style_numbers = read_spreadsheet('Sheet1!I2:I')
+    additional_info = read_spreadsheet('Sheet1!G2:G')
+    size_info = read_spreadsheet('Sheet1!K2:X')
+    internal_references = read_spreadsheet('Sheet1!C2:C')  # Read "internal reference" column
+    
+    logging.info(f"Read {len(product_types)} product types, {len(brands)} brands, {len(style_numbers)} style numbers, {len(additional_info)} additional info entries, {len(size_info)} size info entries, and {len(internal_references)} internal references")
+    
+    # Find the length of the mandatory columns
+    min_length = min(len(product_types), len(brands), len(style_numbers), len(internal_references))
+    
+    if min_length == 0:
+        logging.error("One or more mandatory columns are empty. Please check the spreadsheet.")
+        return
+
+    logging.info(f"Processing {min_length} rows with mandatory data")
+
+    # Store data for each sheet
+    sheet_data = {}
+    
+    for index in range(min_length):
+        product_type = str(product_types[index][0]).strip() if product_types[index] else ""
+        brand = str(brands[index][0]).strip() if brands[index] else ""
+        style_number = str(style_numbers[index][0]).strip() if style_numbers[index] else ""
+        add_info = str(additional_info[index][0]).strip() if index < len(additional_info) and additional_info[index] else ""
+        size = get_size_info(size_info[index]) if index < len(size_info) and size_info[index] else ""
+        internal_reference = str(internal_references[index][0]).strip() if internal_references[index] else ""
+        
+        if not all([product_type, brand, style_number, internal_reference]):
+            logging.warning(f"Skipping row {index+2} due to missing mandatory data: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}', Internal Reference: '{internal_reference}'")
+            continue
+        
+        result = process_product(product_type, brand, style_number, add_info, size, index+2)
+        if result:
+            sheet_name, extracted_data = result
+            extracted_data['Internal Reference'] = internal_reference  # Add internal reference to extracted data
+            if sheet_name not in sheet_data:
+                sheet_data[sheet_name] = []
+            sheet_data[sheet_name].append(extracted_data)
+
+    # Write data to respective sheets
+    for sheet_name, data in sheet_data.items():
+        for entry in data:
+            write_product_data_to_sheets(sheet_name, entry)
+
+if __name__ == '__main__':
+    main()
