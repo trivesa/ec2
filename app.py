@@ -1,9 +1,10 @@
 from flask import Flask, jsonify
-from google.oauth2 import service_account
-from googleapiclient.discovery import build
 import os
 import logging
 import subprocess
+import json
+from google.oauth2 import service_account
+from googleapiclient.discovery import build
 
 app = Flask(__name__)
 
@@ -11,16 +12,25 @@ app = Flask(__name__)
 logging.basicConfig(filename='app.log', level=logging.DEBUG, 
                     format='%(asctime)s %(levelname)s %(message)s')
 
-# 配置
-GOOGLE_CREDENTIALS_PATH = os.getenv('GOOGLE_CREDENTIALS_PATH', '/path/to/auto-listing-22-10-2024-credentials.json')
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = GOOGLE_CREDENTIALS_PATH
-
 # 设置 API 客户端
-credentials = service_account.Credentials.from_service_account_file(
-    GOOGLE_CREDENTIALS_PATH,
-    scopes=['https://www.googleapis.com/auth/drive']
-)
-drive_service = build('drive', 'v3', credentials=credentials)
+GOOGLE_APPLICATION_CREDENTIALS_JSON = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS_JSON')
+
+if GOOGLE_APPLICATION_CREDENTIALS_JSON:
+    try:
+        credentials_info = json.loads(GOOGLE_APPLICATION_CREDENTIALS_JSON)
+        credentials = service_account.Credentials.from_service_account_info(
+            credentials_info, scopes=['https://www.googleapis.com/auth/drive'])
+        drive_service = build('drive', 'v3', credentials=credentials)
+        logging.info("Successfully loaded Google credentials from environment variable")
+    except json.JSONDecodeError:
+        logging.error("Failed to parse GOOGLE_APPLICATION_CREDENTIALS_JSON. Please check the JSON format.")
+        exit(1)
+    except Exception as e:
+        logging.error(f"Error setting up Google credentials: {str(e)}")
+        exit(1)
+else:
+    logging.error("GOOGLE_APPLICATION_CREDENTIALS_JSON environment variable not set")
+    exit(1)
 
 # Google Drive 父文件夹 ID
 PARENT_FOLDER_ID = os.getenv('PARENT_FOLDER_ID', '你的父文件夹ID')  # 请替换为实际的 ID
