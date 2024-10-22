@@ -1,93 +1,3 @@
-scp -i "/Users/yinxianzhi/Downloads/data-automation.pem" /Users/yinxianzhi/Documents/google_sheets_automation/product-information-automation-53f8521f02ca.json ec2-user@15.161.150.190:/home/ec2-user/
-ssh -i "/Users/yinxianzhi/Documents/google_sheets_automation/data-automation.pem" ec2-user@15.161.150.190
-sudo yum update -y
-sudo amazon-linux-extras enable python3.8
-sudo yum install python3.8 -y
-sudo yum search python3
-sudo yum install python3.9 -y
-python3.9 --version
-pip3.9 install gspread pandas requests oauth2client
-sudo yum install python39-pip -y
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-sudo python3.9 get-pip.py
-python3.9 -m venv myenv
-source myenv/bin/activate
-pip install gspread pandas requests oauth2client
-/home/ec2-user/myenv/bin/python3.9 -m pip install --upgrade pip
-nano product_automation.py
-cd /home/ec2-user/
-python3.9 product_automation.py
-python3.9 -m pip install gspread pandas requests oauth2client
-python3.9 product_automation.py
-{   "type": "service_account",;   "project_id": "your-project-id",;   "private_key_id": "your-private-key-id",;   "private_key": "-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n",;   "client_email": "your-service-account-email@your-project-id.iam.gserviceaccount.com",;   "client_id": "your-client-id",;   "auth_uri": "https://accounts.google.com/o/oauth2/auth",;   "token_uri": "https://oauth2.googleapis.com/token",;   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",;   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/your-service-account-email%40your-project-id.iam.gserviceaccount.com"; }
-nano /Users/yinxianzhi/Documents/google_sheets_automation/credentials.json
-cat credentials.json
-ls /home/ec2-user/
-nano product_automation.py
-python3.9 product_automation.py
-[ec2-user@ip-172-31-10-21 ~]$ python3.9 product_automation.py
-Traceback (most recent call last):
-  File "/home/ec2-user/.local/lib/python3.9/site-packages/gspread/client.py", line 134, in open
-    properties = finditem(
-  File "/home/ec2-user/.local/lib/python3.9/site-packages/gspread/utils.py", line 218, in finditem
-    return next(item for item in seq if func(item))
-StopIteration
-The above exception was the direct cause of the following exception:
-Traceback (most recent call last):
-  File "/home/ec2-user/product_automation.py", line 12, in <module>
-    spreadsheet = client.open("Product Data")  # Replace with your Google Sheet name
-  File "/home/ec2-user/.local/lib/python3.9/site-packages/gspread/client.py", line 139, in open
-    raise SpreadsheetNotFound(response) from ex
-gspread.exceptions.SpreadsheetNotFound: <Response [200]>
-[ec2-user@ip-172-31-10-21 ~]$ 
-python3.9 product_automation.py
-nano product_automation.py
-python3.9 product_automation.py
-mkdir google_sheets_automation
-cd google_sheets_automation
-pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
-nano google_sheets_test.py
-python google_sheets_test.py
-python3 --version
-python3 google_sheets_test.py
-ls
-nano google_sheets_test.py
-python3 google_sheets_test.py
-ls
-ls /home/ec2-user/google_sheets_automation/
-python3 google_sheets_test.py
-python3 test_perplexity.py
-ls
-cd /path/to/your/script
-find / -name "test_perplexity.py" 2>/dev/null
-nano test_perplexity.py
-ssh -i "/Users/yinxianzhi/Downloads/data-automation.pem" ec2-user@15.161.150.190
-export PERPLEXITY_API_KEY="Pplx-3eb74abcb61217fd760c0ba7a817ceac7d59d1dbaacd3532"
-nano test_perplexity.py
-ssh -i "/Users/yinxianzhi/Downloads/data-automation.pem" ec2-user@15.161.150.190
-nano perplexity_test.py
-ssh -i "/Users/yinxianzhi/Downloads/data-automation.pem" ec2-user@15.161.150.190
-pip install requests
-ls
-python3 test_perplexity.py
-nano test_perplexity.py
-python3 test_perplexity.py
-echo $PERPLEXITY_API_KEY
-export PERPLEXITY_API_KEY="Pplx-3eb74abcb61217fd760c0ba7a817ceac7d59d1dbaacd3532"
-echo $PERPLEXITY_API_KEY
-python3 test_perplexity.py
-API_KEY = 'Pplx-3eb74abcb61217fd760c0ba7a817ceac7d59d1dbaacd3532'
-nano perplexity_test.py
-nano test_perplexity.py
-python3 test_perplexity.py
-python3 test_perplexity.py
-nano api-test
-python3 api-test.py
-ls
-nano api_key_test
-python3 api_key_test
-Host *
-    ServerAliveInterval 60
     ServerAliveCountMax 5
 sudo yum install -y tmux
 tmux
@@ -983,3 +893,108 @@ nano ~/templates/other_accessories_template.json
 scp local_file_path ec2-user@ec2-ip-address:/home/ec2-user/templates
 scp file.json ec2-user@15.161.150.190:/home/ec2-user/templates
 scp file.json ec2-user@15.161.150.190:/home/ec2-user/templates
+git pull origin main
+git pull origin main
+git status
+   git stash save "Local changes to perplexity-huge.py"
+   git pull origin main
+   rm ~/.git/.MERGE_MSG.swp
+   git pull origin main
+git pull origin main
+   git add .
+   git commit -m "完成合并"
+   git pull origin main
+python3 perplexity-huge.py
+     ssh-keygen -lf ~/.ssh/id_rsa.pub -E sha256
+     git config --global user.name "Your GitHub Username"
+     git config --global user.email "your_email@example.com"
+   git config --global user.name "trivesa"
+   git config --global user.email "david@ecrindefleur.com"
+   git remote set-url origin git@github.com:trivesa/ec2.git
+   ssh -T git@github.com
+   ssh-keygen -t ed25519 -C "david@ecrindefleur.com"
+   cat ~/.ssh/id_ed25519.pub
+   ssh -T git@github.com
+[ec2-user@ip-172-31-10-21 ~]$    ssh -T git@github.com
+Hi yinxianzhi70! You've successfully authenticated, but GitHub does not provide shell access.
+[ec2-user@ip-172-31-10-21 ~]$ 
+ z
+
+
+
+   cat ~/.ssh/id_ed25519.pub
+   cat ~/.ssh/id_rsa.pub
+   cat ~/.ssh/id_ed25519.pub
+   ssh-keygen -lf ~/.ssh/id_ed25519.pub
+   ls -l ~/.ssh/
+   mv ~/.ssh/id_rsa ~/.ssh/id_rsa.old
+   mv ~/.ssh/id_rsa.pub ~/.ssh/id_rsa.pub.old
+   nano ~/.ssh/config
+nano ~/.ssh/config
+   ssh-add -D
+   ssh-add ~/.ssh/id_ed25519
+   eval $(ssh-agent -s)
+   ssh-add ~/.ssh/id_ed25519
+   ssh-add -l
+   ssh -T git@github.com
+git status
+   git push origin main
+   git config --global user.name "davidyin"
+   git config --global user.email "david@ecrindefleur.com"
+   git config --global user.name
+   git config --global user.email
+   ssh -T git@github.com
+   cat ~/.ssh/config
+   ssh-add -l
+   eval $(ssh-agent -s)
+   ssh-add -l
+   ssh-add ~/.ssh/id_rsa  # 如果您使用的是 RSA 密钥
+   ssh-add -d ~/.ssh/id_rsa
+   ssh-keygen -t ed25519 -C "david@ecrindefleur.com"
+   cat ~/.ssh/id_ed25519.pub  # 或您指定的新文件名
+   ssh-add ~/.ssh/id_ed25519  # 或您指定的新文件名
+   ssh-keygen -R github.com
+   ssh -T git@github.com
+   git config --global user.name "trivesa"
+   git config --global user.email "david@ecrindefleur.com"
+   git remote set-url origin git@github.com:trivesa/您的仓库名.git
+   git push origin main
+   git remote -v
+   git remote set-url origin git@github.com:trivesa/ec2.git
+   git remote -v
+   git push origin main
+   git fetch origin
+   git status
+   git pull origin main
+   git push origin main
+   cat .gitignore
+   echo "api_response_*.json" >> .gitignore
+   echo ".ssh/" >> .gitignore
+   git add .gitignore
+   git commit -m "Update .gitignore to exclude API responses and SSH keys"
+   git push origin main
+   rm api_response_*.json
+   git status
+   ssh -T git@github.com
+     cat ~/.ssh/id_rsa.pub
+   ssh-keygen -t ed25519 -C "david@ecrindefleur.com"
+   cat ~/.ssh/id_ed25519.pub
+   git config --global user.name
+   git config --global user.email
+   git remote -v
+   git pull origin main
+   git push origin main
+   rm ~/.ssh/id_rsa.old ~/.ssh/id_rsa.pub.old
+python3 perplexity-huge.py
+cd
+exit
+   nano ~/.ssh/authorized_keys
+   chmod 600 ~/.ssh/authorized_keys
+   ls -l ~/.ssh/authorized_keys
+   ls -ld ~/.ssh
+exit
+cd perplexity-huge.py
+      git pull origin main
+   git add perplexity-huge.py
+   git commit -m "Your commit message here"
+git pull origin main
