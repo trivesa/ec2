@@ -41,8 +41,7 @@ Instructions for the Title (Titolo):
 - Brand Name: Include the brand for recognition (e.g., 'Nike').
 - Product Type: Clearly state what the item is (e.g., 'Men's Running Shoes').
 - Key Features: Include important features such as model name, color, or technology (e.g., 'Air Max', 'Black/White', 'Flyknit').
-- Size: If possible, include the size range (e.g., 'US 8-13').
-- Style Number: ALWAYS include the style number at the end of the title.
+- Size: Add the size information to the end of the title if available.
 
 Instructions for the subtitle (Sottotitolo)
 Complementary: It should add value beyond what the main title already says.
@@ -166,6 +165,7 @@ def generate_prompt(template, brand, product_type, style_number, additional_info
     return prompt
 
 def call_perplexity_api(prompt, temperature):
+    logging.info(f"Calling Perplexity API with temperature {temperature}. Prompt: {prompt[:100]}...")  # 记录API调用
     headers = {
         'Authorization': f'Bearer {PERPLEXITY_API_KEY}',
         'Content-Type': 'application/json'
@@ -173,9 +173,9 @@ def call_perplexity_api(prompt, temperature):
     data = {
         'model': 'llama-3.1-sonar-huge-128k-online',
         'messages': [
-    {'role': 'system', 'content': 'You are a luxury consumer goods industry expert, specializing in high-end fashion and luxury brand product descriptions and market positioning.'},
-    {'role': 'user', 'content': prompt}
-     ],
+            {'role': 'system', 'content': 'You are a luxury consumer goods industry expert, specializing in high-end fashion and luxury brand product descriptions and market positioning.'},
+            {'role': 'user', 'content': prompt}
+        ],
         'max_tokens': 1000,
         'temperature': temperature,
         'top_p': 0.9,
@@ -273,7 +273,7 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
         return None
 
     for attempt in range(max_retries):
-        # Generate product description
+        # 第一次API调用：生成产品描述
         description_prompt = f"""
         Generate a detailed product description for {brand} {product_type} with style number {style_number}.
         Additional Information: {additional_info}
@@ -288,13 +288,13 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
 
         Use bullet points for better readability in the description.
         """
-        description_response = call_perplexity_api(description_prompt, 0.3)
+        description_response = call_perplexity_api(description_prompt, 0.7)  # 使用较高的温度以获得更有创意的描述
         
         if not description_response:
             logging.warning(f"Failed to generate description on attempt {attempt + 1}")
             continue
 
-        # Generate Mandatory and Optional fields
+        # 第二次API调用：生成Mandatory和Optional字段
         fields_prompt = f"""
         For the {brand} {product_type} with style number {style_number}, 
         Additional Information: {additional_info}
@@ -309,20 +309,22 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
 
         Please provide the information in a structured format, with each field on a new line.
         """
-        fields_response = call_perplexity_api(fields_prompt, 0.1)
+        fields_response = call_perplexity_api(fields_prompt, 0.3)  # 使用较低的温度以获得更精确的字段信息
         
         if not fields_response:
             logging.warning(f"Failed to generate fields on attempt {attempt + 1}")
             continue
 
-        # Process description and fields separately
+        # 处理描述和字段分别
         description_data = extract_fields_from_response(description_response, template)
         fields_data = extract_fields_from_response(fields_response, template)
         extracted_data = {**description_data, **fields_data}
         
-        # Add size information to the title
+        # 添加尺寸信息到标题
         if 'Title (Titolo)' in extracted_data and size_info:
             extracted_data['Title (Titolo)'] += f" {size_info}"
+        
+        validate_fields(extracted_data)  # 验证字段
         
         logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
         return sheet_name, extracted_data
@@ -369,6 +371,13 @@ def get_sheet_id(sheet_name):
             return sheet['properties']['sheetId']
     return None
 
+def validate_fields(data):
+    if '**Subtitle' in data['Title (Titolo)']:
+        logging.warning("Title contains Subtitle content")
+    if '**Short Description' in data['Subtitle (Sottotitolo)']:
+        logging.warning("Subtitle contains Short Description content")
+    # 可以添加更多的验证...
+
 def main():
     logging.info(f"Current working directory: {os.getcwd()}")
     
@@ -378,11 +387,12 @@ def main():
     style_numbers = read_spreadsheet('Sheet1!I2:I')
     additional_info = read_spreadsheet('Sheet1!G2:G')
     size_info = read_spreadsheet('Sheet1!K2:X')
+    internal_references = read_spreadsheet('Sheet1!C2:C')  # 读取"internal reference"列
     
-    logging.info(f"Read {len(product_types)} product types, {len(brands)} brands, {len(style_numbers)} style numbers, {len(additional_info)} additional info entries, and {len(size_info)} size info entries")
+    logging.info(f"Read {len(product_types)} product types, {len(brands)} brands, {len(style_numbers)} style numbers, {len(additional_info)} additional info entries, {len(size_info)} size info entries, and {len(internal_references)} internal references")
     
     # Find the length of the mandatory columns
-    min_length = min(len(product_types), len(brands), len(style_numbers))
+    min_length = min(len(product_types), len(brands), len(style_numbers), len(internal_references))
     
     if min_length == 0:
         logging.error("One or more mandatory columns are empty. Please check the spreadsheet.")
@@ -399,14 +409,16 @@ def main():
         style_number = str(style_numbers[index][0]).strip() if style_numbers[index] else ""
         add_info = str(additional_info[index][0]).strip() if index < len(additional_info) and additional_info[index] else ""
         size = get_size_info(size_info[index]) if index < len(size_info) and size_info[index] else ""
+        internal_reference = str(internal_references[index][0]).strip() if internal_references[index] else ""
         
-        if not all([product_type, brand, style_number]):
-            logging.warning(f"Skipping row {index+2} due to missing mandatory data: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
+        if not all([product_type, brand, style_number, internal_reference]):
+            logging.warning(f"Skipping row {index+2} due to missing mandatory data: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}', Internal Reference: '{internal_reference}'")
             continue
         
         result = process_product(product_type, brand, style_number, add_info, size, index+2)
         if result:
             sheet_name, extracted_data = result
+            extracted_data['Internal Reference'] = internal_reference  # 添加内部参考号到提取的数据中
             if sheet_name not in sheet_data:
                 sheet_data[sheet_name] = []
             sheet_data[sheet_name].append(extracted_data)
@@ -423,17 +435,17 @@ def main():
                 logging.info(f"Extracted data keys: {list(data[0].keys())}")
 
                 # Ensure all required fields are present
-                required_fields = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
+                required_fields = ['Internal Reference', 'Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
                 for field in required_fields:
                     if field not in field_names:
-                        field_names.append(field)
+                        field_names.insert(0, field)  # 将Internal Reference插入到字段列表的开头
                         logging.info(f"Added missing field to sheet: {field}")
 
                 # Prepare data to write
                 rows_to_write = []
                 for item in data:
-                    row = []
-                    for field in field_names:
+                    row = [item.get('Internal Reference', 'N/A')]  # 首先添加Internal Reference
+                    for field in field_names[1:]:  # 跳过Internal Reference，因为我们已经添加了
                         value = item.get(field, 'N/A')
                         if isinstance(value, str) and len(value) > 50000:
                             value = value[:50000] + "... (truncated)"
@@ -466,4 +478,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
