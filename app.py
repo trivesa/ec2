@@ -8,6 +8,8 @@ from googleapiclient.discovery import build
 
 app = Flask(__name__)
 
+print("Script is starting")
+
 # 设置日志
 logging.basicConfig(filename='app.log', level=logging.DEBUG, 
                     format='%(asctime)s %(levelname)s %(message)s')
@@ -85,7 +87,7 @@ def run_photo_processing():
             return jsonify({"error": "脚本执行失败", "详情": result.stderr}), 500
     except subprocess.TimeoutExpired:
         logging.error("脚本执行超时")
-        return jsonify({"error": "脚本执���超时"}), 500
+        return jsonify({"error": "脚本执超时"}), 500
     except Exception as e:
         logging.error(f"脚本执行过程中出错: {str(e)}")
         return jsonify({"error": str(e)}), 500
