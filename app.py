@@ -6,9 +6,31 @@ import json
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
-app = Flask(__name__)
-
 print("Script is starting")
+
+try:
+    from flask import Flask, jsonify
+    print("Flask imported successfully")
+except ImportError as e:
+    print(f"Error importing Flask: {e}")
+    exit(1)
+
+import os
+import logging
+import subprocess
+import json
+print("Basic modules imported")
+
+try:
+    from google.oauth2 import service_account
+    from googleapiclient.discovery import build
+    print("Google modules imported successfully")
+except ImportError as e:
+    print(f"Error importing Google modules: {e}")
+    exit(1)
+
+app = Flask(__name__)
+print("Flask app created")
 
 # 设置日志
 logging.basicConfig(filename='app.log', level=logging.DEBUG, 

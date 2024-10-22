@@ -7,7 +7,7 @@ import io
 import os
 
 # Set the path to the Google service account credentials JSON file
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/ec2-user/google-credentials/photo-to-listing-e89218601911.json"
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/ec2-user/google-credentials/photo-to-listing-22-10-2024.json"
 
 # Set up the Google Cloud Vision API client
 vision_client = vision.ImageAnnotatorClient()
