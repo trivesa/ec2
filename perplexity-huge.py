@@ -6,21 +6,25 @@ from googleapiclient.discovery import build
 from google.oauth2 import service_account
 import requests
 import logging
-import re# 设置日志
+import re
+
+# Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# 设置Google Sheets API
+# Google Sheets API setup
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 SERVICE_ACCOUNT_FILE = '/home/ec2-user/google-credentials/photo-to-listing-22-10-2024.json'
 credentials = service_account.Credentials.from_service_account_file(
     SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+
+# Build the Google Sheets service
 sheets_service = build('sheets', 'v4', credentials=credentials)
 
-# Perplexity API设置
+# Perplexity API settings
 PERPLEXITY_API_KEY = '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'
 PERPLEXITY_API_URL = 'https://api.perplexity.ai/chat/completions'
 
-# Google spreadsheet ID
+# Google Spreadsheet ID
 SPREADSHEET_ID = '190TeRdEtXI9HXok8y2vomh_d26D0cyWgThArKQ_03_8'
 
 GENERAL_INSTRUCTIONS = """
@@ -81,6 +85,7 @@ Create a comprehensive product description using bullet points for better readab
   - Highlight any limited availability or special offers
 
 Combine all these elements into a cohesive, flowing description using bullet points, without separate headings or sections. Ensure the description is easy to read, informative, and engaging.
+
 """
 
 def read_spreadsheet(range_name):
@@ -106,6 +111,70 @@ def write_to_spreadsheet(range_name, values):
         logging.info(f"Updated {result.get('updatedCells')} cells")
     except Exception as e:
         logging.error(f"Error writing to spreadsheet: {str(e)}")
+
+def verify_written_data(sheet_name, start_row, num_rows):
+    range_name = f"'{sheet_name}'!A{start_row}:ZZ{start_row + num_rows - 1}"
+    result = sheets_service.spreadsheets().values().get(spreadsheetId=SPREADSHEET_ID, range=range_name).execute()
+    values = result.get('values', [])
+    logging.info(f"Verifying written data in {sheet_name} from row {start_row} to {start_row + num_rows - 1}")
+    for row_index, row in enumerate(values):
+        logging.info(f"Row {start_row + row_index}:")
+        for col_index, value in enumerate(row):
+            logging.info(f"  Column {col_index + 1}: {value[:100]}...")  # Log first 100 characters
+
+def ensure_sheet_exists(sheet_name):
+    try:
+        sheet_metadata = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID).execute()
+        sheets = sheet_metadata.get('sheets', '')
+        for sheet in sheets:
+            if sheet['properties']['title'] == sheet_name:
+                logging.info(f"Sheet '{sheet_name}' already exists.")
+                return True
+        # Create the sheet if it does not exist
+        request_body = {
+            'requests': [{
+                'addSheet': {
+                    'properties': {
+                        'title': sheet_name
+                    }
+                }
+            }]
+        }
+        sheets_service.spreadsheets().batchUpdate(
+            spreadsheetId=SPREADSHEET_ID,
+            body=request_body
+        ).execute()
+        logging.info(f"Sheet '{sheet_name}' has been created.")
+        return True
+    except Exception as e:
+        logging.error(f"Error ensuring sheet '{sheet_name}' exists: {str(e)}")
+        return False
+
+def clear_range_format(sheet_name, start_row, end_row):
+    range_name = f"'{sheet_name}'!A{start_row}:ZZ{end_row}"
+    clear_request = {
+        "requests": [
+            {
+                "updateCells": {
+                    "range": {
+                        "sheetId": get_sheet_id(sheet_name),
+                        "startRowIndex": start_row - 1,
+                        "endRowIndex": end_row
+                    },
+                    "fields": "userEnteredFormat"
+                }
+            }
+        ]
+    }
+    sheets_service.spreadsheets().batchUpdate(spreadsheetId=SPREADSHEET_ID, body=clear_request).execute()
+    logging.info(f"Cleared format for range: {range_name}")
+
+def get_sheet_id(sheet_name):
+    sheet_metadata = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID).execute()
+    for sheet in sheet_metadata.get('sheets', ''):
+        if sheet['properties']['title'] == sheet_name:
+            return sheet['properties']['sheetId']
+    return None
 
 def get_template(product_type):
     if not product_type:
@@ -165,7 +234,7 @@ def generate_prompt(template, brand, product_type, style_number, additional_info
     return prompt
 
 def call_perplexity_api(prompt, temperature):
-    logging.info(f"Calling Perplexity API with temperature {temperature}. Prompt: {prompt[:100]}...")  # 记录API调用
+    logging.info(f"Calling Perplexity API with temperature {temperature}. Prompt: {prompt[:100]}...")  # Log API call
     headers = {
         'Authorization': f'Bearer {PERPLEXITY_API_KEY}',
         'Content-Type': 'application/json'
@@ -188,50 +257,18 @@ def call_perplexity_api(prompt, temperature):
         response_json = response.json()
         content = response_json['choices'][0]['message']['content']
         
-        # 保存API响应到文件
+        # Save API response to file
         with open(f'api_response_{int(time.time())}.json', 'w') as f:
             json.dump(response_json, f, indent=2)
         
-        logging.info(f"API response saved to file. Content: {content[:200]}...")  # 只记录前200个字符
+        logging.info(f"API response saved to file. Content: {content[:200]}...")  # Log first 200 characters
         return content
     except Exception as e:
         logging.error(f"Error calling Perplexity API: {str(e)}")
         return None
 
-def get_sheet_name(product_type):
-    return product_type.lower().strip()
-
-def ensure_sheet_exists(sheet_name):
-    try:
-        sheet_metadata = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID).execute()
-        sheets = sheet_metadata.get('sheets', '')
-        for sheet in sheets:
-            if sheet['properties']['title'] == sheet_name:
-                logging.info(f"Sheet '{sheet_name}' already exists.")
-                return True
-        
-        # 如果工作表不存在，创建它
-        request_body = {
-            'requests': [{
-                'addSheet': {
-                    'properties': {
-                        'title': sheet_name
-                    }
-                }
-            }]
-        }
-        sheets_service.spreadsheets().batchUpdate(
-            spreadsheetId=SPREADSHEET_ID,
-            body=request_body
-        ).execute()
-        logging.info(f"Sheet '{sheet_name}' has been created.")
-        return True
-    except Exception as e:
-        logging.error(f"Error ensuring sheet '{sheet_name}' exists: {str(e)}")
-        return False
-
 def extract_fields_from_response(raw_response, template):
-    logging.info(f"Raw response to extract: {raw_response[:500]}...")  # 只记录前500个字符
+    logging.info(f"Raw response to extract: {raw_response[:500]}...")  # Log first 500 characters
     extracted_data = {}
     
     fields_to_extract = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
@@ -266,65 +303,29 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
         logging.warning(f"Skipping row {index} due to empty product type")
         return None
 
-    sheet_name = get_sheet_name(product_type)
+    sheet_name = product_type.replace(" ", "_").lower()
     template, _ = get_template(product_type)
     if not template:
         logging.warning(f"Skipping row {index} due to missing template for product type: {product_type}")
         return None
 
     for attempt in range(max_retries):
-        # 第一次API调用：生成产品描述
-        description_prompt = f"""
-        Generate a detailed product description for {brand} {product_type} with style number {style_number}.
-        Additional Information: {additional_info}
-        Size Information: {size_info}
-        Please format your response exactly as follows:
-
-        **Title (Titolo):** [Your title here]
-        **Subtitle (Sottotitolo):** [Your subtitle here]
-        **Short Description (Breve Descrizione):** [Your brief summary here, about 2-3 sentences]
-        **Description (Descrizione):**
-        [Your multi-line description here]
-
-        Use bullet points for better readability in the description.
-        """
-        description_response = call_perplexity_api(description_prompt, 0.7)  # 使用较高的温度以获得更有创意的描述
+        # First API call: Generate product description
+        description_prompt = generate_prompt(template, brand, product_type, style_number, additional_info, size_info)
+        description_response = call_perplexity_api(description_prompt, 0.7)  # Use a higher temperature for more creative descriptions
         
         if not description_response:
             logging.warning(f"Failed to generate description on attempt {attempt + 1}")
             continue
 
-        # 第二次API调用：生成Mandatory和Optional字段
-        fields_prompt = f"""
-        For the {brand} {product_type} with style number {style_number}, 
-        Additional Information: {additional_info}
-        Size Information: {size_info}
-        provide information for the following fields. Use 'N/A' if the information is not available or not applicable.
-
-        Mandatory Fields:
-        {', '.join(template['mandatory_fields'])}
-
-        Optional Fields:
-        {', '.join(template['optional_fields'])}
-
-        Please provide the information in a structured format, with each field on a new line.
-        """
-        fields_response = call_perplexity_api(fields_prompt, 0.3)  # 使用较低的温度以获得更精确的字段信息
+        # Extract fields from the response
+        extracted_data = extract_fields_from_response(description_response, template)
         
-        if not fields_response:
-            logging.warning(f"Failed to generate fields on attempt {attempt + 1}")
-            continue
-
-        # 处理描述和字段分别
-        description_data = extract_fields_from_response(description_response, template)
-        fields_data = extract_fields_from_response(fields_response, template)
-        extracted_data = {**description_data, **fields_data}
-        
-        # 添加尺寸信息到标题
+        # Add size information to title
         if 'Title (Titolo)' in extracted_data and size_info:
             extracted_data['Title (Titolo)'] += f" {size_info}"
         
-        validate_fields(extracted_data)  # 验证字段
+        validate_fields(extracted_data)  # Validate extracted fields
         
         logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
         return sheet_name, extracted_data
@@ -332,149 +333,46 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
     logging.error(f"Failed to process product after {max_retries} attempts")
     return None
 
-def verify_written_data(sheet_name, start_row, num_rows):
-    range_name = f"'{sheet_name}'!A{start_row}:ZZ{start_row + num_rows - 1}"
-    result = sheets_service.spreadsheets().values().get(spreadsheetId=SPREADSHEET_ID, range=range_name).execute()
-    values = result.get('values', [])
-    logging.info(f"Verifying written data in {sheet_name} from row {start_row} to {start_row + num_rows - 1}")
-    for row_index, row in enumerate(values):
-        logging.info(f"Row {start_row + row_index}:")
-        for col_index, value in enumerate(row):
-            logging.info(f"  Column {col_index + 1}: {value[:100]}...")  # 只记录前100个字符
-
-def prepare_data_for_write(data):
-    return [[str(cell) if cell is not None else '' for cell in row] for row in data]
-
-def clear_range_format(sheet_name, start_row, end_row):
-    range_name = f"'{sheet_name}'!A{start_row}:ZZ{end_row}"
-    clear_request = {
-        "requests": [
-            {
-                "updateCells": {
-                    "range": {
-                        "sheetId": get_sheet_id(sheet_name),
-                        "startRowIndex": start_row - 1,
-                        "endRowIndex": end_row
-                    },
-                    "fields": "userEnteredFormat"
-                }
-            }
-        ]
-    }
-    sheets_service.spreadsheets().batchUpdate(spreadsheetId=SPREADSHEET_ID, body=clear_request).execute()
-    logging.info(f"Cleared format for range: {range_name}")
-
-def get_sheet_id(sheet_name):
-    sheet_metadata = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID).execute()
-    for sheet in sheet_metadata.get('sheets', ''):
-        if sheet['properties']['title'] == sheet_name:
-            return sheet['properties']['sheetId']
-    return None
-
 def validate_fields(data):
-    if '**Subtitle' in data['Title (Titolo)']:
-        logging.warning("Title contains Subtitle content")
-    if '**Short Description' in data['Subtitle (Sottotitolo)']:
-        logging.warning("Subtitle contains Short Description content")
-    # 可以添加更多的验证...
+    required_fields = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
+    for field in required_fields:
+        if field not in data or not data[field]:
+            logging.warning(f"Field '{field}' is missing or empty in the extracted data.")
 
-def main():
-    logging.info(f"Current working directory: {os.getcwd()}")
-    
-    # Read product information
-    product_types = read_spreadsheet('Sheet1!E2:E')
-    brands = read_spreadsheet('Sheet1!F2:F')
-    style_numbers = read_spreadsheet('Sheet1!I2:I')
-    additional_info = read_spreadsheet('Sheet1!G2:G')
-    size_info = read_spreadsheet('Sheet1!K2:X')
-    internal_references = read_spreadsheet('Sheet1!C2:C')  # 读取"internal reference"列
-    
-    logging.info(f"Read {len(product_types)} product types, {len(brands)} brands, {len(style_numbers)} style numbers, {len(additional_info)} additional info entries, {len(size_info)} size info entries, and {len(internal_references)} internal references")
-    
-    # Find the length of the mandatory columns
-    min_length = min(len(product_types), len(brands), len(style_numbers), len(internal_references))
-    
-    if min_length == 0:
-        logging.error("One or more mandatory columns are empty. Please check the spreadsheet.")
-        return
+def write_product_data_to_sheets(sheet_name, data):
+    try:
+        if ensure_sheet_exists(sheet_name):
+            # Get field names (first row) of the sheet
+            field_names = sheets_service.spreadsheets().values().get(
+                spreadsheetId=SPREADSHEET_ID, range=f"'{sheet_name}'!A1:ZZ1").execute().get('values', [[]])[0]
 
-    logging.info(f"Processing {min_length} rows with mandatory data")
+            logging.info(f"Sheet field names: {field_names}")
+            logging.info(f"Extracted data keys: {list(data.keys())}")
 
-    # Store data for each sheet
-    sheet_data = {}
-    
-    for index in range(min_length):
-        product_type = str(product_types[index][0]).strip() if product_types[index] else ""
-        brand = str(brands[index][0]).strip() if brands[index] else ""
-        style_number = str(style_numbers[index][0]).strip() if style_numbers[index] else ""
-        add_info = str(additional_info[index][0]).strip() if index < len(additional_info) and additional_info[index] else ""
-        size = get_size_info(size_info[index]) if index < len(size_info) and size_info[index] else ""
-        internal_reference = str(internal_references[index][0]).strip() if internal_references[index] else ""
-        
-        if not all([product_type, brand, style_number, internal_reference]):
-            logging.warning(f"Skipping row {index+2} due to missing mandatory data: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}', Internal Reference: '{internal_reference}'")
-            continue
-        
-        result = process_product(product_type, brand, style_number, add_info, size, index+2)
-        if result:
-            sheet_name, extracted_data = result
-            extracted_data['Internal Reference'] = internal_reference  # 添加内部参考号到提取的数据中
-            if sheet_name not in sheet_data:
-                sheet_data[sheet_name] = []
-            sheet_data[sheet_name].append(extracted_data)
+            # Ensure all required fields are present
+            required_fields = ['Internal Reference', 'Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
+            for field in required_fields:
+                if field not in field_names:
+                    field_names.append(field)  # Add missing fields to the sheet field names list
+                    logging.info(f"Added missing field to sheet: {field}")
 
-    # Write data to respective sheets
-    for sheet_name, data in sheet_data.items():
-        try:
-            if ensure_sheet_exists(sheet_name):
-                # Get field names (first row) of the sheet
-                field_names = sheets_service.spreadsheets().values().get(
-                    spreadsheetId=SPREADSHEET_ID, range=f"'{sheet_name}'!A1:ZZ1").execute().get('values', [[]])[0]
+            # Prepare data to write
+            row = [data.get(field, 'N/A') for field in field_names]
+            rows_to_write = [row]
+            logging.info(f"Prepared row to write: {row}")
 
-                logging.info(f"Sheet field names: {field_names}")
-                logging.info(f"Extracted data keys: {list(data[0].keys())}")
+            # Get the next available row
+            sheet_info = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID, ranges=[f"'{sheet_name}'"], includeGridData=True).execute()
+            current_row_count = len(sheet_info['sheets'][0]['data'][0]['rowData'])
+            next_row = current_row_count + 1
 
-                # Ensure all required fields are present
-                required_fields = ['Internal Reference', 'Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
-                for field in required_fields:
-                    if field not in field_names:
-                        field_names.insert(0, field)  # 将Internal Reference插入到字段列表的开头
-                        logging.info(f"Added missing field to sheet: {field}")
+            # Write data
+            range_name = f"'{sheet_name}'!A{next_row}"
+            write_to_spreadsheet(range_name, rows_to_write)
+            
+            # Verify written data
+            verify_written_data(sheet_name, next_row, len(rows_to_write))
+            logging.info(f"Successfully wrote and verified data to sheet '{sheet_name}'")
+        else:
+            logging.error(f"Unable to ensure '{sheet_name}' sheet exists. Skipping write operation.")
 
-                # Prepare data to write
-                rows_to_write = []
-                for item in data:
-                    row = [item.get('Internal Reference', 'N/A')]  # 首先添加Internal Reference
-                    for field in field_names[1:]:  # 跳过Internal Reference，因为我们已经添加了
-                        value = item.get(field, 'N/A')
-                        if isinstance(value, str) and len(value) > 50000:
-                            value = value[:50000] + "... (truncated)"
-                        row.append(value)
-                    rows_to_write.append(row)
-                    logging.info(f"Prepared row: {row[:5]}...")  # 只记录前5个字段
-
-                # Get current row count of the sheet
-                sheet_info = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID, ranges=[f"'{sheet_name}'"], includeGridData=True).execute()
-                current_row = len(sheet_info['sheets'][0]['data'][0]['rowData']) + 1
-
-                # Clear format of the range to be written
-                clear_range_format(sheet_name, current_row, current_row + len(rows_to_write))
-
-                # Prepare data for write
-                rows_to_write = prepare_data_for_write(rows_to_write)
-
-                # Write data
-                range_name = f"'{sheet_name}'!A{current_row}"
-                write_to_spreadsheet(range_name, rows_to_write)
-                
-                # Verify written data
-                verify_written_data(sheet_name, current_row, len(rows_to_write))
-                
-                logging.info(f"Successfully wrote and verified {len(rows_to_write)} rows to sheet '{sheet_name}'")
-            else:
-                logging.error(f"Unable to ensure '{sheet_name}' sheet exists. Skipping write operation.")
-        except Exception as e:
-            logging.error(f"Error writing to sheet '{sheet_name}': {str(e)}")
-
-if __name__ == '__main__':
-    main()
