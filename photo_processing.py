@@ -1,3 +1,4 @@
+import json
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseDownload
@@ -6,17 +7,25 @@ from PIL import Image, ImageStat
 import io
 import os
 
-# Set the path to the Google service account credentials JSON file
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/ec2-user/google-credentials/photo-to-listing-22-10-2024.json"
+# 从环境变量获取凭证
+credentials_json = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS_JSON')
+if not credentials_json:
+    raise ValueError("GOOGLE_APPLICATION_CREDENTIALS_JSON environment variable not set")
 
-# Set up the Google Cloud Vision API client
-vision_client = vision.ImageAnnotatorClient()
+# 解析 JSON 字符串
+credentials_info = json.loads(credentials_json)
+
+# 创建凭证对象
+credentials = service_account.Credentials.from_service_account_info(credentials_info)
+
+# 使用凭证创建客户端
+vision_client = vision.ImageAnnotatorClient(credentials=credentials)
 
 # Set up Google Drive API client
-drive_service = build('drive', 'v3', credentials=service_account.Credentials.from_service_account_file(os.getenv('GOOGLE_APPLICATION_CREDENTIALS')))
+drive_service = build('drive', 'v3', credentials=credentials)
 
 # Set up Google Sheets API client
-sheets_service = build('sheets', 'v4', credentials=service_account.Credentials.from_service_account_file(os.getenv('GOOGLE_APPLICATION_CREDENTIALS')))
+sheets_service = build('sheets', 'v4', credentials=credentials)
 
 # Define the Google Sheet ID and sheet name
 spreadsheet_id = '190TeRdEtXI9HXok8y2vomh_d26D0cyWgThArKQ_03_8'
