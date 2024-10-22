@@ -6,14 +6,12 @@ from googleapiclient.discovery import build
 from google.oauth2 import service_account
 import requests
 import logging
-import re
-
-# 设置日志
+import re# 设置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # 设置Google Sheets API
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-SERVICE_ACCOUNT_FILE = '/home/ec2-user/google-credentials/photo-to-listing-e89218601911.json'
+SERVICE_ACCOUNT_FILE = '/home/ec2-user/google-credentials/photo-to-listing-22-10-2024.json'
 credentials = service_account.Credentials.from_service_account_file(
     SERVICE_ACCOUNT_FILE, scopes=SCOPES)
 sheets_service = build('sheets', 'v4', credentials=credentials)
