@@ -6,6 +6,7 @@ from google.cloud import vision
 from PIL import Image, ImageStat
 import io
 import os
+import re
 
 # 从环境变量获取凭证
 credentials_json = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS_JSON')
@@ -195,9 +196,15 @@ def insert_label_data(image_url, extracted_text):
         print(f"Error inserting data: {e}")
 
 # Custom sorting function to extract and compare the last 5 digits of file names
-def sort_by_last_5_digits(file):
-    last_5_digits = file['name'][-9:-4]
-    return int(last_5_digits)
+def sort_by_dsc_number(file):
+    # 使用正则表达式找到 DSC 后面的 5 位数字
+    match = re.search(r'DSC(\d{5})', file['name'])
+    if match:
+        # 如果找到匹配的数字，返回该数字的整数值
+        return int(match.group(1))
+    else:
+        # 如果没有找到匹配的数字，返回一个非常大的数，确保��个文件排在最后
+        return float('inf')
 
 # Find the latest added subfolder within the parent folder
 query = f"'{parent_folder_id}' in parents and mimeType='application/vnd.google-apps.folder' and trashed=false"
@@ -212,7 +219,7 @@ results = drive_service.files().list(
 files = results.get('files', [])
 
 # Sort files based on the last 5 digits of their names
-files_sorted = sorted(files, key=sort_by_last_5_digits)
+files_sorted = sorted(files, key=sort_by_dsc_number)
 
 # Variables to track the black and label photos
 black_photo_found = False
