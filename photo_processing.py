@@ -203,6 +203,16 @@ def insert_label_data(image_url, extracted_text):
     except Exception as e:
         print(f"Error inserting data: {e}")
 
+def download_file(file_id):
+    request = drive_service.files().get_media(fileId=file_id)
+    file = io.BytesIO()
+    downloader = MediaIoBaseDownload(file, request)
+    done = False
+    while done is False:
+        status, done = downloader.next_chunk()
+    file.seek(0)
+    return file
+
 # Custom sorting function to extract and compare the last 5 digits of file names
 def sort_by_dsc_number(file):
     # 使用正则表达式找到 DSC 后面的 5 位数字
@@ -214,6 +224,7 @@ def sort_by_dsc_number(file):
         # 如果没有找到匹配的数字，返回一个非常大的数，确保个文件在最后
         return float('inf')
 
+# 主程序逻辑
 # Find the latest added subfolder within the parent folder
 query = f"'{parent_folder_id}' in parents and mimeType='application/vnd.google-apps.folder' and trashed=false"
 results = drive_service.files().list(q=query, orderBy='createdTime desc', pageSize=1, fields="files(id)").execute()
@@ -300,12 +311,3 @@ for file in files_sorted:
 
 print("Processing complete.")
 
-def download_file(file_id):
-    request = drive_service.files().get_media(fileId=file_id)
-    file = io.BytesIO()
-    downloader = MediaIoBaseDownload(file, request)
-    done = False
-    while done is False:
-        status, done = downloader.next_chunk()
-    file.seek(0)
-    return file
