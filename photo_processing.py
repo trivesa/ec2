@@ -270,11 +270,11 @@ for file in files_sorted:
             print("No text detected in the image.")
             extracted_text = "未检测到标签。请手动验证并输入产品信息。"
         else:
-            extracted_text = texts[0].description
+            extracted_text = clean_extracted_text(texts[0].description)
             print(f"Extracted text: {extracted_text}")
 
         send_message_to_ui(extracted_text, "extracted texts block")
-        insert_label_data(image_url, extracted_text)
+        process_and_insert_label_data(file, extracted_text)
 
         label_photo_processed = True
         print(f"Processed label photo: {file['name']} ({file['id']})")
