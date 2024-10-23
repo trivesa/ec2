@@ -274,7 +274,7 @@ for file in files_sorted:
             print(f"Extracted text: {extracted_text}")
 
         send_message_to_ui(extracted_text, "extracted texts block")
-        process_and_insert_label_data(file, extracted_text)
+        insert_label_data(image_url, extracted_text)
 
         label_photo_processed = True
         print(f"Processed label photo: {file['name']} ({file['id']})")
@@ -282,3 +282,12 @@ for file in files_sorted:
         print(f"Skipping file: {file['name']} ({file['id']})")
 
 print("Processing complete.")
+
+def clean_extracted_text(text):
+    lines = text.split('\n')
+    cleaned_lines = []
+    for line in lines:
+        line = line.strip()
+        if line and line not in cleaned_lines:
+            cleaned_lines.append(line)
+    return '\n'.join(cleaned_lines)
