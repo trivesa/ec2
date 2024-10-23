@@ -203,7 +203,7 @@ def sort_by_dsc_number(file):
         # 如果找到匹配的数字，返回该数字的整数值
         return int(match.group(1))
     else:
-        # 如果没有找到匹配的数字，返回一个非常大的数，确保��个文件排在最后
+        # 如果没有找到匹配的数字，返回一个非常大的数，确保个文件���在最后
         return float('inf')
 
 # Find the latest added subfolder within the parent folder
@@ -255,8 +255,19 @@ for file in files_sorted:
 
     # If we have a black photo, find the label photo with the closest sequence number
     if black_photo_found:
-        current_sequence_number = int(file['name'][-9:-4])
-        last_black_photo_sequence_number = int(last_black_photo['name'][-9:-4])
+        def extract_sequence_number(filename):
+            match = re.search(r'DSC(\d{5})', filename)
+            if match:
+                return int(match.group(1))
+            else:
+                return -1  # 或者其他适当的默认值
+
+        current_sequence_number = extract_sequence_number(file['name'])
+        last_black_photo_sequence_number = extract_sequence_number(last_black_photo['name'])
+
+        if current_sequence_number == -1 or last_black_photo_sequence_number == -1:
+            print(f"Warning: Could not extract sequence number from {file['name']} or {last_black_photo['name']}")
+            continue
 
         if current_sequence_number > last_black_photo_sequence_number:
             print(f"Identified label photo: {file['name']} ({file['id']})")
