@@ -203,7 +203,7 @@ def sort_by_dsc_number(file):
         # 如果找到匹配的数字，返回该数字的整数值
         return int(match.group(1))
     else:
-        # 如果没有找到匹配的数字，返回一个非常大的数，确保个文件���在最后
+        # 如果没有找到匹配的数字，返回一个非常大的数，确保个文件排在最后
         return float('inf')
 
 # Find the latest added subfolder within the parent folder
@@ -297,3 +297,13 @@ for file in files_sorted:
             print(f"Processed label photo: {file['name']} ({file['id']})")
 
 print("Processing complete.")
+
+def download_file(file_id):
+    request = drive_service.files().get_media(fileId=file_id)
+    file = io.BytesIO()
+    downloader = MediaIoBaseDownload(file, request)
+    done = False
+    while done is False:
+        status, done = downloader.next_chunk()
+    file.seek(0)
+    return file
