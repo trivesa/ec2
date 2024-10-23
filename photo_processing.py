@@ -9,7 +9,7 @@ import os
 import re
 import numpy as np
 
-# 从环境变量获取凭证好的
+# 从环境变量获取凭证
 credentials_json = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS_JSON')
 if not credentials_json:
     raise ValueError("GOOGLE_APPLICATION_CREDENTIALS_JSON environment variable not set")
@@ -50,6 +50,7 @@ def is_black_photo(image, tolerance=10, black_pixel_ratio=0.95):
 
 def insert_label_data(image_url, extracted_text):
     # ... [保持原有的插入逻辑不变] ...
+    pass  # 如果函数体为空，请使用 pass 语句
 
 def download_file(file_id):
     request = drive_service.files().get_media(fileId=file_id)
