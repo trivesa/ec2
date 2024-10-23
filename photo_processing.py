@@ -49,8 +49,37 @@ def is_black_photo(image, tolerance=10, black_pixel_ratio=0.95):
     return np.mean(black_pixels) >= black_pixel_ratio
 
 def insert_label_data(image_url, extracted_text):
-    # ... [保持原有的插入逻辑不变] ...
-    pass  # 如果函数体为空，请使用 pass 语句
+    try:
+        # 检查是否已经处理过这个图片
+        result = sheets_service.spreadsheets().values().get(
+            spreadsheetId=spreadsheet_id,
+            range=f'{sheet_name}!A:A'
+        ).execute()
+        values = result.get('values', [])
+        if any(image_url in row for row in values):
+            print(f"Image {image_url} already processed. Skipping.")
+            return
+
+        # 准备要插入的数据
+        row_data = [
+            image_url,
+            extracted_text,
+            f'=IMAGE("{image_url}", 1)'  # 这将在 Google Sheets 中显示图片
+        ]
+
+        # 插入数据
+        result = sheets_service.spreadsheets().values().append(
+            spreadsheetId=spreadsheet_id,
+            range=f'{sheet_name}!A:C',
+            valueInputOption='USER_ENTERED',
+            insertDataOption='INSERT_ROWS',
+            body={'values': [row_data]}
+        ).execute()
+
+        print(f"Data successfully inserted into Google Sheets for image {image_url}")
+
+    except Exception as e:
+        print(f"Error inserting data: {e}")
 
 def download_file(file_id):
     request = drive_service.files().get_media(fileId=file_id)
@@ -97,39 +126,42 @@ if __name__ == "__main__":
     label_photo_processed = False
 
     for file in files_sorted:
-        print(f"Checking file: {file['name']} ({file['mimeType']})")
+        try:
+            print(f"Checking file: {file['name']} ({file['mimeType']})")
 
-        image_file = download_file(file['id'])
-        image_file.seek(0)
-        pil_image = Image.open(image_file)
+            image_file = download_file(file['id'])
+            image_file.seek(0)
+            pil_image = Image.open(image_file)
 
-        if is_black_photo(pil_image):
-            black_photo_found = True
-            last_black_photo = file
-            label_photo_processed = False
-            print(f"Identified black photo: {file['name']} ({file['id']})")
-        elif black_photo_found and not label_photo_processed:
-            print(f"Processing label photo: {file['name']} ({file['id']})")
-            
-            vision_image = vision.Image(content=image_file.getvalue())
-            response = vision_client.text_detection(image=vision_image, image_context={"language_hints": ["en"]})
-            texts = response.text_annotations
+            if is_black_photo(pil_image):
+                black_photo_found = True
+                last_black_photo = file
+                label_photo_processed = False
+                print(f"Identified black photo: {file['name']} ({file['id']})")
+            elif black_photo_found and not label_photo_processed:
+                print(f"Processing label photo: {file['name']} ({file['id']})")
+                
+                vision_image = vision.Image(content=image_file.getvalue())
+                response = vision_client.text_detection(image=vision_image, image_context={"language_hints": ["en"]})
+                texts = response.text_annotations
 
-            image_url = f'https://drive.google.com/uc?id={file["id"]}'
+                image_url = f'https://drive.google.com/uc?id={file["id"]}'
 
-            if not texts:
-                print("No text detected in the image.")
-                extracted_text = "未检测到标签。请手动验证并输入产品信息。"
+                if not texts:
+                    print("No text detected in the image.")
+                    extracted_text = "未检测到标签。请手动验证并输入产品信息。"
+                else:
+                    extracted_text = clean_extracted_text(texts[0].description)
+                    print(f"Extracted text: {extracted_text}")
+
+                send_message_to_ui(extracted_text, "extracted texts block")
+                insert_label_data(image_url, extracted_text)
+
+                label_photo_processed = True
+                print(f"Processed label photo: {file['name']} ({file['id']})")
             else:
-                extracted_text = clean_extracted_text(texts[0].description)
-                print(f"Extracted text: {extracted_text}")
-
-            send_message_to_ui(extracted_text, "extracted texts block")
-            insert_label_data(image_url, extracted_text)
-
-            label_photo_processed = True
-            print(f"Processed label photo: {file['name']} ({file['id']})")
-        else:
-            print(f"Skipping file: {file['name']} ({file['id']})")
+                print(f"Skipping file: {file['name']} ({file['id']})")
+        except Exception as e:
+            print(f"Error processing file {file['name']}: {str(e)}")
 
     print("Processing complete.")
