@@ -7,6 +7,7 @@ from PIL import Image, ImageStat
 import io
 import os
 import re
+import numpy as np
 
 # 从环境变量获取凭证
 credentials_json = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS_JSON')
@@ -45,17 +46,24 @@ def send_message_to_ui(message, block_name):
     print(f"Message to {block_name}: {message}")
 
 # Define the is_black_photo function
-def is_black_photo(image):
+def is_black_photo(image, tolerance=5):
     """
-    Determines if the given image is a black photo.
-    This function calculates the average brightness of the image and
-    considers it a black photo if the brightness is below a certain threshold.
+    Determines if the given image is a pure black photo (#000000).
+    
+    :param image: PIL Image object
+    :param tolerance: Allowed deviation from pure black (0-255)
+    :return: Boolean indicating if the image is considered black
     """
-    grayscale_image = image.convert('L')
-    stat = ImageStat.Stat(grayscale_image)
-    brightness = stat.mean[0]
-    brightness_threshold = 10  # Adjust this value based on your images
-    return brightness < brightness_threshold
+    # 将图像转换为 RGB 模式（如果不是的话）
+    rgb_image = image.convert('RGB')
+    
+    # 将图像转换为 numpy 数组
+    np_image = np.array(rgb_image)
+    
+    # 检查所有像素是否在容差范围内为黑色
+    is_black = np.all(np_image <= tolerance)
+    
+    return is_black
 
 # Function to insert data into Google Sheets
 def insert_label_data(image_url, extracted_text):
@@ -203,7 +211,7 @@ def sort_by_dsc_number(file):
         # 如果找到匹配的数字，返回该数字的整数值
         return int(match.group(1))
     else:
-        # 如果没有找到匹配的数字，返回一个非常大的数，确保个文件排在最后
+        # 如果没有找到匹配的数字，返回一个非常大的数，确保个文件在最后
         return float('inf')
 
 # Find the latest added subfolder within the parent folder
@@ -221,31 +229,25 @@ files = results.get('files', [])
 # Sort files based on the last 5 digits of their names
 files_sorted = sorted(files, key=sort_by_dsc_number)
 
-# Variables to track the black and label photos
+# 变量来跟踪黑色照片和标签照片
 black_photo_found = False
 last_black_photo = None
 
-# Loop through all files to identify and process label photos
+# 循环处理所有文件以识别和处理标签照片
 for file in files_sorted:
     print(f"Checking file: {file['name']} ({file['mimeType']})")
 
-    # Download the image content
-    request = drive_service.files().get_media(fileId=file['id'])
-    image_file = io.BytesIO()
-    downloader = MediaIoBaseDownload(image_file, request)
-    done = False
-    while not done:
-        status, done = downloader.next_chunk()
-    image_file.seek(0)
-
-    # Load the image for vision processing
-    vision_image = vision.Image(content=image_file.read())
-
-    # Load the image for PIL processing
+    # 下载图像内容
+    image_file = download_file(file['id'])
+    
+    # 加载图像用于视觉处理
+    vision_image = vision.Image(content=image_file.getvalue())
+    
+    # 加载图像用于 PIL 处理
     image_file.seek(0)
     pil_image = Image.open(image_file)
 
-    # Check if the current photo is a black photo
+    # 检查当前照片是否为黑色照片
     if not black_photo_found:
         if is_black_photo(pil_image):
             black_photo_found = True
@@ -253,7 +255,7 @@ for file in files_sorted:
             print(f"Identified black photo: {file['name']} ({file['id']})")
             continue
 
-    # If we have a black photo, find the label photo with the closest sequence number
+    # 如果我们有一个黑色照片，找到序列号最接近的标签照片
     if black_photo_found:
         def extract_sequence_number(filename):
             match = re.search(r'DSC(\d{5})', filename)
@@ -272,26 +274,26 @@ for file in files_sorted:
         if current_sequence_number > last_black_photo_sequence_number:
             print(f"Identified label photo: {file['name']} ({file['id']})")
 
-            # Call Vision API to detect text in the label photo
+            # 调用 Vision API 检测标签照片中的文本
             response = vision_client.text_detection(image=vision_image)
             texts = response.text_annotations
 
-            # Construct Google Drive image URL
+            # 构造 Google Drive 图像 URL
             image_url = f'https://drive.google.com/uc?id={file["id"]}'
 
-            # Check if any text was detected
+            # 检查是否检测到任何文本
             if not texts:
-                # No text detected, send a message to the UI and Sheets
-                send_message_to_ui("No label detected. Manual validate and input product information.", "extracted texts block")
-                insert_label_data(image_url, "No label detected. Manual validate and input product information.")
-                print("No text detected in the image. Notification sent to UI and Sheets.")
+                # 未检测到文本，向 UI 和 Sheets 发送消息
+                send_message_to_ui("未检测到标签。请手动验证并输入产品信息。", "extracted texts block")
+                insert_label_data(image_url, "未检测到标签。请手动验证并输入产品信息。")
+                print("图像中未检测到文本。通知已发送到 UI 和 Sheets。")
             else:
-                # Text detected, construct the text layout and send it to the UI and Sheets
+                # 检测到文本，构造文本布局并发送到 UI 和 Sheets
                 extracted_text = "\n".join([text.description for text in texts])
                 send_message_to_ui(extracted_text, "extracted texts block")
                 insert_label_data(image_url, extracted_text)
 
-            # Reset flag and last_black_photo to look for the next black photo
+            # 重置标志和 last_black_photo 以寻找下一个黑色照片
             black_photo_found = False
             last_black_photo = None
             print(f"Processed label photo: {file['name']} ({file['id']})")
