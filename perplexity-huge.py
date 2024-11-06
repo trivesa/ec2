@@ -44,14 +44,14 @@ GENERAL_INSTRUCTIONS = """
 Product Listing Guidelines for Luxury Fashion Items:
 
 1. Basic Information Format:
-   - Title (Titolo): [Brand] [Product Type] [Key Feature] [Color] - Size [XX]
-   - Subtitle (Sottotitolo): One compelling benefit under 55 characters
-   - Short Description (Breve Descrizione): 2-3 clear sentences
-   - Description (Descrizione): Clear paragraphs without bullet points
+   - Title: [Brand] [Product Type] [Key Feature] [Color] - Size [XX]
+   - Subtitle: One compelling benefit under 55 characters
+   - Short Description: 2-3 clear sentences
+   - Description: Clear paragraphs without bullet points
 
 2. Field Name Requirements:
-   - Use exact format: 'English Name (Italian Name)'
-   - Example: 'Material (Materiale)', 'Color (Colore)'
+   - Use exact format without translations
+   - Example: 'Material', 'Color'
    - Use 'N/A' only when information is unavailable
 
 3. Content Guidelines:
@@ -68,7 +68,7 @@ Product Listing Guidelines for Luxury Fashion Items:
    Technical Details:
    - List key features and technologies
    - Explain practical benefits
-- Include relevant certifications
+   - Include relevant certifications
 
 4. Description Structure:
    First Paragraph: Product overview and key features
@@ -140,20 +140,14 @@ def get_size_info(row):
 
 def generate_prompt(template, brand, product_type, style_number, additional_info, size_info):
     prompt = f"""
-    Brand: {brand}
-    Product Type: {product_type}
-    Style Number: {style_number}
-    Additional Information: {additional_info}
-    Size Information: {size_info}
-
+    ...
     Please generate a detailed eBay listing using the following format:
 
-    **Title (Titolo):** [Generate a concise, descriptive title]
-    **Subtitle (Sottotitolo):** [Generate a brief, catchy subtitle]
-    **Short Description (Breve Descrizione):** [Generate a brief summary of the product, about 2-3 sentences]
-    **Description (Descrizione):** [Generate a detailed, multi-paragraph description]
-    
-    **Mandatory Fields:**
+    **Title:** [Generate a concise, descriptive title]
+    **Subtitle:** [Generate a brief, catchy subtitle]
+    **Short Description:** [Generate a brief summary of the product, about 2-3 sentences]
+    **Description:** [Generate a detailed, multi-paragraph description]
+    ...
     """
     
     for field in template['mandatory_fields']:
@@ -250,7 +244,8 @@ def extract_fields_from_response(raw_response, template):
     logging.info(f"Raw response to extract: {raw_response[:500]}...")  # 只记录前500个字符
     extracted_data = {}
     
-    fields_to_extract = ['Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
+    # 更新字段名称，移除意大利语
+    fields_to_extract = ['Title', 'Subtitle', 'Short Description', 'Description']
     
     for field in fields_to_extract:
         pattern = rf'\*\*{re.escape(field)}:\*\*\s*(.*?)(?=\n\n\*\*|$)'
@@ -295,36 +290,35 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
             Additional Information: {additional_info}
 
             Format requirements:
-            1. Title (Titolo): Create a clear title under 80 characters
+            1. Title: Create a clear title under 80 characters
                - Include brand, product type, and key features
                - Do not include style number
                - Format: [Brand] [Product Type] [Key Feature] [Color/Material]
 
-            2. Subtitle (Sottotitolo): Create a compelling subtitle under 55 characters
+            2. Subtitle: Create a compelling subtitle under 55 characters
                - Highlight unique selling points
                - Focus on benefits or exclusive features
 
-            3. Short Description (Breve Descrizione): 
+            3. Short Description: 
                - 2-3 concise sentences
                - Focus on main features and benefits
                - Avoid technical details
 
-            4. Description (Descrizione):
+            4. Description:
                - Use simple paragraphs without bullet points or markdown
                - Focus on: Materials, Design, Comfort, Quality
                - Include care instructions and sizing information
                - End with a call to action
 
             Please format your response exactly as:
-            **Title (Titolo):** [title]
-            **Subtitle (Sottotitolo):** [subtitle]
-            **Short Description (Breve Descrizione):** [short description]
-            **Description (Descrizione):**
+            **Title:** [title]
+            **Subtitle:** [subtitle]
+            **Short Description:** [short description]
+            **Description:**
             [description]
             """
 
-
-        description_response = call_perplexity_api(description_prompt, 0.3)  # 使用较高的温度以获得有创意的描述
+        description_response = call_perplexity_api(description_prompt, 0.3)
         
         if not description_response:
             logging.warning(f"Failed to generate description on attempt {attempt + 1}")
@@ -366,8 +360,8 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
         extracted_data = {**description_data, **fields_data}
         
         # 添加尺寸信息到标题（如果可用）
-        if 'Title (Titolo)' in extracted_data and size_info:
-            extracted_data['Title (Titolo)'] += f" {size_info}"
+        if 'Title' in extracted_data and size_info:
+            extracted_data['Title'] += f" {size_info}"
         
         validate_fields(extracted_data)  # 验证字段
         
@@ -417,27 +411,26 @@ def get_sheet_id(sheet_name):
     return None
 
 def validate_fields(data):
-    if '**Subtitle' in data.get('Title (Titolo)', ''):
+    if '**Subtitle' in data.get('Title', ''):
         logging.warning("Title contains Subtitle content")
         # 尝试修复问题
-        data['Title (Titolo)'] = data['Title (Titolo)'].split('**Subtitle')[0].strip()
+        data['Title'] = data['Title'].split('**Subtitle')[0].strip()
     
-    if '**Short Description' in data.get('Title (Titolo)', ''):
+    if '**Short Description' in data.get('Title', ''):
         logging.warning("Title contains Short Description content")
         # 尝试修复问题
-        data['Title (Titolo)'] = data['Title (Titolo)'].split('**Short Description')[0].strip()
+        data['Title'] = data['Title'].split('**Short Description')[0].strip()
     
-    if '**Short Description' in data.get('Subtitle (Sottotitolo)', ''):
+    if '**Short Description' in data.get('Subtitle', ''):
         logging.warning("Subtitle contains Short Description content")
         # 尝试修复问题
-        data['Subtitle (Sottotitolo)'] = data['Subtitle (Sottotitolo)'].split('**Short Description')[0].strip()
+        data['Subtitle'] = data['Subtitle'].split('**Short Description')[0].strip()
     
     # 检查字段长度
-    if len(data.get('Title (Titolo)', '')) > 80:
-        logging.warning(f"Title is too long: {len(data['Title (Titolo)'])} characters")
-    if len(data.get('Subtitle (Sottotitolo)', '')) > 55:
-        logging.warning(f"Subtitle is too long: {len(data['Subtitle (Sottotitolo)'])} characters")
-    
+    if len(data.get('Title', '')) > 80:
+        logging.warning(f"Title is too long: {len(data['Title'])} characters")
+    if len(data.get('Subtitle', '')) > 55:
+        logging.warning(f"Subtitle is too long: {len(data['Subtitle'])} characters")
     # 可以添加更多的验证...
 
 def main():
@@ -496,8 +489,8 @@ def main():
                 logging.info(f"Sheet field names: {field_names}")
                 logging.info(f"Extracted data keys: {list(data[0].keys())}")
 
-                # Ensure all required fields are present
-                required_fields = ['Internal Reference', 'Title (Titolo)', 'Subtitle (Sottotitolo)', 'Short Description (Breve Descrizione)', 'Description (Descrizione)']
+                # 在 main 函数中
+                required_fields = ['Internal Reference', 'Title', 'Subtitle', 'Short Description', 'Description']
                 for field in required_fields:
                     if field not in field_names:
                         field_names.insert(0, field)  # 将Internal Reference插入到字段列表的开头
