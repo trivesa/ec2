@@ -289,40 +289,39 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
         return None
 
     for attempt in range(max_retries):
-        for attempt in range(max_retries):
         # 第一次API调用：生成产品描述
         description_prompt = f"""
-        Generate a concise and professional product description for {brand} {product_type}.
-        Additional Information: {additional_info}
+            Generate a concise and professional product description for {brand} {product_type}.
+            Additional Information: {additional_info}
 
-        Format requirements:
-        1. Title (Titolo): Create a clear title under 80 characters
-           - Include brand, product type, and key features
-           - Do not include style number
-           - Format: [Brand] [Product Type] [Key Feature] [Color/Material]
+            Format requirements:
+            1. Title (Titolo): Create a clear title under 80 characters
+               - Include brand, product type, and key features
+               - Do not include style number
+               - Format: [Brand] [Product Type] [Key Feature] [Color/Material]
 
-        2. Subtitle (Sottotitolo): Create a compelling subtitle under 55 characters
-           - Highlight unique selling points
-           - Focus on benefits or exclusive features
+            2. Subtitle (Sottotitolo): Create a compelling subtitle under 55 characters
+               - Highlight unique selling points
+               - Focus on benefits or exclusive features
 
-        3. Short Description (Breve Descrizione): 
-           - 2-3 concise sentences
-           - Focus on main features and benefits
-           - Avoid technical details
+            3. Short Description (Breve Descrizione): 
+               - 2-3 concise sentences
+               - Focus on main features and benefits
+               - Avoid technical details
 
-        4. Description (Descrizione):
-           - Use simple paragraphs without bullet points or markdown
-           - Focus on: Materials, Design, Comfort, Quality
-           - Include care instructions and sizing information
-           - End with a call to action
+            4. Description (Descrizione):
+               - Use simple paragraphs without bullet points or markdown
+               - Focus on: Materials, Design, Comfort, Quality
+               - Include care instructions and sizing information
+               - End with a call to action
 
-        Please format your response exactly as:
-        **Title (Titolo):** [title]
-        **Subtitle (Sottotitolo):** [subtitle]
-        **Short Description (Breve Descrizione):** [short description]
-        **Description (Descrizione):**
-        [description]
-        """
+            Please format your response exactly as:
+            **Title (Titolo):** [title]
+            **Subtitle (Sottotitolo):** [subtitle]
+            **Short Description (Breve Descrizione):** [short description]
+            **Description (Descrizione):**
+            [description]
+            """
 
 
         description_response = call_perplexity_api(description_prompt, 0.3)  # 使用较高的温度以获得有创意的描述
