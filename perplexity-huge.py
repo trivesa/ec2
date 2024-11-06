@@ -420,6 +420,8 @@ def prepare_data_for_write(data, sheet_name):
             if field not in data:
                 data[field] = 'N/A'
                 logging.warning(f"Missing field {field} in shoes data")
+    
+    return data  # 返回处理后的数据
 
 def clear_range_format(sheet_name, start_row, end_row):
     range_name = f"'{sheet_name}'!A{start_row}:ZZ{end_row}"
@@ -594,7 +596,7 @@ def main():
                 # Prepare data to write
                 rows_to_write = []
                 for item in data:
-                    row = [item.get('Internal Reference', 'N/A')]  # 首先添加Internal Reference
+                    row = [item.get('Internal Reference', 'N/A')]  # 首添加Internal Reference
                     for field in field_names[1:]:  # 跳过Internal Reference，因为我们已经添加了
                         value = item.get(field, 'N/A')
                         if isinstance(value, str) and len(value) > 50000:
@@ -611,7 +613,8 @@ def main():
                 clear_range_format(sheet_name, current_row, current_row + len(rows_to_write))
 
                 # Prepare data for write
-                rows_to_write = prepare_data_for_write(rows_to_write)
+                for i, item in enumerate(rows_to_write):
+                    rows_to_write[i] = prepare_data_for_write(item, sheet_name)
 
                 # Write data
                 range_name = f"'{sheet_name}'!A{current_row}"
