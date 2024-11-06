@@ -41,63 +41,50 @@ if not SPREADSHEET_ID:
     exit(1)
 
 GENERAL_INSTRUCTIONS = """
-Use the provided Brand, Product Type, Style number, Additional Information, and Size Information to search for product details and complete the eBay product listing as per the below requirements:
+Product Listing Guidelines for Luxury Fashion Items:
 
-Create Title (Titolo), Subtitle (Sottotitolo), Short Description (Breve Descrizione), and Description (Descrizione).
-Find the Mandatory and Optional product information listed under 'Mandatory Fields' and 'Optional Fields'.
-IMPORTANT: You MUST use the EXACT field names as provided, including both English and Italian parts. Every field name should be in the format: 'English Name (Italian Name)'. Do not omit or change any part of the field names.
-If any fields have no information available on the internet, or you cannot find it, use 'N/A' as the value.
-Provide specific price ranges based on current market data when possible.
-Include detailed size information, including available sizes and fit recommendations.
-Fill in as many optional fields as possible, especially technical specifications.
-Provide detailed information about materials used and manufacturing processes.
-The tone should be professional and follow a minimalist style.
-Ensure all field names in your response follow the 'English (Italian)' format, even if you're only able to provide information for the English part.
+1. Basic Information Format:
+   - Title (Titolo): [Brand] [Product Type] [Key Feature] [Color] - Size [XX]
+   - Subtitle (Sottotitolo): One compelling benefit under 55 characters
+   - Short Description (Breve Descrizione): 2-3 clear sentences
+   - Description (Descrizione): Clear paragraphs without bullet points
 
-Instructions for the Title (Titolo):
-- Brand Name: Include the brand for recognition (e.g., 'Nike').
-- Product Type: Clearly state what the item is (e.g., 'Men's Running Shoes').
-- Key Features: Include important features such as model name, color, or technology (e.g., 'Air Max', 'Black/White', 'Flyknit').
-- Size: Add the size information to the end of the title if available.
+2. Field Name Requirements:
+   - Use exact format: 'English Name (Italian Name)'
+   - Example: 'Material (Materiale)', 'Color (Colore)'
+   - Use 'N/A' only when information is unavailable
 
-Instructions for the subtitle (Sottotitolo)
-Complementary: It should add value beyond what the main title already says.
-Concise: Keep it short and clear, under 55 characters.
+3. Content Guidelines:
+   Materials & Construction:
+   - Specify primary materials and their quality
+   - Detail manufacturing techniques
+   - Include care instructions
 
-Instructions for the Description (Descrizione):
-Create a comprehensive product description using bullet points for better readability. Include the following elements:
+   Sizing & Fit:
+   - Provide exact measurements
+   - Compare with standard sizes
+   - Include fit recommendations
 
-• Product Overview:
-  - Brief, engaging statement highlighting key features or benefits
-  - Explanation of what makes this product stand out
+   Technical Details:
+   - List key features and technologies
+   - Explain practical benefits
+- Include relevant certifications
 
-• Key Features:
-  - Focus on the most important features (technology, materials, design)
-  - Explain how these features benefit the user
-  - Provide specific details about product characteristics and proprietary technologies
+4. Description Structure:
+   First Paragraph: Product overview and key features
+   Second Paragraph: Materials and construction details
+   Third Paragraph: Fit and sizing information
+   Fourth Paragraph: Care instructions and warranty
+   Final Paragraph: Brief call to action
 
-• Size and Fit:
-  - Detailed information about fit, including size options
-  - Comparison to standard sizing
+5. Style Requirements:
+   - Use professional, minimalist language
+   - Avoid marketing hyperbole
+   - Focus on factual information
+   - Maintain EU/UK compliance
+   - Include current market pricing when available
 
-• Materials and Construction:
-  - Description of materials used in different parts of the product
-  - Information on special manufacturing processes
-
-• Intended Use:
-  - Explanation of activities or occasions the product is best suited for
-
-• Care Instructions:
-  - Guidance on how to clean and maintain the product
-
-• After-Sales:
-  - Mention of warranty information and return policy within 14 days according to the European regulations.
-
-• Purchase Encouragement:
-  - Conclusion encouraging the buyer to make a purchase
-  - Highlight any limited availability or special offers
-
-Combine all these elements into a cohesive, flowing description using bullet points, without separate headings or sections. Ensure the description is easy to read, informative, and engaging.
+Note: All descriptions must be accurate, verifiable, and compliant with EU consumer protection laws.
 """
 
 def read_spreadsheet(range_name):
@@ -190,7 +177,16 @@ def call_perplexity_api(prompt, temperature):
     data = {
         'model': 'llama-3.1-sonar-huge-128k-online',
         'messages': [
-            {'role': 'system', 'content': 'You are a luxury consumer goods industry expert, specializing in high-end fashion and luxury brand product descriptions and market positioning.'},
+            {
+                'role': 'system', 
+                'content': '''You are a luxury fashion expert specializing in high-end product descriptions.
+                Your responses should be:
+                1. Professional but accessible
+                2. Accurate and specific
+                3. Free of marketing hyperbole
+                4. Focused on materials, craftsmanship, and design
+                5. Compliant with EU/UK product description standards'''
+            },
             {'role': 'user', 'content': prompt}
         ],
         'max_tokens': 1000,
@@ -293,20 +289,42 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
         return None
 
     for attempt in range(max_retries):
+        for attempt in range(max_retries):
         # 第一次API调用：生成产品描述
         description_prompt = f"""
-        Generate a detailed product description for {brand} {product_type}.
+        Generate a concise and professional product description for {brand} {product_type}.
         Additional Information: {additional_info}
-        Please format your response exactly as follows:
 
-        **Title (Titolo):** [Your title here, do not include style number]
-        **Subtitle (Sottotitolo):** [Your subtitle here]
-        **Short Description (Breve Descrizione):** [Your brief summary here, about 2-3 sentences]
+        Format requirements:
+        1. Title (Titolo): Create a clear title under 80 characters
+           - Include brand, product type, and key features
+           - Do not include style number
+           - Format: [Brand] [Product Type] [Key Feature] [Color/Material]
+
+        2. Subtitle (Sottotitolo): Create a compelling subtitle under 55 characters
+           - Highlight unique selling points
+           - Focus on benefits or exclusive features
+
+        3. Short Description (Breve Descrizione): 
+           - 2-3 concise sentences
+           - Focus on main features and benefits
+           - Avoid technical details
+
+        4. Description (Descrizione):
+           - Use simple paragraphs without bullet points or markdown
+           - Focus on: Materials, Design, Comfort, Quality
+           - Include care instructions and sizing information
+           - End with a call to action
+
+        Please format your response exactly as:
+        **Title (Titolo):** [title]
+        **Subtitle (Sottotitolo):** [subtitle]
+        **Short Description (Breve Descrizione):** [short description]
         **Description (Descrizione):**
-        [Your multi-line description here]
-
-        Use bullet points for better readability in the description.
+        [description]
         """
+
+
         description_response = call_perplexity_api(description_prompt, 0.3)  # 使用较高的温度以获得有创意的描述
         
         if not description_response:
@@ -315,10 +333,13 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
 
         # 第二次API调用：生成Mandatory和Optional字段
         fields_prompt = f"""
-        For the {brand} {product_type} with style number {style_number}, 
-        Additional Information: {additional_info}
-        Size Information: {size_info}
-        provide information for the following fields. Use 'N/A' if the information is not available or not applicable.
+        For this {brand} {product_type} (Style: {style_number}):
+
+        Product Details:
+        - Additional Info: {additional_info}
+        - Size Info: {size_info}
+
+        Please provide accurate information for each field:
 
         Mandatory Fields:
         {', '.join(template['mandatory_fields'])}
@@ -326,8 +347,14 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
         Optional Fields:
         {', '.join(template['optional_fields'])}
 
-        Please provide the information in a structured format, with each field on a new line.
+        Requirements:
+        1. Use 'N/A' only if information is truly unavailable
+        2. Be specific with measurements and materials
+        3. Include actual market prices where available
+        4. Format each field as: **Field Name:** [content]
+        5. Keep technical specifications precise and verifiable
         """
+        
         fields_response = call_perplexity_api(fields_prompt, 0.1)  # 使用较低的温度以获得更精确的字段信息
         
         if not fields_response:
