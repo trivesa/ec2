@@ -1,0 +1,41 @@
+{
+  "fields": [
+    "Title (Titolo)",
+    "Subtitle (Sottotitolo)",
+    "Description (Descrizione)"
+  ],
+  "mandatory_fields": [
+    "Object Category (Categoria Oggetto)",
+    "Store Category (Categoria del Negozio)",
+    "Brand (Marca)",
+    "Type (Tipo)",
+    "Department (Reparto)",
+    "Color (Colore)",
+    "Condition of the Item (Condizione dell'oggetto)",
+    "Price (Prezzo)",
+    "Shipping Rule (Regola sulla spedizione)"
+  ],
+  "optional_fields": [
+    "Custom Label (Etichetta personalizzata - SKU)",
+    "EAN (EAN)",
+    "Style (Stile)",
+    "Material (Materiale)",
+    "Character (Personaggio)",
+    "Theme (Tema)",
+    "Features (Caratteristiche)",
+    "Country of Manufacture (Paese di fabbricazione)",
+    "Pattern (Fantasia)",
+    "Decorative Elements (Elementi decorativi)",
+    "Vintage (Vintage)",
+    "Fabric Type (Tessuto)",
+    "Handmade (Fatto a mano)",
+    "Year Manufactured (Anno di fabbricazione)",
+    "MPN (MPN)",
+    "Quantity (Quantità)",
+    "Unit of Measurement (Unità di misura)",
+    "Personalized (Personalizzato)",
+    "Width (Larghezza)",
+    "Garment Care (Cura dell'indumento)",
+    "Product Line (Linea di prodotto)"
+  ]
+}

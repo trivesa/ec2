@@ -1,0 +1,52 @@
+{
+  "fields": [
+    "Title (Titolo)",
+    "Subtitle (Sottotitolo)",
+    "Description (Descrizione)"
+  ],
+  "mandatory_fields": [
+    "Object Category (Categoria Oggetto)",
+    "Store Category (Categoria del Negozio)",
+    "Brand (Marca)",
+    "Cut (Taglia)",
+    "Department (Reparto)",
+    "Type (Tipo)",
+    "Style (Stile)",
+    "Condition of the Item (Condizione dell'oggetto)",
+    "Price (Prezzo)",
+    "Shipping Rule (Regola sulla spedizione)"
+  ],
+  "optional_fields": [
+    "MPN (MPN)",
+    "Custom Label (Etichetta personalizzata - SKU)",
+    "EAN (EAN)",
+    "Material (Materiale)",
+    "Color (Colore)",
+    "Tissue (Tessuto)",
+    "Size Type (Tipo di taglia)",
+    "Fit (Vestibilità)",
+    "Sleeve Length (Lunghezza della manica)",
+    "Unit of Measurement (Unità di misura)",
+    "Character (Personaggio)",
+    "Season (Stagione)",
+    "Vintage (Vintage)",
+    "Neckline (Scollatura)",
+    "Theme (Tema)",
+    "Activity (Attività)",
+    "Decorative Elements (Elementi decorativi)",
+    "Characteristics (Caratteristiche)",
+    "Occasion (Occasione)",
+    "Knitting Style (Stile lavorazione a maglia)",
+    "Graphic Printing (Stampa grafica)",
+    "Garment Care (Cura dell'indumento)",
+    "Country of Manufacture (Paese di fabbricazione)",
+    "Fabric Type (Tipo di tessuto)",
+    "Personalized (Personalizzato)",
+    "Year Manufactured (Anno di fabbricazione)",
+    "Handmade (Fatto a mano)",
+    "Pattern (Fantasia)",
+    "Closure Type (Tipo di chiusura)",
+    "Accents (Dettagli decorativi)",
+    "Product Line (Linea di prodotto)"
+  ]
+}

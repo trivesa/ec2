@@ -1,0 +1,37 @@
+# Environment and credentials
+.env
+.google_credentials.json
+google-credentials/
+*.log
+
+# Python
+__pycache__/
+*.pyc
+.local/
+.cache/
+
+# System files
+.bash_history
+.bash_profile
+.bashrc
+.bashrc.broken
+.bashrcy
+.config/
+.pki/
+.wget-hsts
+
+# Backup files
+*.bak
+*.save
+
+# Chrome and driver files
+chromedriver*
+geckodriver*
+google-chrome*
+test.png
+LICENSE.chromedriver
+api_response_*.json
+.ssh/
+.bash_history
+google-credentials/
+.env
