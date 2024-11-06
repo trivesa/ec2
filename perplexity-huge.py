@@ -118,18 +118,14 @@ def get_template(product_type):
     
     product_type = product_type.lower().replace(" ", "_")
     template_file = f'templates/{product_type}_template.json'
-    abs_template_file = os.path.abspath(template_file)
-    logging.info(f"Attempting to open template file: {abs_template_file}")
-    
-    if not os.path.exists(abs_template_file):
-        logging.error(f"Template file does not exist: {abs_template_file}")
-        return None, None
     
     try:
-        with open(abs_template_file, 'r') as file:
-            return json.load(file), product_type
-    except json.JSONDecodeError:
-        logging.error(f"Error decoding JSON from file: {abs_template_file}")
+        with open(template_file, 'r') as file:
+            template = json.load(file)
+            template['product_type'] = product_type
+            return template, product_type
+    except Exception as e:
+        logging.error(f"Error loading template: {str(e)}")
         return None, None
 
 def get_size_info(row):
@@ -139,6 +135,45 @@ def get_size_info(row):
     return ""
 
 def generate_prompt(template, brand, product_type, style_number, additional_info, size_info):
+    if product_type.lower() == 'shoes':
+        prompt = f"""
+        Please provide detailed information about these {brand} shoes, following this specific format:
+
+        **Title:** [Generate a concise, descriptive title]
+        **Subtitle:** [Generate a brief, catchy subtitle]
+        **Short Description:** [Generate a brief summary of the product, about 2-3 sentences]
+        **Description:** [Generate a detailed, multi-paragraph description]
+
+        Please ensure to cover these specific aspects in your description:
+
+        Size: State the shoe size.
+
+        Department: Specify whether it's men's, women's, or other.
+
+        Color: Indicate the primary color or color combination.
+
+        Type: Based on the department, classify as one of:
+        - Men's: Athletic Shoes/Sneakers, Boots, Casual Shoes, Dress Shoes, Sandals, Slippers
+        - Women's: Athletic Shoes/Sneakers, Boots, Comfort Shoes, Flats, Heels, Sandals, Slippers
+
+        Style: Specify the style based on these categories:
+        - Boot Styles: Knee-high, Mid-calf, Hiking, Chelsea, Winter, Wellington, Ankle, Work Boots
+        - Casual/Lifestyle: Sneakers (Nike Air Max, Adidas Superstar, etc.), Casual Shoes (Loafers, Vans, etc.)
+        - Formal/Dress: Oxfords, Smart Shoes, Dress Shoes
+        - Sandals: Classic, Platform, Flip Flops, Sports, Beach Shoes, Birkenstock, Crocs, Teva, Adidas Sliders
+        - Luxury/Designer: Christian Louboutin, Gucci, Kate Spade, Kurt Geiger, Carvela
+        - Heel Styles: Block Heel, Chunky Wedge, Kitten Heel, Stiletto, Ballet Flats
+
+        Upper Material: Describe the material used for the shoe's upper part.
+
+        Additional Information: {additional_info}
+        Size Information: {size_info}
+        Style Number: {style_number}
+
+        Please format your response exactly as shown above with the Title, Subtitle, Short Description, and Description fields.
+        """
+    else:
+        # 其他产品类型的现有提示保持不变
     prompt = f"""
     ...
     Please generate a detailed eBay listing using the following format:
@@ -243,6 +278,34 @@ def ensure_sheet_exists(sheet_name):
 def extract_fields_from_response(raw_response, template):
     logging.info(f"Raw response to extract: {raw_response[:500]}...")  # 只记录前500个字符
     extracted_data = {}
+
+    # 特别处理鞋子的关键字段
+    if template.get('product_type') == 'shoes':
+        # 检查并提取 Type
+        type_match = re.search(r'Type:\s*([^.\n]+)', raw_response)
+        if type_match:
+            shoe_type = type_match.group(1).strip()
+            # 验证是否是有效的鞋子类型
+            valid_men_types = ['Athletic Shoes', 'Sneakers', 'Boots', 'Casual Shoes', 'Dress Shoes', 'Sandals', 'Slippers']
+            valid_women_types = ['Athletic Shoes', 'Sneakers', 'Boots', 'Comfort Shoes', 
+                     'Flats', 'Heels', 'Sandals', 'Slippers']
+            if any(valid_type in shoe_type for valid_type in valid_men_types + valid_women_types):
+                extracted_data['Type'] = shoe_type
+            else:
+                logging.warning(f"Invalid shoe type detected: {shoe_type}")
+                extracted_data['Type'] = 'N/A'
+        
+        # 检查并提取 Style
+        style_match = re.search(r'Style:\s*([^.\n]+)', raw_response)
+        if style_match:
+            style = style_match.group(1).strip()
+            extracted_data['Style'] = style
+        
+        # 检查并提取 Upper Material
+        material_match = re.search(r'Upper Material:\s*([^.\n]+)', raw_response)
+        if material_match:
+            upper_material = material_match.group(1).strip()
+            extracted_data['Upper Material'] = upper_material
     
     # 更新字段名称，移除意大利语
     fields_to_extract = ['Title', 'Subtitle', 'Short Description', 'Description']
@@ -363,7 +426,7 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
         if 'Title' in extracted_data and size_info:
             extracted_data['Title'] += f" {size_info}"
         
-        validate_fields(extracted_data)  # 验证字段
+        validate_fields(extracted_data, product_type)  # 验证字段
         
         logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
         return sheet_name, extracted_data
@@ -381,8 +444,18 @@ def verify_written_data(sheet_name, start_row, num_rows):
         for col_index, value in enumerate(row):
             logging.info(f"  Column {col_index + 1}: {value[:100]}...")  # 只记录前100个字符
 
-def prepare_data_for_write(data):
-    return [[str(cell) if cell is not None else '' for cell in row] for row in data]
+def prepare_data_for_write(data, sheet_name):
+    if sheet_name == 'shoes':
+        # 确保所有必需字段都存在
+        required_fields = [
+            'Title', 'Subtitle', 'Description', 
+            'Type', 'Style', 'Upper Material'
+        ]
+        
+        for field in required_fields:
+            if field not in data:
+                data[field] = 'N/A'
+                logging.warning(f"Missing field {field} in shoes data")
 
 def clear_range_format(sheet_name, start_row, end_row):
     range_name = f"'{sheet_name}'!A{start_row}:ZZ{end_row}"
@@ -410,7 +483,23 @@ def get_sheet_id(sheet_name):
             return sheet['properties']['sheetId']
     return None
 
-def validate_fields(data):
+def validate_fields(data, product_type=None):
+    if product_type == 'shoes':
+        # 验证鞋子特定字段
+        if 'Type' in data and len(data['Type']) > 0:
+            logging.info(f"Shoe Type: {data['Type']}")
+        else:
+            logging.warning("Missing or invalid Shoe Type")
+            
+        if 'Style' in data and len(data['Style']) > 0:
+            logging.info(f"Shoe Style: {data['Style']}")
+        else:
+            logging.warning("Missing or invalid Shoe Style")
+            
+        if 'Upper Material' in data and len(data['Upper Material']) > 0:
+            logging.info(f"Upper Material: {data['Upper Material']}")
+        else:
+            logging.warning("Missing or invalid Upper Material")
     if '**Subtitle' in data.get('Title', ''):
         logging.warning("Title contains Subtitle content")
         # 尝试修复问题
@@ -432,6 +521,46 @@ def validate_fields(data):
     if len(data.get('Subtitle', '')) > 55:
         logging.warning(f"Subtitle is too long: {len(data['Subtitle'])} characters")
     # 可以添加更多的验证...
+
+def validate_shoe_fields(data):
+    """验证鞋子特定字段的有效性"""
+    valid_fields = {
+        'Type': {
+            'men': ['Athletic Shoes', 'Sneakers', 'Boots', 'Casual Shoes', 
+                   'Dress Shoes', 'Sandals', 'Slippers'],
+            'women': ['Athletic Shoes', 'Sneakers', 'Boots', 'Comfort Shoes', 
+                     'Flats', 'Heels', 'Sandals', 'Slippers']
+        },
+        'Style': {
+            'boots': ['Knee-high', 'Mid-calf', 'Hiking', 'Chelsea', 'Winter', 
+                     'Wellington', 'Ankle', 'Work Boots'],
+            'casual': ['Sneakers', 'Loafers', 'Vans'],
+            'formal': ['Oxfords', 'Smart Shoes', 'Dress Shoes'],
+            'sandals': ['Classic', 'Platform', 'Flip Flops', 'Sports', 
+                       'Beach Shoes', 'Birkenstock', 'Crocs', 'Teva', 
+                       'Adidas Sliders']
+        }
+    }
+    
+    errors = []
+    
+    # 验证类型
+    if data.get('Type') and not any(
+        shoe_type in data['Type'] 
+        for types in valid_fields['Type'].values() 
+        for shoe_type in types
+    ):
+        errors.append(f"Invalid shoe type: {data['Type']}")
+    
+    # 验证风格
+    if data.get('Style') and not any(
+        style in data['Style'] 
+        for styles in valid_fields['Style'].values() 
+        for style in styles
+    ):
+        errors.append(f"Invalid shoe style: {data['Style']}")
+    
+    return errors
 
 def main():
     logging.info(f"Current working directory: {os.getcwd()}")
@@ -480,6 +609,8 @@ def main():
 
     # Write data to respective sheets
     for sheet_name, data in sheet_data.items():
+        for item in data:
+            prepare_data_for_write(item, sheet_name)
         try:
             if ensure_sheet_exists(sheet_name):
                 # Get field names (first row) of the sheet
