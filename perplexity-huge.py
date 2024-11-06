@@ -137,63 +137,27 @@ def get_size_info(row):
 def generate_prompt(template, brand, product_type, style_number, additional_info, size_info):
     if product_type.lower() == 'shoes':
         prompt = f"""
-        Please provide detailed information about these {brand} shoes, following this specific format:
+        Please provide detailed information about these {brand} shoes...
+        """
+    else:
+        prompt = f"""
+        Please generate a detailed eBay listing using the following format:
 
         **Title:** [Generate a concise, descriptive title]
         **Subtitle:** [Generate a brief, catchy subtitle]
         **Short Description:** [Generate a brief summary of the product, about 2-3 sentences]
         **Description:** [Generate a detailed, multi-paragraph description]
-
-        Please ensure to cover these specific aspects in your description:
-
-        Size: State the shoe size.
-
-        Department: Specify whether it's men's, women's, or other.
-
-        Color: Indicate the primary color or color combination.
-
-        Type: Based on the department, classify as one of:
-        - Men's: Athletic Shoes/Sneakers, Boots, Casual Shoes, Dress Shoes, Sandals, Slippers
-        - Women's: Athletic Shoes/Sneakers, Boots, Comfort Shoes, Flats, Heels, Sandals, Slippers
-
-        Style: Specify the style based on these categories:
-        - Boot Styles: Knee-high, Mid-calf, Hiking, Chelsea, Winter, Wellington, Ankle, Work Boots
-        - Casual/Lifestyle: Sneakers (Nike Air Max, Adidas Superstar, etc.), Casual Shoes (Loafers, Vans, etc.)
-        - Formal/Dress: Oxfords, Smart Shoes, Dress Shoes
-        - Sandals: Classic, Platform, Flip Flops, Sports, Beach Shoes, Birkenstock, Crocs, Teva, Adidas Sliders
-        - Luxury/Designer: Christian Louboutin, Gucci, Kate Spade, Kurt Geiger, Carvela
-        - Heel Styles: Block Heel, Chunky Wedge, Kitten Heel, Stiletto, Ballet Flats
-
-        Upper Material: Describe the material used for the shoe's upper part.
-
-        Additional Information: {additional_info}
-        Size Information: {size_info}
-        Style Number: {style_number}
-
-        Please format your response exactly as shown above with the Title, Subtitle, Short Description, and Description fields.
         """
-    else:
-        # 其他产品类型的现有提示保持不变
-    prompt = f"""
-    ...
-    Please generate a detailed eBay listing using the following format:
-
-    **Title:** [Generate a concise, descriptive title]
-    **Subtitle:** [Generate a brief, catchy subtitle]
-    **Short Description:** [Generate a brief summary of the product, about 2-3 sentences]
-    **Description:** [Generate a detailed, multi-paragraph description]
-    ...
-    """
-    
-    for field in template['mandatory_fields']:
-        prompt += f"\n**{field}:** [Generate appropriate content]"
-    
-    prompt += "\n\n**Optional Fields:**"
-    
-    for field in template['optional_fields']:
-        prompt += f"\n**{field}:** [Generate appropriate content if available, or 'N/A' if not applicable]"
-    
-    prompt += "\n\n" + GENERAL_INSTRUCTIONS
+        
+        for field in template['mandatory_fields']:
+            prompt += f"\n**{field}:** [Generate appropriate content]"
+        
+        prompt += "\n\n**Optional Fields:**"
+        
+        for field in template['optional_fields']:
+            prompt += f"\n**{field}:** [Generate appropriate content if available, or 'N/A' if not applicable]"
+        
+        prompt += "\n\n" + GENERAL_INSTRUCTIONS
     
     return prompt
 
