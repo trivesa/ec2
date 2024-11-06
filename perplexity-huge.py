@@ -97,19 +97,28 @@ def read_spreadsheet(range_name):
     return values
 
 def write_to_spreadsheet(range_name, values):
+    """写入数据到电子表格"""
     body = {
-        'values': values
+        'values': [
+            # 确保每一行都是列表格式
+            [str(cell) if cell is not None else 'N/A' for cell in row]
+            for row in values
+        ]
     }
-    logging.info(f"Attempting to write {len(values)} rows to range: {range_name}")
-    logging.info(f"First row of data: {values[0] if values else 'No data'}")
+    
     try:
         result = sheets_service.spreadsheets().values().update(
-            spreadsheetId=SPREADSHEET_ID, range=range_name,
-            valueInputOption='RAW', body=body).execute()
+            spreadsheetId=SPREADSHEET_ID,
+            range=range_name,
+            valueInputOption='RAW',
+            body=body
+        ).execute()
         logging.info(f"Write result: {result}")
         logging.info(f"Updated {result.get('updatedCells')} cells")
+        return True
     except Exception as e:
         logging.error(f"Error writing to spreadsheet: {str(e)}")
+        return False
 
 def get_template(product_type):
     if not product_type:
@@ -409,19 +418,21 @@ def verify_written_data(sheet_name, start_row, num_rows):
             logging.info(f"  Column {col_index + 1}: {value[:100]}...")  # 只记录前100个字符
 
 def prepare_data_for_write(data, sheet_name):
-    if sheet_name == 'shoes':
-        # 确保所有必需字段都存在
-        required_fields = [
-            'Title', 'Subtitle', 'Description', 
-            'Type', 'Style', 'Upper Material'
-        ]
-        
-        for field in required_fields:
-            if field not in data:
-                data[field] = 'N/A'
-                logging.warning(f"Missing field {field} in shoes data")
-    
-    return data  # 返回处理后的数据
+    """准备要写入的数据"""
+    if isinstance(data, dict):
+        # 如果输入是字典，转换为列表
+        return [data.get(field, 'N/A') for field in field_names]
+    elif isinstance(data, list):
+        # 如果已经是列表，确保所有必需字段都存在
+        if sheet_name == 'shoes':
+            required_fields = [
+                'Title', 'Subtitle', 'Description', 
+                'Type', 'Style', 'Upper Material'
+            ]
+            for field in required_fields:
+                if field not in data:
+                    data.append('N/A')
+    return data
 
 def clear_range_format(sheet_name, start_row, end_row):
     range_name = f"'{sheet_name}'!A{start_row}:ZZ{end_row}"
@@ -575,59 +586,29 @@ def main():
 
     # Write data to respective sheets
     for sheet_name, data in sheet_data.items():
-        for item in data:
-            prepare_data_for_write(item, sheet_name)
-        try:
-            if ensure_sheet_exists(sheet_name):
-                # Get field names (first row) of the sheet
-                field_names = sheets_service.spreadsheets().values().get(
-                    spreadsheetId=SPREADSHEET_ID, range=f"'{sheet_name}'!A1:ZZ1").execute().get('values', [[]])[0]
-
-                logging.info(f"Sheet field names: {field_names}")
-                logging.info(f"Extracted data keys: {list(data[0].keys())}")
-
-                # 在 main 函数中
-                required_fields = ['Internal Reference', 'Title', 'Subtitle', 'Short Description', 'Description']
-                for field in required_fields:
-                    if field not in field_names:
-                        field_names.insert(0, field)  # 将Internal Reference插入到字段列表的开头
-                        logging.info(f"Added missing field to sheet: {field}")
-
-                # Prepare data to write
-                rows_to_write = []
-                for item in data:
-                    row = [item.get('Internal Reference', 'N/A')]  # 首添加Internal Reference
-                    for field in field_names[1:]:  # 跳过Internal Reference，因为我们已经添加了
-                        value = item.get(field, 'N/A')
-                        if isinstance(value, str) and len(value) > 50000:
-                            value = value[:50000] + "... (truncated)"
-                        row.append(value)
+        if ensure_sheet_exists(sheet_name):
+            # 获取当前行数
+            current_row = get_current_row(sheet_name)
+            
+            # 准备数据
+            rows_to_write = []
+            for item in data:
+                row = prepare_data_for_write(item, sheet_name)
+                if row:
                     rows_to_write.append(row)
-                    logging.info(f"Prepared row: {row[:5]}...")  # 只记录前5个字段
-
-                # Get current row count of the sheet
-                sheet_info = sheets_service.spreadsheets().get(spreadsheetId=SPREADSHEET_ID, ranges=[f"'{sheet_name}'"], includeGridData=True).execute()
-                current_row = len(sheet_info['sheets'][0]['data'][0]['rowData']) + 1
-
-                # Clear format of the range to be written
+            
+            if rows_to_write:
+                # 清除格式
                 clear_range_format(sheet_name, current_row, current_row + len(rows_to_write))
-
-                # Prepare data for write
-                for i, item in enumerate(rows_to_write):
-                    rows_to_write[i] = prepare_data_for_write(item, sheet_name)
-
-                # Write data
+                
+                # 写入数据
                 range_name = f"'{sheet_name}'!A{current_row}"
-                write_to_spreadsheet(range_name, rows_to_write)
-                
-                # Verify written data
-                verify_written_data(sheet_name, current_row, len(rows_to_write))
-                
-                logging.info(f"Successfully wrote and verified {len(rows_to_write)} rows to sheet '{sheet_name}'")
-            else:
-                logging.error(f"Unable to ensure '{sheet_name}' sheet exists. Skipping write operation.")
-        except Exception as e:
-            logging.error(f"Error writing to sheet '{sheet_name}': {str(e)}")
+                if write_to_spreadsheet(range_name, rows_to_write):
+                    logging.info(f"Successfully wrote {len(rows_to_write)} rows to {sheet_name}")
+                    # 验证写入的数据
+                    verify_written_data(sheet_name, current_row, len(rows_to_write))
+                else:
+                    logging.error(f"Failed to write data to {sheet_name}")
 
 if __name__ == '__main__':
     main()
