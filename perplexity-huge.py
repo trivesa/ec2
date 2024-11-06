@@ -106,6 +106,9 @@ def write_to_spreadsheet(range_name, values):
         ]
     }
     
+    logging.info(f"Attempting to write {len(values)} rows to range: {range_name}")
+    logging.info(f"First row of data: {values[0] if values else 'No data'}")
+    
     try:
         result = sheets_service.spreadsheets().values().update(
             spreadsheetId=SPREADSHEET_ID,
@@ -417,22 +420,14 @@ def verify_written_data(sheet_name, start_row, num_rows):
         for col_index, value in enumerate(row):
             logging.info(f"  Column {col_index + 1}: {value[:100]}...")  # 只记录前100个字符
 
-def prepare_data_for_write(data, sheet_name):
+def prepare_data_for_write(item, field_names):
     """准备要写入的数据"""
-    if isinstance(data, dict):
-        # 如果输入是字典，转换为列表
-        return [data.get(field, 'N/A') for field in field_names]
-    elif isinstance(data, list):
-        # 如果已经是列表，确保所有必需字段都存在
-        if sheet_name == 'shoes':
-            required_fields = [
-                'Title', 'Subtitle', 'Description', 
-                'Type', 'Style', 'Upper Material'
-            ]
-            for field in required_fields:
-                if field not in data:
-                    data.append('N/A')
-    return data
+    row = []
+    for field in field_names:
+        value = item.get(field, 'N/A')
+        # 确保值是字符串类型
+        row.append(str(value) if value is not None else 'N/A')
+    return row
 
 def clear_range_format(sheet_name, start_row, end_row):
     range_name = f"'{sheet_name}'!A{start_row}:ZZ{end_row}"
@@ -539,6 +534,29 @@ def validate_shoe_fields(data):
     
     return errors
 
+def get_current_row(sheet_name):
+    """获取工作表的当前行数"""
+    try:
+        # 获取工作表信息
+        sheet_info = sheets_service.spreadsheets().get(
+            spreadsheetId=SPREADSHEET_ID,
+            ranges=[f"'{sheet_name}'"],
+            includeGridData=True
+        ).execute()
+        
+        # 获取当前行数
+        if 'sheets' in sheet_info and len(sheet_info['sheets']) > 0:
+            if 'data' in sheet_info['sheets'][0] and len(sheet_info['sheets'][0]['data']) > 0:
+                return len(sheet_info['sheets'][0]['data'][0].get('rowData', [])) + 1
+        
+        # 如果工作表为空，返回2（第一行是标题）
+        return 2
+        
+    except Exception as e:
+        logging.error(f"Error getting current row for sheet {sheet_name}: {str(e)}")
+        # 如果出错，返回2作为默认值
+        return 2
+
 def main():
     logging.info(f"Current working directory: {os.getcwd()}")
     
@@ -586,29 +604,39 @@ def main():
 
     # Write data to respective sheets
     for sheet_name, data in sheet_data.items():
-        if ensure_sheet_exists(sheet_name):
-            # 获取当前行数
-            current_row = get_current_row(sheet_name)
-            
-            # 准备数据
-            rows_to_write = []
-            for item in data:
-                row = prepare_data_for_write(item, sheet_name)
-                if row:
-                    rows_to_write.append(row)
-            
-            if rows_to_write:
-                # 清除格式
-                clear_range_format(sheet_name, current_row, current_row + len(rows_to_write))
+        try:
+            if ensure_sheet_exists(sheet_name):
+                # 获取字段名（第一行）
+                field_names = sheets_service.spreadsheets().values().get(
+                    spreadsheetId=SPREADSHEET_ID,
+                    range=f"'{sheet_name}'!A1:ZZ1"
+                ).execute().get('values', [[]])[0]
                 
-                # 写入数据
-                range_name = f"'{sheet_name}'!A{current_row}"
-                if write_to_spreadsheet(range_name, rows_to_write):
-                    logging.info(f"Successfully wrote {len(rows_to_write)} rows to {sheet_name}")
-                    # 验证写入的数据
-                    verify_written_data(sheet_name, current_row, len(rows_to_write))
-                else:
-                    logging.error(f"Failed to write data to {sheet_name}")
+                logging.info(f"Sheet field names: {field_names}")
+                
+                # 获取当前行数
+                current_row = get_current_row(sheet_name)
+                
+                # 准备数据
+                rows_to_write = []
+                for item in data:
+                    row = prepare_data_for_write(item, field_names)
+                    rows_to_write.append(row)
+                
+                if rows_to_write:
+                    # 清除格式
+                    clear_range_format(sheet_name, current_row, current_row + len(rows_to_write))
+                    
+                    # 写入数据
+                    range_name = f"'{sheet_name}'!A{current_row}"
+                    if write_to_spreadsheet(range_name, rows_to_write):
+                        logging.info(f"Successfully wrote {len(rows_to_write)} rows to {sheet_name}")
+                        # 验证写入的数据
+                        verify_written_data(sheet_name, current_row, len(rows_to_write))
+                    else:
+                        logging.error(f"Failed to write data to {sheet_name}")
+        except Exception as e:
+            logging.error(f"Error processing sheet {sheet_name}: {str(e)}")
 
 if __name__ == '__main__':
     main()
