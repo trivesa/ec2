@@ -107,19 +107,35 @@ def main():
         logging.error("Failed to create Sheets service.")
         return
 
-    # 假设perplexity-huge.py中使用了类似的范围
-    product_data = read_spreadsheet(service, 'Sheet1!C2:H')  # 确保范围与perplexity-huge.py一致
+    # 使用与perplexity-huge.py相同的范围
+    product_types = read_spreadsheet(service, 'Sheet1!E2:E')
+    brands = read_spreadsheet(service, 'Sheet1!F2:F')
+    style_numbers = read_spreadsheet(service, 'Sheet1!I2:I')
+    additional_info = read_spreadsheet(service, 'Sheet1!G2:G')
+    size_info = read_spreadsheet(service, 'Sheet1!K2:X')
+    internal_references = read_spreadsheet(service, 'Sheet1!C2:C')
 
-    for index, row in enumerate(product_data, start=2):
-        if len(row) < 6:
-            logging.warning(f"Skipping row {index} due to insufficient data.")
-            continue
-        internal_reference, brand, product_type, style_number, additional_info = row[0], row[2], row[3], row[4], row[5]
-        description = generate_ebay_description(brand, product_type, style_number, additional_info)
+    min_length = min(len(product_types), len(brands), len(style_numbers), len(internal_references))
+    
+    if min_length == 0:
+        logging.error("One or more mandatory columns are empty. Please check the spreadsheet.")
+        return
+
+    logging.info(f"Processing {min_length} rows with mandatory data")
+
+    for index in range(min_length):
+        product_type = str(product_types[index][0]).strip() if product_types[index] else ""
+        brand = str(brands[index][0]).strip() if brands[index] else ""
+        style_number = str(style_numbers[index][0]).strip() if style_numbers[index] else ""
+        add_info = str(additional_info[index][0]).strip() if index < len(additional_info) and additional_info[index] else ""
+        size = get_size_info(size_info[index]) if index < len(size_info) and size_info[index] else ""
+        internal_reference = str(internal_references[index][0]).strip() if internal_references[index] else ""
+
+        description = generate_ebay_description(brand, product_type, style_number, add_info)
         if description:
-            write_description_to_sheet(service, product_type, index, internal_reference, description)
+            write_description_to_sheet(service, product_type, index + 2, internal_reference, description)
         else:
-            logging.warning(f"Failed to generate description for row {index}.")
+            logging.warning(f"Failed to generate description for row {index + 2}.")
 
 if __name__ == '__main__':
     main()
