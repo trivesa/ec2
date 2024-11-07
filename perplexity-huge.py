@@ -498,28 +498,14 @@ class ProductProcessor:
                     f"款式编号: '{style_number}'")
         
         try:
-            # 验证输入数据
-            if not all([
-                self.data_processor.validate_product_type(product_type),
-                self.data_processor.validate_brand(brand),
-                self.data_processor.validate_style_number(style_number)
-            ]):
-                logging.error("产品数据验证失败")
-                return None
-
             # 生成产品描述
             description = self.generate_product_description(
                 brand, product_type, style_number, additional_info
             )
             
             if description:
-                sheet_name = self.sheet_manager.format_sheet_name(product_type)
-                if not self.sheet_manager.create_sheet_if_not_exists(sheet_name):
-                    logging.error(f"无法处理工作表: {sheet_name}")
-                    return None
-
                 self.sheet_manager.write_description_to_sheet(
-                    sheet_name,
+                    product_type.lower(),
                     index + 2,
                     style_number,
                     description
@@ -598,7 +584,7 @@ class ProductProcessor:
             ])
         
         return template
-class ProductProcessor:
+
     def _generate_prompt(self, template: Dict, brand: str, product_type: str,
                         style_number: str, additional_info: str, size_info: str) -> str:
         """生成API提示"""
