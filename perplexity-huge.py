@@ -400,7 +400,7 @@ def call_perplexity_api(prompt, temperature=0.3):
     }
     
     data = {
-        'model': 'llama-3.1-sonar-huge-128k-online',  # 使用正确的模型名称
+        'model': 'llama-3.1-sonar-huge-128k-online',
         'messages': [
             {
                 'role': 'system',
@@ -417,11 +417,9 @@ def call_perplexity_api(prompt, temperature=0.3):
     try:
         response = requests.post(PERPLEXITY_API_URL, headers=headers, json=data)
         
-        # 添加详细的错误日志
         if response.status_code != 200:
             logging.error(f"Perplexity API Error - Status Code: {response.status_code}")
             logging.error(f"Response Text: {response.text}")
-            logging.error(f"Request Data: {json.dumps(data, indent=2)}")
             return None
             
         return response.json()
@@ -457,7 +455,7 @@ def extract_fields_from_response(response_text, template):
             # 检查是否是新字段
             field_match = re.match(r'\*\*(.*?):\*\*\s*(.*)', line)
             if field_match:
-                # 保存之前的字段（如果有）
+                # 保存之前的字��（如果有）
                 if current_field and current_content:
                     data[current_field] = '\n'.join(current_content).strip()
                     current_content = []
@@ -517,7 +515,7 @@ def ensure_sheet_exists(sheet_name):
         return False
 
 def process_product(product_type, brand, style_number, additional_info, size_info, index, max_retries=2):
-    """处理产品信息，包括 Perplexity API 调用和 OpenAI 增强"""
+    """处理产品信息，包括 Perplexity API 调用"""
     logging.info(f"Processing: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}', Additional Info: '{additional_info}', Size Info: '{size_info}'")
     
     template, sheet_name = get_template(product_type)
@@ -527,65 +525,30 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
     
     prompt = generate_prompt(template, brand, product_type, style_number, additional_info, size_info)
     
-    retry_count = 0
-    while retry_count < max_retries:
+    for attempt in range(max_retries):
         try:
-            # 调用 Perplexity API
             response = call_perplexity_api(prompt)
             
             if response and 'choices' in response:
-                extracted_data = extract_fields_from_response(
-                    response['choices'][0]['message']['content'], 
-                    template
-                )
+                extracted_data = extract_fields_from_response(response['choices'][0]['message']['content'], template)
                 
                 if extracted_data:
-                    # OpenAI 增强步骤
-                    try:
-                        enhancer = OpenAIEnhancer()
-                        enhanced_data = enhancer.enhance_product_data(
-                            extracted_data,
-                            product_type=product_type,
-                            brand=brand,
-                            style_number=style_number
-                        )
-                        
-                        # 验证增强后的数据
-                        validate_fields(enhanced_data, product_type)
-                        if product_type.lower() == 'shoes':
-                            shoe_errors = validate_shoe_fields(enhanced_data)
-                            if shoe_errors:
-                                for error in shoe_errors:
-                                    logging.warning(f"Shoe validation error: {error}")
-                        
-                        logging.info(f"Successfully enhanced data with OpenAI for {brand} {product_type}")
-                        return sheet_name, enhanced_data
-                        
-                    except Exception as e:
-                        logging.error(f"Error in OpenAI enhancement: {str(e)}")
-                        logging.info("Falling back to original Perplexity data")
-                        return sheet_name, extracted_data
+                    logging.info(f"Successfully processed product for {brand} {product_type}")
+                    return sheet_name, extracted_data
                 else:
                     logging.error("Failed to extract fields from response")
-                    retry_count += 1
-                    continue
             
             elif response and response.get('error'):
                 logging.error(f"API error: {response['error']}")
-                retry_count += 1
-                time.sleep(5)
-                continue
             
             else:
                 logging.error("Invalid response format from API")
-                retry_count += 1
-                continue
                 
         except Exception as e:
-            logging.error(f"Error processing product (attempt {retry_count + 1}): {str(e)}")
-            retry_count += 1
-            time.sleep(5)
-            continue
+            logging.error(f"Error processing product (attempt {attempt + 1}): {str(e)}")
+        
+        logging.info(f"Retrying... ({attempt + 1}/{max_retries})")
+        time.sleep(5)
     
     logging.error(f"Failed to process product after {max_retries} attempts")
     return None
