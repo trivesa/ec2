@@ -17,45 +17,53 @@ PERPLEXITY_API_KEY = os.environ.get('PERPLEXITY_API_KEY')
 PERPLEXITY_API_URL = 'https://api.perplexity.ai/chat/completions'
 
 def get_sheets_service():
-    credentials = service_account.Credentials.from_service_account_file(
-        GOOGLE_CREDENTIALS_PATH, scopes=SCOPES)
-    return build('sheets', 'v4', credentials=credentials, cache_discovery=False)
+    try:
+        credentials = service_account.Credentials.from_service_account_file(
+            GOOGLE_CREDENTIALS_PATH, scopes=SCOPES)
+        return build('sheets', 'v4', credentials=credentials, cache_discovery=False)
+    except Exception as e:
+        logging.error(f"Error creating Sheets service: {str(e)}")
+        return None
 
 def read_spreadsheet(service, range_name):
-    sheet = service.spreadsheets()
-    result = sheet.values().get(spreadsheetId=SPREADSHEET_ID, range=range_name).execute()
-    values = result.get('values', [])
-    if not values:
-        logging.warning("No data found in spreadsheet")
-    return values
+    try:
+        sheet = service.spreadsheets()
+        result = sheet.values().get(spreadsheetId=SPREADSHEET_ID, range=range_name).execute()
+        values = result.get('values', [])
+        if not values:
+            logging.warning("No data found in spreadsheet")
+        return values
+    except Exception as e:
+        logging.error(f"Error reading spreadsheet: {str(e)}")
+        return []
 
 def call_perplexity_api(prompt, temperature=0.5):
-    headers = {
-        'Authorization': f'Bearer {PERPLEXITY_API_KEY}',
-        'Content-Type': 'application/json'
-    }
-    data = {
-        'model': 'llama-3.1-sonar-huge-128k-online',
-        'messages': [
-            {
-                'role': 'system', 
-                'content': '''You are a luxury fashion expert specializing in high-end product descriptions.
-                Your responses should be:
-                1. Professional but accessible
-                2. Accurate and specific
-                3. Free of marketing hyperbole
-                4. Focused on materials, craftsmanship, and design
-                5. Compliant with EU/UK product description standards'''
-            },
-            {'role': 'user', 'content': prompt}
-        ],
-        'max_tokens': 1000,
-        'temperature': temperature,
-        'top_p': 0.9,
-        'return_citations': True,
-        'frequency_penalty': 1
-    }
     try:
+        headers = {
+            'Authorization': f'Bearer {PERPLEXITY_API_KEY}',
+            'Content-Type': 'application/json'
+        }
+        data = {
+            'model': 'llama-3.1-sonar-huge-128k-online',
+            'messages': [
+                {
+                    'role': 'system', 
+                    'content': '''You are a luxury fashion expert specializing in high-end product descriptions.
+                    Your responses should be:
+                    1. Professional but accessible
+                    2. Accurate and specific
+                    3. Free of marketing hyperbole
+                    4. Focused on materials, craftsmanship, and design
+                    5. Compliant with EU/UK product description standards'''
+                },
+                {'role': 'user', 'content': prompt}
+            ],
+            'max_tokens': 1000,
+            'temperature': temperature,
+            'top_p': 0.9,
+            'return_citations': True,
+            'frequency_penalty': 1
+        }
         response = requests.post(PERPLEXITY_API_URL, headers=headers, json=data)
         response.raise_for_status()
         response_json = response.json()
@@ -99,15 +107,22 @@ def write_description_to_sheet(service, sheet_name, row_index, internal_referenc
 
 def main():
     service = get_sheets_service()
+    if not service:
+        logging.error("Failed to create Sheets service.")
+        return
+
     product_data = read_spreadsheet(service, 'Sheet1!C2:H')  # 假设C列是Internal Reference，E列是品牌，F列是产品类型，G列是样式编号，H列是附加信息
 
     for index, row in enumerate(product_data, start=2):
         if len(row) < 6:
+            logging.warning(f"Skipping row {index} due to insufficient data.")
             continue
         internal_reference, brand, product_type, style_number, additional_info = row[0], row[2], row[3], row[4], row[5]
         description = generate_ebay_description(brand, product_type, style_number, additional_info)
         if description:
             write_description_to_sheet(service, product_type, index, internal_reference, description)
+        else:
+            logging.warning(f"Failed to generate description for row {index}.")
 
 if __name__ == '__main__':
     main()
