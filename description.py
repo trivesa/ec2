@@ -80,12 +80,12 @@ def generate_ebay_description(brand, product_type, style_number, additional_info
     """
     return call_perplexity_api(prompt)
 
-def write_description_to_sheet(service, sheet_name, row_index, description):
+def write_description_to_sheet(service, sheet_name, row_index, internal_reference, description):
     try:
-        # 写入描述到工作表的"Description"列
-        range_name = f"'{sheet_name}'!D{row_index}"  # 假设"D"列是描述列
+        # 写入描述和内部参考到工作表
+        range_name = f"'{sheet_name}'!C{row_index}:D{row_index}"  # 假设"C"列是Internal Reference，"D"列是Description
         body = {
-            'values': [[description]]
+            'values': [[internal_reference, description]]
         }
         service.spreadsheets().values().update(
             spreadsheetId=SPREADSHEET_ID,
@@ -93,21 +93,21 @@ def write_description_to_sheet(service, sheet_name, row_index, description):
             valueInputOption='RAW',
             body=body
         ).execute()
-        logging.info(f"Description written to sheet '{sheet_name}' at row {row_index}.")
+        logging.info(f"Description and Internal Reference written to sheet '{sheet_name}' at row {row_index}.")
     except Exception as e:
         logging.error(f"Error writing to sheet '{sheet_name}': {str(e)}")
 
 def main():
     service = get_sheets_service()
-    product_data = read_spreadsheet(service, 'Sheet1!E2:H')  # 假设E列是品牌，F列是产品类型，G列是样式编号，H列是附加信息
+    product_data = read_spreadsheet(service, 'Sheet1!C2:H')  # 假设C列是Internal Reference，E列是品牌，F列是产品类型，G列是样式编号，H列是附加信息
 
     for index, row in enumerate(product_data, start=2):
-        if len(row) < 4:
+        if len(row) < 6:
             continue
-        brand, product_type, style_number, additional_info = row[0], row[1], row[2], row[3]
+        internal_reference, brand, product_type, style_number, additional_info = row[0], row[2], row[3], row[4], row[5]
         description = generate_ebay_description(brand, product_type, style_number, additional_info)
         if description:
-            write_description_to_sheet(service, product_type, index, description)
+            write_description_to_sheet(service, product_type, index, internal_reference, description)
 
 if __name__ == '__main__':
     main()
