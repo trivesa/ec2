@@ -71,18 +71,76 @@ def call_perplexity_api(prompt, temperature=0.5):
 
 def generate_ebay_description(brand, product_type, style_number, additional_info):
     prompt = f"""
-    Generate an eBay product description in HTML format for a {brand} {product_type} with style number {style_number}.
+    Generate a concise product description in HTML format for a {brand} {product_type} with style number {style_number}.
     Additional Information: {additional_info}
-    Find the most important or unique feature of this product on the internet and use it to write an appealing description.
     
     Requirements:
-    - Use HTML tags for formatting
-    - Include a catchy title and subtitle
-    - Provide a detailed description focusing on the unique feature
-    - Use bullet points for key features
-    - End with a call to action
+    1. Format:
+        - Title: Brand + Product Type + Key Feature (max 80 characters)
+        - Short description: 2-3 sentences about the product's unique features
+        - 4-6 bullet points highlighting key features
+    
+    2. Content:
+        - Focus on unique design elements, materials, and craftsmanship
+        - Highlight what makes this product special
+        - DO NOT include any shipping, payment, or return policy information
+        - DO NOT include prices or promotional content
+    
+    3. Use this HTML structure:
+        <h1>[Title]</h1>
+        <p>[Short description]</p>
+        <h3>Key Features:</h3>
+        <ul>
+            <li>[Feature 1]</li>
+            <li>[Feature 2]</li>
+            ...
+        </ul>
     """
-    return call_perplexity_api(prompt)
+    
+    response = call_perplexity_api(prompt)
+    
+    # 如果响应包含Markdown格式（**），则转换为HTML
+    if response and '**' in response:
+        # 转换标题
+        response = response.replace('**Title:**', '<h1>')
+        response = response.replace('**Subtitle:**', '</h1>\n<h2>')
+        
+        # 转换关键特性
+        response = response.replace('**Key Features:**', '</h2>\n<h3>Key Features:</h3>\n<ul>')
+        
+        # 转换列表项
+        lines = response.split('\n')
+        formatted_lines = []
+        in_list = False
+        
+        for line in lines:
+            if line.strip().startswith('- **'):
+                if not in_list:
+                    in_list = True
+                line = line.replace('- **', '<li><strong>').replace('**', '</strong>')
+                line = f"{line}</li>"
+            elif in_list and not line.strip().startswith('-'):
+                in_list = False
+                formatted_lines.append('</ul>')
+            formatted_lines.append(line)
+        
+        response = '\n'.join(formatted_lines)
+        
+        # 清理其余的Markdown语法
+        response = response.replace('**', '<strong>').replace('**', '</strong>')
+        
+        # 添加段落标签
+        response = '<p>' + response + '</p>'
+        response = response.replace('\n\n', '</p>\n<p>')
+        
+        # 清理多余的HTML标签
+        response = response.replace('<p><h', '<h')
+        response = response.replace('</h1></p>', '</h1>')
+        response = response.replace('</h2></p>', '</h2>')
+        response = response.replace('</h3></p>', '</h3>')
+        response = response.replace('</ul></p>', '</ul>')
+    
+    return response
 
 def write_description_to_sheet(service, sheet_name, row_index, internal_reference, description):
     try:
