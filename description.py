@@ -19,7 +19,7 @@ PERPLEXITY_API_URL = 'https://api.perplexity.ai/chat/completions'
 def get_sheets_service():
     credentials = service_account.Credentials.from_service_account_file(
         GOOGLE_CREDENTIALS_PATH, scopes=SCOPES)
-    return build('sheets', 'v4', credentials=credentials)
+    return build('sheets', 'v4', credentials=credentials, cache_discovery=False)
 
 def read_spreadsheet(service, range_name):
     sheet = service.spreadsheets()
