@@ -17,13 +17,9 @@ PERPLEXITY_API_KEY = os.environ.get('PERPLEXITY_API_KEY')
 PERPLEXITY_API_URL = 'https://api.perplexity.ai/chat/completions'
 
 def get_sheets_service():
-    try:
-        credentials = service_account.Credentials.from_service_account_file(
-            GOOGLE_CREDENTIALS_PATH, scopes=SCOPES)
-        return build('sheets', 'v4', credentials=credentials, cache_discovery=False)
-    except Exception as e:
-        logging.error(f"Error creating Sheets service: {str(e)}")
-        return None
+    credentials = service_account.Credentials.from_service_account_file(
+        GOOGLE_CREDENTIALS_PATH, scopes=SCOPES)
+    return build('sheets', 'v4', credentials=credentials, cache_discovery=False)
 
 def read_spreadsheet(service, range_name):
     try:
@@ -111,7 +107,8 @@ def main():
         logging.error("Failed to create Sheets service.")
         return
 
-    product_data = read_spreadsheet(service, 'Sheet1!C2:H')  # 假设C列是Internal Reference，E列是品牌，F列是产品类型，G列是样式编号，H列是附加信息
+    # 假设perplexity-huge.py中使用了类似的范围
+    product_data = read_spreadsheet(service, 'Sheet1!C2:H')  # 确保范围与perplexity-huge.py一致
 
     for index, row in enumerate(product_data, start=2):
         if len(row) < 6:
