@@ -115,7 +115,7 @@ class OpenAIEnhancer:
                            product_type: str, 
                            brand: str, 
                            style_number: str) -> Dict[str, Any]:
-        """使用 OpenAI 增强��品数据"""
+        """使用 OpenAI 增强品数据"""
         try:
             messages = self._prepare_messages(extracted_data, product_type, brand, style_number)
             
@@ -400,7 +400,7 @@ def call_perplexity_api(prompt, temperature=0.3):
     }
     
     data = {
-        'model': 'pplx-7b-online',
+        'model': 'llama-3.1-sonar-huge-128k-online',  # 使用正确的模型名称
         'messages': [
             {
                 'role': 'system',
@@ -416,8 +416,16 @@ def call_perplexity_api(prompt, temperature=0.3):
     
     try:
         response = requests.post(PERPLEXITY_API_URL, headers=headers, json=data)
-        response.raise_for_status()
+        
+        # 添加详细的错误日志
+        if response.status_code != 200:
+            logging.error(f"Perplexity API Error - Status Code: {response.status_code}")
+            logging.error(f"Response Text: {response.text}")
+            logging.error(f"Request Data: {json.dumps(data, indent=2)}")
+            return None
+            
         return response.json()
+        
     except requests.exceptions.RequestException as e:
         logging.error(f"Error calling Perplexity API: {str(e)}")
         return None
