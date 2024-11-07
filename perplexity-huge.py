@@ -483,6 +483,7 @@ class ProductProcessor:
     """产品处理类"""
     def __init__(self, sheet_manager: SheetManager, perplexity_api: PerplexityAPI,
                  data_processor: DataProcessor):
+        """初始化ProductProcessor"""
         self.sheet_manager = sheet_manager
         self.perplexity_api = perplexity_api
         self.data_processor = data_processor
