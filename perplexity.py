@@ -20,26 +20,25 @@ def test_perplexity_api():
         "Content-Type": "application/json"
     }
     
-    # 测试数据 - 只使用 frequency_penalty
+    # 测试数据 - 更明确的指令
     payload = {
         "model": "llama-3.1-sonar-small-128k-online",
         "messages": [
             {
                 "role": "system",
-                "content": "You are a direct assistant. Respond with exactly what is asked, nothing more."
+                "content": "You must respond with EXACTLY the text provided, including all punctuation marks."
             },
             {
                 "role": "user",
-                "content": "Respond with exactly these words: Hello, World!"
+                "content": "Output this exact text with no additions or changes: Hello, World!"
             }
         ],
         "max_tokens": 50,
-        "temperature": 0.1,
-        "top_p": 0.9,
+        "temperature": 0,  # 设为0以获得最确定的响应
+        "top_p": 1.0,
         "return_images": False,
         "return_related_questions": False,
-        "frequency_penalty": 0.1,  # 保留这个
-        # 移除了 presence_penalty
+        "frequency_penalty": 0.1,
         "stream": False
     }
 
@@ -60,19 +59,19 @@ def test_perplexity_api():
         # 打印完整响应以供调试
         logging.info(f"Full API Response:\n{json.dumps(response_data, indent=2)}")
 
-        # 验证响应格式
-        if not all(key in response_data for key in ['id', 'model', 'choices', 'usage']):
-            logging.error("Response missing required fields")
-            return False
-
         # 获取生成的内容
-        content = response_data['choices'][0]['message']['content']
+        content = response_data['choices'][0]['message']['content'].strip()
         logging.info(f"Generated content: {content}")
 
-        # 验证内容是否符合预期
+        # 验证内容是否完全匹配
         expected_content = "Hello, World!"
-        if expected_content.lower() not in content.lower():
-            logging.warning(f"Content does not match expected: {expected_content}")
+        if content != expected_content:
+            logging.warning(f"Content does not exactly match expected content")
+            logging.warning(f"Expected: '{expected_content}'")
+            logging.warning(f"Received: '{content}'")
+            logging.warning(f"Length - Expected: {len(expected_content)}, Received: {len(content)}")
+        else:
+            logging.info("✅ Content exactly matches expected output")
         
         # 检查是否因为 token 限制而被截断
         if response_data['choices'][0]['finish_reason'] == 'length':
