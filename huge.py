@@ -174,78 +174,49 @@ def generate_prompt(template, brand, product_type, style_number, additional_info
     return prompt
 
 def call_perplexity_api(prompt, temperature):
-    logging.info(f"Calling Perplexity API with temperature {temperature}. Prompt: {prompt[:100]}...")
-    
+    logging.info(f"Calling Perplexity API with temperature {temperature}. Prompt: {prompt[:100]}...")  # 记录API调用
     headers = {
         'Authorization': f'Bearer {PERPLEXITY_API_KEY}',
         'Content-Type': 'application/json'
     }
-    
     data = {
-        'model': 'llama-3.1-sonar-small-128k-online',
+        'model': 'llama-3.1-sonar-huge-128k-online',
         'messages': [
             {
-                'role': 'system',
+                'role': 'system', 
                 'content': '''You are a luxury fashion expert specializing in high-end product descriptions.
-                Focus on:
-                1. Premium materials and craftsmanship
-                2. Precise technical specifications
-                3. Professional retail standards
-                4. Factual information only'''
+                Your responses should be:
+                1. Professional but accessible
+                2. Accurate and specific
+                3. Free of marketing hyperbole
+                4. Focused on materials, craftsmanship, and design
+                5. Compliant with EU/UK product description standards'''
             },
             {'role': 'user', 'content': prompt}
         ],
         'max_tokens': 1000,
         'temperature': temperature,
         'top_p': 0.9,
-        'return_images': False,
-        'return_related_questions': False,
-        'frequency_penalty': 0.1,
-        'stream': False
+        'return_citations': True,
+        'frequency_penalty': 1
     }
-    
     try:
-        response = requests.post(PERPLEXITY_API_URL, headers=headers, json=data, timeout=30)
+        response = requests.post(PERPLEXITY_API_URL, headers=headers, json=data)
         response.raise_for_status()
-        
-        if response.status_code != 200:
-            logging.error(f"API Error: Status {response.status_code}, Response: {response.text}")
-            return None
-            
         response_json = response.json()
+        content = response_json['choices'][0]['message']['content']
         
-        # 验证响应格式
-        if not all(key in response_json for key in ['id', 'model', 'choices', 'usage']):
-            logging.error(f"Invalid API response format: {response_json}")
-            return None
-            
-        # 验证 choices 数组
-        if not response_json['choices'] or 'message' not in response_json['choices'][0]:
-            logging.error("No valid choices in API response")
-            return None
-            
-        # 获取内容
-        content = response_json['choices'][0]['message'].get('content')
-        if not content:
-            logging.error("No content in API response")
-            return None
-            
-        # 记录使用情况
-        usage = response_json['usage']
-        logging.info(f"API usage - Prompt tokens: {usage['prompt_tokens']}, "
-                    f"Completion tokens: {usage['completion_tokens']}, "
-                    f"Total tokens: {usage['total_tokens']}")
+        # 记录完整的API响应
+        logging.info(f"Full API response: {json.dumps(response_json, indent=2)}")
         
+        # 保存API响应到文件
+        with open(f'api_response_{int(time.time())}.json', 'w') as f:
+            json.dump(response_json, f, indent=2)
+        
+        logging.info(f"API response saved to file. Content: {content[:200]}...")  # 只记录前200个字符
         return content
-        
-    except requests.exceptions.Timeout:
-        logging.error("API request timed out")
-        return None
-    except requests.exceptions.RequestException as e:
-        logging.error(f"API request failed: {str(e)}")
-        return None
     except Exception as e:
-        logging.error(f"Unexpected error in API call: {str(e)}")
+        logging.error(f"Error calling Perplexity API: {str(e)}")
         return None
 
 def get_sheet_name(product_type):
@@ -354,25 +325,37 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
     for attempt in range(max_retries):
         # 第一次API调用：生成产品描述
         description_prompt = f"""
-        Create a luxury product description for {brand} {product_type}.
-        Context: {additional_info}
-        Size Info: {size_info}
+            Generate a concise and professional product description for {brand} {product_type}.
+            Additional Information: {additional_info}
 
-        Required format:
-        1. Title (80 chars): 
-           {brand} {product_type} [Key Feature] [Color] {'EU' + size_info if product_type.lower() == 'shoes' else size_info}
+            Format requirements:
+            1. Title: Create a clear title under 80 characters
+               - Include brand, product type, and key features
+               - Do not include style number
+               - Format: [Brand] [Product Type] [Key Feature] [Color/Material]
 
-        2. Subtitle (55 chars): Focus on unique value
-        3. Short Description: 2-3 key benefit sentences
-        4. Description: Materials, Design, Features, Care
+            2. Subtitle: Create a compelling subtitle under 55 characters
+               - Highlight unique selling points
+               - Focus on benefits or exclusive features
 
-        Format response as:
-        **Title:** [title]
-        **Subtitle:** [subtitle]
-        **Short Description:** [short description]
-        **Description:**
-        [description]
-        """
+            3. Short Description: 
+               - 2-3 concise sentences
+               - Focus on main features and benefits
+               - Avoid technical details
+
+            4. Description:
+               - Use simple paragraphs without bullet points or markdown
+               - Focus on: Materials, Design, Comfort, Quality
+               - Include care instructions and sizing information
+               - End with a call to action
+
+            Please format your response exactly as:
+            **Title:** [title]
+            **Subtitle:** [subtitle]
+            **Short Description:** [short description]
+            **Description:**
+            [description]
+            """
 
         description_response = call_perplexity_api(description_prompt, 0.3)
         
@@ -382,18 +365,26 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
 
         # 第二次API调用：生成Mandatory和Optional字段
         fields_prompt = f"""
-        Provide specifications for {brand} {product_type} (Style: {style_number}).
-        Details: {additional_info}
-        Size Info: {size_info}
+        For this {brand} {product_type} (Style: {style_number}):
 
-        Required fields: {', '.join(template['mandatory_fields'])}
-        Optional fields: {', '.join(template['optional_fields'])}
+        Product Details:
+        - Additional Info: {additional_info}
+        - Size Info: {size_info}
 
-        Guidelines:
-        1. Use precise measurements and materials
-        2. Include market prices if available
-        3. Mark unavailable info as 'N/A'
-        4. Be specific with technical details
+        Please provide accurate information for each field:
+
+        Mandatory Fields:
+        {', '.join(template['mandatory_fields'])}
+
+        Optional Fields:
+        {', '.join(template['optional_fields'])}
+
+        Requirements:
+        1. Use 'N/A' only if information is truly unavailable
+        2. Be specific with measurements and materials
+        3. Include actual market prices where available
+        4. Format each field as: **Field Name:** [content]
+        5. Keep technical specifications precise and verifiable
         """
         
         fields_response = call_perplexity_api(fields_prompt, 0.1)  # 使用较低的温度以获得更精确的字段信息
@@ -649,3 +640,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
