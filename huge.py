@@ -5,49 +5,9 @@ from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
 import requests
-import sys
 import logging
 import re# 设置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-class PerplexityAPIClient:
-    def __init__(self, rate_limit=50, time_window=60):
-        self.request_count = 0
-        self.rate_limit = rate_limit  # requests per time window
-        self.time_window = time_window  # seconds
-        self.last_reset_time = time.time()
-        self.wait_queue = []
-
-    def check_rate_limit(self):
-        current_time = time.time()
-        
-        # Reset request count if time window has passed
-        if current_time - self.last_reset_time > self.time_window:
-            self.request_count = 0
-            self.last_reset_time = current_time
-        
-        # Check if rate limit is exceeded
-        if self.request_count >= self.rate_limit:
-            wait_time = self.time_window - (current_time - self.last_reset_time)
-            logging.warning(f"Rate limit reached. Waiting {wait_time:.2f} seconds")
-            time.sleep(wait_time)
-            
-            # Reset after waiting
-            self.request_count = 0
-            self.last_reset_time = time.time()
-        
-        # Increment request count
-        self.request_count += 1
-        return True
-
-    def make_api_call(self, prompt, temperature):
-        # Add rate limiting check before API call
-        self.check_rate_limit()
-        
-        # Existing API call logic
-        return call_perplexity_api(prompt, temperature)
-
-
 
 # 设置Google Sheets API
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
@@ -214,44 +174,78 @@ def generate_prompt(template, brand, product_type, style_number, additional_info
     return prompt
 
 def call_perplexity_api(prompt, temperature):
-    logging.info(f"Calling Perplexity API with temperature {temperature}. Prompt: {prompt[:100]}...")  # 记录API调用
+    logging.info(f"Calling Perplexity API with temperature {temperature}. Prompt: {prompt[:100]}...")
+    
     headers = {
         'Authorization': f'Bearer {PERPLEXITY_API_KEY}',
         'Content-Type': 'application/json'
-    }  # Add the missing closing bracket here
+    }
     
     data = {
-        'model': 'llama-3.1-sonar-huge-128k-online',
+        'model': 'llama-3.1-sonar-small-128k-online',
         'messages': [
             {
                 'role': 'system',
-                'content': '''You are a luxury fashion expert specializing in high-end product descriptions. Your responses should be: 
-                1. Professional but accessible 
-                2. Accurate and specific 
-                3. Free of marketing hyperbole 
-                4. Focused on materials, craftsmanship, and design 
-                5. Compliant with EU/UK product description standards'''
+                'content': '''You are a luxury fashion expert specializing in high-end product descriptions.
+                Focus on:
+                1. Premium materials and craftsmanship
+                2. Precise technical specifications
+                3. Professional retail standards
+                4. Factual information only'''
             },
             {'role': 'user', 'content': prompt}
         ],
         'max_tokens': 1000,
         'temperature': temperature,
         'top_p': 0.9,
-        'return_citations': True,
-        'frequency_penalty': 1
+        'return_images': False,
+        'return_related_questions': False,
+        'frequency_penalty': 0.1,
+        'stream': False
     }
-
+    
     try:
-        response = requests.post(PERPLEXITY_API_URL, headers=headers, json=data)  # Add the missing closing parenthesis
+        response = requests.post(PERPLEXITY_API_URL, headers=headers, json=data, timeout=30)
         response.raise_for_status()
-        response_json = response.json()
-        content = response_json['choices'][0]['message']['content']
         
-        # Rest of the existing code remains the same
-        ...
-
+        if response.status_code != 200:
+            logging.error(f"API Error: Status {response.status_code}, Response: {response.text}")
+            return None
+            
+        response_json = response.json()
+        
+        # 验证响应格式
+        if not all(key in response_json for key in ['id', 'model', 'choices', 'usage']):
+            logging.error(f"Invalid API response format: {response_json}")
+            return None
+            
+        # 验证 choices 数组
+        if not response_json['choices'] or 'message' not in response_json['choices'][0]:
+            logging.error("No valid choices in API response")
+            return None
+            
+        # 获取内容
+        content = response_json['choices'][0]['message'].get('content')
+        if not content:
+            logging.error("No content in API response")
+            return None
+            
+        # 记录使用情况
+        usage = response_json['usage']
+        logging.info(f"API usage - Prompt tokens: {usage['prompt_tokens']}, "
+                    f"Completion tokens: {usage['completion_tokens']}, "
+                    f"Total tokens: {usage['total_tokens']}")
+        
+        return content
+        
+    except requests.exceptions.Timeout:
+        logging.error("API request timed out")
+        return None
+    except requests.exceptions.RequestException as e:
+        logging.error(f"API request failed: {str(e)}")
+        return None
     except Exception as e:
-        logging.error(f"Error calling Perplexity API: {str(e)}")
+        logging.error(f"Unexpected error in API call: {str(e)}")
         return None
 
 def get_sheet_name(product_type):
@@ -344,99 +338,84 @@ def extract_fields_from_response(raw_response, template):
     logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
     return extracted_data
 
-# Create a global API client instance
-api_client = PerplexityAPIClient()
-
 def process_product(product_type, brand, style_number, additional_info, size_info, index, max_retries=2):
     logging.info(f"Processing: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}', Additional Info: '{additional_info}', Size Info: '{size_info}'")
-    
+
     if not product_type:
         logging.warning(f"Skipping row {index} due to empty product type")
         return None
-    
+
     sheet_name = get_sheet_name(product_type)
     template, _ = get_template(product_type)
-    
     if not template:
         logging.warning(f"Skipping row {index} due to missing template for product type: {product_type}")
         return None
-    
-    # Move description_prompt and fields_prompt definition outside the retry loop
-    description_prompt = f""" 
-    Generate a concise and professional product description for {brand} {product_type}. 
-    Additional Information: {additional_info} 
-    Format requirements: 
-    1. Title: Create a clear title under 80 characters 
-       - Include brand, product type, and key features 
-       - Do not include style number 
-       - Format: [Brand] [Product Type] [Key Feature] [Color/Material] 
-    2. Subtitle: Create a compelling subtitle under 55 characters 
-       - Highlight unique selling points 
-       - Focus on benefits or exclusive features 
-    3. Short Description: 
-       - 2-3 concise sentences 
-       - Focus on main features and benefits 
-       - Avoid technical details 
-    4. Description: 
-       - Use simple paragraphs without bullet points or markdown 
-       - Focus on: Materials, Design, Comfort, Quality 
-       - Include care instructions and sizing information 
-       - End with a call to action 
-    Please format your response exactly as: 
-    **Title:** [title] 
-    **Subtitle:** [subtitle] 
-    **Short Description:** [short description] 
-    **Description:** [description] 
-    """
-    
-    fields_prompt = f""" 
-    For this {brand} {product_type} (Style: {style_number}): 
-    Product Details: 
-    - Additional Info: {additional_info} 
-    - Size Info: {size_info} 
-    Please provide accurate information for each field: 
-    Mandatory Fields: {', '.join(template['mandatory_fields'])} 
-    Optional Fields: {', '.join(template['optional_fields'])} 
-    Requirements: 
-    1. Use 'N/A' only if information is truly unavailable 
-    2. Be specific with measurements and materials 
-    3. Include actual market prices where available 
-    4. Format each field as: **Field Name:** [content] 
-    5. Keep technical specifications precise and verifiable 
-    """
-    
+
     for attempt in range(max_retries):
-        try:
-            # First API call: generate product description
-            description_response = call_perplexity_api(description_prompt, 0.3)
-            if not description_response:
-                logging.warning(f"Failed to generate description on attempt {attempt + 1}")
-                continue
-            
-            # Second API call: generate Mandatory and Optional fields
-            fields_response = call_perplexity_api(fields_prompt, 0.1)
-            if not fields_response:
-                logging.warning(f"Failed to generate fields on attempt {attempt + 1}")
-                continue
-            
-            # Process description and fields separately
-            description_data = extract_fields_from_response(description_response, template)
-            fields_data = extract_fields_from_response(fields_response, template)
-            extracted_data = {**description_data, **fields_data}
-            
-            # Add size information to title (if available)
-            if 'Title' in extracted_data and size_info:
-                extracted_data['Title'] += f" {size_info}"
-            
-            validate_fields(extracted_data, product_type)
-            
-            logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
-            return sheet_name, extracted_data
+        # 第一次API调用：生成产品描述
+        description_prompt = f"""
+        Create a luxury product description for {brand} {product_type}.
+        Context: {additional_info}
+        Size Info: {size_info}
+
+        Required format:
+        1. Title (80 chars): 
+           {brand} {product_type} [Key Feature] [Color] {'EU' + size_info if product_type.lower() == 'shoes' else size_info}
+
+        2. Subtitle (55 chars): Focus on unique value
+        3. Short Description: 2-3 key benefit sentences
+        4. Description: Materials, Design, Features, Care
+
+        Format response as:
+        **Title:** [title]
+        **Subtitle:** [subtitle]
+        **Short Description:** [short description]
+        **Description:**
+        [description]
+        """
+
+        description_response = call_perplexity_api(description_prompt, 0.3)
         
-        except Exception as e:
-            logging.error(f"API call error on attempt {attempt + 1}: {str(e)}")
+        if not description_response:
+            logging.warning(f"Failed to generate description on attempt {attempt + 1}")
             continue
-    
+
+        # 第二次API调用：生成Mandatory和Optional字段
+        fields_prompt = f"""
+        Provide specifications for {brand} {product_type} (Style: {style_number}).
+        Details: {additional_info}
+        Size Info: {size_info}
+
+        Required fields: {', '.join(template['mandatory_fields'])}
+        Optional fields: {', '.join(template['optional_fields'])}
+
+        Guidelines:
+        1. Use precise measurements and materials
+        2. Include market prices if available
+        3. Mark unavailable info as 'N/A'
+        4. Be specific with technical details
+        """
+        
+        fields_response = call_perplexity_api(fields_prompt, 0.1)  # 使用较低的温度以获得更精确的字段信息
+        
+        if not fields_response:
+            logging.warning(f"Failed to generate fields on attempt {attempt + 1}")
+            continue
+
+        # 处理描述和字段分别
+        description_data = extract_fields_from_response(description_response, template)
+        fields_data = extract_fields_from_response(fields_response, template)
+        extracted_data = {**description_data, **fields_data}
+        
+        # 添加尺寸信息到标题（如果可用）
+        if 'Title' in extracted_data and size_info:
+            extracted_data['Title'] += f" {size_info}"
+        
+        validate_fields(extracted_data, product_type)  # 验证字段
+        
+        logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
+        return sheet_name, extracted_data
+
     logging.error(f"Failed to process product after {max_retries} attempts")
     return None
 
@@ -587,88 +566,8 @@ def get_current_row(sheet_name):
         # 如果出错，返回2作为默认值
         return 2
 
-def validate_perplexity_api_key():
-    """
-    Validate Perplexity API key with comprehensive checks
-    """
-    # Basic checks
-    if not PERPLEXITY_API_KEY:
-        logging.error("❌ No API key found")
-        return False
-    
-    # Length and format check
-    if len(PERPLEXITY_API_KEY) < 20:
-        logging.error("❌ API key seems too short")
-        return False
-    
-    # Test API connectivity
-    test_prompt = "Validate API key connectivity. Respond with 'API Key Valid'."
-    
-    headers = {
-        'Authorization': f'Bearer {PERPLEXITY_API_KEY}',
-        'Content-Type': 'application/json'
-    }
-    
-    data = {
-        'model': 'llama-3.1-sonar-huge-128k-online',
-        'messages': [
-            {
-                'role': 'system', 
-                'content': 'You are a helpful assistant'
-            },
-            {
-                'role': 'user', 
-                'content': test_prompt
-            }
-        ],
-        'max_tokens': 50,
-        'temperature': 0.1
-    }
-    
-    try:
-        # Attempt API call with timeout
-        response = requests.post(
-            PERPLEXITY_API_URL, 
-            headers=headers, 
-            json=data, 
-            timeout=10
-        )
-        
-        # Check response status
-        if response.status_code == 200:
-            response_json = response.json()
-            
-            # Additional validation checks
-            if 'choices' in response_json and response_json['choices']:
-                content = response_json['choices'][0]['message']['content']
-                logging.info(f"✅ API Key Validation Response: {content}")
-                return True
-            else:
-                logging.error("❌ Invalid API response structure")
-                return False
-        
-        else:
-            logging.error(f"❌ API Key Validation Failed. Status Code: {response.status_code}")
-            logging.error(f"Response: {response.text}")
-            return False
-    
-    except requests.exceptions.RequestException as e:
-        logging.error(f"❌ API Connection Error: {str(e)}")
-        return False
-    except Exception as e:
-        logging.error(f"❌ Unexpected Error during API key validation: {str(e)}")
-        return False
-
 def main():
-    # Validate API key before proceeding
-    if not validate_perplexity_api_key():
-        logging.critical("API Key Validation Failed. Exiting.")
-        sys.exit(1)
-    
     logging.info(f"Current working directory: {os.getcwd()}")
-    
-    # Create API client with rate limiting
-    api_client = PerplexityAPIClient(rate_limit=30, time_window=45)
     
     # Read product information
     product_types = read_spreadsheet('Sheet1!E2:E')
@@ -676,9 +575,8 @@ def main():
     style_numbers = read_spreadsheet('Sheet1!I2:I')
     additional_info = read_spreadsheet('Sheet1!G2:G')
     size_info = read_spreadsheet('Sheet1!K2:X')
-    internal_references = read_spreadsheet('Sheet1!C2:C')
+    internal_references = read_spreadsheet('Sheet1!C2:C')  # 读取"internal reference"列
     
-    # Log read information
     logging.info(f"Read {len(product_types)} product types, {len(brands)} brands, {len(style_numbers)} style numbers, {len(additional_info)} additional info entries, {len(size_info)} size info entries, and {len(internal_references)} internal references")
     
     # Find the length of the mandatory columns
@@ -687,9 +585,9 @@ def main():
     if min_length == 0:
         logging.error("One or more mandatory columns are empty. Please check the spreadsheet.")
         return
-    
+
     logging.info(f"Processing {min_length} rows with mandatory data")
-    
+
     # Store data for each sheet
     sheet_data = {}
     
@@ -705,48 +603,44 @@ def main():
             logging.warning(f"Skipping row {index+2} due to missing mandatory data: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}', Internal Reference: '{internal_reference}'")
             continue
         
-        # Pass api_client to process_product
         result = process_product(product_type, brand, style_number, add_info, size, index+2)
-        
         if result:
             sheet_name, extracted_data = result
-            extracted_data['Internal Reference'] = internal_reference
-            
+            extracted_data['Internal Reference'] = internal_reference  # 添加内部参考号到提取的数据中
             if sheet_name not in sheet_data:
                 sheet_data[sheet_name] = []
             sheet_data[sheet_name].append(extracted_data)
-    
+
     # Write data to respective sheets
     for sheet_name, data in sheet_data.items():
         try:
             if ensure_sheet_exists(sheet_name):
-                # Get field names (first row)
+                # 获取字段名（第一行）
                 field_names = sheets_service.spreadsheets().values().get(
-                    spreadsheetId=SPREADSHEET_ID, 
+                    spreadsheetId=SPREADSHEET_ID,
                     range=f"'{sheet_name}'!A1:ZZ1"
                 ).execute().get('values', [[]])[0]
                 
                 logging.info(f"Sheet field names: {field_names}")
                 
-                # Get current row
+                # 获取当前行数
                 current_row = get_current_row(sheet_name)
                 
-                # Prepare data
+                # 准备数据
                 rows_to_write = []
                 for item in data:
                     row = prepare_data_for_write(item, field_names)
                     rows_to_write.append(row)
                 
                 if rows_to_write:
-                    # Clear format
+                    # 清除格式
                     clear_range_format(sheet_name, current_row, current_row + len(rows_to_write))
                     
-                    # Write data
+                    # 写入数据
                     range_name = f"'{sheet_name}'!A{current_row}"
                     if write_to_spreadsheet(range_name, rows_to_write):
                         logging.info(f"Successfully wrote {len(rows_to_write)} rows to {sheet_name}")
-                        
-                        # Verify written data
+                        # 验证写入的数据
                         verify_written_data(sheet_name, current_row, len(rows_to_write))
                     else:
                         logging.error(f"Failed to write data to {sheet_name}")
