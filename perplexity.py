@@ -20,21 +20,27 @@ def test_perplexity_api():
         "Content-Type": "application/json"
     }
     
-    # 测试数据 - 更明确的指令
+    # 测试数据 - 使用更强制性的提示
+    test_string = "Hello, World!"
     payload = {
         "model": "llama-3.1-sonar-small-128k-online",
         "messages": [
             {
                 "role": "system",
-                "content": "You must respond with EXACTLY the text provided, including all punctuation marks."
+                "content": """You are a precise text replication system. Your only job is to output exactly what you are given.
+                Rules:
+                1. Output the exact characters provided
+                2. Include ALL punctuation marks
+                3. Do not add or remove anything
+                4. Do not explain or comment"""
             },
             {
                 "role": "user",
-                "content": "Output this exact text with no additions or changes: Hello, World!"
+                "content": f"Copy this text exactly (13 characters including punctuation): {test_string}"
             }
         ],
         "max_tokens": 50,
-        "temperature": 0,  # 设为0以获得最确定的响应
+        "temperature": 0,
         "top_p": 1.0,
         "return_images": False,
         "return_related_questions": False,
@@ -63,13 +69,18 @@ def test_perplexity_api():
         content = response_data['choices'][0]['message']['content'].strip()
         logging.info(f"Generated content: {content}")
 
-        # 验证内容是否完全匹配
-        expected_content = "Hello, World!"
+        # 详细的内容验证
+        expected_content = test_string
         if content != expected_content:
             logging.warning(f"Content does not exactly match expected content")
             logging.warning(f"Expected: '{expected_content}'")
             logging.warning(f"Received: '{content}'")
             logging.warning(f"Length - Expected: {len(expected_content)}, Received: {len(content)}")
+            
+            # 字符级别的比较
+            for i, (exp_char, rec_char) in enumerate(zip(expected_content, content + ' ' * (len(expected_content) - len(content)))):
+                if exp_char != rec_char:
+                    logging.warning(f"Mismatch at position {i}: Expected '{exp_char}', Received '{rec_char}'")
         else:
             logging.info("✅ Content exactly matches expected output")
         
@@ -96,4 +107,3 @@ if __name__ == "__main__":
         logging.info("✅ Test completed successfully!")
     else:
         logging.error("❌ Test failed!")
-        
