@@ -20,7 +20,7 @@ def test_perplexity_api():
         "Content-Type": "application/json"
     }
     
-    # 测试数据 - 更明确的指令
+    # 测试数据 - 修正 frequency_penalty 值
     payload = {
         "model": "llama-3.1-sonar-small-128k-online",
         "messages": [
@@ -33,13 +33,13 @@ def test_perplexity_api():
                 "content": "Respond with exactly these words: Hello, World!"
             }
         ],
-        "max_tokens": 50,  # 增加 token 限制以确保完整响应
-        "temperature": 0,   # 设置为 0 以获得最确定的响应
-        "top_p": 1,
+        "max_tokens": 50,
+        "temperature": 0.1,
+        "top_p": 0.9,
         "return_images": False,
         "return_related_questions": False,
-        "frequency_penalty": 0,
-        "presence_penalty": 0,
+        "frequency_penalty": 0.1,  # 修改为大于 0 的值
+        "presence_penalty": 0.1,   # 也稍微调整一下这个值
         "stream": False
     }
 
