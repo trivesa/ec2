@@ -9,6 +9,43 @@ import logging
 import re# 设置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
+class PerplexityAPIClient:
+    def __init__(self, rate_limit=50, time_window=60):
+        self.request_count = 0
+        self.rate_limit = rate_limit  # requests per time window
+        self.time_window = time_window  # seconds
+        self.last_reset_time = time.time()
+        self.wait_queue = []
+
+    def check_rate_limit(self):
+        current_time = time.time()
+        
+        # Reset request count if time window has passed
+        if current_time - self.last_reset_time > self.time_window:
+            self.request_count = 0
+            self.last_reset_time = current_time
+        
+        # Check if rate limit is exceeded
+        if self.request_count >= self.rate_limit:
+            wait_time = self.time_window - (current_time - self.last_reset_time)
+            logging.warning(f"Rate limit reached. Waiting {wait_time:.2f} seconds")
+            time.sleep(wait_time)
+            
+            # Reset after waiting
+            self.request_count = 0
+            self.last_reset_time = time.time()
+        
+        # Increment request count
+        self.request_count += 1
+        return True
+
+    def make_api_call(self, prompt, temperature):
+        # Add rate limiting check before API call
+        self.check_rate_limit()
+        
+        # Existing API call logic
+        return call_perplexity_api(prompt, temperature)
+
 # 设置Google Sheets API
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 GOOGLE_CREDENTIALS_PATH = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')
@@ -178,28 +215,26 @@ def call_perplexity_api(prompt, temperature):
     headers = {
         'Authorization': f'Bearer {PERPLEXITY_API_KEY}',
         'Content-Type': 'application/json'
-    }
     data = {
-        'model': 'llama-3.1-sonar-huge-128k-online',
-        'messages': [
-            {
-                'role': 'system', 
-                'content': '''You are a luxury fashion expert specializing in high-end product descriptions.
-                Your responses should be:
-                1. Professional but accessible
-                2. Accurate and specific
-                3. Free of marketing hyperbole
-                4. Focused on materials, craftsmanship, and design
-                5. Compliant with EU/UK product description standards'''
-            },
-            {'role': 'user', 'content': prompt}
-        ],
-        'max_tokens': 1000,
-        'temperature': temperature,
-        'top_p': 0.9,
-        'return_citations': True,
-        'frequency_penalty': 1
-    }
+    'model': 'llama-3.1-sonar-huge-128k-online',
+    'messages': [
+        {
+            'role': 'system',
+            'content': '''You are a luxury fashion expert specializing in high-end product descriptions. Your responses should be: 
+            1. Professional but accessible 
+            2. Accurate and specific 
+            3. Free of marketing hyperbole 
+            4. Focused on materials, craftsmanship, and design 
+            5. Compliant with EU/UK product description standards'''
+        },
+        {'role': 'user', 'content': prompt}
+    ],
+    'max_tokens': 1000,
+    'temperature': temperature,
+    'top_p': 0.9,
+    'frequency_penalty': 1,
+    'return_citations': True
+   }
     try:
         response = requests.post(PERPLEXITY_API_URL, headers=headers, json=data)
         response.raise_for_status()
@@ -309,18 +344,47 @@ def extract_fields_from_response(raw_response, template):
     logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
     return extracted_data
 
-def process_product(product_type, brand, style_number, additional_info, size_info, index, max_retries=2):
-    logging.info(f"Processing: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}', Additional Info: '{additional_info}', Size Info: '{size_info}'")
+# Create a global API client instance
+api_client = PerplexityAPIClient()
 
+def process_product(product_type, brand, style_number, additional_info, size_info, index, max_retries=2):
+    logging.info(f"Processing: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
+    
     if not product_type:
         logging.warning(f"Skipping row {index} due to empty product type")
         return None
-
+    
     sheet_name = get_sheet_name(product_type)
     template, _ = get_template(product_type)
+    
     if not template:
         logging.warning(f"Skipping row {index} due to missing template for product type: {product_type}")
         return None
+    
+    for attempt in range(max_retries):
+        try:
+            # Use the API client for making API calls
+            description_response = api_client.make_api_call(description_prompt, 0.3)
+            
+            if not description_response:
+                logging.warning(f"Failed to generate description on attempt {attempt + 1}")
+                continue
+            
+            # Similarly for fields prompt
+            fields_response = api_client.make_api_call(fields_prompt, 0.1)
+            
+            if not fields_response:
+                logging.warning(f"Failed to generate fields on attempt {attempt + 1}")
+                continue
+            
+            # Rest of the existing processing logic...
+            
+        except Exception as e:
+            logging.error(f"API call error on attempt {attempt + 1}: {str(e)}")
+            continue
+    
+    logging.error(f"Failed to process product after {max_retries} attempts")
+    return None
 
     for attempt in range(max_retries):
         # 第一次API调用：生成产品描述
@@ -559,6 +623,8 @@ def get_current_row(sheet_name):
 
 def main():
     logging.info(f"Current working directory: {os.getcwd()}")
+
+    api_client = PerplexityAPIClient(rate_limit=30, time_window=45)
     
     # Read product information
     product_types = read_spreadsheet('Sheet1!E2:E')
