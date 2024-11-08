@@ -20,21 +20,24 @@ def test_perplexity_api():
         "Content-Type": "application/json"
     }
     
-    # 测试数据
+    def test_perplexity_api():
+    # ... 前面的代码保持不变 ...
+    
+    # 修改测试数据
     payload = {
         "model": "llama-3.1-sonar-small-128k-online",
         "messages": [
             {
                 "role": "system",
-                "content": "You are a helpful assistant."
+                "content": "You are a helpful assistant. Be very concise and direct in your responses."
             },
             {
                 "role": "user",
-                "content": "Please write a simple 'Hello, World!' message."
+                "content": "Say hello world."
             }
         ],
-        "max_tokens": 100,
-        "temperature": 0.2,
+        "max_tokens": 20,  # 减少 token 限制
+        "temperature": 0.1,  # 降低温度使输出更确定性
         "top_p": 0.9,
         "return_images": False,
         "return_related_questions": False,
@@ -42,6 +45,8 @@ def test_perplexity_api():
         "presence_penalty": 0,
         "stream": False
     }
+    
+    # ... 后面的代码保持不变 ...
 
     try:
         # 发送请求
