@@ -20,7 +20,7 @@ def test_perplexity_api():
         "Content-Type": "application/json"
     }
     
-    # 测试数据 - 修正 frequency_penalty 值
+    # 测试数据 - 只使用 frequency_penalty
     payload = {
         "model": "llama-3.1-sonar-small-128k-online",
         "messages": [
@@ -38,8 +38,8 @@ def test_perplexity_api():
         "top_p": 0.9,
         "return_images": False,
         "return_related_questions": False,
-        "frequency_penalty": 0.1,  # 修改为大于 0 的值
-        "presence_penalty": 0.1,   # 也稍微调整一下这个值
+        "frequency_penalty": 0.1,  # 保留这个
+        # 移除了 presence_penalty
         "stream": False
     }
 
