@@ -660,18 +660,14 @@ def validate_perplexity_api_key():
         return False
 
 def main():
-    def main():
     # Validate API key before proceeding
     if not validate_perplexity_api_key():
         logging.critical("API Key Validation Failed. Exiting.")
         sys.exit(1)
     
-    # Rest of your existing main function code...
     logging.info(f"Current working directory: {os.getcwd()}")
     
-    # Existing code continues...
-    logging.info(f"Current working directory: {os.getcwd()}")
-
+    # Create API client with rate limiting
     api_client = PerplexityAPIClient(rate_limit=30, time_window=45)
     
     # Read product information
@@ -680,8 +676,9 @@ def main():
     style_numbers = read_spreadsheet('Sheet1!I2:I')
     additional_info = read_spreadsheet('Sheet1!G2:G')
     size_info = read_spreadsheet('Sheet1!K2:X')
-    internal_references = read_spreadsheet('Sheet1!C2:C')  # 读取"internal reference"列
+    internal_references = read_spreadsheet('Sheet1!C2:C')
     
+    # Log read information
     logging.info(f"Read {len(product_types)} product types, {len(brands)} brands, {len(style_numbers)} style numbers, {len(additional_info)} additional info entries, {len(size_info)} size info entries, and {len(internal_references)} internal references")
     
     # Find the length of the mandatory columns
@@ -690,9 +687,9 @@ def main():
     if min_length == 0:
         logging.error("One or more mandatory columns are empty. Please check the spreadsheet.")
         return
-
+    
     logging.info(f"Processing {min_length} rows with mandatory data")
-
+    
     # Store data for each sheet
     sheet_data = {}
     
@@ -708,44 +705,48 @@ def main():
             logging.warning(f"Skipping row {index+2} due to missing mandatory data: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}', Internal Reference: '{internal_reference}'")
             continue
         
+        # Pass api_client to process_product
         result = process_product(product_type, brand, style_number, add_info, size, index+2)
+        
         if result:
             sheet_name, extracted_data = result
-            extracted_data['Internal Reference'] = internal_reference  # 添加内部参考号到提取的数据中
+            extracted_data['Internal Reference'] = internal_reference
+            
             if sheet_name not in sheet_data:
                 sheet_data[sheet_name] = []
             sheet_data[sheet_name].append(extracted_data)
-
+    
     # Write data to respective sheets
     for sheet_name, data in sheet_data.items():
         try:
             if ensure_sheet_exists(sheet_name):
-                # 获取字段名（第一行）
+                # Get field names (first row)
                 field_names = sheets_service.spreadsheets().values().get(
-                    spreadsheetId=SPREADSHEET_ID,
+                    spreadsheetId=SPREADSHEET_ID, 
                     range=f"'{sheet_name}'!A1:ZZ1"
                 ).execute().get('values', [[]])[0]
                 
                 logging.info(f"Sheet field names: {field_names}")
                 
-                # 获取当前行数
+                # Get current row
                 current_row = get_current_row(sheet_name)
                 
-                # 准备数据
+                # Prepare data
                 rows_to_write = []
                 for item in data:
                     row = prepare_data_for_write(item, field_names)
                     rows_to_write.append(row)
                 
                 if rows_to_write:
-                    # 清除格式
+                    # Clear format
                     clear_range_format(sheet_name, current_row, current_row + len(rows_to_write))
                     
-                    # 写入数据
+                    # Write data
                     range_name = f"'{sheet_name}'!A{current_row}"
                     if write_to_spreadsheet(range_name, rows_to_write):
                         logging.info(f"Successfully wrote {len(rows_to_write)} rows to {sheet_name}")
-                        # 验证写入的数据
+                        
+                        # Verify written data
                         verify_written_data(sheet_name, current_row, len(rows_to_write))
                     else:
                         logging.error(f"Failed to write data to {sheet_name}")
