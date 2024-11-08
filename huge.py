@@ -345,7 +345,7 @@ def extract_fields_from_response(raw_response, template):
 api_client = PerplexityAPIClient()
 
 def process_product(product_type, brand, style_number, additional_info, size_info, index, max_retries=2):
-    logging.info(f"Processing: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}'")
+    logging.info(f"Processing: Product Type: '{product_type}', Brand: '{brand}', Style Number: '{style_number}', Additional Info: '{additional_info}', Size Info: '{size_info}'")
     
     if not product_type:
         logging.warning(f"Skipping row {index} due to empty product type")
@@ -358,116 +358,82 @@ def process_product(product_type, brand, style_number, additional_info, size_inf
         logging.warning(f"Skipping row {index} due to missing template for product type: {product_type}")
         return None
     
+    # Move description_prompt and fields_prompt definition outside the retry loop
+    description_prompt = f""" 
+    Generate a concise and professional product description for {brand} {product_type}. 
+    Additional Information: {additional_info} 
+    Format requirements: 
+    1. Title: Create a clear title under 80 characters 
+       - Include brand, product type, and key features 
+       - Do not include style number 
+       - Format: [Brand] [Product Type] [Key Feature] [Color/Material] 
+    2. Subtitle: Create a compelling subtitle under 55 characters 
+       - Highlight unique selling points 
+       - Focus on benefits or exclusive features 
+    3. Short Description: 
+       - 2-3 concise sentences 
+       - Focus on main features and benefits 
+       - Avoid technical details 
+    4. Description: 
+       - Use simple paragraphs without bullet points or markdown 
+       - Focus on: Materials, Design, Comfort, Quality 
+       - Include care instructions and sizing information 
+       - End with a call to action 
+    Please format your response exactly as: 
+    **Title:** [title] 
+    **Subtitle:** [subtitle] 
+    **Short Description:** [short description] 
+    **Description:** [description] 
+    """
+    
+    fields_prompt = f""" 
+    For this {brand} {product_type} (Style: {style_number}): 
+    Product Details: 
+    - Additional Info: {additional_info} 
+    - Size Info: {size_info} 
+    Please provide accurate information for each field: 
+    Mandatory Fields: {', '.join(template['mandatory_fields'])} 
+    Optional Fields: {', '.join(template['optional_fields'])} 
+    Requirements: 
+    1. Use 'N/A' only if information is truly unavailable 
+    2. Be specific with measurements and materials 
+    3. Include actual market prices where available 
+    4. Format each field as: **Field Name:** [content] 
+    5. Keep technical specifications precise and verifiable 
+    """
+    
     for attempt in range(max_retries):
         try:
-            # Use the API client for making API calls
-            description_response = api_client.make_api_call(description_prompt, 0.3)
-            
+            # First API call: generate product description
+            description_response = call_perplexity_api(description_prompt, 0.3)
             if not description_response:
                 logging.warning(f"Failed to generate description on attempt {attempt + 1}")
                 continue
             
-            # Similarly for fields prompt
-            fields_response = api_client.make_api_call(fields_prompt, 0.1)
-            
+            # Second API call: generate Mandatory and Optional fields
+            fields_response = call_perplexity_api(fields_prompt, 0.1)
             if not fields_response:
                 logging.warning(f"Failed to generate fields on attempt {attempt + 1}")
                 continue
             
-            # Rest of the existing processing logic...
+            # Process description and fields separately
+            description_data = extract_fields_from_response(description_response, template)
+            fields_data = extract_fields_from_response(fields_response, template)
+            extracted_data = {**description_data, **fields_data}
             
+            # Add size information to title (if available)
+            if 'Title' in extracted_data and size_info:
+                extracted_data['Title'] += f" {size_info}"
+            
+            validate_fields(extracted_data, product_type)
+            
+            logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
+            return sheet_name, extracted_data
+        
         except Exception as e:
             logging.error(f"API call error on attempt {attempt + 1}: {str(e)}")
             continue
     
-    logging.error(f"Failed to process product after {max_retries} attempts")
-    return None
-
-    for attempt in range(max_retries):
-        # 第一次API调用：生成产品描述
-        description_prompt = f"""
-            Generate a concise and professional product description for {brand} {product_type}.
-            Additional Information: {additional_info}
-
-            Format requirements:
-            1. Title: Create a clear title under 80 characters
-               - Include brand, product type, and key features
-               - Do not include style number
-               - Format: [Brand] [Product Type] [Key Feature] [Color/Material]
-
-            2. Subtitle: Create a compelling subtitle under 55 characters
-               - Highlight unique selling points
-               - Focus on benefits or exclusive features
-
-            3. Short Description: 
-               - 2-3 concise sentences
-               - Focus on main features and benefits
-               - Avoid technical details
-
-            4. Description:
-               - Use simple paragraphs without bullet points or markdown
-               - Focus on: Materials, Design, Comfort, Quality
-               - Include care instructions and sizing information
-               - End with a call to action
-
-            Please format your response exactly as:
-            **Title:** [title]
-            **Subtitle:** [subtitle]
-            **Short Description:** [short description]
-            **Description:**
-            [description]
-            """
-
-        description_response = call_perplexity_api(description_prompt, 0.3)
-        
-        if not description_response:
-            logging.warning(f"Failed to generate description on attempt {attempt + 1}")
-            continue
-
-        # 第二次API调用：生成Mandatory和Optional字段
-        fields_prompt = f"""
-        For this {brand} {product_type} (Style: {style_number}):
-
-        Product Details:
-        - Additional Info: {additional_info}
-        - Size Info: {size_info}
-
-        Please provide accurate information for each field:
-
-        Mandatory Fields:
-        {', '.join(template['mandatory_fields'])}
-
-        Optional Fields:
-        {', '.join(template['optional_fields'])}
-
-        Requirements:
-        1. Use 'N/A' only if information is truly unavailable
-        2. Be specific with measurements and materials
-        3. Include actual market prices where available
-        4. Format each field as: **Field Name:** [content]
-        5. Keep technical specifications precise and verifiable
-        """
-        
-        fields_response = call_perplexity_api(fields_prompt, 0.1)  # 使用较低的温度以获得更精确的字段信息
-        
-        if not fields_response:
-            logging.warning(f"Failed to generate fields on attempt {attempt + 1}")
-            continue
-
-        # 处理描述和字段分别
-        description_data = extract_fields_from_response(description_response, template)
-        fields_data = extract_fields_from_response(fields_response, template)
-        extracted_data = {**description_data, **fields_data}
-        
-        # 添加尺寸信息到标题（如果可用）
-        if 'Title' in extracted_data and size_info:
-            extracted_data['Title'] += f" {size_info}"
-        
-        validate_fields(extracted_data, product_type)  # 验证字段
-        
-        logging.info(f"Extracted data: {json.dumps(extracted_data, indent=2)}")
-        return sheet_name, extracted_data
-
     logging.error(f"Failed to process product after {max_retries} attempts")
     return None
 
