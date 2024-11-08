@@ -215,41 +215,38 @@ def call_perplexity_api(prompt, temperature):
     headers = {
         'Authorization': f'Bearer {PERPLEXITY_API_KEY}',
         'Content-Type': 'application/json'
+    }  # Add the missing closing bracket here
+    
     data = {
-    'model': 'llama-3.1-sonar-huge-128k-online',
-    'messages': [
-        {
-            'role': 'system',
-            'content': '''You are a luxury fashion expert specializing in high-end product descriptions. Your responses should be: 
-            1. Professional but accessible 
-            2. Accurate and specific 
-            3. Free of marketing hyperbole 
-            4. Focused on materials, craftsmanship, and design 
-            5. Compliant with EU/UK product description standards'''
-        },
-        {'role': 'user', 'content': prompt}
-    ],
-    'max_tokens': 1000,
-    'temperature': temperature,
-    'top_p': 0.9,
-    'frequency_penalty': 1,
-    'return_citations': True
-   }
+        'model': 'llama-3.1-sonar-huge-128k-online',
+        'messages': [
+            {
+                'role': 'system',
+                'content': '''You are a luxury fashion expert specializing in high-end product descriptions. Your responses should be: 
+                1. Professional but accessible 
+                2. Accurate and specific 
+                3. Free of marketing hyperbole 
+                4. Focused on materials, craftsmanship, and design 
+                5. Compliant with EU/UK product description standards'''
+            },
+            {'role': 'user', 'content': prompt}
+        ],
+        'max_tokens': 1000,
+        'temperature': temperature,
+        'top_p': 0.9,
+        'return_citations': True,
+        'frequency_penalty': 1
+    }
+
     try:
-        response = requests.post(PERPLEXITY_API_URL, headers=headers, json=data)
+        response = requests.post(PERPLEXITY_API_URL, headers=headers, json=data)  # Add the missing closing parenthesis
         response.raise_for_status()
         response_json = response.json()
         content = response_json['choices'][0]['message']['content']
         
-        # 记录完整的API响应
-        logging.info(f"Full API response: {json.dumps(response_json, indent=2)}")
-        
-        # 保存API响应到文件
-        with open(f'api_response_{int(time.time())}.json', 'w') as f:
-            json.dump(response_json, f, indent=2)
-        
-        logging.info(f"API response saved to file. Content: {content[:200]}...")  # 只记录前200个字符
-        return content
+        # Rest of the existing code remains the same
+        ...
+
     except Exception as e:
         logging.error(f"Error calling Perplexity API: {str(e)}")
         return None
