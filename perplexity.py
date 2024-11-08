@@ -20,10 +20,7 @@ def test_perplexity_api():
         "Content-Type": "application/json"
     }
     
-    def test_perplexity_api():
-    # ... 前面的代码保持不变 ...
-    
-    # 修改测试数据
+    # 测试数据
     payload = {
         "model": "llama-3.1-sonar-small-128k-online",
         "messages": [
@@ -36,8 +33,8 @@ def test_perplexity_api():
                 "content": "Say hello world."
             }
         ],
-        "max_tokens": 20,  # 减少 token 限制
-        "temperature": 0.1,  # 降低温度使输出更确定性
+        "max_tokens": 20,
+        "temperature": 0.1,
         "top_p": 0.9,
         "return_images": False,
         "return_related_questions": False,
@@ -45,8 +42,6 @@ def test_perplexity_api():
         "presence_penalty": 0,
         "stream": False
     }
-    
-    # ... 后面的代码保持不变 ...
 
     try:
         # 发送请求
@@ -93,4 +88,3 @@ if __name__ == "__main__":
         logging.info("✅ Test completed successfully!")
     else:
         logging.error("❌ Test failed!")
-
