@@ -47,77 +47,7 @@ class PerplexityAPIClient:
         # Existing API call logic
         return call_perplexity_api(prompt, temperature)
 
-def validate_perplexity_api_key():
-    """
-    Validate Perplexity API key with comprehensive checks
-    """
-    # Basic checks
-    if not PERPLEXITY_API_KEY:
-        logging.error("❌ No API key found")
-        return False
-    
-    # Length and format check
-    if len(PERPLEXITY_API_KEY) < 20:
-        logging.error("❌ API key seems too short")
-        return False
-    
-    # Test API connectivity
-    test_prompt = "Validate API key connectivity. Respond with 'API Key Valid'."
-    
-    headers = {
-        'Authorization': f'Bearer {PERPLEXITY_API_KEY}',
-        'Content-Type': 'application/json'
-    }
-    
-    data = {
-        'model': 'llama-3.1-sonar-huge-128k-online',
-        'messages': [
-            {
-                'role': 'system', 
-                'content': 'You are a helpful assistant'
-            },
-            {
-                'role': 'user', 
-                'content': test_prompt
-            }
-        ],
-        'max_tokens': 50,
-        'temperature': 0.1
-    }
-    
-    try:
-        # Attempt API call with timeout
-        response = requests.post(
-            PERPLEXITY_API_URL, 
-            headers=headers, 
-            json=data, 
-            timeout=10
-        )
-        
-        # Check response status
-        if response.status_code == 200:
-            response_json = response.json()
-            
-            # Additional validation checks
-            if 'choices' in response_json and response_json['choices']:
-                content = response_json['choices'][0]['message']['content']
-                logging.info(f"✅ API Key Validation Response: {content}")
-                return True
-            else:
-                logging.error("❌ Invalid API response structure")
-                return False
-        
-        else:
-            logging.error(f"❌ API Key Validation Failed. Status Code: {response.status_code}")
-            logging.error(f"Response: {response.text}")
-            return False
-    
-    except requests.exceptions.RequestException as e:
-        logging.error(f"❌ API Connection Error: {str(e)}")
-        return False
-    except Exception as e:
-        logging.error(f"❌ Unexpected Error during API key validation: {str(e)}")
-        return False
+
 
 # 设置Google Sheets API
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
@@ -656,6 +586,78 @@ def get_current_row(sheet_name):
         logging.error(f"Error getting current row for sheet {sheet_name}: {str(e)}")
         # 如果出错，返回2作为默认值
         return 2
+
+def validate_perplexity_api_key():
+    """
+    Validate Perplexity API key with comprehensive checks
+    """
+    # Basic checks
+    if not PERPLEXITY_API_KEY:
+        logging.error("❌ No API key found")
+        return False
+    
+    # Length and format check
+    if len(PERPLEXITY_API_KEY) < 20:
+        logging.error("❌ API key seems too short")
+        return False
+    
+    # Test API connectivity
+    test_prompt = "Validate API key connectivity. Respond with 'API Key Valid'."
+    
+    headers = {
+        'Authorization': f'Bearer {PERPLEXITY_API_KEY}',
+        'Content-Type': 'application/json'
+    }
+    
+    data = {
+        'model': 'llama-3.1-sonar-huge-128k-online',
+        'messages': [
+            {
+                'role': 'system', 
+                'content': 'You are a helpful assistant'
+            },
+            {
+                'role': 'user', 
+                'content': test_prompt
+            }
+        ],
+        'max_tokens': 50,
+        'temperature': 0.1
+    }
+    
+    try:
+        # Attempt API call with timeout
+        response = requests.post(
+            PERPLEXITY_API_URL, 
+            headers=headers, 
+            json=data, 
+            timeout=10
+        )
+        
+        # Check response status
+        if response.status_code == 200:
+            response_json = response.json()
+            
+            # Additional validation checks
+            if 'choices' in response_json and response_json['choices']:
+                content = response_json['choices'][0]['message']['content']
+                logging.info(f"✅ API Key Validation Response: {content}")
+                return True
+            else:
+                logging.error("❌ Invalid API response structure")
+                return False
+        
+        else:
+            logging.error(f"❌ API Key Validation Failed. Status Code: {response.status_code}")
+            logging.error(f"Response: {response.text}")
+            return False
+    
+    except requests.exceptions.RequestException as e:
+        logging.error(f"❌ API Connection Error: {str(e)}")
+        return False
+    except Exception as e:
+        logging.error(f"❌ Unexpected Error during API key validation: {str(e)}")
+        return False
 
 def main():
     def main():
