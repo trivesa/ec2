@@ -5,6 +5,7 @@ from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
 import requests
+import sys
 import logging
 import re# 设置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -45,6 +46,78 @@ class PerplexityAPIClient:
         
         # Existing API call logic
         return call_perplexity_api(prompt, temperature)
+
+def validate_perplexity_api_key():
+    """
+    Validate Perplexity API key with comprehensive checks
+    """
+    # Basic checks
+    if not PERPLEXITY_API_KEY:
+        logging.error("❌ No API key found")
+        return False
+    
+    # Length and format check
+    if len(PERPLEXITY_API_KEY) < 20:
+        logging.error("❌ API key seems too short")
+        return False
+    
+    # Test API connectivity
+    test_prompt = "Validate API key connectivity. Respond with 'API Key Valid'."
+    
+    headers = {
+        'Authorization': f'Bearer {PERPLEXITY_API_KEY}',
+        'Content-Type': 'application/json'
+    }
+    
+    data = {
+        'model': 'llama-3.1-sonar-huge-128k-online',
+        'messages': [
+            {
+                'role': 'system', 
+                'content': 'You are a helpful assistant'
+            },
+            {
+                'role': 'user', 
+                'content': test_prompt
+            }
+        ],
+        'max_tokens': 50,
+        'temperature': 0.1
+    }
+    
+    try:
+        # Attempt API call with timeout
+        response = requests.post(
+            PERPLEXITY_API_URL, 
+            headers=headers, 
+            json=data, 
+            timeout=10
+        )
+        
+        # Check response status
+        if response.status_code == 200:
+            response_json = response.json()
+            
+            # Additional validation checks
+            if 'choices' in response_json and response_json['choices']:
+                content = response_json['choices'][0]['message']['content']
+                logging.info(f"✅ API Key Validation Response: {content}")
+                return True
+            else:
+                logging.error("❌ Invalid API response structure")
+                return False
+        
+        else:
+            logging.error(f"❌ API Key Validation Failed. Status Code: {response.status_code}")
+            logging.error(f"Response: {response.text}")
+            return False
+    
+    except requests.exceptions.RequestException as e:
+        logging.error(f"❌ API Connection Error: {str(e)}")
+        return False
+    except Exception as e:
+        logging.error(f"❌ Unexpected Error during API key validation: {str(e)}")
+        return False
 
 # 设置Google Sheets API
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
@@ -585,6 +658,16 @@ def get_current_row(sheet_name):
         return 2
 
 def main():
+    def main():
+    # Validate API key before proceeding
+    if not validate_perplexity_api_key():
+        logging.critical("API Key Validation Failed. Exiting.")
+        sys.exit(1)
+    
+    # Rest of your existing main function code...
+    logging.info(f"Current working directory: {os.getcwd()}")
+    
+    # Existing code continues...
     logging.info(f"Current working directory: {os.getcwd()}")
 
     api_client = PerplexityAPIClient(rate_limit=30, time_window=45)
