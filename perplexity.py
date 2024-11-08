@@ -20,25 +20,25 @@ def test_perplexity_api():
         "Content-Type": "application/json"
     }
     
-    # 测试数据
+    # 测试数据 - 更明确的指令
     payload = {
         "model": "llama-3.1-sonar-small-128k-online",
         "messages": [
             {
                 "role": "system",
-                "content": "You are a helpful assistant. Be very concise and direct in your responses."
+                "content": "You are a direct assistant. Respond with exactly what is asked, nothing more."
             },
             {
                 "role": "user",
-                "content": "Say hello world."
+                "content": "Respond with exactly these words: Hello, World!"
             }
         ],
-        "max_tokens": 20,
-        "temperature": 0.1,
-        "top_p": 0.9,
+        "max_tokens": 50,  # 增加 token 限制以确保完整响应
+        "temperature": 0,   # 设置为 0 以获得最确定的响应
+        "top_p": 1,
         "return_images": False,
         "return_related_questions": False,
-        "frequency_penalty": 1,
+        "frequency_penalty": 0,
         "presence_penalty": 0,
         "stream": False
     }
@@ -69,6 +69,15 @@ def test_perplexity_api():
         content = response_data['choices'][0]['message']['content']
         logging.info(f"Generated content: {content}")
 
+        # 验证内容是否符合预期
+        expected_content = "Hello, World!"
+        if expected_content.lower() not in content.lower():
+            logging.warning(f"Content does not match expected: {expected_content}")
+        
+        # 检查是否因为 token 限制而被截断
+        if response_data['choices'][0]['finish_reason'] == 'length':
+            logging.warning("Response was truncated due to token limit")
+
         # 打印使用情况
         usage = response_data['usage']
         logging.info(f"Token usage - Prompt: {usage['prompt_tokens']}, "
@@ -88,3 +97,4 @@ if __name__ == "__main__":
         logging.info("✅ Test completed successfully!")
     else:
         logging.error("❌ Test failed!")
+        
