@@ -30,7 +30,7 @@ def call_perplexity_api(prompt):
         "messages": [
             {
                 "role": "system",
-                "content": "You are a luxury fashion expert. Verify product listings and respond in JSON format."
+                "content": "You are a luxury fashion expert. Always respond with a valid JSON object containing your analysis."
             },
             {
                 "role": "user",
@@ -54,8 +54,45 @@ def call_perplexity_api(prompt):
         
         if response.status_code == 200:
             response_json = response.json()
-            logging.info(f"API Response: {str(response_json)[:200]}...")
-            return response_json['choices'][0]['message']['content']
+            # 获取实际的消息内容
+            content = response_json['choices'][0]['message']['content']
+            logging.info(f"API Response Content: {content[:200]}...")
+            
+            # 尝试解析内容为 JSON
+            try:
+                # 清理内容
+                content = content.strip()
+                if content.startswith('```json'):
+                    content = content[7:]
+                if content.endswith('```'):
+                    content = content[:-3]
+                content = content.strip()
+                
+                # 解析 JSON
+                result = json.loads(content)
+                logging.info(f"Successfully parsed JSON response: {str(result)[:200]}...")
+                return result
+            except json.JSONDecodeError as e:
+                logging.error(f"Failed to parse content as JSON: {str(e)}")
+                logging.error(f"Content was: {content[:200]}...")
+                return {
+                    "title_check": {
+                        "is_valid": False,
+                        "issues": ["API response not in valid JSON format"],
+                        "contains_brand": False,
+                        "appropriate_length": False,
+                        "keyword_optimization": False
+                    },
+                    "description_check": {
+                        "is_valid": False,
+                        "issues": ["API response not in valid JSON format"],
+                        "completeness": False,
+                        "accuracy": False,
+                        "formatting": False
+                    },
+                    "is_valid": False,
+                    "suggestions": ["API response format error"]
+                }
         else:
             logging.error(f"API request failed: {response.text}")
             raise Exception(f"API request failed: {response.text}")
