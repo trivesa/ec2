@@ -120,10 +120,17 @@ def call_perplexity_api(prompt):
 def get_listing_data(sheets_service, product_type):
     """从原始表格获取listing数据"""
     try:
+        # 修改这里：使用单引号包裹工作表名称，并正确处理空格
         sheet_name = product_type.lower().strip()
+        # 将工作表名称中的空格替换为下划线
+        sheet_name = sheet_name.replace(' ', '_')
+        
+        # 构建范围字符串
+        range_name = f"'{sheet_name}'!A:Z"
+        
         result = sheets_service.spreadsheets().values().get(
             spreadsheetId=SOURCE_SPREADSHEET_ID,
-            range=f"'{sheet_name}'!A:Z"
+            range=range_name
         ).execute()
         
         values = result.get('values', [])
