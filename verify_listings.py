@@ -1,4 +1,3 @@
-# verify_listings.py
 import json
 import os
 import time
@@ -13,34 +12,11 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 
 # 配置
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-GOOGLE_CREDENTIALS_PATH = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')
+GOOGLE_CREDENTIALS_PATH = "/home/ec2-user/google-credentials/service-account.json"
 PERPLEXITY_API_KEY = os.environ.get('PERPLEXITY_API_KEY')
-SOURCE_SPREADSHEET_ID = os.environ.get('SPREADSHEET_ID')  # 原始表格
-VERIFICATION_SPREADSHEET_ID = '1rJvO5QpRChKFS3NrhQgforpPKCx3OhVGeaV72nUdGLw'  # 验证表格
+SPREADSHEET_ID = "1rJvO5QpRChKFS3NrhQgforpPKCx3OhVGeaV72nUdGLw"
 
-def verify_objective_fields(listing_data):
-    """验证客观字段（颜色、材质等）"""
-    objective_checks = {
-        'Color': {
-            'is_valid': bool(listing_data.get('Color')),
-            'message': 'Color is missing' if not listing_data.get('Color') else 'Valid'
-        },
-        'Style': {
-            'is_valid': bool(listing_data.get('Style')),
-            'message': 'Style is missing' if not listing_data.get('Style') else 'Valid'
-        },
-        'Type': {
-            'is_valid': bool(listing_data.get('Type')),
-            'message': 'Type is missing' if not listing_data.get('Type') else 'Valid'
-        },
-        'Upper Material': {
-            'is_valid': bool(listing_data.get('Upper Material')),
-            'message': 'Material is missing' if not listing_data.get('Upper Material') else 'Valid'
-        }
-    }
-    return objective_checks
-
-def verify_title_and_description(brand, style_number, listing_data):
+def verify_listing(brand, style_number, listing_data):
     """使用 Perplexity API 验证标题和描述"""
     verification_prompt = f"""
     As a luxury fashion expert, verify this eBay listing:
@@ -57,37 +33,22 @@ def verify_title_and_description(brand, style_number, listing_data):
             "is_valid": boolean,
             "issues": [list of issues],
             "contains_brand": boolean,
-            "appropriate_length": boolean,
-            "keyword_optimization": boolean
+            "appropriate_length": boolean
         }},
         "description_check": {{
             "is_valid": boolean,
             "issues": [list of issues],
             "completeness": boolean,
-            "accuracy": boolean,
-            "formatting": boolean
+            "accuracy": boolean
         }}
     }}
-
-    Check for:
-    1. Title (80 characters max):
-       - Brand name accuracy
-       - Key features included
-       - No style number included
-       - SEO optimization
-
-    2. Description:
-       - Product details accuracy
-       - Complete specifications
-       - Proper formatting
-       - Required policies included
     """
 
     try:
         response = call_perplexity_api(verification_prompt)
         return json.loads(response)
     except Exception as e:
-        logging.error(f"Title/Description verification error: {str(e)}")
+        logging.error(f"Verification error: {str(e)}")
         return None
 
 def call_perplexity_api(prompt):
@@ -105,9 +66,7 @@ def call_perplexity_api(prompt):
                 'content': 'You are a luxury fashion expert specializing in product verification.'
             },
             {'role': 'user', 'content': prompt}
-        ],
-        'max_tokens': 1000,
-        'temperature': 0.1
+        ]
     }
 
     response = requests.post(
@@ -115,135 +74,119 @@ def call_perplexity_api(prompt):
         headers=headers,
         json=data
     )
-    return response.json()['choices'][0]['message']['content']
+    
+    if response.status_code == 200:
+        return response.json()['choices'][0]['message']['content']
+    else:
+        raise Exception(f"API call failed with status {response.status_code}: {response.text}")
 
-def get_listing_data(sheets_service, product_type):
-    """从原始表格获取listing数据"""
+def get_sheet_data():
+    """获取 Google Sheet 数据"""
     try:
-        # 修改这里：使用单引号包裹工作表名称，并正确处理空格
-        sheet_name = product_type.lower().strip()
-        # 将工作表名称中的空格替换为下划线
-        sheet_name = sheet_name.replace(' ', '_')
+        credentials = service_account.Credentials.from_service_account_file(
+            GOOGLE_CREDENTIALS_PATH, scopes=SCOPES)
         
-        # 构建范围字符串
-        range_name = f"'{sheet_name}'!A:Z"
+        service = build('sheets', 'v4', credentials=credentials)
+        sheet = service.spreadsheets()
         
-        result = sheets_service.spreadsheets().values().get(
-            spreadsheetId=SOURCE_SPREADSHEET_ID,
+        # 读取 Sheet1 的数据
+        range_name = 'Sheet1!A:N'  # A 到 N 列包含所有需要的数据
+        result = sheet.values().get(
+            spreadsheetId=SPREADSHEET_ID,
             range=range_name
         ).execute()
         
-        values = result.get('values', [])
-        if not values:
-            return None
-            
-        headers = values[0]
-        required_fields = ['Title', 'Description', 'Color', 'Style', 'Type', 'Upper Material']
-        indices = {field: headers.index(field) if field in headers else -1 for field in required_fields}
-        
-        if len(values) > 1:
-            latest_row = values[-1]
-            return {
-                field: latest_row[index] if index >= 0 and index < len(latest_row) else 'N/A'
-                for field, index in indices.items()
-            }
-            
-        return None
+        return result.get('values', [])
     except Exception as e:
-        logging.error(f"Error getting listing data: {str(e)}")
+        logging.error(f"Error reading sheet: {str(e)}")
         return None
 
-def write_verification_results(sheets_service, results):
-    """写入验证结果到验证表格"""
+def write_verification_results(results):
+    """写入验证结果"""
     try:
-        # 写入表头
+        credentials = service_account.Credentials.from_service_account_file(
+            GOOGLE_CREDENTIALS_PATH, scopes=SCOPES)
+        
+        service = build('sheets', 'v4', credentials=credentials)
+        
+        # 准备表头
         headers = [
-            ['Internal Reference', 'Brand', 'Style Number', 'Product Type', 
-             'Overall Status', 'Title Check', 'Description Check', 
-             'Objective Fields Check', 'Issues Found', 'Suggestions']
+            ['Internal Reference', 'Brand', 'Style Number', 
+             'Title Check', 'Description Check', 'Issues Found']
         ]
         
-        sheets_service.spreadsheets().values().update(
-            spreadsheetId=VERIFICATION_SPREADSHEET_ID,
-            range='Sheet1!A1',
+        # 准备数据行
+        data_rows = [[
+            result['internal_ref'],
+            result['brand'],
+            result['style_number'],
+            json.dumps(result['verification']['title_check']),
+            json.dumps(result['verification']['description_check']),
+            json.dumps(result.get('issues', []))
+        ] for result in results]
+        
+        # 写入数据
+        body = {
+            'values': headers + data_rows
+        }
+        
+        service.spreadsheets().values().update(
+            spreadsheetId=SPREADSHEET_ID,
+            range='Verification!A1',
             valueInputOption='RAW',
-            body={'values': headers}
+            body=body
         ).execute()
-
-        # 写入验证结果
-        sheets_service.spreadsheets().values().update(
-            spreadsheetId=VERIFICATION_SPREADSHEET_ID,
-            range='Sheet1!A2',
-            valueInputOption='RAW',
-            body={'values': results}
-        ).execute()
-
+        
     except Exception as e:
         logging.error(f"Error writing verification results: {str(e)}")
 
 def main():
     try:
-        # 设置 Google Sheets 服务
-        credentials = service_account.Credentials.from_service_account_file(
-            GOOGLE_CREDENTIALS_PATH, scopes=SCOPES)
-        sheets_service = build('sheets', 'v4', credentials=credentials)
-
-        # 读取源数据
-        source_data = sheets_service.spreadsheets().values().get(
-            spreadsheetId=SOURCE_SPREADSHEET_ID,
-            range='Sheet1!C2:I'  # 调整范围以匹配您的数据
-        ).execute().get('values', [])
-
+        # 读取数据
+        data = get_sheet_data()
+        if not data:
+            logging.error("No data found in sheet")
+            return
+        
+        headers = data[0]
+        required_columns = ['internal reference', 'brand', 'style number', 'Title', 'Description']
+        column_indices = {col: headers.index(col) if col in headers else -1 for col in required_columns}
+        
         verification_results = []
-        for row in source_data:
-            if len(row) >= 5:
-                internal_ref = row[0]
-                brand = row[3]  # 根据实际列调整
-                style_number = row[6]  # 根据实际列调整
-                product_type = row[2]  # 根据实际列调整
-
-                # 获取listing数据
-                listing_data = get_listing_data(sheets_service, product_type)
+        
+        # 处理每一行
+        for row in data[1:]:
+            if len(row) <= max(column_indices.values()):
+                continue
                 
-                if listing_data:
-                    # 验证客观字段
-                    objective_checks = verify_objective_fields(listing_data)
-                    
-                    # 验证标题和描述
-                    content_verification = verify_title_and_description(brand, style_number, listing_data)
-                    
-                    # 汇总验证结果
-                    overall_status = "Pass" if (
-                        all(check['is_valid'] for check in objective_checks.values()) and
-                        content_verification['title_check']['is_valid'] and
-                        content_verification['description_check']['is_valid']
-                    ) else "Fail"
-
-                    # 准备结果行
-                    result_row = [
-                        internal_ref,
-                        brand,
-                        style_number,
-                        product_type,
-                        overall_status,
-                        json.dumps(content_verification['title_check']),
-                        json.dumps(content_verification['description_check']),
-                        json.dumps(objective_checks),
-                        json.dumps(content_verification['title_check'].get('issues', []) + 
-                                 content_verification['description_check'].get('issues', [])),
-                        json.dumps(content_verification.get('suggestions', []))
-                    ]
-                    
-                    verification_results.append(result_row)
-                    
-                    # 避免超过API限制
-                    time.sleep(1)
-
+            listing_data = {
+                'Title': row[column_indices['Title']],
+                'Description': row[column_indices['Description']]
+            }
+            
+            verification = verify_listing(
+                row[column_indices['brand']],
+                row[column_indices['style number']],
+                listing_data
+            )
+            
+            if verification:
+                result = {
+                    'internal_ref': row[column_indices['internal reference']],
+                    'brand': row[column_indices['brand']],
+                    'style_number': row[column_indices['style number']],
+                    'verification': verification
+                }
+                verification_results.append(result)
+            
+            # 避免 API 限制
+            time.sleep(1)
+        
         # 写入验证结果
         if verification_results:
-            write_verification_results(sheets_service, verification_results)
+            write_verification_results(verification_results)
             logging.info(f"Successfully verified {len(verification_results)} listings")
-
+        
     except Exception as e:
         logging.error(f"Main process error: {str(e)}")
 
